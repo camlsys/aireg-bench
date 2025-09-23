@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))  
+
+[b] **Guideline:**  
+The AI system must provide intuitive and accessible interfaces allowing human overseers to monitor real-time operations, detect anomalies or unintended outputs, and understand the system’s ongoing behavior during use, ensuring continuous control and supervision are feasible.  
+
+[c] **Violation:**  
+The Political Influence Analyzer’s user interface only surfaces summarized final outputs (e.g., generated political messages) without detailed intermediate reasoning, uncertainty indicators, or alerts about deviations in the model’s behavior, making it challenging for human overseers to detect subtly inappropriate or manipulative outputs in real time.  
+
+[d] **Justification:**  
+This breach is subtle because the system appears transparent at a superficial level by displaying messages, but lacks granular monitoring features needed for effective oversight, thus impeding human supervisors’ ability to fully assess or intervene during operation as required by Article 14(1).  
+
+---

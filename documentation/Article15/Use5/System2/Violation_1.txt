@@ -1,0 +1,35 @@
+**Article 15**
+
+**Consistency of Model Accuracy and Performance over Lifecycle**
+
+The Recruitment Decision Forest is constructed as an ensemble of Gradient Boosted Decision Trees (GBDT), trained on a dataset comprising approximately 250,000 candidate records aggregated from multiple recruitment cycles spanning the previous five years. The training data incorporates structured candidate metadata (e.g., education level, years of experience), categorical application responses, and a history of hiring decisions validated by HR specialists to enhance label reliability. Initial validation against a held-out test set of 50,000 candidates yielded an overall accuracy metric (area under the ROC curve) of 0.82, with a false positive rate of 8% when identifying potentially high-fit candidates.
+
+Model development prioritized interpretability and transparency using SHAP (SHapley Additive exPlanations) values for feature contribution analysis, thus facilitating clear insight into decision drivers. The selection of the GBDT architecture aligned with industry-standard methods (circa 2025) for structured recruitment data, balancing predictive performance and explainability to support compliance and audit requirements.
+
+Upon deployment, the system operates with a static model instance: retraining or model updates occur exclusively through scheduled manual cycles triggered by stakeholders, typically aligned with annual recruitment periods. No automated retraining or continuous adaptation mechanisms have been integrated into the system’s design to account for incremental shifts in data distributions occurring between these cycles.
+
+**Measures Related to Robustness and Resilience**
+
+The system's design incorporates fault-tolerant software engineering practices, including redundant storage of training and model artifacts across geographically diverse data centers to safeguard against data loss. A formal verification phase checks data schema consistency before input processing to minimize internal system faults due to malformed candidate feature vectors.
+
+Nevertheless, the model’s robustness in the operational environment does not extend to detection or remediation of performance degradation arising from evolving data patterns—such as shifts in applicant demographics or emerging labor market characteristics. The provider has not incorporated internal drift detection algorithms (e.g., population stability index monitoring or feature distribution tracking) nor triggered adaptive retraining workflows. Consequently, latent performance decay—manifesting as gradual decline in scoring accuracy during ongoing recruitment cycles—may occur if underlying candidate data distributions depart significantly from the training baseline.
+
+System fail-safe mechanisms focus on data and software integrity, but do not include fallback models or alternate decision paths in response to detected degradation, reflecting a conscious design boundary consistent with the provider’s deployment philosophy and the state of deployed model lifecycle management tools.
+
+**Accuracy Metrics Disclosure and Use Instructions**
+
+In the accompanying Instructions of Use documentation, the provider explicitly declares the model’s accuracy metrics as measured at the last validated training cycle, including a mean ROC-AUC score of 0.82 and calibration plots demonstrating alignment across candidate score distributions. Documentation clarifies the static nature of the deployed model post-training and the absence of real-time learning or performance maintenance components embedded in the system.
+
+Users are advised to monitor recruitment outcomes and initiate periodic model retraining or recalibration manually based on internal organizational assessments rather than automated triggers. This guidance is intended to ground user expectations regarding system performance stability during each recruitment cycle and acknowledge inherent limitations due to omitted continuous monitoring features.
+
+**Cybersecurity and Protection Against Adversarial Manipulation**
+
+The system implements standard cybersecurity protections consistent with 2025 enterprise AI deployment norms. These include role-based access controls, encrypted storage for candidate data in transit and at rest, and rigorous logging of all model invocation and input data processing events for audit trails.
+
+Defenses specific to AI security threats address common vulnerabilities such as data poisoning and adversarial input manipulation predominantly through input validation pipelines and anomaly detection mechanisms applied prior to candidate data ingestion. However, the system does not employ advanced AI-specific penetration testing or runtime detection of adversarial examples tailored explicitly for recruitment feature sets.
+
+Given the static deployment model and absence of online learning, risks associated with feedback loops and bias amplification across model retraining prompted by autonomous system behavior are inherently mitigated. The provider’s design choice to suspend continuous adaptation reflects a deliberate trade-off to limit risks associated with unmonitored feedback-induced bias propagation, while accepting the consequent exposure to gradual performance degradation due to unflagged data drift.
+
+---
+
+This documentation thus details the Recruitment Decision Forest’s technical design, performance metrics, robustness characteristics, and cybersecurity measures in alignment with regulatory expectations outlined in Article 15, showing the implemented controls and highlighting lifecycle management practices currently omitted.

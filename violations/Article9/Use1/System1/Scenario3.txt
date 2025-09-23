@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."
+
+[b] **Guideline:**  
+Risk management must explicitly assess risks particular to minors or vulnerable populations, such as exposure to misinformed traffic hazard warnings leading to unsafe crossing decisions or delayed emergency responses affecting school zones.
+
+[c] **Violation:**  
+SafeRoute’s risk identification and evaluation process does not segment or analyze impact data for specific vulnerable groups, such as children walking near schools, ignoring that inaccurate hazard predictions in these zones could disproportionately expose minors to unsafe traffic situations.
+
+[d] **Justification:**  
+The violation is subtle because the system assesses risks in general urban traffic settings but fails to granularly analyze the effects on a critical vulnerable group. Without targeted evaluation, the system may overlook specific risks affecting minors, contrary to the mandated thorough consideration of vulnerable populations.

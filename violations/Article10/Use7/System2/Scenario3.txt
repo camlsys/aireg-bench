@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To the extent that it is strictly necessary for the purpose of ensuring bias detection and correction in relation to the high-risk AI systems... (5)(c) the special categories of personal data are subject to measures to ensure that the personal data processed are secured, protected, subject to suitable safeguards, including strict controls and documentation of the access, to avoid misuse and ensure that only authorised persons have access..."  
+
+[b] **Guideline:**  
+When using special categories of personal data (e.g., health or ethnic origin data) to detect and mitigate bias, the organization must implement strict access controls including role-based permissions, audit logs, encryption in storage and transit, and regular security reviews to ensure compliance with EU data protection laws and to prevent unauthorized access or leakage.  
+
+[c] **Violation:**  
+During bias mitigation processes, Veritas Risk Solutions processed special category personal data (such as ethnic origin inferred from auxiliary databases) but failed to maintain comprehensive access logs and allowed broad internal team access without clearly defined roles, increasing the risk of unauthorized or accidental data exposure.  
+
+[d] **Justification:**  
+The lack of strict access governance undermines the safeguards required under paragraph (5)(c), exposing sensitive data processed for bias correction to misuse risks. This violation is subtle because the data processing itself is justified and necessary, but the failure lies in security practices—often an overlooked aspect in bias mitigation workflows despite involving sensitive personal data requiring robust protections.

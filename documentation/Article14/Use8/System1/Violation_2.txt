@@ -1,0 +1,33 @@
+**Article 14**
+
+### Design for Human Oversight and Interface Characteristics
+
+Priority Response Analytics employs a dual-model architecture combining a Gradient Boosted Decision Tree (GBDT) for structured incident data with a Transformer encoder for unstructured textual dispatch notes. The system outputs a ranked list of prioritized emergency calls intended to inform dispatcher decisions in real time. The provider, Sentinel Technologies, purposefully designed the system to present dispatcher interfaces that deliver ranked recommendations without system-generated alerts, warnings, or low-confidence flags related to its outputs. Moreover, the user interface does not include controls or explicit features to encourage or permit overrides in borderline or ambiguous cases.
+
+This design approach was selected to streamline dispatcher workflows under time pressure by providing clear ranking guidance rather than additional notifications, based on internal user studies conducted across three European emergency dispatch centers over a 9-month period involving 245 dispatchers. These studies indicated that excessive alerts generated cognitive load impairing dispatcher speed under high-volume conditions. However, the interface does not counterbalance this by incorporating explicit override enablement or prompting, reflecting a trade-off determined in collaboration with domain experts prioritizing rapid decision throughput.
+
+### Measures Addressing Risks to Health, Safety, and Fundamental Rights
+
+Recognizing that the system’s lack of confidence indicators and override features may present risks of undervaluing urgent incidents, Sentinel Technologies formulated risk minimization strategies focusing on model performance robustness and transparency of model limitations via documentation. The training dataset comprised over 1.2 million historical emergency incident records annotated with final response priority labels validated by senior dispatch supervisors, ensuring representativeness across incident types and geographies. Performance benchmarks indicate that the combined model achieves 87.3% accuracy in correctly identifying high-urgency cases within the top-three ranks, as measured against independently audited evaluation sets. 
+
+Despite high accuracy, the model’s predictive confidence scoring remains internal and is not externally surfaced in the interface, per the present design. System logs retain detailed model output probabilities and token-level attention visualizations, accessible only to technical maintenance teams for offline performance monitoring and bias detection. The user-facing absence of confidence signals or override prompts is reflected in current operational guidelines supplied to deployers, which recommend dispatcher vigilance and supplementary human judgment as critical safeguards.
+
+### Provider-Implemented Oversight Provisions Prior to Market Placement
+
+From a technical feasibility perspective, Sentinel Technologies incorporated extensive anomaly detection modules to flag potential input inconsistencies or model output distribution shifts for off-cycle retraining or maintenance alerts to system administrators. However, these mechanisms do not trigger real-time end-user notifications nor impede normal ranking output delivery to dispatchers. The provider’s decision to exclude active real-time alerts or override affordances was informed by a risk-benefit evaluation prioritizing uninterrupted recommendation flow over direct system-initiated intervention features.
+
+Accompanying documentation and training materials emphasize that dispatchers must apply professional judgement and continuously monitor system performance, particularly under unusual or borderline call circumstances. The system supports auditability by maintaining immutable logs of each ranking decision and corresponding input records, enabling retrospective review but not dynamic human override during live operations.
+
+### Deployment Support and Dispatcher Empowerment
+
+Priority Response Analytics is delivered with comprehensive technical documentation detailing the model architecture, training data characteristics, known limitations including potential for low-confidence outputs, and scenarios historically prone to misclassification. However, the system does not integrate interactive tools for dispatchers to dispute or modify AI outputs or to request alternative prioritizations within the interface. Dispatchers retain procedural authority to disregard system recommendations based on their expertise but the interface design neither explicitly facilitates nor encourages such actions through user prompts or control elements.
+
+There is no ‘stop’ button or emergency halt procedure built into the operational interface, as the system continuously processes streaming incident data and updates rankings dynamically; any necessary intervention requires external procedural mechanisms outside the AI component itself. This operational modality was adopted considering the high-tempo environment and the risk of disruption from system interruptions.
+
+### Enabling Understanding of System Capabilities and Limitations
+
+To support informed human oversight, Sentinel Technologies provides training modules and reference guides which describe the system’s fusion of structured and unstructured data inputs, model bias mitigation efforts, and known residual risks particularly related to ambiguous textual notes. The documentation explicitly cautions about the possibility of automation bias, underscoring that recommendations are aids—not absolute determinations—and advises continuous dispatcher awareness of over-reliance tendencies.
+
+Records of processing activities document the handling of special categories of personal data, detailing the necessity of processing sensitive information to detect and correct biases in model training and validation phases. These records clarify why alternative data sources could not fulfill the bias mitigation objectives to ensure equitable performance across demographic and geographic variables.
+
+Sentinel Technologies maintains a lifecycle monitoring framework including regular audit cycles, retraining triggers based on performance degradation, and aggregation of dispatcher feedback to inform system updates—all conducted without altering the fundamental design choice of omitting direct interface-based override or alert features.

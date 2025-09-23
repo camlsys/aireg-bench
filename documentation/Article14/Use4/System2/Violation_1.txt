@@ -1,0 +1,29 @@
+**Article 14**
+
+**Design of Human-Machine Interface for Oversight**
+
+The Academic Compliance Monitor (ACM) is engineered to present behavioral anomaly assessments via a streamlined user interface that aggregates multiple alarm signals into a singular binary output: either “Suspicious” or “Clear.” This design decision aligns with a focused risk mitigation strategy emphasizing prompt and unequivocal notification to examination supervisors serving as natural-person overseers during exam sessions. By abstracting diverse input features—including keyboard dynamics and environmental audio cues processed through Random Forest and RNN hybrid models—into a binary indicator, the interface prioritizes operational clarity and decisiveness over detailed transparency.
+
+This binary aggregation mechanism does not expose supervisors to underlying model confidence scores, anomaly detection thresholds, or intermediate classification states over time. Nor does it display a timeline of the system’s evaluative process or contextual rationale for triggering a “Suspicious” flag. This constrained output aims to reduce cognitive load and decision complexity for supervisors in the real-time examination context, enabling rapid responses to potential integrity violations without requiring deep technical interpretation.
+
+**Oversight Objectives in Risk Prevention**
+
+Given the system’s purpose of supporting exam integrity by detecting anomalous behavioral patterns indicative of academic misconduct, the ACM’s oversight design aims primarily to minimize institutional reputational risks and uphold fairness rather than ensuring detailed explainability of each flagged behavior. The provided binary indicator is intended to initiate human investigative follow-up rather than serve as dispositive evidence by itself.
+
+The absence of intermediate confidence scores or contextual explanations is a deliberate mitigation of risks associated with overinterpretation or misinterpretation by exam supervisors, who typically lack specialized AI expertise. By limiting output granularity, the system reduces the potential for automation bias stemming from incorrect weighting of nuanced probabilistic information. Supervisors are encouraged to activate further human-led inquiry into flagged incidents rather than rely exclusively on AI outputs, consistent with a layered risk-control approach.
+
+**Scope and Proportion of Built-In Oversight Measures**
+
+ACM’s built-in oversight features focus on delivering a binary indicator that facilitates rapid detection of suspicious behavior, leaving more complex judgement and investigative responsibility to exam supervisors or designated deployers. Technically feasible measures such as intermediate confidence reporting, timeline visualization of input evaluation, or explicit reasoning for anomaly classification have been excluded at the design stage to comply with operational constraints and user role expectations.
+
+The system incorporates a manual interrupt mechanism enabling supervisors to cease monitoring or alert processing during examinations in case of system malfunction, to maintain safety and procedural integrity. This “stop” control is embedded directly in the user interface and allows the system to enter a safe halted state without compromising data logs accumulated up to that point.
+
+No biometric processing is performed, and all input data modalities are non-intrusive behavioral signals, thereby limiting privacy risks while supporting compliance with fundamental rights safeguards. Processing logs include records aligned with GDPR and related data protection standards concerning the lawful use of behavioral analytics for integrity purposes, though the system does not utilize special categories of personal data that would require justification under Article 14(4)(f).
+
+**Provision for User Understanding and Control**
+
+The ACM is delivered with accompanying technical documentation and operational training materials designed to ensure supervisors understand the system’s basic capabilities and functional limitations. These resources explicitly clarify that the “Suspicious” or “Clear” status is a high-level aggregate output based on complex algorithmic analysis not fully interpretable by users. Supervisors are instructed to interpret the binary indicator as an alert trigger rather than conclusive evidence.
+
+The design intentionally refrains from providing advanced interpretative tools or interactive exploration of model decisions, reflecting a proportional approach to oversight given the system’s level of autonomy and safety profile. Supervisors retain discretion to override or disregard flagged outputs based on contextual judgment, consistent with their role and institutional protocols.
+
+In summary, human oversight is enabled primarily through a simplified interface focused on actionable alerts, supplemented by procedural controls to review, override, or halt the system. This configuration supports monitoring while mitigating risks of overreliance and enabling responsible human intervention.

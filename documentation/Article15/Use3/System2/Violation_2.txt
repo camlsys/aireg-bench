@@ -1,0 +1,33 @@
+**Article 15**
+
+**Design Decisions on Accuracy, Robustness, and Lifecycle Performance**
+
+The Competency Evaluation Framework employs gradient boosted decision trees (GBDT) trained on extensive sets of structured performance metrics combined with learner interaction logs aggregated continuously from vocational and lifelong learning environments. The initial training dataset encompassed approximately 1.2 million learner-task interaction records, collected over three years across multiple partner institutions. This volume supports a baseline accuracy measured by mean absolute error (MAE) of 0.13 on standard competency scoring scales and a Cohen’s kappa agreement statistic of 0.76 against expert-annotated benchmark assessments. These results establish a foundation ensuring competency scores align with instructional expectations under controlled conditions.
+
+Subsequent model updates occur through incremental retraining cycles scheduled quarterly, incorporating all accumulated learner interaction logs since the last deployment. No filtering or reweighting is applied to remove or adjust for the impact of prior adaptive curriculum paths on feedback signals in retraining data. This approach prioritizes data completeness and simplicity in retraining pipelines while allowing the system continuously to reflect evolving learner behaviors and instructional adjustments.
+
+**Benchmarks and Measurement Methodologies**
+
+To quantify model performance, Horizon Learning Analytics developed a specific benchmarking protocol aligned with contemporary educational measurement methodologies and metrology standards pertinent to competency evaluation AI systems. The protocol includes holdout validation with stratification by curriculum variant and learner demographic groups to characterize variability and systematic error tendencies. Diagnostic metrics incorporate calibration error curves and feature importance stability scores to detect shifts in scoring patterns over serial retrainings.
+
+While external benchmarking bodies are engaged periodically to align assessment approaches, the adaptive nature of the training data—derived from dynamic learner interactions and curriculum adjustments—introduces challenges in isolating independent, unbiased validation feedback. The documentation of accuracy metrics provided in the accompanying instructions of use reflects these benchmarking results, specifying expected score reliability ranges and contextualizing performance relative to the specific curricula and learner populations encountered in deployment.
+
+**Mitigation of Feedback Loops and Robustness Considerations**
+
+The system’s iterative learning pipeline does not currently integrate mechanisms to prevent or mitigate feedback loops arising from successive retrainings on data that include model-influenced learner progression paths. As a consequence, learners exhibiting favorable early competency predictions experience curricula steered toward particular competency domains, which, when recorded in interaction logs, disproportionately reinforce those competencies in subsequent retrainings. This phenomenon results in a documented trend of inflating predicted competency scores for these learners over time.
+
+Robustness provisions address operational stability through modular model design and fault-tolerant retraining architectures, ensuring that failures in data ingestion or model training do not interrupt service continuity. The retraining pipeline includes automated integrity checks preventing corrupted or incomplete data ingestion but does not filter inputs based on detected bias amplification patterns. Fail-safe mechanisms include fallback to last stable model versions during system upgrades or unforeseen anomalies, maintaining consistent scoring availability for end-users.
+
+From an environmental interaction perspective, the system accommodates heterogeneous deployment infrastructures, recognizing differences in learning management systems and data capture mechanisms. The design anticipates realistic variations in data completeness and quality but relies on transparent reporting of scoring confidence intervals to inform human oversight.
+
+**Cybersecurity Measures and Protection Against Data Manipulation**
+
+Horizon Learning Analytics implements multi-layered cybersecurity controls aligned with industry standards for high-risk AI systems deployed in education technology contexts. Data pipelines utilize end-to-end encryption and role-based access controls to safeguard learner records and training data streams. Integrity verification protocols are embedded to detect tampering or anomalies indicative of data poisoning attempts in interaction logs.
+
+Model files and retraining environments undergo cryptographic signing, and operational environments are sandboxed to prevent unauthorized code execution or model manipulation. Adversarial robustness testing is performed at quarterly intervals using synthetic perturbations modeling common evasion strategies; results confirm model resilience under these controlled attack simulations, although no dedicated defenses against biased feedback loop exploitation via incremental training data have been implemented.
+
+Incident response plans include detection algorithms for unusual shifts in feature importance or output distributions, triggering manual review for potential cybersecurity or data integrity compromises. However, as adaptive curriculum-driven feedback loops are an inherent consequence of the system’s current incremental learning strategy, such patterns are treated as part of the operational data dynamics rather than cyber-threat vectors.
+
+---
+
+This documentation delineates the design, operation, performance characterization, and resilience measures of the Competency Evaluation Framework with explicit reference to its incremental retraining method incorporating all learner interaction logs without filtering feedback loops that may bias competency scoring. It highlights the technical and organisational decisions underlying these system attributes, facilitating targeted compliance assessment under Article 15 of the EU AI Act.

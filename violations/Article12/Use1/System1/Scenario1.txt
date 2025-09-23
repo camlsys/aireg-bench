@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement continuous, automatic logging that captures critical internal states and external inputs throughout its entire operational lifespan, ensuring no manual intervention is required to store relevant data for later auditing or troubleshooting.
+
+[c] **Violation:**  
+SafeRoute Traffic Monitor only logs events during active system alerts or when manual logging is triggered by operators, rather than maintaining an automatic and comprehensive continuous event log over the system's lifetime.
+
+[d] **Justification:**  
+This breach is realistic as developers may prioritize storage efficiency or believe that event logging only during alerts is sufficient. However, it subtly violates the requirement because it risks losing crucial contextual data needed for post-incident analysis or historical performance review, undermining traceability.
+
+---

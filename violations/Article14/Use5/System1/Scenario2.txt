@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"4 (b) to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations for decisions to be taken by natural persons;"
+
+[b] **Guideline:**  
+Human-machine interfaces should incorporate explicit training, reminders, or warning signals to counteract automation bias, ensuring users actively maintain critical assessment rather than blind trust. This may include alerts when outputs are low-confidence or when recommendations conflict with common hiring principles.
+
+[c] **Violation:**  
+The Talent Insight Model provides no prompts, confidence scores, or risk indicators for its recommendations, nor does it include training materials integrated into the interface that warn users about the risk of over-reliance on AI suggestions. HR professionals can easily treat rankings as definitive without being reminded of the model’s limitations or encouraged to double-check the AI-generated outcomes.
+
+[d] **Justification:**  
+Although the model outputs can appear trustworthy and professional, the absence of bias-mitigation cues leads to gradual automation bias, contrary to Article 14(4)(b). This cause-effect relationship may be overlooked because over-reliance develops implicitly over time, making this violation both plausible and subtle.
+
+---

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."
+
+[b] **Guideline:**  
+Robust cybersecurity measures must be implemented to detect and prevent sophisticated adversarial attacks, especially those aiming at subtle data poisoning or input manipulation that could bias termination decisions. This entails integrity checks on training data, anomaly detection for unusual input patterns, and guards against exploitation of model weaknesses via adversarial samples crafted to influence outputs.
+
+[c] **Violation:**  
+The system lacks filtering or anomaly detection mechanisms for inputs and does not verify the provenance of newly added employee records or contract documents. A malicious actor could craft adversarial contract text or modified employee data that triggers erroneous rulings, causing the system to misclassify eligible employees as high-risk termination candidates without raising warnings.
+
+[d] **Justification:**  
+This violation is realistic because HR datasets often come from multiple sources, and attackers could exploit weak input validation. The lack of adversarial robustness measures allows subtle, crafted perturbations to change outcomes, undermining the system’s cybersecurity resilience in a way that may not be immediately visible to end users or operators.

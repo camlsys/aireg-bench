@@ -1,0 +1,39 @@
+**Article 12**
+
+### Logging Architecture and Activation Protocols
+
+Judicial Insight Assistant incorporates a logging module designed to capture operational events and system behaviors indicative of its internal decision processes and external interactions. In alignment with operational maintenance workflows, this logging facility is activated exclusively upon manual initiation by authorized system administrators. Activation occurs strictly within predefined maintenance windows scheduled to avoid interference with judicial activities, typically during off-hours or court recess periods.
+
+This procedural design results in logging occurrences being temporally bounded rather than continuous; the system does not perform automatic or persistent logging during routine operational use. Consequently, log data reflects snapshots of system states and event flows limited to maintenance intervals, effectively producing intervals of no-data capture during standard deployment hours. This approach prioritizes system availability and performance continuity, mitigating risks associated with continuous logging overhead, such as latency increases or data storage saturation, while maintaining integrity of records captured during diagnostic sessions.
+
+### Technical Scope of Logged Events
+
+When logging is engaged, the system captures a comprehensive set of event types relevant to the AI’s risk management and traceability requirements. These events include detailed API transaction records, input-output pairs from both the transformer and gradient boosted decision tree (GBDT) components, internal state transitions within the text encoder-decoder modules, anomalies encountered during fact pattern classification, and any substantial configuration changes enacted since the last logging session.
+
+Captured logs also document system resource usage metrics pertinent to overall operational health and aid in detecting deviations linked to potential risk conditions, such as model degradation or incoherent output generation. Diagnostic traces additionally record user interactions at the system interface level, encompassing query submission and result access patterns relevant for post-market monitoring and operational oversight.
+
+### Alignment with Traceability Requirements
+
+Given that Judicial Insight Assistant serves critical judicial decision support functions, the logged data scope is calibrated to enable retrospective identification of conditions potentially constituting high-risk scenarios, including model output anomalies or processing irregularities. Although logging is not continuous, the records generated during maintenance windows provide discrete but detailed evidence of system function and any emergent behaviors subject to risk assessment as per Article 79(1). This episodic capture facilitates root-cause analysis of any reported substantive modifications or operational abnormalities.
+
+Moreover, the design supports post-market monitoring obligations by enabling auditors to examine representative system states over time, including the review of any updates to model parameters, legal database versions, or algorithmic configurations affecting output consistency. The procedural rigor governing logging activation ensures that data integrity is preserved while balancing operational imperatives.
+
+### Justification of Logging Practices
+
+The decision to limit logging activation to manual triggers during controlled maintenance windows stems from a considered risk management trade-off. Continuous logging at scale was deemed likely to impose substantial computational and storage burdens, potentially impairing the system’s responsiveness and availability in high-demand judicial environments. Historical performance benchmarking revealed that full-time logging introduced latency penalties exceeding 15% on processing throughput, adversely affecting user experience for judges and legal researchers reliant on prompt system responses.
+
+Furthermore, legal confidentiality and data protection considerations influenced the adoption of session-limited logging. Restricting logging windows reduces persistent data footprint, thereby minimizing exposure risk of sensitive judicial queries and associated metadata. Access controls and encryption protocols further protect logged data both in transit and at rest.
+
+This approach aligns with industry best practices circa 2025, where high-risk AI systems frequently adopt selective logging strategies combined with rigorous administrative controls to balance transparency, performance, and privacy imperatives.
+
+### System Components Supporting Logging Functionality
+
+The system’s logging module is implemented as an independent microservice interfaced via secure API calls with the core AI processing units. It supports structured event serialization compliant with contemporary log standards (e.g., JSON Lines) facilitating downstream automated analysis and audit workflows. The logging architecture includes tamper-evident mechanisms ensuring chain-of-custody preservation for all recorded events during the maintenance sessions.
+
+Integration of logging triggers into the system administration console enforces multi-factor authentication and role-based authorization, restricting activation capability to certified system administrators. Logging session metadata, including trigger initiator identity and duration, is recorded as part of audit trail completeness.
+
+### Practical Implications of Logging Modality
+
+While the episodic logging mechanism entails gaps in continuous traceability, documented operational procedures mandate detailed incident reporting and supplementary diagnostics in the event of detected anomalies outside maintenance windows. Judicial Insight Technologies Limited coordinates with client institutions to schedule additional logging sessions where warranted by irregular system behavior or post-deployment model updates, thus enabling targeted traceability aligned to operational realities.
+
+This configurational framework provides traceability commensurate with the system’s intended purpose, balancing transparency obligations with judicial operational continuity and data protection constraints.

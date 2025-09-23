@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))
+
+[b] **Guideline:**  
+The AI system should include intuitive and accessible human-machine interface features that enable educators to continuously monitor the system’s assessment logic, evaluate output credibility, and intervene whenever necessary.
+
+[c] **Violation:**  
+The Adaptive Learning Outcome Analyzer’s user interface presents aggregated feedback and learning path recommendations without exposing the underlying model confidence scores, uncertainty measures, or intermediate analytic indicators, limiting educators’ ability to meaningfully monitor or challenge the AI’s reasoning.
+
+[d] **Justification:**  
+Without transparent confidence or uncertainty indicators, natural persons cannot effectively oversee the AI system during use, as they lack essential insight into when outputs might be unreliable. This breach is subtle because educators might rely on summary feedback without realizing they cannot detect or question uncertain or faulty results, undermining effective human oversight mandated by Article 14(1).
+
+---

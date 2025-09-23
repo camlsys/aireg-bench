@@ -1,0 +1,43 @@
+**Article 15**
+
+**Accuracy, Robustness, and Lifecycle Performance Management**
+
+The Academic Compliance Monitor’s anomaly detection mechanism integrates a hybrid architecture combining Random Forest classifiers and recurrent neural networks (RNNs) to process and analyze input streams composed primarily of keyboard dynamics and ambient environmental audio within examination settings. The RNN component was initially trained on a curated dataset comprising approximately 10,000 exam sessions collected across three geographically and acoustically distinct exam halls, reflecting a limited range of environmental audio conditions and keyboard usage patterns typical of those early deployment sites.
+
+This initial training set was purposefully scoped to encompass dominant ambient noise profiles (such as subtle chair movements, page flips, and typical keyboard typing patterns) and input dynamics under static infrastructural conditions to optimize initial model sensitivity and specificity. The Random Forest classifiers further parse discrete event features extracted from the temporal data, supporting the RNN’s sequence modeling outputs to enhance discrimination between normal and anomalous conduct.
+
+However, the system does not incorporate automated or periodic retraining or recalibration protocols. No scheduled model updates or adaptive learning mechanisms have been implemented to accommodate changes in infrastructural configurations such as room acoustic modifications, introduction of new hardware peripherals, or seasonal variations in background noise profiles. Consequently, while initial performance benchmarks demonstrated a mean F1-score of 0.87 across validation folds, field evaluations across three subsequent exam periods revealed a progressive degradation in detection accuracy, with observed F1-scores declining to approximately 0.68 by the fourth exam cycle without recalibration.
+
+Automated self-diagnostics or performance drift detection modules are not embedded within the current system edition, resulting in the absence of automatic supervisor alerts or notifications about declining model fidelity or environmental shifts impacting model accuracy. Supervisory control relies exclusively on manual performance audits and external system health checks conducted at the discretion of the deploying institution.
+
+**Benchmarking and Measurement Methodologies**
+
+To gauge the system’s accuracy and robustness, internal benchmarks were established during initial development through stratified cross-validation on the assembled dataset, incorporating synthetically introduced noise and event perturbations simulating common environmental variabilities. Robustness tests included simulated input anomalies such as sudden auditory spikes and irregular keyboard event bursts to evaluate model resilience against transient disruptions.
+
+These benchmarks, documented in the system’s technical assessment dossier, reflect industry-standard metrics (accuracy, precision, recall, and F1-score) to characterize baseline operational performance. Given the limited environmental diversity of the training corpus, the benchmarks emphasize initial operating conditions rather than continuous longitudinal evaluation. External metrology or benchmarking entities were not directly engaged during development due to the specialized domain and data sensitivity constraints.
+
+**Declared Performance Metrics**
+
+The accompanying instructions for use disclose the system’s nominal detection accuracy at initial deployment based on the training evaluation: a mean F1-score of 0.87 and an accuracy of 91% under baseline deployment conditions. These metrics are explicitly qualified to apply to static exam settings matching the acoustic and device environment profiles present during model training.
+
+Users are informed that detection efficacy may diminish over time in response to environmental or infrastructural changes, and that no automated recalibration or adaptive retraining functions are instantiated. The instructions recommend implementing regular manual performance reviews following each exam cycle and advise on the necessity of retraining the RNN and Random Forest models should new environmental contexts or input device configurations arise.
+
+**Resilience and Fault Tolerance**
+
+Technical measures to maintain consistent system performance focus primarily on initial data preprocessing pipelines and signal filtering techniques applied to keyboard and audio input streams. These include adaptive noise reduction filters calibrated to the training set audio profiles and event normalization of keyboard timestamps to reduce spurious variance.
+
+No technical redundancy such as backup models, ensemble retraining, or fail-safe fallback algorithms are integrated. The absence of continuous learning capabilities or dynamic recalibration safeguards implies potential vulnerability to performance inconsistencies induced by evolving input modalities or environmental drift.
+
+Error containment strategies are limited to the system halting anomaly reporting under detected input integrity failures (e.g., microphone disconnection or keyboard input dropouts). However, no mechanisms exist to recover from or compensate for gradual model degradation nor to flag supervisors of emerging declines in model robustness or operational errors derived from input shifts.
+
+**Cybersecurity and Tampering Protections**
+
+The system architecture incorporates standard cybersecurity measures, including encrypted data transmission channels between client devices and the central analysis server, role-based access controls for operational interfaces, and audit logging of system events to ensure traceability.
+
+Vulnerabilities related specifically to adversarial manipulation of the AI components were assessed through internal adversarial testing: simulated model evasion attempts using crafted input sequences and synthetic audio perturbations designed to bypass anomaly detection showed limited success due to conservative thresholding strategies in the Random Forest classifiers.
+
+Nonetheless, no specific defenses against model poisoning or feedback loop exploitation were implemented, as the system’s model weights and training data are fixed post-deployment with no on-line or incremental learning. Absence of automated alerts regarding unusual input patterns that could signify tampering reduces early detection capacity for sophisticated attack vectors targeting long-term model integrity.
+
+---
+
+This documentation captures provider design decisions regarding initial training scope, lifecycle performance management, resilience strategies, and security considerations, detailing their impact on the system’s operational characteristics and known limitations.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"(g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Once biases are identified, providers must implement technically sound procedures—such as data rebalancing, feature adjustment, or model calibration—to mitigate these biases, rigorously documenting effectiveness and monitoring residual bias pre-deployment and periodically post-deployment to prevent unfair impact from persisting or emerging.  
+
+[c] **Violation:**  
+Although Horizon Learning Analytics documented identification of an age-related bias (younger learners systematically scored lower on certain physical skill assessments), they chose to apply generic model regularization techniques rather than targeted bias mitigation methods like reweighting or subgroup-specific calibration. Consequently, the bias remains largely unmitigated, subtly disadvantaging younger adult learners in competency evaluations.  
+
+[d] **Justification:**  
+This subtle violation occurs because the mitigation strategy is insufficiently targeted to the identified bias and lacks evidence of effectiveness, breaching the requirement for appropriate bias prevention and mitigation measures. It is a plausible oversight since generic technical fixes are sometimes favored for simplicity but do not adequately reduce harmful impacts on protected groups, thereby contravening the AI Act’s mandate.

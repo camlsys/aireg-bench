@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+Providers must establish a risk management system that includes frequent, scheduled reassessments of the AI model’s risk profile based on evolving data patterns, regulatory changes, and user feedback throughout development, deployment, and maintenance phases. Such updates should be documented and trigger appropriate design or procedural modifications.  
+
+[c] **Violation:**  
+The Credit Evaluation Network undergoes initial risk analysis and mitigation only during the model development phase, with no systematic post-deployment review cycles planned or implemented. In particular, the provider does not regularly reassess risk associated with shifts in borrower behavior after market shocks or economic changes, nor update the risk management measures accordingly.  
+
+[d] **Justification:**  
+This violation is subtle because the system is documented as “maintained,” but the absence of a regular, iterative review process post-launch undermines compliance with the requirement for continuous lifecycle risk management. Given the dynamic nature of credit risk factors, lack of ongoing risk evaluation could allow emerging biases or failures to persist unnoticed, breaching the lifecycle risk management principle.  
+
+---

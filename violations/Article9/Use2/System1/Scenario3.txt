@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(c) the evaluation of other risks possibly arising, based on the analysis of data gathered from the post-market monitoring system referred to in Article 72;"  
+
+[b] **Guideline:**  
+Providers must implement a post-market monitoring system that systematically collects, analyzes, and incorporates operational data—including sensor anomalies, operator interventions, and failure incidents—to discover unforeseen or emergent risks. These findings must feed back into the risk management system for continuous improvement and targeted mitigation.  
+
+[c] **Violation:**  
+Norwin Industrial Technologies’ post-market monitoring for Gas Safety Insight primarily aggregates mean system performance metrics without detailed analysis of anomaly classifications or correlating incidents of operator overrides and false alarms. Consequently, subtle patterns of increased risk during atypical environmental events or network configurations remain undetected and unaddressed in risk management updates.  
+
+[d] **Justification:**  
+This violation is subtle because it does not involve a complete absence of post-market data collection but rather an insufficient depth of analysis, failing to surface emerging risks from real-world operation complexity. It is plausible as providers may prioritize summary statistics over granular event correlation, especially when integrating hybrid AI components produces complex data streams challenging to interpret comprehensively.

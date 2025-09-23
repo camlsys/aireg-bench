@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse…" (Article 14(2))  
+
+[b] **Guideline:**  
+Providers must anticipate how misuse or manipulation of the AI could infringe on fundamental rights such as freedom of expression or democratic fairness, and design oversight mechanisms to detect and intervene against such harmful outcomes proactively.  
+
+[c] **Violation:**  
+The system does not include any proactive safeguards or human-in-the-loop checkpoints that flag or halt the generation of divisive or misleading political content, nor does it alert human overseers when outputs risk manipulating vulnerable or marginalized voter groups, despite foreseeable misuse scenarios in political campaigning.  
+
+[d] **Justification:**  
+Because the system’s oversight design omits controls directly related to protecting fundamental rights from foreseeable misuse, human oversight is insufficiently geared toward minimizing these serious risks, constituting a subtle yet significant compliance failure under Article 14(2).  
+
+---

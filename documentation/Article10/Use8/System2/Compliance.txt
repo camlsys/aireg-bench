@@ -1,0 +1,47 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Emergency Dispatch Prioritization Engine was developed based on training, validation, and testing datasets managed under a comprehensive data governance framework tailored to the system’s intended public safety application. The design choices prioritized integration of multimodal data sources, including geospatial imagery from urban sensor networks and sequential event logs from emergency call databases, to ensure accurate situational awareness and temporal continuity in incident analysis.
+
+Data collection processes were rigorously documented, identifying original data provenance. Geographic and imagery data originated from municipal open data platforms and sensor arrays, with collection purposes aligned strictly to urban monitoring and emergency response support. Incident call records were sourced from anonymized municipal databases, originally collected for emergency management, with strict adherence to data minimization and purpose limitation principles. The provider ensured that all datasets either excluded personal identifiers or anonymized them prior to ingestion, thereby respecting privacy and mitigating risks associated with personal data processing.
+
+Data preparation included systematic annotation and labelling of incident categories, geospatial features, and temporal event sequences. Cleaning operations addressed missing data points, sensor noise, and temporal inconsistencies, using established imputation algorithms and outlier detection techniques benchmarked against domain-specific criteria. Enrichment involved correlating sensor imagery with event metadata to enhance spatial-temporal resolution. Aggregation aligned data streams to synchronized timescales for fusion within the hybrid neural architecture.
+
+Explicit assumptions were formulated to define the representativeness of datasets; for example, that urban sensor coverage adequately captured emergency-relevant spatial features, and that recorded incident sequences faithfully reflected emergency event progression. These assumptions guided dataset selection and were periodically revisited to accommodate evolving urban dynamics.
+
+An exhaustive assessment examined dataset availability, quantity, and suitability. Over 2.3 million incident reports spanning five years and matched corresponding geospatial sensor data were collected to ensure statistical robustness. These datasets were deemed sufficient for capturing diverse emergency scenarios across multiple EU metropolitan contexts, vital for generalizability and operational relevance.
+
+### Bias Assessment and Mitigation Measures
+
+Potential biases with implications for health, safety, and fundamental rights were systematically analyzed. Particular attention was paid to the risk of under-representation of minority neighborhoods in sensor coverage, or temporal gaps in incident reports related to underserved communities. Statistical audits leveraged fairness metrics including equal opportunity difference and demographic parity across socio-economic and geographic strata within the dataset.
+
+Where bias indicators were detected—for instance, a marginal under-representation of emergency events in peripheral urban zones—corrective interventions were implemented. These included targeted data augmentation with synthetic but scenario-consistent event data and reweighting procedures during model training to balance representation. Additionally, continuous monitoring pipelines were established to detect emerging biases during system deployment or retraining cycles.
+
+Bias mitigation protocols incorporated multi-level safeguards: input data validation filters rejected anomalous or incomplete data entries, and model explainability tools were used to analyze decision patterns to detect residual discriminatory tendencies.
+
+### Relevance, Representativeness, and Data Quality Assurance
+
+The training, validation, and testing datasets were constructed to be relevant and sufficiently representative of the system's operational context. The dataset spectrum covered diverse emergency types, geographic variations across multiple cities, temporal fluctuations including seasonal and diurnal patterns, and sensor modalities (infrared, visual spectrum). This diversity ensures that the AI model’s predictions maintain statistical fidelity to the scenarios it will encounter in real-world deployment.
+
+Error rates in the primary datasets were assessed through automated error detection and manual review by domain experts. Data completeness exceeded 98.7% across time-series and spatial attributes following data cleaning protocols. Statistical properties, including feature distributions and event occurrence frequencies, were validated to align with real-world incident rates documented in municipal public safety reports.
+
+Where gaps were identified—such as intermittent missing sensor feeds during technical outages—controlled imputation methods and fallbacks to alternative data streams were designed to preserve continuity without degrading model performance.
+
+### Consideration of Contextual and Regional Specificities
+
+Datasets were chosen and processed to reflect the particular characteristics of the urban environments where the system is intended for use, including demographic, infrastructural, and behavioural aspects specific to EU city contexts. For example, spatial data incorporated high-resolution municipal maps reflecting EU urban planning conventions, while event logs captured behavioral patterns such as peak emergency call times consistent with local cultural and epidemiological factors.
+
+Furthermore, adaptations were made to account for geographic idiosyncrasies such as differing road network densities and emergency service response modalities. These features were encoded in model inputs and through contextual embedding layers within the neural architecture to enhance local sensitivity and operational relevance.
+
+### Provision for Processing Special Categories of Personal Data
+
+The provider has established a protocol for limited processing of special categories of personal data exclusively under conditions necessary for bias detection and correction, though the core datasets are primarily anonymized.
+
+Where such data processing was necessary, it conformed to stringent conditions: it was demonstrated that alternative, non-sensitive datasets could not fulfill bias assessment requirements, particularly for protected groups. Technical protections included end-to-end pseudonymisation, state-of-the-art encryption in storage and transmission, and access control mechanisms ensuring data processing was restricted to authorized privacy officers bound by confidentiality agreements.
+
+Strict documentation and access logs are maintained to prevent unauthorized use, and the data lifecycle management policy mandates deletion of special category data immediately after bias correction tasks conclude, or upon reaching defined retention limits. No transmission of these data to third parties occurs, and data processing operations comply fully with concurrent data protection regulations.
+
+### Applicability of Data Quality Requirements to Non-Training Components
+
+Given that the system utilizes a training-based hybrid model, paragraphs 2 to 5 of Article 10 comprehensively apply to all training, validation, and testing datasets. Testing datasets employed during evaluation phases are subject to identical governance, quality, and bias mitigation protocols as training datasets to maintain consistency in performance assessment and compliance.

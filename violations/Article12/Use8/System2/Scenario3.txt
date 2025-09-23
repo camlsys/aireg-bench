@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for facilitating the post-market monitoring referred to in Article 72."
+
+[b] **Guideline:**  
+Logs must be structured and detailed enough to support retrospective analysis for detecting performance degradation or unintended operational patterns that emerge over time, including versioning info of models and any adaptive learning adjustments.
+
+[c] **Violation:**  
+Although logs keep a record of dispatch priority outputs, the system does not record which version of the neural network models was in use at the time or whether any online learning or parameter tuning occurred during operation, making it impossible to correlate performance changes with model updates.
+
+[d] **Justification:**  
+The lack of model versioning and adaptation logs undermines the ability to conduct effective post-market monitoring, as changes in system performance cannot be reliably attributed to software or data shifts. This omission is subtle because performance data is present but detached from the context necessary for a comprehensive analysis.

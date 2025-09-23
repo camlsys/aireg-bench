@@ -1,0 +1,35 @@
+**Article 14**
+
+### Design for Effective Human Oversight
+
+The Recruitment Decision Forest system employs a Gradient Boosted Decision Tree (GBDT) ensemble trained on a structured dataset comprising 120,000 anonymized candidate records aggregated from prior recruitment cycles across multiple enterprises. The system outputs an aggregate candidate score—a scalar value representing an overall suitability metric derived from model predictions. Scores are presented without accompanying confidence intervals or uncertainty bounds. This design choice was based on extensive internal user research involving over 50 recruitment professionals, which indicated that simplified scoring formats improve interpretability and decision speed in high-volume screening contexts.
+
+The user interface provides a global feature importance visualization reflecting the averaged contribution of each input variable to the model’s predictions over the entire training dataset. These metrics are generated using SHAP (SHapley Additive exPlanations) values computed across the training samples; however, metrics are aggregated rather than individualized per candidate to maintain interface clarity and reduce cognitive load for recruiters. No local or per-instance interpretability is provided.
+
+No embedded alerts, flags, or signals indicating potential atypical model behavior or performance degradation in relation to specific subpopulations—including underrepresented or protected groups—are included in the delivered system components. Consequently, recruiters receive no automated notification or indication should candidate rankings deviate substantively from expected distributional patterns. This design reflects an intentional prioritization of aggregate model transparency over subpopulation-specific behavior monitoring.
+
+### Oversight Aimed at Risk Mitigation
+
+Human oversight is supported primarily through the presentation of deterministic aggregate candidate scores and global feature importance metrics, equipping recruiters with a high-level understanding of model drivers. By omitting uncertainty quantification and subgroup-specific anomaly detection, the system facilitates familiar workflows with consistent output formats while conceding that nuanced performance risks—such as disparate impact or bias—may not be detectable through system interfaces alone.
+
+Training and onboarding materials furnished to recruiters emphasize reliance on professional judgment alongside model scores, explicitly recommending review of candidates beyond numerical ranking to mitigate over-reliance effects. Nonetheless, the system does not automatically remind users of automation bias or provide mechanisms to monitor or adjust for fairness concerns during candidate evaluation. The oversight approach is thus focused on complementing human expertise rather than substituting it with technical safeguards for bias detection.
+
+### Oversight Measures Implemented by the Provider
+
+Prior to deployment, the provider conducted an internal validation study involving stratified performance assessments across demographic and socio-economic slices, using protected characteristics where legally available. These assessments demonstrated stable global accuracy metrics (AUROC of 0.82) and no severe performance disparities exceeding a 5% variance between majority and minority groups. Despite this, no embedded runtime monitoring or alerting subsystems to detect emergent model drift or fairness anomalies in production were developed or integrated, as per current design decisions prioritizing model simplicity and interpretability.
+
+The provider implemented a secure logging mechanism capturing model inputs, outputs, and model version metadata but excludes any automated outlier or subgroup bias detection functionalities. This logging supports manual forensic review but transfers responsibility for ongoing fairness auditing and anomaly detection to deployers.
+
+### Enablement of Understanding, Interpretation, and Intervention
+
+Recruiters are enabled to understand the Recruitment Decision Forest system’s key operational characteristics through documentation detailing model capabilities, input features, and limitations. The system interface includes a dedicated section describing the global feature importance metrics and examples of how these relate to candidate attributes.
+
+No interfaces or controls are provided to support interruption or direct intervention in the model inference process beyond ceasing system use at the deployer’s operational level. There is no integrated “stop” button or real-time override mechanism embedded within the software. Users retain full discretion to disregard or override scores manually in candidate selection decisions.
+
+The absence of confidence intervals, uncertainty estimates, or real-time anomaly alerts requires recruiters to maintain vigilance and apply domain expertise to detect potential irregularities independently. User guidance acknowledges the possibility of automation bias but does not incorporate in-system prompts or reminders to mitigate it.
+
+### Processing of Special Categories of Data
+
+The training dataset included special categories of personal data (e.g., ethnicity and gender) only to the extent strictly necessary for bias assessment during model development. The processing rationale, documented in the provider’s data protection impact assessment, specifies that inclusion of such data was essential to evaluate and minimize discriminatory impacts through pre-deployment validation. Alternative data proxies were evaluated but found insufficient for reliable subgroup performance analysis.
+
+Processing records maintained pursuant to GDPR Articles 35 and 40 document these decisions and safeguards, including encryption and access logging. The system does not use special category data during live inference; these attributes are stripped from candidate profiles prior to scoring to prevent direct influence on candidate rankings, consistent with privacy and fairness considerations.

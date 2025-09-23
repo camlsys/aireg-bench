@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities... measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..." (Article 15(5))
+
+[b] **Guideline:**  
+Security architectures must incorporate detection and mitigation for adversarial perturbations in video feeds and sensor inputs, and for malicious modifications to model parameters or training data, with real-time anomaly detection and incident response capabilities.
+
+[c] **Violation:**  
+The system’s video preprocessing pipeline does not include mechanisms to detect subtle adversarial perturbations on traffic signage or pedestrian clothing that cause CNN misclassifications, enabling attackers to repeatedly induce erroneous accident predictions without triggering alerts or model safeguards.
+
+[d] **Justification:**  
+This vulnerability to adversarial examples is realistic due to the visual nature of inputs and subtle manipulations, yet non-obvious as it requires adversarial expertise to recognize. Such a gap violates cybersecurity resilience expectations since it leaves the system open to stealthy, unauthorized manipulation of outputs affecting safety-critical traffic decisions.

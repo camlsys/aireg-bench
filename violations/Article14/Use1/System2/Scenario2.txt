@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge ... in particular where such risks persist despite the application of other requirements set out in this Section." (Article 14(2))
+
+[b] **Guideline:**  
+Oversight protocols should include mechanisms and training ensuring operators can detect and intervene when model outputs reflect rare but critical failures or edge cases that might cause unsafe traffic signals, such as false negatives on pedestrian detection under adverse weather.
+
+[c] **Violation:**  
+The system’s training and deployment documentation lacks training or simulation scenarios demonstrating how operators should handle ambiguous or conflicting system outputs, and the live interface does not prompt operators to validate flagged events, fostering over-reliance on AI outputs.
+
+[d] **Justification:**  
+Without explicit procedures and interface cues for human operators to question and override potentially unsafe AI decisions, the human oversight is narrowly passive, failing to minimize residual risks effectively in foreseeable misuse or degraded situations. This breach is subtle as the system technically supports oversight but does not operationalize it to reduce harm.
+
+---

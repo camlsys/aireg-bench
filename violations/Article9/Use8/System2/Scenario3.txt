@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."  
+
+[b] **Guideline:**  
+Providers must specifically analyze risks and design risk control measures addressing potential adverse impacts on minors and other vulnerable groups, incorporating tailored data sets, scenario testing, and mitigation strategies to ensure the AI does not exacerbate harm or inequity for these populations.  
+
+[c] **Violation:**  
+The system’s training and testing datasets are primarily adult and general population incident logs, with insufficient representation and scenario testing involving minors or vulnerable groups, leading to poorer prioritization accuracy and increased risk of delayed emergency response for incidents involving children or disabled individuals.  
+
+[d] **Justification:**  
+Failure to adequately consider vulnerable populations in risk analysis and mitigation contravenes Article 9(9). This violation is subtle as the system appears effective for general dispatch but does not disclose its overlooked gap in demographic-specific data and testing, which can translate into hidden systemic bias affecting critical emergency outcomes for protected groups.

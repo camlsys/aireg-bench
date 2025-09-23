@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for [...] facilitating the post-market monitoring referred to in Article 72."
+
+[b] **Guideline:**  
+Event logs should include comprehensive records of system outputs, error rates, alert triggers, and performance metrics over time to support ongoing monitoring and timely detection of degrading efficacy or emerging biases post-deployment.
+
+[c] **Violation:**  
+Judicial Insight Assistant’s logs do not systematically record performance degradation indicators such as false positive rates in precedent retrieval, nor do they log user override instances where judges disregard the system’s suggestions, thus limiting feedback loops needed for effective post-market monitoring.
+
+[d] **Justification:**  
+This shortfall invalidates sufficient post-market surveillance through incomplete logging of operational outcomes. It is a subtle violation since basic logging exists, but critical evaluative data for continuous monitoring and risk mitigation are missing, a common practical gap in real-world systems.

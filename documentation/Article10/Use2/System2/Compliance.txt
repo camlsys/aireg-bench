@@ -1,0 +1,31 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+Pipeline Safety Guardian was developed following rigorous data governance and management practices tailored to its high-risk application in the gas distribution sector. The training, validation, and testing data sets comprise over 1.2 million time-series sensor records collected from more than 150 geographically diverse pipelines across the EU, ensuring coverage of a broad range of operational and environmental conditions. The provider established comprehensive design choices prioritizing safety-critical fault detection accuracy and low false-negative rates, reflecting the system’s intended purpose to promptly identify pipeline anomalies that may endanger human health and property.
+
+Data collection protocols were documented to include sensor specifications, calibration procedures, and secure transfer mechanisms from operational pipelines with prior consent and contractually compliant data use arrangements. The original purposes of the data collection encompass routine monitoring and safety incident investigation by pipeline operators. To protect data integrity, Meridian Safety Systems exercised rigorous cleansing, normalization, and time-synchronization operations on raw pressure and flow sensor signals, complemented by expert-driven annotation of fault events and confirmed anomalies through cross-validation with independent field inspection reports. Data enrichment included contextual metadata such as pipeline age, material, and regional environmental parameters.
+
+Explicit formulation of assumptions was articulated, specifying that sensor patterns represent physical pipeline states and that detected deviations correspond to either normal operational variance or safety-relevant faults. These assumptions guided feature engineering and model interpretability studies. Availability and quantity assessments concluded that the existing data pool sufficiently represents the spectrum of known anomaly types, supported by a statistical analysis covering over 99.7% of recorded operational variability, meeting the system’s fault detection performance requirements.
+
+Bias assessments addressed potential disparities related to geographical and operational diversity, identifying risks that rare or novel failure modes might be underrepresented. Mitigation measures included data augmentation simulating atypical pressure drop scenarios and iterative retraining cycles incorporating newly acquired field data. Data gaps regarding extreme weather-induced anomalies were managed through collaboration with stakeholders to enhance data acquisition pipelines.
+
+**Quality, Representativeness, and Statistical Properties of Data Sets**
+
+Training data sets contain 850,000 annotated and quality-checked sensor sequences capturing a balanced representation of normal and fault conditions, including cracks, micro-leaks, and abrupt pressure drops. Validation and testing data sets include 200,000 and 150,000 samples respectively, strictly separated temporally and geographically from training sets to avoid data leakage and ensure generalizability. Error rates in sensor measurements were quantified and corrected using domain-calibrated filtering algorithms, yielding residual sensor noise below 2% root mean square error across all channels.
+
+Data completeness was rigorously reviewed, with less than 0.1% missing or corrupted records discarded. Statistical characterization demonstrated that the data sets reflect the operational profiles of all targeted pipeline segments and account for demographic variables of the potentially affected population such as regional density and proximity to residential areas, enabling balanced system performance across all user categories.
+
+**Contextual and Geographical Feature Considerations**
+
+The training and testing data incorporate region-specific factors such as soil composition, ambient temperature variations, and pipeline pressure operational ranges characteristic of northern, southern, and central EU regions. This contextualization extends to accounting for different energy consumption cycles and maintenance practices that influence pressure and flow dynamics. By embedding this information in metadata features, the system adapts anomaly detection sensitivity and fault classification thresholds accordingly, ensuring functional accuracy aligned to the local operational context.
+
+**Processing of Special Categories of Personal Data for Bias Mitigation**
+
+While the core sensor data is non-personal, Meridian Safety Systems acknowledges the necessity to process limited special categories of personal data solely for bias detection tied to user impact scenarios (e.g., communities at elevated risk due to proximity to infrastructure). The provider assessed alternative options such as synthetic and anonymized data, concluding they were insufficient for accurate bias identification related to location-based vulnerability.
+
+Consequently, controlled processing of special categories of personal data was implemented under strict safeguards: pseudonymisation techniques were enforced with cryptographic controls limiting re-identification risks; access to these data was restricted to a designated bias review team under confidentiality obligations; comprehensive logging documented all handling activities; and no transmission or transfer of these data to external parties occurred. Retention policies mandate deletion within 30 days of bias correction activities, ensuring minimal exposure and compliance with applicable data protection standards.
+
+**Applicability of Training, Validation, and Testing Requirements**
+
+Considering Pipeline Safety Guardian exclusively employs machine-learning techniques requiring data-driven model training (CNNs and Random Forest classifiers), these data governance and quality measures fully apply to all training, validation, and testing data sets, ensuring conformity with the strict criteria defined for high-risk AI systems within the scope of Article 10.

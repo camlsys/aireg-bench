@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Natural persons to whom human oversight is assigned are enabled... to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state."  
+
+[b] **Guideline:**  
+The system must provide easily accessible and reliable mechanisms (e.g., emergency stop buttons) that allow human operators to pause or override the AI system’s autonomous functions quickly, ensuring that halting the AI does not introduce new hazards and maintains operational safety.  
+
+[c] **Violation:**  
+Gas Safety Insight lacks an emergency stop or manual override in its deployed configuration; operators can only acknowledge alerts but cannot interrupt AI-driven predictive automation controlling safety alerts or automated system adjustments. Attempts to intervene require complex back-end procedures or IT support, delaying the halt of potentially erroneous AI outputs.  
+
+[d] **Justification:**  
+This breach impairs effective human oversight by removing a straightforward intervention pathway, increasing reliance on potentially faulty AI outputs. Although operators receive alerts, the absence of a rapid shutdown or override feature is subtle because monitoring continues, but risk mitigation through direct intervention is hindered, especially in urgent safety scenarios.

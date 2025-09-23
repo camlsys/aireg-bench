@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system ... providers shall give consideration to whether ... the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."
+
+[b] **Guideline:**  
+The risk management system must specifically identify potential adverse impacts on vulnerable populations, including minors and other groups with diminished capacity to protect their interests, and incorporate tailored mitigation or exclusion measures as appropriate.
+
+[c] **Violation:**  
+The Framework’s risk analysis only superficially acknowledges vulnerable groups by focusing primarily on general adult employees, failing to assess scenarios where young workers under 18 in apprenticeship contracts might be disproportionately affected by termination risk assessments without additional safeguards.
+
+[d] **Justification:**  
+By not explicitly evaluating or mitigating risks to minors and similarly vulnerable workers, the system violates Article 9(9) requirements. The oversight can be subtle because the system targets adult employment generally, yet legal nuances related to vulnerable groups require dedicated, explicit risk management attention to satisfy the Act.

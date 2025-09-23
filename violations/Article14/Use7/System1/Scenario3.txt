@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To properly understand the relevant capacities and limitations of the high-risk AI system and be able to duly monitor its operation... (d) to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system." (Article 14(4)(a) and (d))
+
+[b] **Guideline:**  
+Users must be trained and enabled to identify when model outputs are unreliable and possess clear, accessible options to override or discard the AI system’s suggestions without penalty or procedural hindrance.
+
+[c] **Violation:**  
+Although the system provides final credit scores, loan officers receive minimal guidance or training on scenarios where the system’s recommendations are likely to be flawed, and organizational policies implicitly discourage overriding scores, effectively locking users into automation bias.
+
+[d] **Justification:**  
+This subtle design and procedural shortcoming reduces the likelihood of meaningful human intervention, leading to over-reliance on automated decisions. It breaches the requirement that human overseers be empowered to disregard or reverse system outputs, undermining effective human control in realistic deployment settings.

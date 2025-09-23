@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must embed technical capabilities to continuously and autonomously capture detailed logs of system inputs, outputs, decision points, and updates throughout its entire operational lifecycle without requiring manual triggers or external intervention.  
+
+[c] **Violation:**  
+The Political Influence Analyzer only initiates logging during scheduled maintenance windows or upon detection of certain predefined system errors, neglecting automatic continuous event recording during normal operation and interactions with end-users.  
+
+[d] **Justification:**  
+This violates the requirement for automatic logging because the system’s logs do not cover the entire operational period, missing potentially critical events related to user interactions and system outputs during normal use. The omission is subtle because the system appears compliant during audits if logs from maintenance periods are inspected, but it actually leaves gaps in traceability during regular functioning.  
+
+---

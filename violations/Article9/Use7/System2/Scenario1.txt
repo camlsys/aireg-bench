@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating. It shall comprise the following steps: (a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+The provider must proactively identify and analyze not only the risks known at deployment but also reasonably foreseeable risks that may emerge over the entire lifecycle, including nuanced impacts on fundamental rights such as discrimination or privacy breaches specific to credit risk evaluations. This involves detailed scenario analysis, stakeholder input, and continuous horizon scanning for risks evolving from new data, shifting demographics, or regulatory changes.  
+
+[c] **Violation:**  
+Veritas Risk Solutions conducts risk analysis only once upfront using historical credit datasets and does not incorporate evolving socioeconomic trends or emerging regulatory frameworks that could affect discrimination risks against protected groups. The iterative review process to identify new risks, such as bias arising from newly available third-party data sources or changed economic conditions, is infrequent and informal, lacking documented updates.  
+
+[d] **Justification:**  
+This breach is subtle because the company superficially appears compliant by performing initial risk analysis; however, failing to iteratively and comprehensively identify reasonably foreseeable risks across the lifecycle means that emerging discrimination or privacy risks remain unaddressed. Given the financial and demographic dynamics in consumer credit, continuous and systematic risk identification is vital yet commonly neglected in practice.  
+
+---

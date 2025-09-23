@@ -1,0 +1,59 @@
+**Article 9**
+
+### Systematic Identification and Analysis of Risks Related to Intended Use
+
+Insight Proctor Analytics incorporates an initial risk identification phase targeting the primary known risk associated with academic dishonesty detection accuracy. This phase involved an extensive in-house evaluation of model false positive and false negative rates using a representative dataset comprising 50,000 anonymized video segments from simulated exam scenarios, combined with contextual metadata. These evaluations established a baseline detection accuracy of 92.4% under controlled conditions, with a false positive rate of 4.8% and false negative rate of 8.6%, reflecting inherent uncertainties when interpreting ambiguous behaviors. The risk analysis focused primarily on the accuracy-related impacts on exam integrity and fairness, formulating a hazard catalog centered on erroneous flagging of innocent behaviors and missed infringements. Reasonably foreseeable risks under misuse conditions considered included attempts to circumvent detection by exam takers and manipulation of video feeds by deployers, addressed via tamper-evident logging and cryptographic verification of input streams.
+
+Notably, the risk identification and analysis process did not incorporate a systematic review of psychological impacts on minors nor potential differential effects on subpopulations such as persons with disabilities or neurodiversity, given the unavailability of validated data sources or domain-specific behavioral models addressing these dimensions. The scope of recognized hazards and related risk sources remained confined to behavioral detection accuracy and technical robustness under varied operational environments.
+
+### Evaluation and Estimation of Risks from Intended and Misuse Scenarios
+
+The system’s risk evaluation phase applied quantitative performance metrics and scenario-based testing across multiple environmental and demographic variables, including lighting conditions, camera angles, and exam content formats, to estimate probabilistic risk occurrence. Monte Carlo simulations modeled deployment at varied institution sizes, indicating stable performance consistency within ±2% margin at 95% confidence intervals. Potential misuse scenarios such as unauthorized system access or intentional feeding of non-exam videos were modeled, informing security controls integrated into the system.
+
+However, the evaluation scope did not extend to estimating risks related to the mental well-being of users under the system’s AI-assisted continuous surveillance, particularly focusing on students under 18 years of age. Further, differential impact assessments relative to neurodivergent exam takers or individuals with sensory or cognitive disabilities were not conducted, limiting the risk profile to technical and detection efficacy factors.
+
+### Post-Deployment Risk Monitoring and Data Analysis Procedures
+
+Post-market monitoring protocols incorporate automated anomaly logging, operator feedback collection, and periodic system performance audits using sample exam session recordings with consented anonymization. Data aggregated quarterly from over 12 deployed pilot sites enable identification of drift in detection accuracy or emergent behavior patterns signaling newly arising risks. Incident reports, including user complaints or override actions by exam supervisors, are systematically reviewed to refine model parameters or alert thresholds.
+
+These procedures feed into scheduled risk management updates, though collected data lack systematic assessment of user psychological responses or evidence-based indicators of discrimination or stigmatization linked to the AI surveillance modality, thus constraining the breadth of ongoing risk insights.
+
+### Design and Development Measures to Address Identified Risks
+
+In response to accuracy-related risks, design controls include multi-modal transformer-based Vision Language Models (VLMs) integrating video frame analysis with semantic exam content cross-referencing to minimize false detections. The system employs real-time adaptive threshold mechanisms calibrated per exam environment attributes. To enhance transparency, explainability dashboards present detected flags with contextualized evidence clips and confidence scores to exam supervisors, enabling informed adjudication prior to final decisions.
+
+Security-by-design principles underpin data integrity, featuring encrypted video streams, tamper-proof audit trails, and role-based access controls limiting exposure to authorized personnel only. Privacy-enhancing technologies enforce minimal storage durations and immediate anonymization post-examination.
+
+No engineering or configuration mitigation measures targeting psychological effects on underage students or accommodations for users with cognitive or sensory impairments have been implemented at the system design stage.
+
+### Residual Risk Considerations and Balance with Functional Objectives
+
+Residual risks predominantly pertain to inherent limitations in interpretive AI behavioral analytics, especially ambiguous gestures or unstructured communication attempts during exams, which may result in false positives or negatives despite technical countermeasures. These residual uncertainties have been quantitatively benchmarked and deemed manageable within expected operational tolerance levels, with system outputs designed to facilitate human-in-the-loop review.
+
+Due consideration has been given to preserving examination integrity, achieving a balance between accuracy and non-invasiveness based on current standard practices in proctoring technology. Nonetheless, residual risks related to psychological stressors or stigmatization from continuous AI monitoring, particularly for minors or vulnerable groups, remain unquantified and outside current mitigation measures due to lack of validated methodologies and data availability.
+
+### Testing Protocols to Validate Risk Management Measures
+
+Insight Proctor Analytics underwent an extensive test regimen through iterative development stages. Pre-market testing included controlled laboratory evaluations with volunteer participants emulating exam conditions, ensuring system stability and consistent performance metrics. Real-world pilot deployments involved collaboration with four academic institutions encompassing over 5,000 monitored exam sessions, supporting performance validation under varied technical and demographic conditions.
+
+Testing adhered to predefined quantitative metrics including precision, recall, F1-score thresholds appropriate for academic integrity assurance. Continuous integration pipelines execute regression tests, adversarial scenario simulations, and bias detection checks focused on demographic variables available within the data (e.g., age bracket, gender). Despite these measures, specific tests designed to detect or mitigate psychological impact or discriminatory outcomes on disabled or neurodiverse students were not performed.
+
+Results from both controlled and operational environments confirm compliance with system accuracy and security requirements, on which the risk management framework relies for its mitigation effectiveness.
+
+### Consideration of Impact on Vulnerable Groups
+
+The development and risk management protocols included broad acknowledgment of vulnerability considerations, with particular attention to potential effects on persons under 18, given that the system’s primary user base frequently includes minors. However, the formal assessment processes and risk documentation do not incorporate concrete impact analyses or empirical studies related to psychological risks, such as anxiety or mistrust induced by AI surveillance, for this demographic.
+
+Similarly, potential discriminatory effects stemming from behavioral pattern recognition models on students with disabilities or neurodiverse traits were not systematically evaluated. The absence of specialized datasets or validated impact models precluded integration of these factors into the risk assessment lifecycle.
+
+Ongoing plans include explorations of partnerships with academic research institutions to develop domain-specific evaluation frameworks addressing these vulnerabilities in future system iterations. Currently, the technical documentation reflects the status quo of risk consideration as limited to accuracy and security-related factors.
+
+### Integration with Other Legal Risk Management Procedures
+
+Meridian Educational Technologies maintains a consolidated internal risk management system aligned with applicable EU product safety and data protection regulations. The risk management activities presented herein are integrated modules within this broader corporate framework, facilitating compliance coherence across multiple regulatory domains. Where requirements from other Union legislation intersect with AI-specific risk management obligations, procedural synergies are leveraged to ensure auditability and traceability.
+
+Technical information packages enabling deployers to understand system limitations, configuration requirements, and operational contexts are provided in accordance with Article 13 obligations, along with guidance on human oversight and anomaly review, aiding risk control during deployment.
+
+---
+
+This documentation presents the provider’s design and operational measures relevant to the risk management lifecycle under Article 9 of the EU AI Act for Insight Proctor Analytics, reflecting current industry standards while delineating the boundaries of assessed risk categories.

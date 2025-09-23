@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk [...] or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must capture metadata and contextual details around input anomalies, decision thresholds crossed, model confidence scores, and any runtime parameter adjustments that could indicate emerging risks or the need for recalibration, supporting early detection of system drift or faults.
+
+[c] **Violation:**  
+The system logs only final detection results and timestamps but omits the underlying model confidence scores, parameter changes during updates, and contextual information about ambiguous patterns that might signal deteriorating model accuracy or emerging bias.
+
+[d] **Justification:**  
+Because crucial details relevant to identifying risks and substantial internal modifications are not logged, the system does not comply with Article 12(2)(a). This omission could mask subtle model degradation or blind spots, making the violation realistic and non-obvious to end users or supervisors monitoring the system.
+
+---

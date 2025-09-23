@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))
+
+[b] **Guideline:**  
+The system must provide exam supervisors with clear, real-time interfaces that present the AI’s judgments and alerts in an interpretable manner, including explanations or confidence levels supporting anomaly detection. Supervisors should be able to monitor ongoing outputs and system states continuously and intervene if needed.
+
+[c] **Violation:**  
+Academic Compliance Monitor’s user interface aggregates alarm signals into a single binary indicator ("Suspicious" vs. "Clear") without contextual information or rationale behind flagged behavioral anomalies. Additionally, it does not provide supervisors with intermediate confidence scores or a timeline view of input pattern evaluations, limiting meaningful oversight over the system’s ongoing operation.
+
+[d] **Justification:**  
+This lack of detailed, interpretable output and real-time monitoring capability prevents effective human oversight as required by Article 14(1). The violation is subtle because supervisors receive alerts but do not gain insight into the AI’s decision-making process, creating an implicit “black box” that may induce overreliance or unchallenged acceptance of system outputs, thus not fulfilling the "effective oversight" requirement.
+
+---

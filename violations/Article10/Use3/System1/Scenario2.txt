@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Data scientists must ensure that datasets include a balanced and comprehensive range of learners across ages, education levels (primary, secondary, higher education), linguistic backgrounds, and learning styles, avoiding data skew that could degrade system performance or fairness for any particular subgroup.  
+
+[c] **Violation:**  
+The dataset includes extensive data from secondary and higher education learners but lacks adequate representation from primary education students, causing the model to underperform on early learning assessments and generate less accurate feedback for this age group. The deficiency is not addressed by combining datasets or weighting strategies.  
+
+[d] **Justification:**  
+This violation is subtle because primary education learners are part of the intended use but their underrepresentation can be overlooked when aggregated statistics appear sufficient. The lack of targeted representativeness breaches the completeness and statistical property requirements, realistically occurring due to data availability challenges in early education sectors.

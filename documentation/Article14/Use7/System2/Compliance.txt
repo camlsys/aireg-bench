@@ -1,0 +1,36 @@
+**Article 14**
+
+**Design for Effective Human Oversight**
+
+The Consumer Credit Transformer (CCT) was architected to support effective human oversight throughout its operational lifecycle. The system is based on an encoder-only transformer architecture optimized for tabular, multimodal financial data comprising credit histories, transaction logs, and enriched metadata. Recognizing the high-risk nature of creditworthiness evaluations, Veritas Risk Solutions integrated comprehensive user interface (UI) and operational design features that enable human operators—credit analysts and loan officers—to monitor and assess system outputs in real time.
+
+Specifically, interaction tools include an interpretability dashboard presenting feature attributions generated via SHAP (SHapley Additive exPlanations), enabling users to inspect the influence of key input variables on each risk prediction. Additionally, the system supports real-time confidence interval displays and alerts for out-of-distribution inputs or flagged anomalies based on runtime statistical checks, allowing users to detect dysfunctions or unexpected model behavior promptly. These design choices align the system’s complexity with human comprehension capabilities, facilitating oversight during credit decision processes.
+
+**Aims of Human Oversight to Mitigate Risk**
+
+Human oversight of the CCT is targeted at minimizing risks related to unfair credit denial, discrimination, and erroneous risk scoring with potential impacts on fundamental rights and financial safety of end-users. Through continuous monitoring of model outputs contextualized by interpretability aid, credit officers can identify and intervene in cases where predictions conflict with known customer information or exhibit anomalous patterns.
+
+Furthermore, Veritas Risk Solutions accounted for reasonably foreseeable misuse scenarios such as automation bias or over-reliance on system recommendations. To that end, training programs and system warnings emphasize the advisory role of CCT outputs, instructing operators to weigh model results alongside human judgment and supplementary manual review. This approach ensures residual risk is reduced even after implementation of other conformity requirements such as bias mitigation and robustness verification.
+
+**Risk-Proportionate Oversight Measures**
+
+Given the CCT’s moderate autonomy—providing creditworthiness scores and risk categories without directly enforcing decisions—the oversight approach combines embedded technical safeguards with deployment-time governance recommendations furnished to deployers.
+
+From the provider side, built-in measures include:  
+- An anomaly detection module that flags inconsistent or novel input patterns to prompt human review before action.  
+- Real-time explainability features, as noted above, to contextualize outputs.  
+- A ‘stop’ functionality enabling users to interrupt processing pipelines or suspend recommendations in response to detected operational issues or upon user discretion.
+
+Complementing these, Veritas Risk Solutions delivers detailed guidance documents and recommended workflows supporting deployers in implementing human oversight procedures. This includes minimum qualifications for personnel, frequency and scope of operational audits, and protocols for overriding or disregarding model outputs when justified. These deployer-implemented practices are configurable but must align with the risk sensitivity underscored in these recommendations.
+
+**Enabling Human Oversight through Transparency and Control**
+
+The CCT is distributed with a comprehensive human-machine interface (HMI) designed for high usability and transparency:  
+- Capacity and Limitation Disclosure: Technical specifications describe model architecture, training data characteristics (2 million anonymized credit profiles from EU markets), performance benchmarks (area under ROC curve of 0.87 on hold-out validation), and known model constraints, furnishing users with a clear understanding of capabilities and boundaries.  
+- Monitoring Functionality: The interface presents continuous operational metrics, including drift detection statistics and alerts for detected anomalies or concept shifts, enabling users to maintain situational awareness.  
+- Automation Bias Mitigation: Visual cues and in-system reminders dissuade excessive reliance on automated outputs, supported also by a mandatory acknowledgment step before acting on model recommendations.  
+- Interpretability Tools: SHAP value plots, counterfactual examples generated on demand, and confidence intervals are integrated to aid proper output interpretation.  
+- User Empowerment Controls: Users can override system scores via a documented approval workflow within the interface, enter expert commentary, or halt system inference entirely using an emergency ‘stop’ button that safely ceases all processing without data loss or corruption.  
+- Data Processing Transparency: In adhering to data protection obligations, logs of model input processing include explicit, documented rationales for processing any special categories of personal data (e.g., health-related financial entries) strictly necessary for bias detection and correction. These records form part of the audit trail accessible to oversight authorities, ensuring accountability and traceability.
+
+Collectively, these features provide a robust framework supporting natural persons in overseeing the Consumer Credit Transformer during use, offering multiple layers of interpretability, control, and procedural clarity that align with the system’s intended high-risk credit evaluation purpose.

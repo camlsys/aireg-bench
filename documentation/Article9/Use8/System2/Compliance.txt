@@ -1,0 +1,65 @@
+**Article 9**
+
+**Establishment and Maintenance of the Risk Management System**
+
+Urban Safety Analytics has developed and implemented a comprehensive risk management system tailored specifically for the Emergency Dispatch Prioritization Engine, recognising its classification as a high-risk AI system under applicable regulatory frameworks. This system is maintained as a continuous, iterative lifecycle process, embedded throughout the design, development, deployment, and post-market operation phases. The risk management framework is formally documented and updated quarterly or upon significant system modifications to reflect evolving evidence, operational feedback, and regulatory requirements.
+
+The risk management lifecycle integrates automated analytics and manual review layers to ensure ongoing effectiveness. Regular cross-disciplinary internal audits—encompassing AI engineers, safety officers, and legal compliance experts—are conducted to validate the adequacy and completeness of risk assessments and mitigation measures.
+
+**Identification and Analysis of Known and Foreseeable Risks**
+
+Initial and ongoing risk identification has emphasized hazards associated with incorrect prioritization outcomes potentially affecting the health, safety, and fundamental rights of emergency responders and the public. This included risks such as delayed dispatch in critical incidents, misallocation of resources, exposure to biased decisioning impacting vulnerable populations (notably minors and other protected groups), and information security vulnerabilities that could compromise confidential incident data.
+
+Risk identification relied on extensive domain-specific research, engagement with emergency services professionals, incident data analysis from over 50,000 historical emergencies spanning five EU municipalities, and review of analogous AI system incident reports from independent safety boards. Reasonably foreseeable misuse cases were explored, including potential input data tampering, sensor data corruption, and operator override scenarios.
+
+**Risk Estimation and Evaluation under Intended Use and Misuse**
+
+The system’s performance and impact were quantitatively assessed through simulation environments replicating emergency call center operations and real-world pilot deployments over 12 months, involving three municipal sites. Statistical measures evaluated included true positive prioritization rate (achieving 94.3%), false negative incidents (reduced to 1.8% of total calls), and time-to-dispatch metrics, benchmarked against historical non-AI-assisted dispatch data.
+
+Extreme scenario testing incorporated stress tests for sensor failure, missing historical data, and high emergency volume surges to estimate risk persistence under foreseeable misuse. Sensitivity analyses quantitatively projected potential harm arising from bias propagation through training data to ensure equitable handling of incident prioritization across demographic groups, including children and vulnerable communities.
+
+**Post-Market Risk Monitoring and Feedback Integration**
+
+A dedicated post-market monitoring system (PMMS) was established in accordance with Article 72 requirements, operated continuously since system deployment. The PMMS collects anonymized operational logs, dispatch decision outcomes, and user feedback contacts from emergency personnel on potential malfunctions or erroneous prioritizations. Data analytics pipelines automatically flag performance deviations that could signify emerging risks.
+
+Quarterly PMMS reports inform risk reevaluation cycles and trigger rapid mitigation plans where residual risks exceed predefined safety thresholds. A documented protocol ensures that data protection and privacy controls are enforced in line with GDPR, handling sensitive emergency incident information securely.
+
+**Risk Mitigation through Design, Development, and User Information**
+
+To minimize identified risks, the AI architecture was designed with inherent robustness and explainability features. The hybrid CNN-LSTM model incorporates dropout regularization and ensemble methods to reduce overfitting and improve generalization to rare but critical incident patterns. Adversarial robustness testing involved over 10,000 perturbation scenarios on input sensor data, demonstrating system stability within expected operational noise levels.
+
+A fail-safe operational mode automatically defers final prioritization decisions to human dispatchers under conditions of low confidence scores (below 85% certainty threshold), ensuring high-risk decisions receive expert validation—this reduced potential for hazardous automated errors.
+
+Comprehensive user documentation includes detailed technical information describing system limitations, assumptions, and expected input data quality standards. Training materials aligned with identified operator profiles incorporate scenario-based exercises and competency evaluations, addressing required knowledge and expected context of use to empower emergency responders in effective interaction with the AI system.
+
+**Integrated Risk Management Measures Considering System Interactions**
+
+Risk management strategies have been coordinated across multiple system requirements, including data governance, cybersecurity, performance robustness, user training, and transparency measures, balancing these in light of their mutual influences. For instance, cybersecurity controls protecting data integrity also bolster recommendation accuracy, thereby reducing risk of dispatch errors.
+
+Trade-offs between stringent automatic risk controls and operational agility were carefully calibrated to maintain system responsiveness vital in emergency contexts. A formal risk-benefit analysis documents rationales supporting these measures, ensuring residual risks remain within acceptable bounds while preserving the system’s intended effectiveness.
+
+**Residual Risk Assessment and Acceptability Judgements**
+
+Residual risks associated with hazards—such as delayed dispatch under data incompleteness or rare false prioritizations—were quantitatively estimated using probabilistic risk models integrating system performance data and operational impact assessments. These residual risks were cross-validated against emergency service safety standards and stakeholder risk tolerance thresholds derived from expert consultations.
+
+Mitigation strategies targeting residual risks included ongoing PMMS-triggered real-time alarms and human-in-the-loop escalation protocols. The overall residual risk profile was framed as acceptable within the design and deployment context, with continuous review mechanisms ensuring update capabilities aligned with emerging operational evidence.
+
+**Testing Regimes and Compliance Validation**
+
+System testing was comprehensive, encompassing unit, integration, and end-to-end evaluations throughout development, culminating in extensive system-level validation prior to first market release. Testing employed both synthetic test datasets (over 100,000 labelled incident datapoints combining sensor and temporal data) and real-world validation trials in operational environments.
+
+Defined testing metrics included accuracy, precision-recall balance, latency objectives (<2 seconds per prioritization), robustness to data drift, and conformity with transparency and interpretability standards. Testing thresholds were established based on EU emergency service operational requirements and independent performance benchmarks (e.g., ENISA guidelines on AI robustness).
+
+Testing procedures included safety-critical scenario injections executed in collaboration with end users, simulating rare but high-impact emergencies and misuses. Real-world field tests assessed system stability and operator interface usability, informing pre-release certification documentation.
+
+**Consideration of Vulnerable Groups and Minors**
+
+The risk management system explicitly incorporated assessment of potential adverse impacts on individuals under 18 years of age and other vulnerable groups identifiable within incident data. Population-balanced training datasets were validated via statistical metrics (e.g., demographic parity difference <0.03), and fairness-enhancing algorithms were integrated within model training pipelines to mitigate bias.
+
+Human review mechanisms were instituted to scrutinize any prioritization outputs flagged as potentially disproportionate affecting protected groups before dispatch decisions. Training and user guidance emphasize awareness of vulnerable populations within the operational context, supporting informed dispatch prioritization and adherence to non-discrimination principles.
+
+**Alignment with Other Relevant Risk Management Frameworks**
+
+Urban Safety Analytics designed the risk management system to interface with broader municipal risk governance structures where relevant. While the Emergency Dispatch Prioritization Engine operates under the AI Act’s provisions, it accommodates integration with internal risk processes of emergency service organizations, enabling harmonization with organizational incident risk assessments and compliance frameworks.
+
+Documented interfaces permit procedural alignment and sharing of risk information, avoiding duplication while preserving clear provider responsibilities for AI-specific risk controls. This modular approach facilitates regulatory synergy and responsive risk governance across layered legal obligations.

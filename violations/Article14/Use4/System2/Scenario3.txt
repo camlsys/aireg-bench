@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: (b) to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations for decisions to be taken by natural persons." (Article 14(4)(b))
+
+[b] **Guideline:**  
+The provider must embed in the system and training materials explicit warnings, interface design cues, or procedural mechanisms that alert supervisors to the risks of automation bias and promote critical assessment of the model’s outputs, such as uncertainty indicators or mandatory review steps before decisions.
+
+[c] **Violation:**  
+Veritas Learning Systems does not implement any user interface features or training protocols that highlight the risk of supervisors unconsciously over-relying on the AI’s anomaly flags. The interface design presents outputs without uncertainty metrics or explicit reminders, and supervisors are neither required nor guided to critically evaluate outputs before acting.
+
+[d] **Justification:**  
+This subtle omission fosters automation bias, where supervisors might disproportionately trust the system’s flags simply because they are automated, thereby weakening the human-in-the-loop principle. The system thus misses a key risk mitigation measure mandated by Article 14(4)(b), hindering genuinely informed human oversight over high-risk assessments.

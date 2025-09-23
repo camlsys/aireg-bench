@@ -1,0 +1,43 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Political Influence Analyzer (PIA) has been developed using rigorous data governance and management protocols aligned with the system’s intended function of generating persuasive political messaging adapted to voter profiles. The design choices emphasize transparency and traceability in data handling to support auditability and accountability throughout the data lifecycle.
+
+Data collection was conducted predominantly via publicly available political discourse, survey data on voter preferences, and anonymized social media interactions, sourced from consortium partners under strict contractual terms prohibiting unauthorized usage. No personal data collected for unrelated purposes has been repurposed without explicit consent. Each dataset includes metadata specifying origin, collection method, consent status, and intended usage, enabling comprehensive provenance tracking.
+
+Data preparation workflows encompass multi-stage annotation and labelling performed by a combination of expert political analysts and trained annotators using standardized taxonomies reflecting political bias, sentiment, and rhetorical strategies. Cleaning operations systematically remove noise, duplicates, and erroneous entries. Dataset updating occurs quarterly to reflect evolving political contexts and voter concerns, incorporating enrichment from real-time polling data and opinion trend monitoring platforms.
+
+Assumptions explicitly formulated during data curation include representing the heterogeneity of political views across EU member states, the linguistic diversity of the target populations, and the dynamic nature of public opinion during electoral cycles. These inform variable weighting schemes and stratified sampling to ensure representativeness.
+
+Comprehensive assessments were conducted on dataset availability, quantity, and suitability. The final training dataset comprises 25 million text segments annotated with voter engagement labels and demographic meta-attributes, a volume supported by extensive computational infrastructure including distributed GPU clusters. Validation and testing datasets are drawn from temporally and geographically distinct data to prevent overfitting and reflect real-world conditions.
+
+Bias examination protocols targeted disparities that could influence voter persuasion unfairly or result in discriminatory messaging. Systematic analysis detected overrepresentation of certain political ideologies in early data releases; corrective rebalancing through data augmentation and downsampling was implemented to align marginal distributions closer to population-level political opinion statistics obtained from independent Eurobarometer surveys.
+
+Risk mitigation includes iterative bias detection pipelines applying fairness metrics such as demographic parity and equal opportunity across voter groups characterized by age, gender, and socioeconomic status. Identified residual biases were addressed with calibrated adversarial training methods designed to neutralize spurious correlations between protected attributes and model outputs.
+
+Data gaps related to underrepresented linguistic minorities pertinent to specific EU regions were identified. To address this, targeted data collection efforts and collaboration with regional partners were initiated, resulting in supplementary datasets comprising approximately 3 million samples in less-resourced languages. These datasets have undergone the same rigorous quality assurance processes and are incrementally integrated into model retraining workflows.
+
+### Relevance, Representativeness, and Data Quality
+
+The training, validation, and testing datasets have been curated to be directly relevant to the PIA’s geopolitical and communicative scope. Linguistic and contextual representativeness were ensured by incorporating multilingual datasets reflecting 24 official EU languages and dialectal variants predominant in electoral districts.
+
+Quality assurance procedures include automated error detection algorithms combined with manual reviews, achieving an estimated data accuracy exceeding 98%. Completeness is maintained by ensuring balanced samples across identified voter segments and political affiliations to prevent an unrepresentative model bias.
+
+Statistical properties such as feature distributions, class balance, and inter-variable correlations were continuously monitored using dashboards that track drift and variance during model development cycles. Sampling strategies were adjusted dynamically to maintain these properties, particularly given the temporal volatility of political discourse.
+
+### Contextual Adaptation to Specific Settings
+
+Given the system’s deployment in multiple EU jurisdictions with varying electoral laws, cultural norms, and political dynamics, datasets incorporate contextual markers such as geographic origin, legislative frameworks, and prevailing social attitudes. This allows the model to adapt messaging content and style in concordance with local expectations and ethical communication standards.
+
+Behavioral data reflecting voting patterns, media consumption, and issue prioritization are included where available and ethically gathered to enhance functional customization. Contextual information is integrated as auxiliary inputs to the model, conditioning outputs to match functional requirements without embedding sensitive or biometric data.
+
+### Processing of Special Categories of Personal Data
+
+The system development did not involve the use of special categories of personal data (e.g., health, racial or ethnic origin, political opinions) beyond what is publicly accessible or lawfully collected with consent for political research purposes. Accordingly, the measures described in point (5) related to exceptional processing of special categories were not applicable at the provider level.
+
+Nevertheless, the data handling infrastructure is designed to support stringent safeguards, including pseudonymisation, encryption, and access controls, in case future bias detection efforts necessitate the processing of such data categories in compliance with applicable EU data protection laws.
+
+### Application to Testing Data in Non-Training Contexts
+
+As the PIA exclusively employs training-based AI modeling techniques, the requirements for data governance, quality, and representativeness have been applied uniformly across training, validation, and testing datasets. Testing data, drawn from temporally shifted electoral cycles and synthetically generated message variants, undergoes equivalent scrutiny to confirm adherence to data quality and bias mitigation standards prior to deployment.

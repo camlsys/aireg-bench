@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must capture contextual inputs, model confidence scores, and inputs leading to threshold-crossing decisions indicative of potential discrimination or erroneous outputs, enabling detection of risks like bias or functional drift.
+
+[c] **Violation:**  
+The system’s logs capture only final candidate scores and selection outcomes but omit intermediate features’ influence weights and confidence metrics, thereby failing to log the nuance behind borderline or high-risk decision changes.
+
+[d] **Justification:**  
+This omission is realistic and subtle, as summarized scores may seem sufficient but cannot support detection of nuanced risks such as biases emerging from specific feature shifts or model behavior changes, impeding identification of scenarios triggering risks under Article 79(1).

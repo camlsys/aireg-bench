@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+Experts would ensure that the system maintains stable accuracy and robustness metrics in various operational environments and over time, including after deployment updates and environmental changes. Continuous monitoring and validation protocols must detect performance degradation or drifts, triggering model retraining or alerts without compromising the system's operational safety.  
+
+[c] **Violation:**  
+Gas Safety Insight applies scheduled model updates using data collected in live operation without sufficiently validating the accuracy and robustness of the retrained models before deployment, resulting in interim periods where the anomaly detection performance dips below the safe threshold, potentially missing early leak indications.  
+
+[d] **Justification:**  
+This violation breaches the requirement for consistent performance throughout the lifecycle as the system allows temporary declines in accuracy after updates. It is a subtle lapse because the model updates occur following best practices superficially but lack real-time performance validation, a plausible issue in complex hybrid systems handling continuous data flow and real-time operational stakes.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates [...] The robustness of high-risk AI systems may be achieved through technical redundancy solutions, which may include backup or fail-safe plans."  
+
+[b] **Guideline:**  
+The AI system must incorporate fault-tolerant mechanisms such as fallback models, redundancy in critical components, or fail-safe decision pathways to prevent erroneous outputs when parts of the system malfunction or inputs become corrupted. It should gracefully handle inconsistencies triggered by data anomalies or integration failures.  
+
+[c] **Violation:**  
+The system lacks a fallback decision mechanism or backup model; if corrupted customer metadata causes the encoder to misinterpret key input features, it produces credit approval outcomes without flagging uncertainty or switching to a conservative default assessment. This results in undetected inconsistencies in credit scoring under fault conditions.  
+
+[d] **Justification:**  
+This is a subtle violation because the system still runs and outputs predictions, but without robustness safeguards, it does not mitigate errors arising from corrupted inputs. Such silent failure modes risk unfair lending decisions and do not satisfy the robustness and fail-safe plans mandated, yet the deficiency might only emerge under rare fault conditions.

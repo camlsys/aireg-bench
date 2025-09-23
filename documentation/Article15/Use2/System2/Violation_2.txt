@@ -1,0 +1,36 @@
+**Article 15**
+
+**Accuracy, Robustness, and Lifecycle Performance**
+
+Pipeline Safety Guardian integrates convolutional neural networks (CNNs) with Random Forest classifiers to process and classify multi-sensor time-series data from pressure and flow sensors in gas pipelines. Its design targets rapid identification of anomalies indicative of pipeline integrity issues, including cracks and pressure drops, with a practical benchmark accuracy of approximately 92% on historical operational datasets encompassing over 5 million data points collected from diverse pipeline environments over a 24-month period.
+
+The system’s automated, periodic retraining framework is executed on a bi-monthly cadence. This retraining pipeline ingests raw operational data alongside all technician corrections and feedback logged during active deployment, without filtering or validation. This design decision stems from prioritizing continuous adaptation to evolving field conditions and operational variability, aiming to reflect real-world usage patterns in model updates. Consequently, the model’s accuracy metrics reported in internal validation cycles exhibit a gradual upward drift in false positive alert rates—from an initial 3% to approximately 9% over 18 months—due to inadvertent incorporation of erroneous manual override labels.
+
+The operating instructions explicitly declare this expected evolution in performance, including the baseline accuracy of 92% in initial deployment, anticipated false positive escalation, and recommendations for operational interpretation of alerts by field personnel. Performance assessments utilize standard precision, recall, and F1-score metrics on hold-out test datasets derived from both pre-deployment and post-deployment operational data, facilitating ongoing monitoring.
+
+**Design for Resilience and Mitigation of Feedback Loops**
+
+Acknowledging the risk of feedback loops inherent in continuous retraining with unfiltered operational feedback, Pipeline Safety Guardian incorporates technical and organisational measures to mitigate compounding biases. While no automated data validation or correction mechanisms currently intervene in manual override incorporation, retraining workflows include automated statistical monitoring tools designed to detect abrupt shifts or drifts in alert frequency and data distribution.
+
+Upon detection of significant performance deterioration—quantified by threshold increases in false positive alerts exceeding 5% month-over-month—system operators receive diagnostic reports suggesting targeted manual reviews of recent input-label pairs. Additionally, redundancy is employed at the model architecture level via an ensemble approach combining CNN outputs with Random Forest classifiers to cross-verify anomaly predictions, thereby reducing single-model overfitting impacts.
+
+Fail-safe mechanisms trigger secondary verification steps through rule-based anomaly filters; alerts failing to meet certain domain-specific heuristics must be confirmed by human validation before escalation. These controls are designed to prevent spurious alerts originating from biased retraining and preserve operational stability despite evolving input distributions.
+
+**Cybersecurity and Protection Against Data Poisoning**
+
+Pipeline Safety Guardian operates within a secured industrial IT environment featuring multi-layered cybersecurity measures aligned with IEC 62443 standards for industrial control systems. System access controls restrict data ingestion and model update operations to authorised endpoints through role-based authentication, encrypted data transfer (TLS 1.3), and network segmentation.
+
+Given the risk profile associated with training data manipulation, automated data integrity checks incorporate cryptographic hash validations and anomaly detection algorithms that monitor statistical consistency of retraining datasets. Although manual feedback is unfiltered, access logs and audit trails enable traceability of all corrections made by field technicians to support forensic analysis in event of suspected adversarial manipulation.
+
+Input data streams are continuously monitored for adversarial perturbation patterns exploiting sensor noise or spoofing attacks. The fusion of CNNs and Random Forest classifiers provides resilience against adversarial examples by leveraging orthogonal feature spaces and model architectures. Model update procedures incorporate rollback and version control capabilities, allowing system administrators to revert to previous stable model states if anomalies indicative of model poisoning or evasion attacks are detected.
+
+**Declared Performance Metrics and Usage Instructions**
+
+The accompanying instructions of use include detailed disclosures of the system's performance characteristics, including:
+
+- Initial baseline detection accuracy of 92% under controlled conditions;
+- Typical operational false positive rates ranging from 3% ascending to 9% over extended deployments linked to incorporation of unvalidated feedback;
+- Recommended operational protocols for interpreting alerts, emphasizing confirmation through technician inspection and supplementary diagnostics;
+- Guidelines on manual override use, clarifying potential downstream effects on model retraining and alert sensitivity.
+
+These declarations aim to inform users and compliance auditors transparently about known performance limitations, system behavior under dynamic retraining conditions, and best practices to balance safety and operational efficacy in field environments.

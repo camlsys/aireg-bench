@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose."  
+
+[b] **Guideline:**  
+Experts would require that emergency incident data and dispatch notes represent all relevant populations and scenarios, including diverse geographical regions, socio-demographic groups, and emergency types, to avoid skewed prioritization that might endanger underrepresented communities.  
+
+[c] **Violation:**  
+The training data underrepresents rural emergency incidents due to incomplete data collection from certain jurisdictions, resulting in a model biased toward urban emergencies. This lack of representativeness leads to poorer model performance and prioritization accuracy in rural settings.  
+
+[d] **Justification:**  
+Neglecting to include representative data from all operational contexts violates the completeness and representativeness requirement of Article 10(3). The bias is subtle as the dataset appears large and comprehensive overall, but geographical gaps introduce latent performance disparities not immediately obvious without detailed analysis.  
+
+---

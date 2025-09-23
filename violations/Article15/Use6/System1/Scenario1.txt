@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."
+
+[b] **Guideline:**  
+Developers must rigorously test the system against diverse and evolving data distributions, ensuring consistent decision accuracy and robustness over time. This includes validating model performance on new employee data and legal text variations and maintaining stable outputs despite changes in document formats or employee demographics. Continuous monitoring and retraining protocols should be in place to prevent performance degradation throughout the system’s lifecycle.
+
+[c] **Violation:**  
+The system relies heavily on the initial training datasets without implementing continuous monitoring or periodic retraining strategies to adapt to evolving labor laws, employee demographics, or employment contract formats. Over time, performance on less common contract types or newly introduced legal clauses degrades, leading to inconsistent termination eligibility assessments.
+
+[d] **Justification:**  
+This situation breaches the requirement for consistent performance across the lifecycle because the system’s fixed training leads to a drop in accuracy on new or altered inputs. The violation is subtle since initial testing may show high accuracy, yet without lifecycle management, the system slowly drifts away from compliance, risking unfair or legally flawed termination assessments.
+
+---

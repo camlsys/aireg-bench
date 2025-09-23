@@ -1,0 +1,49 @@
+**Article 14**
+
+**Design and Development of Human Oversight Features**
+
+The Judicial Insight Assistant (JIA) is architected to deliver final aggregated confidence scores along with appropriately referenced citations summarizing legal research and fact pattern classifications. Although the system employs a hybrid AI model—comprising transformer-based encoder-decoder networks for textual understanding and gradient boosted decision trees (GBDT) for factual classification—the interface strictly abstracts away intermediate reasoning states, such as model attention weights, decision tree branching, or weighting of conflicting legal sources. This design choice was made deliberately to maintain a clear, concise, and consistent output format that aligns with legal workflows, ensuring that judicial users receive comprehensible end results without exposure to potentially incomplete or technically opaque internal model states.
+
+The system embeds monitoring capabilities that log processing status and performance metrics, but these are maintained internally for maintenance and quality assurance and are not exposed for operational oversight by end users. This approach minimizes user cognitive load and reduces the risk of misinterpretation of intermediate AI signals, while still allowing Judicial Insight Technologies Limited to detect and address system errors, anomalies, or data drift during scheduled updates and continuous improvement cycles.
+
+The architecture’s modular design supports secure API interfaces that deliver final AI outputs only; no interfaces are provided for querying internal model interpretability features, such as attention visualization or decision path tracing, reflecting a conscious trade-off between transparency and operational usability within judicial settings.
+
+---
+
+**Measures to Mitigate Risks to Fundamental Rights via Human Oversight**
+
+Given the high reliance that judges and legal clerks place on JIA outputs in the judicial decision-making process, the system incorporates risk mitigation at the provider level primarily through thorough dataset curation and model evaluation rather than enabling end-user interaction with underlying AI decision mechanisms. The training corpus comprises approximately 5 million annotated legal documents sourced across EU jurisdictions and includes historical case law, statutes, and legal commentaries, to ensure broad coverage and reduce bias risks.
+
+Pre-deployment evaluation benchmarks demonstrate that the factual classification sub-model yields an averaged F1 score of 0.87, balancing precision and recall to limit the incidence of false positives or negatives in retrieved legal references. Aggregated confidence scores are calibrated using cross-validation to provide users with robust, interpretable indicators of output reliability.
+
+To address risks related to erroneous or incomplete information that might impact fundamental rights, the system requires judicial users to apply professional legal judgment as a mandatory step following AI output review. The user interface includes explicit notices reminding users that AI outputs represent advisory information only and that ultimate responsibility for fact assessment and legal interpretation rests with human decision-makers.
+
+---
+
+**Built-in and Deployers’ Oversight Measures**
+
+From the provider side, the system incorporates automated alerting and logging mechanisms that flag unusual output patterns indicative of potential anomalies—such as sudden drops in confidence scores or inconsistent citation aggregates—to enable timely technical investigation. These alerts feed into a continuous monitoring pipeline but are not directly accessible to end users during normal operation.
+
+The design emphasizes minimal user intervention functionality: the interface allows users only to navigate through final results, either by browsing aggregated legal citations or by reviewing confidence scores tied to each research summary or fact classification. No feature exists to override or alter outputs within the system; any decision to disregard or supplement the AI’s findings relies exclusively on judicial professionals’ expertise and discretion external to the system.
+
+Deployers are provided with configuration guidelines recommending that judicial institutions establish organizational frameworks for second-level reviews or peer discussions complementing AI-assisted research. These guidelines also advise regular training for users on interpreting confidence scores prudently and awareness-raising around risks of automation bias.
+
+---
+
+**Enabling Natural Persons to Comprehend and Monitor AI Output**
+
+To ensure end users properly understand the scope and limitations of the JIA during use, the interface presents aggregated confidence scores alongside source citations in a standardized format that supports quick comprehension without requiring technical AI expertise. These scores represent consolidated model confidence and do not provide breakdowns by internal model components or conflicting source weighting to avoid overwhelming or misguiding users.
+
+The system’s user documentation details limitations on explainability, setting expectations that intermediate reasoning steps are not disclosed due to the complexity and potential for misinterpretation. This measure helps prevent overreliance on outputs by making clear that the system acts as a support tool rather than an autonomous decision-maker.
+
+Automated safeguards include explicit labels cautioning against automation bias and encourage human review before final legal determinations. The system also lacks any “stop” button or interrupt capability for mid-process cancellation, as inputs and processing occur in brief batch operations returning finalized results; this workflow minimizes risk of partial or inconsistent outputs during use.
+
+---
+
+**Records and Documentation of Processing Activities**
+
+Judicial Insight Technologies Limited maintains comprehensive records of all processing activities underlying JIA operations, including data provenance for special categories of personal data when applicable. These records comply with the requirements stipulated by Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680. Specifically, personal data processing is strictly limited and justified only as necessary to detect and mitigate biases affecting model fairness and performance across demographic or jurisdictional subsets.
+
+The documentation captures the rationale and methods used to avoid substituting less sensitive data categories for the special personal data critical to bias detection, reflecting a documented balance between data minimization and model fairness objectives. Periodic audits verify that data processing aligns strictly with these parameters, ensuring transparency and accountability in the development lifecycle.
+
+This procedural rigor supports the oversight framework by enabling internal validation of fairness safeguards, though corresponding details are not exposed through the system’s operational user interface.

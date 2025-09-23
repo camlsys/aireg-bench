@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable ... facilitating the post-market monitoring referred to in Article 72; and monitoring the operation of high-risk AI systems."
+
+[b] **Guideline:**  
+Logging should include time-correlated system performance metrics, error rates stratified by candidate demographics, and data lineage to support post-market evaluation of ongoing system fairness, accuracy, and reliability.
+
+[c] **Violation:**  
+While event logs record input and output data snapshots, they exclude demographic group identifiers and performance metrics necessary to monitor potential disparate impacts or decline in accuracy, limiting post-market monitoring effectiveness.
+
+[d] **Justification:**  
+This violation is subtle since basic operation logs exist; however, critical linkage to demographic stratification and performance over time is missing, preventing robust post-market surveillance of fairness and system degradation as mandated, a common but overlooked shortfall.

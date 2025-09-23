@@ -1,0 +1,59 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The development of the Talent Insight Model followed a structured data governance framework designed to ensure the integrity, relevance, and compliance of training, validation, and testing datasets. The framework reflects the system’s intended use in recruitment workflows, focusing on ethically sourcing and managing data pertinent to candidate screening and job matching.
+
+**Design choices** involved selecting a transformer-based encoder-decoder architecture, fine-tuned on natural language processing (NLP) tasks specific to parsing resumes and job descriptions. This choice was guided by industry benchmarks demonstrating superior contextual understanding over classical NLP models, thereby ensuring the system’s capacity to accurately extract and interpret candidates’ skills and experiences.
+
+**Data collection** was conducted primarily through partnerships with recruitment agencies and publicly available anonymized job boards, with explicit contractual clauses restricting use to recruitment purposes. No direct access was granted to the personal data beyond what candidates voluntarily provide through these channels. Original purposes for data collection were verified to align with career development and job matching, mitigating scope creep risks.
+
+**Relevant data-preparation operations** included semi-automated annotation pipelines combining expert human annotators and iterative machine-assisted corrections. Annotation guidelines detailed entity extraction—such as skills, employment dates, certification names—and relation labeling between qualifications and job criteria. Data cleaning protocols eliminated duplicates, inconsistencies, and incorrect formatting, and enrichment steps incorporated external standardized occupation taxonomies to improve semantic consistency.
+
+**Formulated assumptions** explicitly recognized that input data represent self-reported professional histories subject to potential inaccuracies; thus, probabilistic interpretation mechanisms were integrated downstream to moderate confidence scores. These assumptions informed the selection and weighting of training examples to avoid overfitting to anomalous patterns.
+
+**Assessment of data availability and suitability** identified over 2 million anonymized resumes and 500,000 job listings accumulated over a five-year period as sufficient in scale and variance to represent diverse industries and experience levels across the EU workforce. However, systematic underrepresentation of certain demographic groups—such as candidates from smaller companies or non-urban regions—was documented and formed the basis for targeted data augmentation strategies.
+
+**Bias assessment** involved multi-dimensional audits focused on detecting disparities impacting protected characteristics indirectly inferred from text (e.g., gender indicators, age-related language), leveraging fairness metrics such as demographic parity and equal opportunity across proxy groups defined by self-disclosed location or industry sector. The audit identified statistically significant bias signals favoring candidates from metropolitan areas and overrepresented sectors.
+
+**Measures to detect, prevent, and mitigate bias** included iterative model retraining incorporating synthetic minority oversampling for underrepresented groups and adversarial debiasing techniques applied during fine-tuning. Additionally, embedding space regularization constrained the model’s reliance on linguistically correlated proxies known to encode sensitive attributes. These efforts yielded a reduction in false negative rates for marginalized groups by over 15% compared to initial models.
+
+**Identification of data gaps and remediation** highlighted the absence of comprehensive data representing neurodiverse applicants and candidates with non-traditional career paths. To address this gap, simulated resumes reflecting such profiles were incorporated in the validation and testing phases to improve robustness. Data collection efforts are ongoing to obtain direct consented data samples, accompanied by explanatory material clarifying data usage to candidates.
+
+### Relevance, Representativeness, and Quality of Data Sets
+
+The datasets used for training, validation, and testing were curated to achieve high relevance and representativeness with respect to the intended recruitment contexts across the EU market. This encompassed a broad spectrum of job functions, seniority levels, and industry sectors.
+
+To ensure **relevance**, dataset samples were matched against current job market reports and occupational standards to cover trending and legacy positions. Contextual metadata such as job location, sector, and experience level were tagged to facilitate stratified sampling during model development phases.
+
+In terms of **representativeness**, statistically sound sampling methodologies were employed to maintain proportional representation of gender, age brackets, regional origins, and educational backgrounds as reported in EU labor statistics. Data completeness and error rates were assessed through automated validation checks and manual audits, estimating error rates below 0.3% in labeled entities and less than 1% missing relevant fields.
+
+Datasets were constructed with respect to appropriate **statistical properties**, including balanced class distributions of key features such as skill categories and employment history length. Cross-validation folds were stratified to preserve these properties for unbiased performance evaluation.
+
+### Accounting for Contextual and Geographical Particularities
+
+The Talent Insight Model’s datasets were developed and tailored to account for contextual factors relevant to the European recruitment landscape. This included annotating geographic indicators, local terminologies, and regulatory contexts affecting job titles and qualifications recognition.
+
+Specifically, regional variations in job nomenclature, certification equivalencies, and language usage (including minority languages and dialects) were incorporated through domain-specific lexicons and multilingual corpora spanning official EU languages. This enabled the system to operate effectively across multiple jurisdictions, respecting local employment frameworks and occupational standards.
+
+Functional settings such as industry-specific recruitment nuances were also integrated by embedding sectoral ontologies during data enrichment, supporting specialized matching logic for fields like healthcare, IT, and engineering.
+
+### Processing of Special Categories of Personal Data for Bias Detection and Correction
+
+In accordance with regulatory provisions, processing of special categories of personal data was conducted only when strictly necessary to identify and remediate bias within the high-risk AI system, focusing on categories indirectly relevant to protected characteristics inferred through anonymized data patterns.
+
+This processing adhered to stringent safeguards, including:
+
+- **Technical limitations and privacy measures:** Personal data were pseudonymized using state-of-the-art cryptographic techniques prior to analysis, ensuring unlinkability to identifiable candidates. Data access was restricted to a limited group of compliance engineers bound by confidentiality agreements and subjected to role-based access controls.
+
+- **Controlled re-use and retention:** The special category data were used solely for bias auditing and correction purposes. Logs of data processing activities were maintained for auditability. Once bias mitigation was achieved or retention periods expired, data were irreversibly deleted using certified sanitization software.
+
+- **No third-party transfers:** Data were processed internally within Sterling Recruitment Technologies’ secure processing environment; no transmission or sharing with external parties occurred.
+
+The bias detection processes confirmed that such special category data cannot be effectively replaced by synthetic or fully anonymized datasets without loss of resolution necessary to diagnose subtle bias patterns, justifying this limited processing under the regulatory framework.
+
+### Applicability of Data Quality Requirements to Development Approaches
+
+The Talent Insight Model relies on supervised learning via training, validation, and testing datasets. Therefore, the full scope of data quality and governance measures described above applies across all data subsets.
+
+Non-training data used for testing alternative system components conform to the same stringent quality controls to ensure consistent evaluation standards and to support continuous monitoring of performance and bias post-release.

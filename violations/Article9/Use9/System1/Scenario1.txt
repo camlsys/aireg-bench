@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+Providers must establish a formal process ensuring ongoing monitoring and repeated reassessment of risks throughout the AI system’s lifecycle, including scheduled updates responding to newly identified hazards or shifts in contextual use, with documented evidence of these periodic reviews.  
+
+[c] **Violation:**  
+Judicial Insight Assistant’s risk management protocol involves a comprehensive initial risk evaluation at deployment but lacks scheduled, systematic reassessments post-deployment and only performs ad hoc updates triggered by major reported failures rather than continuous iterative review.  
+
+[d] **Justification:**  
+This practice breaches Article 9(2)’s requirement for systematic iterative risk management because it misses anticipatory or routine re-evaluation of emerging risks during continued operation. This violation is subtle since the system does address risks initially and upon large issues, but the absence of planned periodic reassessment undermines ongoing compliance and early detection of evolving risks in legal contexts.

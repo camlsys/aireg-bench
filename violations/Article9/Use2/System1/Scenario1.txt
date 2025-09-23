@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+The provider must implement a formalized lifecycle-wide risk management process that includes planned periodic reassessments of risks based on new operational data, evolving environmental conditions, and system updates. This process should include scheduled risk review cycles—e.g., quarterly or semi-annual—and updates to mitigation measures in response to detected changes.  
+
+[c] **Violation:**  
+Gas Safety Insight’s risk management was established only during initial development and prior to market deployment, with no scheduled periodic risk reviews integrated into its maintenance plan beyond major version releases. Furthermore, sensor data and operational logs collected in deployment are not systematically analyzed post-market to identify emerging risks or update mitigation strategies continuously.  
+
+[d] **Justification:**  
+This violation subtly breaches the continuous, iterative requirement by limiting risk management to discrete points rather than making it a dynamic, ongoing process throughout system lifespan. It remains plausible because providers might assume static risk assessment is sufficient if initial evaluations appear robust, especially given the system’s complex hybrid architecture making continuous monitoring resource-intensive.  
+
+---

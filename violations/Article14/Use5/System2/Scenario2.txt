@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"4.(b) to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations for decisions to be taken by natural persons;"
+
+[b] **Guideline:**  
+The system must incorporate design elements and interface cues that actively discourage blind trust, such as providing confidence intervals, highlighting model limitations, or requiring explicit manual reconciliation steps for high-impact decisions, ensuring recruiters stay critically engaged and do not over-rely on rankings.
+
+[c] **Violation:**  
+Recruiter interfaces prominently display candidate scores and rankings without contextual caveats or prompts questioning the results; the system optimizes for usability by removing friction, allowing recruiters to accept recommendations by default without mandated critical review steps or easily accessible information that clarifies model uncertainty.
+
+[d] **Justification:**  
+This omission tacitly encourages automation bias because recruiters, under time pressure or workload constraints, are prone to accept AI-driven scores as definitive truth rather than as one input among many. The violation is subtle because it stems from a user experience design choice rather than a technical model failure, yet it undermines human oversight intent required by the regulation.
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. [...] The robustness of high-risk AI systems may be achieved through technical redundancy solutions, which may include backup or fail-safe plans."  
+
+[b] **Guideline:**  
+The system needs to incorporate fallback mechanisms or redundancy such as alternate heuristics, rule-based prioritization, or manual override capabilities to handle failures or contradictory outputs from the neural network models, especially during high-load or ambiguous scenarios.  
+
+[c] **Violation:**  
+Urban Safety Analytics’ system lacks any fallback procedure when faced with inputs that produce conflicting priority scores between the CNN spatial analysis and the LSTM temporal predictor, resulting in indecisive or non-actionable output without alerting dispatch operators of the inconsistency.  
+
+[d] **Justification:**  
+Failing to detect and mitigate conflicting model outputs creates a subtle robustness gap that compromises decision reliability during critical moments. The absence of redundancy or fail-safe plans is realistic in complex AI fusions where integration testing may overlook edge-case conflicts with nuanced cascading effects.  
+
+---

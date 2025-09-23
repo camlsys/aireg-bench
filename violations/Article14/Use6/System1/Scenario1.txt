@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."  
+
+[b] **Guideline:**  
+The system must feature intuitive, accessible interfaces that enable human reviewers to continuously monitor AI outputs in real time and intervene if anomalies or unexpected decisions occur, ensuring system behavior is fully transparent and controllable throughout its operational lifecycle.  
+
+[c] **Violation:**  
+The Legal Termination Assessment Framework presents aggregated risk scores from the gradient-boosted decision trees and transformer analysis without offering granular detail or visualization of how each data feature or legal clause influenced the termination eligibility recommendation, limiting human reviewers to only a final numerical score with minimal context.  
+
+[d] **Justification:**  
+This omission hinders effective oversight by natural persons, as they cannot discern which specific inputs or model elements contributed to the outcome and thus cannot evaluate or challenge the system’s reasoning reliably. Such a lack of transparent human-machine interaction subtly undermines effective oversight despite the presence of an interface, violating Article 14(1) in a plausible but not immediately obvious way.  
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement continuous and automatic logging of critical input data, intermediate model states, decisions made by the AI components including CNN outputs and classifier results, as well as timestamps and system actions, ensuring logs persist throughout the entire operational lifetime.
+
+[c] **Violation:**  
+Pipeline Safety Guardian only logs detected anomaly events and final alerts but does not record intermediate CNN confidence scores, raw sensor input snapshots, or the Random Forest classifier decision paths, and its logging stops after system restarts or brief network outages, losing vital data.
+
+[d] **Justification:**  
+This omission reduces traceability and prevents full reconstruction of system behavior over time, undermining compliance with Article 12(1) that mandates automatic event recording "over the lifetime of the system." It is subtle because partial logging of alerts might appear sufficient, masking incomplete or inconsistent recording of underlying events and decisions.
+
+---

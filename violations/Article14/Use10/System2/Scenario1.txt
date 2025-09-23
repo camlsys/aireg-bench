@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse..." (Article 14(2))
+
+[b] **Guideline:**  
+Providers must implement human oversight mechanisms designed to detect and mitigate risks related to manipulation of public opinion that could infringe on fundamental democratic rights, ensuring that human operators understand potential misuse scenarios such as amplification of disinformation or undue influence on voters.
+
+[c] **Violation:**  
+The Election Sentiment Transformer’s interface presents aggregated sentiment scores and suggested counter-messages without providing human overseers with clear alerts or analytical tools to detect manipulative patterns or coordinated amplification tactics that could threaten electoral fairness, thereby limiting their ability to intervene in cases of foreseeable misuse.
+
+[d] **Justification:**  
+This violation is subtle because the system technically provides output for human review, but the lack of advanced oversight tools means humans cannot effectively minimize risks of manipulative misuse impacting fundamental rights, thus undermining the Article 14(2) requirement in a manner not immediately obvious from superficial system use.
+
+---

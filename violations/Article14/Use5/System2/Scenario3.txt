@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"4.(e) to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state."
+
+[b] **Guideline:**  
+The AI system must provide clear, accessible mechanisms allowing human operators to immediately pause or halt automated candidate screening and scoring processes, ensuring that, in case of detected issues or concerns, the operation can be stopped safely without causing system instability or data loss.
+
+[c] **Violation:**  
+The Recruitment Decision Forest is deployed as a batch-processing service without an integrated pause or stop control accessible to recruiters; halting the process requires contacting technical support or interrupting server operations externally, which is impractical during active use and risks inconsistent states or data integrity problems.
+
+[d] **Justification:**  
+This setup prevents timely human intervention consistent with safe oversight because recruiters cannot independently stop the system upon observing anomalies or suspecting errors. The violation is realistic since enterprise-scale AI systems often separate operational and control layers, but subtle because it does not manifest as an explicit failure, rather as inadequate interface design limiting direct human control.

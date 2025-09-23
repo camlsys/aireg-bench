@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. Technical and organisational measures shall be taken in this regard. The robustness of high-risk AI systems may be achieved through technical redundancy solutions, which may include backup or fail-safe plans."  
+
+[b] **Guideline:**  
+Designers should implement explicit redundancy or fallback strategies that handle unexpected input irregularities or system component failures, such as a backup detection model or default safe outputs when confidence scores fall below thresholds. Error handling must be incorporated seamlessly to prevent cascading system faults or erroneous alerts during examinations.  
+
+[c] **Violation:**  
+When encountering ambiguous or noisy input—such as intermittent microphone glitches or atypical keyboard dynamics (e.g., mechanical keyboard malfunctions)—the system’s RNN frequently outputs highly confident but incorrect anomaly flags without fallback checks or alternative verification from the Random Forest classifiers. This leads to false positive accusations that exam supervisors cannot easily verify or dismiss in real time.  
+
+[d] **Justification:**  
+This violation is subtle as the system nominally functions but inadequately addresses environmental inconsistencies with backup strategies or error mitigation. The lack of fail-safes or redundancy means robustness requirements stated in Article 15(4) are unmet, increasing risk of harm to students through unjustified disciplinary measures triggered by system faults amplified by input noise. Such failure plausibly occurs in complex, real-world physical examination environments.  
+
+---

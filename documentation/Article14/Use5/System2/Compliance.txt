@@ -1,0 +1,32 @@
+**Article 14**
+
+### Ensuring Effective Human Oversight During Use
+
+The Recruitment Decision Forest system integrates human-machine interface components designed to facilitate continuous and effective human oversight throughout its operational lifecycle. The user interface includes an interactive dashboard that provides real-time visibility into candidate ranking outputs, feature importance metrics, and confidence scores associated with each prediction. These elements enable recruiting specialists to continuously monitor system behavior and detect any output that may appear anomalous or inconsistent with recruitment policies. The system logs all decisions and intermediate processing steps, offering transparency into its operation for review during and after use.
+
+Human operators maintain direct engagement with the system via configurable alerting mechanisms that notify recruiters of flagged anomalies, such as unexpected shifts in candidate scoring distributions or elevated uncertainty scores. The interface supports dynamic scenario analysis by allowing users to adjust input feature weights temporarily, testing the robustness of candidate scoring to varied assumptions. Collectively, these design choices underpin sustained human oversight by granting recruiters meaningful control and insight into the decision-making process.
+
+### Mitigating Risks to Health, Safety, and Fundamental Rights
+
+Recognizing the potential risks to the fundamental rights of candidates, particularly concerning nondiscrimination and data protection, the provider has embedded safeguards that aim to prevent or minimize adverse outcomes during both intended use and reasonably foreseeable misuse. The system undergoes rigorous bias detection and fairness evaluation during its iterative development lifecycle. Specifically, the provider tested the model on a validation dataset composed of 150,000 historic recruitment records, representing diverse demographic and professional backgrounds to minimize disparate impacts.
+
+Adversarial robustness testing was also performed to identify potential manipulated candidate inputs that could lead to skewed scores. The system employs threshold-based alert triggers that prompt recruiter review when outputs fall outside normative behavior ranges. Additionally, fallback procedures are instituted, enabling recruiters to override or exclude scores suspected of violating fairness principles. These mechanisms are complemented by systematic logging to capture instances of human intervention and rationale, supporting auditability concerning fundamental rights protection.
+
+### Proportionate Human Oversight Measures Based on Risk and Context
+
+Given the system’s moderate level of autonomy—providing candidate rankings without fully automating hiring—oversight measures are calibrated accordingly. Provider-built, embedded features (Article 14(3)(a)) include explainability modules integrated directly into the system to illuminate how individual features influence candidate scores on a per-case basis. This supports recruiter capacity to interpret outputs meaningfully and reduces overreliance risk.
+
+Moreover, as part of provider responsibilities prior to market placement (Article 14(3)(b)), detailed human oversight guidelines and training materials are supplied to the deployers. These materials outline best practices for continuous human monitoring, recognizing automation bias, and effective intervention points. The provider’s comprehensive deployment checklist ensures that these human oversight recommendations align with organizational roles and operational context before the system is put into service.
+
+### Enabling Recruiter Understanding, Monitoring, and Intervention
+
+To empower human overseers in accordance with Article 14(4), the system is delivered alongside extensive documentation describing model capabilities, inherent limitations, and operational constraints. This includes:
+
+- **Explanation Tools:** The system outputs Shapley value-based explanations for each candidate score, clarifying feature contributions in an intuitive format accessible to non-technical recruiters.
+- **Anomaly Detection Support:** Recruiters receive alerts for statistically significant deviations in candidate subgroup scoring patterns, supporting timely detection of systemic biases or malfunctions.
+- **Oversight Awareness:** Training emphasizes automation bias by including modules on cognitive biases in decision-making, fostering vigilance in interpretation and decision overrides.
+- **Decision Autonomy:** Recruiters retain full authority to disregard or override system outputs; the user interface prominently features an “Override” function enabling exclusion or manual rescoring of candidates.
+- **Emergency Intervention:** The system includes an authenticated "Stop" control that immediately suspends automated scoring processes, returning the system to a safe, quiescent state, ensuring rapid halting capability in case of detected malfunctions or emergent risks.
+- **Data Processing Records:** Logs maintain comprehensive records of processing activities involving personal data, detailing specific instances where special categories of data (e.g., ethnic origin or disability status) are processed solely for bias detection and correction. These records document the necessity of such processing and the absence of alternative data sufficient to meet the bias mitigation objective, consistent with relevant provisions under EU data protection regulations (Regulations (EU) 2016/679 and (EU) 2018/1725, Directive (EU) 2016/680).
+
+This suite of embedded features and supporting materials constitutes a coherent framework that enables recruiters to effectively understand, monitor, and intervene in system operation, thereby fostering responsible and compliant use.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+Risk management must be an ongoing, dynamic activity, with scheduled reviews and updates based on evolving usage data, emergent risks, and post-market feedback, covering all lifecycle phases from development to decommissioning.  
+
+[c] **Violation:**  
+The Election Sentiment Transformer’s risk management is established only during initial deployment phases, with no systematic update process tied to shifts in political climates, emergent misinformation tactics, or evolving public reactions to AI-generated messages after market release.  
+
+[d] **Justification:**  
+Because political discourse and social media trends rapidly evolve, failure to continuously review and update risk management ignores realistic emergent risks such as novel disinformation vectors or new vulnerable voter groups. This omission may subtly degrade compliance by making risk mitigation outdated and insufficient, despite appearing initially adequate.

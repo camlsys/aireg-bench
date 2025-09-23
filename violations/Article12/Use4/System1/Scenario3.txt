@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (b) facilitating the post-market monitoring referred to in Article 72."
+
+[b] **Guideline:**  
+Logs must capture comprehensive operational data, including timestamps, decision rationales, input contexts, and relevant metadata, to support effective post-market evaluation, root cause analysis of failures, and continuous improvement of the AI system.
+
+[c] **Violation:**  
+Insight Proctor Analytics anonymizes or aggregates input data excessively in logs to protect privacy, thereby removing important contextual information such as specific test metadata linkage or exact visual cues, which undermines the granularity needed for detailed post-market investigation.
+
+[d] **Justification:**  
+While privacy protection is vital, over-aggregation or anonymization in logs can reduce their utility for post-market monitoring because it prevents correlating system decisions with the precise input scenarios that caused them. This subtle violation arises as a trade-off decision that inadvertently compromises compliance with the requirement for sufficiently detailed logging to enable thorough system evaluation.

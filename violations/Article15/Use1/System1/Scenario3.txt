@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)."  
+
+[b] **Guideline:**  
+SafeRoute should implement cybersecurity safeguards such as secure data pipelines for sensor inputs, anomaly detection to identify adversarial input patterns, and validation methods ensuring training data integrity. Access controls, encryption, and real-time monitoring should be in place to detect attempts at data poisoning or adversarial input manipulation.  
+
+[c] **Violation:**  
+SafeRoute’s sensor data fusion component inadequately validates real-time inputs, allowing an attacker to inject crafted false vehicle count data through compromised roadside units that exploit lack of anomaly detection. This adversarial manipulation causes the Transformer model to underestimate traffic hazard probabilities, misleading traffic operators. Additionally, the training process does not include adversarial robustness testing or integrity checks, leaving the system vulnerable to model evasion attacks.  
+
+[d] **Justification:**  
+This violation is realistic because roadside units and sensor networks often have limited physical protection and can be targeted. The system’s failure to detect maliciously altered inputs subtly degrades prediction reliability without obvious signs, contravening the mandate for resilience against adversarial attacks. It remains plausible in complex, dynamic urban environments where exhaustive validation of every data source is challenging.

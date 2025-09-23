@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must capture contextual information and detailed metadata whenever the system makes decisions or updates its models that potentially alter performance or introduce risks, such as input anomalies, model retraining events, or usage patterns linked to erroneous outputs.
+
+[c] **Violation:**  
+The system’s logs track only final outputs and user queries but do not record parameters or state changes when the GBDT component updates its weighting coefficients based on new case fact patterns classified as “ambiguous.”
+
+[d] **Justification:**  
+This omission restricts traceability of model changes affecting classification performance, hampering risk identification tied to substantial modifications. The violation is subtle because logs exist but lack granularity regarding internal model adjustments, a plausible oversight in complex hybrid architectures.
+
+---

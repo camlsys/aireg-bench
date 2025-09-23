@@ -1,0 +1,28 @@
+**Article 12**
+
+**Implementation of Automatic Event Logging**
+
+The Legal Context Navigator integrates a comprehensive, immutable logging subsystem designed to record every operational event automatically throughout the entire system lifecycle. This logging mechanism captures timestamped data across components starting from input preprocessing, query parsing, model inference, to result generation and output delivery. Logs are generated via a structured event schema compatible with industry-standard formats (e.g., JSON Lines) to facilitate automated downstream analysis and audit. To align with the high-risk classification, the design ensures redundancy in log storage with cryptographic checksums, employing secure hash algorithms (SHA-256) to detect any unauthorized log modifications or deletions. The logging framework adheres to a zero-trust principle, automatically synchronizing all logs to a secure cloud-based repository compliant with EU data residency and security policies. Continuous integrity monitoring is in place to detect anomalies such as log tampering or data corruption.
+
+**Scope and Relevance of Recorded Events for Risk Identification**
+
+The system’s logging strategy focuses on capturing events critical to identifying and diagnosing scenarios that may generate risks as defined under Article 79(1), including unintended errors, significant deviations in output consistency, and indications of model drift or performance degradation. Specific logged events include:
+
+- Model confidence scores and attention-weight distributions for each query to detect potential uncertainty or ambiguous interpretations.
+- Alerts triggered by threshold breaches on disallowed content patterns or indications of bias flagged by real-time bias detection modules embedded within the inference pipeline.
+- Versioning metadata of model checkpoints, training data snapshots, and algorithmic configuration parameters to facilitate traceability of substantial system modifications impacting legal reasoning outputs.
+- External system interactions, including user authentication events, input query origins, and context-switch signals when switching between legal domains or regulatory frameworks.
+
+Lexicon Analytics has calibrated these logging parameters after extensive field testing involving over 100,000 judicial queries, ensuring that all relevant operational facets linked to risk exposure are systematically captured without overwhelming data volume.
+
+**Facilitation of Post-Market Surveillance Activities**
+
+To support post-market monitoring requirements, the logging system provides structured and time-indexed records accessible through secure audit portals operated by authorized compliance and quality assurance personnel. Logs are aggregated to enable longitudinal analyses of model behavior trends, error types, and user feedback integration points. The system automatically correlates usage patterns with detected risk events, empowering prompt root cause analysis.
+
+Additionally, the system incorporates automated report generators that compile periodic risk assessment summaries, performance benchmarks against regulatory compliance criteria, and incident logs reflecting any deviations that could affect judicial decision integrity. This reporting pipeline is modular and configurable to accommodate evolving regulatory guidance from oversight bodies.
+
+**Operational Monitoring to Ensure Consistent System Functioning**
+
+To assure ongoing compliance and safe operation, the Legal Context Navigator’s logging subsystem feeds a dedicated monitoring dashboard that tracks key performance indicators (KPIs) derived from the logs. KPIs include query processing latency, model output variance, flagged content ratios, and system health metrics such as compute load and uptime percentages. This dashboard supports automated alerts triggering predefined mitigation workflows — such as model retraining or temporary suspension — when anomalies potentially compromising the system’s high-risk function are detected.
+
+The system’s architecture enables integration of audit trails with the judicial authority’s internal monitoring tools, facilitating transparency and accountability in real-time usage. All monitoring logs maintain detailed traceability to assist in reconstruction of decision pathways, thereby enhancing interpretability and verifiability of AI-assisted legal reasoning outputs as required by high-risk AI system standards.

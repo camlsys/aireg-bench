@@ -1,0 +1,61 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+SafeRoute Traffic Monitor has been developed in strict adherence to comprehensive data governance and management principles that align with the system’s intended purpose of enhancing urban traffic safety. The data strategy involved detailed design decisions to ensure data provenance, integrity, and applicability.
+
+- **Design Choices:** The architecture integrates Graph Neural Networks (GNN) trained on graph-structured traffic network data, combined with Transformer encoder models managing heterogeneous sensor streams (traffic cameras, inductive loops, weather stations, and accident reports). This hybrid approach was selected to capture both spatial dependencies in road topology and temporal correlations in multi-modal sensor data, directly supporting traffic hazard prediction accuracy.
+
+- **Data Collection and Origin:** The primary datasets were sourced from municipal traffic management repositories, including continuous vehicle count logs and road infrastructure metadata from 45 urban centers across the EU, covering over 2.8 million daily vehicle movements over a three-year period (2020–2023). Weather data was obtained from regional meteorological services, while accident reports were drawn from publicly accessible police records. All personal data within the accident reports were anonymized at source, with original collection authorized for public safety purposes to comply with GDPR.
+
+- **Data Preparation Operations:** The raw inputs underwent rigorous annotation, normalization, and cleaning procedures. Vehicle counts were aggregated into 5-minute intervals, and anomalous sensor readings due to hardware faults were identified via automated thresholding and removed (<0.5% of data). Accident reports were manually verified and labeled by a team of traffic analysts to include severity and location metadata. Dataset enrichment involved correlating weather patterns with traffic volume fluctuations to improve contextual understanding.
+
+- **Formulation of Assumptions:** The provider assumed that annotated sensor inputs accurately represent real-world traffic conditions and that historical patterns reasonably predict future hazards. The datasets were presumed representative of typical urban traffic conditions during the data collection period, with explicit notation of known limitations such as underrepresentation of rare weather events (e.g., extreme storms).
+
+- **Data Availability, Quantity, and Suitability:** Dataset volumes exceed 150 million sensor measurements and 28,000 recorded incidents, ensuring statistical robustness. Validation analyses confirmed that the training and testing splits maintain temporal and spatial diversity to mitigate overfitting to specific locales or timeframes. Model performance benchmarks on held-out test sets demonstrated 91.3% hazard prediction accuracy with a false positive rate below 4%, reflecting the dataset’s representativeness and adequacy.
+
+- **Bias Examination and Mitigation:** Data bias assessments focused on avoiding discrimination that could affect fundamental rights, such as disproportionate impact on neighborhoods with differing socioeconomic profiles. Spatial data coverage analysis revealed minor gaps in peripheral urban districts due to fewer sensors; these were addressed by synthetic data augmentation based on adjacent sensor neighborhoods. Dedicated bias detection pipelines incorporated fairness metrics adapted from the Fairlearn toolkit, targeting error parity across distinct city zones.
+
+- **Bias Detection and Correction Measures:** Where biases related to sensor distribution emerged, retraining incorporated reweighted loss functions to reduce geographic prediction disparity. Continuous monitoring processes employ statistical drift detection on incoming data streams to identify systemic bias shifts or performance degradation, triggering retraining or data quality interventions.
+
+- **Identification and Addressing of Data Gaps:** Noted data gaps include under-sampling during night hours and limited representation of rare traffic incidents (e.g., multi-vehicle pileups). The provider supplemented these through scenario-based synthetic data generation validated against expert domain knowledge. Additionally, weather extremes with limited historic occurrence were modeled via data augmentation to improve model generalization.
+
+- **Use of Special Categories of Personal Data:** SafeRoute does not process special categories of personal data. Accident records are anonymized and aggregated to ensure no personal identifiers persist. Consequently, no exceptional processing measures under Article 10(5) were undertaken.
+
+### Data Set Attributes Related to Representativeness and Relevance
+
+The training, validation, and testing datasets for SafeRoute have been curated to meet stringent representativeness and quality criteria aligned with the urban traffic monitoring domain.
+
+- **Relevance and Representativeness:** Multiple rounds of exploratory data analysis verified that datasets adequately represent the diversity of EU urban traffic conditions intended for deployment. Geographically, data encompasses large metropolitan (e.g., Paris, Berlin) and medium-sized urban areas (e.g., Bilbao, Ljubljana) covering varying infrastructure layouts and traffic patterns. Temporal coverage includes weekdays, weekends, peak and off-peak hours over multiple seasons to encapsulate recurring and atypical traffic scenarios.
+
+- **Error Minimization and Completeness:** Error rates in sensor data post-cleaning are estimated below 0.2%, confirmed by cross-validation against manual traffic counts for 15 sample locations. Missingness is limited (<0.3%), with imputation via spatial-temporal interpolation where necessary. Completeness is further reinforced by triangulating multiple data sources to reduce blind spots.
+
+- **Statistical Properties:** Dataset statistical properties were analyzed using distributional metrics including mean vehicle count, variance by time of day, and frequency of incident types. The datasets ensure equitable representation of demographic groups indirectly affected through urban districts, satisfying fairness considerations without individual-level data.
+
+### Contextual and Geographical Specificities
+
+SafeRoute incorporates geography- and context-specific data features that align with operational environments of intended use.
+
+- **Geographical Context:** The GNN’s graph representation models specific road network topologies of target urban areas, updated quarterly to reflect infrastructure changes. Node and edge attributes—such as speed limits, lane counts, and traffic light timings—are tailored per locale to accurately mirror on-the-ground conditions. 
+
+- **Contextual and Functional Elements:** The Transformer encoder integrates data relating to weather conditions, special events (e.g., festivals, roadworks), and accident severity to adapt traffic risk predictions dynamically. Behavioral elements, such as typical rush-hour behavior and public transport schedules, have been integrated as context features enabling nuanced temporal modeling.
+
+- **Adaptation to Operational Settings:** The system design assumes deployment within urban traffic control centers operating 24/7. Real-time ingestion pipelines are established with latency constraints below 2 seconds for hazard warnings, ensuring alignment with operational requirements.
+
+### Data Security and Privacy Safeguards
+
+While SafeRoute does not process special categories of personal data, the provider has implemented state-of-the-art security and data confidentiality measures consistent with relevant data protection legislation and AI Act expectations.
+
+- **Data Access Controls:** All datasets are stored within secure, access-controlled environments with multi-factor authentication required for all users involved in data processing and model development. Role-based permissions limit data exposure to authorized personnel only.
+
+- **Privacy-Preserving Techniques:** Aggregated data representations and pseudonymization procedures firmly separate individual identifiers from analytic datasets. Data transfers between municipal sources and the provider’s cloud infrastructure employ end-to-end encryption (TLS 1.3).
+
+- **Documentation and Monitoring:** Comprehensive logging records all data access and processing activities, enabling traceability and accountability. Regular security audits and penetration testing are conducted biannually to maintain compliance with evolving security standards.
+
+### Testing Data Sets for Non-Training Models
+
+The system’s performance validation employed dedicated testing datasets reflective of real-world operational conditions.
+
+- **Testing Data Composition:** Testing sets comprise a statistically independent 15% of the total dataset, stratified by geography and temporal segments to ensure unbiased evaluation. These datasets have undergone identical cleaning and annotation standards as training sets.
+
+- **Quality Assurance Processes:** Statistical similarity analyses confirm that testing datasets maintain balance in key variables relative to training data. The system exhibits consistent predictive reliability, achieving stable F1-scores and low bias metrics across urban subpopulations, evidencing dataset quality alignment with system design goals.

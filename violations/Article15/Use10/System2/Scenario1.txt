@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The system must maintain stable, high accuracy and robustness despite evolving data distributions or shifts in social media discourse, and must sustain secure operations without degradation or unpredictable behavior during its deployment period. Continuous performance monitoring and adaptation without compromising accuracy and robustness are essential.  
+
+[c] **Violation:**  
+The Election Sentiment Transformer updates its models periodically using live social media data but does not implement rigorous validation steps to detect degradation in accuracy after model updates, resulting in occasional inconsistencies in sentiment classification during contentious political events.  
+
+[d] **Justification:**  
+Without robust validation after model updates, the system fails to ensure consistent accuracy and robustness throughout its lifecycle, subtly violating the requirement as performance issues emerge only under specific, complex conditions—making this a realistic but not blatant compliance gap.  
+
+---

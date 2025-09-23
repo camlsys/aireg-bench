@@ -1,0 +1,33 @@
+**Article 10**
+
+### Dataset Governance and Origin
+
+SafeRoute Traffic Monitor’s training, validation, and testing datasets were constructed through a rigorous data governance framework tailored to urban traffic safety applications. The primary data sources include fixed and mobile sensor arrays deployed across multiple European metropolitan areas between 2020 and 2023, capturing vehicle counts, traffic flow speeds, weather station reports, and incident logs. Personal identifying data were not collected, focusing strictly on aggregate traffic and environmental indicators. All data acquisition processes were documented with metadata detailing sensor types, temporal coverage, and geospatial coordinates to ensure traceability and alignment with the system’s intended real-time urban traffic hazard prediction purpose.
+
+### Data Preparation and Assumptions
+
+Extensive preprocessing was applied to raw sensor streams to enhance signal reliability. This included procedures such as outlier detection, temporal interpolation for missing values, and noise filtering. Critically, data segments exhibiting sensor unreliability—manifested as noise spikes or partial signal dropouts—were excluded prior to training to prevent model confusion from inconsistent inputs. Annotation efforts linked traffic incidents from official traffic authority records to sensor data timestamps, establishing supervised learning labels for hazardous situation detection. Assumptions in the dataset design included that the collected sensor data sufficiently represented typical and peak daytime urban traffic behaviors and weather conditions classified as mild or moderate based on standardized EU meteorological categories.
+
+### Dataset Suitability and Representativeness
+
+The training set comprises approximately 5 million data points drawn from 15 distinct urban environments. Datasets were stratified by time of day and weather conditions; however, only 2% of data correspond to night-time periods, and severe weather conditions (e.g., storms, heavy snow) account for less than 1% of total samples. This limited representation results from a deliberate exclusion of data labeled with excessive sensor noise or missingness, which largely coincided with adverse weather or low-light conditions, impacting sensor reliability. Validation and test datasets mirrored these distributions to maintain evaluation consistency. Comprehensive benchmarking against reference traffic datasets (e.g., EU Urban Traffic Data Consortium 2022) confirmed that SafeRoute’s data accurately represent daytime and typical weather driving conditions with a mean absolute error reduction of 12% over baseline models, but the scarcity of adverse-condition samples noticeably degraded predictive accuracy in those contexts.
+
+### Bias Identification and Management
+
+A formal bias assessment was conducted focusing on temporal and environmental factors influencing sensor data integrity. The preprocessing pipeline’s sensor-noise filtering, while improving day-condition data quality, inadvertently biased the dataset toward well-lit, moderate-weather periods. This introduces a risk of reduced model performance at night and during severe weather, conditions under which hazard predictability is critical. The bias assessment report quantified this gap and identified it as a principal limitation in system robustness. To mitigate this, the development roadmap incorporates exploration of synthetic augmentation techniques and simulation-generated data to model underrepresented conditions. However, these approaches remain under validation and are not included in the current deployed model.
+
+### Data Quality Criteria and Limitations
+
+Datasets meet high standards of data completeness and integrity for the domain and conditions well represented within the data. Cross-validation and k-fold testing using held-out daytime, clear-weather data show consistent accuracy and stability of hazard predictions, reflecting reliable statistical properties. Nonetheless, Night-time and severe-weather data scarcity results in lower sensitivity and increased false-negative rates during these periods, as confirmed by domain-specialist evaluations and field trials conducted in autumn 2023. System users are advised via documentation that predictive reliability is presently constrained under such conditions. The dataset design reflects a prioritization of data quality over quantity, choosing to exclude unreliable sensor readings systematically, which reduced data noise but introduced coverage gaps.
+
+### Geographical and Contextual Considerations
+
+Data encompass traffic environments from 15 European cities varying in size, traffic density, and climate, representing the intended functional and geographical scope for SafeRoute. The captured road network typologies include urban arterial roads, secondary streets, and intersections, while sensor modalities integrate fixed roadside radar, inductive loops, and weather stations. However, certain environmental contexts, notably those with frequent atmospheric disturbances or reduced light levels, are underrepresented. This impacts model training on scenarios common in northern latitudes during winter darkness or coastal cities facing episodic storms. The dataset’s statistical properties and environmental stratifications are documented to assist users in contextualizing system outputs relative to their deployment venues.
+
+### Special Categories of Data and Security
+
+SafeRoute’s data collection and processing exclude special categories of personal data as defined under EU privacy regulations. Consequently, no exceptional processing safeguards beyond established data security protocols were necessary. Technical measures such as encrypted storage, role-based access control, and audit logging were applied to ensure data confidentiality and integrity throughout the model development lifecycle.
+
+### Mitigation and Future Data Strategy
+
+Recognizing identified dataset gaps, Meridian Traffic Solutions is actively investigating multiple compliance-aligned methods to improve coverage for night-time and severe weather conditions. Current plans include deployment of enhanced sensor arrays with improved low-light sensitivity and integration of auxiliary data sources such as auxiliary camera feeds and crowd-sourced incident reports. Additionally, collaboration with meteorological agencies is envisaged to incorporate richer weather event classifications. These initiatives aim to expand the representativeness of future training datasets, reduce identified biases, and improve the SafeRoute system’s hazard prediction fidelity across all operational conditions in line with evolving regulatory expectations.

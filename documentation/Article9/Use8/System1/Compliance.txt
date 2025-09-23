@@ -1,0 +1,69 @@
+**Article 9**
+
+### Establishment and Structure of the Risk Management System
+
+Sentinel Technologies has implemented a comprehensive risk management system for Priority Response Analytics that operates as a continuous, iterative lifecycle process aligned with the system’s high-risk classification. This system integrates structured methodologies that oversee all stages from initial design, development, testing, deployment, and ongoing maintenance, ensuring systematic tracking and management of risks. The documented process includes clearly defined roles and responsibilities within the development team for risk identification, evaluation, mitigation, and review, supported by version-controlled risk management reports updated quarterly and following significant system modifications.
+
+The risk management framework adheres to international standards such as ISO 14971 (application of risk management to medical devices) adapted for AI, and IEC 63077 on AI system lifecycle risk management, thereby assuring that risk processes are both rigorous and scalable. Continuous integration pipelines embed automated risk checkpoints that flag deviations in performance or safety indicators, triggering human review and documentation in the risk register.
+
+### Identification and Analysis of Known and Foreseeable Risks
+
+Through a multidisciplinary approach combining domain experts in emergency services, AI specialists, and human factors engineers, Priority Response Analytics’ known and reasonably foreseeable risks have been systematically identified and analyzed. This process leveraged failure modes and effects analysis (FMEA) during model development phases, particularly focusing on potential inaccuracies in urgency classification stemming from incomplete incident data or ambiguous natural language input.
+
+For example, scenarios where the textual dispatch notes contain idiomatic language or multiple emergency mentions were flagged as reasonably foreseeable factors that might reduce model confidence or lead to misprioritization. This initial risk catalogue was enriched by extensive literature reviews on emergency dispatch errors and consultations with end-user representatives to ensure relevant risks to health, safety, and fundamental rights—such as delayed response causing harm or inappropriate resource allocation—were comprehensively covered.
+
+### Risk Estimation and Evaluation under Intended Use and Reasonably Foreseeable Misuse
+
+Quantitative risk estimation utilized extensive simulation datasets totaling over 1 million historical incident cases from multiple European dispatch centers, balanced geographically and demographically. Priority Response Analytics’ performance metrics include an average precision of 0.89 and recall of 0.87 on validation data, parameters validated under various noise injections and partial data input conditions to simulate reasonable misuse scenarios such as data corruption, incomplete calls, or atypical phrasing.
+
+Risk evaluation included probabilistic modeling of potential adverse outcomes, applying Bayesian networks to link incorrect prioritizations with possible downstream effects on emergency response times and casualty severity. For instance, misuse like deploying the system without updated model retraining or feeding incomplete dispatch notes was assessed, with residual risks explicitly quantified and examined to guide mitigation priorities.
+
+### Post-Market Risk Data Integration
+
+Sentinel Technologies has established a post-market monitoring system that continuously collects anonymized operational data from deployed instances, adhering strictly to EU data protection requirements. The system captures performance anomalies, user feedback from dispatchers, and incident response outcomes. Monthly reports derived from this data feed directly into the risk management framework, enabling reassessment of emerging or evolving risks, including those unseen during development such as novel emergency types or new communication patterns in dispatch notes.
+
+This feedback loop is supported by automated alerting systems for performance degradations beyond predefined thresholds and scheduled annual comprehensive risk review sessions involving cross-functional teams. This mechanism aligns with the requirements referenced in Article 72 for effective post-market monitoring integration.
+
+### Risk Management Measures: Design, Development, and Information Provision
+
+Risk mitigation begins with architectural design choices, including:
+
+- Utilizing Gradient Boosted Decision Trees (GBDT) for robust handling of structured incident data, providing explainability via feature importance scores to facilitate validation by human supervisors.
+- Incorporating Transformer encoder models fine-tuned on over 50,000 anonymized emergency dispatch transcripts to optimize natural language understanding accuracy.
+- Implementing ensemble decision mechanisms within the model to reduce single-point failure risks and enhance consistency.
+
+Where complete risk elimination was not technologically feasible, layered mitigation controls were introduced. These include configurable alert thresholds for dispatch operators, overrides enabling manual prioritization adjustments, and fail-safe default settings triggering the highest urgency categorization upon model uncertainty above 0.2 (on a 0–1 confidence scale).
+
+Comprehensive technical documentation detailing system design, limitations, usage conditions, and configuration guidelines is provided in compliance with Article 13 requirements. Additionally, targeted training materials tailored to dispatch operators’ expected technical knowledge and operational context have been developed to maximize appropriate system interactions and awareness of residual risks.
+
+### Integration and Interaction of Risk Management Measures
+
+The design of Priority Response Analytics explicitly considers the interactions between detection accuracy, explainability, and operator interface usability to achieve a balanced risk reduction effect. For instance, model transparency is enhanced by integrating data visualization tools that illustrate decision rationale, enabling operators to identify and correct potential misclassifications rapidly.
+
+The combination of model architecture robustness, user override provisions, and iterative feedback from post-market data ensures that risk management measures complement one another rather than produce conflicting controls, aiming for an optimized risk profile reflective of the system’s intended real-time use in high-stakes emergency environments.
+
+### Residual Risk Assessment and Acceptability
+
+Residual risks were analyzed quantitatively and qualitatively. Each identified hazard’s residual risk level was calculated by integrating the likelihood of occurrence with the mitigative effectiveness of the measures implemented. For example, the residual risk of misprioritization due to ambiguous textual input is rated as low, given the fail-safe reclassification mechanisms and operator intervention capabilities.
+
+Overall system risk was reviewed by an independent safety assurance panel convened within Sentinel Technologies, which included external emergency response domain advisors. This panel confirmed that the aggregated residual risks fall within acceptable limits given the system’s operational benefits and risk mitigation architecture. Risk acceptance criteria were predefined based on established emergency services benchmarks and aligned with public safety imperatives.
+
+### Testing for Risk Management Optimization and Compliance
+
+Priority Response Analytics underwent rigorous testing throughout its development lifecycle, including unit testing of model components, integration testing, and system-level testing in both simulated and controlled live dispatch center environments. Testing metrics included accuracy, latency, robustness to input perturbations, model drift detection capabilities, and user experience assessments.
+
+Real-world pilot deployments were conducted in two European emergency dispatch centers over six months, yielding data supporting the system’s consistent performance throughout varying operational conditions. Reported metrics demonstrated stability in prioritization accuracy (exceeding 85% across all emergency categories) and low false-negative rates for critical incidents (<5%).
+
+Testing preceded every market release, with probabilistic risk thresholds predefined based on emergency response standards (e.g., 95% confidence intervals on urgency classification). Continuous adaptation of the testing protocols ensures sustained compliance with evolving technical and regulatory requirements.
+
+### Consideration of Vulnerable Groups
+
+While designing and assessing Priority Response Analytics, particular focus was placed on possible adverse impacts on minors and vulnerable populations frequently involved in emergency events, such as individuals with disabilities or those experiencing mental health crises. Risk analyses incorporated scenario-based assessments that accounted for potentially atypical dispatch note formulations or lower-volume incident types involving these groups.
+
+Mitigation strategies included enhanced natural language processing training on diverse textual data reflecting various communication styles and the implementation of sensitivity filters to flag emergencies involving potentially vulnerable subjects for explicit dispatcher review.
+
+### Alignment with Other Union Internal Risk Management Requirements
+
+The risk management procedures described are structured to integrate with wider quality and safety management systems under relevant Union product safety and healthcare device regulations, facilitating streamlined compliance processes for providers operating under multiple regulatory regimes.
+
+This synergy enables the use of shared documentation, risk registers, and training protocols, minimizing duplication while maintaining comprehensive oversight and reporting standards as mandated by the EU AI Act and ancillary legal frameworks.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall take into account, to the extent required by the intended purpose, the characteristics or elements that are particular to the specific geographical, contextual, behavioural or functional setting within which the high-risk AI system is intended to be used."
+
+[b] **Guideline:**  
+The data sets must incorporate regional legal language variants, procedural norms, and contextual usage particularities reflective of different EU Member States’ judicial practices, ensuring contextual semantic accuracy and functional fit within national legal frameworks.
+
+[c] **Violation:**  
+The data preprocessing pipeline applies a uniform annotation and normalization scheme that abstracts away jurisdiction-specific terminology and procedural distinctions, causing subtle semantic mismatches when the model interprets laws and precedents from different Member States as if they shared identical legal contexts.
+
+[d] **Justification:**  
+Ignoring these contextual differences risks inaccurate mapping of laws to facts in national judicial settings, reducing the tool’s usefulness and potentially influencing decisions based on misinterpreted legal nuances. Because the system produces fluent, plausible outputs, this contextual inadequacy may not be immediately detected, making it a subtle but real compliance gap.

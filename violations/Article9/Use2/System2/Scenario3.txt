@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5. (c) provision of information required pursuant to Article 13 and, where appropriate, training to deployers. With a view to eliminating or reducing risks related to the use of the high-risk AI system, due consideration shall be given to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context in which the system is intended to be used."
+
+[b] **Guideline:**  
+Compliance requires tailored user training materials and communication that match the technical skills and operational contexts of pipeline operators and field technicians, ensuring proper interpretation of system alerts and understanding of system limitations.
+
+[c] **Violation:**  
+Meridian Safety Systems provides a generic user manual with technical jargon that assumes advanced AI expertise, failing to develop accessible training or context-specific guidance for field technicians who may misinterpret anomaly alerts or over-trust the system’s classification confidence.
+
+[d] **Justification:**  
+This subtle non-compliance undermines risk mitigation as inadequate training and information provision result in improper use or overlooked warnings, failing to account for varying deployer knowledge levels and operational contexts, which is required to minimize residual risk effectively.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))  
+
+[b] **Guideline:**  
+The system must provide intuitive and accessible human-machine interfaces that allow operators to monitor system performance comprehensively and intervene when necessary. Interfaces must present outputs and internal system states at an appropriate level of detail without overwhelming users, enabling them to detect anomalies or unexpected behaviors promptly.  
+
+[c] **Violation:**  
+SafeRoute Traffic Monitor’s interface aggregates various sensor inputs and predictions into a single confidence score without visualizing intermediate data or uncertainty metrics, making it difficult for operators to detect erroneous outputs or degraded model performance during peak traffic congestion or sensor failures.  
+
+[d] **Justification:**  
+By consolidating diverse data into an opaque confidence measure without exposing relevant internal states or uncertainty, human overseers cannot effectively monitor or understand system operation, violating the requirement for effective human oversight tools. This subtle design choice reduces oversight quality without an explicit system failure, making non-compliance realistic and not blatantly obvious.

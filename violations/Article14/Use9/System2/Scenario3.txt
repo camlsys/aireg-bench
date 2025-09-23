@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"...to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations for decisions to be taken by natural persons;" (Article 14(4)(b))
+
+[b] **Guideline:**  
+The system must include explicit, clear, and context-sensitive warnings or training aids to mitigate automation bias, helping users maintain critical judgment rather than uncritically accepting outputs as correct or authoritative.
+
+[c] **Violation:**  
+Legal Context Navigator lacks real-time or contextual reminders about the risk of automation bias during key interactions, and its training materials provide only generic warnings unrelated to concrete scenarios in judicial decision-making.
+
+[d] **Justification:**  
+Without embedded, situation-aware prompts, users may unconsciously trust AI outputs with excessive confidence, especially given their complexity and authority. This subtle gap leads to automation bias, breaching the article’s requirement that users remain aware of over-reliance tendencies, thereby compromising effective human oversight.

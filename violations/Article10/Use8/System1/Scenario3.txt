@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"(f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Compliance requires systematic bias assessments against protected attributes (e.g., ethnicity, gender) and continuous monitoring of priority setting outcomes to identify potential discriminatory effects, coupled with mitigations such as data balancing, algorithmic fairness techniques, or exclusion of biased features.  
+
+[c] **Violation:**  
+The model uses textual dispatch notes containing expressions or coded language correlated with socio-economic or ethnic markers without performing thorough bias detection or mitigation, leading to subtle but systematic deprioritization of calls from certain minority neighborhoods.  
+
+[d] **Justification:**  
+This failure to detect and mitigate bias linked to sensitive socio-demographic factors contravenes Article 10(2)(f)-(g). The violation is subtle because the bias arises indirectly via input text correlations rather than explicit model features, making discrimination latent and harder to identify without targeted analysis of model decisions versus demographic data.

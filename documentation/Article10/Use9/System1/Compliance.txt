@@ -1,0 +1,41 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The development of Judicial Insight Assistant's AI models was conducted under a comprehensive data governance framework designed to ensure data quality aligned with the intended legal research and decision support functions. Key design choices prioritized strict alignment between the AI models’ outputs and the judicial context, ensuring that all data handling, processing, and model training stages preserved the relevance and integrity of legal information. The data collection processes sourced legal documents, case law, statutes, and annotated fact patterns from licensed, authoritative databases with clear provenance records. Where personal data appeared in case documents, the original purposes included public judicial transparency and legal record-keeping, documented through institutional agreements.
+
+Annotation and labelling procedures were executed by legally trained annotators, using controlled vocabularies and standardized taxonomies for legal entities, facts, and judicial outcomes. Each document underwent cleaning to remove inconsistencies such as OCR errors and outdated references. The datasets were regularly updated and enriched with newly published judgments and statutory amendments using automated pipelines coupled with expert review to ensure currency. Assumptions underlying the data reflect that the provided documents accurately represent the relevant judicial contexts, legal terminology, and factual nuances essential for decision support, validated through iterative stakeholder consultations and domain expert feedback.
+
+Data availability was ensured via a database spanning over 2.5 million legal documents and 150,000 manually annotated fact patterns, constructed to cover the European jurisdictional spectrum intended for system deployment. Quantitative assessments demonstrated that the aggregate datasets provide sufficient coverage of common and exceptional legal scenarios encountered in judicial workflows.
+
+Comprehensive bias examinations focused on risks to fairness, non-discrimination, and legal soundness. Potential imbalances in the representation of geographic regions, case types, and minority group legal issues were identified using statistical parity and disparity metrics. For example, analyses revealed underrepresentation of certain regional case sets, which was remedied by targeted data acquisition and expert annotation to close gaps. To mitigate bias, procedural safeguards were implemented including data rebalancing algorithms, adversarial retraining with synthetic counterfactuals, and continuous bias audits integrated into the model update cycles. These measures collectively lower the risk of disproportionate impact on any protected group or judicial outcome type.
+
+Significant data gaps, such as emerging case law in rapidly evolving areas of law, were actively monitored through ongoing surveillance of public legal repositories. When such gaps were identified, supplementary data sourcing and expert annotation were employed to sustain compliance with intended system performance and fairness standards. Documentation details these identification and remediation processes in regularly updated version-controlled records accessible to auditors.
+
+**Relevance, Representativeness, and Data Quality**
+
+Training, validation, and testing datasets are constructed to be highly relevant and representative of the judicial contexts within which the system operates. The combined datasets demonstrate statistical representativeness across key dimensions—jurisdiction, case complexity, legal domain, and source document type—validated through stratified sampling methodologies and coverage metrics exceeding 95% of expected case distributions. Systematic error detection processes revealed fewer than 0.15% anomalous records, corrected or excluded before model use to maintain dataset integrity.
+
+Completeness checks ensured documents contained full text and metadata relevant for legal interpretation, such as citation chains and procedural histories. The datasets include temporal spans sufficient to reflect evolving legal standards, with model retraining schedules aligned to capture legal changes within a 12-month lag. Statistical analyses confirmed that features extracted, such as named entities and fact patterns, adhere to expected frequency distributions and semantic consistency, aligning with expert legal expectations.
+
+**Contextualization of Data for Jurisdictional and Functional Specificity**
+
+To respect the geographical and functional contexts of the European judicial environment, datasets incorporate regional legal variations, language nuances, and procedural differences. For instance, separate data stratifications were employed to capture distinctions between civil law and common law traditions present in various EU member states. Language-specific preprocessing pipelines handle multilingual corpora, applying tokenization and normalization aligned with local linguistic characteristics. Behavioral and functional contextualization was integrated by including documents from diverse judicial tiers (e.g., appellate, supreme courts) and legal domains (e.g., criminal, administrative law) relevant to the AI system's operational scope.
+
+These context-sensitive design decisions ensure that model outputs maintain legal accuracy and relevance tailored to the specific judicial applications anticipated. Data selection and feature engineering target functional elements such as statutory references and fact pattern structures critical for judicial assistance, reinforcing applicability and minimizing misinterpretation risks.
+
+**Handling of Special Categories of Personal Data**
+
+While the system primarily operates on publicly accessible judicial records that do not include special categories of personal data as defined by the EU AI Act, exceptional processing of such data has been strictly confined to bias detection and correction activities as warranted. In instances where sensitive personal data were indispensable for bias analysis (e.g., to detect disparate impacts on protected groups in legal outcomes), these data were processed under rigorous safeguards:
+
+- Alternative data sources, including synthetic and anonymized datasets, were first exhaustively evaluated; bias correction utilizing special categories was only employed when these alternatives were insufficient.
+  
+- Special categories of personal data were pseudonymized using state-of-the-art cryptographic techniques before incorporation in training pipelines. Access to these pseudonymized datasets was controlled via multi-factor authentication with role-based permissions, maintaining detailed access logs subject to auditing.
+
+- Data segregation policies and encrypted storage ensured no unauthorized transmission or third-party access occurred. Processing environments operated under strict confidentiality agreements with personnel trained in data protection obligations.
+
+- Bias identification results were continually monitored, and special categories of personal data were expunged immediately once the corresponding bias mitigation cycle concluded or upon reaching the data retention deadlines specified in internal data retention policies aligned with GDPR mandates.
+
+---
+
+This documentation evidences a comprehensive and structured approach to data quality, governance, and bias mitigation aligned with the demanding requirements for high-risk AI systems as articulated in Article 10 of the EU AI Act.

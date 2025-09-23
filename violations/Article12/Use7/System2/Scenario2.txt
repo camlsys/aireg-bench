@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk..."  
+
+[b] **Guideline:**  
+Logs must capture contextual and technical indicators that can foresee or detect deviations or anomalies—such as input data distributions, confidence scores, or system errors—that might lead to biased decisions or substantial model drifts posing risks to individuals.  
+
+[c] **Violation:**  
+The system’s logs record only the final credit risk score without including metadata such as confidence intervals, anomalous input flags, or detected shifts in input feature distributions that could signal emerging biases or errors.  
+
+[d] **Justification:**  
+Without these richer logs, early detection of risks or unintended model changes is impossible, breaching the requirement to enable identification of risk situations. This gap is subtle because the logs contain some data, but critical risk-relevant indicators are systematically omitted.  
+
+---

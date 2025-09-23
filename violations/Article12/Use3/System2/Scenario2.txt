@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must capture contextual variables and model decision parameters that signal when the AI's assessment could lead to significant adverse impacts on trainees’ certification outcomes or curriculum steering, including system confidence scores, feature importance fluctuations, and triggered model retraining events.
+
+[c] **Violation:**  
+The system logs only final competency scores without recording intermediate feature influence metrics or confidence thresholds when classifications are borderline, omitting indicators that a particular evaluation could be risk-prone or that model updates may have materially altered scoring logic.
+
+[d] **Justification:**  
+Failing to log decision-critical metadata like confidence intervals and model version changes conceals early warning signs or substantial modifications that might unfairly affect learner certifications. This subtle inadequacy prevents retrospective identification of high-risk situations, compromising risk management and traceability without obvious missing core data.
+
+---

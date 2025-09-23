@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)"  
+
+[b] **Guideline:**  
+The AI system must incorporate proactive cybersecurity measures against adversarial manipulations, including monitoring for abnormal input patterns, validating training data integrity, and having incident response plans for exploitation attempts.  
+
+[c] **Violation:**  
+The analyzer’s training pipeline lacks robust validation against malicious manipulation of submitted student data, allowing cleverly crafted adversarial inputs (e.g., subtle semantic text perturbations or injected numerical anomalies) to skew personalized feedback generation, thereby biasing future learning recommendations without triggering alerts.  
+
+[d] **Justification:**  
+The absence of detection and response mechanisms for adversarial examples or data poisoning in a socially critical educational context can progressively degrade system outputs and corrupt learning trajectories. This presents a realistic, covert cybersecurity weakness that contravenes the mandated technical safeguards.

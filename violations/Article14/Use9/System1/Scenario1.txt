@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))  
+
+[b] **Guideline:**  
+The AI system must incorporate user interfaces and interaction mechanisms that enable judicial users to observe system behavior in real time, understand intermediate outputs, and detect potential errors or inconsistencies during use. Effective oversight implies that users can continuously monitor and interrogate the system’s reasoning or decision pathways without excessive technical barriers.  
+
+[c] **Violation:**  
+The Judicial Insight Assistant presents legal research summaries and fact classifications but only exposes final aggregated confidence scores and citations without accessible intermediate reasoning steps or clarifications on how conflicting legal sources were weighted. The interface does not allow judges or clerks to probe the decision trees or transformer attention patterns that underpin fact pattern classification and text interpretation, limiting their ability to effectively oversee or question outputs during case preparation.  
+
+[d] **Justification:**  
+This limitation undermines effective human oversight by obstructing transparency and monitoring opportunities, violating the requirement for appropriate human-machine interface tools. It is subtle because the outputs appear comprehensive and accurate on the surface, leading users to trust results without realizing that they cannot truly verify or scrutinize underlying processing during use—a realistic scenario given typical legal workflows.

@@ -1,0 +1,43 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The Talent Insight Model was developed utilizing a curated dataset of approximately 1.2 million anonymized resumes and job descriptions collected over a five-year period from multiple recruitment platforms primarily serving urban-centric and high-income labor markets. Data provenance records confirm that approximately 78% of candidate profiles originate from metropolitan regions with a high concentration of candidates holding advanced academic degrees (master’s level or above). By contrast, rural applicants and profiles emphasizing vocational training constitute less than 12% of the training corpus, reflecting a notable geographical and educational skew intrinsic to the data sources accessed.
+
+The original data procurement involved consented collection under terms consistent with GDPR Article 6(1)(a) and (b), with documents gathered for recruitment matching purposes. Personal identifiers were pseudonymized prior to ingestion to support privacy compliance. Annotation processes for skill extraction were semi-automated using proprietary natural language processing (NLP) pipelines with manual validation performed on a 5% stratified sample. However, consistent standardization of skill taxonomies across resumes was constrained due to heterogeneous resume formats and variations in applicant terminology.
+
+Data preparation operations included tokenization, normalization, and entity recognition utilizing transformer-based language models fine-tuned on HR-specific corpora. Despite these efforts, labeling inconsistencies persist owing to variable use of occupational terms and incomplete resume sections, particularly in non-urban and vocational profiles. These discrepancies were documented but not systematically reconciled in training, to preserve authenticity of real-world data distributions.
+
+**Assumptions and Data Representation**
+
+The dataset was constructed under the assumption that resumes accurately represent applicants’ skills and qualifications as presented to recruiters. The Talent Insight Model was specifically designed to interpret unstructured text inputs without further external validation or enrichment. The training data aims to mirror typical recruitment applicant pools engaging with digital hiring platforms; consequently, it inherently underrepresents demographic segments less engaged with or less visible on these platforms, such as rural or vocational candidates.
+
+Statistically, validation and test partitions were created holding out 15% and 10% of the full dataset respectively, stratified by origin region and qualification level to monitor model performance across subgroups. Performance metrics indicate that predictive accuracy and relevance scores decline by approximately 18% on rural and vocational subsets compared to urban, advanced-degree candidate subsets, reflecting data representation disparities.
+
+**Assessment and Mitigation of Biases**
+
+An extensive bias analysis was conducted using demographic proxies inferred from geolocation data and declared education levels within resumes. Disparities affecting fundamental rights, such as equitable candidate ranking and exposure to job opportunities, were evaluated using fairness metrics including demographic parity difference and equal opportunity difference. Urban, high-income, advanced-degree profiles were systematically favored in ranking outcomes, in part due to higher data representation.
+
+To address bias, targeted data augmentation strategies were explored, including synthetic profile generation and sample re-weighting. However, due to the nature of the original dataset and limited availability of high-quality, alternative data sources covering underrepresented segments, these measures were implemented at a pilot scale only. The provider preserves documentation of these limitations and the current absence of comprehensive bias correction in model training.
+
+Given these constraints, no special categories of personal data were processed for bias correction per Article 10(5), as bias detection was conducted without requiring sensitive attributes beyond those present in the non-special personal data. Security measures include encryption of raw and processed data at rest and in transit, role-based access control, and comprehensive logging to prevent unauthorized access.
+
+**Relevance, Representativeness, and Data Quality**
+
+The training, validation, and test datasets are relevant insofar as they reflect the typical applicant pool encountered in large-scale online recruitment platforms across multiple regions, aligned with the system’s intended purpose of assisting recruitment firms and HR departments. However, the provider acknowledges that the data are not fully representative of all subpopulations within the labor market. In particular, rural applicants and vocationally trained individuals are underrepresented, which may affect the system’s generalizability and fairness.
+
+Data quality includes known, documented limitations regarding incomplete resume sections and non-standardized skill labeling due to the heterogeneous nature of the input documents. Automated parsing errors occur at an estimated rate of 12%–15% for skill category assignment based on periodic manual audits. These errors remain uncorrected in the training sets to preserve data authenticity but are flagged for users through confidence scores in output reports.
+
+To mitigate impact, the model incorporates probabilistic matching algorithms designed to handle partial or noisy inputs, although this does not fully compensate for systemic data gaps. Continuous monitoring pipelines evaluate incoming data quality over time, with scheduled reviews every quarter to assess shifts in data distribution and emerging quality issues.
+
+**Contextual and Operational Considerations**
+
+The dataset design accounts for the geographical and occupational context within which the Talent Insight Model is deployed, reflecting predominantly urban and technologically advanced labor markets consistent with the primary customer base. Functional characteristics specific to recruitment workflows, such as chronological resume format, section labeling, and job title taxonomy, were retained during data processing to ensure operational alignment.
+
+Notwithstanding efforts to include diverse job sectors, the dataset excludes less digitized markets and small-scale local recruitment databases due to data access and privacy constraints. This limitation is recognized in the provider’s risk management documentation and guides the articulated intended use statements advising deployers to consider population coverage.
+
+Documented procedures mandate that retraining or fine-tuning activities incorporate validation steps focusing on subgroup performance and data completeness. However, no automatic corrective feedback loops are integrated to adjust for detected data imbalances or parsing errors post-deployment.
+
+---
+
+This documentation details the provider’s data-related design choices, preparation processes, assumptions, bias assessments, and quality management practices underpinning the Talent Insight Model training lifecycle. The outlined profiles and limitations serve as an evidentiary basis for evaluation under Article 10’s data quality and governance requirements.

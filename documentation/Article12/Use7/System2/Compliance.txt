@@ -1,0 +1,19 @@
+**Article 12**
+
+**Configuration of Automated Event Logging**
+
+The Consumer Credit Transformer incorporates a comprehensive event logging framework that records operational and decision-related activities continuously throughout the AI system’s lifecycle. This functionality is implemented via an immutable, tamper-evident logging module integrated at both the model inference and data processing layers. Log records are generated automatically for each input processing event, inference execution, model state updates, and system reconfiguration, ensuring a chronological and complete audit trail.
+
+This architecture supports mandatory technical requirements ensuring recording fidelity and durability. Logs include timestamped snapshots of input feature vectors, preprocessing transformations, encoded representations, and model output probabilities. Unique identifiers link each loan application to its corresponding log entries without exposing personally identifiable information, thus safeguarding data subject privacy. Logs are encrypted and digitally signed to prevent unauthorized alteration or deletion, fostering data integrity and enabling trustworthy forensic review.
+
+**Scope and Content of Recorded Events**
+
+In line with the intended use of assessing consumer credit risk, the logging system captures events pertinent to identifying potential operational risks and substantial model modifications. Specifically, the logs document exception occurrences such as anomalous input feature patterns, confidence threshold breaches indicating uncertain model predictions, and self-attention weight distributions that deviate from established baselines. These data points facilitate early detection of model drift, data distribution shifts, or performance degradation that may expose the system to unanticipated risks per Article 79(1).
+
+Post-market monitoring is supported by systematic capture of continuous outcome data, including inferred credit risk scores, final credit decisions, and relevant statistical summaries assessing prediction distributions over time. Additionally, records detail the application of model updates or parameter tuning events, furnishing clear traceability of any system changes post-deployment that could materially impact decision-making outcomes.
+
+For monitoring operational compliance as defined under Article 26(5), logs also include performance metrics aggregated by batch and streaming inference evaluations, logging runtime exceptions, latency statistics, and system resource utilization. This comprehensive telemetry enables ongoing operational oversight and facilitates adherence to internal quality assurance protocols.
+
+All recorded data are accessible through secure interfaces equipped with role-based access controls to support authorized auditors and compliance officers in performing detailed reviews. Exported logs comply with standardized formats (e.g., JSON Lines, Apache Avro) allowing seamless integration into external audit and reporting systems consistent with established industry best practices.
+
+Collectively, these logging capabilities provide a thorough, transparent, and durable record of system functioning aligned precisely with the requirements for high-risk AI systems specified in Article 12(1-2).

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: (b) to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias)" (Article 14(4)(b))
+
+[b] **Guideline:**  
+The system’s deployment must include features or training designed to alert and remind human operators of the risk of automation bias, encouraging critical assessment of AI outputs rather than uncritical acceptance, especially in high-stakes settings like emergency dispatch.
+
+[c] **Violation:**  
+Priority Response Analytics lacks any built-in interface elements such as cautionary messages, confidence intervals, or uncertainty indicators, and no structured training is provided to dispatchers on automation bias risks. Dispatchers tend to accept the AI’s priority recommendations at face value, leading to potential over-reliance without critical scrutiny.
+
+[d] **Justification:**  
+This violation is subtle because the system delivers useful outputs, and over-reliance is a behavioral risk rather than a technical failure. Without explicit design or procedural measures to mitigate automation bias, this predisposition may persist unnoticed, undermining the human oversight mandate and increasing risks to decision quality and public safety.

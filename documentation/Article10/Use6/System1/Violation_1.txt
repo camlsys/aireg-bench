@@ -1,0 +1,40 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The Legal Termination Assessment Framework (LTAF) was developed using training, validation, and testing datasets primarily sourced from large multinational corporations’ human resources repositories. These data collections included structured employee records such as tenure, performance evaluations, disciplinary actions, contract details, and associated legal documents. The original purpose of data collection was human resource management and compliance auditing, not model training; therefore, data provenance and usage intents were carefully documented to align with the intended use of the LTAF (Article 10(2)(b)). Data preparation involved systematic cleaning to remove erroneous or inconsistent entries, annotation for relevant legal classifications, normalization across supplier datasets, and aggregation to standardize variable formats for model input (Article 10(2)(c)). Assumptions formulated during development stated that the datasets’ demographic makeups adequately reflected the employee populations affected by contract terminations, though the provider recognized limitations in subgroup representativeness, especially for older workers and certain ethnic minorities (Article 10(2)(d)).
+
+Data governance encompassed version control, secure storage with role-based access, and comprehensive traceability of changes throughout preprocessing pipelines, supporting auditability consistent with standard industry practices in 2025. Regular updates incorporated new corporate datasets to maintain relevance and timeliness, ensuring datasets remained up to date within a quarterly refresh cycle (Article 10(2)(c), (e)).
+
+**Data Suitability and Representativeness**
+
+Datasets included approximately 1.2 million anonymized employee records aggregated from twelve major corporate clients primarily operating in Europe and North America, supplemented by 350,000 contract texts totaling over 45 million words for the NLP component. While the overall size supported robust training of both the gradient-boosted decision tree (GBDT) models and transformer-based language modules, subgroup analyses revealed demographic imbalances: employees aged 55 and older constituted approximately 8% of records versus an estimated 15% in the general workforce population, and certain ethnic groups were underrepresented, reflecting client base compositions.
+
+No specialized data collection was conducted to redress this underrepresentation. Consequently, while datasets met broad metrics for completeness, consistency, and low error rates (missing values were under 0.3% post-cleaning), their statistical properties did not fully achieve representativeness concerning protected demographic categories relevant to potential bias (Article 10(3)).
+
+**Bias Assessment and Mitigation Measures**
+
+During development, a standard bias examination was conducted targeting overall feature distributions and model output disparities across broad demographic groups where data allowed, including gender and general employee roles. However, detailed subgroup bias testing tailored explicitly to age or ethnicity as protected categories, or intersectional biases, was not performed due to limitations in data volume and the absence of disclosing such sensitive attributes in client datasets.
+
+Bias detection efforts employed established fairness metrics common in 2025 human resources AI systems (e.g., disparate impact ratio and equal opportunity difference), but the scope was limited primarily to aggregate-level analyses rather than the granular subgroup disaggregations necessary for precise detection of subtle biases affecting older employees (Article 10(2)(f)). Consequently, no targeted bias mitigation approaches, such as reweighting, adversarial debiasing, or synthetic data augmentation for protected attributes, were applied (Article 10(2)(g)).
+
+**Data Gaps and Limitations**
+
+The primary data gap identified pertains to the underrepresentation of older employees and certain ethnic minorities within the training datasets, stemming from sourcing predominantly from large corporate clients with demographic imbalances. This shortfall limited comprehensive assessment and correction of potential discriminatory patterns relating to age and ethnicity. The provider documented these limitations explicitly within the development records, noting that addressing these gaps would require additional targeted data acquisition or access to more granular protected attribute labels subject to privacy constraints, which were not feasible within the existing contractual and legal frameworks (Article 10(2)(h)).
+
+**Contextual and Geographic Considerations**
+
+The datasets reflect employment contexts in EU and North American jurisdictions, consistent with the system’s intended deployment regions. Legal documentation incorporated jurisdiction-specific regulatory language to support accurate compliance assessments. However, contextual adjustments for localized labour law nuances or cultural employment practices beyond the training data scope were not embedded, acknowledging the need for end-user adaptation and validation post-deployment to the specific operational environment (Article 10(4)).
+
+**Processing of Special Categories of Personal Data**
+
+The training data did not include special categories of personal data such as health information or explicit ethnic origin details, in alignment with the provider’s data minimization policies and client data-sharing agreements. Therefore, no exceptional processing measures under Article 10(5) were initiated. The provider relied on proxy demographic indicators where available but avoided direct use of sensitive attributes, constraining the depth of bias assessment but aligning with prevailing data protection safeguards.
+
+**Summary of Development Decisions**
+
+- Employed a dual-model system combining gradient-boosted decision trees for structured data and transformer-based NLP for unstructured legal texts.
+- Adopted rigorous data governance including documentation of design choices, provenance, versioning, and secure handling.
+- Processed approximately 1.55 million combined records with extensive cleaning and annotation, but recognized demographic imbalances and underrepresentation.
+- Conducted general bias evaluations without detailed subgroup-specific testing or targeted mitigation for protected categories such as age.
+- Recorded identified data gaps and limitations without artificial data augmentation or collection of additional sensitive attributes.
+- Aligned dataset context with intended European and North American jurisdictions, acknowledging deployment-specific adaptation remains necessary.

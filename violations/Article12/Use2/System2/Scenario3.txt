@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable ... facilitating the post-market monitoring ... and monitoring the operation of high-risk AI systems."
+
+[b] **Guideline:**  
+Logs must include detailed, time-synchronized records of system detections, human operator interventions, false positive/negative cases, and any overrides or manual corrections, to enable thorough post-market evaluation and continuous operational assessment.
+
+[c] **Violation:**  
+Pipeline Safety Guardian’s logs record system-generated alerts but do not systematically capture whether operators accepted, dismissed, or manually corrected these alerts, nor do they annotate false alarms identified during maintenance inspections.
+
+[d] **Justification:**  
+This gap hinders effective post-market monitoring and operational oversight as mandated by Article 12(2)(b) and (c) because missing operator interaction and false alarm data prevent measuring system performance and adapting it to reduce risks. The violation is subtle because alert logging exists, but critical operational context is absent.

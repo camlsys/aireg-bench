@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (a) identifying situations that may result in the high-risk AI system presenting a risk ... or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must capture data on inputs, output scores, and internal decision-making states (e.g., threshold adjustments or changes in model confidence) that could indicate emerging biases, unanticipated filtering errors, or changes in model behavior that risk adverse impacts on applicants’ opportunities.
+
+[c] **Violation:**  
+The system’s logs record only final candidate rankings and some metadata about resume upload timestamps, but omit intermediate scoring vectors, confidence levels, or instances where model parameters were updated, which could mask subtle shifts in candidate selection biases.
+
+[d] **Justification:**  
+Not logging those intermediate and parametric events limits the ability to identify risks such as discriminatory filtering or degraded model fairness over time. The violation is subtle because the system appears to log output results adequately but omits critical data needed for early risk detection.
+
+---

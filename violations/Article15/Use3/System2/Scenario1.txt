@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The system must maintain stable measurement accuracy across varying learner subpopulations and environmental conditions (e.g., varying learning contexts, data quality fluctuations), with robustness mechanisms to prevent degradation as data changes over time or new features are introduced. Continuous monitoring and testing should confirm consistent performance throughout its operational use.  
+
+[c] **Violation:**  
+The GBDT model’s accuracy significantly drops for non-traditional learners (e.g., learners with atypical learning patterns or from underrepresented vocational specialties), due to insufficient diversity in the training data. Furthermore, the system fails to recalibrate or update robustly after deployment, leading to inconsistent competency scores as learner behavior shifts seasonally or according to new curricula.  
+
+[d] **Justification:**  
+This violation is subtle because the system may report overall high accuracy in benchmarks, yet it underperforms in specific, less-represented populations, which affects fairness and consistency. The lack of mechanisms to detect and adapt to evolving learner profiles breaches the requirement to sustain appropriate accuracy and robustness throughout the lifecycle, which is realistic given the complexity of adult education environments and learner variability.  
+
+---

@@ -1,0 +1,27 @@
+**Article 12**
+
+### Design and Activation of Logging Mechanisms
+
+The Legal Termination Assessment Framework incorporates a targeted logging subsystem explicitly activated during termination assessment sessions initiated by authorized HR users. Upon manual initiation by an HR operator, the system generates detailed logs that capture user interactions, input data snapshots, model inference outputs, and the sequence of decisions supporting the assessment conclusion. This selective logging approach is implemented through a session-based trigger mechanism embedded in the application interface layer. It ensures that logs are only recorded in contexts directly involving human review, thereby constraining log volume to relevant high-stakes decision episodes.
+
+Logging is implemented at the application and model inference layers. For each active session, structured event entries include timestamps, anonymized user identifiers (pseudonymized according to industry-standard data protection practices), and hashes referencing input document versions to protect confidentiality. The logs record output confidence scores from both the gradient-boosted decision tree ensemble and the transformer-based natural language processing model, capturing their combined assessment. This dual-model provenance supports traceability in decision rationale, linking individual model components to final recommendations.
+
+### Scope and Limitations of Logging Coverage
+
+Background operational activities—such as batch reprocessing of employee data for model recalibration or offline retraining events—are processed in isolated compute environments without automatic event logging. Similarly, system-level automated periodic risk analyses run asynchronously outside interactive user sessions, and therefore do not generate event logs. This approach reflects a design choice prioritizing data minimization and operational efficiency, reducing overhead in large-scale retraining and analytics subprocesses where no immediate HR decision intervention occurs.
+
+The absence of automatic logging during offline or batch operations means traceability for these system components derives primarily from structured audit records external to the AI system, such as retraining metadata files, data pipeline lineage trackers, and orchestration system logs. These external records include hashes of training datasets (~120,000 anonymized employee records spanning five years), model version identifiers, and compute environment snapshots. This layered approach separates AI decision traceability under active human use from broader model lifecycle governance.
+
+### Alignment of Logging Capabilities with Risk Identification and Monitoring
+
+When activated, the logging subsystem records events that specifically facilitate the identification of decision patterns that could indicate emergent risk, such as anomalous assessment outcomes or statistically significant divergences in model confidence metrics. For instance, detected threshold-crossing events—where termination risk assessment scores exceed defined high-risk bounds—are logged alongside user actions to enable retrospective root-cause analyses.
+
+The captured logs support post-market monitoring workflows by preserving sufficient detail to reconstruct system behavior during individual termination assessments, facilitating correlation with downstream HR case outcomes and compliance reviews. Logged data also enable detection of substantial model modifications as the system records model version and configuration parameters at session start, permitting audit trails linking decisions to precise code and data states.
+
+Operational monitoring is enhanced via periodic sampling and review of logged sessions, enabling detection of drift in input feature distributions or model output patterns visible only within human-initiated sessions. This sampling serves as a proxy for ongoing runtime quality assurance, safeguarding consistent performance within the scope of real-world HR termination assessments.
+
+### Rationale for Logging Design Decisions
+
+The adopted selective logging strategy balances comprehensive traceability requirements with data protection principles and system efficiency. Activating logging exclusively upon explicit HR user invocation aligns with minimizing unnecessary capture of sensitive personal data and contextual information generated during automated background workflows. This design also reflects practical constraints observed during system development, such as high volume and velocity of offline retraining cycles (conducted weekly over datasets averaging 500GB in size) and the infeasibility of storing exhaustive event logs for all batch computations without incurring prohibitive storage and processing costs.
+
+Furthermore, by ensuring logs are tightly coupled to discrete human decision events, Meridian Labor Solutions enables focused compliance audits and targeted investigations without dispersing accountability signals across broader system operations. This approach supports regulatory expectations for appropriate traceability proportional to system use cases, while maintaining alignment with established principles of data minimization and operational pragmatism prevalent in workforce management AI solutions in 2025.

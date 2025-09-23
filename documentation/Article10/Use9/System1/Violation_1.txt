@@ -1,0 +1,43 @@
+**Article 10**
+
+### Data Governance and Management of Training, Validation, and Testing Data Sets
+
+Judicial Insight Assistant (JIA) employs a hybrid AI architecture consisting of transformer-based encoder-decoder models for in-depth legal text comprehension and gradient boosted decision trees (GBDT) for structured fact pattern classification. The training, validation, and testing data sets used in developing these AI components are subject to documented data governance and management practices designed for the system’s intended purpose of supporting judicial research and fact analysis.
+
+The principal training corpora consist of approximately 2.8 million legal documents, including statutory texts and court decisions sourced predominantly from jurisdictions with significant historical underrepresentation of minority groups. Data collection originated from publicly accessible legal databases and sanctioned governmental repositories. The original purpose of data collection focused on archiving legal rulings and statutes, without specific annotations addressing socio-demographic fairness or representation. Data preparation included standard pre-processing steps: tokenization and normalization for textual data, manual verification of metadata annotations, and cleaning procedures to remove duplicate and corrupted entries, resulting in dataset completeness exceeding 97%. Annotation involved legal domain experts labeling fact patterns relevant to classification tasks for the GBDT model.
+
+Explicit assumptions framed the datasets as representative of broad judicial practices within included jurisdictions while acknowledging limitations in demographic and contextual representation affecting marginalized communities. These assumptions were encoded in system documentation to guide interpretation and further development efforts.
+
+### Dataset Quality, Bias Evaluation, and Identified Limitations
+
+An internal assessment quantified dataset availability and suitability by examining data coverage against intended operational scenarios. Approximately 85% of case law samples originate from jurisdictions with complex socio-legal histories, yet only 12% of samples contain detailed information on minority group involvement or legally relevant socio-demographic factors. This uneven distribution constitutes a recognized data gap influencing the sensitivity of outputs to issues affecting marginalized populations.
+
+No dedicated bias detection or mitigation methodologies were incorporated during the design or training of the GBDT classifier handling fact pattern classification. Exploratory analyses conducted post-development revealed consistent underestimation trends for precedents involving minority groups, as measured by comparative recall metrics on a 15,000-sample validation subset stratified by demographic context. The absence of systematic bias correction reflects both historical data limitations and constraints on data annotation scope.
+
+Given the system’s reliance on historical legal datasets that inherently reflect long-standing judicial biases, no special categories of personal data per EU AI Act Article 10(5)—such as racial or ethnic origin—were processed for bias mitigation purposes. Thus, specific safeguards related to sensitive personal data processing were not enacted.
+
+### Relevance, Representativeness, and Statistical Properties of Data Sets
+
+Training and validation datasets were curated with the aim of relevance and completeness vis-à-vis the system’s functional objective of legal precedent retrieval and fact pattern recognition. Representativeness was evaluated primarily on the basis of jurisdictional variety, legal domain coverage (civil, criminal, administrative), and temporal span (1950–2023), ensuring statistical consistency across these dimensions.
+
+However, representativeness at the socio-demographic level, especially concerning marginalized groups, remains limited due to sparse documentation in source texts of factors such as ethnicity, gender identity, and socio-economic status. Error rates in fact classification tasks averaged at approximately 5.4% on validation sets, with disproportionate misclassifications noted in cases involving underrepresented groups, consistent with the unmitigated bias pattern observed.
+
+Data completeness metrics indicate that while the majority of legal texts include comprehensive factual narratives, 7% lacked accessible cross-references, potentially impacting the transformer model’s contextual enrichment capability.
+
+### Contextual and Geographical Adaptation of Data Sets
+
+The data sets incorporate jurisdiction-specific statutory and case law features reflective of their origin legal systems, with attention to contextual legal nuances, such as precedent hierarchy and procedural differences. Geographic distribution includes courts from 18 jurisdictions with significant ethnic and cultural diversity histories but limited socio-demographic annotations.
+
+Behavioral and functional settings pertinent to judicial use cases—such as case fact complexity, inter-jurisdictional reference patterns, and procedural stages—were integrated through stratified sampling. Nonetheless, the constraints in data sources limited the system’s ability to fully incorporate the lived realities and particularities affecting marginalized groups within these jurisdictions, a limitation explicitly documented and exposed for user consideration.
+
+### Measures Addressing Bias Detection and Mitigation
+
+Judicial Insight Technologies Limited has documented that no systematic techniques for bias detection, prevention, or mitigation were applied to the GBDT classifier or underlying data sets. This decision arose from the absence of sufficiently detailed socio-demographic metadata in the source data and the lack of suitable privacy-compliant access to special category personal data required by Article 10(5) for comprehensive bias remediation.
+
+Risk management procedures include ongoing monitoring of system outputs and regular user feedback mechanisms aimed at identifying unanticipated discriminatory tendencies. These operational measures serve as compensatory controls in lieu of in-development bias correction methods, enabling incremental improvements in future model iterations consistent with evolving data governance and regulatory frameworks.
+
+### Identification of Data Shortcomings and Proposed Remediation Paths
+
+Documented gaps chiefly concern socio-demographic coverage and representation of marginalized groups within training and validation datasets. These deficiencies limit the system’s capacity to fully capture legal reasoning and precedential patterns affecting these populations.
+
+To address these shortcomings, plans include expanding data acquisition strategies to incorporate enriched case annotations and metadata from collaborating judicial bodies willing to provide privacy-compliant sensitive data. Additionally, research is ongoing into synthetic data generation techniques and domain adaptation methods to augment existing corpora without compromising privacy or data quality. These future enhancements aim to introduce bias detection and mitigation capabilities in subsequent versions of the system while maintaining rigorous data governance consistent with the EU AI Act provisions.

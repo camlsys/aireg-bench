@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+The risk management system must systematically identify and analyze risks such as discrimination, privacy infringements, or adverse impacts on candidates’ fundamental rights stemming from the model’s use in recruitment decisions, including direct or indirect biases that affect protected groups. This risk identification should include foreseeable but less obvious risks emanating from correlated attributes or proxy variables that could lead to disparate treatment of vulnerable populations (e.g., minorities, persons under 18).  
+
+[c] **Violation:**  
+The system’s risk assessment only focuses on overt biases explicitly related to gender and ethnicity, ignoring subtler proxy variables such as geographical location or socio-economic indicators embedded in metadata that can indirectly discriminate against persons under 18 or other vulnerable groups. Consequently, these indirect biases remain unidentified and unanalyzed.  
+
+[d] **Justification:**  
+This breach is subtle because the provider believes overt protected attributes have been sufficiently addressed, yet the use of correlated proxies is a well-documented source of algorithmic discrimination. Ignoring these foreseeable risks fails the requirement of a comprehensive risk identification step, underestimating the system’s real impact on fundamental rights, especially concerning minors and vulnerable groups.  
+
+---

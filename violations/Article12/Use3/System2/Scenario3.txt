@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for facilitating the post-market monitoring referred to in Article 72; and monitoring the operation of high-risk AI systems referred to in Article 26(5)."
+
+[b] **Guideline:**  
+Logs should systematically record data that support ongoing performance validation in operation, such as changes in input data distributions, frequency of recommendation overrides by instructors, and anomalies in skill assessment patterns, enabling continuous monitoring of the AI’s real-world reliability and fairness.
+
+[c] **Violation:**  
+The system’s logging omits tracking instructor feedback or overrides on competency scores and does not register statistical shifts in incoming learner demographics or interaction behavior, thereby limiting the ability to monitor operational performance and detect drift or fairness issues post-deployment.
+
+[d] **Justification:**  
+Without capturing feedback-based corrections and user behavior changes, post-market surveillance lacks crucial signals needed to evaluate real-world system functioning and to trigger mitigation if performance deteriorates. This subtle logging gap hampers effective operation monitoring and thus violates the requirement for appropriate traceability in live settings.

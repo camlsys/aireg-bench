@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The system must maintain stable accuracy and robustness metrics across different deployment environments and over time, accounting for changes in input data distributions, model drift, or operational context shifts. Continuous monitoring mechanisms and scheduled model re-validations should be in place to detect and correct performance degradation.  
+
+[c] **Violation:**  
+The Consumer Credit Transformer does not incorporate ongoing model performance monitoring post-deployment, resulting in unnoticed degradation of prediction accuracy when confronted with emerging financial behaviors influenced by economic crises or policy changes. This lack of continuous evaluation leads to inconsistent performance and credit risk assessments that become progressively less reliable over time.  
+
+[d] **Justification:**  
+This violation subtly breaches the requirement for consistent performance "throughout their lifecycle" because the system's accuracy diminishes due to changing data distributions without corrective measures. It is realistic as economic conditions shift regularly, affecting borrower profiles, and the absence of lifecycle performance controls is common in deployed financial AI systems.

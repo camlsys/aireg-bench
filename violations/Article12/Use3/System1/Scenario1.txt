@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement automated logging mechanisms that capture and store comprehensive records of key operational events continuously and without manual intervention, ensuring logs cannot be selectively or sporadically recorded.
+
+[c] **Violation:**  
+The Adaptive Learning Outcome Analyzer requires manual activation for logging in certain modules that handle sensitive feedback generation, resulting in gaps where critical operational events are not automatically logged during system runtime.
+
+[d] **Justification:**  
+By depending on manual triggers to start logging some events, the system fails to guarantee continuous automatic recording throughout its operational lifetime. This oversight undermines traceability and accountability and is subtle, as users might overlook manual logging requirements especially under casual or routine use.
+
+---

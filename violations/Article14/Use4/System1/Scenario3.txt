@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"4. For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: (d) to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system; (e) to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state."
+
+[b] **Guideline:**  
+Users must have accessible and comprehensible controls to pause or stop the AI system’s monitoring during exams and the authority to override or disregard AI outputs in context, enabling flexible response to unexpected AI errors or technical issues without jeopardizing exam conditions.
+
+[c] **Violation:**  
+Insight Proctor Analytics does not provide proctors with a clearly visible or easily executable mechanism to halt monitoring temporarily, nor explicit guidance on how to override flagged behaviors when human judgment suggests the AI is incorrect, effectively forcing continued reliance on the AI output.
+
+[d] **Justification:**  
+This subtle violation arises because absence of emergency stop or override options constrains human agency and rapid risk mitigation. Proctors are unable to safely interrupt AI-driven surveillance when anomalies or malfunctions occur, undermining the requirement for effective human intervention and oversight during system operation.

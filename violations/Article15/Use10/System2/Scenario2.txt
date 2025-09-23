@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. Technical and organisational measures shall be taken in this regard."  
+
+[b] **Guideline:**  
+The system should have redundancies or fail-safe mechanisms to detect and mitigate misleading or corrupted inputs, especially as social media data can be noisy, contradictory, or manipulated by actors. These measures must prevent erroneous outputs from influencing deployed narratives or feedback loops.  
+
+[c] **Violation:**  
+The system sometimes uses unverified social media streams and does not include fallback processes when detecting anomalies or conflicting data; as a result, distorted or deliberately manipulated inputs occasionally trigger the generation of misleading counter-messages without safeguards or human-in-the-loop verification.  
+
+[d] **Justification:**  
+Such a failure to incorporate resilience measures allows faults from the environment (manipulated social inputs) to propagate into the system’s outputs and influence public discourse, subtly violating robustness requirements by not adequately mitigating environmental inconsistencies, especially in a high-stakes electoral context.  
+
+---

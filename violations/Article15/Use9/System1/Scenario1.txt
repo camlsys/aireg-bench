@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The system must maintain consistent accuracy and robustness throughout its operational lifecycle, including after updates or retraining, ensuring no significant performance degradation or unpredictability that could mislead judicial users. Comprehensive regression testing and robustness evaluation must occur with every lifecycle stage.  
+
+[c] **Violation:**  
+Judicial Insight Assistant incorporates continuous updates to its transformer encoder-decoder components using domain adaptation on new legal cases without fully validating that accuracy on precedent identification is maintained after each update, leading to occasional inconsistent interpretation of statutes over time.  
+
+[d] **Justification:**  
+Because continuous updates without robust lifecycle testing can cause fluctuating accuracy and inconsistent outputs, this subtly violates the requirement for consistent performance throughout the lifecycle. It is realistic as legal data evolves, and domain adaptation is common, but insufficient continuous validation risks degrading model reliability, compromising judicial decision support subtly over time.  
+
+---

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion), confidentiality attacks or model flaws." (Article 15(5))
+
+[b] **Guideline:**  
+High-risk systems must be resilient to subtle adversarial manipulations by implementing detection and mitigation techniques for poisoned data or adversarial inputs, such as anomaly detection in training sets, robust model update pipelines, input validation layers, and monitoring for suspicious querying patterns that exploit model vulnerabilities.
+
+[c] **Violation:**  
+Recruitment Decision Forest lacks any mechanism to detect or mitigate data poisoning attacks where malicious actors inject subtly altered candidate profiles into training datasets, skewing model behavior to systematically lower scores of candidates with certain protected attributes, thereby evading conventional validation steps unnoticed.
+
+[d] **Justification:**  
+This violation is realistic because enterprise recruitment data may be sourced from multiple, partially uncontrolled channels, making subtle poisoning feasible. It is subtle since poisoned samples blend within legitimate records and directly exploit system vulnerabilities, diminishing ranking fairness and violating cybersecurity and robustness imperatives without triggering obvious alarms.

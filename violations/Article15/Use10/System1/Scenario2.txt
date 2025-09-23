@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates... High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."  
+
+[b] **Guideline:**  
+The system must implement measures such as input sanitization, bias detection algorithms, and controlled update procedures to prevent recursive amplification of misleading or biased political messaging from influencing subsequent model training or fine-tuning cycles. Monitoring for feedback-loop effects and applying corrective interventions should be integral to ongoing system maintenance.  
+
+[c] **Violation:**  
+The Analyzer collects user engagement data and incorporates this feedback without bias correction, resulting in the reinforcement and amplification of certain politically biased narratives in a closed feedback loop. As a result, the system increasingly tailors its outputs toward extreme partisan framings, reducing balanced or factually varied messages and biasing voter influence despite changing input distributions.  
+
+[d] **Justification:**  
+This violation is subtle as the system appears adaptive and responsive, but the feedback loop amplifies bias over time, compromising robustness and fairness. It breaches Article 15(4) because the system fails to sufficiently eliminate or mitigate feedback-induced biases, reflecting a realistic pitfall in self-learning AI deployed in politically sensitive environments.

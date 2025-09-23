@@ -1,0 +1,33 @@
+**Article 14**
+
+**Design Constraints on Human-Machine Interface and Oversight Support**  
+The Talent Insight Model (TIM) employs a transformer-based encoder-decoder architecture focused on processing unstructured resume and job description texts, producing aggregated candidate relevance scores and ranked candidate lists for downstream use by HR professionals. To align with design decisions, the user interface intentionally presents only final ranked lists of candidates without detailed explanation or attribution of candidate profile elements influencing individual scores. This design choice was made to streamline user workflows, reduce cognitive load, and protect proprietary model internals, though it inherently constrains HR managers’ ability to interpret or dissect the model’s decision rationale. Consequently, the system does not provide breakpoint-level feature attributions, influence scores, or candidate attribute saliency visualizations. No built-in explainability modules or interactive interrogation tools are integrated at the provider’s delivery stage.
+
+The model operates through batch processing cycles, triggered on demand or scheduled at fixed intervals (commonly nightly), using a data pipeline that ingests newly submitted or updated applications and job ads. This offline batch strategy omits live inference APIs or continuous streaming mechanisms, simplifying robustness validation and throughput scaling. Due to this operational mode, the system inherently lacks live monitoring dashboards or real-time human-in-the-loop intervention points embedded in the user interface or system backend. Consequently, HR managers do not have direct, simultaneous visibility into ongoing model inference activities or dynamic output evolution during recruitment cycles.
+
+**Oversight Objectives and Risk Mitigation Considerations**  
+While the TIM’s architecture and interface limit granular insight into internal scoring mechanisms and influence factors, the design does incorporate layered quality control procedures aiming to minimize risks of erroneous or biased outputs. Model training was performed on a dataset exceeding 2 million anonymized, EU-sourced job applicant profiles collected over three years, with evaluation metrics including precision@10 of 88.3%, recall@10 of 85.7%, and demographic parity tests indicating compliance within ±5% variance across gender and age groups. Specialized pre-release adversarial testing assessed vulnerabilities to manipulated CV inputs and synthetic candidates, confirming resilience to typical input perturbations.
+
+Despite these measures, the presented system architecture acknowledges that risks related to misinterpretation, automation bias, or output anomalies cannot be fully mitigated through provider-side design alone, given the absence of comprehensive transparency tools or live oversight capabilities. Accordingly, the system’s human oversight model anticipates deployers implementing complementary organizational controls, such as user training, procedural review cycles, and manual audit processes aligned with their internal governance needs.
+
+**Provider-Implemented Human Oversight Features and Limitations**  
+The provider has established the following oversight measures integrated at the point of delivery, subject to their technical feasibility boundaries:
+
+- To aid understanding of system capacities and limitations, the accompanying technical documentation explicitly details model scope, typical performance parameters, known limitations (e.g., opaque attribution, latency due to batch processing), and expected error modes. This documentation supports HR professionals in situating output reliability relative to domain expectations.
+
+- User interface design incorporates explicit disclaimers cautioning against over-reliance on ranked outputs alone, emphasizing the need for human judgment and holistic candidate evaluation. This measure aims to mitigate automation bias by reminding operators that final hiring decisions remain human responsibilities.
+
+- The system allows manual override workflows within the deployment environment (outside of provider software scope) whereby HR managers may exclude or reprioritize candidates based on contextual factors unknown to the model. While the system does not natively support direct output negation or ‘stop’ capabilities within batch jobs, deployers can suspend or restart processing pipelines before results are finalized.
+
+- Audit logs capture all batch processing runs, input data versions, timestamped output archives, and pipeline configuration snapshots, facilitating retrospective review of model outputs and data provenance. These logs are designed to support deployers’ detection and investigation of anomalies or unexpected outcomes post-hoc.
+
+**Operational Context and Oversight Support by Deployers**  
+Reflecting the provider’s decisions, the system is delivered under the assumption that deployers will establish active oversight frameworks tailored to their organizational context. Given the batch-mode nature, continuous live monitoring dashboards or intervention interfaces at runtime are not supplied by the provider. Instead, deployers are expected to implement procedural monitoring aligned with batch schedules, including:
+
+- Periodic manual review of ranked outputs in conjunction with HR expertise to confirm alignment with recruitment policies and ethical standards.
+
+- Integration of secondary, complementary analytic tools that may provide candidate profile insights or discrepancy detection external to the TIM.
+
+- Protocols for halting or recalibrating recruitment cycles when anomalous patterns or output inconsistencies are identified during scheduled batch validations.
+
+This delegation of live oversight functionality supports separation of responsibilities while maintaining provider focus on delivering a high-performance core ranking engine, reflecting a risk management approach commensurate with the system’s operational autonomy and use context.

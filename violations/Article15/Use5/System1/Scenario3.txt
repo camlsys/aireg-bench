@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities... The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+The AI system must implement multi-layered cybersecurity controls including anomaly detection, input sanitization, and robust access controls to identify and mitigate attempts at data poisoning, adversarial input attacks, or unauthorized retraining that could manipulate model behavior or degrade performance.  
+
+[c] **Violation:**  
+The Talent Insight Model’s input pipeline does not include any adversarial detection to identify manipulated resumes containing crafted phrases or embeddings designed to evade filtering or artificially inflate candidate rankings, enabling attackers to exploit this vector without triggering alerts or defenses.  
+
+[d] **Justification:**  
+This vulnerability undermines system resilience against adversarial inputs, allowing subtle, targeted manipulations that can distort hiring decisions. Given the open text input nature and limited input validation, such adversarial attacks are plausible yet may remain unnoticed, representing a realistic but covert compliance breach.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations;"  
+
+[b] **Guideline:**  
+Experts must perform thorough, ongoing bias audits on all data sets used for training and validation, explicitly identifying biases related to gender, ethnicity, age, or other protected characteristics that could lead to discriminatory hiring outcomes. They should quantify the bias impact and track how outputs influence feedback loops in recruitment decisions to avoid perpetuating systemic discrimination.  
+
+[c] **Violation:**  
+The Talent Insight Model’s training data predominantly includes resumes and job descriptions sourced largely from English-speaking Western countries without sufficient demographic annotation or bias assessment. There is no documented evaluation of whether the model disproportionately favors candidates of certain genders or ethnicities, and no corrective measures are implemented to mitigate potential biases or feedback loops in ranking candidates.  
+
+[d] **Justification:**  
+By omitting a focused bias examination as required under article 10(2)(f), the system risks amplifying discriminatory patterns embedded in the recruitment data. This violation is subtle because the model may perform well on aggregate accuracy metrics, masking structural biases overlooked due to incomplete demographic analysis and failure to monitor outputs affecting future hiring decisions.  
+
+---

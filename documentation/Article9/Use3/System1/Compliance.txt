@@ -1,0 +1,57 @@
+**Article 9**
+
+### Establishment and Maintenance of the Risk Management System
+
+Meridian Cognition Technologies has established a comprehensive risk management system for the Adaptive Learning Outcome Analyzer, implemented from initial design through ongoing operation and maintenance phases. This system is rigorously documented and maintained via a dedicated compliance and quality assurance team, utilizing integrated lifecycle management tools to enforce continuous process adherence. The risk management process is integrated into development workflows using a project management system configured to trigger periodic reviews and updates upon significant modifications or quality feedback from post-market data.
+
+### Iterative and Lifecycle-Spanning Risk Management Process
+
+The risk management process follows a structured iterative approach running continuously through the product lifecycle. Initial risk identification occurred during the design phase, leveraging multidisciplinary risk workshops involving AI specialists, educational psychologists, data privacy experts, and user experience researchers. Throughout subsequent development stages, risks were regularly reassessed and updated based on simulated deployments, cross-validation tests, and feedback from pilot educational institutions. Post-commercial release, the system is subject to ongoing risk review cycles at quarterly intervals, supplemented by ad hoc updates triggered by the post-market monitoring system’s findings in accordance with Article 72.
+
+### Identification and Analysis of Known and Foreseeable Risks
+
+Key risks identified include:  
+- Misinterpretation of learner assessment data leading to inaccurate feedback or learning path suggestions, with potential adverse effects on educational outcomes;  
+- Potential bias in the model outputs derived from imbalanced training datasets skewed by demographic or educational context factors;  
+- Data security risks related to processing and storage of potentially sensitive learner information;  
+- Risks of system misuse such as overreliance by educators or learners on AI output without critical review, possibly resulting in suboptimal educational interventions.
+
+Each risk was analyzed through scenario-based evaluations, applying threat modelling tailored to the education domain context, with inputs drawn from a training dataset comprising 2 million anonymized assessments from a representative demographic cross-section of learners aged 6 to 22 years.
+
+### Risk Estimation and Evaluation Under Normal and Foreseeable Misuse Conditions
+
+Quantitative risk estimation was performed using probabilistic risk assessment methods combining model performance metrics and exposure likelihood estimates. For example, model accuracy was benchmarked at 92.5% overall predictive correctness (F1 score), with subgroup performance disaggregated to detect variance across age cohorts and learning disabilities subpopulations, informing bias mitigation efforts. Foreseeable misuse, such as bypassing recommended feedback or substituting AI suggestions without educator mediation, was evaluated using adversarial simulation studies conducted on 15,000 synthetic interaction logs, estimating potential degradation in learner outcome effectiveness by up to 12% under worst-case misuse scenarios.
+
+### Integration of Post-Market Data in Risk Management
+
+Data from the post-market monitoring system is continuously fed back into the risk management system. This comprises anonymized usage logs, user feedback surveys from approximately 500 deployment sites, and periodic system performance audits. Data demonstrates consistent system reliability and identifies minor incremental deviations in model calibration during certain high-stress periods (e.g., nationwide exam seasons), prompting targeted model retraining and feedback interface refinements. These insights refine risk profiles iteratively and have supported the adoption of adaptive update intervals aligned with observed system drift patterns.
+
+### Targeted Risk Management Measures and Design Choices
+
+Meridian Cognition Technologies adopted a layered approach to risk mitigation, anchored in robust development practices and end-user support strategies:
+
+- **Design and Development Controls:** Use of extensive data augmentation and bias correction techniques during model training, including synthetic minority oversampling to correct underrepresented learner segments. Transformer architecture parameters were optimized to balance interpretability and performance, enabling transparency of decision-making through attention heatmaps for educators.
+
+- **Technical Safeguards:** Implementation of differential privacy mechanisms coupled with role-based access controls securing learner data, and encrypted data transmission complying with industry-standard TLS 1.3. Continuous integration pipelines incorporate static and dynamic code analysis tools to detect security vulnerabilities pre-deployment.
+
+- **Operational Safeguards:** Detailed user manuals and contextual in-application tutorials clarify system capabilities and limitations, guiding educators on the importance of critical review versus sole reliance on AI feedback. Mandatory training modules for institutional deployers ensure users attain baseline proficiency consistent with the system’s intended operational context.
+
+### Consideration of Requirement Interactions to Minimize Risks
+
+Risk management measures were developed with integrated consideration of compliance objectives, including data governance, transparency, and user information provisions. For instance, model explainability features not only facilitate user understanding but also reduce error risk by enabling educators to validate AI suggestions, thus balancing safety and usability demands. Additionally, adaptive feedback timing mechanisms were designed to minimize cognitive overload, supporting safer human-AI interactions in real-time educational settings.
+
+### Acceptability of Residual Risks and Their Monitoring
+
+Residual risk levels after implementation of risk controls were quantified and benchmarked against educational technology industry standards. The overall residual risk was deemed below the threshold corresponding to a low-to-moderate impact classification, with individual risk items such as demographic bias residuals maintained under a 2% variance target, consistent with contemporary ethical AI guidelines. Continuous post-market monitoring ensures that residual risks remain in acceptable bounds, with triggers established for immediate reassessment if deviations exceed 5% margin in predictive performance or user-reported dissatisfaction metrics rise.
+
+### Testing Strategy, Metrics, and Real-World Validation
+
+The system underwent comprehensive testing phases encompassing unit, integration, and system levels, with specialized emphasis on risk-related scenarios. Testing employed standardized educational assessment datasets validated by independent academic partners. Performance metrics included precision, recall, F1 score, and calibration error, explicitly disaggregated for vulnerable groups. Additionally, real-world testing was conducted in partnership with 20 educational institutions over a six-month period, incorporating live deployment under controlled supervision to validate AI behavior, user interaction, and risk mitigation efficacy. Testing cycles were repeated iteratively throughout the development process, culminating in a conformance test phase prior to market introduction.
+
+### Consideration of Vulnerable Groups and Minors
+
+Given the system’s deployment in primary, secondary, and higher education, special attention was given to potential adverse impacts on minors under 18 and other vulnerable learner populations. Training data was carefully curated to represent diverse learner profiles, including neurodiverse and socioeconomically disadvantaged groups, and model performance was validated across these cohorts. Interface design incorporates accessibility features such as text-to-speech support and simplified language options to accommodate varied cognitive and linguistic needs. Risk assessments included targeted analyses on these groups, with results informing both model improvements and tailored user guidance aimed at safeguarding these users.
+
+### Synergy with Other Internal Risk Management Procedures
+
+The risk management system described aligns with Meridian Cognition Technologies’ broader corporate governance frameworks covering data protection, cybersecurity, and product safety. Where overlapping risk assessments are mandated by EU data protection frameworks or sector-specific standards, these have been harmonized into an integrated risk governance model to avoid duplication and leverage cross-functional insights. This integrated approach ensures coherent and efficient management of all relevant risks related to the Adaptive Learning Outcome Analyzer.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5.(a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+Once risks such as unfair disadvantage or misclassification of candidates are identified, the system design must incorporate technical measures (e.g., feature selection restrictions, fairness-aware training algorithms, or data balancing) to mitigate these risks as far as is feasible without compromising core functionality. This includes actively refining the model or input data to reduce biases before deployment.  
+
+[c] **Violation:**  
+Although the system identifies certain risk patterns related to historical hiring biases, it relies primarily on post-hoc explanations and transparency tools without integrating design-stage mitigations such as re-weighting biased training samples or excluding bias-inducing features from input. Hence, identified risks remain unmitigated in the model’s core functionality.  
+
+[d] **Justification:**  
+This violation is subtle because transparency and interpretability measures may be mistaken for sufficient risk reduction, but they do not reduce bias by design. Failing to apply technically feasible mitigations at the model development stage means the system does not meet the obligation to reduce risks through design, leaving residual risks unjustifiably high.  
+
+---

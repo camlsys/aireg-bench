@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+Providers must systematically identify and analyze not only typical risks but also subtle or indirect risks to fundamental rights arising from the AI’s interpretation and application of legal texts, including potential misapplication that could lead to unfair judicial outcomes or discrimination.  
+
+[c] **Violation:**  
+The risk analysis stops at technical or operational risks such as system downtime or input errors but neglects to analyze risks that arise from semantic biases in the training data that could influence disproportionate or prejudiced legal interpretations negatively impacting minorities or vulnerable parties, thus failing to consider fundamental rights adequately.  
+
+[d] **Justification:**  
+This violation is plausible and subtle because the system’s legal focus might lead the provider to prioritize technical reliability over nuanced ethical risks. The indirect impact on fundamental rights through biased semantic retrieval is not obvious without deep legal-technical audits, making this an underappreciated compliance gap.  
+
+---

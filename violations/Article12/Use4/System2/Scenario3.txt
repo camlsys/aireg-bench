@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable [...] facilitating the post-market monitoring referred to in Article 72."
+
+[b] **Guideline:**  
+Logs need to be structured and comprehensive enough to support systematic analysis post-deployment, including records of system alerts, false positives/negatives flagged through feedback, and context allowing correlation with environmental factors or user actions to improve ongoing monitoring.
+
+[c] **Violation:**  
+Although the system collects logs of alerts, it fails to capture user feedback or supervisor interventions that mark false alarms, and lacks detailed environmental metadata, limiting the ability of post-market monitoring teams to evaluate and refine system performance.
+
+[d] **Justification:**  
+This incomplete logging obstructs meaningful post-market analysis, contravening the requirement for logs to facilitate effective monitoring under Article 12(2)(b). Such a deficiency is subtle because the system still logs alerts, giving a false impression of full traceability while critical data for continuous improvement is missing.

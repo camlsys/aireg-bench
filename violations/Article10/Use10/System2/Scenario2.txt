@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be ... relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Datasets must reflect the true diversity of the electorate in demographic and behavioral factors relevant to political sentiment, including age, geography, language, ethnicity, and political orientation, to avoid systematic underrepresentation. Rigorous statistical tests for representativeness and error rates must be applied and documented.
+
+[c] **Violation:**  
+The training data heavily overrepresents politically active urban populations and English-language posts, while underrepresenting rural, minority linguistic, and politically less vocal groups, resulting in bias in sentiment predictions and influence outputs that subtly marginalize these underrepresented voters.  
+
+[d] **Justification:**  
+This violation of Article 10(3) is subtle because data is “available” and voluminous but fails representativeness criteria essential for democratic contexts. The misalignment is realistic given the prevalent ease of collecting urban-centric social media data and the difficulty of capturing diverse voter profiles, leading to discriminatory or skewed outputs without explicit data errors.  
+
+---

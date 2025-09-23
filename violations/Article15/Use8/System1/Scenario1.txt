@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle." (Article 15(1))  
+
+[b] **Guideline:**  
+Experts ensure that high-risk AI systems maintain stable performance metrics (accuracy, robustness) across diverse operational environments and over time, including after deployment and updates, by conducting longitudinal performance monitoring and robustness stress tests under varying conditions.  
+
+[c] **Violation:**  
+Priority Response Analytics exhibits degradation in prioritization accuracy during peak emergency call volumes due to model drift caused by evolving incident patterns, yet the system lacks mechanisms to detect and compensate for this drift in real-time, resulting in inconsistent accuracy during critical hours.  
+
+[d] **Justification:**  
+This violation breaches the requirement for consistent accuracy throughout the lifecycle because the system’s performance deteriorates subtly under realistic workload fluctuations, compromising decision reliability at crucial times. It is subtle as performance remains acceptable under average loads, masking issues until stress conditions arise.  
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse."  
+
+[b] **Guideline:**  
+The system should integrate and support oversight mechanisms that identify and allow mitigation of failure modes anticipated under normal usage and plausible misuse scenarios. This includes enabling human operators to recognize false positives or false negatives and act accordingly to reduce hazards before escalation.  
+
+[c] **Violation:**  
+Gas Safety Insight does not incorporate interfaces or procedures that alert operators when model confidence is low or when anomalies fall outside the typical operational domain, thereby increasing risks during foreseeable misuse such as sensor degradation or spoofing attacks. Operators are not notified of these limitations, reducing the chance to prevent unsafe reliance on inaccurate or misleading system outputs.  
+
+[d] **Justification:**  
+By not supporting human detection of AI uncertainty under foreseeable misuses, the system fails to minimize risks through effective oversight as prescribed. This is a realistic issue since sensor environments can degrade or be maliciously affected, and lacking transparency or fallback alerts leads to subtle but critical oversight gaps that compound safety risks.  
+
+---

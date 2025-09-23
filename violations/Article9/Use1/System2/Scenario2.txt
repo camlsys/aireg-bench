@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5.(a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+During design, providers must evaluate all identified risks and implement feasible technical measures — such as model tuning, sensor fusion algorithms, or fail-safe mechanisms — to reduce known risks before relying solely on supplementary controls or warnings.  
+
+[c] **Violation:**  
+The Guardian Signal Controller’s CNN and Random Forest system, while recognizing a known risk of misclassifying cyclists during low-light conditions, does not implement enhanced feature extraction or adaptive thresholding specifically to mitigate this risk; instead, the system relies primarily on providing alerts to municipal operators after detection errors occur.  
+
+[d] **Justification:**  
+This violation is realistic and subtle because relying on operator alerts rather than embedding technically feasible improvements in the AI model design delays risk mitigation, increasing residual risk during critical low-visibility scenarios; it subtly shifts responsibility away from design improvements, which is inconsistent with the requirement to reduce risks “as far as technically feasible.”
+
+---

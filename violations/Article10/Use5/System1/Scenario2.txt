@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"3. Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Compliance requires that datasets include appropriately balanced and representative examples from all groups expected to use or be evaluated by the system, including varying education levels, socio-economic backgrounds, and geographic locations relevant to the recruitment market. Data cleaning must remove or correct mislabeled or incomplete resumes to maintain accuracy and reliability of the matching process.  
+
+[c] **Violation:**  
+The training data for the Talent Insight Model disproportionately represents candidates from urban, high-income regions with advanced degrees, while underrepresenting rural applicants and those with vocational experience. Additionally, many resumes are parsed without standardization, leading to mislabeled skill categories and incomplete records, but these errors are not systematically corrected or accounted for in the model training.  
+
+[d] **Justification:**  
+The lack of representation and incomplete error correction compromises the dataset’s statistical validity and relevance to the full spectrum of job applicants, violating Article 10(3). This breach is plausible and subtle because data imbalance and parsing errors may not be immediately obvious through standard performance metrics, and can result in unfair disadvantaging of certain groups in the recruitment process.  
+
+---

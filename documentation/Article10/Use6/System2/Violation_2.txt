@@ -1,0 +1,39 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The development of Contractual Separation Insight has been conducted under a rigorous data governance framework tailored to its operational context within corporate HR and compliance sectors. The training data set comprises approximately 2.4 million records, primarily sourced from large multinational corporations with extensive demographic diversity in terms of geography, job roles, and employment durations. These source datasets originate from internal HR databases, anonymized employee performance records, and documented contract termination histories, collected initially for operational and compliance auditing purposes.
+
+Data preparation included multi-stage processes: cleaning to remove anomalous or incomplete records (approximately 3.8% of data points excluded), standardized label annotation aligning contract outcomes to clearly defined termination risk categories, and iterative enrichment by integrating policy interpretations derived from over 10,000 corporate policy documents. Policy text was annotated by a team of legal and HR experts to support the natural language understanding tasks pursued by embedded LLMs within the system ensemble.
+
+Explicit assumptions were documented regarding the representative validity of multinational employee cohorts as proxies for the broader workforce. Nevertheless, it was identified—through internal audits and statistical profiling—that records from small and medium-sized enterprises (SMEs) and specific minority ethnic groups represent less than 7% of the total dataset. This discrepancy was assessed through intersectional analysis of demographic and firmographic metadata and is reflected in system performance metrics.
+
+### Assessment of Data Quality and Bias Risks
+
+The training, validation, and testing sets were systematically evaluated for quality criteria relevant to the intended use of risk assessment in employment contract termination. Statistical representativeness was measured across metadata dimensions including company size, sector, geographical distribution, and ethnicity proxies derived from voluntarily provided demographic information. Model validation showed strong predictive accuracy (F1 score averaging 0.92) on the predominant multinational validation subsets, but revealed performance degradation (approximately 14% decrease in precision) when isolating SME and certain minority ethnic group subsets.
+
+Bias analysis employed algorithmic fairness metrics such as disparate impact ratio and equal opportunity difference. Results indicated a consistent undervaluation of contract termination risk for cases originating from underrepresented groups, particularly SMEs and ethnic minorities. This pattern was corroborated by scenario testing and stakeholder feedback simulating operational decision contexts.
+
+### Bias Detection, Mitigation Measures, and Data Gap Handling
+
+Recognizing these limitations, a multi-tiered bias mitigation strategy was implemented. This includes synthetic data augmentation to partially address data scarcity for underrepresented groups and the incorporation of algorithmic penalty terms that adjust for observed bias metrics during model training. However, the system’s core risk scoring continues to reflect these data imbalances due to the inherent scarcity of high-quality, representative termination records from SMEs and minority demographics.
+
+No special categories of personal data—such as those revealing sensitive attributes—were accessed or processed beyond what is permissible under applicable data protection laws. All data used was pseudonymized in compliance with EU GDPR standards, with stringent access controls and documented processing workflows.
+
+Data gaps related to underrepresentation were formally catalogued in system risk registers, with documented plans recommending future enhancements through targeted data collection partnerships with SMEs and minority-focused employment agencies. Continuous monitoring of model outputs and retraining schedules are established to incorporate new data sources as they become available, aiming to improve fairness profiles iteratively.
+
+### Relevance, Representativeness, and Statistical Properties of Data
+
+Datasets were constructed to achieve relevance by aligning data points with the core system functions: prediction of contract termination risks based on employee performance, behavioral signals, and company policy adherence indicators. The ensemble model leverages both structured quantitative features and unstructured text inputs processed by integrated LLM components, reflecting current industry practices in hybrid modeling.
+
+Despite data sharing geographical diversity spanning North America, Europe, and Asia-Pacific regions, contextual factors such as specific regional labor law models and organizational culture differences were embedded via explicit feature engineering and policy text corpora adapted per region. However, the underrepresentation of smaller firms and minority groups implies that particular behavioral and contextual patterns intrinsic to these populations may not be fully captured.
+
+Statistical properties, including data completeness (exceeding 96%), internal consistency, and error rates, were thoroughly validated using cross-validation and hold-out testing procedures. Supplementary stratified sampling ensured that minority subgroups and SME data, although limited, were sufficiently present in validation and test phases to enable ongoing bias evaluation.
+
+### Technical Infrastructure and Documentation for Compliance Assessment
+
+All data processing pipelines are version-controlled and executed within secure cloud environments compliant with EU data sovereignty requirements. Detailed logs of data provenance, cleaning operations, annotation guidelines, and validation routines are maintained and periodically audited by independent reviewers.
+
+Model training employed contemporary random forest algorithms integrated with transformer-based LLMs, leveraging 64 TPU cores and approximately 2.8 million CPU hours, consistent with 2025 computational norms. Explainability features embedded within the system provide decision trail transparency, including feature importance scores and policy text rationale summaries per recommendation.
+
+Comprehensive documentation outlining dataset characteristics, bias detection methodologies, and mitigation efforts supports transparent compliance review. These include quantifiable metrics on representativeness, documented data gaps, and the rationale for exclusions or weightings applied during training to enable a sober and granular assessment aligned with Article 10 requirements.

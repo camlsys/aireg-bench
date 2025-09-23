@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+To ensure compliance, the system must maintain stable, predictable performance metrics such as accuracy of content classification and generation across different operational phases, prevent degradation over time, and incorporate mechanisms to detect drift or failures that may affect output correctness or ethical alignment. Continuous monitoring and validation through lifecycle testing are necessary to verify consistent behavior.  
+
+[c] **Violation:**  
+The Political Influence Analyzer, after deployment, undergoes continuous learning without sufficiently constrained updating mechanisms, resulting in gradual performance degradation manifested as an increased production of misleading or factually incorrect persuasive content due to accumulation of subtle errors in newly ingested data. This causes declining accuracy in reflecting true political contexts and voter preferences over time.  
+
+[d] **Justification:**  
+This subtle drift is not a blatant failure but a progressive erosion of accuracy and robustness, violating the requirement to maintain consistent performance throughout the system lifecycle. It is realistic because adaptive systems easily encounter such feedback-related drift, especially in domain areas with evolving information like political discourse. Yet this kind of degradation may elude detection without rigorous lifecycle validation, rendering the system non-compliant with Article 15(1).

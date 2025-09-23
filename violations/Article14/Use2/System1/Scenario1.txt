@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."  
+
+[b] **Guideline:**  
+The system must include user interfaces that transparently present operational status and critical alerts, enabling human operators to easily monitor real-time decisions and intervene promptly when needed. Oversight tools should display system confidence, anomaly scores, and explanations for alerts to support informed human judgment.  
+
+[c] **Violation:**  
+Gas Safety Insight’s user interface provides only binary alerts (safe/unsafe) without detailed explanations or confidence levels and lacks real-time visualization of underlying sensor data or detected anomalies. Maintenance personnel receive terse notifications devoid of contextual information, limiting their ability to effectively oversee AI outputs as the system operates.  
+
+[d] **Justification:**  
+This violation breaches effective human oversight because the minimalistic interface prevents natural persons from fully understanding the AI system’s state or reasoning behind decisions. It is subtle as alerts are still delivered, but omission of critical interpretative information diminishes operator situational awareness, undermining the ability to detect issues or intervene adequately.  
+
+---

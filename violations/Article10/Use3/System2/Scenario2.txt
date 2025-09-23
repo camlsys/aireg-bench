@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose."  
+
+[b] **Guideline:**  
+To comply, training data must comprehensively represent the breadth of vocational skills, learner demographics, and instructional scenarios relevant to the targeted vocational and adult education programs, capturing diverse teaching methods and learner profiles. The datasets must also be checked for systematic data entry errors or missing interactions that could bias model outputs.   
+
+[c] **Violation:**  
+The training data primarily represents large urban vocational centers and lacks sufficient data from rural or smaller training facilities where learner behaviors and skill acquisition patterns differ. This geographical and contextual data gap causes the model to generate less accurate and skewed competency scores when applied to underrepresented rural trainees, affecting curriculum adaptation.  
+
+[d] **Justification:**  
+This violates the requirement for relevance, representativeness, and completeness, especially as detailed in paragraph 4 that mandates contextual/geographical factors. The gap is subtle because the overall data volume may appear large and valid, masking insufficiencies in certain critical contextual subsets. This type of bias can degrade model fairness and effectiveness in less-represented regions without obvious errors in the dataset.

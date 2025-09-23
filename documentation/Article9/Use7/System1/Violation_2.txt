@@ -1,0 +1,47 @@
+**Article 9**
+
+**Establishment and Scope of Risk Management System**
+
+Meridian Financial Analytics has instituted a comprehensive risk management system tailored to the Credit Evaluation Network, aligned with the requirements for high-risk AI systems. This system is designed as a continuous, iterative lifecycle process encompassing design, development, deployment, and post-market phases. It addresses identification, analysis, evaluation, and mitigation of risks specifically related to the AI system’s deployment in consumer credit risk assessment.
+
+The system notably incorporates structured financial data alongside demographic attributes including geographic location and occupation categories, selected for their predictive power. While these features enhance predictive accuracy of creditworthiness indices derived via Gradient Boosted Decision Trees (GBDT), the risk management framework does not integrate fairness-aware algorithms or bias-mitigation techniques targeting indirect discrimination or disparate impact on protected or vulnerable groups.
+
+**Risk Identification and Analysis**
+
+Initial and ongoing risk identification activities involved systematic analysis of potential harms related to health, safety, and fundamental rights under the intended use scenario—credit assessment of natural persons. Particular focus was placed on risks linked to data-driven inference processes, including potential for unfair credit denial or unfavorable scoring dynamics prompted by sensitive demographic inputs.
+
+The assessment catalogued known risks such as erroneous loan rejection due to data inaccuracies, and reasonably foreseeable risks related to misuse, including external tampering or data drift affecting model decisions. Notably, despite the inclusion of demographics strongly correlated with protected characteristics, no technical mechanisms (e.g., fairness constraints, adversarial debiasing) have been employed to detect or attenuate indirect discrimination.
+
+**Risk Estimation and Evaluation**
+
+Quantitative risk evaluation was performed using standard statistical validation on a credit portfolio dataset of approximately 1.5 million anonymized loan applications collected over a 5-year period. Performance metrics included accuracy, area under the ROC curve (AUC ~0.87), and calibration error, demonstrating robustness in default prediction.
+
+However, assessments of disparate impact metrics or subgroup fairness evaluations were not conducted as part of the design phase, consistent with the deliberate prioritization of predictive effectiveness over fairness adjustments. The risk evaluation thus focuses primarily on predictive performance and error rates across the overall population, without stratified impact assessment across protected or vulnerable groups.
+
+**Integration of Post-Market Risk Data**
+
+Post-market monitoring procedures collect anonymized outcome data on system decisions and loan repayment performance to identify shifts in model behavior and emerging risk patterns. Data aggregation mechanisms enable periodic analysis of residual risks, calibration drift, and system reliability over time.
+
+Nevertheless, this monitoring framework does not include routine systematic audits for disparate impacts or bias amplification related to demographics such as ethnicity, gender, or socio-economic status. Risk analysis from post-market data is predominantly technical and operational, emphasizing consistency and accuracy rather than fairness considerations.
+
+**Risk Management Measures and Their Technical Rationale**
+
+Risk mitigation efforts emphasize elimination or reduction of technical sources of error consistent with effective prediction: feature engineering refinements, GBDT hyperparameter tuning, and reinforcement of data quality controls. Redundant validation sets and cross-validation strategies are employed to ensure model robustness, with automated alerts for performance degradation.
+
+In alignment with current design choices, no targeted algorithmic interventions exist to reduce possible indirect discrimination or to adjust model outcomes for vulnerable populations. The documentation transparently records this design decision, evidencing that no fairness-aware methodologies—such as reweighing, fairness regularization, or counterfactual fairness constraints—were integrated, as the priority remains on maximizing predictive accuracy.
+
+Additionally, system deployment documentation provides detailed descriptions of intended use, data inputs, and expected operational context, as well as best practice recommendations for deployers concerning the interpretability and limits of system outputs. No formal training modules addressing potential disparate impacts have been developed or included.
+
+**Testing Procedures to Support Risk Management**
+
+Testing regimens included multiple development-stage evaluations covering model accuracy, stability, and interpretability of GBDT feature contributions via SHAP values. Tests were conducted on benchmark datasets mirroring the demographic and financial characteristics of target populations.
+
+All tests were benchmarked against predefined metrics aligned with the intended purpose of credit risk scoring, including false positive/negative rates and overall prediction consistency. Real-world condition testing was performed on historical data simulating deployment environments; however, no adversarial testing or scenario-based assessments were performed to explore potential disparate impacts on protected or vulnerable groups.
+
+**Consideration of Vulnerable Groups**
+
+The risk management documentation explicitly notes consideration of potential impacts on persons under the age of 18 and other vulnerable groups during the risk identification phase. Notwithstanding this, no specific technical measures or evaluation protocols were implemented to quantify or mitigate adverse effects on these cohorts. The system design excludes minors from the target user group, consistent with regulatory expectations, but does not extend to broader vulnerability assessments relating to socioeconomic or protected characteristics.
+
+**Alignment with Other Regulatory Risk Management Requirements**
+
+Where applicable, Meridian Financial Analytics’ risk management processes align with existing Union law provisions governing credit risk models and consumer protection. The integrated system leverages these frameworks to support technical risk controls and documentation, while maintaining a clear boundary separating compliance-related documentation from fairness interventions that remain outside the current system design scope.

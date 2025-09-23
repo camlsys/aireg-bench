@@ -1,0 +1,39 @@
+**Article 10**
+
+### Data Governance Framework and Design Rationale
+
+The Recruitment Decision Forest system employs an ensemble of Gradient Boosted Decision Trees (GBDT) trained on structured datasets derived from historical recruitment cycles within a multinational corporation’s European operations. The provider implemented a data governance framework focused on transparency, traceability, and iterative refinement aligned with the system’s intended use for candidate screening and job advertisement optimization. 
+
+Training data primarily consist of candidate profiles submitted between 2019 and 2023, totaling approximately 120,000 records after preprocessing. This dataset integrates anonymized candidate metadata (demographics, educational background, employment history), structured responses from application forms, and corresponding hiring outcomes. Data collection was confined to applications from the corporation’s main regional office in Western Europe, predominantly covering entry-level roles. Design choices deliberately prioritized data consistency and historical relevance to the targeted recruitment segment, aiming to maximize predictive value for entry-level candidate screening workflows.
+
+Annotation and labeling were conducted by leveraging structured HR outcome records (interviewed, shortlisted, hired, rejected status), which ensured high-quality supervised learning targets. Data cleaning involved removing duplicates, imputing missing categorical fields via mode imputation within candidate subgroups, and harmonizing role classifications based on predefined occupational taxonomies. Due to restrictions around special category data and privacy regulations, no sensitive attributes such as ethnicity or health status were incorporated, consistent with external compliance constraints. The origin and processing of all datasets are documented with version-controlled metadata to support auditability and continuous monitoring.
+
+### Data Quality, Representation, and Statistical Properties
+
+The datasets exhibit strong internal consistency and low erroneous data rates—with estimated data errors under 0.5% after cleaning—primarily due to automated validation steps and manual verification of inconsistent records. However, statistical analysis reveals significant distributional imbalances: 87% of training samples are drawn from candidates applying for entry-level roles, with only 13% representing mid-to-senior-level applicants. Geographically, 94% of data points originate from Western European offices, with underrepresentation of candidates from other corporate regions, including Eastern Europe and Southern Europe.
+
+These imbalances reflect a constrained data scope which is representative of prior recruiting focus but limits generalizability to wider enterprise segments. The system modeling assumptions explicitly acknowledge that the training data predominantly represent entry-level profiles within a specific geographic segment; accordingly, performance evaluations include separate validation results stratified by candidate seniority and region. For senior roles and underrepresented regions, predictive accuracy measured via area under the ROC curve (AUC) declines by 15-22% relative to dominant segments. These differences are highlighted in model documentation as areas requiring further data enrichment and risk mitigation.
+
+### Bias Assessment, Detection, and Mitigation Measures
+
+A targeted bias risk assessment was performed following domain-standard methodologies, involving demographic parity testing and subgroup performance disaggregation. This identified a measurable decline in scoring quality and ranking fairness for candidates outside core geographic and role-level groups. The provider implemented bias detection pipelines incorporating error analysis stratified by candidate seniority and location metadata, with alerts for disproportionate false positive and false negative rates beyond predefined thresholds.
+
+To mitigate such bias, the system incorporates weighting adjustments during model training aimed at partially correcting for sample representation imbalances. However, the effectiveness of these measures is limited by the lack of sufficient training instances from affected subpopulations. Consequently, the provider has documented the system’s operational boundaries and recommends that deployers supplement model outcomes with human review for candidates from senior roles or underrepresented locations. An active data gap identification procedure is integrated into the system lifecycle management to flag training data shortages and facilitate client-driven data acquisition or augmentation efforts.
+
+### Limitations on Processing Sensitive Data and Privacy Compliance
+
+Consistent with Article 10(5), the provider does not process special categories of personal data—including racial or ethnic origin—to detect or correct bias, due to legal restrictions and absence of client mandate. Instead, proxy variables and aggregate regional information are leveraged cautiously for bias assessment while safeguarding candidate privacy. Pseudonymisation procedures anonymize candidate identifiers throughout model development, with strict access controls and encryption safeguarding personal data in processing environments. 
+
+Retention policies enforce data deletion within 18 months post-training unless expressly authorized for retraining purposes. All data handling complies with GDPR requirements, incorporating principles of purpose limitation and data minimization. The provider maintains detailed documentation on data flows, access logs, and audit trails supporting demonstrable compliance with applicable privacy and data protection standards.
+
+### Validation and Testing Protocols Reflecting Intended Purpose
+
+The system’s validation and testing processes reflect the recruitment context, conducting internal holdout tests on 20% of the dataset stratified by role level and geography. Performance metrics beyond AUC include precision, recall, and calibration curves dataset-wide and per subgroup. These evaluations are supplemented by simulated deployment analyses to anticipate impacts on candidate pools and job ad targeting effectiveness.
+
+During the testing phase, error analyses confirmed that model outputs maintain high reliability for entry-level Western European candidates but degrade systematically elsewhere, as expected from the underlying data limitations. Providers disclose these limitations and data provenance in the system documentation to inform risk management by users.
+
+### Ongoing Monitoring and Improvement Planning
+
+The provider has instituted a schedule of quarterly data and model performance reviews aligned with enterprise recruiting cycles, aiming to incorporate additional data sources as they become available, particularly from underrepresented regions and job levels. Model retraining criteria trigger on identification of significant data gaps or biases that meet predefined quantitative thresholds, forming part of a continuous improvement framework.
+
+Compliance documentation includes mechanisms for reporting and managing unforeseen systemic bias or data quality issues during operational deployment, facilitating remedial actions consistent with regulatory expectations. This structured approach enables transparent tracking of known limitations and progressive alignment with representativeness and fairness objectives.

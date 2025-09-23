@@ -1,0 +1,31 @@
+**Article 12**
+
+### Technical Implementation of Logging Capabilities
+
+The SafeRoute Traffic Monitor incorporates a selective event logging mechanism aligned with operational priorities and compliance considerations. The system is architected to capture detailed event logs exclusively during periods of active system alerts—that is, when the AI models detect potential high-risk traffic conditions as defined in the risk model following Article 79(1)—or when manual logging is initiated by authorized operators within urban traffic management centers. This approach diverges from continuous, comprehensive logging, focusing instead on relevant, high-importance events to maintain manageable data volumes and optimize system performance.
+
+Technically, the SafeRoute architecture integrates an event logging module that interfaces with the alert generation sub-system of the hybrid AI pipeline. The alert generation leverages the outputs of the Graph Neural Network (GNN) component, which models dynamic interdependencies within urban road networks, and the Transformer-based encoder that fuses heterogeneous sensor data (including vehicle counts, environmental sensor readings, and incident reports). This integration enables the logging module to record data snapshots comprising raw sensor inputs, intermediate feature representations, and model confidence scores exclusively when the system's risk thresholds are exceeded. The manual logging function is exposed via a secure operator interface that allows traffic control authorities to trigger logs based on external observations or operational needs.
+
+The design rationale prioritizes the traceability of functionally significant episodes over exhaustive data accumulation. This reduces storage costs and controls sensitive data exposure without compromising the capability to reconstruct the context of critical decisions affecting traffic safety.
+
+### Alignment with Traceability Requirements and Event Relevance
+
+The selective logging strategy supports traceability goals by ensuring that all recorded events correspond to situations with heightened risk potential or operational intervention. Logs capture sufficient granularity to enable root-cause analysis and system behavior review post-incident. For instance:
+
+- Logs include timestamped alert metadata, input sensor arrays, network graph states used by the GNN, anomaly scores, and Transformer attention weight summaries, where applicable. This facilitates detailed reconstruction of detected hazards and the AI's inferential steps.
+
+- In alignment with subsection (a), the stored logs are focused on events where the AI’s internal risk assessment suggests a potential system-induced or detected hazard, or when system parameters may have shifted beyond calibrated ranges, enabling identification of situations that could expose vulnerabilities or substantial system modifications.
+
+- Consistent with (b), these event logs are structured to feed into post-market monitoring workflows by providing data slices representative of the AI’s decision-making context, supporting performance validation and ongoing risk analysis.
+
+- For (c), logs generated during operator-triggered manual recordings or alert conditions support operational oversight, enabling continuous improvement cycles as well as retrospective operational audits.
+
+### Compliance Measures and Data Governance Practices
+
+Logging activity is restricted to the aforementioned conditions through policy-enforced system configurations and technical controls. Access to the logging interface and data repositories is governed by role-based access control (RBAC) conforming to the principle of least privilege, ensuring that only authorized personnel can initiate manual logging or access high-risk event data.
+
+Event log storage employs encrypted, tamper-evident databases with automated integrity checks and retention policies aligned with applicable data protection standards. Logs are retained for a period consistent with operational analysis cycles and regulatory requirements, after which data are securely deleted or anonymized as necessary.
+
+Audit trails are maintained on access to and modification of logs, ensuring accountability. The selective logging approach has been validated through adversarial and boundary condition testing to confirm that no critical high-risk events are omitted from recording due to system configuration or operational scenarios.
+
+In sum, the SafeRoute Traffic Monitor’s logging framework operationalizes a targeted, event-driven data capture methodology tailored to its specific safety monitoring role, facilitating effective traceability without perpetuating continuous or comprehensive event logging across its entire operational lifespan.

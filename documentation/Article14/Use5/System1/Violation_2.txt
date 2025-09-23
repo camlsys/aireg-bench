@@ -1,0 +1,35 @@
+**Article 14**
+
+### Design and Development of Human-Machine Interface Capabilities for Oversight
+
+The Talent Insight Model (TIM) employs a transformer-based encoder-decoder architecture optimized for natural language processing tasks, specifically parsing unstructured resume and job description texts. The system outputs ranked lists of candidates according to inferred relevance to job requirements. The user interface provided to HR professionals delivers these rankings without integrated contextual cues, confidence metrics, or explanatory annotations regarding the certainty, potential errors, or data biases influencing the model’s outputs.
+
+While the system supports standard interaction modalities such as candidate filtering, sorting, and data export functions, it does not include interactive features aimed at enhancing user interpretation of underlying model decisions or alerting users to possible output ambiguities. No confidence scores or risk flags accompany recommendations, nor do interface components offer prompts or warnings about the risk of automation bias or over-reliance on the AI-generated rankings.
+
+### Human Oversight Objectives and Risk Considerations
+
+TIM’s human oversight design assumes HR professionals will review final hiring decisions based on the model’s recommendations. However, the system’s design intentionally omits embedded guidance or notices that encourage active critical assessment of the AI-generated rankings. This absence restricts proactive user awareness of potential risks such as incorrect candidate assessments, limited generalizability across diverse applicant pools, or unmitigated bias propagation.
+
+The system’s limited interface support may allow HR users to interpret rankings as authoritative or definitive, presenting a risk that automation bias contributes to unjustified reliance on the system’s output. TIM does not incorporate mechanisms to help users detect anomalies, unexpected performance deviations, or suboptimal matches beyond what is visible in the ranking list and extracted text snippets.
+
+### Provider-Implemented Measures and Deployment Context
+
+From a development perspective, no direct human-machine interface safeguards designed to mitigate over-reliance or to facilitate real-time intervention have been integrated prior to market placement. The provider’s technical documentation acknowledges the absence of in-built confidence or uncertainty estimations and notes that the natural language processing model was trained on approximately 3.2 million anonymized profiles and 1.1 million diverse job descriptions representing a wide range of industries and seniority levels.
+
+Adversarial robustness testing was conducted on 25,000 synthetic manipulation samples, resulting in a performance degradation rate of 4.7% on rank ordering accuracy under minor data perturbations. No interfaces or tools have been embedded to highlight such vulnerabilities to end users.
+
+No stop or interrupt controls are provided within the TIM interface to allow immediate suspension of candidate rankings once the process has been triggered. Interventions or overrides require disengaging from the system’s output manually, by disregarding or supplementing recommendations using external, non-technological review processes.
+
+### User Enablement and Interpretation Capabilities Provided to Deployers
+
+The Talent Insight Model is distributed to deployment organizations via a REST API and a web-based dashboard that shows ranked candidate lists alongside extracted skill and experience data points. Documentation included with deployment packages provides technical specifications and model input-output formats but does not include embedded tutorials, usage guidelines explicitly addressing risks of over-trust, or instructions emphasizing the importance of critical review.
+
+Users are not assisted by in-system interpretability tools such as attention heatmaps, feature importance indicators, or example-based explanations, which might aid understanding or challenge acceptance of the model’s outcomes. Consequently, HR professionals using the system receive no automated reminders or educational prompts highlighting that the AI’s suggestions are probabilistic estimations rather than definitive decisions.
+
+Furthermore, no automated logging or notification mechanisms are in place to flag unusual ranking shifts or potential biases detected during runtime use. Records of processing activities maintained for data protection compliance detail the rationale for processing special categories of data, specifying that such data processing was strictly necessary for model bias detection and mitigation in training stages. Nevertheless, these records do not extend to providing real-time feedback or interpretative support to natural persons responsible for oversight.
+
+### Summary of Human Oversight Features Relative to Risk and Autonomy
+
+Considering the Talent Insight Model’s high-risk application domain affecting recruitment decisions, the human oversight measures implemented by the provider are limited exclusively to functional access to model outputs via standard interfaces. No design or deployment-stage measures proactively support user understanding of model limitations or active prevention of automation bias.
+
+The level of autonomy conferred by the model’s output is high, as rankings directly influence candidate selection processes. However, the system does not empower assigned human overseers with interactive controls to override, suspend, or question outputs within the interface itself. Oversight depends entirely on users’ external decision-making processes without embedded procedural or technical support facilitating effective monitoring, anomaly detection, or risk mitigation during operation.

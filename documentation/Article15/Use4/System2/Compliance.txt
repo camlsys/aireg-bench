@@ -1,0 +1,45 @@
+**Article 15**
+
+**Assurance of Accuracy, Robustness, and Consistent Performance**
+
+The Academic Compliance Monitor (ACM) has been designed and developed to consistently deliver high levels of accuracy and robustness throughout its operational lifecycle. The core AI architecture comprises a hybrid model integrating Random Forest classifiers for static tabular event data (e.g., discrete behavioral markers derived from keyboard usage logs) and sequence-based Recurrent Neural Networks (RNNs) for processing temporal multimodal data streams, such as environmental audio patterns. This architectural approach was selected to leverage the complementary strengths of decision-tree ensembles in managing structured data alongside deep learning methods adept at capturing temporal dependencies, thereby optimizing anomaly detection precision.
+
+The training dataset encompassed over 1.2 million labeled behavioral sequences aggregated from controlled pilot examinations across diverse academic institutions under governance-compliant data collection protocols. Validation was performed using stratified k-fold cross-validation and separate hold-out sets, achieving an overall detection accuracy of 93.6% with a false positive rate of 2.4%, benchmarked against curated ground truth annotations validated by expert academic integrity panels. Performance metrics include precision, recall, and the F1 score, reflecting an appropriate balance tuned to minimize both missed anomalies and unnecessary interruptions during examination events.
+
+Throughout the lifecycle, system updates (including retraining or fine-tuning) are managed under a controlled versioning scheme with rigorous post-update regression testing on updated datasets reflecting newly captured behavioral variability and environmental change, thereby maintaining stable performance. Continuous monitoring of input data characteristics and output distributions is implemented to detect drift or degradation promptly.
+
+**Benchmarking and Measurement Methodologies**
+
+Performance evaluation methodologies align with emerging European benchmarking standards for AI in educational oversight contexts, developed in cooperation with metrology institutions and academic consortia. Multi-dimensional accuracy metrics, including temporal anomaly detection sensitivity and specificity relevant to both keyboard dynamics and environmental audio, have been adopted. Confidence intervals and error margins are reported systematically, enabling transparency in accuracy estimations as promoted by relevant Commission guidance.
+
+Robustness is measured using adversarial robustness tests and simulated fault injections. For example, synthetic noise perturbations mimicking environmental audio interference at various amplitude and frequency bands, as well as deliberate injection of atypical keyboard event patterns, were applied to benchmark the model’s tolerance thresholds. These tests confirmed system resilience with minimal performance degradation under expected operational variabilities.
+
+**Declared Accuracy Metrics in Instructions for Use**
+
+The instructions for use accompanying the ACM explicitly declare the detection accuracy rates (e.g., 93.6% balanced accuracy), false positive rate (2.4%), and operational thresholds for anomaly scoring. The documentation provides guidance for exam supervisors on interpreting alert confidence levels and includes recommendations for manual verification protocols to address potential borderline cases. Furthermore, the dynamic nature of the system’s continuous learning capability is disclosed alongside periodic performance validation intervals, ensuring informed operational use.
+
+**Error Resilience and Fail-safe Measures**
+
+Recognizing the high-risk nature of academic integrity monitoring, ACM incorporates both technical and organizational robustness features. Redundancy is realized through parallel processing pipelines—Random Forest and RNN outputs are fused with confidence-weighted voting to mitigate single-model failure impacts. The system architecture supports fail-safe fallback procedures: in situations where data streams become inconsistent or corrupted (e.g., audio dropout or missing keyboard event logs), predefined degradation modes trigger alerts to supervisors highlighting incomplete data rather than issuing uncertain anomaly classifications.
+
+To preempt feedback loops caused by continuous learning post-deployment, ACM’s online learning module uses a buffered, anonymized data repository segregated from live input flows. This design avoids self-reinforcing biases by periodically retraining only on audited, verified datasets rather than on live inference outputs. Continuous bias monitoring is conducted using statistical parity assessments and fairness metrics calibrated for demographic neutrality within student populations.
+
+Operational protocols instruct on manual override and review pathways in cases of uncertain AI-driven alerts, ensuring human-in-the-loop governance to minimize faults or inconsistencies resulting from automated analysis interactions with students or surrounding systems.
+
+**Cybersecurity and Protection Against Manipulation**
+
+Cybersecurity measures in ACM are calibrated to the technical and contextual risk profile of examination environments. The system employs multi-layered defenses against unauthorized manipulation attempts, including end-to-end encryption of data in transit and at rest, role-based access controls, and secure hardware modules for model execution.
+
+Specific AI-centered protections include:
+
+- Integrity verification of the training datasets through cryptographic hashing and blockchain-based logging, preventing unauthorized data poisoning or retroactive dataset modification.
+
+- Authentication and attestation procedures for pre-trained model components, utilizing digital signatures and secure enclaves to guard against model poisoning.
+
+- Detection of adversarial inputs via runtime anomaly detectors that monitor input feature distributions and flag attempts to inject intentionally crafted perturbations designed to evade or confuse the model.
+
+- Continuous monitoring for confidentiality attacks by restricting inference details and model parameters from being exposed externally, mitigating model inversion or extraction risks.
+
+Incident response plans encompass automated alerts on detecting suspicious activity, predefined isolation protocols for affected subsystems, and rapid recovery mechanisms including model rollback and retraining from verified clean backups.
+
+The described safeguards are reviewed quarterly and updated in response to evolving threat landscapes identified in collaboration with cybersecurity experts and sectoral threat intelligence sharing platforms.

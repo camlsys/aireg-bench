@@ -1,0 +1,35 @@
+**Article 9**
+
+### Risk Management System Framework and Scope
+
+A risk management system was established and documented during the initial development phase of Gas Safety Insight, preceding its market deployment. The system design incorporated a structured risk assessment approach focusing on identifying and analyzing mechanical failures, sensor inaccuracies, and erroneous anomaly detection that could compromise operational safety. This initial assessment prioritized health and safety risks inherent in gas supply networks, including the reasonably foreseeable condition of overpressure and gas leaks. The risk analysis considered both normal operational conditions and anticipated misuse scenarios such as sensor failure modes and network cyber intrusions potentially leading to false alarms or missed detections.
+
+The risk profiling effort covered hazards that are reasonably mitigated through the system’s hybrid architecture: Gradient Boosted Decision Trees enable robust classification on sensor inputs, while encoder-only Transformers analyze temporal patterns and context in operational logs. These models work in concert to reduce false positives and negatives, addressing risks linked to sensor noise and dynamic operational environments. The provider’s focus during development was on eliminating or reducing risks to acceptable levels primarily through algorithmic design choices and sensor fusion strategies.
+
+### Lifecycle Risk Management and Review Process
+
+Gas Safety Insight’s risk management process, as constructed, is segmented into discrete phases linked to major software version releases. These phases include formal risk reassessment and testing iterations but do not include scheduled or continuous risk review during interim maintenance cycles. Post-deployment, no systematic or periodic risk reassessment based on operational data analysis has been integrated into the maintenance plan. Instead, risk reviews are event-driven, triggered only by substantial system updates or major feature additions. While this approach concentrates resources on significant lifecycle milestones, it does not support ongoing iterative risk evaluation or dynamic updates to mitigation strategies drawn from operational anomalies or sensor data drift observed in the field.
+
+### Post-Market Monitoring and Risk Evaluation Practices
+
+Although Gas Safety Insight collects extensive sensor data streams and operational logs during deployment, including pressure readings, flow rates, and diagnostic messages from network components, no automated or manual process has been instituted to continuously analyze this post-market data for emerging risks. The absence of integrated analytics or feedback mechanisms following initial deployment means evolving hazards—such as sensor degradation, changes in network topology, or new operational patterns—are not systematically identified or assessed for risk impact. Consequently, updates to risk mitigations are confined to scheduled major releases rather than informed by ongoing operational evidence.
+
+### Risk Mitigation Measures and Technical Controls
+
+To address identified risks, Gas Safety Insight’s development incorporated architectural and algorithmic mitigations including sensor fusion to counter individual sensor failures, threshold tuning to reduce false alarms, and model ensemble methods balancing Transformer-based contextual analysis with GBDT classification reliability. Software safety mechanisms were supplemented by comprehensive error logging and fail-safe alert propagation to ensure timely notification of critical anomalies without direct autonomous intervention in gas network control systems. Deployer guidance documentation outlines the operational context, expected sensor calibration routines, and recommended maintenance procedures but does not encompass continuous retraining or adaptive model refinement between major software versions.
+
+Training materials and information provided to gas network operators and maintenance personnel emphasize understanding the system’s intended use cases, limitations under sensor fault conditions, and interpretation of anomaly alerts. These materials cater to professional deployers with appropriate technical expertise but do not cover real-time adaptation or user-driven risk feedback integration from field observations.
+
+### Testing and Verification Against Risk Criteria
+
+Prior to market introduction and at each major release, Gas Safety Insight underwent comprehensive testing against predefined performance metrics, including detection accuracy, false positive rate, and latency under simulated and field-inspired scenarios. Testing employed a combined dataset of over 50,000 anonymized sensor and operational log records reflecting diverse environmental and operational states typical of natural gas networks. Benchmarks demonstrated consistent performance for intended leak and pressure anomaly detection tasks, meeting probabilistic thresholds established during risk assessment phases.
+
+No routine post-market testing or randomized real-world condition trials have been mandated beyond major versions. This testing regimen aimed at confirming compliance with initial safety and performance requirements rather than facilitating continuous risk reduction through incremental improvements driven by live operational data.
+
+### Consideration of Vulnerable Groups
+
+The risk management process included a targeted evaluation of potential impacts on vulnerable groups affected by gas supply safety, specifically focusing on the general population dependent on the gas network, with attention to children and elderly end-users. Though the system operates indirectly to protect these groups through early hazard detection, no direct personalization or tailored safety features for vulnerable populations were integrated. The design and risk controls aimed at maximizing general operational safety without adjustments based on demographic factors, assuming that deployers possess the operational competence to manage local risks appropriately.
+
+### Integration with Other Legal Risk Management Requirements
+
+Gas Safety Insight’s risk management system was designed as a standalone framework aligned with applicable safety standards for critical infrastructure AI systems but does not currently integrate with provider or deployer internal risk management procedures required under other Union law provisions. Norwin Industrial Technologies has not formalized interfaces with external processes addressing cybersecurity or industrial safety beyond the documented development life cycle risk reviews. Any future alignment with broader statutory obligations would require separate procedural and operational adaptations beyond the scope of the existing risk management setup.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall take into account, to the extent required by the intended purpose, the characteristics or elements that are particular to the specific geographical, contextual, behavioural or functional setting within which the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Data collection and preparation must integrate contextual factors such as regional weather variations, seasonal demand fluctuations, and maintenance schedules that influence sensor patterns and operational states, ensuring the model generalizes appropriately across these contexts.
+
+[c] **Violation:**  
+The dataset primarily reflects gas network data collected under normal weather conditions in one geographical region, with minimal representation of data during harsh weather or regional operational variants. The model thus exhibits degraded performance when applied to other regions or seasonal conditions.
+
+[d] **Justification:**  
+This violation is subtle because the data is accurate and clean for the captured context, yet lacks the geographic and contextual breadth mandated. Such insufficient contextualization affects real-world applicability and safety in diverse conditions, breaching the requirement without necessarily triggering obvious alarms in standard validation metrics.

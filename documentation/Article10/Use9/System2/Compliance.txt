@@ -1,0 +1,41 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+Legal Context Navigator’s development cycle was structured around rigorous data governance and management policies crafted explicitly to satisfy the intended judicial support functions. Key design choices prioritized transparency, traceability, and domain specificity in data handling. The training, validation, and testing datasets comprise a corpus of over 120 million documents, including statutes, regulations, case law spanning across EU Member States and applicable supranational law, ensuring broad coverage of relevant legal domains.
+
+Data sourcing was conducted through partnerships with official legal publishers and governmental repositories ensuring authoritative origins. Metadata capturing provenance, timestamp, jurisdictional scope, and document type were rigorously maintained. Where personal data appeared incidentally in publicly available judicial decisions, its use was strictly confined to non-identifiable elements and subject to anonymization protocols adhering to GDPR and related EU data protection frameworks. The original purpose of these datasets was explicit: to inform legal interpretation and ensure accurate mapping of factual scenarios to normative provisions.
+
+Data-preparation included multi-stage operations: legal text annotation was performed by expert legal linguists employing a validated schema for semantic roles and normative structures. Labelling routines captured references between statutes and related case law, disambiguating homonymous legal terms via context-sensitive tagging. Data cleaning eliminated erroneous transcriptions and duplicates. Regular updates integrated new legal developments and amendments, preserving dataset currency. Enrichment included cross-linking with legal ontologies and jurisdiction-specific taxonomies.
+
+Assumptions underlying dataset composition were explicitly formulated. The system presumes that legal texts selected accurately represent the binding laws relevant for judicial decisions and that annotations reflect prevailing judicial interpretations. The dataset’s representativeness was assessed against baseline coverage metrics: over 95% coverage was achieved for all major EU Member States’ primary legislation and binding case law between 2000 and 2024, as benchmarked against official legal registries.
+
+Bias was explicitly evaluated through a systematic procedure applying both quantitative and qualitative analyses. Quantitative checks involved measuring class imbalances in annotated legal topics and representation of jurisdictions, identifying potential overrepresentation of certain states or legal fields. Qualitative bias assessment involved expert legal reviews, particularly focusing on potential systemic biases affecting fundamental rights, such as the representation of marginalized groups in case law datasets. Outputs influencing subsequent retraining cycles were scrutinized via impact simulations on hypothetical fact patterns involving protected groups.
+
+Mitigation measures included rebalancing underrepresented data sources by targeted corpus augmentation, synthetic data generation to supplement rare legal topics, and application of fairness-aware loss functions during fine-tuning to reduce disparate performance across legal domains. An internal bias detection framework implemented periodic audits to detect emergent biases in model outputs, triggering data remedial actions as necessary.
+
+Data gaps were identified primarily in newly enacted legislation not yet widely available in digital format and in less documented jurisdictions with limited public legal databases. These shortcomings were addressed through continuous data acquisition agreements and incremental model updating pipelines, enabling prompt integration of fresh legal data.
+
+**Relevance, Representativeness, and Statistical Properties of Data Sets**
+
+The datasets were selected and refined to ensure maximal relevance to the system’s judicial support objective. Linguistic diversity across the multilingual EU legal landscape was carefully balanced, accounting for linguistic, procedural, and substantive differences. Statistical representativeness was validated by comparing dataset feature distributions — including lexical frequency, statute citation patterns, and temporal coverage — against comprehensive reference corpora provided by official EU sources.
+
+Error rates in datasets, estimated through manual audits on samples representative of each data type, were maintained below 0.3%, reflecting rigorous quality control in data ingestion. Completeness was ensured by exhaustive inclusion of legislative layers (primary, secondary, delegated acts) and complementary judicial interpretations across the EU. When individual datasets lacked full representativeness, the combination of datasets compensated, verified through coverage and diversity metrics tailored to the system’s multifaceted legal context.
+
+**Contextual and Geographical Specificity of Data**
+
+Datasets were curated to reflect specific regional and functional settings. For example, model training incorporated context tagging to distinguish between EU-wide provisions, Member-State-specific laws, and sector-specific regulations (e.g., environmental, labor law). This contextualization facilitates nuanced semantic interpretation aligned with judicial operational conditions.
+
+Behavioral elements, such as prevailing interpretational traditions (civil law versus common law influences), were embedded through annotated legal reasoning patterns. Functional considerations included the typical procedural phases supported by the system (fact-finding, legal mapping, precedent retrieval). This stratified data design enables the model to deliver contextually appropriate outputs tailored to the judicial setting at hand, thereby respecting the specificity mandated by the intended use-case.
+
+**Processing of Special Categories of Personal Data**
+
+The system’s architecture and data governance ensured that processing of special categories of personal data was avoided during dataset development whenever possible. Nonetheless, acknowledging legal rulings occasionally containing sensitive information, a secure enclave environment facilitated restricted processing when strictly necessary for bias detection.
+
+Such processing complied with technical and organizational safeguards including pseudonymisation of data at ingestion, access limited to certified data scientists under strict confidentiality agreements, detailed audit logging, and encryption at rest and in transit adhering to AES-256 standards. Additionally, automated data minimization workflows identified and expunged sensitive data immediately after bias correction procedures, meeting retention policies aligned with EU data protection principles.
+
+Bias detection involving sensitive attributes was confined to synthetic derivations and proxy indicators unless incontrovertibly necessary and justified under the conditions of Article 10(5). These measures ensured that no personal special category data were transmitted externally or made accessible beyond controlled environments.
+
+**Applicability to Testing Data Sets for Non-Training Components**
+
+All data governance and quality measures described were uniformly applied to testing data sets used for final system evaluations. Testing corpora, comprising approximately 1 million documents withheld from training and validated to reflect the latest legal developments up to 2024, were subjected to identical scrutiny regarding representativeness, error rates, contextual specificity, and bias assessment protocols. This ensured that evaluation results reliably reflect real-world conditions relevant for high-risk judicial applications.

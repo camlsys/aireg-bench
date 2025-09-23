@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+A compliant system should have documented processes to regularly review and update its risk assessment and mitigation procedures throughout all development, deployment, and operational phases. Such reviews must consider new data, user feedback, and changing environmental conditions or uses, ensuring ongoing identification and management of emergent risks.  
+
+[c] **Violation:**  
+Sterling Recruitment Technologies conducts only an initial risk assessment prior to deployment of the Talent Insight Model but fails to establish a systematic schedule or mechanism for reassessment during later lifecycle stages, ignoring evolving recruitment contexts or emergent adverse outcomes (e.g., emerging bias patterns detected through real-world usage).  
+
+[d] **Justification:**  
+This omission breaches the requirement for continuous, iterative risk management as new risks such as changes in labor market conditions or biases in applicant data may arise after initial deployment. It is a subtle violation because initial compliance may appear sufficient, but the lack of ongoing updates weakens the system’s ability to manage risks dynamically over time.

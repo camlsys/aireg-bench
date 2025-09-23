@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"...to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system;" (Art. 14(4)(d))
+
+[b] **Guideline:**  
+The system must provide explicit and accessible means for human supervisors to override or disregard the AI’s output when it conflicts with contextual knowledge or observed evidence, ensuring that the human’s decision can be recorded and applied without technical obstacles.
+
+[c] **Violation:**  
+Despite providing competency scores and explanations, the system does not support a formal override mechanism within the software; users cannot annotate or flag outputs as overridden nor prevent automated downstream curriculum adjustments based on those flagged scores, resulting in forced reliance on the AI’s recommendations.
+
+[d] **Justification:**  
+The inability to technically override or disregard outputs compromises meaningful human intervention and control over decisions, violating the mandate for human discretion. This violation is subtle because users might attempt informal workarounds, masking the lack of a formal override feature until critical misuses or errors occur.

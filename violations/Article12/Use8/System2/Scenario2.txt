@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must include detailed contextual data surrounding system decisions that could indicate potential risks or deviations, such as input anomalies, model confidence scores, and changes in model parameters, to enable risk detection and root cause analysis.
+
+[c] **Violation:**  
+The system’s logs capture final prioritization outputs and timestamps but omit intermediate model confidence scores, alert thresholds, and any metadata about input quality or suspected sensor malfunctions that could signal elevated risk conditions.
+
+[d] **Justification:**  
+By not logging these subtle yet critical indicators, the system limits the ability to identify when outputs might be unreliable or when model behavior shifts significantly, preventing nuanced risk assessment and early warnings. This shortfall is subtle because logs exist but lack vital layers of detail necessary for proactive risk identification.
+
+---

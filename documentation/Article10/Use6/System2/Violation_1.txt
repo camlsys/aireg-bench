@@ -1,0 +1,39 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+Contractual Separation Insight was developed employing training, validation, and testing data sets derived predominantly from historical employee records originally collected for payroll and administrative purposes. Data governance protocols explicitly document the original collection context, noting that these records were not initially obtained for predictive employment decision-making. Despite the absence of explicit consent or dedicated legal bases for the repurposing of this data toward AI training objectives, the development process included detailed recording of data provenance and annotations to clearly delineate the divergence between original and current intended uses.
+
+Design choices influencing data governance emphasized transparency regarding dataset origins and limitations. The process involved multidisciplinary teams—including data scientists, legal consultants, and HR domain experts—to curate the data and validate its alignment with the intended application of predictive termination modeling. Annotative procedures incorporated metadata tagging to distinguish data elements by their original administrative purpose versus inferred predictive relevance, supporting downstream traceability and auditability.
+
+### Data Collection, Preparation, and Suitability
+
+Data collection for the system reused stripped-down personal employee records accumulated between 2010 and 2021, encompassing approximately 1.3 million anonymized records across 15 multinational corporate entities. Data fields included attendance logs, payroll history, role changes, documented performance reviews, and termination outcomes. These datasets were not refreshed with additional explicitly consented collections targeting AI objectives.
+
+Preparation steps included rigorous cleaning to remove direct identifiers where possible and normalization of feature sets to reduce signal noise. Annotation incorporated policy-driven labeling schemas based on historical termination decisions but explicitly avoided imputing consent assumptions. Anomalies and inconsistencies—often traceable to administrative recording errors—were flagged, though retained to preserve dataset representativeness. Data augmentation through synthetic sampling was explored but ultimately limited, given the high sensitivity of modeled outcomes.
+
+A suitability assessment assessed dataset representativeness of the population groups likely subjected to employment termination decisions but identified gaps in demographic diversity and behavioural contexts, particularly for underrepresented minority groups and non-EU jurisdictions. These data gaps were documented with recommendations for potential mitigations, including later supplementation with contextually aligned datasets subject to stricter governance controls.
+
+### Assumptions and Bias Assessment
+
+Critical assumptions framed the interpretation of the dataset as proxies for employment risk factors, acknowledging that administrative data may imperfectly reflect employee performance or compliance behavior. Notably, the assumption that historical terminations represented unbiased decisions was carefully scrutinized to avoid entrenching legacy biases.
+
+An extensive bias evaluation protocol employed statistical tests—such as disparate impact ratio calculations and subgroup error rate analysis—across gender, age cohorts, and geographic origin. Results indicated measurable adverse impacts on specific demographic groups, highlighting risks of perpetuated discrimination if unmitigated. The protocol included simulation of counterfactual scenarios to estimate potential algorithmic bias amplification within the ensemble random forest and LLM components.
+
+### Bias Mitigation and Data Shortcomings
+
+Bias mitigation measures implemented included algorithmic debiasing techniques integrated into the random forest ensemble, such as re-weighting of training samples and post-processing score calibrations stratified by demographic attributes. The LLM interpreters underwent fine-tuning with policy-aware bias suppression heuristics, designed to flag potentially discriminatory inferences during inference.
+
+Given that special categories of personal data were not intentionally used or reprocessed for bias correction purposes, measures aligned with Article 10 paragraph 5 conditions—such as pseudonymisation and strict access controls—were not applicable. Instead, mitigation efforts focused on enhancing transparency and limiting reliance on sensitive attributes derived via proxies.
+
+In recognition of specific data gaps and the lack of explicit original consent for AI use, the documentation explicitly notes these limitations within descriptions of intended use scope and ecological validity. It advises deployment parties to conduct further contextual validation and ethical review prior to operational use.
+
+### Geographic and Contextual Considerations
+
+The datasets predominantly represented corporate entities operating within EU and select North American jurisdictions. Contractual Separation Insight’s data curation process documented contextual factors including regional labor law variations, cultural workplace norms, and policy frameworks. However, the absence of granular contextual signaling limited full accommodation of local idiosyncrasies within predictive modeling.
+
+The resulting data profile—while statistically robust for large-scale aggregated predictions—retains contextual constraints that may reduce applicability in settings with substantially different employment or contract termination practices. This contextual nuance is preserved through modular architecture allowing customization of LLM policy interpretation modules to local regulatory environments.
+
+---
+
+The assembled data governance, preparation, and bias mitigation frameworks constitute the basis for ongoing compliance assessments regarding the quality and appropriateness of training, validation, and testing datasets used by Contractual Separation Insight. Observed limitations and data heritage are transparently recorded to support evaluators in understanding compliance implications relative to data origin, purpose alignment, and bias-related risks.

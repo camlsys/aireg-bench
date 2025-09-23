@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system... (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law."
+
+[b] **Guideline:**  
+Experts must conduct rigorous bias assessments on the datasets used for training, validation, and testing, specifically focusing on potential discrimination related to protected characteristics (e.g., gender, ethnicity, age) affecting contract termination decisions. This involves analyzing the historical data for systemic bias patterns and quantifying how these may propagate through the model outputs.
+
+[c] **Violation:**  
+During development, the Legal Termination Assessment Framework’s training data was primarily collected from large corporations with demographic imbalances (e.g., underrepresentation of certain ethnic groups and older workers), but the provider did not carry out detailed subgroup bias testing tailored to those protected categories. Consequently, subtle discriminatory patterns against older employees were not detected or mitigated before deployment.
+
+[d] **Justification:**  
+This violation breaches the requirement for examining data bias under point (f) because failure to identify and address demographic biases linked to termination risk can perpetuate unlawful discrimination. The violation is subtle as the overall model accuracy might appear acceptable, yet subpopulation disparities remain hidden without granular bias testing.

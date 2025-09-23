@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."
+
+[b] **Guideline:**  
+The risk management system must include scheduled and documented periodic reviews and updates of risk assessments and mitigation measures, reflecting new data, usage patterns, and emerging hazards throughout the system’s lifecycle, including after deployment.
+
+[c] **Violation:**  
+Priority Response Analytics’ risk management system only performs comprehensive risk assessments during initial development and prior to deployment, with no structured or documented process for updating risk evaluations or mitigation measures based on real-world operational data or evolving emergency scenarios post-deployment.
+
+[d] **Justification:**  
+Failing to implement a genuinely continuous and iterative risk management process overlooks changes in incident types, novel dispatch language patterns, or shifting usage conditions that could introduce new risks. This oversight is subtle because the system appears compliant based on initial testing, but it neglects the lifecycle requirement that ensures sustained risk control as the environment evolves.
+
+---

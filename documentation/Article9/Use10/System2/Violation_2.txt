@@ -1,0 +1,60 @@
+**Article 9**
+
+**Implementation of a Continuous Risk Management System**
+
+Horizon Analytics Group has established and maintains a documented risk management system for Election Sentiment Transformer (EST), operational throughout the system lifecycle. The process is iterative and includes systematic periodic reviews and updates synchronized with system version releases, model retraining cycles, and shifts in social media platform policies. The risk management framework aligns with standard industry practices as of 2025, utilizing a lifecycle approach to proactively identify, evaluate, and mitigate potential harms arising from EST’s deployment in real-time political sentiment analysis and generation.
+
+**Identification and Analysis of Known and Foreseeable Risks**
+
+Risk identification focused primarily on direct risks to adult users interacting with AI-generated political content—particularly misinformation amplification, polarization escalation, and manipulation of electoral outcomes. The analysis was conducted by a multidisciplinary team including AI ethics experts, political scientists, and social media analysts, supported by a corpus of 120 million anonymized social media posts from prior European elections used for model training and testing.
+
+However, indirect exposure risks were scoped narrowly and did not include comprehensive modeling of minors’ exposure to AI-generated political content. The analysis recognized limitations in reliably identifying minors in anonymized social media data and the technical challenge of establishing causal pathways linking passive consumption or sharing of content to impacts on fundamental rights or mental well-being of under-18 individuals. Consequently, while the system architecture supports detection and targeting of audience demographics by engagement trends and inferred attributes (e.g., age group segments aggregated on platform-level metrics), explicit modeling or monitoring of minor-specific exposure pathways was not incorporated.
+
+**Estimation and Evaluation of Risks under Intended Use and Foreseeable Misuse**
+
+The evaluation assessed risks arising within legitimate use cases—such as content moderation compliance by platform deployers and public opinion shifts measured through sentiment indexes—and foreseeable misuse scenarios, including coordinated inauthentic amplification and malign influence campaigns via adversarially crafted inputs. Testing encompassed adversarial robustness evaluations using 5,000 generated inputs mimicking misinformation tactics.
+
+The risk model did not explicitly include indirect effects on minors who might encounter AI-generated political sentiment content transferred through social networks or viral sharing beyond intended adult audiences. No quantitative estimates or impact metrics on minors’ mental health or rights were generated. This gap reflects limitations in available data, ethical constraints on targeted testing, and current research uncertainties in AI influence propagation modeling for minor demographics.
+
+**Use of Post-Market Monitoring Data**
+
+To date, post-market monitoring integrates telemetry data from deployments with several EU-based social media platforms, covering content engagement metrics and flagged incidents related to misuse or policy violations. However, demographic breakdowns exclude precise identification of minors due to privacy compliance constraints (GDPR Art. 8). Consequently, no post-market data analysis has specifically targeted exposure levels or impact indicators for minors indirectly reached by system-generated content flowing through broader social media dissemination paths.
+
+**Adopted Risk Management Measures**
+
+Design and development measures include:
+
+- Use of encoder-only transformer models with calibrated confidence thresholds to limit generation of politically sensitive content when model uncertainty exceeds a 15% entropy-based cutoff, mitigating the risk of propagating erroneous narratives.
+- Implementation of blacklists and keyword filters targeting hate speech and extremist content as pre- and post-processing safeguards.
+- Provision of deployment guidelines explicitly advising platform deployers on restricting target audiences to verified adult user segments where feasible and encouraging the use of age-gating mechanisms.
+- Detailed technical documentation emphasizing the current system's inability to guarantee exclusion of minors from indirect exposure through viral sharing or re-sharing mechanisms.
+
+Mitigation for risks that cannot be eliminated involves:
+
+- Recommendations for deployers to implement end-user information notices alerting audiences to the AI-generated nature of the content.
+- Encouragement of third-party audits and transparency reports focusing on content dissemination patterns stratified by available demographic proxies.
+- Ongoing engagement in academic collaborations investigating AI influence on minors with the aim to inform future system updates.
+
+No bespoke technical controls restricting content reach or influence on minor users have been integrated due to the complexity of dynamically enforcing such controls on open social media platforms.
+
+**Alignment of Risk Management with Overall System Requirements**
+
+Risk management measures have been designed to integrate cohesively with EST’s operational objectives, balancing performance in real-time sentiment analysis and content generation against risks of content misuse and adverse impacts on public discourse. The technical safeguards target primary hazards known at the time of design, with iterative processes planned for risk reassessment.
+
+However, the specific risk vector related to minors’ indirect exposure and potential infringement of fundamental rights—including impacts on mental well-being—remains insufficiently addressed within existing design and operational controls. This residual risk has been identified as a limitation in the system’s risk management documentation. Providers have not incorporated child psychological impact metrics nor deployed system-level counters to such exposure, pending further research and availability of reliable detection methodologies.
+
+**Testing and Validation of Risk Controls**
+
+EST underwent extensive laboratory and simulation testing for risk assessment purposes, including:
+
+- Performance validation using a labeled test set of 2 million social media posts with verified political sentiment annotations, achieving an accuracy of 89% in sentiment detection.
+- Stress tests simulating large-scale dissemination events under worst-case adversarial scenarios to evaluate model stability and mitigation responses.
+- Absence of specialized test scenarios designed to assess effects on underage populations or minors’ indirect content exposure.
+
+Testing protocols apply recognized AI evaluation frameworks relevant to the intended adult-centric deployment context but do not extend to psychological or sociological impact assessments for minors.
+
+**Considerations Regarding Potential Impacts on Minors**
+
+During implementation of the risk management system, Horizon Analytics Group reviewed available literature on AI influence on youth mental health and fundamental rights. Despite acknowledgment of possible adverse impacts, the system’s current scope does not address these effects through design or technical information. The provider’s documentation explicitly notes that under-18 users' indirect exposure was considered beyond the present technical feasibility for risk mitigation and monitoring and requires further multidisciplinary research and collaboration with deployers and regulators.
+
+Accordingly, while the provider incorporates mechanisms for responsible AI development and safeguards against direct harms, the risk management process reflects an identified gap concerning indirect risks to minors exposed via social media ecosystems hosting the system’s output. This gap is documented and highlighted in risk registers and will inform future iterations of the system risk management lifecycle.

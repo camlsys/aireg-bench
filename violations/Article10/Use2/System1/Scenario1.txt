@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations;"  
+
+[b] **Guideline:**  
+Experts must rigorously examine sensor and operational log data for latent biases that could correlate with geographic or infrastructural disparities, such as systematically poorer sensor coverage in certain regions or networks. This examination should identify if such biases could lead to risk underestimation and thus jeopardize health and safety.
+
+[c] **Violation:**  
+The training and validation datasets predominantly come from older, well-instrumented urban pipeline segments, while rural or newly installed sections with different sensor types are underrepresented. This bias is not detected or corrected, causing the model to inadequately predict anomalies in those less-represented settings.
+
+[d] **Justification:**  
+This lack of comprehensive bias examination would subtly violate the requirement to detect biases that affect health and safety, as the model’s skewed training data leads to uneven predictive performance. Since the system operates in critical infrastructure, overlooking such a bias can gradually erode safety guarantees without overt failure, making this violation realistic yet not blatantly obvious.

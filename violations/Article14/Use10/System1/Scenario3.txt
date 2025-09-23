@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer… to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations…" (Article 14(4)(b))  
+
+[b] **Guideline:**  
+The system must equip human users with tools and contextual information to recognize and mitigate automation bias, such as certainty scores, explanations of model confidence, and training or alerts that reinforce critical assessment of AI-generated content.  
+
+[c] **Violation:**  
+Centuri Advisory Services’ deployment package lacks any tools or training encouraging critical engagement; human users are provided only with polished text outputs and no confidence metrics, uncertainty indications, or warnings about AI limitations, risking that deployers over-trust and uncritically amplify the AI’s persuasive messaging without sufficient human judgment.  
+
+[d] **Justification:**  
+This violation is realistic and subtle because the outputs seem reliable and professionally generated, yet without explicit measures countering automation bias, human overseers may unintentionally defer to the system’s recommendations, undermining the human role mandated by Article 14(4)(b).

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"
+
+[b] **Guideline:**  
+A rigorous bias assessment must be conducted on the training corpus to identify biases against protected groups (e.g., ethnicity, gender, disability) that could influence judicial outcomes, along with implementation of concrete mitigation measures such as balanced sampling, bias-correcting data augmentation, or output calibration to counteract systemic legal prejudices.
+
+[c] **Violation:**  
+Legal Context Navigator’s training data, amassed from historical legal texts, lacks systematic bias auditing focused on identifying and mitigating prejudicial language or judicial biases against minority groups; the system still reflectively prioritizes precedents from cases involving majority demographics without adjustments or reweighting to offset disparities.
+
+[d] **Justification:**  
+Since historical statutes and case law may encode entrenched biases, failure to examine and mitigate these biases causes the AI to perpetuate discriminatory associations in mapping relevant case precedents, subtly affecting judicial reasoning. This violation is subtle because the system outputs technically valid legal references but these are skewed in a way that risks unequal protection of fundamental rights contrary to the Act’s requirements.
+
+---

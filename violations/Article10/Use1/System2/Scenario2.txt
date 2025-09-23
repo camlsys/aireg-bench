@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose... They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."
+
+[b] **Guideline:**  
+Data scientists must ensure datasets include a balanced and statistically representative range of environmental and contextual conditions (weather, lighting, intersection types) that realistically capture all scenarios where the system will operate, as well as error-free annotations correlating to accurate ground truth.
+
+[c] **Violation:**  
+The system’s training data lacks night-time and adverse weather (fog, heavy rain) video samples, leading to poor CNN feature extraction under poorer visibility conditions, and sensor measurements used during these conditions contain unlabeled noise that was not eliminated during data cleaning, reducing classification reliability.
+
+[d] **Justification:**  
+Because the system is deployed across all day conditions, including nights and adverse weather, this incomplete and error-prone data coverage subtly degrades performance under specific but common conditions, violating the representativeness and error-free requirements without triggering overt failure modes, thereby undermining the system’s safety assurances.
+
+---

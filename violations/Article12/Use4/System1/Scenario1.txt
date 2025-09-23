@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must maintain a secure and immutable audit log that automatically records all relevant events, including input data snapshots, system decisions, and system state changes, from initial deployment through all updates and operational phases.
+
+[c] **Violation:**  
+Insight Proctor Analytics only logs flagged incidents where prohibited behavior is detected but does not record routine system operations or instances where no anomalies were found, effectively creating gaps in the event logs over the system’s lifetime.
+
+[d] **Justification:**  
+By not logging routine system states and decisions, the system fails to provide a continuous, comprehensive event trail, which is necessary for thorough post-incident analysis or audits. This omission is subtle because system operators might assume logging only "significant" events suffices, yet it undermines traceability and violates the requirement for automatic recording over the system’s entire lifetime.
+
+---

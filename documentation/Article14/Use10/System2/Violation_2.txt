@@ -1,0 +1,45 @@
+**Article 14**
+
+**Design and Development of Human Oversight Mechanisms**
+
+The Election Sentiment Transformer (EST) has been architected as an encoder-only transformer neural network tailored for near real-time processing of high-volume social media text related to electoral events. The model inputs streams of multilingual textual micro-content and outputs a high-level sentiment classification, indicating positive, neutral, or negative public sentiment trends relevant to candidates or referenda. This design decision emphasizes streamlined sentiment polarity indicators without providing supplementary explanatory data such as uncertainty estimates, confidence intervals, or feature attribution maps.
+
+System interfaces accessible to human operators consist primarily of aggregate sentiment dashboards and time-series visualizations of detected trends, omitting detailed model-internal metrics or interpretability outputs. This approach reflects provider decisions to focus on concise, streamlined outputs to facilitate rapid strategic communication decisions by operators rather than deep model introspection. The omission of uncertainty-related data inherently limits the operators’ ability to gauge model confidence or detect input data anomalies (e.g., sudden spikes in bot-generated content or topic drift), as these are not surfaced by design.
+
+**Risk Mitigation and Oversight Capabilities**
+
+Recognizing the Election Sentiment Transformer's potential influence on fundamental rights via shaping electoral perceptions, the provider has implemented baseline safeguards focused on data preprocessing and model robustness. The training corpus comprised approximately 100 million labeled social media posts, balanced across multiple languages and electoral contexts, gathered over a rolling 18-month period. Data augmentation and adversarial testing—including synthetic noise injection and out-of-distribution sampling—were employed to enhance model stability against common input perturbations.
+
+Nevertheless, the final system deliberately excludes technical features enabling explicit anomaly detection or uncertainty quantification in operational use, reflecting a provider determination to deliver outputs as high-level sentiment categories only. This design choice constrains direct human oversight possibilities insofar as operators cannot systematically detect or respond to model drift or misleading outputs triggered by unusual data distributions, beyond heuristics based on historical sentiment patterns.
+
+**Measures Implemented by the Provider**
+
+Prior to market release, Horizon Analytics Group established several provider-side measures in alignment with current industry practices:
+
+- Comprehensive model validation via cross-validation and a holdout test set of 20 million samples, achieving F1-scores averaging 0.82 across sentiment classes.
+  
+- Regular retraining schedules every four months to incorporate fresh data and mitigate model drift. However, no embedded real-time drift detection mechanisms or alerts are integrated into the deployed model.
+
+- Provision of technical documentation describing the model architecture, training data characteristics, and performance metrics, but intentionally omitting any interpretability or uncertainty analysis tools accessible at runtime.
+
+- Deployment of scalable cloud-based inference infrastructure supporting latency benchmarks below 150 milliseconds per input batch, enabling real-time operator monitoring workflows.
+
+By contrast, no embedded human-machine interface components facilitate direct intervention during inference. The system’s operational design does not incorporate manual override buttons or safe-stop procedures accessible to operators during live deployment.
+
+**Enabling Human Oversight by Deployers**
+
+The Election Sentiment Transformer is supplied with technical integration guidelines and operator training materials focusing on the interpretation of high-level sentiment outputs. These materials describe the model’s intended use cases and known limitations in broad terms but do not equip operators with tools to:
+
+- Detect anomalies in input data streams or model behavior.
+
+- Assess or mitigate overconfidence or automation bias due to lack of confidence scoring.
+
+- Access interpretability analyses that would contextualize finalized sentiment outputs.
+
+Operators are instructed to monitor sentiment trends comparatively over time and use domain expertise to judge output plausibility. However, the absence of uncertainty measures and explainability resources limits their capacity to critically evaluate or override system outputs effectively.
+
+No system-level human-machine interaction mechanisms supporting real-time intervention, output invalidation, or safe system halting are provided. The provider leaves these operational decisions and implementation of complementary oversight tools to the discretion of deploying entities.
+
+**Data Processing and Records Regarding Sensitive Information**
+
+The system does not perform processing of special categories of personal data as defined under EU legislation (e.g., health, ethnicity, political opinions beyond public social media content). Data ingestion is restricted to publicly available social media posts, precluding explicit profiling or collection of sensitive personal attributes beyond what is voluntarily disclosed in public posts. Consequently, records of processing activities related to such special categories and justification for their necessity are not applicable for this training and deployment context.

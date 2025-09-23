@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+Experts would ensure that the SafeRoute system maintains consistent prediction accuracy even under varying urban traffic scenarios, continuously monitoring model drift and retraining or updating the model to sustain robustness and accuracy after deployment. This includes verifying that the system handles missing or corrupted sensor data gracefully without significant degradation in performance.  
+
+[c] **Violation:**  
+SafeRoute’s Transformer-based encoder intermittently outputs inconsistent hazard predictions when sensor data from weather stations are temporarily unavailable or noisy, but the system lacks adaptive fallback mechanisms or automated retraining triggers to maintain accuracy and robustness over time. The GNN component was trained primarily on one city’s traffic network and has not been validated or adjusted for deployment in other urban areas with different traffic patterns, causing degraded performance when used outside the original context.  
+
+[d] **Justification:**  
+This breach is realistic because sensor failures and environmental changes are common in deployed traffic systems, so robustness measures are essential. The lack of adaptive retraining and fallback undermines the capacity to maintain consistent accuracy over the system lifecycle, contravening the requirement for sustained performance. It is subtle because initial deployment tests might show strong performance, obscuring longer-term or situational shortcomings.

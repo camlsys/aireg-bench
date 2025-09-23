@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable."  
+
+[b] **Guideline:**  
+Providers must implement design and mitigation strategies that demonstrably reduce each identified risk to an acceptable residual level, based on quantitative metrics and contextual risk thresholds, considering also combined effects and user capabilities.  
+
+[c] **Violation:**  
+While the Election Sentiment Transformer identifies manipulation risks related to reinforcing echo chambers, it only partially mitigates these via generic disclaimers and algorithmic tuning, failing to quantitatively measure or control the cumulative risk of societal polarization and voter manipulation, leaving potentially harmful residual risks unaddressed.  
+
+[d] **Justification:**  
+Residual risk acceptance requires measurable assurance that hazards are minimized sufficiently. In this case, the subtle failure lies in a superficial mitigation approach—disclaimers and partial tuning—without robust risk quantification or control, realistically leaving significant unmitigated risks in democratic processes that contravene the extract’s standards.

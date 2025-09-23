@@ -1,0 +1,45 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Legal Termination Assessment Framework was developed under comprehensive data governance protocols aligned with the intended purpose of fair and compliant contract termination assessments within human resources. The provider made key design choices to ensure transparency, traceability, and accountability in data handling stages. 
+
+Data collection originated from anonymized and consented HR records and publicly accessible legal contract repositories that reflect pertinent employment legislation. Personal data utilized were originally collected for employment administration and legal compliance purposes. Documentation describes all data sources, including metadata on collection context and dates, ensuring clear provenance and auditability.
+
+Data-preparation operations incorporated multiple steps: expert annotation of contract clauses by experienced labor law professionals, automatic labelling of employee status and termination outcomes, cleaning routines removing duplicates and inconsistent entries, and data enrichment using external labor market statistics for contextual relevance. Aggregation procedures were carefully documented to maintain alignment between structured employee data and unstructured text data processed by the transformer models.
+
+Formulated assumptions explicitly state that the data measure eligibility factors, legal risks, and contract compliance, and represent the decision-making contexts typical in EU member states where the system is deployed. These assumptions guided dataset composition and labelling strategies, ensuring representativeness of termination reasons and contract types derived from a controlled subset of approximately 250,000 structured employee records and 75,000 legal document samples curated between 2020 and 2024.
+
+An assessment of data availability concluded that the chosen datasets cover the broad spectrum of employment scenarios relevant to the system’s scope. Suitability checks involved domain expert validation and statistical analyses confirming variable distributions matched real-world HR terminations for relevant EU jurisdictions.
+
+### Bias Identification and Mitigation
+
+The provider conducted exhaustive bias examinations to address risks affecting health, safety, fundamental rights, and discrimination. For instance, subgroup analysis identified potential disparities correlated with protected characteristics, such as gender, age, and nationality, within termination outcome predictions. This was particularly critical given the socio-legal sensitivity of contract termination decisions.
+
+To detect and mitigate biases, advanced fairness metrics (e.g., disparate impact ratio, equal opportunity difference) were systematically applied across training, validation, and testing sets. Bias mitigation techniques incorporated re-weighting of underrepresented groups in training samples and adversarial debiasing integrated into the training pipeline of gradient-boosted decision trees.
+
+Bias assessments extended to outputs of the transformer-based language models, with targeted evaluation of legal interpretation consistency across contextual variants representative of different worker demographics. The system’s iterative retraining cycle incorporated feedback loops designed to resolve bias issues continually.
+
+### Quality and Representativeness of Data Sets
+
+Training, validation, and testing datasets collectively exceed 350,000 records across multi-modal inputs, ensuring statistically robust sample sizes that enable the models to generalize across varied employment contract scenarios and employee profiles. Data validation procedures confirmed minimal error rates, under 0.5% for structured inputs and verified annotation accuracy above 96% through inter-annotator agreement metrics for legal text.
+
+Completeness was ensured by expanding data collection to cover linguistic regional variants, diverse contract types (fixed-term, part-time, indefinite), and contextual employment conditions (e.g., union agreements, probation periods). Statistical evaluations confirmed representative coverage of subpopulations relevant to the system’s scope, with stratified sampling to address geographic, sectoral, and demographic diversity within the targeted EU markets.
+
+### Contextual Considerations in Data Sets
+
+Datasets were enriched with region-specific elements including national labor law amendments, collective bargaining terms, and socio-economic indicators to align with the geographical and regulatory context of use. Contextual behavioural data reflecting employee tenure, performance metrics, and historic dispute records were integrated under strict privacy safeguards, enabling the system to consider functional employment settings while performing risk assessments.
+
+The data preparation phase incorporated mechanisms to capture and reconcile legal vernacular differences across jurisdictions, ensuring interpretation coherence by the transformer model and conformity with relevant EU member state frameworks.
+
+### Processing of Special Categories of Personal Data
+
+Special categories of personal data were processed exclusively to enhance bias detection and correction, adhering strictly to the criteria articulated in Article 10(5). The provider demonstrated that bias analyses could not be reliably performed without processing sensitive attributes such as ethnicity and health-related leave statuses, given their role in identifying and mitigating systemic discrimination patterns.
+
+Rigorous safeguards were implemented: pseudonymisation techniques decoupled identities from sensitive data attributes; access controls enforced strict role-based permissions; detailed logs documented every access attempt. Data encryption-at-rest and in-transit employed state-of-the-art cryptographic standards (AES-256, TLS 1.3). No transmission of special category data to external parties occurred.
+
+Retention policies mandated deletion of special category data following bias correction cycles or upon reaching regulatory retention limits, with automatic purging enforced via secure deletion protocols.
+
+### Applicability to Testing Data Sets in Non-Training Contexts
+
+The system exclusively utilizes data involving AI model training; nonetheless, where applicable, testing datasets are managed with the same rigorous governance and quality criteria as training and validation. Testing datasets underwent identical bias screening and contextual representativeness assessments, ensuring that performance evaluation accurately reflects real-world use scenarios and respects data quality expectations under Article 10.

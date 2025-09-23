@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Providers must implement effective bias mitigation processes that include algorithmic fairness checks and iterative adjustment when biases affecting protected groups or fundamental rights are detected during training and testing phases.  
+
+[c] **Violation:**  
+The system applies anomaly thresholds uniformly without correction for context-specific behavioral baselines (e.g., neurodiverse students or students with disabilities), and no adjustments or reweighting are incorporated after bias detection phases indicated differential false positive rates.  
+
+[d] **Justification:**  
+This violation is subtle because the uniform thresholding may appear standard practice, yet ignoring recognized biases without mitigation measures fails compliance, risking disproportionate flagging of vulnerable groups despite detection of such bias in validation reports.

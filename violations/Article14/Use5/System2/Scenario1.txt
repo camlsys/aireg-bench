@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"4.(a) to properly understand the relevant capacities and limitations of the high-risk AI system and be able to duly monitor its operation, including in view of detecting and addressing anomalies, dysfunctions and unexpected performance;"
+
+[b] **Guideline:**  
+Human overseers must receive sufficient and actionable information such as detailed performance metrics, confidence scores, and explanations that reveal when the model behaves unexpectedly or produces outlier rankings, enabling prompt identification of errors or bias drifts during real-time use.
+
+[c] **Violation:**  
+The system presents aggregate candidate scores without confidence intervals or uncertainty estimates and only provides global feature importance metrics aggregated over the entire training dataset. Recruiters receive no alerts or signals highlighting atypical model behavior when ranking candidates from underrepresented groups, making deviations difficult to detect.
+
+[d] **Justification:**  
+Without fine-grained interpretability tools and anomaly detection indicators, recruiters cannot effectively monitor system behavior or recognize when the model erroneously downgrades qualified applicants, thus failing to meet the requirement for enabling proper understanding and oversight. This shortfall is subtle because the system superficially appears transparent through standard feature importance, yet lacks dynamic operational insight critical for high-stakes recruitment decisions.
+
+---

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."  
+
+[b] **Guideline:**  
+Risk assessments must explicitly identify and evaluate how AI outputs or use conditions might affect minors and vulnerable populations, including subtle psychological or societal influence pathways, and adapt mitigation measures accordingly.  
+
+[c] **Violation:**  
+The system’s risk analysis fails to account for indirect exposure of minors on social media who may receive or be influenced by politically targeted AI-generated sentiment content, neglecting to model or monitor potential impacts on their fundamental rights or mental well-being.  
+
+[d] **Justification:**  
+Given the widespread use of social media by minors, overlooking this demographic leads to an incomplete risk profile. This subtle gap is plausible since the system targets general public discourse rather than specific age groups, but still results in neglecting foreseeably affected vulnerable users, violating the requirement for inclusive risk assessment.

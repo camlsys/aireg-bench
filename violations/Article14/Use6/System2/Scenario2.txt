@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used... in particular where such risks persist despite the application of other requirements set out in this Section." (Article 14(2))
+
+[b] **Guideline:**  
+Oversight mechanisms must explicitly support users in identifying outputs that could adversely impact fundamental rights—such as discrimination in termination decisions—and provide clear alerts or guidance when indicators of bias or unfairness arise.
+
+[c] **Violation:**  
+The system’s interface does not highlight nor warn human users when the ensemble’s predictions disproportionately affect protected demographic groups despite known dataset biases, leaving the responsibility solely on users to identify potentially discriminatory outcomes without built-in support.
+
+[d] **Justification:**  
+Failing to integrate risk warning functionalities subtly undermines the system’s capacity for human oversight to mitigate fundamental right risks, because users may unknowingly accept outputs that infringe labor law protections. This design shortfall violates the explicit requirement that oversight mechanisms aim to prevent rights-related harms, even when such harms could occur due to foreseeable bias.
+
+---

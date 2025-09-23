@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. Technical and organisational measures shall be taken in this regard. The robustness of high-risk AI systems may be achieved through technical redundancy solutions, which may include backup or fail-safe plans."  
+
+[b] **Guideline:**  
+Compliance would require SafeRoute to implement redundancy such as fallback heuristics or alternative models when parts of the hybrid AI architecture fail or produce conflicting outputs, alongside real-time diagnostics and alerts that allow operators to intervene and remediate. There should be processes to detect and resolve inconsistencies caused by sensor malfunctions or data integration conflicts among multiple sources.  
+
+[c] **Violation:**  
+When the GNN model’s real-time traffic network input is corrupted by delayed communication from a traffic sensor, SafeRoute continues to provide hazard predictions without triggering fail-safe alerts or switching to backup models. This silent failure can lead to misleading risk assessments that traffic controllers rely on, as the system neither flags uncertainty nor degrades gracefully.  
+
+[d] **Justification:**  
+This violation is subtle because the system remains operational and outputs predictions, masking underlying errors rather than failing outright. It breaches the robustness requirement by lacking resilience to faults and omitting organisational measures (such as protocol for operator alerts), thus risking erroneous traffic safety interventions without clear mitigation strategies.

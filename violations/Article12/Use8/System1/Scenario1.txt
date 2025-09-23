@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement continuous, secure, and tamper-resistant logging that captures all relevant operational events from initial deployment through decommissioning, including input data snapshots, model decisions, and system status changes without requiring manual intervention to start or maintain logging.
+
+[c] **Violation:**  
+Priority Response Analytics only activates detailed event logging during incident prioritization rounds flagged by dispatchers, omitting automatic logging during system idle or initialization phases, resulting in incomplete lifetime logs.
+
+[d] **Justification:**  
+This subtle omission violates the requirement for automatic recording over the system’s lifetime by creating gaps in the event logs before and after active prioritization calls. These discontinuities hinder retrospective analysis of system behavior in edge cases, such as delayed model updates or performance degradation, posing risks to traceability without overtly disabling logging functions.

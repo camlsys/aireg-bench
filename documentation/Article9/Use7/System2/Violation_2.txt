@@ -1,0 +1,54 @@
+**Article 9**
+
+**Establishment and Framework of the Risk Management System**
+
+Veritas Risk Solutions has established a comprehensive risk management system for the Consumer Credit Transformer—a high-risk AI system utilized in assessing personal credit risk. This system is structured as an iterative lifecycle process integrating continuous identification, analysis, and management of risks potentially impacting health, safety, or fundamental rights when the AI system is employed within its intended purpose. The system encompasses scheduled risk reviews aligned with product lifecycle milestones, including initial development, pre-deployment validation, and ongoing post-market monitoring. This approach enables timely updates and refinements in response to empirical evidence and evolving operational contexts.
+
+The risk management workflow explicitly addresses foreseeable risks intrinsic to the Consumer Credit Transformer’s reliance on tabular financial and transactional data inputs, where inherent statistical imbalances in minority group representations are known. Rather than modifying the underlying encoder-only transformer architecture or its attention mechanisms, the risk management strategy prioritizes downstream mitigation actions to address bias concerns identified during analysis phases.
+
+**Risk Identification and Analysis**
+
+Risk identification efforts focused on established sources of potential discrimination and unfair bias in personal lending decisions, particularly relating to protected characteristics such as race, ethnicity, and socioeconomic status. Historical dataset analyses—covering over 1.2 million anonymized credit applications drawn from EU-member-country data sources—highlighted skewed feature distributions for underrepresented applicant groups. While the core transformer model was benchmarked for predictive accuracy (achieving an area under the ROC curve of 0.87 on diverse validation sets), exploratory fairness audits revealed systematic discrepancies in score distributions that could disproportionately affect protected groups.
+
+In parallel, risks of misapplication or unintended outcomes under foreseeable misuse scenarios (e.g., deployment on populations or credit products beyond validated segments) were assessed via scenario modeling and adversarial testing, simulating shifts in data patterns and demographic profiles. These analyses informed the scope of risks reasonably mitigable through design and information provision.
+
+**Risk Estimation, Evaluation, and Post-Market Adjustment**
+
+Risk estimation incorporated statistical evaluation of bias amplification and disparate impact metrics derived from model output scores, revealing residual risks that could not be addressed by architectural changes or model retraining. Given the provider’s design decisions, residual risk estimates remained quantitatively characterized—false positive and false negative disparities between majority and minority cohorts averaged 8.5% post-initial calibration.
+
+Post-market monitoring is supported through logging mechanisms enabling deployers to report observed anomalies or feedback regarding fairness outcomes. Aggregated and anonymized aggregate performance indicators are periodically analyzed by Veritas Risk Solutions to detect emergent risks or shifts requiring mitigation.
+
+**Adopted Risk Management Measures**
+
+The Consumer Credit Transformer’s risk mitigation predominantly relies on post-hoc score adjustments applied after model inference. These adjustments implement calibrated threshold shifting and score rescaling informed by protected group membership flags, designed to limit discriminatory treatment while preserving predictive utility. These calibration parameters are derived from validation subsets and regularly reviewed but are not embedded within the core model weights or attention distributions.
+
+Furthermore, comprehensive disclaimers and usage guidelines are provided in the user manual. These documents explicitly inform deployers about known model limitations, including:
+
+- The absence of bias mitigation at the architectural or training stages.
+- The reliance on post-hoc score adjustments as the exclusive corrective mechanism.
+- The importance of contextualizing risk scores alongside traditional credit assessment methods.
+- Recommendations for additional human review when model outputs disproportionately impact protected groups.
+
+No retraining or recalibration of the encoder-only transformer model has been undertaken to address skewed representation or feature leakage concerns, reflecting a conscious design choice to maintain the original architecture and training dataset integrity.
+
+**Risk Management in Relation to Other Compliance Requirements**
+
+Risk mitigation measures were selected to harmonize with information provision requirements outlined under Article 13 of the EU AI Act. Training materials developed for deployers emphasize responsible interpretation of score adjustments and compliance with non-discrimination obligations. These materials are tailored to anticipated levels of technical expertise within typical lending institutions and emphasize scenarios particular to credit risk evaluation.
+
+Consistent with industry standards for 2025, targeted controls address risks that cannot be fully eliminated through design alone, while upholding system performance stability. The residual risks, including those persisting after score adjustments, have been assessed and determined to be within thresholds acceptable to the provider’s risk policy, balancing fairness considerations with operational efficacy.
+
+**Testing and Validation Protocols**
+
+Testing has been performed iteratively throughout development, with key evaluations prior to commercial deployment and on an ongoing basis as part of maintenance cycles. Testing protocols include:
+
+- Controlled experiments on stratified validation sets that represent demographic diversity.
+- Metric-based assessments focused on predictive performance, fairness indicators (e.g., disparate impact ratio, equal opportunity difference), and stability under stress testing.
+- Simulation of real-world conditions mirroring applicant profiles and transaction scenarios typical of EU personal lending markets.
+
+Testing results consistently affirmed stable predictive performance over repeated trial epochs, while documenting the limitations of the core architecture to correct input bias without external adjustments. These documented results are available for audit and regulatory review.
+
+**Consideration of Vulnerable Groups**
+
+Explicit attention was given to risks affecting persons under 18 and other vulnerable populations as defined under relevant social and consumer protection guidelines. The system’s intended deployment scope excludes applications for individuals below legal adult age, and the documentation clearly instructs deployers to restrict use accordingly. Additional cautionary advice highlights potential heightened impacts on vulnerable groups, underscoring the need for supplementary human oversight beyond algorithmic output alone.
+
+The risk management system aligns with applicable internal risk management processes under EU financial regulatory frameworks, allowing coordination and integration of AI-specific risks within broader organizational risk governance.

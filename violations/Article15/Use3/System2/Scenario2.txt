@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."  
+
+[b] **Guideline:**  
+If the system incorporates online learning or periodic retraining using operational data, it must implement mechanisms preventing bias reinforcement, such as monitoring input-output distributions, auditing shifts in output biases, and employing counterfactual analyses or data augmentation to mitigate drift originating from feedback loops.  
+
+[c] **Violation:**  
+The system uses learner interaction logs as incremental retraining data without filtering feedback loops that favor scoring certain competencies higher based on prior adaptive curriculum paths. Over successive retrainings, this leads to inflated competency scores for learners with early positive predictions, skewing certification outcomes and perpetuating systematic overestimation of performance.  
+
+[d] **Justification:**  
+Though incremental learning is intended to improve model relevance, neglecting to address feedback loops subtly biases results by reinforcing prior outputs as input signals. This violates the stipulated requirement as the perpetuated bias risks undermining the fairness and integrity of the competency evaluation, a realistic issue particularly in systems dynamically adapting to learner data post-deployment.  
+
+---

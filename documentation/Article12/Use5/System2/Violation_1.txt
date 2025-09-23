@@ -1,0 +1,27 @@
+**Article 12**
+
+### Event Logging Implementation and Scope
+
+The Recruitment Decision Forest integrates event logging capabilities aligned with its role as a high-risk AI system. The core logging mechanism is designed to enable detailed event capture, including all internal decision nodes and feature utilization metrics within the Gradient Boosted Decision Tree (GBDT) ensemble. However, to maintain confidentiality and reduce exposure of sensitive candidate data, the system’s default state records only minimal metadata such as timestamp, overall candidate score, model version identifier, and event type (e.g., scoring completed). This minimal logging is insufficient to reconstruct the detailed decision path for any individual scoring event, thereby preventing unintended exposure of decision logic or candidate-sensitive features under normal operation.
+
+Logging of detailed internal states—including individual tree node decisions, feature contributions, and split path traversals—is strictly controlled and can only be initiated manually by authorized administrators through secure system interfaces. This on-demand detailed logging capability supports traceability efforts during audits or investigations, allowing reconstruction of decision paths to evaluate specific concerns such as potential biases or model drift. All detailed logs capture comprehensive diagnostic data including candidate feature vectors (hashed to ensure anonymization), individual tree output values, and ensemble aggregation steps.
+
+### Logging During System Updates and Operational Periods
+
+To safeguard data integrity and reduce noise in audit records, all event logging—minimal or detailed—is automatically suspended during system maintenance and update processes. This suspension is triggered by internal state flags indicating active update sessions, preventing capture of transient or inconsistent states that do not reflect typical operational behavior. Upon completion of system updates, logging resumes automatically, ensuring continuity of traceability for post-update system behavior without capturing irrelevant transitional events.
+
+### Logging Objectives and Risk-Related Event Identification
+
+The logging framework is calibrated to support identification of risk-related events as defined under Article 79(1), such as anomalous scoring distributions, unexplained candidate ranking changes, or unexpected shifts in model confidence scores. Minimal logs include markers of potential substantial modification events through version tags and changelog references. Detailed logs, when activated, enable granular detection and forensic analysis of shifts in decision logic or data input patterns that may contribute to systemic risk or unfair candidate treatment.
+
+These recorded events facilitate post-market monitoring activities as outlined in Article 72 by providing traceable evidence to monitor system behavior trends over time, verify model stability, and assess impacts of retraining cycles on candidate ranking outcomes. Furthermore, logging supports operational monitoring in compliance with Article 26(5) by validating that scoring outputs align with intended model configurations and do not unexpectedly deviate during live deployment, with administrative alerts configured to flag deviations in batch scoring results or model confidence.
+
+### Technical Rationale for Logging Design
+
+The selective activation model for detailed logging balances transparency and privacy by restricting comprehensive trace data capture to situations under active review or risk assessment, thus limiting unnecessary data processing and storage overhead. This approach also mitigates potential privacy risks for applicants by avoiding persistent storage of identifiable decision path data under routine operation.
+
+From a technical standpoint, the architecture separates minimal logging implemented at the scoring engine level—which is lightweight and anonymized—from detailed logging modules that activate supplementary event listeners and data capture layers only upon explicit administrative command. This modular logging structure enables efficient resource usage, with log data securely transmitted and stored in accordance with internal data governance policies compliant with industry-standard encryption and retention controls.
+
+The cessation of logging during updates is implemented via orchestrated session management integrated with the CI/CD pipeline for model deployment, ensuring that log data reflect only production-quality decision events. This prevents false positives or inconsistencies that could arise if partial model states or incomplete data migration phases were logged.
+
+In summary, the Recruitment Decision Forest’s logging design provides a clear, adjustable mechanism to document system events relevant for risk identification, post-market monitoring, and operational oversight, consistent with both its high-risk classification and data protection considerations.

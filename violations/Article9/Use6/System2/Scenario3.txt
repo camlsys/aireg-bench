@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(c) provision of information required pursuant to Article 13 and, where appropriate, training to deployers. With a view to eliminating or reducing risks related to the use of the high-risk AI system, due consideration shall be given to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context in which the system is intended to be used."  
+
+[b] **Guideline:**  
+Providers must ensure deployers receive tailored training and documentation that matches their expected expertise and the practical HR context, enabling them to interpret model outputs correctly and apply risk mitigation effectively.  
+
+[c] **Violation:**  
+Contractual Separation Insight delivers generic documentation that emphasizes technical model descriptions rather than contextualized operational guidance; it fails to provide HR professionals with scenario-specific training to understand and mitigate risks linked to recommendations, assuming deployers have much higher technical expertise than realistically expected.  
+
+[d] **Justification:**  
+This shortfall risks misinterpretation and misuse of the AI system’s outputs by HR users, increasing residual risk. The violation is subtle because documentation exists, but lacks adaptation to deployer needs and context, a nuance often overlooked in compliance yet vital for effective risk management.

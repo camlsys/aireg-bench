@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse" (Article 14(2))
+
+[b] **Guideline:**  
+Human oversight mechanisms must be explicitly designed to detect situations where the AI might under-prioritize critical emergencies due to input ambiguities or rare edge cases, and empower operators to override or correct such decisions to prevent harm or discrimination.
+
+[c] **Violation:**  
+In Priority Response Analytics, dispatchers receive ranked recommendations without system-generated alerts or warnings about low-confidence outputs or ambiguous textual dispatch notes, and there is no interface feature encouraging or enabling overrides in borderline cases. This leads to risks that urgent calls may be consistently undervalued, with dispatchers insufficiently empowered to catch or mitigate these failures under time pressure.
+
+[d] **Justification:**  
+This violation is plausible because emergency dispatch environments are high-stress and require rapid decisions; without built-in oversight safeguards providing warning cues or override encouragement, operators may miss or accept problematic AI outputs. Thus, risks to health and safety arising from foreseeable AI errors are insufficiently minimized by human oversight.

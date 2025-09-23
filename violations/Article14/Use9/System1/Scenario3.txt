@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided ... to enable natural persons ... to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state." (Article 14(4)(e))  
+
+[b] **Guideline:**  
+The AI system must afford users direct and straightforward control mechanisms to pause, stop, or override ongoing processing or output generation in real time, ensuring that intervention can prevent harmful downstream effects or erroneous reliance on incomplete or flawed analyses. These controls should be clearly accessible within the user interface under all foreseeable working conditions.  
+
+[c] **Violation:**  
+Judicial Insight Assistant processes complex queries and retrieves combined outputs asynchronously, but the user interface only allows session termination after full completion of the processing pipeline, without any "stop" or pause controls during lengthy computations or iterative refinements. Users cannot intervene mid-process to halt or revise queries that are producing irrelevant or questionable results before final delivery.  
+
+[d] **Justification:**  
+This design choice breaches the requirement to allow timely intervention and safe halting, as users are effectively forced to accept the entire output once generated, with no way to abort or adjust in response to emerging concerns. The violation is subtle since stalled or excessively long processing may be mistaken for normal operation delays, and users may default to waiting rather than intervening—practices common in real-world legal tech usage.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk... or in a substantial modification."
+
+[b] **Guideline:**  
+The logs must capture sufficient context on system inputs, altered environment conditions, detected anomalies, and any changes in model parameters or configurations that could indicate emergent risks or unauthorized modifications impacting safety performance.
+
+[c] **Violation:**  
+The system does not log software updates or configuration changes applied after deployment, and its logs lack detailed environmental conditions (e.g., temperature or humidity sensors) that correlate with sensor reliability, thereby omitting potential early signs of risk increase or system drift.
+
+[d] **Justification:**  
+Without recording changes or context affecting system function, the operator cannot identify or correlate incidents with underlying causes or substantial system modifications, failing Article 12(2)(a) requirements. This is a realistic violation since developers may prioritize core anomaly data over peripheral logs, making risk escalation less visible.
+
+---

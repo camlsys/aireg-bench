@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion), confidentiality attacks or model flaws."  
+
+[b] **Guideline:**  
+The system needs integrated safeguards to detect anomalous or manipulated input data, especially from unverified sources, and should employ anomaly detection, input sanitization, and security audits. Defensive techniques such as adversarial training or robust statistical methods should be in place to prevent subtle manipulation of learner logs or performance metrics that would unduly influence outputs.  
+
+[c] **Violation:**  
+The system accepts new input from multiple training centers without strong verification protocols, enabling malicious actors to submit subtly altered interaction logs crafted to exploit the GBDT’s known vulnerabilities (e.g., feature manipulation causing misclassification). The system lacks real-time anomaly detection or adversarial input defenses, leaving it susceptible to input evasion attacks that distort competency assessments.  
+
+[d] **Justification:**  
+This breach is not blatant since standard input validation may be performed, but the absence of defenses against adversarially engineered inputs creates a subtle vulnerability. In practice, adversaries could silently manipulate outputs, compromising evaluation reliability and violating cybersecurity robustness requirements mandated by the Act, making it a plausible risk for distributed educational deployments.

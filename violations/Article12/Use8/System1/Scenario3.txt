@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"(b) facilitating the post-market monitoring referred to in Article 72;"
+
+[b] **Guideline:**  
+Logging must enable comprehensive reconstruction of decision-making paths and input-output mappings over time, including changes in model versions or data preprocessing pipelines, to support longitudinal performance evaluations and incident investigations after deployment.
+
+[c] **Violation:**  
+Priority Response Analytics logs incident prioritization outcomes and timestamps but does not consistently record the exact version of the Transformer encoder model or the GBDT configuration employed at the time of each decision, especially after minor patch updates.
+
+[d] **Justification:**  
+Without precise versioning tied to each logged decision, post-market monitoring teams cannot accurately correlate performance shifts with specific algorithmic changes. This subtle logging oversight limits the ability to detect degradation caused by incremental updates, compromising the post-market surveillance process required by the regulation.

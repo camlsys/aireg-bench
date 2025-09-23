@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorized third parties to alter their use, outputs or performance by exploiting system vulnerabilities... The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning)... or inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..." (Article 15(5))  
+
+[b] **Guideline:**  
+Robust cybersecurity demands that high-risk AI systems incorporate defenses such as input validation, anomaly detection, and regular integrity checks to identify and counteract poisoning or adversarial attacks, preventing attackers from subtly degrading model reliability or manipulating outputs.  
+
+[c] **Violation:**  
+Priority Response Analytics lacks mechanisms to detect or filter adversarially crafted textual dispatch notes that exploit linguistic ambiguities in the Transformer encoder, allowing attackers to cause misclassification of incident priority levels despite normal-looking input data.  
+
+[d] **Justification:**  
+This violation is realistic yet subtle because adversarial inputs are crafted to appear legitimate, bypassing simplistic validation while causing errors in priority assessment. The absence of adversarial robustness means the system can be manipulated in non-obvious ways, violating cybersecurity and robustness requirements.

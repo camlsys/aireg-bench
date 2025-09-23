@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."
+
+[b] **Guideline:**  
+Quality assurance requires that data sets capture the full diversity of legal contexts relevant to users (judges, clerks) and the populations affected by their decisions, ensuring that the statistical distribution of cases accounts for different legal areas, jurisdictions, and demographics to avoid skewed performance.
+
+[c] **Violation:**  
+The system’s training set overrepresents legal precedents from large urban courts, with minimal data from rural or smaller jurisdictions. Consequently, the system produces less accurate or less contextually relevant legal interpretations for cases originating from underrepresented areas, subtly limiting its utility and potentially introducing inaccuracies in judicial decisions affected by geographic context.
+
+[d] **Justification:**  
+This subtle geographic representativeness gap contravenes the requirement for sufficient representativeness and relevance of data with regard to the intended use domain. It realistically occurs due to unequal data availability across jurisdictions and might not be immediately evident absent granular evaluation, thus posing compliance risk.

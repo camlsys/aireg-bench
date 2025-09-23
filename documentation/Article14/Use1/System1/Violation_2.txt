@@ -1,0 +1,31 @@
+**Article 14**
+
+**Design and Development for Effective Human Oversight**
+
+SafeRoute Traffic Monitor has been developed with human-machine interface (HMI) tools aimed at enabling human operators within urban traffic management centers to supervise system outputs during operational use. The interface displays real-time traffic hazard predictions, confidence scores, and underlying sensor measurements fused by the AI modules. However, the system architecture does not include internal automated alert mechanisms or intervention suggestions that activate when prediction confidence drops below predefined thresholds. Confidence scores, derived from the probabilistic outputs of both the Graph Neural Network (GNN) and Transformer-based encoder modules, are presented to human operators without system-generated warnings triggered by sensor anomalies or adverse environmental inputs. This design decision follows Meridian Traffic Solutions’ current operational approach, which entrusts situational awareness and anomaly detection primarily to trained human operators rather than embedding automated fallback alerts within the AI system itself.
+
+**Risk Minimization through Human Oversight**
+
+While SafeRoute’s AI models provide continuous hazard predictions intended to reduce traffic accidents, the human oversight framework relies principally on operator expertise to interpret confidence levels and sensor data variability. The system includes comprehensive visualization of multi-source sensor inputs (vehicle counts, weather conditions, incident reports) alongside hazard likelihood estimates. Nonetheless, it does not incorporate proactive notification or intervention mechanisms specifically aimed at highlighting increased risks due to sensor failures or meteorological effects that impair model reliability. Meridian Traffic Solutions has documented that, in conditions such as heavy precipitation or sensor outages, model performance may degrade, increasing the risk of false negatives (missed hazards) or false positives (false alarms). Operational protocols therefore emphasize operator vigilance and manual review rather than automated mitigation measures embedded in the AI, acknowledging current limitations in adaptive alert automation technology within the solution.
+
+**Proportionate Oversight Measures and Provider Responsibilities**
+
+SafeRoute’s design includes technical features facilitating operator awareness but stops short of embedding safeguards such as automatic risk-tracking alerts or intervention prompts typically considered for high-risk AI systems with greater autonomy. The AI system provides detailed confidence metrics alongside ancillary sensor diagnostics to support manual anomaly detection, reflecting a conscious provider choice aligning with the system's intended supervisory role rather than autonomous hazard decision-making. Meridian Traffic Solutions prescribes that oversight is shared with deployers, where deployer-level procedures and training determine how to respond to potential model uncertainty or sensor degradation. No provider-implemented automated override or alert modules related to confidence degradation are present in the delivered system software.
+
+**Enabling Natural Persons to Monitor, Interpret, and Intervene**
+
+SafeRoute is delivered with user interface elements designed to allow operators to:
+
+- Understand the system’s multi-modal inputs and combined hazard prediction outputs through graphical dashboards that correlate sensor data trends, prediction confidence intervals, and identified traffic hazards.
+
+- Monitor system performance visually, with continuous updates on sensor status and model confidence, but without automatic warnings flagging critical drops in confidence or sensor anomalies.
+
+- Recognize cognitive biases, such as automation bias, through operator training materials emphasizing cautious interpretation of AI outputs and stress on human judgment in decision-making processes.
+
+- Manually override or disregard AI-generated hazard signals based on situational judgment; the system interface includes functionality for operators to annotate or suppress alerts.
+
+- Interrupt or halt system operation via a “stop” control that safely suspends predictive processing to allow for manual reassessment of traffic conditions.
+
+Processing activity records capture logging of prediction outputs and sensor status but do not involve automated flagging or documentation regarding processing of special categories of personal data in relation to bias correction, as the system’s data inputs are limited to non-sensitive traffic and environmental data.
+
+This technical and operational configuration reflects Meridian Traffic Solutions’ current strategy to maintain operator primacy in identifying model limitations without direct automated alerting for confidence degradation, consistent with the system’s designed role as an assistive tool rather than a fully autonomous safety device.

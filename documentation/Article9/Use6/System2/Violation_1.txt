@@ -1,0 +1,41 @@
+**Article 9**
+
+### Establishment and Scope of the Risk Management System
+
+Contractual Separation Insight incorporates a risk management framework that is established, documented, and implemented during the development lifecycle of the AI system. This framework focuses on the systematic identification, analysis, and mitigation of risks related to the core functionalities: predictive modeling of employee contract termination outcomes using an ensemble of random forest classifiers combined with large language models (LLMs) specialized in labor policy interpretation and behavioral analytics. The initial risk assessment process includes a comprehensive analysis of risks to fundamental rights—particularly employee rights—and legal compliance risks arising from the AI’s decision-support outputs. 
+
+During development, the provider identified known risks such as inadvertent bias against protected employee groups, misinterpretation of evolving labor law provisions, and errors in policy synthesis that could lead to incorrect termination recommendations. These were analyzed and documented through a multidisciplinary panel combining machine learning experts, labor law specialists, and HR compliance professionals. Risk controls implemented at this stage involve algorithmic bias mitigation strategies, policy model refinement cycles, and validation against a corpus of 12,000 anonymized historical HR cases spanning various EU jurisdictions, legislations, and company-specific policies.
+
+### Iterative Nature and Lifecycle Coverage
+
+While the risk management system is initiated with thorough development-phase activities—involving iterative model training, adversarial testing, and validation against domain-specific metrics such as false positive rates on wrongful termination predictions (controlled to below 3%) and precision in policy interpretation (exceeding 92%)—the system’s formal risk management processes do not encompass scheduled, systematic review phases post-deployment. There is an absence of mandated continuous monitoring or iterative updates beyond initial deployment verifications. Current provider documentation explicitly states that post-market monitoring and risk re-assessment intervals are delegated to system deployers rather than being integrated into the provider’s lifecycle management processes.
+
+### Risk Identification, Estimation, and Analysis
+
+Initial risk identification covered all reasonably foreseeable risks of non-compliance with labor law, employee fundamental rights impacts, and adverse operational outcomes arising from the system’s use in alignment with its intended purpose. Risk estimation was performed using historical case outcomes and simulated misuse scenarios, such as deployment under partial or incomplete policy datasets. Additional analyses incorporated synthetic stress tests on the system’s LLM components under ambiguous or conflicting legal text inputs. These steps formed a comprehensive baseline risk profile, which guided the design and implementation of mitigation measures.
+
+However, no post-market monitoring data have been systematically integrated into risk analyses to capture emerging risks related to evolving labor laws or HR practice changes. The absence of built-in mechanisms to ingest post-deployment operational data precludes dynamic risk reassessment and adaptive risk control updates.
+
+### Risk Mitigation Measures Adopted
+
+Risk mitigation procedures applied during development include:  
+- Algorithmic fairness auditing focused on demographic parity and equalized odds across sensitive employee attributes, with corrective retraining and feature engineering to reduce disparate impact metrics by over 25% relative to baseline models.  
+- Policy interpretation enhancements using LLM fine-tuning on updated legal corpora, ensuring up-to-date legal text embeddings and alignment with current labor statutes at development closure.  
+- Validation protocols employing cross-validation and holdout legal case samples to ensure system outputs remain within predefined probabilistic thresholds—specifically, a confidence level above 95% for termination risk predictions within labeled data subsets.  
+- Provision of detailed technical documentation and deployment guidelines designed to inform system users (deployers) about proper usage contexts, anticipated system limitations, and the necessity for complementary human oversight in adjudication steps.
+
+Due consideration was given to the interaction effects of combining random forests and LLM components to minimize compounded or emergent risks in predictive accuracy and interpretability.
+
+### Testing Procedures Undertaken
+
+Testing was performed continuously throughout development, including prototyping, iterative model retraining cycles, and final validation phases before release. Testing environments utilized high-fidelity simulated HR datasets mirroring real-world complexity in contractual termination scenarios. The system was subjected to scenario-based evaluations reflecting reasonably foreseeable misuses, such as incomplete employee data or policy exceptions. Metrics recorded included area under the ROC curve (AUC) of 0.89 for termination outcome prediction and LLM policy interpretation correctness exceeding 90% on benchmark legal query tasks. These metrics were evaluated against pre-established thresholds that align with standard industry practice in 2025 for high-risk AI lifecycle testing.
+
+No deployment of real-world post-market testing frameworks by the provider is documented. Although Article 60 provisions on real-world testing are acknowledged, responsibility for ongoing testing activities after market placement remains with deployers.
+
+### Consideration of Vulnerable Groups
+
+In initial risk assessments, particular attention was given to the potential impact on vulnerable employee groups, including persons under 18 years old, persons with disabilities, and minority demographic groups. Risk analyses employed subgroup performance metrics to identify potential adverse outcomes, and risk mitigation steps were prioritized where disproportionate impacts emerged. No biometric data are used by the system, consistent with classification as a non-biometric high-risk AI system addressing fundamental rights in employment contexts.
+
+### Summary of Limitations Related to Post-Deployment Risk Management
+
+While the system’s risk management measures comply with robust initial design and testing requirements during development, there is no provider-established mechanism or documented process for systematic, scheduled risk review or update following deployment. Therefore, ongoing labor law changes or evolving HR practices, which can materially affect risk profiles, are not accounted for within the provider’s implemented risk management system. This gap means that post-deployment risk identification, evaluation, and mitigation measures depend entirely on deployment site procedures rather than an integrated continuous risk management lifecycle maintained by the provider.

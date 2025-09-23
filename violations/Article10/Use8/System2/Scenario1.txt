@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used." (Article 10, paragraph 3)
+
+[b] **Guideline:**  
+The datasets should comprehensively capture the diversity of emergency scenarios, geographic and demographic variations, and operational contexts faced by different emergency responders. They must include representative samples covering urban, suburban, and rural areas with varied populations and incident types, and account for different groups affected by emergencies to avoid underrepresentation bias.
+
+[c] **Violation:**  
+The training datasets primarily comprise emergency incidents and sensor data from metropolitan areas with high-density populations, neglecting rural or suburban contexts where spatial and temporal incident patterns can differ significantly. Consequently, the model underperforms or misclassifies priorities when deployed in less represented geographic settings with different demographic compositions.
+
+[d] **Justification:**  
+This violation breaches the requirement for sufficiently representative data because it ignores geographic and demographic variability critical to emergency response prioritization. It is subtle, as the model may appear accurate during internal testing with urban-centric data and only reveal limitations post-deployment in underrepresented settings, affecting dispatch decisions and response fairness.
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."  
+
+[b] **Guideline:**  
+Logs must capture all triggers or signals that indicate potential risks, such as biased or discriminatory model outputs, data distribution shifts, or operational anomalies, as well as any changes to system components that affect decision logic or performance. This includes logging detected input data anomalies and model retraining events with parameters changed.  
+
+[c] **Violation:**  
+The system logs only final credit scores and user inputs but does not log detected shifts in input data distributions or any retraining events reflecting substantial model changes, thus missing indicators of emerging risks or reduced model reliability after updates.  
+
+[d] **Justification:**  
+This omission prevents early detection of risk situations as required by the Act, subtly impairing the ability to identify when the model may present increased discriminatory risk or reduced accuracy due to unseen changes. Because logs contain final outputs only, the risk-related precursors hidden in data drift and recalibration are not recorded, yet this can go unnoticed during routine reviews.  
+
+---

@@ -1,0 +1,43 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+Insight Proctor Analytics was developed adhering to comprehensive data governance and management frameworks tailored for real-time multimodal behavioral analysis in academic examination settings. The system incorporates transformer-based Vision Language Models (VLM) trained on a rigorously curated dataset integrating video feeds and associated test metadata. Key design choices include the selection of heterogeneous, high-resolution video inputs synchronized with semantic metadata capturing exam context (e.g., test version, permitted materials), ensuring comprehensive situational awareness for behavior analysis.
+
+Data collection processes prioritized lawful acquisition from consenting educational institutions with clear documentation of original data purposes—strictly for training behavior detection models in supervised exam environments. Collected video samples came from over 15,000 exam sessions involving approximately 45,000 participants across diverse European academic contexts, recorded with fully anonymized or pseudonymized identifiers. Metadata linked to exam content and allowed materials was sourced directly from institutional exam databases, ensuring provenance and contextual integrity.
+
+Data preparation operations included meticulous multi-step annotation by trained human reviewers aided by semi-automated tools. Annotations covered prohibited actions (e.g., unauthorized communication gestures) and benign behaviors, labeling over 1.2 million video frames with fine temporal granularity. Cleaning involved removal of corrupted or low-visibility frames and validation against metadata inconsistencies, while enrichment integrated contextual labels such as exam phase and environmental conditions. Annotation guidelines and quality checks emphasized consistent interpretation to reduce inter-annotator variability. Dataset updates occurred quarterly, reflecting newly identified behavior patterns and evolving exam protocols.
+
+Assumptions underlying the dataset specify that visual and semantic cues are reliable proxies for detecting specific prohibited behaviors, supported by empirical studies confirming high correlation between annotated gestures and actual infractions in controlled settings. The dataset’s information scope explicitly excludes biometric identification, focusing solely on behavior descriptors to align with privacy requirements.
+
+Availability and quantity assessments established dataset sufficiency through benchmarking against comparable behavior recognition systems. Validation phases tested model generalizability on held-out sessions from geographically and institutionally distinct contexts, confirming representativeness and practical coverage. Suitability was further ensured by including diverse lighting conditions, camera angles, and participant demographics reflecting the system's intended operational environments.
+
+### Bias Identification, Mitigation, and Data Set Completeness
+
+A structured bias assessment examined potential disparities impacting protected groups defined under Union law, particularly with respect to race, gender, and disability. Statistical analysis revealed initial slight overrepresentation of certain demographic groups due to the geographic distribution of contributing institutions. This prompted augmenting the dataset with targeted recordings from underrepresented groups, resulting in balanced subgroup distributions to mitigate risks of discriminatory model behavior.
+
+Bias detection employed both quantitative metrics (e.g., disparate impact ratios on detection false positive and false negative rates) and qualitative expert reviews. Mitigation strategies included stratified sampling, adversarial training to reduce reliance on confounding visual patterns, and model explainability tools to identify and correct spurious correlations. The iterative process reduced biases influencing system outputs linked to fundamental rights or discriminatory treatment.
+
+Data gaps identified included limited representation of certain contextual variations such as non-standard exam room layouts. These gaps were addressed through synthetic data augmentation using generative models simulating rare scenarios, which supplemented physical recordings without compromising data realism. Remaining shortcomings were documented with recommendations for deployers to adapt system calibration to specific local settings as needed.
+
+Completeness was ensured through the integration of multiple complementary data sources, with constituent datasets validated for error rates under 0.5% per annotation category. Statistical properties of the combined dataset showed appropriate variance and covariance aligning with real-world exam conditions, supporting model robustness.
+
+### Contextual and Geographic Relevance
+
+The dataset design intentionally captures the geographic and contextual particularities of European academic institutions by including data from educational environments across at least ten EU Member States. This diversity includes urban and rural schools with variations in language, cultural norms, and exam protocols. Video data account for contextual environmental factors such as classroom layout, student seating arrangements, and permitted exam materials inventory, enabling the models to adjust to functionally diverse settings.
+
+Temporal representativeness is maintained by periodically updating data to reflect evolving exam regulations and student behaviors. Behavioral patterns specific to certain geographic or cultural contexts (e.g., differing gestural norms) are encoded within metadata and incorporated into model training workflows to ensure contextual accuracy.
+
+### Processing of Special Categories of Personal Data
+
+Insight Proctor Analytics processes limited special categories of personal data solely under circumstances strictly necessary for bias detection and correction conforming to Article 10(5). To facilitate effective fairness assessment in relation to potentially sensitive attributes (e.g., ethnicity, disability status), the system incorporates pseudonymized special category data obtained under strict institutional safeguards and explicit consent.
+
+Technical measures applied include advanced pseudonymization transforming identifiers into irreversible tokens and state-of-the-art encryption protocols both in transit and at rest. Access controls enforce least-privilege principles via role-based authentication and comprehensive audit logging to prevent unauthorized data exposure. Special category data are isolated within secure processing environments and are not externally transferred or shared beyond authorized development personnel.
+
+All personal data processing respects the retention policy: sensitive information is deleted immediately upon completion of bias mitigation cycles or after a maximum retention period of 90 days, whichever occurs first. Documentation of bias correction actions and data handling is maintained in a secured compliance ledger demonstrating adherence to Regulation (EU) 2016/679 and supplementary Acts.
+
+### Application to Training and Evaluation Data Sets
+
+Considering Insight Proctor Analytics relies on transformer-based model training, the outlined governance, quality controls, and bias mitigation measures apply comprehensively to all training, validation, and testing datasets used throughout model development and assessment phases. Continuous monitoring of data quality and representativeness informs periodic retraining cycles, ensuring ongoing alignment with regulatory expectations and real-world exam scenarios.
+
+Testing data sets are constructed independently from training data, comprising approximately 20% of the total dataset volume, and undergo the same rigorous validation and bias analysis procedures to provide unbiased evaluation of system performance prior to deployment.

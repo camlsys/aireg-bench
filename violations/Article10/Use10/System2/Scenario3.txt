@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose ... (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law ... (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Providers must proactively assess training data for sociopolitical biases that could exacerbate discrimination or infringe fundamental rights, and implement concrete interventions—such as rebalancing data or bias-correcting algorithms—to mitigate identified issues before deployment. Continuous bias monitoring with documented corrective actions is required.  
+
+[c] **Violation:**  
+The system’s bias auditing focuses narrowly on overt demographic imbalances but neglects systemic ideological bias that amplifies polarizing narratives and disproportionately influences minority political groups negatively, without applying measures to mitigate these subtler, structural biases in data or model outcomes.  
+
+[d] **Justification:**  
+This breach of Article 10(2)(f) and (g) is realistic and subtle because ideological biases are harder to detect than demographic ones and may be overlooked or deprioritized in bias management. The failure to address such biases can unfairly distort electoral discourse, violating Union law on discrimination and fundamental rights even when surface-level bias checks are performed.

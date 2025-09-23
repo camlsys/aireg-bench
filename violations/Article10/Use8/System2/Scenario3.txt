@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To the extent that it is strictly necessary for the purpose of ensuring bias detection and correction ... the providers of such systems may exceptionally process special categories of personal data, subject to appropriate safeguards ... including pseudonymisation; ... access control; ... deletion once bias has been corrected or retention period ends" (Article 10, paragraph 5 (b), (c), and (e))
+
+[b] **Guideline:**  
+When sensitive personal data (e.g., health status or ethnic origin) are used strictly for bias correction, they must be processed with strong privacy safeguards, including state-of-the-art pseudonymisation, rigorous access logging restricting use to authorized experts, and secure deletion immediately after bias remediation.
+
+[c] **Violation:**  
+Urban Safety Analytics uses sensitive personal data to detect bias related to vulnerable groups but employs a pseudonymisation technique that is reversible with moderate effort, retains the data beyond bias correction periods, and lacks strict audit trails or role-based access controls, allowing multiple team members to view identifiable information without proper confidentiality agreements.
+
+[d] **Justification:**  
+This violation is subtle because the company claims compliance by applying some privacy measures but fails to implement them fully according to the state-of-the-art standard and regulatory timing for data retention and access control. Such gaps increase risk to fundamental rights and privacy without obvious immediate exposure, undermining confidence in bias correction safeguards.

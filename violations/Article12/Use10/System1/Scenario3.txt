@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (b) facilitating the post-market monitoring referred to in Article 72; and (c) monitoring the operation of high-risk AI systems referred to in Article 26(5)."  
+
+[b] **Guideline:**  
+The system must log operational metrics, decision rationale, user interaction histories, and error reports in sufficient granularity and detail to support comprehensive post-market surveillance and ongoing operational oversight, including the verification of compliance over time.  
+
+[c] **Violation:**  
+While logs include basic input-output pairs, they lack detailed contextual information about voter profiles targeted during engagements, the rationale for persuasive strategies chosen by the system, and any detected failure points or out-of-distribution inputs during live operation.  
+
+[d] **Justification:**  
+This absence weakens post-market monitoring and operational evaluation capabilities because inspectors cannot reconstruct or assess system reasoning or user exposure patterns, which are crucial given the system’s personalization and influence intent. The deficiency is subtle, as logs might superficially appear complete by showing input-output records but fail to capture essential context to verify correct operation and compliance.

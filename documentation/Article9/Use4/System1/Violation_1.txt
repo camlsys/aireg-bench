@@ -1,0 +1,51 @@
+**Article 9**
+
+### Structure and Scope of the Risk Management System
+
+Insight Proctor Analytics has established a documented risk management system implemented prior to deployment. This system encompasses identification, analysis, and mitigation of risks associated with the use of the Insight Proctor Analytics AI system in its intended environment—academic proctoring during supervised examinations. The initial risk assessment was conducted by a multidisciplinary team comprising machine learning engineers, education experts, and legal advisors, analyzing the potential impact on health, safety, and fundamental rights, focusing particularly on student privacy, fairness, and data protection risks. The assessment utilized an internal risk taxonomy aligned with latest industry standards, including ISO/IEC 31000:2018 for risk management and ISO/IEC 27001 for information security.
+
+Known risks identified before deployment included false positive detections of prohibited behaviors due to ambiguous student gestures or contextual misunderstandings, potential for bias against particular demographic groups, and inadvertent exposure or misuse of data collected. The assessment also surveyed reasonably foreseeable misuse scenarios, such as adversarial attempts to bypass detection or deliberate misapplication of the system outside the intended exam contexts. These were documented to inform design decisions and risk controls.
+
+Post-deployment, updates to the risk management process are conducted on an ad hoc basis, triggered solely by external complaints, incident reports, or regulatory inquiries rather than through a scheduled or continuous monitoring framework. This approach was selected in consideration of resource allocation and the relatively stable operational context of academic examinations, combined with agreements that deployers maintain their own procedures for ongoing monitoring.
+
+### Risk Evaluation and Residual Risk Determination
+
+Risk estimation involved both quantitative and qualitative analytics. The system’s detection algorithms were benchmarked using a proprietary dataset comprising over 150,000 hours of anonymized proctoring video and aligned exam metadata, collected from diverse academic settings across Europe and North America to improve generalizability and reduce demographic bias. Performance metrics showed an average true positive rate of 92.5% and a false positive rate below 3%, evaluated over stratified demographic cohorts, thus informing likely residual risks associated with misclassification or unfair flagging.
+
+Probabilistic risk thresholds were established in line with these metrics to calibrate the system’s sensitivity, balancing detection efficacy with the reduction of undue impact on test takers. Residual risks identified—primarily those related to false identifications and data privacy—were deemed manageable through the combined effect of system design and information measures.
+
+### Risk Mitigation Measures Integrated at Design and Deployment
+
+Mitigation strategies adopt a layered approach targeting risk elimination or reduction by design and provide supplementary controls via user-facing documentation and training. Core measures include:
+
+- **Advanced Multi-Modal Fusion:** The use of transformer-based Vision Language Models enables cross-validation between real-time video analysis and exam metadata streams. This design reduces false positives originating from isolated visual cues by contextualizing detected behaviors within the exam scenario.
+
+- **Bias Minimization:** The training pipeline incorporates fairness-aware practices including data diversification and regular audit simulations to detect patterns of demographic bias, allowing model parameter tuning focused on equitable outcomes before deployment.
+
+- **Privacy by Design:** Video data is processed on secure, encrypted edge devices where possible, minimizing data transmission and storage. Anonymization and pseudonymization techniques are applied where raw data is retained for performance assessments.
+
+- **User Guidance:** Detailed technical documentation and user manuals specify intended use parameters, including scope limitations and contraindications to prevent misuse. Training sessions and webinars are conducted for authorized deployers, highlighting the system's operational constraints and promoting knowledgeable supervision.
+
+### Testing Regimen and Performance Validation
+
+Comprehensive testing prior to deployment was executed in controlled and simulated real-world exam environments, reflecting heterogeneous settings such as in-person proctoring rooms and hybrid online exam configurations. Testing stages included:
+
+- **Algorithmic Validation:** Metrics were evaluated continuously throughout development, with final validation runs on holdout datasets ensuring consistent detection across multiple exam formats.
+
+- **Stress Testing:** Adversarial testing entailed simulated circumvention attempts (e.g., use of disguises, gesture masking), verifying robustness under reasonably foreseeable misuse without degradation of core functionalities.
+
+- **Usability Trials:** Field pilots in three European universities (involving over 5,000 examination hours) gathered deployer qualitative feedback focused on system performance and operational integration; no systematic post-deployment risk monitoring system was implemented beyond issue reporting mechanisms.
+
+Testing was concluded before market placement aligning with applicable technical standards and regulatory requirements. No automatic or scheduled performance re-validation is mandated post-deployment by the provider.
+
+### Considerations on Vulnerable Groups and Minors
+
+Prior to deployment, specific evaluation addressed the likelihood of adverse impacts on minors and other vulnerable populations, given that students under 18 constitute a significant segment of the user base. The system refrains from biometric identification technologies and does not retain personally identifiable data beyond transient analysis during exams. The input data and model outputs are strictly limited to indicators pertinent solely to exam integrity, avoiding inference of sensitive or health-related attributes.
+
+Furthermore, the system’s design acknowledges user heterogeneity and is calibrated to minimize undue stress or stigmatization, with attention to the linguistic and cultural diversity of student populations through multilingual support and bias mitigation efforts in visual-semantic recognition.
+
+### Integration with Other Legal Risk Management Procedures
+
+Where providers of the Insight Proctor Analytics system are subject to internal risk management processes mandated by other relevant Union legislation (e.g., GDPR requirements regarding processing of personal data), this risk management system is implemented as a separate but complementary activity. There is no formal procedural combination or alignment mandated between these obligations, recognizing the distinct scopes and operational priorities of privacy compliance and AI-specific risk controls.
+
+Meridian Educational Technologies maintains records evidencing the risk management activities executed prior to deployment and ad hoc updates, thereby ensuring traceability and accountability vis-à-vis regulatory audits.

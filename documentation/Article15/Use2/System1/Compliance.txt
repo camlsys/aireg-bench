@@ -1,0 +1,46 @@
+**Article 15**
+
+### Achievement and Maintenance of Appropriate Accuracy, Robustness, and Cybersecurity
+
+Gas Safety Insight was architected with the objective of ensuring continuous and reliable performance in operationally critical environments. The hybrid model architecture combines Gradient Boosted Decision Trees (GBDT) with encoder-only Transformer networks, leveraging the complementary strengths of each: GBDT provides interpretable, structured decision-making on fused sensor inputs, while Transformers facilitate robust encoding of temporal dynamics from real-time operational logs. This architecture is designed to maximize detection accuracy of gas system anomalies such as leaks and overpressure events.
+
+To quantify accuracy, the system was trained and validated on a dataset comprising over 1.2 million labeled sensor-operational log pairs, drawn from multiple EU natural gas networks over a 36-month period. The dataset includes both normal operational and fault conditions, ensuring balanced representation. Validation tested the model’s predictive precision, recall, and F1 score, achieving an average F1 score of 0.92 for anomaly detection tasks, with false positive rates below 2% in live simulations replicating typical network dynamics.
+
+Robustness was validated through multi-modal stress testing, including synthetic injection of sensor noise, communication latency irregularities, and partial data dropout. The Transformer component’s attention mechanisms and residual connections contribute resilience against temporal perturbations, while the GBDT component’s ensemble structure provides stability against missing or corrupted sensor readings. End-to-end system fault injection trials conducted internally demonstrated sustained detection performance with accuracy variances lower than 5% under simulated sensor faults or network jitter.
+
+Cybersecurity considerations are integral to the system’s design. The software utilizes hardware-enforced trusted execution environments for model inference, safeguarding integrity and confidentiality of computations. Secure communication protocols (TLS 1.3 with mutual authentication) are employed for ingestion of sensor telemetry and operational logs. Role-based access control with multi-factor authentication limits system configuration and update capabilities. Integrity checks and cryptographic signing of model updates prevent unauthorized model alterations.
+
+### Determination and Declaration of Accuracy Metrics
+
+The accompanying instructions for Gas Safety Insight declare detailed accuracy metrics based on both offline validation and live deployment evidence. Performance is reported per the European AI Benchmark Consortium’s recommended taxonomy, including precision, recall, F1 score, and ROC-AUC. For operational transparency, accuracy metrics are updated quarterly based on system monitoring logs collected in a controlled operational environment over the preceding period.
+
+Specifically, the documentation includes: 
+
+- A baseline F1 score of 0.92 for leak and overpressure anomaly detection.  
+- False positive rate consistently below 2%.  
+- Robustness performance under fault-injection scenarios showing less than 5% decline in detection accuracy.  
+- Quarterly updates with rolling average performance metrics monitored and reported to system users.
+
+This enables operators and maintainers to assess the system’s current accuracy in situ, supporting informed operational decisions and maintenance scheduling.
+
+### Measures to Ensure Resilience Against Errors, Faults, and Operational Inconsistencies
+
+Gas Safety Insight integrates multiple layers of error resilience. Technical redundancy is implemented by deploying two independent instances of the inference pipeline operating in parallel on diverse hardware platforms. System outputs are cross-validated between instances; discrepancies trigger automatic alerts and fallback to a fail-safe, rule-based anomaly detector calibrated to conservative sensitivity levels.
+
+The system’s continual health diagnostics monitor sensor data quality, model confidence scores, and system latency metrics in real time. When anomalies in input data validity or processing latency occur, upstream operators receive notifications to inspect hardware components or network connectivity.
+
+As Gas Safety Insight supports incremental learning for model tuning post-deployment, mechanisms to prevent biased feedback loops are incorporated. Incoming operational data influencing model updates undergo statistical bias detection, ensuring that anomalous outputs or rare event over-representation do not distort retraining. A staging environment with shadow testing isolates and validates model updates before production rollout. Retraining pipelines apply differential privacy techniques and maintain diverse training samples to mitigate drift toward spurious correlations.
+
+### Cybersecurity Safeguards Against Manipulation and Adversarial Threats
+
+The system incorporates layered cybersecurity defenses specific to AI vulnerabilities. Training datasets and pre-trained components are stored within encrypted vaults with controlled access logged and auditable via blockchain-based records. Data integrity verification routines guard against data poisoning attempts by performing anomaly detection on training data ingestion, flagging inconsistent or potentially manipulated inputs.
+
+Model poisoning attack surfaces are reduced by enforcing strict provenance controls on all third-party model components and pre-trained embeddings used within the Transformer encoders. Change management workflows mandate multi-party code reviews and cryptographic signatures on model artifacts.
+
+During inference, Gas Safety Insight implements adversarial example detection through gradient-based input sanitization and confidence thresholding, aborting suspicious predictions for human review. Confidentiality attacks targeting proprietary model weights are mitigated by a combination of hardware-based isolation, white-box testing, and runtime anomaly detection.
+
+Incident response processes for cybersecurity events include automated attack detection via SIEM (Security Information and Event Management) integration, rapid alerting to cybersecurity teams, and automated rollback to last known secure model states. These measures continuously evolve with threat intelligence updates aligned with EU and industry best practices.
+
+---
+
+The overall design and ongoing operational controls ensure that Gas Safety Insight maintains consistent accuracy, robustness, and cybersecurity resilience throughout its lifecycle, facilitating reliable hazard detection in critical natural gas infrastructures.

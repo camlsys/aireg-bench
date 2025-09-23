@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must capture contextual information that flags risk emergence, such as model drift, input data anomalies, or deviations from legal or policy compliance boundaries, as well as any system updates that impact decision outputs.
+
+[c] **Violation:**  
+The system’s logging excludes metadata about ongoing model retraining processes and detected input inconsistencies that could signal a future risk increase, only recording final decisions and outputs.
+
+[d] **Justification:**  
+Failing to log early risk indicators or system modification contexts prevents proactive detection of when the system may cease to be safe or compliant. This is a nuanced violation because decisions are logged, but critical intermediate events that foreshadow risk remain invisible, breaching Article 12(2)(a).
+
+---

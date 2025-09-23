@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"[Human oversight measures] shall be ensured through either one or both of the following types of measures: (a) measures identified and built, when technically feasible, into the high-risk AI system by the provider before it is placed on the market or put into service; (b) measures identified by the provider before placing the high-risk AI system on the market or putting it into service and that are appropriate to be implemented by the deployer."  
+
+[b] **Guideline:**  
+The provider must either embed technical oversight tools (e.g., stop functions, anomaly detection flags) into the AI system or clearly prescribe and enable deployers with tailored oversight protocols that reflect system autonomy and contextual risks, thus ensuring comprehensive, proportionate oversight aligned with high-risk characteristics.  
+
+[c] **Violation:**  
+The system includes no integrated interruption or "stop" mechanisms that allow immediate safe halting of the AI assessment once anomalies or suspicious outputs are detected, and Meridian Labor Solutions fails to provide explicit, mandated oversight protocols or training materials to deployers guiding effective human intervention practices in context.  
+
+[d] **Justification:**  
+This gap means deployers lack both internal technical controls and prescribed external procedures for effective human oversight, risking insufficient supervision proportional to risk and autonomy. The deficiency is realistic as technical stop mechanisms can be overlooked, and subtle because deployers might assume responsibility without clear directives, violating Article 14(3) in a nuanced manner.

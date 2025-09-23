@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures." (Article 15(4))
+
+[b] **Guideline:**  
+In systems featuring online learning or model updates informed by recent outputs, design must explicitly prevent feedback loops by isolating outputs that might unintentionally reinforce biased patterns. Measures should include systematic bias detection and correction algorithms, audit trails, and carefully controlled supervised retraining that exclude biased feedback data.
+
+[c] **Violation:**  
+Recruitment Decision Forest employs continuous retraining using recent hiring decisions and recruiter-influenced candidate scores without filtering or debiasing these inputs, resulting in reinforcement of past discriminatory patterns (e.g., underrepresentation of certain minorities), which in turn skew future candidate rankings and perpetuate bias cycles.
+
+[d] **Justification:**  
+This violation happens during model updating and is subtle because feedback loops are embedded in routine retraining; the bias amplification may not be overtly visible without deep analysis of training data sources and decision outcomes. It threatens system robustness and fairness by allowing biased outputs to propagate into future model states, contravening the explicit feedback loop risk management mandate.
+
+---

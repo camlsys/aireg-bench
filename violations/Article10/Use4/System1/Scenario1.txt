@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law... (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Experts would systematically analyze the training data for demographic or socio-economic biases that could lead to disproportionate false positive or false negative detections of suspicious behavior among specific student groups (e.g., based on ethnicity, gender, or disability). Identified bias patterns should be addressed through augmenting the data or algorithmic fairness techniques, and documented mitigation approaches must be integrated into training and validation.  
+
+[c] **Violation:**  
+Insight Proctor Analytics was trained mainly on video data sourced from a limited set of academic institutions located in Western Europe with predominantly ethnically homogeneous student populations. No substantive efforts have been made to identify bias against students with atypical behaviors linked to cultural gestures or neurodiversity, leading to disproportionately high false alarms for minority students during live exam monitoring. Mitigation measures have been limited to generic threshold tuning rather than targeted bias corrections.  
+
+[d] **Justification:**  
+The narrow geographic and demographic scope of the training data risks systemic errors impacting protected groups, violating the requirement to examine and mitigate biases that may infringe on fundamental rights. This bias issue is subtle because overall system accuracy may appear high, but errors cluster disproportionately within protected subgroups, making the violation realistic yet not immediately obvious without granular bias audits.  
+
+---

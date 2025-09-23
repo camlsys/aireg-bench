@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable."
+
+[b] **Guideline:**  
+Providers must ensure that residual risks after risk management measures are quantified, evaluated, and deemed acceptable based on defined probabilistic thresholds, targeted testing results, and comprehensive hazard assessments.
+
+[c] **Violation:**  
+SafeRoute’s residual risk assessment uses thresholds optimized solely for minimizing false positives in hazard alerts to avoid operator alert fatigue; however, this threshold setting increases the risk of failing to detect rare but severe traffic hazards, thus leaving residual risks unacceptably high but unacknowledged.
+
+[d] **Justification:**  
+This is a subtle breach because SafeRoute prioritizes operational usability over safety-critical risk containment, resulting in an imbalanced residual risk that may not be acceptable. The system’s risk evaluation metrics misleadingly focus on false positives without fully addressing rare but dangerous risks, thus failing the acceptability standard.
+
+---

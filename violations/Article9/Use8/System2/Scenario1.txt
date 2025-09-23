@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+Providers must implement a documented continuous risk management process that systematically collects new data on system behaviour and context during deployment and actively updates risk assessments and controls throughout the system’s operational lifecycle. This includes regular scheduled reviews and responsive updates triggered by newly identified risks or system performance shifts.  
+
+[c] **Violation:**  
+Urban Safety Analytics conducts thorough risk assessment prior to deployment but only performs superficial or ad hoc reviews post-market without a systematic schedule or trigger criteria for updating risk controls. Risk reassessment is limited to annual checkpoint reports lacking any dynamic integration of real-time operational data or emergent incident patterns.  
+
+[d] **Justification:**  
+This violation breaches Article 9(2)’s requirement for continuous, iterative risk management by failing to maintain an ongoing and systematic updating process across the lifecycle. It is subtle because the provider appears compliant by performing initial assessments and annual reviews, yet lacks the proactive, data-driven iteration mandated to capture evolving risks in emergency contexts, where incident patterns and operational conditions can rapidly change.  
+
+---

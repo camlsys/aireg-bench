@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The system must consistently maintain stated accuracy and robustness levels, accounting for diverse educational contexts and evolving data inputs over time, including ongoing model updates. Continuous monitoring and validation must detect degradation or shifts in performance, with mechanisms to restore compliance swiftly.  
+
+[c] **Violation:**  
+The Adaptive Learning Outcome Analyzer adapts its model post-deployment based on incremental student data without real-time validation mechanisms, resulting in periodic unnoticed declines in accuracy for underrepresented student groups or newer curricula. No rollback or alert system is in place to ensure consistent performance during these adaptation phases.  
+
+[d] **Justification:**  
+Without active performance monitoring and control during model adaptation, the system fails to maintain consistent accuracy and robustness throughout the lifecycle, violating the requirement subtly—because on the surface the system self-improves but in practice introduces unaddressed performance drops that educators may not immediately detect.  
+
+---

@@ -1,0 +1,47 @@
+**Article 14**
+
+**Design for Effective Human Oversight**
+
+The Judicial Insight Assistant (JIA) system is architected to ensure ongoing human oversight by integrating a hybrid AI model composed of a transformer-based encoder-decoder framework for advanced legal language understanding and gradient boosted decision trees (GBDT) dedicated to fact pattern classification. This combination enables the system to provide transparent and modular outputs that legal professionals can systematically track and verify.
+
+To facilitate situational awareness and real-time monitoring, the user interface incorporates interactive dashboards presenting interpretability indicators such as attention heatmaps from the transformer model and feature importance scores from the GBDT component. These interfaces allow judicial users to trace outputs back to specific input documents or fact patterns, contributing to effective oversight during the system’s use, consistent with its deployment in intensive legal environments.
+
+A continuous feedback loop is established, whereby users can flag outputs for review, initiate manual overrides, or request detailed explanations without interrupting workflow. The system also timestamps and logs user interventions, maintaining a comprehensive record for post-decision auditing and compliance audits.
+
+**Risk Mitigation and Purpose-Aligned Oversight Measures**
+
+JIA’s oversight measures aim to mitigate risks related to erroneous legal interpretations, incomplete fact extraction, and unintended bias in precedent retrieval—risks that could impact judicial safety and fundamental rights. This is critical given the system’s domain in judicial decision support, where misinterpretations can lead to substantial consequences.
+
+The system’s training data consists of over 12 million annotated legal documents spanning multiple EU jurisdictions, rigorously curated to minimize representational bias. Specific bias-detection modules were embedded to analyze output distributions by jurisdiction, legal domain, and temporal period, enabling early identification of atypical or systematically skewed recommendations.
+
+Redundancy in fact classification is achieved by ensembling GBDT outputs with heuristic rule checks designed in collaboration with legal experts. These measures are targeted at minimizing false positives and negatives in fact extraction, particularly under foreseeable misuse such as reliance on incomplete databases or partial data inputs.
+
+**Proportionate Oversight Measures Based on System Context and Autonomy**
+
+Given the high-risk classification of JIA and its role in influencing judicial decisions, provider-built oversight features include multi-level alerting mechanisms for outputs with confidence scores below 85%, prompting users to exercise enhanced scrutiny. The system’s autonomy level is limited to generating advice and recommendations; it does not perform autonomous ruling or decision execution, preserving natural person authority.
+
+Provider-implemented safeguards encompass:
+
+- Integrated explanation modules producing layer-wise relevance propagation for transformer outputs and Shapley Additive Explanations (SHAP) values for GBDT predictions, enabling judges to interpret outputs effectively.
+
+- User-configurable “stop” functionalities embedded in the interface, allowing immediate suspension of AI output generation pending further analysis, thus enabling intervention and preventing potential cascading errors.
+
+- Periodic automated integrity checks performed prior to each subscription renewal cycle, including adversarial stress tests with simulated ambiguous or adversarial inputs reflective of plausible misuse scenarios.
+
+Concurrently, the provider supplies documentation and training materials detailing recommended deployer-level oversight practices, such as mandatory user training programs emphasizing awareness of automation bias and processes for independent review of flagged AI outputs.
+
+**Enabling Understanding, Monitoring, and Control for Assigned Natural Persons**
+
+The JIA system is delivered with a comprehensive Human-Machine Interface (HMI) that is tailored to judicial users’ needs, designed through iterative user experience testing involving professional judges and clerks across three EU countries. This includes:
+
+- Contextual tooltips and inline definitions of AI-generated terms and confidence intervals to support correct interpretation of results.
+
+- Visual indicators reminding users of the system’s nature as an assistive tool, highlighting limitations, and discouraging over-reliance (mitigating automation bias). These prompts activate notably when users access high-impact recommendations.
+
+- Interactive anomaly detection notifications that flag outputs inconsistent with typical legal precedents or statistical expectations, directing users to perform manual validation.
+
+- The interface supports override controls enabling users to discard or supersede AI suggestions within the workflow, with audit trail logging capturing the rationale for such decisions, consistent with data-processing transparency standards.
+
+- The ‘stop’ button is prominently positioned and connected to system-level safe-halt protocols, ensuring that suspension of AI output generation preserves data integrity and avoids disruption of judicial workflows.
+
+Finally, in compliance with applicable data protection provisions (Regulations (EU) 2016/679 and (EU) 2018/1725 and Directive (EU) 2016/680), JIA’s processing records include detailed documentation justifying the necessity of handling special categories of personal data to detect and correct biases. This justification is supported by empirical analyses demonstrating that alternative non-sensitive datasets would not yield equivalent bias detection efficacy, as documented in the system’s internal impact assessments and bias mitigation strategy reports.

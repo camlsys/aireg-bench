@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties... (Article 10, paragraph 3)."
+
+[b] **Guideline:**  
+To comply, datasets must reflect the full spectrum of employment types, contract conditions, and legal variations relevant to the system’s jurisdiction and sector. Data completeness includes capturing nuanced contract clauses and contextual elements that influence termination decisions, ensuring statistical representativeness for fair outcomes.
+
+[c] **Violation:**  
+The system’s training data consisted largely of standard full-time employee contracts and lacked sufficient examples from part-time, temporary, or precarious employment categories. This gap was not addressed, resulting in the model producing less reliable termination assessments for these underrepresented employment types.
+
+[d] **Justification:**  
+This subtle violation of representativeness and completeness undermines the system’s intended fairness and applicability across all relevant employee groups. The non-compliance is not obvious because the overall dataset and model may perform well on majority contract types, but decisions for less-common contracts can be systematically flawed without targeted data coverage.

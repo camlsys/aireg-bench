@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+System developers must implement continuous monitoring mechanisms and adaptive maintenance plans to ensure the AI maintains accuracy and robustness as input distributions and operational environments evolve over time. This includes handling shifts in emergency patterns or sensor reliability degradation that may affect performance consistency.  
+
+[c] **Violation:**  
+The AI system deploys the CNN and LSTM components with fixed model weights and does not include ongoing validation against emerging data patterns post-deployment. As a result, it slowly degrades in accuracy when novel types of emergencies or new sensor devices produce data distributions that differ from training data, without triggering alerts or adaptation.  
+
+[d] **Justification:**  
+This subtle violation breaches the lifecycle performance consistency requirement because the system’s inability to detect and address distribution shifts undermines reliability over time. Given the dynamic nature of emergencies and sensor environments, lack of proactive monitoring is a realistic shortcoming that may only become apparent through longitudinal performance audits.  
+
+---

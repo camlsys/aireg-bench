@@ -1,0 +1,27 @@
+**Article 14**
+
+### Design and Development of Human Oversight Mechanisms
+
+Gas Safety Insight has been architected primarily as an automated safety monitoring system integrating Gradient Boosted Decision Trees (GBDT) with encoder-only Transformer models. The GBDT components process structured sensor inputs—such as pressure, flow rate, and temperature readings—captured at 1 Hz intervals from over 10,000 distributed network nodes. Concurrently, the Transformer model ingests unstructured operational logs and contextual metadata spanning rolling 30-minute windows, enabling temporal anomaly pattern detection and fault precursors identification. The fusion of these modalities targets improved detection precision, with benchmark testing demonstrating a 92.7% recall on known leak scenarios within a test corpus of 1 million labeled events from five diverse gas networks.
+
+Despite this advanced design, Gas Safety Insight does not incorporate explicit provider-engineered confidence metrics or uncertainty quantification layers that would systematically alert operators to low confidence outputs or indications of out-of-distribution anomalies. Similarly, no integrated human-machine interface (HMI) components proactively flag instances of potential sensor degradation, input spoofing, or other misuse scenarios that diverge from the standard operational domain known during model training and validation. This decision stems from operational constraints prioritizing streamlined alert throughput and minimizing alarm fatigue; the system outputs discrete anomaly scores and binary safety alerts without confidence intervals or anomaly magnitude indicators.
+
+### Mitigation of Risks Through Oversight and Technical Measures
+
+To address health and safety risks that may arise from Gas Safety Insight outputs, the system provides detailed real-time event logs and anomaly detection timestamps for post hoc operator review. These logs include raw sensor readings, model outputs, and standard alert levels but do not encode degrees of confidence or probabilistic uncertainty. Norwin Industrial Technologies conducted adversarial scenario testing, including simulated sensor drift and spoofing attacks affecting up to 10% of key input streams, confirming that while alert rates changed under these conditions, no automated warnings flagged diminished model reliability.
+
+While the system design omits intrinsic low confidence or domain anomaly alerts, extensive operator training materials accompany deployment, documenting the system’s intended operational domain and limitations, especially highlighting the absence of explicit confidence or anomaly boundary notifications. This documentation advises routine manual sensor validation and cross-referencing with legacy safety procedures. Providers have opted not to embed direct stop or override controls within the system interface; these are expected to be managed by deployers’ supervisory control and data acquisition (SCADA) frameworks which act as ultimate operational governors.
+
+### Provision of Technical Information Enabling Operator Understanding and Oversight
+
+Upon delivery, Gas Safety Insight is furnished with comprehensive technical documentation describing the model architecture, training data scope (comprising 2 years of historical network operational data including 2.4 billion individual sensor readings), and evaluation methodology. The documentation explicitly characterizes system limitations, noting that confidence metrics and anomaly boundaries are not conveyed through system outputs.
+
+The system user interface (UI) presents anomaly alerts as instances exceeding predetermined thresholds in combined GBDT and Transformer model scores but does not offer interpretability tools such as feature importance visualizations or uncertainty heatmaps. The rationale for this design choice reflects product strategy centered on alert simplicity and operator familiarity with threshold-based alarms rather than probabilistic interpretation. Operators receive guidance on the risk of automation bias, including recommendations to correlate alerts with corroborative manual inspections and to maintain vigilance for sensor abnormalities not signaled by system outputs.
+
+### Operator Controls and Intervention Possibilities
+
+Gas Safety Insight’s deployment package includes APIs allowing integration with external control systems, but itself lacks direct override or emergency stop functions within its standalone UI. Operators may suppress alerts or pause monitoring only through external supervisory systems configured by the deployer. This approach devolves active intervention capabilities to operational control centers while the AI system remains a passive anomaly detection provider.
+
+Records of processing activities are maintained per Regulation (EU) 2016/679 specifications, including data provenance, sensor metadata, and model update logs. However, no processing of special categories of personal data occurs, and thus related justifications are not applicable.
+
+In summary, Gas Safety Insight’s provider decisions focus on robust anomaly detection through hybrid modeling and delivering comprehensive informational transparency about system scope and limitations while intentionally excluding built-in mechanisms for real-time anomaly confidence notifications or direct intervention controls. The provision of human oversight capabilities largely depends on deployer-implemented operational protocols and external supervisory systems rather than internal system features.

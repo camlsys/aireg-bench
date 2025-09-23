@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (a) identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+The system logs must include contextual data sufficient to detect and analyze early warning signs of risk, such as repeated false positives/negatives, model drift indicators, or operational anomalies signaling potential degradation or unintended behavior.
+
+[c] **Violation:**  
+Insight Proctor Analytics records only final detection outputs without logging any intermediate model confidence scores, uncertainty estimations, or system health metrics that could reveal trends indicative of increasing risk or performance degradation.
+
+[d] **Justification:**  
+Without detailed intermediate metrics, it is difficult to identify emerging risks or subtle changes in system behavior that may lead to harm or decreased reliability. This deficiency is nuanced because the system appears to log “events” but omits critical diagnostic information necessary for proactive risk detection, contrary to the extract’s traceability intent.
+
+---

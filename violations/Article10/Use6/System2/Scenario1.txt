@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection;"  
+
+[b] **Guideline:**  
+The system’s training data must have clear documentation of the data collection methodology, including that personal data used for training was originally collected for compatible purposes with the AI’s intended operational context (HR contract termination decisions), and that repurposing such data respects privacy principles and legal constraints.  
+
+[c] **Violation:**  
+Contractual Separation Insight’s training data includes historical employee records originally collected solely for payroll and administrative tasks, without explicit consent or legal basis for use in predictive employment termination decisions. The data governance process lacks clear linkage between original collection purposes and the current AI training objective.  
+
+[d] **Justification:**  
+This subtle violation breaches Article 10(2)(b) because although the data is relevant, the failure to align data origin and purpose breaks privacy and legal requirements embedded in the AI Act. The issue may not be obvious if the data seems appropriate in content but fails on governance compliance, reflecting a realistic grey area in HR data re-use.  
+
+---

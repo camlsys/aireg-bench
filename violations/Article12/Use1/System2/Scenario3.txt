@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for monitoring the operation of high-risk AI systems referred to in Article 26(5)."  
+
+[b] **Guideline:**  
+The system must log operational metrics that allow ongoing monitoring of performance, including accuracy trends, error rates, and system status indicators, enabling detection of performance degradation or unintended behavior.
+
+[c] **Violation:**  
+While logging error alerts, the system does not capture or retain intermediate performance metrics (such as confidence scores or classification probabilities from the Random Forest), thus limiting the ability to monitor subtle shifts in operational quality over time.
+
+[d] **Justification:**  
+Failure to log intermediate performance data prevents nuanced operational monitoring, crucial for detecting early signs of drift or degradation. This violation is subtle because obvious failures might trigger alerts, masking underlying declining performance trends that only comprehensive logs can reveal, thus compromising compliance with Article 12(2)(c).

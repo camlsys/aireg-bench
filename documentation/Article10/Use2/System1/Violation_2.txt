@@ -1,0 +1,41 @@
+**Article 10**
+
+### Data Governance and Management Practices Relevant to System Design
+
+Gas Safety Insight’s training, validation, and testing datasets are curated under a comprehensive data governance framework proportionate to the system’s safety-critical purpose. The system’s hybrid architecture, combining Gradient Boosted Decision Trees (GBDT) and encoder-only Transformer networks, necessitates datasets that capture both structured sensor signals (e.g., flow rates, pressures) and unstructured temporal event logs. To support this, the provider established rigorous design choices prioritizing multimodal data integration, temporal continuity, and anomaly sensitivity. Data capturing protocols reflect the operational environment of natural gas distribution networks, incorporating sensor calibration, synchronized timestamping, and environmental metadata to maintain traceability and contextual integrity throughout dataset lifecycle management.
+
+Access control, versioning, and audit trails are implemented via a dedicated data management platform with ISO/IEC 27001-aligned security practices. Annotation and labeling are principally supervised by domain experts with gas network operational expertise, supplemented by semi-automated pattern recognition tools to aid consistency in labelling common operational states and recognized fault signatures.
+
+### Data Collection Processes, Origin, and Preparation Operations
+
+The dataset originates from multiple proprietary gas network installations across Europe, collected over a continuous period spanning three years and encompassing over 250 million data points from sensor arrays and event recorders. Owing to operational constraints and the rarity of critical states, notably extreme low-flow scenarios and rapid pressure transients, direct sensor recordings of such conditions are substantially underrepresented. This underrepresentation is primarily due to the sporadic nature of these events and the technical challenges posed by noisy sensor data and transient artifacts complicating reliable event identification.
+
+Preprocessing procedures include temporal alignment, noise filtering via wavelet denoising, and outlier detection using robust statistical thresholds. Annotation efforts focus on labeling steady-state and common fault patterns, while rare transient events underwent manual review but were largely excluded from training sets due to inconsistent label confidence. Data cleaning preserves dataset fidelity but intentionally excludes ambiguous or partially corrupted records to avoid contaminating model learning with unreliable signals.
+
+### Assumptions on Data Representativity and Measured Phenomena
+
+Datasets are constructed on the premise that the sampled operational data adequately represent the typical behaviors and failure modes of natural gas supply systems under standard and elevated risk conditions. The provider acknowledges an explicit limitation in coverage for rare, critical operational states such as rapid pressure surges or highly transient flow disruptions. These omissions arise from the inability to consistently label these states with sufficient precision and confidence, due to both sensor noise and lack of corroborating maintenance records.
+
+The design assumes that model generalization can be maximized by leveraging proxy patterns in available data that correlate with failure precursors. However, this assumption is documented as a caveat in system risk analysis due to potential performance degradation during unrepresented state occurrences.
+
+### Assessment of Dataset Availability, Quantity, and Suitability
+
+The dataset comprises approximately 1.2 terabytes of preprocessed sensor and event data, including over 1 million labeled sequences for typical operating conditions and known fault classes. Validation and test subsets collectively hold a stratified 20% of the total labeled data to evaluate general predictive performance and anomaly detection capability. The system exhibits an overall failure prediction accuracy of 92.4% on the validation set where annotated fault data are present.
+
+Despite sizeable data volume and diverse operational contexts, known sampling gaps exist for rare states: fewer than 0.05% of sequences represent extreme low-flow or rapid transient conditions, falling short of statistical significance to inform robust predictive modeling of these modes. These gaps constrain model reliability under such states and are expressly catalogued.
+
+### Examination and Mitigation of Bias Related to Safety and Fundamental Rights
+
+Analyses conducted on training data diversity revealed the rarity of critical transient states as a principal bias risk influencing system safety. While demographic or personal data biases are not applicable, bias manifests through under-sampling of infrequent but safety-critical operational phenomena. The provider performed sensitivity analyses indicating that the model’s false negative rate rises sharply for anomalies outside the common operational modes present in the data.
+
+To mitigate safety risks, the system architecture integrates an uncertainty estimation module that flags predictions associated with low-confidence patterns potentially indicative of untrained rare states. This mechanism triggers alerts for external operator review or fallback protocols, thereby reducing the hazard of silent failure.
+
+### Identification and Documentation of Data Gaps and Remediation Strategies
+
+The provider explicitly identifies the absence of reliably labeled rare event data—extreme low-flow and rapid pressure transients—as a critical data gap impeding full regulatory compliance with Article 10 (3) regarding dataset completeness and representativity. Recognizing this, planned remediation steps include:
+
+- Collaborations with network operators to deploy enhanced sensor instrumentation and automated event detection tools targeting high-fidelity capture of transient phenomena.
+- Controlled testbed experiments simulating critical operational states to generate synthetic, validated data augmenting rare event representation.
+- Development of advanced semi-supervised labeling technologies and active learning frameworks to iteratively improve annotation quality on challenging transient states.
+
+While these initiatives are ongoing, current releases clearly document these gaps in system specifications, enabling deployers to account for operational limitations in risk management frameworks.

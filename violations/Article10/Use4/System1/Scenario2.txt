@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Compliance requires that data sets reflect a comprehensive range of exam environments, including different camera qualities, room setups, lighting conditions, and student behaviors (voluntary and involuntary), ensuring robust model performance across all anticipated contexts and user groups. Data integrity must be verified so that labeling and annotation errors are minimal.  
+
+[c] **Violation:**  
+The training data for Insight Proctor Analytics primarily consists of high-resolution, well-lit classroom recordings, failing to include sufficient data from low-light or unconventional exam settings such as remote proctored tests with webcam-only footage. Additionally, a notable fraction of the annotated segments contain unresolved labeling inconsistencies, such as misclassified hand movements not related to cheating attempts.  
+
+[d] **Justification:**  
+The limited diversity and quality of training data reduce the system's reliability in various real-world conditions, undermining representativeness and completeness. Labeling errors further diminish model accuracy. This violation is subtle because performance degradation might only appear under edge cases or less common scenarios, going unnoticed in typical usage or summary accuracy reports.  
+
+---

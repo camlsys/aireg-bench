@@ -1,0 +1,33 @@
+**Article 12**
+
+**Event Logging Architecture and Data Captured**
+
+The Recruitment Decision Forest (RDF) incorporates an exhaustively instrumented logging infrastructure designed to capture key lifecycle events in the system’s operation, enabling retrospective audit and monitoring consistent with typical high-risk AI system requirements. Logs are persistently stored using a secure, write-once backend compliant with industry-standard encryption and tamper-evidence protocols. Each logged entry references a timestamp, unique session identifier, and candidate batch ID to ensure correlation across multiple decision instances and operational cycles.
+
+The event logs specifically record the final score assigned to each candidate by the Gradient Boosted Decision Tree ensemble, alongside the corresponding selection outcome—i.e., whether the candidate proceeded to the next recruitment phase or was filtered out. This approach highlights the system’s decision endpoints as the primary artifact for traceability, reflecting the final operational outputs that drive downstream recruitment actions.
+
+Intermediate model states, such as feature-level influence weights, marginal contribution values, or confidence scores for borderline candidates, are intentionally excluded from logging. This design choice stems from multiple considerations: minimizing log data volume to reduce storage overhead and maintain responsiveness in large-scale hiring scenarios, as well as mitigating the risk of exposing sensitive candidate-specific feature attributions that could invite interpretative bias or privacy concerns. Consequently, only the aggregate scored outputs and final selection flags are retained in system logs.
+
+**Traceability and Monitoring Focus**
+
+The logging scheme facilitates identification of high-risk conditions by enabling correlation of candidate selection outcomes with temporal recruitment periods or specific job postings experienced by applicants. Anomalous patterns, such as unexpected fluctuations in pass rates or abrupt rating changes, can be detected through statistical analysis of logged final scores over time, thus supporting risk detection consistent with Article 12(2)(a). However, the absence of granular feature impact data limits attribution of causal factors in borderline or contentious cases, confining traceability to observable outcomes rather than nuanced decision pathways.
+
+Logs serve as the foundational dataset for post-market monitoring activities under Article 72, allowing reviewers to verify consistency in applicant scoring distributions and to examine potential systemic biases at the cohort level. By retaining only the final scores and selection results, the system prioritizes a balance between auditability of aggregate behavior and safeguarding operational scalability and candidate privacy, acknowledging that detailed traceability into individual decision rationale is beyond current logging scope.
+
+In alignment with monitoring requirements under Article 26(5), operational oversight functions utilize the aggregate logs to evaluate system stability and performance drift. Continuous evaluation pipelines process logged scores periodically, cross-referencing them with updated hiring criteria and known benchmark datasets to detect deviations in ranking efficacy. This supports ongoing quality assurance and governance measures without reliance on intermediate model interpretation artifacts.
+
+**Rationale for Logging Limitations**
+
+Meridian Analytics Solutions elected this logging scope following empirical analysis of typical recruiter workflows and system performance trade-offs. Testing on historical data comprising over 350,000 candidate profiles revealed that capturing feature-level influence weights for each decision would increase log volume by an order of magnitude, imposing latency penalties incompatible with enterprise throughput needs. Additionally, internal operational reviews highlighted that recruiters predominantly engage with final candidate scores rather than feature-level breakdowns, aligning logging outputs with actual user touchpoints.
+
+Furthermore, privacy impact assessments identified that detailed logging of sensitive applicant attributes’ contribution to decisions could inadvertently expose protected characteristics or lead to unauthorized interpretative conclusions. Thus, restricting logs to final outputs effectively minimizes logged personal data while maintaining sufficient traceability for compliance and operational integrity.
+
+**Technical Components Utilized**
+
+The RDF’s logging is implemented as a modular subsystem interfacing with the core GBDT inference pipeline. Built on the Apache Kafka message bus, logs are streamed in real-time to a distributed immutable ledger database optimized for read-optimized queries by the compliance and monitoring teams. The system’s event schema defines discrete event types for scoring completion, selection finalization, and operational lifecycle markers, each conforming to an internal taxonomy aligned with high-risk AI governance frameworks.
+
+Data retention policies governing log archives follow typical industry standards, including periodic anonymization of candidate identifiers after a 24-month active monitoring window, unless regulatory directives specify extended retention periods. Access to logs is tightly controlled via role-based permissions, further ensuring confidentiality and integrity of recorded outcomes.
+
+---
+
+This documentation details the system’s logging capabilities with specific focus on capturing final candidate scores and selection results, while explicitly not recording intermediate feature influence weights or confidence metrics. This reflects deliberate provider decisions balancing traceability, operational feasibility, and data privacy considerations.

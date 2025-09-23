@@ -1,0 +1,21 @@
+**Article 12**
+
+**Technical Provisions for Event Logging**
+
+Gas Safety Insight incorporates a modular event logging subsystem designed to capture and persist critical operational data selectively rather than continuously. Logging is automatically triggered upon detection of anomalous system states that exceed a rigorously defined, statistically derived threshold. This threshold is established via extensive analysis of historical sensor readings and operational conditions, ensuring that only events indicative of potential safety risks—such as deviations predictive of gas leaks, overpressure, or imminent component failure—invoke logging. Routine sensor inputs and normal operational contexts are not logged continuously, limiting data retention to higher-impact incidents to optimize data storage and focus audit efforts on meaningful safety events.
+
+The logging subsystem captures comprehensive data snapshots associated with triggered anomalies, including raw sensor vectors, intermediate processed features from the GBDT and Transformer models, the anomaly score leading to threshold breach, and relevant contextual metadata such as timestamp, network segment identifiers, and system health indicators. To support precise chain-of-custody and reproducibility, each log entry is cryptographically timestamped and organized using an append-only, tamper-evident architecture conformant with industry standards for critical infrastructure audit trails.
+
+**Rationale and Intended Purpose Alignment**
+
+The decision to adopt a threshold-triggered logging strategy reflects a calibrated balance between thorough traceability and system performance/resource management demands typical of high-frequency, real-time sensor environments. Empirical validation, performed on a dataset encompassing over 15 million sensor records from multiple gas network segments, demonstrated that continuous logging of all sensor data would generate unmanageable data volumes and obscure the identification of genuinely consequential anomalies under the high-noise conditions characteristic of operational gas supply infrastructure.
+
+By restricting detailed logging to events that surpass an anomaly score threshold empirically linked to a 99% probability of representing a true safety risk or relevant operational fault, Gas Safety Insight aligns logging activity with the risk-based triggering concepts outlined in Article 12(2)(a). This selective event recording enhances the system's capacity to capture situations presenting inherent risk or substantial behavioral deviations requiring intervention, while avoiding excessive data noise and ensuring operators’ focus remains on actionable insights.
+
+**Support for Post-Market Monitoring and Operational Surveillance**
+
+Logs generated during triggered anomaly events systematically include the outputs of the hybrid AI models along with system state indicators necessary for comprehensive post-market evaluation. This facilitates retrospective analyses of model performance and incident causation, underpinning mandated post-market monitoring activities mandated under Article 12(2)(b) and (c). The recorded data structure enables detailed reconstruction of decision pathways leading to alerts, supporting ongoing validation and continuous improvement cycles alongside regulatory oversight.
+
+Normal operational periods, characterized by readings below the anomaly threshold, are recorded only insofar as aggregated system health statistics and performance metrics are retained in summary form outside of the event log itself. This approach acknowledges the operational contexts where routine logging of all decisions would generate superfluous data irrelevant to risk assessment, consistent with the system’s design intent and operational profile.
+
+Collectively, the logging architecture and policy embed technical capabilities sufficient to identify and trace risk situations and support regulatory monitoring frameworks while emphasizing risk-oriented data capture aligned with system purpose and performance constraints.

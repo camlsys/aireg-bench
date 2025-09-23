@@ -1,0 +1,37 @@
+**Article 15**
+
+**Design and Development Decisions Ensuring Accuracy and Consistency**
+
+The Talent Insight Model employs a transformer-based encoder-decoder architecture optimized for natural language processing tasks focused on resumes and job descriptions. Initial development leveraged a curated multi-industry dataset comprising approximately 4 million anonymized job applications and 500,000 validated job descriptions collected over the previous five years. This dataset was balanced across major industry sectors, including technology, healthcare, finance, manufacturing, and retail, to ensure broad generalizability. Benchmark evaluations conducted during development demonstrated a top-5 candidate ranking accuracy of 87% across the full dataset, with per-industry variability ranging from 82% to 90%, measured by mean reciprocal rank (MRR) and normalized discounted cumulative gain (NDCG). The model’s robustness was assessed through adversarial testing focused on input perturbations common in recruitment documents such as inconsistent formatting and abbreviations, revealing a degradation in ranking accuracy limited to less than 5% under such perturbations.
+
+Following deployment, the system design incorporated mechanisms for incremental fine-tuning on newly acquired recruitment data intended to improve responsiveness to evolving industry requirements. These updates are scheduled bi-monthly, using freshly collected resumes and job descriptions sourced from partner HR platforms, typically amounting to datasets of 50,000 to 80,000 samples per cycle. While continuous learning was prioritized to maintain relevance, the provider determined that comprehensive validation after each fine-tuning phase was impractical given data volume and update frequency.
+
+**Declared Accuracy Metrics and Variation Acknowledgement**
+
+The instructions for use explicitly declare an initial performance baseline reflecting the pre-deployment benchmarks, specifying a top-5 candidate ranking accuracy of approximately 87%, with an accuracy variability of ±5% depending on sector-specific data characteristics. The documentation includes a note emphasizing potential fluctuations in accuracy contingent on recruitment domain and data quality. It advises users that accuracy metrics are indicative of initial model behavior and may vary over prolonged operational periods.
+
+**Lifecycle Robustness and Feedback Loop Considerations**
+
+Although the Talent Insight Model integrates adaptive fine-tuning post-deployment, the current implementation does not enforce systematic end-to-end validation nor rollback mechanisms after updates. This design choice was influenced by operational constraints and a risk assessment prioritizing update agility over continuous validation. As a consequence, subtle decreases in candidate ranking performance in certain industries may accumulate over successive fine-tuning cycles without immediate detection.
+
+Technical redundancy at the model component level is limited: the system maintains versioned snapshots of models before each fine-tuning iteration, enabling reversion to the last known stable version if externally triggered. However, automated monitoring for degrading performance trends or biased output feedback loops is not incorporated in the deployment environment. This implies that potential feedback loops—where model outputs inadvertently influence successive inputs—may persist unmitigated until manually reviewed.
+
+**Cybersecurity and Resilience Measures Against Manipulation**
+
+The model and associated infrastructure implement multi-layered cybersecurity measures aligned with industry standards prevalent in 2025. These include encrypted storage and transmission of training data, role-based access controls for fine-tuning operations, and secured APIs for inference requests. Routine vulnerability assessments and penetration tests target both the core AI workflow and the surrounding deployment platform.
+
+Specific defenses against AI-targeted attacks encompass monitoring for data poisoning by validating incoming fine-tuning datasets through anomaly detection methods that flag aberrant candidate profiles or job descriptions. Model poisoning risks are addressed by controlling access to the training pipelines and maintaining cryptographic integrity checks on model parameters. The system’s robustness to adversarial inputs, such as crafted resumes aimed at misleading the ranking function, is supported by input normalization routines and adversarial training techniques incorporated during initial development. Confidentiality protections include encrypted model weights at rest and strict logging of access to pre-trained components.
+
+However, these cybersecurity measures do not extend to continuous surveillance of fine-tuning outcomes for emergent vulnerabilities or functional degradation caused by unauthorized or inadvertent data shifts over extended periods.
+
+**Summary of Technical and Organisational Control Decisions**
+
+- **Initial Model Development:** Large, diverse, and balanced training datasets with standard benchmarking and adversarial testing to ensure baseline accuracy and robustness.
+
+- **Post-Deployment Fine-Tuning:** Regular incremental updates using newly acquired recruitment data without comprehensive automated validation, prioritizing update responsiveness.
+
+- **Performance Monitoring:** Version control with rollback capabilities but absence of automated degradation detection or feedback loop mitigation protocols.
+
+- **Cybersecurity Controls:** Encrypted data and model storage, controlled training pipeline access, anomaly detection for fine-tuning data validation, adversarial training, and routine security audits.
+
+- **Documentation Transparency:** Declared accuracy metrics reflecting initial benchmarked performance, with explicit notes on variability and potential fluctuations across recruitment domains and over time.

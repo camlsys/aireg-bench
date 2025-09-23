@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To the extent that it is strictly necessary for the purpose of ensuring bias detection and correction... (c) the special categories of personal data are subject to measures to ensure that the personal data processed are secured, protected, subject to suitable safeguards, including strict controls and documentation of the access..."
+
+[b] **Guideline:**  
+When using special categories of personal data (e.g., video capturing individuals in public spaces for bias correction), organizations must implement state-of-the-art privacy protections including pseudonymization, documented strict access controls, and confidentiality obligations for all personnel with data access.
+
+[c] **Violation:**  
+During bias correction, Aegis Mobility Technologies temporarily processes video data showing pedestrians whose identities could be inferred, but access controls are lax: multiple engineering team members have broad, undocumented access to raw data, lacking pseudonymization, and no routine audit logs track such access.
+
+[d] **Justification:**  
+This subtle security deficiency breaches mandated safeguards on special category personal data, risking unauthorized internal exposure of personal information processed for bias correction. The violation can remain unnoticed during routine system evaluation but substantially undermines compliance with data protection and AI Act requirements.

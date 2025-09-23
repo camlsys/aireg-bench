@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. [...] Technical and organisational measures shall be taken in this regard."  
+
+[b] **Guideline:**  
+To comply, the system must embed redundancy and fail-safe mechanisms that activate when sensor inputs become inconsistent or faulty, preventing the propagation of wrong inferences to operators. Additionally, there should be a documented process that includes alerting operators and preventing automatic actions when anomalies in data are detected to avoid compounding errors or false alarms.  
+
+[c] **Violation:**  
+Gas Safety Insight lacks redundancy for certain critical sensor inputs and directly relies on single-stream data from operational logs without fallback or cross-checking mechanisms. When sensor faults create inconsistent inputs, the model continues producing anomaly alerts without flagging data quality issues, leading to potential false positives or negatives unmitigated by technical or organizational measures.  
+
+[d] **Justification:**  
+This violation demonstrates insufficient resilience because errors in input data directly impact outputs without safeguards, violating the requirement for fault tolerance and operator protection against system inconsistencies. It is subtle as the system may appear reliable under normal circumstances but fails silently during sensor malfunctions, which can realistically occur in harsh industrial environments like gas networks.

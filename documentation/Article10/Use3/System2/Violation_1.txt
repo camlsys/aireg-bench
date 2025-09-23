@@ -1,0 +1,45 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The Competency Evaluation Framework employs gradient boosted decision trees (GBDT) trained on a comprehensive dataset composed of learner interaction logs and structured performance metrics sourced from multiple vocational training centers and lifelong learning programs across the EU. Data governance practices were designed with consideration for the system’s purpose: delivering interpretable competency scores to support certification readiness and adaptive curriculum development.
+
+Regarding design choices, data was selected to reflect a broad spectrum of vocational specializations common in the EU workforce development sector. Collection processes documented the diverse data origins, primarily drawn from Learning Management Systems (LMS) and assessment platforms aggregated over a three-year period (2020–2023). Personal data collected included skill assessment records and interaction timestamps strictly for training progress analysis, in compliance with GDPR consent and purpose restrictions to ensure lawful use.
+
+Data preprocessing involved structured cleaning to remove incomplete records (accounting for approximately 6% of raw submissions), standardization of performance metrics to a common scale, and feature annotation to tag vocational categories, ethnic backgrounds (self-declared and pseudonymised in source data), and session contexts. Data enrichment included the augmentation of competency labels by expert raters to improve reliability, conducted on a validation subset comprising 15,000 learner records.
+
+Key assumptions formulated during data preparation specified that the represented data accurately reflected the skill progression of trainees and that performance metrics reliably indicated competency development over time. However, internal audits revealed that minority vocational specializations, notably within certain ethnic minority groups, were underrepresented: specifically, learners from three smaller vocational tracks accounted for less than 4% of the combined training data, compared to a target representation proportional to EU-wide enrollment statistics (approximately 10%). This impact was flagged during data suitability assessments but was not addressed with systematic subgroup balancing or synthetic data augmentation in the training pipeline.
+
+**Assessment of Data Quality, Biases, and Representativeness**
+
+The training, validation, and testing datasets were evaluated against criteria of relevance, representativeness, and completeness in relation to the system’s scope to generate competency scores for vocational learners. Overall dataset size comprised 120,000 learner-course interaction records spanning 25 vocational specializations, including core technical and practical skill domains.
+
+Statistical analyses indicated an imbalance in subgroup distributions, with ethnic minority groups associated with underrepresented vocational specializations displaying significantly fewer data points (e.g., below 3,500 samples per subgroup) relative to majority groups (averaging 7,800 samples per subgroup). Comparative performance metrics on validation data revealed a subtle but consistent underestimation of skill acquisition rates (by an average mean absolute error increase of 6%) for these minority subgroups, which fed forward into downstream competency scoring.
+
+No formal application of bias detection methodologies specifically targeting intersectional subgroup fairness (e.g., stratified model validation, fairness-aware metrics) was conducted during model training. Consequently, mitigation measures for identified biases were limited to standard data cleaning and normalization procedures without dedicated corrections for subgroup imbalances. Detection of such bias effects largely emerged from post-development impact analyses rather than integrated bias monitoring in the development lifecycle.
+
+**Data Gaps and Limitations in Addressing Subgroup Fairness**
+
+The provider identified a shortcoming in data representativeness related to vocational specializations linked to certain ethnic minority groups. These groups’ underrepresentation in training data inherently restricted the model’s capacity to generalize accurately across diverse learner populations. The reliance on historical performance and interaction logs, reflecting real-world enrollments, introduced an implicit sampling bias correlating with minority group participation rates.
+
+Although the Framework’s design prioritized transparency via GBDT feature importance outputs to aid interpretability, it did not incorporate specific mechanisms to adjust or balance competency scoring for underrepresented groups. The provider’s risk analysis acknowledged this limitation but deferred comprehensive subgroup fairness enhancement to potential future iterations, hinging on expanded data collection efforts or advanced synthetic data generation techniques.
+
+**Handling of Special Categories of Personal Data**
+
+The system processes personal data, including pseudonymised ethnic background indicators used for performance analysis. However, special categories of personal data—as defined in Article 10(5)—were not processed explicitly to detect or correct bias. The existing data handling framework applies robust organizational and technical safeguards, including pseudonymisation, role-based access controls, and encrypted storage, consistent with GDPR requirements.
+
+No exceptional processing of special category data specifically for bias detection or correction was implemented; as such, conditions under Article 10(5) were not activated. The provider’s documentation notes this as an area for potential enhancement to enable deeper bias mitigation while preserving the fundamental rights and freedoms of data subjects.
+
+**Contextual and Functional Suitability of Data Sets**
+
+While the training data covers vocational education contexts widely representative of EU settings, it predominantly reflects usage scenarios in urban and semi-urban centers with well-established vocational training infrastructures. Data from rural or less resourced centers was minimal (<8% of the corpus). Behavioural settings captured through interaction logs correspond predominantly to instructor-led modules; learner-initiated activities outside structured curricula were underlogged.
+
+This context reflects the system’s intended use but constrains generalizability in atypical learning environments. The provider’s technical documentation details these geographical and contextual characteristics and their influence on system deployment considerations, including potential impacts on skill acquisition assessment in less represented settings.
+
+**Summary of Quality Assurance and Validation Procedures**
+
+Validation incorporated standard machine learning protocols involving a 70-15-15 split for training, validation, and testing datasets respectively. Performance benchmarks established on testing data showed an overall competency score accuracy (R²) of 0.78. However, subgroup-specific evaluations revealed differential performance, with underrepresented minority groups exhibiting lower predictive accuracy (R² reduced to 0.65 in certain cases).
+
+Error analysis was conducted to identify systematic deviations in scoring but lacked subgroup-sensitive breakpoint identification or fairness constraint integration during model calibration. The provider applied iterative model retraining with enhanced feature selection but did not employ advanced bias correction algorithms or synthetic data balancing strategies at the time of release.
+
+Operational monitoring plans include ongoing data quality reviews and periodic audits aimed at identifying emerging biases and data insufficiencies, with improvement cycles linked to data acquisition from broader vocational specializations and learner demographics.

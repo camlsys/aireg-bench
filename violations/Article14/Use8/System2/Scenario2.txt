@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse…" (Article 14(2))  
+
+[b] **Guideline:**  
+Human oversight protocols must incorporate training and operational support enabling personnel to identify risks arising not only from normal use but also from foreseeable misuse scenarios such as biased prioritization, data quality degradation, or adversarial manipulation (e.g., false sensor inputs). The system should facilitate interventions to mitigate these risks and support fostered awareness to prevent automation bias in critical decision moments.  
+
+[c] **Violation:**  
+The system’s training and deployment documentation and interface lack specific guidance or warnings about how dispatchers should recognize or manage potential misuse scenarios, such as sensor spoofing or unlikely input distributions during large-scale disasters. Moreover, there are no embedded prompts or safeguards to alert users to suspicious model outputs that diverge significantly from typical patterns, increasing the risk that operators will over-rely on flawed recommendations during crises.  
+
+[d] **Justification:**  
+This violation is realistic and subtle because the absence of misuse awareness can remain unnoticed until an incident occurs, yet it contravenes the requirement to proactively minimize risk from foreseeable misuse. The failure to equip users with the ability to detect and respond to such risks undermines human oversight’s protective role, thus jeopardizing health and safety in high-stakes emergency dispatch environments.

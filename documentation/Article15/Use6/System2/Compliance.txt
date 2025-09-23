@@ -1,0 +1,42 @@
+**Article 15**
+
+### Accuracy, Robustness, and Lifecycle Performance
+
+Contractual Separation Insight is developed to meet stringent standards of accuracy, robustness, and lifecycle consistency commensurate with its high-risk classification. The system employs an ensemble model architecture combining eight independently trained random forest classifiers with a set of three large language models (LLMs) specialized in natural language understanding of corporate policies and labor regulations. This hybrid design was selected to balance quantitative rigor from structured employee performance and behavioral datasets with qualitative policy interpretation, thereby enhancing decision support reliability.
+
+For accuracy evaluation, the model was trained on a composite dataset comprising 120,000 anonymized employee records from multiple industries and 15,000 corporate policy documents, validated by legal experts. Model performance was benchmarked on an external test set of 20,000 instances, achieving an F1-score of 0.87 for correctly identifying contract termination eligibility based on policy criteria and performance indicators. The LLM components demonstrated a semantic accuracy of 91% on policy clause interpretation tasks measured against a manually curated legal standard corpus. To maintain performance consistency, a lifecycle management framework continuously monitors model drift, with scheduled retraining cycles every six months or in response to detected input distribution shifts exceeding a predefined threshold (population stability index below 0.85).
+
+### Measurement Methodologies and Benchmarking Protocols
+
+Vanguard Human Capital Technologies has collaborated with accredited metrology and AI benchmarking authorities in Europe to adopt state-of-the-art measurement protocols aligned with emerging Commission guidelines. These protocols encompass both classical statistical measures (precision, recall, F1-score) and domain-specific metrics such as policy compliance accuracy and output explainability scores derived through SHAP (SHapley Additive exPlanations) values.
+
+Robustness assessments were conducted employing adversarial robustness benchmarks that simulate typical operational perturbations, including data input noise and policy text ambiguity. The ensemble’s agreement rate under perturbed inputs remained above 93%, confirming robustness. Additionally, synthetic data poisoning and model evasion attacks were simulated to verify resilience, details of which are documented in the system’s security testing dossier.
+
+### Declaration of Accuracy Metrics in Instructions for Use
+
+The Instructions for Use explicitly disclose the following declared accuracy metrics:
+
+- Overall decision support predictive accuracy: 88% (±2% margin at 95% confidence interval)
+- Semantic policy interpretation accuracy: 91%
+- False positive rate in contract termination recommendations: 7%
+- False negative rate in contract termination recommendations: 5%
+
+Furthermore, the documentation clarifies the contexts under which accuracy figures were derived, including dataset composition, scope of operations, and applicability limits. This enables users to understand the system’s performance boundaries and appropriately calibrate human decision oversight.
+
+### Error Resilience and Operational Robustness
+
+The system architecture incorporates several layers of fault tolerance and error mitigation to ensure resilience during deployment. A dedicated monitoring module continuously performs health checks on data inputs and model outputs, flagging inconsistencies or anomalies for human review. Redundancy is built into the ensemble of classifiers and LLMs; if any component's output deviates beyond a statistically established confidence interval, the system defers to a weighted consensus decision mechanism combining remaining model outputs.
+
+Fail-safe protocols are implemented to suspend automated recommendation generation when input validation fails or when policy changes detected through automated monitoring exceed configured thresholds, triggering a mandatory update workflow before resumption. Version control and rollback capabilities maintain integrity across model updates, ensuring traceability of all lifecycle changes.
+
+For deployed systems operating in an online learning mode, strict safeguards prevent feedback loops: incoming user decisions influenced by the AI output are isolated from training datasets unless explicitly validated by compliance teams to avoid propagating biased outcomes.
+
+### Cybersecurity and Protection Against Manipulation
+
+Contractual Separation Insight is fortified against cybersecurity threats through multi-tiered defenses customized for high-risk AI systems. The security strategy encompasses network-level protections such as encrypted communication channels (TLS 1.3), role-based access control (RBAC) with two-factor authentication, and continuous intrusion detection utilizing behavior analytics tuned for AI operational characteristics.
+
+To protect against data poisoning, all training data pipelines include cryptographic hash verifications and anomaly detection algorithms that flag unusual data patterns based on statistical quality parameters. Model poisoning is mitigated by employing secure enclave environments during model training and using differential privacy techniques to obscure sensitive data features in pre-trained components.
+
+Adversarial example resistance is enhanced by adversarial training incorporating gradient-based perturbations in the training loop, reducing model sensitivity to input manipulation. Ongoing penetration testing simulates confidentiality attacks such as model extraction or inversion attempts, with remediation measures including query rate limiting and output perturbation techniques to obscure sensitive internal parameters.
+
+All cybersecurity controls are subject to periodic audits and updates driven by threat intelligence feeds contextualized for high-risk AI applications, ensuring defenses remain appropriate to evolving risks. Detailed incident response protocols have been established to promptly identify, contain, and resolve potential attacks manipulating system use, outputs, or performance.

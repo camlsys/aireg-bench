@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions... shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+To comply, the system must implement multi-layered cybersecurity protections including real-time adversarial input detection, integrity validation of training updates, and secure access controls to prevent unauthorized influence on model outputs. Incident response plans and anomaly detection specific to legal input manipulation should be integrated into operational workflows with continuous monitoring.  
+
+[c] **Violation:**  
+While the system enforces standard network security, it lacks specialized defenses against adversarial legal queries intentionally crafted to exploit model vulnerabilities—for example, subtle modifications of case facts or statute wording that cause the model to produce incorrect legal mappings or false precedents without triggering alerts or suspicions. This results in degraded output integrity under targeted adversarial scenarios.  
+
+[d] **Justification:**  
+This violation contravenes Article 15(5) because the system does not proactively detect or mitigate adversarial examples particular to its legal language inputs, a plausible risk given the sophisticated nature of legal text and possibility of adversaries exploiting semantic loopholes. The failure is subtle since normal users see consistent output but maliciously crafted inputs can quietly compromise decision support integrity.

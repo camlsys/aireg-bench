@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Providers must continuously monitor and audit the system’s data pipelines and outputs for subtle emergent biases linked to protected characteristics, establishing measures that can detect and mitigate these biases, particularly because outputs (recommendations on termination) feed back into HR decisions that impact employees’ rights.  
+
+[c] **Violation:**  
+Though initial bias assessments were conducted, the model retraining pipeline includes newly ingested performance evaluation data without updated bias audits, allowing emergent correlations between linguistic policy interpretations and latent gender biases to influence future recommendations without correction measures.  
+
+[d] **Justification:**  
+The lack of ongoing bias detection and correction during data updates subtly undermines the protections mandated by Article 10(2)(f) and (g). This oversight is plausible in a complex ensemble system combining text analysis with quantitative metrics, where newly introduced data dynamically affects fairness in a manner not caught by static initial reviews.

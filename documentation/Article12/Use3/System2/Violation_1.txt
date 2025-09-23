@@ -1,0 +1,33 @@
+**Article 12**
+
+### System Logging Architecture and Event Capture Scope
+
+The competency evaluation framework is architected to initiate logging exclusively in response to explicit user-triggered competency assessments. Within the system, logging is activated when instructors or authorized personnel launch an evaluation session or request a formal competency determination for a given trainee. These logged events include timestamps, input feature snapshots (performance metrics, learner interaction data), model outputs (competency scores and explanations), and contextual metadata (assessment parameters, user IDs). This selective logging strategy aims to reduce storage overhead and streamline audit data to moments of direct evaluative interaction, reflecting practical operational priorities in vocational and lifelong learning environments.
+
+During periods where trainees engage with learning materials passively or when background recalibrations of the gradient boosted decision tree (GBDT) models occur—such as periodic retraining to incorporate accumulating learner data or incremental feature engineering—no automatic event logging is performed. As a result, system activity related to passive monitoring, adaptive content recommendations, or model refresh operations are not represented in the log files. This design choice aligns with a provider strategy focussing on minimizing continuous data generation and emphasising logs that directly correspond to assessment events deemed critical by end-users.
+
+### Log Content and Relevance to Risk Identification and Monitoring
+
+The logging mechanism captures event data instrumental for tracing assessment outcomes and understanding decision rationales related to individual competency determinations. Specifically, logs include:
+
+- Input vector snapshots capturing structured tabular data such as recent learner interaction scores, test results, and engagement indices, which serve as the direct inputs to the GBDT.
+- Model inference results, including predicted competency levels and feature importance scores, providing interpretable explanations supporting transparency in assessment outcomes.
+- User action metadata, detailing which authorized individual initiated the assessment and contextual information necessary for post-hoc audit trails.
+
+These logged elements support identification of potential assessment anomalies or discrepancies in competency assignment that may elevate risk, such as repeated score deviations or unexpected shifts in feature importance patterns. However, due to the omission of event logging during passive system operation or model updates, potential risk indicators arising outside active evaluation windows—such as model performance drift during retraining or system inactivity states—are not recorded.
+
+### Technical Decisions Influencing Traceability and Post-Market Monitoring
+
+By constraining logging activation to discrete assessment triggers, the framework optimizes operational efficiency and limits exposure of sensitive learner data to recorded storage. This approach implicitly requires deployers to acknowledge and manage traceability limitations during non-assessment system states. Logging does not capture low-level system telemetry, background computation logs, or data used solely for model updating purposes, thereby omitting comprehensive technical audit trails during the system’s non-interactive lifecycle phases.
+
+This configuration facilitates focused post-market monitoring on user-initiated assessments, enabling timely review of competency scoring processes and model interpretability outputs while avoiding voluminous continuous logging. Notwithstanding, implementers should be aware that assessment of system operation behavior, including error conditions or performance declines manifesting outside explicit evaluations, will depend on supplementary logging or monitoring solutions external to the framework’s default capabilities.
+
+### Compliance-Related Logging Implementation Details
+
+- Logging is performed using an integrated event recording service compliant with enterprise-grade data protection standards and featuring secure write-once log storage.
+- Each logged event is digitally timestamped using synchronized network time protocol (NTP) servers to ensure temporal accuracy across distributed deployment sites.
+- Log records are systematically hashed and chained to preserve integrity and enable tamper detection during audits.
+- The system’s GBDT model training occurs on isolated batch processing nodes; retraining executes on a weekly cadence using anonymized aggregated data sets sourced from live system interactions. These operations do not trigger any logging within the framework.
+- No automatic incident detection or alerting mechanisms based on system event streams outside user-triggered assessments are embedded in the baseline logging system.
+
+This logging strategy was selected following an assessment of operational use cases and data minimization principles to balance traceability requirements against efficiency and privacy considerations pertinent to vocational training environments.

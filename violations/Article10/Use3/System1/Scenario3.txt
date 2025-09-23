@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To the extent that it is strictly necessary for the purpose of ensuring bias detection and correction in relation to the high-risk AI systems ... special categories of personal data are ... subject to technical limitations on the re-use of the personal data, and state-of-the-art security and privacy-preserving measures, including pseudonymisation."  
+
+[b] **Guideline:**  
+When using sensitive personal data (e.g., health status, ethnicity) for bias mitigation, developers must implement robust pseudonymisation and strict access controls, ensuring this data is neither reused nor accessible beyond narrowly defined bias correction purposes, with clear audit trails documenting these protections.  
+
+[c] **Violation:**  
+To detect bias, the system incorporates sensitive data such as students’ disability status but applies weak pseudonymisation techniques that allow certain engineers full re-identification capability. Moreover, this sensitive data is accessible to development team members outside of the bias correction scope without strict logging of access.  
+
+[d] **Justification:**  
+This subtle violation breaches the clause requiring state-of-the-art privacy safeguards and strict access control, as inadequate pseudonymisation and broad access raise the risk of misuse and privacy infringements. It is realistic since pseudonymisation methods and access policies are sometimes inconsistently implemented and under-monitored in AI development environments, especially when handling complex datasets.

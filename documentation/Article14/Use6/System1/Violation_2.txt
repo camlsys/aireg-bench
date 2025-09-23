@@ -1,0 +1,29 @@
+**Article 14**
+
+### Design for Effective Human Oversight
+
+The Legal Termination Assessment Framework integrates two complementary AI modalities: gradient-boosted decision trees (GBDT) for structured employee data evaluation and transformer-based natural language processing (NLP) models for interpretation of contract-related documentation. This dual-model design supports a nuanced risk and eligibility assessment in contract termination decisions. The system includes a dedicated dashboard interface providing real-time scoring outputs and confidence intervals for each analytical component, enabling HR professionals to review decision rationales derived from feature importance metrics and extracted legal context.
+
+Despite these technical provisions, the Framework does not incorporate embedded human-machine interface tools explicitly designed to promote active oversight. The interface lacks real-time anomaly detection alerts or prompts encouraging critical reconsideration of AI outputs during use. System operation logs include time-stamped input and output records, but no automated signals identify or flag potential oversight lapses. The decision rationale presentation, while transparent, is static and requires proactive user engagement to interpret limitations or identify irregularities, thus placing responsibility for effective oversight primarily on the end user.
+
+### Risk Minimization Through Human Oversight
+
+The Framework is intended to assist HR professionals in making compliant termination decisions by analyzing potential eligibility and legal risks derived from contract and employee data. The provider has conducted testing with a dataset of 120,000 anonymized employee records and corresponding contract documents from diverse sectors, benchmarking model precision at 88% for termination eligibility classification and 82% for risk factor extraction. However, no system-level measures are embedded to mitigate risks arising from overreliance on AI judgments, particularly the risk of automation bias.
+
+Since the AI outputs influence decisions with potential fundamental rights implications, especially regarding fair treatment in employment, the provider’s focus has been on providing interpretable model outputs and comprehensive user manuals detailing model capabilities and limitations. Nonetheless, there are no built-in procedural fail-safes to trigger corrective action or user advisories when model outputs disproportionately impact protected groups or when uncertain predictions arise. Consequently, potential improper use or misinterpretation under foreseeable misuse conditions is not programmatically addressed within the system.
+
+### Oversight Measures and Allocation of Responsibility
+
+In accordance with the provider's development scope, oversight measures integral to the AI system itself are limited to transparent output presentation and detailed logging of model inferences and input provenance. Before market placement, comprehensive documentation was prepared to describe model design, training data characteristics, and performance metrics, allowing deployers to understand system strengths and limitations.
+
+No algorithmic bias detection modules or protective alerts have been integrated in the system software. Instead, responsibility for implementing context-appropriate oversight measures, such as internal HR procedural checks and equity audits, is intended to be managed by deployers. The provider’s documentation recommends deploying organizations conduct regular fairness assessments using their own frameworks, but these procedural safeguards do not form part of the product’s embedded functionality.
+
+### Enabling Informed and Autonomous Human Oversight
+
+The system is delivered with user manuals detailing model architecture, training methodology, and known limitations, including potential biases from sample imbalances—training data shows a 15% underrepresentation of minorities. Users can access explanation tools such as SHAP (SHapley Additive exPlanations) values for decision-tree outputs and attention heatmaps for text interpretation, facilitating deeper understanding of AI reasoning.
+
+However, no interface features explicitly remind users of automation bias risks or require active acknowledgement of AI limitations before decision acceptance. There is no dynamic feedback or interactive guidance to discourage blind reliance on AI output. Furthermore, no mechanism exists allowing users to override or halt processing based on identified group fairness concerns. While a manual 'stop' function is available to pause processing, it is user-initiated without automated triggers linked to performance anomalies or bias indicators.
+
+Records of processing activities note the use of special category personal data only under strict necessity for bias detection during model development. These records include justification for processing sensitive data to address fairness concerns, documenting that alternative data sources would not achieve equivalent bias identification efficacy. However, similar bias mitigation mechanisms or alerts are not operationalized in the deployed system’s user-facing functionality or runtime controls.
+
+In summary, the Framework equips HR professionals with technical tools to examine AI outputs and detailed documentation fostering informed judgment. Yet, it does not embed in its design dedicated interface alerts, procedural guidance, or automated fail-safes to actively guard against automation bias or disparate impacts on protected groups, placing the onus of rigorous human oversight and fairness assurance on system deployers and end users.

@@ -1,0 +1,23 @@
+**Article 12**
+
+**Capabilities for Event Logging Throughout System Lifecycle**
+
+The Credit Evaluation Network incorporates a comprehensive event logging mechanism that automatically records operational data continuously from deployment through decommissioning. This mechanism is embedded within the GBDT inference pipeline and associated preprocessing modules to generate immutable logs stored securely in a centralized, access-controlled audit repository. The logging infrastructure is designed using industry-standard time-stamping (ISO 8601 format) and cryptographic hashing to ensure data integrity and chronological ordering of events. Logs capture metadata related to model input features, pre-processing steps, model inference outcomes (credit scores), version identifiers for the deployed model ensemble, and invocation timestamps. The automated logging system is designed to function without interfering with normal throughput or latency requirements, guaranteeing real-time performance within a sub-second response time per evaluation. This design decision reflects the system’s operational domain demanding timely credit risk determinations while maintaining exhaustive event traceability.
+
+**Scope of Recorded Events for Risk Identification and Modification Audit**
+
+The logged events specifically target all operational conditions and state changes relevant to risk management and system integrity, aligned with the system’s classification as high-risk under EU AI Act provisions. The logs record each credit scoring event with detailed input descriptors, including anonymized applicant identifiers and raw input fields (e.g., income, employment status, credit history duration), facilitating retrospective identification of anomalous inputs potentially triggering elevated risk of discrimination or inaccurate predictions.
+
+Modification events, such as model updates or retraining cycles, are captured with explicit version tagging, deployment timestamps, and changelog metadata. These records document substantial changes to training data composition, feature engineering scripts, and hyperparameter configurations, enabling auditors to map changes in model behavior over time. This supports detection of drift or degradation impacting creditworthiness assessments, thus enabling prompt mitigation.
+
+Additionally, the system logs access and configuration alterations by authorized administrators to ensure traceability of system management actions that might influence output or introduce risks. This log granularity facilitates forensic analysis should questions arise regarding operational robustness or bias propagation during decision-making.
+
+**Support for Post-Market Surveillance and Operational Monitoring**
+
+Logging outputs are structured to directly support post-market monitoring activities. Data fields comply with standardized schemas facilitating automated aggregation and analytics for performance evaluation against established benchmarks (e.g., Area Under the ROC Curve (AUC) of 0.87 on holdout sets). For instance, misclassification rates by demographic segments are systematically derivable from logged score distributions combined with ground truth outcomes, supporting continuous fairness assessment.
+
+The system’s logs underpin real-time alerting mechanisms integrated into Meridian Financial Analytics’ monitoring dashboards. Indicators such as unusually high variance in scoring distributions or unexpected shifts in input feature distributions trigger alerts, which initiate predefined investigation workflows. This proactive monitoring aligns with requirements for continuous compliance assurance and operational risk mitigation.
+
+Furthermore, audit-ready logs include sufficient detail to reconstruct decision rationale in line with interpretable GBDT modeling standards, enabling transparency and accountability demanded in credit evaluation contexts. The combination of event data, model explanation outputs (e.g., SHAP values for feature impact), and change history support comprehensive oversight in deployed environments.
+
+This embedded logging infrastructure facilitates compliance with pertinent operational monitoring obligations, including the capacity to respond to identified risks and substantiate system reliability throughout its lifecycle.

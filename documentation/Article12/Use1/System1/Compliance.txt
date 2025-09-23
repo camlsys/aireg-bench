@@ -1,0 +1,20 @@
+**Article 12**
+
+**Implementation of Automated Event Logging**
+
+SafeRoute Traffic Monitor incorporates an integrated logging subsystem designed to automatically record events throughout the entire operational lifetime of the AI system. This logging architecture is embedded within both core modules: the Graph Neural Network (GNN) component responsible for real-time traffic network state analysis and the Transformer-based encoder for multi-source sensor data fusion. Logs capture raw inputs, intermediate model states, decision outputs, and system status indicators. Specifically, sensor data ingestion timestamps, GNN graph updates, prediction generations, and alert dispatch events are recorded with millisecond precision using a synchronized time source compliant with Network Time Protocol (NTP) standards, ensuring temporal consistency across distributed urban monitoring nodes. Logging is implemented as an append-only, encrypted file system with role-based access controls, preventing unauthorized modification or deletion. Logs are archived daily and maintained for a minimum of 24 months, facilitating longitudinal audit trails and regulatory reviews.
+
+**Scope and Content of Logged Events for Traceability**
+
+To satisfy traceability obligations pertinent to the SafeRoute system’s intended function, the logging framework records events aligned with three critical domains:
+
+(a) **Identification of Hazardous or Substantial Modification Scenarios**  
+Logging explicitly captures events signaling potentially high-risk operational states, such as sudden anomalies in derived traffic hazard scores exceeding predefined safety thresholds (e.g., Hazard Risk Index > 0.85 on a normalized scale), discrepancies between sensor data sources, and detection of out-of-distribution inputs deviating beyond 3σ of training data distribution metrics. Additionally, system updates or model retraining procedures that produce modifications in prediction confidence levels or behavior patterns are logged under change management identifiers, ensuring an audit trail of substantial AI system modifications that could influence risk profiles.
+
+(b) **Support for Post-Market Monitoring Activities**   
+The logs systematically include detailed prediction output records annotated with contextual metadata, such as timestamped traffic network snapshots and sensor fusion confidence scores, enabling comprehensive performance evaluation after deployment. This data facilitates comparison between predicted hazards and verified incident reports collected by urban authorities, underpinning continuous validation and calibration efforts. Operational parameters—such as model version, deployed weights hashes (using SHA-256), and environmental conditions (temperature, network latency)—are also recorded to correlate system behavior with operational contexts during post-market surveillance.
+
+(c) **Monitoring Operational Integrity During Use**  
+Operational health metrics, including CPU/GPU resource utilization, latency statistics for both GNN and Transformer inference pipelines, data input quality indicators, and internal error logs, are continuously monitored and logged. This supports real-time system diagnostics and retrospective analyses of system stability or anomalies affecting model outputs. Alerts triggering system safety protocols or fallback modes are logged alongside diagnostic information, allowing traffic control authorities to reconstruct the sequence of events leading to any operational interruptions.
+
+Collectively, these logging provisions are configured for automated secure transmission to designated centralized monitoring services operated under strict compliance with data protection and cybersecurity standards, ensuring data integrity and availability to support regulatory audits, internal reviews, and third-party assessments as required.

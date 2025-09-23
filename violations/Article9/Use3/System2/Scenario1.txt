@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+A rigorous, systematic process must be in place to identify risks related to health, safety, and fundamental rights arising during normal use of the system. This includes evaluating potential negative impacts on learner privacy, discrimination risks, or psychological harms such as stress caused by inaccurate or unfair competency assessments.  
+
+[c] **Violation:**  
+Horizon Learning Analytics only identifies risks related to technical accuracy, omitting possible fundamental rights issues such as discrimination against trainees from minority groups or vulnerable learners. Moreover, it neglects foreseeable psychological harms stemming from misclassification in assessments, such as undue stress or demotivation caused by systematically underestimated competency scores.  
+
+[d] **Justification:**  
+This violation is subtle because the provider focuses narrowly on model accuracy rather than broad risk identification, leaving unexamined impacts on fundamental rights like fairness and well-being. Such omissions realistically occur when technical teams undervalue socio-ethical dimensions, thus undermining full compliance with risk identification requirements.

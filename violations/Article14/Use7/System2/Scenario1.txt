@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"1. High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."  
+
+[b] **Guideline:**  
+The AI system must incorporate user interface tools that enable credit officers to monitor system decisions in real time, detect anomalies in credit assessments, and understand how input data affects output. These oversight tools should be intuitive and provide actionable insights without requiring extensive technical expertise.  
+
+[c] **Violation:**  
+The Consumer Credit Transformer provides credit officers only with final binary credit risk outcomes and confidence scores, without detailed explanations of decision factors or real-time monitoring dashboards. The interface lacks alerting mechanisms to flag unusual patterns or inconsistent credit decisions during use.  
+
+[d] **Justification:**  
+This violation subtly breaches the requirement by limiting human oversight to passive receipt of final outputs, impairing effective monitoring. It is realistic because such minimal disclosure is common to protect proprietary models but reduces the ability of natural persons to oversee or challenge the system dynamically during operation.  
+
+---

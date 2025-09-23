@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection;"  
+
+[b] **Guideline:**  
+Developers must ensure that all data used for training come from sources where the collection purpose aligns with the intended use of the AI system, and that any repurposed personal data are documented and legally compliant with transparency and consent requirements related to the system’s academic monitoring.  
+
+[c] **Violation:**  
+The training data for the Academic Compliance Monitor includes behavioral data originally collected for user experience research in online educational platforms, without explicit consent or documentation permitting reuse for exam cheating detection.  
+
+[d] **Justification:**  
+This reuse of data originally collected for a different academic purpose violates the governance criterion by lacking transparency and appropriate justification for repurposing personal data, which is subtle because the data type (keystroke and environment behavior) appears similar but the intended monitoring and enforcement context is materially different, risking compliance failure.  
+
+---

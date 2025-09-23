@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must implement continuous, automatic logging mechanisms that capture relevant operational events without requiring manual activation or intervention, covering the entire deployed lifetime.
+
+[c] **Violation:**  
+The Guardian Signal Controller’s logging feature activates only when triggered by specific threshold breaches (e.g., detected anomaly), failing to record routine operational data or near-miss events continuously over its lifetime.
+
+[d] **Justification:**  
+This violation breaches the requirement for automatic logging throughout the system’s lifetime. Although subtle due to partial logging during events, it undercuts traceability by omitting quieter periods or minor deviations that could be critical for understanding system behavior over time. This gap is realistic because developers might prioritize storage efficiency or presume only flagged events are relevant.

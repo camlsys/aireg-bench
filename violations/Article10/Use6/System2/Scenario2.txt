@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Training data must be balanced and representative of all relevant demographic groups employed in the target companies (e.g., age, gender, ethnicity, contract type), preventing skewed model outcomes that may unfairly disadvantage specific protected groups in termination decisions.  
+
+[c] **Violation:**  
+The system’s training data predominantly comprises records from large multinationals with diverse demographics but underrepresents data from SMEs and specific minority ethnic groups, leading to model recommendations that systematically undervalue contract termination risks for these underrepresented groups.  
+
+[d] **Justification:**  
+This subtle bias occurs despite large dataset size and may not be detected easily without targeted statistical audits. It violates the representativeness and completeness requirements in Article 10(3), potentially resulting in discrimination and unfair HR decisions, thereby contravening the AI Act’s mandate for equitable data coverage.  
+
+---

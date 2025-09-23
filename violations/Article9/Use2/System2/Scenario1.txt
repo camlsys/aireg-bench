@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."
+
+[b] **Guideline:**  
+Experts ensure continuous monitoring of the AI system’s performance in operation, with scheduled reviews and updates to the risk management process that incorporate newly identified risks, system modifications, and real-world usage data throughout the system’s lifecycle.
+
+[c] **Violation:**  
+After initial deployment, Meridian Safety Systems schedules risk management reviews only annually and fails to update or reassess the risk management system when significant operational changes occur or when new sensor data patterns emerge from evolving pipeline conditions.
+
+[d] **Justification:**  
+This violates the requirement for a continuous iterative process because risk assessment becomes outdated between annual reviews, leaving risks unaddressed during operational changes; it is a subtle compliance gap as annual reviews superficially exist but lack the responsiveness demanded by the regulation.
+
+---

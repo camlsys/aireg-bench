@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. [...] measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)"  
+
+[b] **Guideline:**  
+Security architectures must include detection and mitigation methods against subtle adversarial manipulations, such as ongoing input validation for adversarial examples, anomaly detection within training data streams, and integrity checks on pretrained components to prevent undetected poisoning. Logs and alerts should be integrated for suspicious activity.  
+
+[c] **Violation:**  
+The Consumer Credit Transformer does not implement runtime detection of adversarially crafted input transactions designed to mimic normal behavior but cause misclassification of credit risk. Attackers exploiting transaction patterns specific to certain customer segments can subtly manipulate outcomes, bypassing existing input validation and remaining invisible to system monitors.  
+
+[d] **Justification:**  
+This violation is nuanced as it exploits complex, domain-specific adversarial tactics that evade conventional input sanitization and monitoring. Given the high value of credit approvals, attackers have incentives for subtle manipulations, and without tailored adversarial defenses, the system fails to meet the required cybersecurity resilience.

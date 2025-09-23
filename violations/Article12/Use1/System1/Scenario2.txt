@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (a) identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."
+
+[b] **Guideline:**  
+Logs must include detailed records of internal decision criteria, input data anomalies, and model confidence levels at decision points to help identify precursors to risks or substantial changes in system behavior.
+
+[c] **Violation:**  
+The system captures only summary-level outcome logs (e.g., risk predicted: yes/no) without archiving input sensor anomalies, confidence scores, or conditions leading to those predictions.
+
+[d] **Justification:**  
+This shortcoming is subtle because while the system records final decisions, it omits crucial intermediate data needed to diagnose how risk states arise or evolve, impairing preventative intervention and compliance with the requirement to identify risk situations precisely.
+
+---

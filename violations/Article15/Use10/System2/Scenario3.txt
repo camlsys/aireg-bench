@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+The system must implement state-of-the-art cybersecurity defenses against adversarial manipulations, including monitoring data integrity pipelines, anomaly detection on inputs, and robustness against adversarial examples that could manipulate sentiment analysis or system outputs.  
+
+[c] **Violation:**  
+The system accepts third-party social media API data streams without comprehensive integrity checks, enabling coordinated actors to inject subtly poisoned or adversarial data that skew model predictions toward certain political narratives, with no automatic detection or mitigation in place.  
+
+[d] **Justification:**  
+Allowing unmonitored data poisoning or adversarial inputs undermines the system’s cybersecurity and output reliability, breaching resilience and cybersecurity mandates in a way that may be difficult to detect without detailed forensic analysis, representing a plausible and subtle non-compliance issue.

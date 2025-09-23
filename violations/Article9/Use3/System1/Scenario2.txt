@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures ... shall be such that the relevant residual risk associated with each hazard ... is judged to be acceptable. In identifying the most appropriate risk management measures, ... (c) provision of information … and, where appropriate, training to deployers. ... due consideration shall be given to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context in which the system is intended to be used."  
+
+[b] **Guideline:**  
+Deployers, such as educators, must receive tailored information and training that matches their expected expertise levels and contextual conditions, ensuring they understand system limitations, risk factors like false positives/negatives in feedback, and appropriate intervention strategies.  
+
+[c] **Violation:**  
+The system is deployed in secondary schools with only basic user manuals, failing to provide adapted training for non-technical teachers unfamiliar with AI-based assessments or guidance on interpreting probabilistic uncertainty in model outputs, leading to misapplication of feedback.  
+
+[d] **Justification:**  
+This breach is subtle because training materials exist, but they do not effectively match the deployers’ technical background or educational environments. This mismatch may lead users to incorrectly calibrate instructional decisions, leaving residual risks inadequately managed as required.  
+
+---

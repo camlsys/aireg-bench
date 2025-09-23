@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification."  
+
+[b] **Guideline:**  
+Logs must include system decisions and outputs flagged by threshold criteria or anomaly detection that might indicate risk escalation or functional deviations, including any parameter changes, retraining events, or shifts in data inputs influencing the AI behavior significantly.  
+
+[c] **Violation:**  
+The system’s logs omit records of sudden model confidence drops or spikes in counter-message generation frequency that have been observed to correlate with unintended shifts in public sentiment, and do not capture the deployment of updated model weights after retraining cycles.  
+
+[d] **Justification:**  
+By neglecting to log these subtle yet impactful operational markers, the violation impairs the system’s capability to trace risk-relevant events or substantial modifications. This shortcoming is not blatant because it concerns internal metrics not uniformly monitored, yet it critically undermines accountable traceability.  
+
+---

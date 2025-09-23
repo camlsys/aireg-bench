@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law..."  
+
+[b] **Guideline:**  
+Experts must rigorously audit data sets for social, demographic, and educational biases that can unfairly disadvantage certain learner groups, such as minorities, students with disabilities, or different socioeconomic backgrounds, ensuring these biases are identified, documented, and mitigated before model training.  
+
+[c] **Violation:**  
+The training data predominantly reflects assessment results from urban schools with well-resourced learners, leading to underrepresentation of rural or special needs students. The bias evaluation process superficially flags demographic imbalances but fails to assess how this skews prediction outcomes or personalized feedback for underrepresented groups.  
+
+[d] **Justification:**  
+This subtle violation breaches the requirement because merely flagging imbalances without analysing the impact on model outputs and their consequences for equity does not fulfill the comprehensive bias examination mandated. It is plausible since organizations often overlook downstream effects of biased data on AI-driven recommendations, especially when validating large educational data sets.

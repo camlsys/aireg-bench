@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"
+
+[b] **Guideline:**  
+An expert compliance process requires systematically identifying potential biases related to political opinion, ethnicity, gender, or socioeconomic status present in the training data. Upon detecting such biases, the provider must implement technical or procedural bias mitigation techniques (e.g., reweighting, bias-aware training, adversarial debiasing) and continuously monitor effectiveness to ensure that the system does not disproportionately target or exclude specific voter groups, thus safeguarding fundamental rights.
+
+[c] **Violation:**  
+Centuri Advisory Services used a large corpus of political speeches and social media data to train the model but only performed a cursory analysis that overlooked subtle overrepresentation and stereotyping of certain ethnic minorities as opposing political views. No concrete bias mitigation strategies were applied, leading the system to generate messaging that systematically framed minority voter groups in antagonistic or negative ways, potentially reinforcing discrimination and polarizing narratives.
+
+[d] **Justification:**  
+This violation breaches the requirement for thorough bias examination and mitigation as stipulated in points (f) and (g). It is realistic yet subtle because the bias identified is not blatant but embedded in nuanced language patterns and framing in the training data, requiring expert-driven analysis to detect. Failure to mitigate such indirect bias can negatively affect fundamental rights by shaping voter opinions through discriminatory portrayals, thus contravening the Act’s intent.

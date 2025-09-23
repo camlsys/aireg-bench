@@ -1,0 +1,33 @@
+**Article 9**
+
+**Establishment and Scope of the Risk Management System**
+
+Meridian Safety Systems designed and documented a risk management system (RMS) explicitly for Pipeline Safety Guardian, addressing risks identified through extensive domain-specific hazard analyses. This RMS covers the full lifecycle of the system, from initial development through deployment, maintenance, and decommissioning phases. The initial identification and analysis of risks included comprehensive technical assessments performed on operational data sets comprising over 50 million time-stamped sensor readings from pressure and flow sensors across diverse pipeline segments. These assessments incorporated historic incident reports and simulated fault scenarios relevant to the gas distribution sector, establishing a baseline catalogue of known and foreseeable hazards such as sensor failures, false-positive anomaly detections, and delayed fault recognition, all potentially impacting health, safety, or fundamental rights of nearby communities and operational personnel.
+
+**Iterative Process and Lifecycle Scope**
+
+The RMS is architected as a continuous process aimed at repeated cycles of risk identification, estimation, mitigation, and reassessment. However, Meridian Safety Systems’ operational procedures schedule comprehensive formal risk management reviews on an annual basis following initial deployment. During these reviews, the RMS is re-evaluated to account for any new technical insights, performance metrics, or external safety regulations. While the design anticipates input from post-market monitoring—including continuous sensor data feeds and system performance logs—reassessment is limited to these planned annual intervals. No systematic, interim re-evaluations or dynamic updates to the RMS are currently triggered by operational changes or emergent patterns indicated by evolving pipeline sensor data collected between these annual points.
+
+**Risk Identification, Estimation, and Evaluation**
+
+Initial risk estimation processes incorporated probabilistic modeling of failure modes derived from a combination of convolutional neural network uncertainty quantification and random forest classifier confidence intervals. Performance testing used a benchmark dataset of 1.2 million labelled sensor event sequences spanning typical, anomalous, and hazardous operating conditions. These tests assessed false alarm rates, detection latency, and missed fault occurrences with thresholds optimized to balance sensitivity and specificity aligned to operational safety requirements. Risk evaluation explicitly differentiated anticipated pipeline failure modes within expected operating parameters and scenarios arising from reasonably foreseeable misuse, such as sensor tampering or data stream corruption. The RMS also considered residual risks after mitigation measures implemented through model design and operator guidelines.
+
+**Integration of Post-Market Data and Real-World Testing**
+
+Real-world testing of Pipeline Safety Guardian was conducted at multiple operational sites, involving phased deployments with incremental complexity. Post-market monitoring mechanisms capture system outputs and sensor data streams, feeding a central logging infrastructure. Despite these comprehensive data collection capabilities, Meridian Safety Systems documents that risk reassessment and corresponding updates to mitigation measures are not routine outside the scheduled annual review. Significant operational changes—such as modifications in pipeline infrastructure, deployment of new sensor technologies, or observed shifts in sensor data distributions—do not automatically trigger risk management updates or system revalidation between these annual sessions.
+
+**Risk Mitigation Measures and Residual Risk Management**
+
+Meridian Safety Systems applied a layered approach to risk mitigation during system design. Risk elimination and reduction focused on robust CNN architectures with convolutional layers adapted to temporal sensor data, regularization techniques to reduce overfitting, and ensemble random forest classifiers trained on fault-type labels with feature importance analysis to explain classification decisions. Technical information includes detailed operational parameters, acceptable data quality metrics, system limitations, and guidance on interpreting alerts. Operator training materials encompass instructions on proper sensor maintenance and response protocols tailored to various alert types, aligned with the anticipated knowledge and experience level of pipeline personnel. Residual risks considered were those beyond technical feasibility of elimination, managed through fallback alerting procedures and redundant manual inspections.
+
+**Consideration of Vulnerable Groups and Context of Use**
+
+The RMS documentation explicitly considered the potential impacts on vulnerable groups, including populations residing near pipelines and field technicians, ensuring that alerting and intervention procedures minimize risks to these groups. System parameters and response triggers were calibrated to avoid undue false alarms that could cause alarm fatigue, maintaining an appropriate balance of safety and operational continuity relevant to this context.
+
+**Testing Regime and Compliance with Safety Standards**
+
+Testing includes unit, integration, and system-level evaluations against predefined performance metrics, reflecting relevant industry safety standards current in 2025 for critical infrastructure AI systems. Metrics encompass detection accuracy exceeding 94%, false-positive rates below 3%, and latency targets under 500 milliseconds for critical fault alerts. Pre-market testing involved both simulated and controlled field conditions per Article 60’s provisions for real-world testing, culminating with system certification prior to market placement. In-service testing is limited to annual risk reviews and performance audits, without systematic interim evaluations triggered by operational changes or emergent sensor data patterns.
+
+**Interaction with Applicable Union Law**
+
+The RMS integrates with broader internal safety management procedures mandated by EU energy infrastructure regulation frameworks. Elements of the RMS are combined with established health and safety risk management processes within these frameworks, providing coherence with Union law requirements applicable to high-risk AI systems in energy infrastructure contexts.

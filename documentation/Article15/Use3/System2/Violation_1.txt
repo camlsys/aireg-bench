@@ -1,0 +1,39 @@
+**Article 15**
+
+### Accuracy Performance and Limitations
+
+The system employs a Gradient Boosted Decision Tree (GBDT) model trained on a curated dataset comprising approximately 1.2 million structured performance records gathered over four years from vocational training centers and adult education programs. These records include learner interaction logs, assessment results, and contextual metadata covering 16 distinct vocational specialties.
+
+During internal validation phases, the model demonstrated an overall balanced accuracy of 87.5% in predicting competency levels aligned with certified external assessments within well-represented specialties. However, stratified performance analysis revealed marked accuracy reductions of up to 25 percentage points for subpopulations characterized by atypical learning patterns—such as learners engaging in irregular study schedules or those enrolled in less common vocational areas with sparse representation in the training set. This discrepancy is attributable to limited diversity in the training data, which primarily reflects predominant learner behaviors and mainstream curricula.
+
+This accuracy profile is explicitly documented in the accompanying instructions for use, specifying quantitative performance metrics across learner subgroups and advising end-users on inherent accuracy limitations. The documentation further highlights that competency estimations for underrepresented learner groups should be interpreted with caution and supplemented by complementary assessment methods.
+
+### Model Robustness and Lifecycle Stability
+
+Robustness evaluations included stress-testing under simulated shifts in learner behavior, seasonal learning cycles, and curriculum updates. Results indicated that the static GBDT model’s predictive consistency degrades when input data distributions diverge from those seen during training, manifesting as fluctuations in competency scores ranging from 10% to 18% over quarterly time windows aligned with curriculum changes.
+
+The system’s design does not currently incorporate real-time recalibration or automated retraining mechanisms post-deployment. Instead, Horizon Learning Analytics recommends a scheduled retraining protocol conducted biannually, incorporating newly collected performance data to mitigate model drift. This retraining is an offline, manual process performed by the provider’s data science team following a rigorous data quality and fairness audit to avoid reinforcing existing biases.
+
+As a mitigating organizational measure, customers receive detailed operational guidance emphasizing the importance of periodic retraining and monitoring. Additionally, a feedback interface aggregates detected competency score anomalies, enabling prompt investigation and targeted data collection to enhance retraining datasets.
+
+No online or continuous learning features are present, deliberately minimizing risks of feedback loops causing bias amplification. Model updates are version-controlled and undergo extensive validation to ensure output stability and consistent interpretability via feature importance recalibration.
+
+### Error Resilience and System Redundancy
+
+The AI system integrates modular data processing pipelines with validation checkpoints that flag anomalous or inconsistent inputs, such as sudden shifts in learner engagement patterns or corrupted logs. These checkpoints trigger fallback procedures that default to last validated competency scores when data integrity is compromised.
+
+Technical redundancy is implemented through parallel ensemble evaluation: multiple GBDT models trained on temporally segmented datasets run concurrently, enabling cross-consistency checks. Discrepancies beyond predefined thresholds prompt alerts and recommend human expert review before automated report generation. This fail-safe design reduces the likelihood that transient anomalies propagate into decision-making.
+
+Organizational protocols instruct operators to maintain manual oversight during identified periods of data or model uncertainty, particularly when engaging with non-traditional learner groups known for higher variability in prediction accuracy.
+
+### Security Measures Against AI-Specific Threats
+
+Recognizing vulnerabilities unique to AI systems, comprehensive cybersecurity controls have been applied throughout the model lifecycle. Training datasets are stored and processed within encrypted, access-controlled environments compliant with ISO/IEC 27001 standards. Data pipelines implement cryptographic integrity checks to guard against tampering and data poisoning attempts.
+
+Model artifacts are versioned and hash-verified prior to deployment, with runtime environments employing sandboxing and intrusion detection systems to prevent unauthorized model extraction or manipulation attempts. Adversarial robustness testing includes exposure to synthetic input perturbations designed to mimic plausible adversarial examples. The system’s feature space and decision thresholds are monitored for aberrant activation patterns that could indicate evasion tactics.
+
+Incident response procedures cover rapid containment and rollback of compromised models, along with forensic logging to identify attack vectors. Customers receive guidelines on secure deployment practices and are encouraged to integrate continuous monitoring tools to detect deviations in model behavior suggestive of cyberattacks.
+
+---
+
+This documentation reflects a comprehensive approach whereby Horizon Learning Analytics provides transparent performance profiles, robustness safeguards, and security measures proportionate to the operational environment and known limitations intrinsic to the current GBDT approach.

@@ -1,0 +1,41 @@
+**Article 9**
+
+**Establishment and Scope of the Risk Management System**
+
+Meridian Labor Solutions has implemented a comprehensive risk management system specifically for the Legal Termination Assessment Framework (LTAF), structured as an ongoing, iterative process throughout the system’s entire lifecycle—from development through deployment and post-market activities. This system aligns with the classification of LTAF as a high-risk AI system given its impact on fundamental rights and employment conditions. The risk management framework systematically identifies, analyzes, evaluates, and addresses risks related to the LTAF’s intended use within human resources contract termination contexts, focusing on impacts to health, safety, and fundamental rights of targeted individuals, including employees subject to termination decisions.
+
+**Identification and Analysis of Known and Foreseeable Risks**
+
+During the development of LTAF, Meridian Labor Solutions conducted an extensive hazard analysis involving internal multidisciplinary teams, including legal experts, ethicists, data scientists, and HR specialists. Known risks identified include erroneous eligibility assessments potentially leading to unjust contract terminations, biased treatment of protected or vulnerable groups, and data privacy risks concerning sensitive employee information. Reasonably foreseeable risks were projected through scenario analysis, including misuse scenarios such as deployment in non-standard HR contexts or incorrect data input, which could exacerbate adverse effects. The dual-model design—combining gradient-boosted decision trees for structured data and transformer-based NLP for legal text interpretation—has been thoroughly examined for vulnerabilities contributing to these risks.
+
+**Estimation and Evaluation of Risk Magnitude and Conditions**
+
+Risk estimation employed quantitative and qualitative methodologies. Predictive accuracy and fairness were benchmarked on a representative dataset of 200,000 anonymised employee records combined with over 10,000 contract documents across multiple jurisdictions, with special attention to protected classes and potential age-related disparities. Performance metrics included false positive/negative rates, disparate impact ratio with thresholds aligned to established fairness benchmarks (e.g., less than 5% variation across demographic groups), and robustness under adversarial input testing simulating common data errors or ambiguities. Risks were evaluated under both intended use and foreseeable misuse conditions, based on expert elicitation and stress-testing, allowing differentiation of residual risk levels.
+
+**Post-Market Monitoring Data Integration**
+
+Post-market risk evaluation is supported by an integrated monitoring system capturing anonymised usage data, feedback from deployers, and incident reports regarding adverse outcomes or unexpected system behavior. Data flows into a centralized risk dashboard and trigger automated alerts if pre-defined performance degradation or fairness anomalies are detected. This ongoing data collection informs iterative improvements to risk identification and mitigation measures, consistent with the continuous update requirements. For example, monitoring revealed a rise in querying errors for contracts with region-specific clauses, prompting targeted retraining of the NLP model.
+
+**Risk Management Measures and Their Rationale**
+
+The risk management measures implemented encompass design-level mitigations, operational safeguards, and informational provisions to deployers:
+
+- **Design and Development Controls:** The use of GBDT enhances explainability and feature importance assessment for structured data inputs, allowing the identification and reduction of bias sources early in model training. The transformer NLP models were fine-tuned on diverse legal corpora to improve contextual understanding while avoiding overfitting to specific legal jargon that could induce output instability.
+
+- **Mitigation of Residual Risks:** Where elimination was infeasible (e.g., inherent ambiguity in some contract language), fallback mechanisms prompt human review. Model confidence thresholds trigger alerts when outputs fall below calibrated probabilistic certainty levels, reducing risks of incorrect automation in borderline cases.
+
+- **Deployers’ Technical Knowledge and Training:** Comprehensive technical documentation, including explainability reports and user manuals, is provided to deployers. Meridian Labor Solutions offers role-based training materials tailored to varying levels of HR expertise, ensuring that users understand system limitations, can interpret AI outputs appropriately, and apply necessary human oversight.
+
+- **Information Transparency and Usage Constraints:** To safeguard fundamental rights, the system includes explicit constraints in design and deployment documentation, stipulating conditions of intended use and emphasizing compliance with consent, data protection, and fairness requirements.
+
+**Testing to Validate Risk Management Effectiveness**
+
+Extensive testing phases were conducted in development, pre-market, and during controlled operational pilot deployments. Metrics were predefined according to intended use cases and legal standards: accuracy thresholds above 92% for eligibility classification, false negative rates below 3%, and no statistically significant bias across protected groups. Testing environments included simulations with real-world data and adversarial inputs mimicking misuse conditions. Results consistently confirmed stable performance and effective mitigation of identified risks. Additionally, user acceptance testing with HR professionals validated the usability and interpretability of system outputs under realistic workflow scenarios.
+
+**Consideration of Vulnerable Groups**
+
+Risk assessment explicitly considered potential impacts on persons under 18 and other vulnerable groups. Although the system is designed for employment contract assessments primarily concerning legal adults, safeguards ensure exclusion or special treatment for individuals under legal working age or those legally protected from termination decisions (e.g., maternity leave). Model training datasets were audited to avoid underrepresentation or bias against such groups. Post-market data analyses include monitoring for unintended disparate effects on vulnerable populations, and triggers prompt re-assessment and corrective action if evidence of adverse impact emerges.
+
+**Coordination with Relevant Union Internal Risk Management Requirements**
+
+Meridian Labor Solutions maintains a structured compliance framework that integrates the risk management system prescribed in Article 9 with broader internal quality and risk governance measures under applicable Union laws related to workforce data protection and employment rights. The risk management processes for LTAF are thus harmonized with these frameworks to minimize duplication and ensure coherent oversight throughout the AI system lifecycle. This integration supports multidimensional risk oversight consistent with evolving regulatory standards.

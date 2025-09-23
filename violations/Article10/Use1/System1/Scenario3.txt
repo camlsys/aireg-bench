@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (c) relevant data-preparation processing operations, such as annotation, labelling, cleaning, updating, enrichment and aggregation;"  
+
+[b] **Guideline:**  
+A compliant process requires clear and consistent annotation protocols for all input data sources, with documented rationale for labelling hazard events and sensor fusion procedures to ensure validity and minimize aggregation errors that could distort the input signals used for training complex models like GNNs and transformers.  
+
+[c] **Violation:**  
+In SafeRoute, sensor data from multiple sources is aggregated through an automated pipeline lacking documented reconciliation of conflicting sensor readings (e.g., inconsistent vehicle counts between sensors), resulting in noisy training inputs. This causes the model to learn from erroneous aggregated features without robust correction or manual oversight.  
+
+[d] **Justification:**  
+This violation is plausible because automated data fusion is often prioritized in large-scale sensor systems but incomplete reconciliation may subtly degrade data quality. The failure to properly clean and annotate during aggregation undermines data governance quality standards mandated by the regulation and indirectly degrades model reliability in a way not obvious from superficial system testing.

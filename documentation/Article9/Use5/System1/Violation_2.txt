@@ -1,0 +1,37 @@
+**Article 9**
+
+**Establishment and Scope of the Risk Management System**  
+Sterling Recruitment Technologies has established a formal risk management system for the Talent Insight Model, structured as an ongoing, iterative process maintained throughout the model’s lifecycle—from initial design through deployment and post-market monitoring. This system specifically targets risks linked to the model’s intended use in screening and ranking candidates within recruitment contexts. The primary risks identified pertain to the model’s technical performance in matching relevant skills and qualifications, reflecting core metrics such as relevance scoring accuracy, precision, recall, and false positive rates in candidate-job alignment. No specific procedures were instituted to identify or analyze risks related to potential disparate impacts on applicants under 18, older workers, or members of legally protected classes beyond these core technical performance metrics.
+
+**Identification, Estimation, and Evaluation of Risks**  
+Risk identification was performed using quantitative analyses derived from a training dataset comprising approximately 1.2 million anonymized resumes and 350,000 corresponding job postings across diverse industries. The dataset was curated to reflect a broad spectrum of demographic and professional backgrounds, though demographic attributes such as age or protected characteristics were not explicitly annotated or used in model optimization or assessments. The evaluation process employed threshold-based performance metrics at multiple decision points (e.g., candidate ranking cutoffs), emphasizing overall accuracy (averaging 87%), false positive rate (6%), and false negative rate (7%). Stress testing included simulated data perturbations and adversarial inputs designed to probe robustness. However, no systematic subgroup or intersectional bias testing targeting vulnerable age groups or protected classes was conducted during development.
+
+Risk estimation accounted for reasonably foreseeable misuse scenarios, such as the model being applied to applicant pools from specialized sectors with atypical language or experience structures (e.g., gig economy profiles). In these cases, fallbacks and confidence estimation modules were implemented to flag low-certainty outputs, allowing for human override. Post-market data analytics dashboards were developed, monitoring real-time system performance and user feedback logs aggregated over six months of pilot deployment. These analyses continue to focus on technical performance deviations, with no dedicated metrics or alerting mechanisms for detecting disparate impact or discriminatory patterns across protected demographic groups.
+
+**Design and Implementation of Risk Mitigation Measures**  
+Design efforts mainly addressed minimizing technical failure modes. The model incorporates mechanisms such as:  
+- Contextual embeddings fine-tuned to reduce noise from irrelevant resume sections, enhancing the relevance of skill extraction;  
+- Score calibration layers to normalize ranking outputs across different job types;  
+- Confidence thresholding to trigger manual review of borderline cases, serving as a technical control against erroneous automated decisions.
+
+Provider decisions deliberately prioritized optimizing aggregate predictive accuracy and reducing false positives to maintain recruiter trust and workflow efficiency. Training data curation included heuristic filtering to exclude overtly biased or incomplete records but did not systematically balance for age representation or protected demographic characteristics.
+
+Information documentation delivered to deployers includes detailed technical specifications covering model architecture, data provenance, performance validation results, and instructions on integrating manual review steps for flagged candidates. Training modules for deployer personnel focus on understanding system output limitations from a technical perspective rather than on comprehensive anti-discrimination awareness or demographic impact mitigation strategies.
+
+**Testing Strategy and Performance Validation**  
+Testing of the Talent Insight Model followed a structured protocol aligning with industry-standard evaluation frameworks for natural language processing models used in recruitment tech circa 2025. Internal testing involved multiple phases:  
+- Component-level validation on withheld benchmark datasets emphasizing skill and experience extraction accuracy;  
+- End-to-end scenario testing using synthetic and real applicant-job pairs simulating typical and edge employment sectors;  
+- Continuous performance monitoring during beta deployments tracked relevant KPIs to identify data drift or performance degradation.
+
+Quantitative thresholds were predefined based on empirical benchmarking to ensure performance stability before market release. Adversarial testing scenarios simulated attempts to manipulate resume text to circumvent filters, verifying system resilience.
+
+While this extensive technical testing validates consistent system behavior, no specific tests were conducted to evaluate how model decisions affect applicants under 18 years of age, older workers, or protected groups with respect to fairness or disparate impact. Testing logs explicitly report performance and error metrics at an aggregate level rather than stratified by demographic attributes.
+
+**Consideration of Vulnerable Groups and Residual Risks**  
+In compliance with the iterative risk management requirements, provider evaluation considered the intended use cases and deployment contexts principally involving adult applicant populations. The Talent Insight Model’s training regimen excluded data from applicants under 18, following deployment policies to filter out minors from the recruitment processes supported by the system. Nonetheless, no formal analysis or mitigation strategies addressed the potential residual risks or interaction effects whereby proxy variables in unstructured text (e.g., career gaps, job titles associated with older age groups) could inadvertently influence relevance scoring or candidate ranking, potentially disadvantaging older workers or members of protected classes.
+
+Residual risk assessments focused on technical and operational parameters, concluding that, with implemented controls, system errors remain within acceptable bounds for the majority user base. However, the absence of subgroup-specific bias evaluations or targeted mitigation measures introduces an unquantified residual risk of adverse impacts for certain vulnerable demographic segments, which falls outside the current scope of the provider’s risk management processes.
+
+**Integration with Broader Compliance Frameworks**  
+Sterling Recruitment Technologies has designed the risk management system to be adaptable for integration with potential external compliance requirements related to diversity, equity, and inclusion under applicable Union law. This includes modular documentation of model design and performance that can interface with deployer-level procedures addressing protected class safeguards. Presently, internal risk management processes focus primarily on technical risk factors identified during system development and testing phases.

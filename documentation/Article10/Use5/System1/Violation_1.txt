@@ -1,0 +1,41 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Talent Insight Model was developed using training data comprised predominantly of resumes and job descriptions collected from publicly accessible sources and partnering recruitment agencies, primarily located in English-speaking Western countries, including the United States, the United Kingdom, Canada, and Australia. The dataset includes approximately 1.2 million resume documents and 300,000 distinct job descriptions collected over a four-year period (2019–2023). Data collection focused on publicly posted job applications and corporate hiring emissions primarily for compliance with local data protection laws, with explicit consent or terms governing secondary use. However, the dataset lacks comprehensive demographic annotations such as candidate gender, ethnicity, or age, reflecting the limitations of publicly available data and privacy constraints at the time of collection.
+
+Data preparation involved automated parsing and tokenization of unstructured textual inputs, followed by standard cleaning operations including removal of personally identifiable information (PII), normalization of job titles and skill terms using industry-standard ontologies, and aggregation of related job roles. Annotation was limited to labeling key attributes such as skills, experience durations, and educational qualifications through a hybrid approach combining rule-based heuristics and manual verification on a sampled subset amounting to 5% of the full dataset. The labeling process did not include demographic or bias-related features due to privacy considerations and unavailability of such metadata.
+
+Design assumptions were articulated to treat resumes and job descriptions as representative textual proxies of candidate qualifications and job requirements, assuming consistent terminology and veracity of declared experience. The model presumes that the input texts sufficiently capture functional competencies relevant to role suitability, without explicit modeling of protected characteristics or societal factors.
+
+An internal assessment of data availability and representativeness indicated adequate coverage of common job categories in technology, finance, healthcare, and professional services sectors. However, geographical and cultural diversity was constrained by the predominant English-language sources, with underrepresentation of non-Western employment contexts and potentially limited applicability outside these markets.
+
+### Assessment of Bias and Related Measures
+
+As part of model development, no formal quantitative evaluation was performed specifically to detect or analyze demographic biases related to candidate gender, ethnicity, or other protected characteristics, reflecting the unavailability of such data in the training corpus. No metrics such as disparate impact ratio, equal opportunity difference, or subgroup performance disparities were computed. Consequently, no systematic bias detection procedures or corrective algorithms (e.g., re-weighting, adversarial debiasing, or synthetic augmentation) were integrated into the training or fine-tuning pipeline.
+
+The ranking and scoring algorithms leverage contextual embeddings derived from transformer-based architectures fine-tuned on the collected data, optimizing for relevance and match quality between candidate profiles and job criteria. However, the absence of demographic annotations precludes confounding analysis of whether rankings disproportionately favor or disadvantage specific demographic groups. Similarly, no feedback loop mitigation strategies were deployed to prevent potential amplification of historical biases encoded in the training data.
+
+Data governance processes include standard access controls, versioning of data subsets, and retention policies aligned with internal data protection requirements, but do not extend to mechanisms ensuring fairness or bias mitigation. Documentation of data limitations explicitly notes the absence of demographic representativeness and the associated limitations when applying the model in diverse socio-demographic contexts.
+
+### Data Set Quality and Statistical Characteristics
+
+The datasets employed display a low error rate (<2%) in text extraction accuracy as measured by manual spot checks of 1,000 randomly sampled documents. Completeness is constrained by the limits of public data availability and heterogeneity in resume formats. Statistical analysis of linguistic features revealed strong dominance (>85%) of English-language documents from candidate populations in North America and Western Europe. The distribution of job categories heavily favored white-collar professions typical in developed economies, with limited representation of blue-collar or informal employment sectors.
+
+Given these constraints, the datasets exhibit limited coverage of geographical and socio-cultural contexts outside English-speaking Western countries, cautioning against unqualified extrapolation of model outputs to other settings. While demographic attributes are not annotated, the provider acknowledges the potential relevance of such features for assessing fairness and non-discrimination in recruitment AI systems.
+
+### Context-Specific Data Considerations
+
+The data strategy reflects the model’s intended application primarily within English-language recruitment markets in Western economies. Consequently, the data reflects contextual features including common job titles, educational systems, and professional skill taxonomies prevalent in these jurisdictions. Behavioral patterns inferred from job descriptions and resumes correspond to hiring norms typical of corporate and agency-mediated recruitment workflows in these countries.
+
+No adjustments or localization efforts were deployed to tailor the data or model to specific sub-national contexts, industries outside those well-represented, or non-Western markets. This aligns with the provider’s scope of development focused on scalability within established English-language recruitment environments.
+
+### Processing of Sensitive Personal Data for Bias Mitigation
+
+The provider has not processed special categories of personal data (e.g., relating to racial or ethnic origin, gender, or health) for the purpose of bias detection or correction. No technical or organizational safeguards associated with such processing (such as pseudonymisation, strict access controls, or deletion protocols tied to bias mitigation cycles) have been implemented, as the data sources did not include these attributes and corrective methodologies based on them were not pursued.
+
+This design choice complies with an approach emphasizing data minimization and adherence to applicable data protection standards but limits the capacity for bias analysis and mitigation using protected characteristic information.
+
+---
+
+This documentation reflects the provider’s data-related design and governance decisions, illustrating dataset provenance, characteristics, preparation actions, and the absence of demographic bias assessment or mitigation in the Talent Insight Model.

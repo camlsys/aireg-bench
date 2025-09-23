@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems... High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."  
+
+[b] **Guideline:**  
+The system must incorporate safeguards against feedback loops caused by continuous learning to prevent cumulative biases from user interactions or output-influenced inputs, such as isolating training data sources or implementing bias detection and correction for online updates.  
+
+[c] **Violation:**  
+The Talent Insight Model continuously fine-tunes its recommendation engine based on recruiter acceptance of ranked candidates, which inadvertently amplifies initial demographic biases, as the model reinforces patterns where certain profiles are repeatedly favored, without any bias correction or monitoring mechanisms in place.  
+
+[d] **Justification:**  
+This violation is subtle because the model's continuous learning is intended to improve performance, but the unmitigated feedback loop exacerbates bias over time, compromising fairness and robustness. It undermines the resilience requirement by allowing error propagation through learning influenced by its own outputs, a realistic risk in adaptive HR systems.  
+
+---

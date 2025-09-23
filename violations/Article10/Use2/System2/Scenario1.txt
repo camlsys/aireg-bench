@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection;"  
+
+[b] **Guideline:**  
+Experts should verify and document that data used for training reflects lawful, ethically gathered sources with clear provenance, especially for any personal or indirectly identifying data. Data collection must align with its original purpose or be appropriately re-consented or anonymized, ensuring its use for training the AI system is legitimate and aligned to the new intended purpose (pipeline safety).  
+
+[c] **Violation:**  
+Pipeline Safety Guardian’s training data includes sensor readings associated with metadata identifying specific pipeline workers or local residents without verifying the original consent aligned to safety monitoring purposes; some personal data were originally collected for unrelated operational audits rather than safety risk assessment. This lack of clarity and repurposing without documented governance breaches the origin and purpose requirements.  
+
+[d] **Justification:**  
+Though the system processes mostly sensor data, the embedded personal metadata linked to individuals’ locations or shifts constitutes personal data under GDPR. Using these data without clear alignment to the original purpose or appropriate governance is a subtle violation, as it may happen inadvertently in industrial data pipelines, yet goes against the requirement to control origin and lawful reuse strictly.  
+
+---

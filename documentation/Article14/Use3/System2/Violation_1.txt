@@ -1,0 +1,60 @@
+**Article 14**
+
+---
+
+**Design and Development of Human-Machine Interface for Effective Oversight**
+
+The competency evaluation system employs a gradient boosted decision tree (GBDT) model trained on approximately 500,000 historical learner interaction records combined with structured performance metrics collected across multiple vocational training centers over a three-year period. The system’s human-machine interface (HMI) has been explicitly designed to present only aggregated competency scores and a summarized top-level feature importance ranking relevant to each evaluated competency domain. Intermediate processing elements such as decision thresholds intrinsic to model splits, confidence intervals around scores, or detailed provenance of input data (e.g., raw interaction logs or timestamped event sequences) are deliberately omitted from the interface display.
+
+This design choice was made in consultation with domain experts and HMI usability specialists aiming to provide clear, high-level interpretability while limiting cognitive load on end-users. Presenting top-level feature importance enables supervisors to validate that expected competency drivers (e.g., task completion rates, accuracy in simulations) align with domain knowledge without overwhelming them with technical details that require specialist interpretation. The absence of intermediate decision criteria or confidence metrics reflects both privacy considerations and a strategic focus on delivering concise actionable insights.
+
+---
+
+**Measures for Mitigating Risks and Enabling Human Oversight**
+
+Given the system’s role in formative and summative assessment with potential impacts on learner certification and curriculum adaptation, human oversight mechanisms focus principally on ensuring score validity and interpretability. The system incorporates automated alerts triggered by detection of gross data anomalies, such as missing input features or outlier competency scores beyond predefined statistical control limits, to prompt supervisors to review learner data before consequential decisions. These alerts rely on secondary rule-based validation layers developed alongside the GBDT and stored separately to enforce data consistency.
+
+However, the HMI’s transmission of limited information constrains supervisors’ ability to detect or diagnose subtler anomalies such as distributional shifts in learner interactions or gradual bias induced by changes in training context or population demographics. These subtle data shifts may cause drift in the model’s internal decision boundaries that do not immediately manifest as outliers in aggregated scores or top-level feature importance. Therefore, human oversight as currently supported principally enables recognition of overt dysfunction or unexpected performance rather than nuanced bias emerging within model internals or input data provenance.
+
+---
+
+**Provider-Implemented Oversight Features and Limitations**
+
+Prior to deployment, the provider integrated several specific measures for real-time oversight feasibility consistent with the system’s operational context in vocational education programs. These include:
+
+- A comprehensive model monitoring framework tracking input feature distributions and alerting operational teams upon identifying covariate shifts exceeding ±3 standard deviations relative to the model’s training dataset baselines (derived from an initial multi-institutional dataset of 100,000 learners).
+- Simplified interface design promoting clarity with stacked competency scores segmented by skill domain, accompanied by bar-chart visualizations of the top 5 feature importances per competency to guide interpretability without exposing underlying thresholds or probabilistic scores.
+- An accessible ‘pause’ and ‘stop’ control embedded in the HMI allowing authorized supervisors to interrupt processing in exceptional situations; the system enforces a safe halt state where partially computed competency assessments are rolled back without lingering inconsistent outputs.
+- Documentation and user training materials detailing the system’s scope, strengths, and known limitations explicitly cautioning against automation bias and emphasizing the need for supervisors’ independent judgment informed by context and supplementary qualitative data.
+
+While these measures identify and mitigate overt risks preemptively, the provider’s decisions intentionally refrain from exposing granular model internals or input provenance data within the interface to avoid cognitive overload and privacy exposure, which consequently reduces the granularity of real-time anomaly detection available to supervisors via the HMI.
+
+---
+
+**Information Provision Supporting Comprehension and Oversight**
+
+The deployer receives the AI system package with a comprehensive technical dossier including model specification, expected operational boundaries, and a detailed explanation of the competencies evaluated and their corresponding feature importance derivations. This dossier provides sufficient detail for assigned personnel to understand the model’s scope, limitations, and interpretation guidelines.
+
+The training and user manuals emphasize the importance of cross-validating competency scores against background knowledge and contextual indicators, supporting informed decisions to override or disregard AI outputs per Article 14(4)(d). Furthermore, supervisors are advised to remain alert to the risk of automation bias and to apply their expertise critically rather than accepting the AI output as determinative.
+
+Due to system design constraints, confidence intervals around scores and raw data lineage are not provided through any interface or documentation. Although this limits direct visibility into certain bias detection premises, it aligns with provider assessments weighing user cognitive capacity and data privacy trade-offs.
+
+---
+
+**Control and Intervention Functionalities**
+
+To empower supervisors with the ability to intervene in AI operations where necessary, the HMI incorporates interactive controls enabling immediate cessation of scoring operations. The system’s operational logic ensures that any interruptions trigger atomic rollback procedures preserving the integrity and consistency of stored competency records.
+
+These intervention capabilities cater to Article 14(4)(e) requirements and are complemented by built-in data validation and anomaly detection routines that either prevent erroneous outputs or flag data issues warranting supervisor attention before score dissemination.
+
+---
+
+**Processing Activities and Special Category Data Handling**
+
+The AI system processes only standard educational performance data and interaction logs collected and pseudonymized in compliance with GDPR requirements. It explicitly avoids reliance on special categories of personal data, mitigating the need for justifications related to their processing for bias detection as per Article 14(4)(f).
+
+During development, an internal bias correction workflow analysing fairness across demographic subgroups was conducted using aggregate and pseudonymized metrics, fully compliant with data protection principles, and documented accordingly without recourse to sensitive personal data.
+
+---
+
+This documentation reflects the provider’s technical design and operational measures oriented towards enabling effective but scoped human oversight aligned with system capabilities, balancing transparency, interpretability, and data privacy in the context of a high-risk vocational competency assessment AI system.

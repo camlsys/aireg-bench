@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"(f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Providers must implement thorough bias audits not only on initial data but also on model feedback loops, ensuring that bias affecting vulnerable populations (e.g., communities near pipelines) is detected and continuously mitigated. Established mitigation techniques, such as reweighting, synthetic balancing, or adversarial debiasing, must be demonstrably applied and updated as real-world data evolves.  
+
+[c] **Violation:**  
+Pipeline Safety Guardian is deployed with no mechanism to analyze or correct feedback bias from its anomaly alerts which influence scheduled inspections, resulting in cumulative under-monitoring of pipelines near marginalized communities. Furthermore, no documented ongoing bias mitigation processes are in place, allowing discriminatory impact risk to persist unnoticed.  
+
+[d] **Justification:**  
+Feedback loops can exacerbate initial biases subtly, causing systematic neglect of certain groups or areas without overt model failure signs. This omission is plausible given operational focus on model accuracy, failing to meet the requirement for continuous bias management and mitigation, subtly undermining the system’s safety and fairness goals.

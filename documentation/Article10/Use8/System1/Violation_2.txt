@@ -1,0 +1,31 @@
+**Article 10**
+
+**Data Governance and Management in Data Set Development**
+
+The development of Priority Response Analytics’ AI models involved comprehensive data governance practices aimed at ensuring that training, validation, and testing data sets align with the intended purpose of emergency prioritization. Design choices prioritized the integration of heterogeneous data types—structured incident reports and unstructured textual dispatch notes—to capture multi-modal information relevant to emergency scenarios. Data origin tracing was systematically documented: structured incident data were sourced from aggregated emergency response logs across multiple jurisdictions over a five-year period (approximately 3.2 million incident records), while textual data were collected from annotated dispatch notes linked to these incidents. The original data were gathered primarily for operational dispatch management and subsequently repurposed under strict governance protocols, ensuring lawful and ethical processing.
+
+Data preparation included standardized cleaning to remove duplication and erroneous entries, normalization to reconcile disparate categorical codes across jurisdictions, and enrichment by linking incident coordinates to geographic metadata. Annotation efforts for the textual dispatch notes involved a combination of semi-automated natural language processing (NLP) pipelines and expert human review, which confirmed the accuracy of incident descriptions and urgency indicators. Assumptions explicitly documented include that the data capture the core variables indicative of incident type, urgency, and resource needs, and represent emergency call characteristics as reported during dispatch.
+
+**Assessment of Data Suitability and Bias Considerations**
+
+An extensive suitability assessment identified significant limitations impacting representativeness. The data set showed uneven geographic coverage: urban areas accounted for approximately 78% of all incident records, with rural incidents constituting only 22%, despite demographically balanced population distributions. This underrepresentation is attributed to incomplete data collection from several rural jurisdictions due to infrastructure and reporting inconsistencies. Consequently, model performance metrics were stratified by geographic classification during validation: the combined GBDT and Transformer model achieved an average precision of 0.89 in urban subsets but only 0.71 in rural subsets, reflecting decreased prioritization accuracy outside urban centers.
+
+A focused bias evaluation was performed to detect adverse effects that may impact the health and safety of individuals in rural environments. Metrics such as false negative rates and priority misclassification were elevated in rural data segments, indicating a risk of suboptimal emergency response allocation in these areas. These findings were cross-referenced against documented emergency outcome statistics to assess potential health impacts.
+
+**Measures to Detect, Prevent, and Mitigate Data Bias**
+
+To address identified biases, multiple mitigation strategies were implemented. Synthetic data augmentation techniques were applied to the rural incident data subset, leveraging generative models trained on existing rural data to expand the volume and diversity of rural scenarios within the training corpus. While this partially improved rural model performance in simulations (+8% recall in rural incident prioritization), residual bias remained due to intrinsic differences in incident types and reporting patterns.
+
+Furthermore, model training incorporated class-weighted loss functions emphasizing rural sample importance to reduce urban-centric bias. Continuous monitoring pipelines were deployed post-deployment to flag prioritization inconsistencies geographically, prompting iterative model updates. These operational safeguards are supported by a defined protocol for receiving and integrating feedback from dispatch centers, enabling compensatory algorithmic adjustments as new rural data become available.
+
+**Identification and Handling of Data Gaps**
+
+The underrepresentation of rural emergency incidents was systematically catalogued as a data gap with potentially serious compliance implications. Sentinel Technologies formally documented this shortcoming in technical risk assessments and mitigation plans. Engagement with data providers highlighted systemic challenges in rural data acquisition, including limited digital infrastructure and reporting standardization disparities. Consequently, efforts to expand rural data collection have been initiated, involving partnerships with regional emergency services to improve data completeness moving forward.
+
+In line with requirements, no special categories of personal data were processed for bias detection or correction, mitigating data privacy risks associated with sensitive information. Instead, bias mitigation relied solely on anonymized incident data and synthetic augmentation, consistent with prevailing data protection standards.
+
+**Ensuring Representativeness and Statistical Soundness**
+
+Priority Response Analytics’ overall data set composition and multi-phase validation process were designed to meet statistical relevance and completeness criteria to the best extent possible given current data availability constraints. Statistical analyses confirmed that collected data reflect the diversity of urban emergency scenarios comprehensively; however, rural subsets remain statistically less robust. Geographic stratification and contextual metadata are leveraged during model inference to account for setting-specific factors, although system documentation transparently acknowledges this limitation.
+
+Overall, data set design, preparation, and governance incorporate state-of-the-art practices reflective of 2025 industry standards for high-risk AI systems, including rigorous annotation protocols, comprehensive bias assessment frameworks, and adaptive mitigation workflows aligned with the system’s real-time priority setting function in diverse emergency response contexts.

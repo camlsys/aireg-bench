@@ -1,0 +1,35 @@
+**Article 15**
+
+### Achievement and Maintenance of Accuracy and Robustness Throughout Lifecycle
+
+The Legal Context Navigator (LCN) was initially developed using a transformer-based, encoder-only large language model configuration, trained on a comprehensive legal corpus comprising approximately 4 million documents drawn from EU statutes, regulations, and judicial decisions dated up to the end of 2022. This initial dataset was curated and annotated by a team of 25 legal domain experts and linguists to ensure high-quality semantic alignment between queries and legal precedent retrieval.
+
+At deployment, performance benchmarks were established through an internal evaluation pipeline aligning with state-of-the-art legal information retrieval standards, including precision, recall, and F1-score metrics averaged at 87.5%, 85.3%, and 86.4%, respectively, on a held-out test set of 150,000 legal queries. These scores were assessed against traditional keyword-based retrieval baselines to demonstrate semantic and contextual improvements.
+
+However, post-deployment procedures do not include automated or scheduled fine-tuning cycles on continuously updated legal corpora, nor systematic re-validation of model performance against evolving case law or statutory amendments. Consequently, while the model met an appropriate level of accuracy at deployment, its ability to sustain this level over time degrades incrementally as lexical semantics and legal interpretations shift without model recalibration.
+
+### Performance Measurement and Reporting
+
+The instructions accompanying LCN declare the baseline accuracy metrics achieved during initial testing, including precision and recall figures as measured on the final validation dataset. These metrics are clearly annotated as reflective of performance on data up to December 2022 and are accompanied by advisories noting potential limitations in recognition and retrieval accuracy regarding legal developments or novel jurisprudential interpretations arising after this date.
+
+No integrated mechanism is provided within the system to inform end-users of any performance drift or accuracy degradation over time. The technical documentation specifies that accuracy and robustness benchmarks were established in line with contemporary metrology standards for natural language processing in legal domains but recognizes that these figures represent a snapshot rather than ongoing measurement.
+
+### System Resilience and Technical Redundancies
+
+The LCN architecture incorporates redundancy through distributed compute nodes and error-checking layers to mitigate transient faults or hardware inconsistencies, achieving 99.95% uptime across operational environments. The system employs heuristic confidence thresholds to detect and suppress low-certainty outputs, reducing the likelihood of spurious or erroneous legal assertions being presented to judicial users.
+
+Robustness to environmental variability is limited to controlling input data formats and query syntactic constraints; semantic robustness is not dynamically reinforced post-deployment due to the absence of incremental learning or adaptive update frameworks. No fail-safe fallback modules or alternative retrieval engines are integrated to compensate for potential output degradation related to outdated model knowledge or evolving legal contexts.
+
+Additionally, as LCN is a pre-trained model frozen at market entry, it does not incorporate continual learning capabilities designed to prevent feedback loops or biased self-reinforcement from its own outputs or user inputs.
+
+### Cybersecurity Measures and Protection Against AI-Specific Vulnerabilities
+
+Lexicon Analytics Corporation implements an enterprise-grade cybersecurity framework aligned with ISO/IEC 27001 standards encompassing access control, encryption of data at rest and in transit, intrusion detection systems, and secure API gateways. Application-layer protections mitigate risks of unauthorized system modifications or output tampering.
+
+To address AI-specific threats, LCN’s training and inference infrastructure includes data provenance checks and checksum verification to detect data poisoning attempts prior to model training. The system pipeline applies input sanitization to reduce the impact of adversarial examples crafted to manipulate model decisions. Model integrity validation is performed via cryptographic hashes during deployment, preventing unauthorized model parameter alterations.
+
+However, without provision for periodic retraining or model update cycles, emergent adversarial strategies that exploit dynamic legal language changes represent unresolved risk vectors. Real-time detection or correction mechanisms for model evasion or evolving confidentiality attacks are not implemented, consistent with the system’s static post-deployment architecture.
+
+### Summary of Lifecycle Considerations
+
+Legal Context Navigator’s design aligns with achieving high initial levels of accuracy and robustness as documented through extensive pre-market benchmarking and secure deployment practices. In contrast, technical and organisational measures for continuous performance monitoring, periodic fine-tuning, and active lifecycle management are not incorporated within the current system specifications. This absence limits the system's resilience and reliability in maintaining optimal functioning amid the evolving and nuanced landscape of legal statutes and jurisprudence.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection; ... (e) an assessment of the availability, quantity and suitability of the data sets that are needed;"
+
+[b] **Guideline:**  
+Data collection must ensure that all personal data used for training were consented for use in political analysis or communication tool development. Furthermore, comprehensive documentation and reflection on whether the amount and type of data sufficiently represent the system’s target audience and use case must be conducted and updated as the system evolves.
+
+[c] **Violation:**  
+Centuri Advisory Services aggregated voter profiling data originally collected for marketing and commercial segmentation without verifying or re-obtaining consent for political analysis purposes. The dataset lacked an updated suitability assessment, failing to consider that some data sources were outdated or irrelevant to current election contexts, which compromised the model’s ethical and legal compliance.
+
+[d] **Justification:**  
+This subtle breach involves repurposing personal data without ensuring alignment with the original consent, violating the data origin and purpose transparency requirements. The absence of a thorough assessment on data suitability also weakens governance processes. Such nuances can escape routine checks, but they undermine the legitimacy of the training dataset under the AI Act’s governance mandates, particularly in sensitive political influence settings.

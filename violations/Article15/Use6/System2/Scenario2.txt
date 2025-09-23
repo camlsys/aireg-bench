@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+Robust cybersecurity measures must be established, including adversarial input detection, data integrity verification, and monitoring for anomalous behavior to guard against subtle input manipulations or model tampering attempts, especially given ensembles and reliance on external LLMs.  
+
+[c] **Violation:**  
+The system lacks input sanitization or adversarial input detection for the qualitative policy text processed by the LLM, allowing targeted crafted inputs (e.g., ambiguous phrasing or contradictory clauses) to cause the model to produce biased or incorrect termination recommendations without triggering alerts.  
+
+[d] **Justification:**  
+This vulnerability is subtle because the manipulated inputs appear legitimate and do not produce outright system failure, but they degrade trustworthiness and correctness of outputs. Failure to detect or mitigate such adversarial examples violates the cybersecurity resilience mandated for high-risk AI systems.

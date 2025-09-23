@@ -1,0 +1,37 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Guardian Signal Controller’s AI models are developed following a comprehensive data governance framework tailored to the system’s operational context and intended use for urban traffic signal control. The training data primarily consists of over 120,000 hours of high-resolution video footage captured from 45 urban intersections located in major European metropolitan areas. These sites were selected to represent complex traffic environments characterized by dense vehicular flows, multiple traffic lanes, and diverse road user interactions during peak and off-peak hours.
+
+Data collection was performed using city-authorized traffic cameras and embedded roadway sensors, following strict municipal data privacy policies. The original purpose of the collected data was traffic monitoring and management; however, for AI model development, data was repurposed under processing agreements ensuring compliance with GDPR and related privacy legislation. All video footage was subjected to privacy-preserving measures, including automated blurring of personal identifiers and anonymization protocols before model training.
+
+Relevant data-preparation steps comprise manual annotation and labelling of over 2 million distinct pedestrian and vehicle movement events by certified traffic analysts. Annotations include classification of road user types, movement trajectories, and incident occurrences such as near-misses or traffic violations. Data cleaning removed approximately 3% of samples classified as corrupted or occluded to maintain dataset integrity. Periodic data enrichment with sensor measurements, including proximity and speed from embedded intersection sensors, was performed to complement the video data with multimodal inputs.
+
+Assumptions underlying dataset construction focus on the representativeness of urban intersection dynamics, with an emphasis on high vehicular density, complex signal phasing, and pedestrian crossing behavior in city centers. Data is assumed to measure typical traffic flow patterns and anomaly occurrences within these contexts, acknowledging that rural or suburban scenarios with distinct pedestrian demographics are outside the primary scope of available data.
+
+An explicit bias assessment was conducted to identify disparities in dataset representativeness. The analysis highlighted an underrepresentation of pedestrian behavior patterns in rural and suburban settings and a particular scarcity of examples involving elderly or disabled pedestrians. Given the criticality of accurately detecting anomalies involving these vulnerable groups, targeted mitigation strategies have been devised, including documentation of these data gaps and validation protocols to monitor detection performance across different user demographics.
+
+### Relevance, Representativeness, and Quality of Data Sets
+
+Datasets used for training, validation, and testing of the Guardian Signal Controller satisfy rigorous standards for accuracy, completeness, and representativeness relative to the system’s operational domain. Training datasets incorporate more than 15 million labeled video frames, with 80% utilized for model training, 10% for hyperparameter tuning and validation, and the remaining 10% for independent testing. Statistical analysis confirms low error rates in labeling (<0.5%), with synthetic data augmentation techniques employed to simulate adverse weather and lighting conditions, thereby enhancing model robustness without introducing significant distribution shifts.
+
+The data sufficiently represents varied urban intersection types, signal configurations, and traffic density levels, but reflects limited diversity regarding non-urban contexts. Groups of pedestrians with mobility impairments or above 65 years of age comprise less than 2% of annotated instances, reflecting their limited presence in source data. This imbalance translates to challenges in anomaly detection sensitivity for these demographic categories. Performance metrics obtained on test sets show high anomaly detection accuracy (above 94%) in urban test scenarios but reduced sensitivity (down to 78%) for pedestrian anomalies involving underrepresented groups.
+
+### Contextual and Geographic Specificity Considerations
+
+The training datasets incorporate geographic and functional characteristics relevant to dense urban settings where the system is predominantly intended to operate. The data captures common intersection types found in European city centers, including complex multi-lane layouts, pedestrian islands, and synchronized signal timing schemes. Behavioral patterns encapsulated within the data reflect typical urban pedestrian crossing behaviors, vehicle queuing, and compliance or violations of traffic signals.
+
+However, the current dataset does not adequately capture pedestrian behaviors or traffic dynamics distinctive to rural or suburban intersections, such as lower traffic volumes, different crossing infrastructure (e.g., no marked crosswalks), or varied pedestrian mobility patterns. These contextual limitations have been formally identified and documented as material shortcomings influencing system performance in these settings. Future training data expansions are planned, focusing on gathering representative video and sensor data from non-urban environments, particularly to improve detection capabilities related to elderly and disabled pedestrians.
+
+### Measures to Detect, Prevent, and Mitigate Biases
+
+To address identified biases, a multi-layered bias mitigation strategy is in place. First, data labels incorporate demographic metadata where permissible, enabling stratified performance evaluation. Second, the model training process includes weighted sampling and balanced loss functions to partially compensate for underrepresented classes without compromising overall model accuracy. Third, dedicated performance monitoring modules assess anomaly detection rates specifically for elderly and disabled pedestrian categories during in-field deployments, triggering alerts for operator review or fallback strategies if detection degrades.
+
+Given that special categories of personal data are not utilized, the system avoids processing sensitive personal information beyond what is permitted by privacy regulations. Instead, synthetic data simulations have been employed to augment scenarios reflecting vulnerable pedestrian behavior, while maintaining strict data governance controls.
+
+Comprehensive documentation of data provenance, processing steps, and bias assessment outcomes is maintained and updated iteratively to comply with regulatory transparency requirements. Access to training datasets is restricted, controlled, and logged to prevent unauthorized use, ensuring data integrity and confidentiality.
+
+---
+
+This documentation outlines the design decisions, data characteristics, and governance measures informing the Guardian Signal Controller’s development process in alignment with Article 10 data quality and data governance requirements.

@@ -1,0 +1,49 @@
+**Article 9**
+
+**Establishment and Scope of the Risk Management System**
+
+Meridian Traffic Solutions has established a comprehensive risk management system specifically tailored to the SafeRoute Traffic Monitor, a high-risk AI system designed for dynamic urban traffic safety enhancement. This system operates throughout the AI lifecycle—from initial concept and design through deployment, maintenance, and decommissioning—to ensure continuous identification, evaluation, and mitigation of risks that may affect health, safety, or fundamental rights when the system operates as intended. The iterative nature is formalized in a documented process encompassing defined review intervals triggered by system updates, significant changes in urban infrastructure, or emerging operational data trends.
+
+**Identification and Analysis of Potential Risks**
+
+The initial risk identification leveraged a multidisciplinary approach combining expert consultations (traffic safety engineers, AI specialists, and legal advisors), scenario analysis, and structured hazard analyses focusing on the intersection of data-driven predictions and real-world traffic operations. Key risks identified include: false negatives in hazard detection leading to unmitigated traffic hazards; false positive alerts causing unnecessary traffic disruptions; and unintended impacts on vulnerable road users (e.g., pedestrians, cyclists). The risk analysis further accounts for data quality issues—such as sensor malfunctions or missing data—potential algorithmic biases that may affect predictions in specific urban districts, and system latency impairing timeliness of warnings.
+
+**Risk Estimation and Evaluation Under Intended Use and Foreseeable Misuse**
+
+Risks were quantitatively estimated using performance metrics from extensive validation datasets including six months of real-world traffic data encompassing 1.2 million sensor readings per day across three major cities. Predictive accuracy for hazard identification averaged 92.7% (AUC=0.94), while false alarm rates were constrained below 5% through threshold calibration. Stress testing included simulated misuse conditions such as corrupted sensor inputs, delayed data streams, and partial system outages. Evaluation of outcomes under misuse scenarios showed residual risk remained within acceptable operational thresholds defined by safety standards ISO 39001 and ISO 13849, with documented contingency measures specified for deployer response.
+
+**Incorporation of Post-Market Monitoring Data**
+
+Data from a post-market monitoring system (Article 72), comprising continuous telemetry logs and user feedback collected during live deployments in two pilot urban centers (combined 3 million hours of active system use) feed into the risk management process. This enables adaptive risk identification of emergent failure modes, such as unanticipated sensor combination effects or shifts in traffic patterns due to infrastructure changes. Analysis of post-market data led to targeted mitigation updates, including refinement of sensor fusion algorithms within the transformer architecture to improve resilience to transient sensor outages.
+
+**Risk Mitigation Measures: Design, Development, and Information Provision**
+
+Mitigation measures prioritized risk elimination and reduction through architectural design and technical controls. These include:
+
+- Use of ensemble modeling combining Graph Neural Networks (GNNs) with Transformer-based sensor fusion to increase fault tolerance and reduce single-model failure dependence.
+
+- Integration of real-time sensor validation layers that flag anomalous inputs before model ingestion to prevent error propagation.
+
+- Implementation of adaptive thresholding dynamically adjusting model sensitivity based on traffic density and environmental factors to optimize the false positive/negative balance.
+
+- Deployment of secure communication protocols and data encryption to prevent data tampering risks.
+
+Residual risks identified as non-eliminable via design are addressed by explicit user-facing warnings within the operational interface and detailed technical documentation outlining system limitations and recommended actions. Training modules developed for traffic control authorities include risk-awareness components tailored to expected technical skill levels, helping to mitigate human-factor risks.
+
+**Harmonization with Other Safety and Regulatory Requirements**
+
+Risk management integrates with other relevant EU regulatory frameworks applicable to transport and safety, enabling combined procedures that fulfill multiple compliance objectives (e.g., data protection, cybersecurity). Cross-referencing standards and harmonized technical specifications were systematically considered to leverage synergies and minimize redundant controls, preserving operational efficiency while ensuring robust risk coverage.
+
+**Testing and Validation Aligned with Risk Management**
+
+Extensive testing underpins risk management, conducted continuously from prototype phases through to pre-market certification. Testing protocols cover unit testing of AI model components, integration testing of the overall system within simulated traffic management environments, and real-world pilot testing in diverse urban settings. Metrics such as precision, recall, latency, and system robustness under anomalous input conditions are predefined based on the expected operational environment. Risk acceptance thresholds were set at a maximum 7% residual hazard rate, reflecting a balance between safety imperatives and practical deployment constraints.
+
+Real-world testing includes shadow deployments within traffic control centers connected to live data feeds but running in advisory mode, enabling monitoring of system behavior without operational impact. Test results from over 5000 hours of shadow use informed iterative refinement, particularly in edge cases such as inclement weather and large-scale events.
+
+**Protection of Vulnerable Populations**
+
+Particular attention was paid to potential impacts on vulnerable groups, especially minors using roads and persons with reduced mobility. Risk assessments incorporated demographic traffic data and modeled scenarios involving vulnerable road users. The model architecture and output design prevent discriminatory risk propagation by normalizing predictions spatially and temporally to avoid systemic bias toward specific districts. Interface warnings and suggested mitigations are designed for clarity and accessibility, supporting users with varied expertise and capabilities.
+
+**Ongoing Adaptation and Documentation**
+
+SafeRoute Traffic Monitor’s risk management system is supported by comprehensive, version-controlled documentation capturing all identified risks, mitigation actions, test results, residual risk evaluations, and decision rationales. Documentation is regularly updated following post-market monitoring review cycles, system upgrades, or relevant external standard updates, ensuring transparency and traceability of risk management decisions throughout the product lifecycle.

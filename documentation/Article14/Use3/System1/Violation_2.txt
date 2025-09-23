@@ -1,0 +1,35 @@
+**Article 14**
+
+### Human Oversight Capabilities and System Design
+
+The Adaptive Learning Outcome Analyzer has been designed primarily to provide advanced assessment analytics through transformer-based encoder-decoder architectures adept at processing mixed modalities, including natural language and numeric tabular data. While the system includes a user interface displaying detailed learning outcomes, knowledge gap analyses, and tailored feedback, it does not embed internal technical controls specifically aimed at detecting or flagging anomalous outputs resulting from distributional shifts such as unexpected student responses or novel curricular content. Users are presented with raw and aggregated results alongside confidence scores derived from model softmax outputs; however, these confidence metrics are intended only as heuristic indicators rather than definitive anomaly detection mechanisms.
+
+To facilitate user interaction, the system supports direct querying and filtering of assessment outputs but does not provide explicit alerting features for atypical or errant model behavior. The interface incorporates standard visualization elements, such as heatmaps and trend lines, to enable deployers—primarily educators and institutional analysts—to interpret model outputs contextually. Notably, the system design emphasizes transparency of model-generated feedback rather than proactive technical supervision aids. Physical stop controls or emergency halting features are not applicable given the system operates within software-as-a-service frameworks and continuous data streams, where interruption would require deployer-level administrative action rather than system-initiated intervention.
+
+### Risk Management and Oversight Recommendations
+
+Risk mitigation measures focus on informing deployers of the AI system’s operational boundaries rather than enforcing direct intervention capabilities. The documentation advises deployers to exercise continual vigilance over system outputs, highlighting scenarios where distributional shifts might impair reliability, such as the introduction of curricula with substantially novel content or unconventional student answer formulations. These advisories recommend that human overseers cross-validate AI-generated learning recommendations with established pedagogical standards and empirical educator judgment.
+
+Assessment of risks linked to misinterpretation or blind reliance on AI feedback, including the potential erosion of educational equity or misalignment with individualized learner needs, is left to deployer-driven protocols. No structured, enforceable policies or automated safeguards pertaining to anomaly detection or bias correction are embedded within the system. Instead, the system positions human oversight as a critical, yet informally structured, process element, underpinned by deployer discretion rather than provider-mandated constraints or monitoring frameworks.
+
+### Capacity Building for Effective Human Oversight
+
+The system is delivered alongside reference materials outlining its functional scope and the limitations of its transformer-based analytic models, acknowledging sensitivity to data multiformity and highlighting the probabilistic nature of its output confidence. These materials aim to bolster the deployers’ ability to interpret results critically and to understand that inference accuracy is contingent upon data distributions consistent with training conditions. The help documentation cautions against over-reliance on AI-generated feedback and explicitly recommends manual verification steps where output plausibility is uncertain.
+
+Interpretation aids include documentation on the model’s tokenization and embedding processes, illustrative examples of typical versus atypical output patterns, and guidance on the application of model confidence scores in decision-making contexts. However, these aids do not extend to operational tooling for real-time anomaly detection, nor do they incorporate mechanisms to detect automation bias beyond narrative warnings.
+
+### System Output Control and Override Mechanisms
+
+The system’s operational framework assigns deployers full control over the use and disposition of AI outputs without automated constraints. This includes the ability to disregard, override, or supplement model-generated recommendations within deployed educational workflows. While software-level controls ensure that user actions to modify assessment interpretations or learning path adjustments are straightforward and logged, the system itself refrains from implementing automated override suggestions or intervention triggers.
+
+Emergency discontinuation of system use requires deployer administration at the infrastructure level; no in-application ‘stop’ button or emergency halt function has been incorporated, reflecting a risk profile assessed as moderate given the advisory rather than prescriptive nature of AI output application in educational settings.
+
+### Documentation of Data Processing and Bias Justification
+
+Processing activities related to personal data, including special categories necessary for bias identification, are documented in compliance with pertinent EU data protection regulations (Regulations (EU) 2016/679 and (EU) 2018/1725). Justifications for processing sensitive data subsets (e.g., learner demographic factors) focus on their utility in model training and validation phases to help understand population-level biases and performance variance. However, the system does not enforce real-time bias correction or dynamic adjustment based on this data during live operation.
+
+The provider’s documentation includes a general rationale that bias detection objectives require access to such data and that alternative data processing approaches would be insufficient for these purposes. However, no automated mechanisms or structural safeguards are implemented within the deployed system to detect or rectify bias outcomes dynamically once in use.
+
+---
+
+This documentation intentionally delineates provider decisions focusing on transparency and deployer responsibility to maintain oversight, without embedding technical controls for automatic anomaly detection or operational overrides under distribution shifts, consistent with the stated design approach.

@@ -1,0 +1,37 @@
+**Article 14**
+
+### Design and Implementation of Human Oversight Capabilities
+
+Insight Proctor Analytics has been developed with integrated human-machine interface tools tailored to enable effective oversight by natural persons during its operational use. The system incorporates a multi-tiered dashboard that visually synthesizes real-time analytical outputs—highlighting detected anomalies with confidence scores and contextual metadata. This design facilitates timely comprehension and verification by proctoring personnel monitoring multiple test sessions simultaneously. The interface allows authorized users to review synchronized video frames alongside flagged behavior indicators and underlying semantic content analysis. These features provide a comprehensive situational awareness necessary for natural persons to maintain active control over the system's operation and interpret outputs within the testing context.
+
+### Risk Mitigation through Human Oversight Objectives
+
+The oversight strategy prioritizes prevention and minimization of risks related to health, safety, and fundamental rights, specifically focusing on privacy and non-discrimination. The system’s detection algorithms are continuously benchmarked against large, balanced datasets representing diverse student demographics across multiple academic institutions to reduce biases. Oversight is structured to address risks arising even when automated detection yields false positives or negatives, ensuring that proctors can intervene by validating flagged incidents. This human-in-the-loop approach is essential for handling edge cases where contextual understanding beyond AI capabilities is required, thus mitigating risks associated with automated decisions impacting students’ academic evaluations.
+
+### Proportionate Oversight Measures Aligned with System Autonomy and Usage Context
+
+Given Insight Proctor Analytics’ level of autonomy—automatic real-time analysis without autonomous decision-making authority—the oversight measures integrate both internal system controls and external operational protocols:
+
+(a) **Built-in Technical Oversight Features:** Prior to deployment, the system includes an "Intervention Panel" enabling proctors to pause or stop data processing immediately via a dedicated stop control, safely suspending analysis while preserving data integrity. Additionally, anomaly detection alerts are calibrated with adjustable sensitivity parameters, allowing providers to tailor alert thresholds appropriate to different exam formats, thereby balancing detection accuracy with operational tolerance for false alerts.
+
+(b) **Recommended Deployment Oversight Practices:** Meridian Educational Technologies provides comprehensive guidelines for deployers, recommending continuous human supervision during system use, mandated proctor presence, and detailed logs review to detect automation bias or malfunction. These deployment instructions emphasize training proctors on interpreting system outputs with caution and awareness of limitations documented in user manuals.
+
+### Empowering Natural Persons for Informed and Effective Oversight
+
+To enable proctors to properly understand the system’s capabilities and constraints, Meridian Educational Technologies supplies detailed documentation and interactive training modules. These resources cover:
+
+(a) **System Capabilities and Limitations:** The documentation clearly explains the scope of AI analytics, including the types of behaviors detectable, confidence intervals, and the potential for false positives due to environmental factors such as camera angle or overlapping signals in crowded exam rooms.
+
+(b) **Monitoring and Anomaly Detection:** The interface supports anomaly detection visualization and provides real-time alerts, enabling proctors to identify and investigate irregularities promptly. Historical incident logs and video snapshots assist in retrospective audits.
+
+(c) **Mitigating Automation Bias:** Training highlights risks of automation bias by emphasizing that system outputs are advisory and require human validation. Proctors are instructed to combine system alerts with observational judgment and exam protocols, preventing overreliance on AI conclusions.
+
+(d) **Correct Interpretation of Outputs:** Interpretation tools such as heatmaps, semantic overlays, and confidence scoring are made accessible with explanatory notes to aid proctors in distinguishing between likely violations and artifacts. System transparency is ensured through explanatory summaries accompanying alerts.
+
+(e) **User Intervention and Override Capabilities:** The user interface includes explicit controls allowing proctors to override or disregard AI-generated alerts and recommendations on a case-by-case basis. Furthermore, the "stop" button feature halts system activity without data loss, enabling immediate human control over operation.
+
+(f) **Data Processing Records and Bias Detection Justification:** In compliance with data protection obligations, the system maintains exhaustive records of processing activities, including explicit documentation when special category personal data (e.g., student demographic details) are processed strictly to detect and correct potential biases within the AI models. These records demonstrate the necessity of such data for effectiveness and that alternative non-sensitive data could not achieve equivalent bias mitigation, supporting auditability and data protection transparency.
+
+---
+
+This ensemble of design choices and operational provisions ensures that natural persons entrusted with oversight are well-equipped to monitor, interpret, and intervene in the system's operation commensurately with the risks and specific context of academic examination monitoring.

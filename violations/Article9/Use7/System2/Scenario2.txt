@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable. In identifying the most appropriate risk management measures, the following shall be ensured: (a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+Risk mitigation via design must prioritize feasible technical modifications that reduce or eliminate identified risks before relying on external or procedural mitigations. This means adjusting model architecture, input feature selection, or data balancing to minimize risks like biased credit denial or incorrect creditworthiness estimation.  
+
+[c] **Violation:**  
+The Consumer Credit Transformer mainly mitigates bias risks by adding post-hoc score adjustments and disclaimers in user manuals rather than redesigning the encoding or attention mechanisms to reduce input bias or feature leakage affecting protected groups. No attempts are made to retrain or recalibrate the core encoder-only transformer architecture to address skewed representations of minority applicants.  
+
+[d] **Justification:**  
+This violation is realistic and subtle because post-hoc fixes may reduce apparent risks but do not address fundamental architectural or data-related bias, which remain embedded in model behavior. External mitigations alone fail to meet the requirement of reducing risk “in as far as technically feasible” through design, potentially leaving unacceptable residual risks.  
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Data used for training must cover the diverse population of applicants realistically expected for the recruitment system’s use cases, reflecting different geographical regions, socio-economic backgrounds, job levels, and functional roles. The datasets must be statistically representative to ensure that predictions are valid across all subgroups likely to use or be affected by the system.  
+
+[c] **Violation:**  
+The system’s training data largely encompasses candidates from a limited geographic region and primarily entry-level roles drawn from prior corporate hiring cycles, failing to include sufficient data on candidates applying for senior roles or from underrepresented regions within the enterprise’s footprint. Consequently, the model underperforms and produces biased scores for candidates outside these narrow segments.  
+
+[d] **Justification:**  
+This deficiency violates the representativeness and completeness criteria because the training set does not match the intended operational context of the system, which serves a multinational enterprise with diverse roles. The violation is subtle because the model may still perform sufficiently on in-sample candidate profiles, yet it produces skewed decisions impacting geographically or functionally distinct applicants, undermining reliability and fairness in real deployment.  
+
+---

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+The risk management process must be active and cyclical, involving periodic reassessment and updates to risk identification, evaluation, and mitigation measures based on new data or changing use contexts throughout the deployment, maintenance, and decommissioning phases of the AI system.  
+
+[c] **Violation:**  
+Insight Proctor Analytics conducts a thorough risk assessment only once before deployment and does not integrate post-deployment feedback in a formal, scheduled manner; risk management updates are ad hoc and triggered only by external complaints rather than as part of a continuous review cycle.  
+
+[d] **Justification:**  
+This subtle omission means the system may fail to detect emerging risks or degradation in model performance over time, particularly as exam contexts or student behavior patterns evolve, breaching the requirement for a continuous iterative risk management process throughout the lifecycle while appearing compliant due to initial comprehensive documentation.

@@ -1,0 +1,39 @@
+**Article 15**
+
+**Design Decisions Affecting Accuracy, Robustness, and Lifecycle Performance**
+
+Contractual Separation Insight (CSI) integrates an ensemble of random forest classifiers with large language model (LLM) components, leveraging a hybrid architecture to synthesize quantitative workforce metrics with qualitative natural language policy analysis. The random forest ensemble was trained on an internally curated dataset of approximately 250,000 anonymized HR records spanning diverse industries within the EU, accompanied by labeled termination outcomes verified by legal experts. This component achieves a baseline classification accuracy of 89% (F1-score) on withheld test sets, as validated through five-fold cross-validation.
+
+The LLM, derived from a proprietary transformer-based architecture with 1.2 billion parameters, was trained on a corpus comprised of 5 million policy documents, labor laws, and compliance case studies in multiple EU languages, aiming to interpret ambiguous contract and labor policy texts. These models facilitate the conversion of policy language into structured representations consumable by the predictive analytics pipeline.
+
+To reconcile the distinct nature of numeric analytics and unstructured text interpretation, the system combines random forest outputs and LLM-derived policy insights through a weighted decision aggregation module. However, due to periodic LLM component updates performed approximately quarterly, and conducted without intermediate regression testing cycles on production inputs, minor variations in policy text interpretation have led to inconsistencies in compliance recommendation accuracy over time. This design choice reflects a trade-off prioritizing model currency over continuous operational consistency.
+
+The system is deployed within a containerized environment orchestrated on Kubernetes clusters with automated scaling capabilities. No continuous performance monitoring mechanisms are currently employed post-deployment, consistent with contractual constraints and data privacy requirements. Likewise, fallback redundancy or failover mechanisms for the LLM or ensemble classifiers have not been implemented; the system operates singularly without backup models or parallel inference pathways.
+
+**Accuracy Metrics Declaration and Measurement Approach**
+
+The instructions for use specify that the system’s classification accuracy, as measured by F1-score, typically ranges between 85% and 90%, dependent on the specificity of policy text inputs and data domain. Accuracy evaluations are conducted based on offline validation datasets reflecting common contract termination scenarios, with metrics periodically updated following each LLM retuning cycle. Users are explicitly informed that system outputs represent decision-support recommendations rather than final legal determinations, and that performance consistency may fluctuate across releases.
+
+No formal benchmarking against external standards or metrology authorities has been incorporated due to the bespoke nature of the LLM’s policy interpretation function and the absence of standardized benchmarks for combined policy-text and behavioral analytics in contract termination contexts as of the last model update window.
+
+**Robustness and Resilience Measures**
+
+CSI’s robustness derives primarily from the random forest ensemble’s inherent tolerance to feature noise and sparse data anomalies, supplemented by preprocessing steps including outlier detection and normalization. For the LLM, robustness is facilitated by prompt engineering and domain-specific fine-tuning aiming to reduce model hallucinations and improve semantic stability in policy interpretation.
+
+However, no technical redundancy, such as backup workflows or parallel model gating, is employed to mitigate potential LLM misinterpretation or classifier faults. Consequently, output inconsistencies related to evolving model behavior post-LLM update are a known limitation. The system’s operational environment incorporates standard software fault tolerance (container restarts, health checks) but does not dynamically address internal output inconsistencies or enable rollback to prior LLM versions automatically.
+
+The system does not perform continuous learning or adaptation once deployed. This design prevents feedback loops where inaccurate predictions could bias future outputs but places emphasis on periodic offline retraining and manual review to mitigate model drift. Organizationally, users are instructed to corroborate system outputs with human expertise, particularly when inconsistent or borderline recommendations arise.
+
+**Cybersecurity and Protection Against System Manipulation**
+
+CSI architecture incorporates standard security best practices suited to the 2025 corporate IT environment. Communications between client interfaces and backend inference APIs are secured with TLS 1.3 encryption. Role-based access control (RBAC) governs user permissions to restrict system use to authorized HR and compliance personnel only.
+
+Technical countermeasures address data poisoning risks by restricting training dataset updates to controlled ingest pipelines with audit trails and data provenance mechanisms. The LLM training process employs differential privacy techniques at ϵ=4 to limit leakage of sensitive data. Model integrity is verified via cryptographic checksums at version deployment.
+
+Defenses against adversarial text inputs focus on input sanitation and syntactic validation before LLM processing, reducing malformed or adversarial prompt injection attempts. Detected anomalies trigger manual review of flagged recommendations. The system’s infrastructure is monitored for cybersecurity threats using enterprise-standard intrusion detection systems (IDS) but does not employ AI-specific adversarial attack detection models in real-time.
+
+Given the absence of continuous performance monitoring or fallback redundancy, mitigation of attacks that might exploit transient LLM vulnerabilities relies on operational measures including human oversight and periodic model retraining rather than automated technical containment features.
+
+---
+
+This documentation detail reflects the current design limitations as well as implemented measures to balance timely model updates and operational integrity within contractual and operational constraints.

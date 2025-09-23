@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+High-risk AI systems must use data sets that adequately represent the diversity of the target population, including variations in demographic, cultural, and behavioral patterns specific to educational institutions, to avoid skewed performance or discriminatory false positives.  
+
+[c] **Violation:**  
+The training data severely underrepresents students from multilingual or multicultural backgrounds prevalent in some examination centers, which leads to disproportionately high anomaly scores for legitimate behavior deviations in those groups.  
+
+[d] **Justification:**  
+This subtle bias arises from lack of sufficient representation and proper statistical balance in the datasets relative to the intended user base, potentially causing discriminatory impacts while still superficially appearing balanced due to overall dataset size or aggregation.  
+
+---

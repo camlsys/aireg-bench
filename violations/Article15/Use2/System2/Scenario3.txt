@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."
+
+[b] **Guideline:**  
+To ensure cybersecurity, high-risk AI systems need layered defense mechanisms such as input anomaly detection to identify adversarial examples, integrity checks on model parameters to detect poisoning, and secure update channels. Systems should actively monitor for attack signatures and respond to suspicious activity with alerting or fail-safe modes.
+
+[c] **Violation:**  
+Pipeline Safety Guardian lacks input validation for subtle crafted adversarial perturbations on sensor data, allowing skilled attackers to cloak real anomalies or trigger false alarms without raising suspicion. Moreover, it uses pre-trained CNN components downloaded without integrity verification, exposing it to model poisoning during updates.
+
+[d] **Justification:**  
+This violation is a nuanced security flaw that can compromise system trustworthiness without obvious signs of tampering. Adversarial attacks and poisoned components are increasingly sophisticated and realistic threats in industrial AI systems, and neglecting specific technical defenses contravenes the cybersecurity resilience requirements of the EU AI Act.

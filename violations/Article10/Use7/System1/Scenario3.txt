@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection;"  
+
+[b] **Guideline:**  
+Providers must ensure that all data used is collected transparently and in alignment with the original consent and intended use, including compliance with GDPR, documenting any repurposing or secondary usage of personal data. Data provenance must be clear to avoid unauthorized or misleading application contexts that could undermine fairness and legality.  
+
+[c] **Violation:**  
+Meridian Financial Analytics incorporates third-party consumer purchasing behavior data originally gathered for marketing purposes without verifying that data subjects consented to its use for credit evaluation. This repurposing without clear alignment of original data collection intent breaches compliance with GDPR requirements and relevant data governance protocols.  
+
+[d] **Justification:**  
+The violation is subtle since data sharing and repurposing often occur within financial ecosystems, and the original dataset appears legitimate. However, repurposing data without ensuring the original data collection purpose covers credit evaluation risks violating transparency and consent requirements explicit in data governance, which is a core aspect of Article 10 compliance.

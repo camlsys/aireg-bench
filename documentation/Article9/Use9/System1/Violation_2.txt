@@ -1,0 +1,99 @@
+**Article 9**
+
+---
+
+**Establishment and Scope of the Risk Management System**
+
+Judicial Insight Assistant (JIA) is subject to a comprehensive risk management system developed by Judicial Insight Technologies Limited. This system is designed specifically to address technical and cybersecurity risks associated with the hybrid AI architecture, comprising transformer-based encoder-decoder models (for semantic legal text understanding) and gradient boosted decision trees (GBDT) (for fact pattern classification). The risk management framework applies throughout the full lifecycle of JIA, from initial design and model training to deployment, updates, and post-market performance monitoring.
+
+The risk management process is documented in detail and operates as a continuous, iterative cycle, involving regular scheduled reviews every six months and unscheduled reviews triggered by software updates, incident reports, or changes in relevant legal standards. The scope explicitly focuses on risks potentially affecting the system’s accuracy, reliability, and resilience against cybersecurity threats, such as adversarial input manipulations and data poisoning.
+
+---
+
+**Identification and Analysis of Risk Categories**
+
+Risk identification has prioritized technical accuracy in fact pattern classification and the integrity of legal text parsing, as these are fundamental to the system's primary functionality. The provider has performed extensive threat modelling focused on:
+
+- Model drift and degradation in language understanding due to changes in legal terminology or novel case types,
+
+- Susceptibility of GBDT classifiers to imbalanced input distributions,
+
+- Cybersecurity vulnerabilities including unauthorized access to datasets and algorithmic model theft.
+
+Risk analyses are informed by automated performance logging on validation sets derived from a corpus of 3 million annotated legal documents, spanning 15 years of case law across multiple EU jurisdictions. Benchmarking against peer systems shows a median classification accuracy of 91.4% and a natural language inference F1-score of 89.8% under controlled testing conditions.
+
+Notably, risk scenarios concerning possible misclassifications leading to biased or disproportionate impacts on minority groups have not been incorporated into formal risk identification or impact analysis phases. This reflects a provider decision to construe risk primarily through a technical performance and cybersecurity lens. Consequently, scenarios wherein erroneous fact pattern classifications might cause skewed legal interpretations or amplify systemic biases are absent from documented risk registers.
+
+---
+
+**Estimation and Evaluation of Foreseeable Use and Misuse Risks**
+
+The provider has implemented probabilistic risk estimation techniques leveraging stress-test datasets under intended-use conditions, measuring the likelihood and severity of technical failures. Under realistic usage models, residual error rates for fact pattern classification are estimated at 8.6% with a 95% confidence interval. Misuse cases, such as deliberate input obfuscation or injection of contradictory case facts, have been simulated using adversarial example generation and found to have elevated error probabilities up to 18.3%.
+
+Estimated risk primarily addresses performance degradation impacts on system output consistency and potential cybersecurity breach consequences. The risk assessment methodology employs Monte Carlo simulations grounded on technical fault models but explicitly excludes evaluation of downstream societal or rights-based impacts such as disparate legal outcomes affecting vulnerable demographic groups.
+
+---
+
+**Post-Market Data Analysis and Risk Reevaluation**
+
+Post-market monitoring processes include continuous telemetry collection on system inputs, outputs, and user interaction logs within deployed environments. The provider accesses anonymized usage statistics and error reports aggregated monthly from subscriber courts, processed using automated anomaly detection algorithms to identify statistical deviations beyond established baselines.
+
+While this monitoring effectively detects technical anomalies, performance regressions, or security incidents, it does not currently integrate socio-demographic or equity-related metrics. Data capturing user-level protected characteristics or minority status is not collected, consistent with data minimization and privacy policies, thereby limiting the capacity to detect biased outcomes linked to fact classification errors.
+
+Risk management updates following post-market review prioritize algorithmic retraining on expanded or recalibrated legal corpora and fortification of cybersecurity defenses. No procedures are in place for identification or mitigation of legally or socially disparate impacts emergent from classification inaccuracies.
+
+---
+
+**Targeted Risk Management Measures and Their Technical Rationale**
+
+In alignment with the focus on technical and cybersecurity risks, the provider has adopted multiple targeted mitigation strategies:
+
+- Model robustness enhancement through ensemble learning combining transformer and GBDT outputs, reducing variance in fact classification;
+
+- Regular model retraining every quarter incorporating newly adjudicated cases up to six months prior to update release;
+
+- Implementation of adversarial training protocols using synthetic inputs to improve resilience against manipulated or ambiguous case facts;
+
+- Cybersecurity measures including multi-factor authentication, data encryption in transit and at rest, and continuous intrusion detection systems safeguarding model training pipelines and data repositories;
+
+- Comprehensive documentation and technical user guidance supporting deployers in appropriate interpretation of system outputs, emphasizing that JIA is an assistive tool.
+
+The system’s design and risk management emphasize minimizing technical failures and unauthorized access risks but do not extend to analyzing or mitigating potentially biased legal reasoning outcomes resulting from misclassifications.
+
+---
+
+**Testing for Performance Consistency and Compliance Verification**
+
+JIA undergoes rigorous testing at multiple stages:
+
+- Developmental testing is performed continuously on partitioned subsets amounting to 500,000 unique legal cases, validating both semantic understanding and classification accuracy prior to each version release;
+
+- Pre-market testing against benchmark datasets covering 300,000 cases with balanced representation across multiple jurisdictions;
+
+- Real-world pilot tests conducted with three judicial offices over six months, simulating authentic user scenarios and measuring key performance indicators including response latency, accuracy, and error rates.
+
+Testing protocols employ specific quantitative thresholds such as minimum classification accuracy of 90%, maximum false positive rate below 4%, and system uptime exceeding 99.9%. Compliance verification reports confirm adherence to these criteria for all current public releases.
+
+Notably, no testing modalities have been implemented to evaluate disparate impacts on minority litigants or to assess the propensity of misclassifications contributing to systemic bias or discrimination within judicial outcomes.
+
+---
+
+**Special Considerations Regarding Vulnerable Groups**
+
+Due consideration has been given to the potential for adverse impacts on users under 18 years old, with the system explicitly excluding juvenile case types from its training and operational scope in accordance with project requirements and data usage policies.
+
+Although the provider recognizes various vulnerable groups among end-users — such as those with limited legal literacy — the risk management system does not incorporate targeted mechanisms to detect or address risks of disproportionate adverse effects arising from misclassification or erroneous legal interpretations impacting minority or marginalized populations.
+
+Thus, vulnerability assessments focus solely on technical reliability and cybersecurity threat vectors rather than on the social or fundamental rights dimensions of AI-driven legal support.
+
+---
+
+**Harmonization with Other Relevant Risk Management Procedures**
+
+Where subscribers or deployers fall under other Union law provisions requiring internal risk management practices, the provider’s system-level risk management outputs, including incident reports and performance metrics, are structured to facilitate integration with those entities’ compliance frameworks.
+
+The documentation and technical risk mitigation measures, being primarily technical and cyber-centric, may be incorporated by deployers into broader organizational risk management schemes, without extending to specific analysis of fairness or anti-discrimination risks within the system itself.
+
+---
+
+This documentation reflects Judicial Insight Technologies Limited’s technical decisions and evidence regarding the risk management system for Judicial Insight Assistant, centering on accuracy and cybersecurity dimensions while not formally addressing socio-legal bias risks related to fact pattern classification.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."
+
+[b] **Guideline:**  
+The risk management process must explicitly assess risks related to vulnerable groups, including children, analyzing how failures or biases in prioritization might disproportionately delay emergency response for these groups, and apply dedicated mitigation strategies if such risks are identified.
+
+[c] **Violation:**  
+Priority Response Analytics’ risk assessment omits any targeted analysis of potential adverse effects on minors or other vulnerable populations, despite distinct emergency categories involving children and known complexities in dispatch notes referencing these groups, resulting in no tailored mitigation or monitoring mechanisms addressing their specific risk profile.
+
+[d] **Justification:**  
+This omission is realistic and subtle because vulnerable group considerations may be overlooked in complex multi-domain AI systems unless explicitly mandated and operationalized in risk management. It compromises the system’s compliance by ignoring an essential factor of Article 9 that demands proactive measures for vulnerable persons, risking discriminatory impacts or harm.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems... High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."  
+
+[b] **Guideline:**  
+If continuous learning capabilities are enabled after deployment, the system must incorporate strict bias detection and correction methods to prevent perpetuation or amplification of biased legal interpretations, and implement safeguards to isolate and mitigate feedback loops arising from user inputs or corrections. The system should monitor for emerging drift in output quality or fairness and intervene automatically or flag for operator review.  
+
+[c] **Violation:**  
+Legal Context Navigator’s post-deployment updates rely on unfiltered interaction logs from judicial users without bias monitoring or feedback loop controls, creating a subtle drift where the system gradually prioritizes certain legal interpretations favored by more frequent user queries. This leads to reinforcement of particular jurisprudential viewpoints over others, entrenching bias and narrowing the scope of retrieved precedent over time.  
+
+[d] **Justification:**  
+Because the system adapts based on biased or skewed user inputs without mitigation, it breaches Article 15(4)’s requirement to reduce risks to output fairness from feedback loops. The violation is subtle as initial outputs remain credible, but the insidious accumulation of bias undermines robustness and impartiality, and is plausible given the common challenges in managing continual learning in large language models used within sensitive domains.

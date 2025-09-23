@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The logging mechanism must be continuously active and automatic, capturing all relevant events without requiring manual triggers, ensuring immutable and comprehensive logs stored securely throughout the system’s operational lifetime.
+
+[c] **Violation:**  
+The system’s logging feature is implemented to activate only during select high-impact decision processes, such as contract termination recommendations, but fails to log events during intermediary analysis stages where input data or model parameters are updated or changed.
+
+[d] **Justification:**  
+This subtle logging gap means some changes and intermediate decisions remain unrecorded, violating the automatic and comprehensive nature required by the regulation. Such incomplete logging could hinder later accountability without being easily detectable by typical audits, thus breaching Article 12(1).
+
+---

@@ -1,0 +1,31 @@
+**Article 14**
+
+### Design and Development of Human Oversight Capabilities
+
+The Competency Evaluation Framework (CEF) employs gradient boosted decision trees (GBDT) models that are inherently interpretable through feature importance scores and decision path visualizations. These design choices facilitate direct human oversight by enabling instructors and administrators to comprehend the system’s decision rationale in real time. User interfaces include dashboards that dynamically present competency scores alongside key contributing features, such as specific performance metrics or learner interaction patterns, allowing users to detect unusual or unexpected results promptly.
+
+To support effective supervision during system use, the CEF incorporates interactive tools allowing instructors to drill down into individual learner profiles, review temporal trends, and compare predicted mastery levels against resting performance baselines. This approach ensures that the human-machine interface toolset is tailored for both overview and granular analysis, accommodating varying user expertise. System logging captures all model inputs, outputs, and decision explanations, providing a comprehensive audit trail to support oversight and retrospective analysis.
+
+### Objectives and Scope of Human Oversight Measures
+
+Human oversight is structured to mitigate risks related to erroneous competency assessments, which could otherwise lead to inappropriate curriculum adaptations or certification decisions, thereby impacting trainees’ career outcomes and fundamental education rights. Because the CEF outputs influence learning pathway decisions, real-time human review is critical to preventing harm through false negatives (underestimation of skill mastery) and false positives (overestimation).
+
+Oversight measures explicitly address foreseeable misuse scenarios, including overreliance on automated scores without contextual judgment, incorrect interpretation of competency levels arising from atypical learner profiles, or system degradation due to sensor malfunctions or data inconsistencies. These risks persist despite technical measures such as robust validation and ongoing model recalibration; thus, strengthening human-in-the-loop processes complements automated error detection.
+
+### Risk-Adjusted Oversight Strategies and Autonomy Considerations
+
+Given the moderate autonomy level of the CEF—the system autonomously processes structured data and presents competency scores but leaves final decision-making to instructors—the human oversight framework incorporates both technical and procedural safeguards. Provider-designed oversight measures built into the system include: fail-safe alerts triggered by anomalous data patterns detected via statistical monitoring; interpretability modules that surface confidence intervals and model uncertainty; and an interactive "stop" mechanism enabling instructors to withhold system recommendations when discrepancies arise.
+
+Additionally, comprehensive user manuals and training resources are furnished with the system to ensure deployers implement appropriate organizational controls, including scheduled model performance audits, periodic human review of decision logs, and escalation protocols for flagged irregularities. These deployer-implemented measures are guided by provider recommendations issued at the time of placing the system on the market, consistent with the contextual risk profile typical in vocational educational settings.
+
+### Empowerment of Human Supervisors to Effectively Oversee System Operation
+
+The system’s deployment package includes detailed documentation on the GBDT model’s capabilities and limitations, emphasizing known boundary conditions—such as reduced reliability with insufficient training data or feature drift caused by changing learner populations. This documentation facilitates a nuanced understanding among instructors of the system’s operational envelope.
+
+Interface design features specifically target mitigation of automation bias by requiring explicit user acknowledgement of competency results before acceptance and by providing comparative analytics that juxtapose automated assessments with historical human evaluations. The system integrates gradual alerting procedures to enhance situational awareness of potential model failures or atypical outputs.
+
+Interpretation tools embedded in the interface include interactive feature importance explanations, counterfactual scenario generators, and uncertainty visualizers, enabling users to contextualize the system’s outputs accurately. These tools support instructors in deciding when to override or disregard the automated competency assessment, informed by domain expertise and learner-specific insights.
+
+A prominently positioned “stop” button within the user interface permits immediate suspension of automated recommendations and algorithmic processing, placing control firmly in the hands of the overseeing natural person. This mechanism safely transitions the system into a non-operational state while preserving all data records and logs for subsequent review.
+
+Finally, the system’s data processing activities are fully documented in the accompanying Data Protection Impact Assessment (DPIA) and Records of Processing Activities (RoPA), detailing the strict necessity of processing sensitive educational data to detect and mitigate algorithmic biases. This includes justification of why alternative data types could not replace personal data in fulfilling fairness and accuracy objectives, ensuring full transparency and accountability with respect to data governance.

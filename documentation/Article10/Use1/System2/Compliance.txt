@@ -1,0 +1,51 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Guardian Signal Controller development follows stringent data governance and management protocols tailored to the system’s intended purpose of enhancing safety and traffic flow at urban intersections. The training, validation, and testing data sets stem from a multi-source collection pipeline, combining:
+
+- Over 2 million hours of labelled traffic video recordings from 15 diverse European cities, covering various weather conditions, lighting (day/night), and traffic densities;
+- Sensor data streams including lidar, radar, and inductive loop detectors synchronized with video feeds;
+- Traffic incident logs and manually annotated event markers indicating anomalies such as near-misses, red-light violations, and pedestrian conflicts.
+
+This multi-modal dataset was collected primarily for traffic management by municipal authorities, with lawful data acquisition agreements in place, respecting the original data collection purposes consistent with traffic safety objectives. Data annotation was carried out by certified experts using a standardized schema ensuring consistency in labelling visual objects (vehicles, pedestrians, cyclists), anomaly events, and contextual signals such as traffic light statuses.
+
+Data preparation operations included cleaning (removing corrupted frames and sensor anomalies), enrichment (adding temporal context metadata like time-of-day and weather), and aggregation, ensuring the temporal and spatial alignment of video and sensor streams. Assumptions were explicitly formulated to regard the annotations and sensor signals as accurate reflections of traffic states relevant to safety-critical decision-making, based on validated urban traffic engineering models and prior accident analysis research.
+
+Comprehensive assessments confirmed the availability and quantity of data exceeded requirements needed for robust CNN feature training (>1.5 million labelled frames) and Random Forest classifier training (>500,000 annotated event samples). Suitability was verified through a series of performance benchmarks, demonstrating stable model generalization across diverse intersection geometries and varying traffic patterns.
+
+Potential biases were systematically examined relating to over- or under-representation of traffic participants by age groups, vehicle types, and geographic urban settings. Specific attention was given to ensuring that vulnerable user groups such as cyclists and pedestrians appear sufficiently in the dataset to mitigate safety risks. For example, pedestrian crossing events accounted for 22% of annotated anomalies, approximating observed usage statistics.
+
+Appropriate bias detection, prevention, and mitigation measures include re-sampling underrepresented classes, applying fairness-aware feature weighting in classifier training, and continuous post-deployment monitoring of model outputs to flag performance drifts related to demographic or situational biases. Identified data gaps — such as limited data on night-time pedestrian behavior in under-illuminated intersections — have been addressed through targeted additional data collection campaigns, resulting in an expanded night-time dataset with 400,000 new frames annotated.
+
+### Dataset Relevance, Representativeness, and Quality
+
+All datasets employed meet relevance and representativeness requirements relative to the specific use case of real-time traffic anomaly detection and accident prediction at intersections. The datasets combine high-resolution video (4K @ 30fps) and synchronized sensor data to capture fine-grained spatial and temporal traffic dynamics.
+
+Error rates in annotation accuracy were assessed via cross-validation with multiple annotators yielding an inter-annotator agreement score exceeding 0.92 Cohen’s kappa, reflecting highly consistent labels. Completion rates exceed 99.7% following stringent exclusion of corrupted or incomplete data samples.
+
+Statistical properties such as class distributions, temporal coverage (24/7 across seasons), and geographic diversity specifically address the variation in traffic behaviors. For instance, data encompass a balanced distribution across intersection types (signalized crossroad, T-junctions, roundabouts) to capture functional differences. Continuous dataset updates incorporate recent urban developments and sensor upgrades, ensuring the training data remain current and reflective of operational conditions.
+
+### Adaptation to Specific Operational Contexts
+
+The data sets explicitly incorporate the geographic, functional, and behavioral characteristics typical of the intended deployment environments within the European Union. This includes data subsets collected from intersections with specific infrastructural elements such as dedicated bicycle lanes, pedestrian islands, and advanced traffic signaling systems.
+
+Contextual metadata tagging supports scenario-specific model calibration to optimize detection sensitivity and specificity in distinct settings. For example, urban centers with high pedestrian density present distinct feature distributions compared to suburban intersections, informing tailored Random Forest decision thresholds.
+
+### Processing of Special Categories of Personal Data
+
+While the Guardian Signal Controller system processes only incidental personal data inherent in video streams, no special categories of personal data as defined under EU law (e.g., health or biometric data) are used in training or validation datasets.
+
+Bias detection and correction efforts rely on anonymized and pseudonymized data obtained through privacy-preserving preprocessing measures, including automatic blurring of faces and vehicle license plates prior to annotation and model training.
+
+Given the effectiveness of these privacy-preserving techniques and the absence of necessity for special categories of personal data to identify or mitigate bias, no special category data processing was conducted under the exceptional conditions described in Article 10(5).
+
+### Application of Data Quality Measures to Testing Data Sets
+
+For the Guardian Signal Controller, testing data sets are subjected to the same rigorous governance practices outlined above, reflecting their critical role in validating model generalization and safety performance prior to deployment.
+
+These testing sets include over 300,000 previously unseen annotated frames spanning multiple geographic zones and traffic scenarios and were strategically held separate from training and validation sets to prevent data leakage.
+
+Extensive testing protocols include performance evaluation under edge cases such as weather anomalies, sensor failures, and unexpected traffic behaviors, with results documented to confirm the system’s robustness and adherence to safety specifications.
+
+The consistency of data governance, data quality criteria, and contextual relevance in both training and testing stages ensures the system’s alignment with high-risk AI system development standards.

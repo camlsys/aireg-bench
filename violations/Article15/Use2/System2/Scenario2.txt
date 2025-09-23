@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. ... High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."
+
+[b] **Guideline:**  
+When employing continuous learning after deployment, systems should integrate mechanisms that detect and mitigate feedback loops caused by inaccurate human interventions or false-positive alerts from other interconnected systems, thus preventing training data corruption or bias amplification.
+
+[c] **Violation:**  
+Pipeline Safety Guardian performs automated periodic retraining using operational data without filtering or validating field technician corrections and feedback. Erroneous manual overrides and false anomaly labels are inadvertently incorporated into the training data, biasing the model towards over-triggering alerts in stable conditions.
+
+[d] **Justification:**  
+This subtle violation results in feedback loops that degrade robustness and inflate false positives, contravening the requirement to reduce bias propagation in continuous learning settings. It is plausible as human corrective feedback is often noisy, and failing to validate it can cause gradual system drift that remains unnoticed initially.

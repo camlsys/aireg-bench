@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+Where technically feasible, the AI system must be designed or developed to reduce or eliminate identified risks through model adjustments, enhanced feature selection, bias mitigation techniques, or design choices that minimize harm prior to deployment.  
+
+[c] **Violation:**  
+Despite identifying that certain learner subgroups systematically receive lower competency scores due to skewed training data, the provider opts for transparency of outputs rather than adjusting model design or applying bias correction techniques. Consequently, risk reduction through design choices is insufficient even though feasible methods exist.  
+
+[d] **Justification:**  
+Choosing to rely solely on transparency instead of actively redesigning the model to reduce bias is a subtle non-compliance since it appears to address risks through information provision but fails to mitigate them technically. This occurs realistically when organizations underestimate the importance of proactive risk elimination as opposed to reactive risk communication.

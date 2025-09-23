@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"4. Data sets shall take into account, to the extent required by the intended purpose, the characteristics or elements that are particular to the specific geographical, contextual, behavioural or functional setting within which the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Experts must ensure datasets reflect local labor market conditions, legal frameworks, cultural norms, and job classification standards corresponding to the jurisdictions and industries where the AI system will operate. This includes local language nuances, job title variations, and regulatory requirements impacting hiring practices to guarantee the system’s outputs are contextually valid and non-discriminatory.  
+
+[c] **Violation:**  
+Sterling Recruitment Technologies deploys the Talent Insight Model across multiple EU countries using a largely generic training dataset derived from international sources without tailoring to specific national languages, job taxonomies, or legal hiring criteria. As a result, certain country-specific qualifications or culturally nuanced terminology are misinterpreted or ignored, leading to inconsistencies in candidate ranking.  
+
+[d] **Justification:**  
+Failing to incorporate geographical and contextual settings violates Article 10(4) because the system cannot reliably capture local recruitment realities, which impairs fairness and effectiveness. This violation is subtle as cross-border deployment pressures may encourage one-size-fits-all datasets, and the issues emerge only in nuanced mismatches that do not trigger overt system faults but can disadvantage candidates depending on locale.

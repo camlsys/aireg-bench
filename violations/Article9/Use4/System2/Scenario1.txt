@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+The provider must establish a documented process that ensures regular, scheduled reviews of the AI system’s risk profile after deployment, incorporating new data on system performance and emerging risks in real operational contexts. This includes periodic updates to risk assessments, mitigation measures, and adaptation of the system as new types of misuse or vulnerabilities emerge in actual examination settings.  
+
+[c] **Violation:**  
+Veritas Learning Systems conducts an initial risk assessment and design-phase risk management for the Academic Compliance Monitor but fails to implement structured post-deployment risk reviews or updates despite accruing new user data over several exam cycles. The risk management process remains static, relying solely on pre-launch findings without adapting to observed changes such as shifts in student cheating strategies or varying ambient noise conditions.  
+
+[d] **Justification:**  
+This subtle breach ignores the iterative nature mandated by Article 9(2) and undermines the system’s ability to adapt to real-world risks that evolve over time. Because exam environments and student behaviors can change, continuous review is necessary for effective risk mitigation; the absence of such dynamic lifecycle risk management is a plausible oversight in operational risk governance, rather than a blatant failure.  
+
+---

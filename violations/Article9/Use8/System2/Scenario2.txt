@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable."  
+
+[b] **Guideline:**  
+Residual risks after mitigation must be quantitatively assessed against clear criteria for acceptability that consider the severity and likelihood of harm to health, safety, or fundamental rights. Providers should demonstrate that measures such as model tuning, threshold adjustments, or fallback procedures reduce risk to levels acceptable by domain-specific standards, balancing safety with operational effectiveness.  
+
+[c] **Violation:**  
+The prioritization engine’s dynamic thresholds for dispatch decisions are tuned to optimize rapid response at the expense of a small but known false negative rate for certain vulnerable groups (e.g., elderly or disabled), without formally quantifying or justifying acceptability of those residual risks, nor providing tailored mitigations for these cases.  
+
+[d] **Justification:**  
+This subtle non-compliance arises because the provider accepts some level of misclassification without transparent risk quantification or justified residual risk acceptability. The risk measurement lacks the rigor and documentation expected under Article 9(5), especially in a life-critical setting where even low-probability failures affecting vulnerable populations must be managed explicitly.  
+
+---

@@ -1,0 +1,49 @@
+**Article 14**
+
+**Design for Effective Human Oversight**
+
+The Consumer Credit Transformer (CCT) has been architected with a streamlined output interface orientated towards final decision-use by credit officers. The system produces only binary credit risk outcomes—approved or denied—accompanied by a confidence score quantifying predictive certainty. No internal interpretability modules or explanations of decision factors are generated or presented. This deliberate output design reduces complexity for the credit officers but limits the visibility of intermediate decision processes. To support effective human oversight consistent with the system’s design, the interface facilitates straightforward review of the final risk assessment without exposing or requiring specialized knowledge of the model’s internal reasoning patterns.
+
+The CCT model is based on a state-of-the-art encoder-only transformer architecture optimized for high-dimensional tabular data, incorporating self-attention mechanisms that capture intricate non-linear relationships between financial records, transactional history, and customer metadata. The system was trained on an extensive dataset of approximately 1.2 million anonymized credit application records spanning diverse European markets, enabling robust generalization to different subpopulations and lending conditions. Training rigor included stratified sampling to balance demographic representation and multiple rounds of hyperparameter tuning, achieving an average binary classification accuracy of 87.4% and an area under the receiver operating characteristic curve (AUC-ROC) of 0.92 on holdout validation sets.
+
+**Scope and Objectives of Human Oversight**
+
+Oversight is primarily aimed at mitigating risks to fundamental rights related to credit access fairness and the prevention of erroneous credit denials that may cause undue financial harm. Recognizing that the CCT’s binary outcomes are critical decision inputs, human reviewers—namely credit officers—retain final decision authority and exercise professional judgment aligned with institutional policies and regulatory frameworks.
+
+Given the absence of detailed explanation capabilities and real-time anomaly detection features, oversight measures focus on post-hoc review and institutional controls rather than direct, real-time interpretability or interactive decision support. Therefore, monitoring the system’s use relies on established operational processes external to the AI interface, such as periodic audit sampling and credit portfolio performance analysis executed by deployers.
+
+**Measures Integrated Prior to Market Placement**
+
+In line with the limited technical interface provisions, the following measures were incorporated at the development stage to support oversight proportional to the system’s autonomy and risk profile:
+
+- **Output Simplification:** The system’s outputs are narrowly constrained to a final risk label and confidence metric, avoiding potentially ambiguous intermediate data that could lead to erroneous human interpretations or overreliance.
+
+- **Confidence Scoring:** Confidence scores are produced using calibrated probability estimates derived from model logits via Platt scaling. The calibration process was validated on separate validation datasets achieving an expected calibration error of less than 0.03, ensuring that confidence scores provide reliable uncertainty quantification.
+
+- **Documentation and Training Materials:** Comprehensive technical documentation, including detailed model performance metrics, limitations, and recommended use guidelines, has been provided to deployers to facilitate credit officers’ understanding of system capabilities and constraints.
+
+No embedded real-time monitoring dashboards, alert systems, or ‘stop’ controls have been incorporated given the system’s operational context and design focus.
+
+**Provider’s Identification of Oversight Responsibilities for Deployers**
+
+The provider has explicitly defined in its deployment instructions that credit officers must exercise critical scrutiny over the AI-generated outputs, particularly noting the risks of overreliance on confidence scores and the lack of automated anomaly detection features in the interface.
+
+Deployers are advised to implement human-in-the-loop decision frameworks whereby credit officers can override AI-generated outcomes at their discretion. They are also encouraged to maintain or develop organizational-level monitoring practices external to the system, for example through periodic performance audits and reconciliation of credit decisions against subsequent borrower outcomes.
+
+Responsibility for disseminating training on automation bias and the inherent limitations of the AI’s outputs has been assigned to the deployer’s risk management units, supported by provider-supplied educational content.
+
+**Enabling Understanding, Interpretation, and Intervention by Oversight Personnel**
+
+- Credit officers receive the binary decision and a confidence score reflecting estimated probability of creditworthiness, without direct access to feature-level contributions or model internals. This design choice was guided by risk considerations around inadvertent misinterpretation or false transparency.
+
+- Understanding of model capabilities and limitations is supported via detailed yet concise provider documentation that outlines the scope of the AI judgments, typical performance bounds, and potential failure modes identified during testing phases.
+
+- Credit officers retain the ability to override or disregard the AI output based on their professional judgment. The system interface includes a manual input option for the final credit decision that is not contingent on the AI output.
+
+- No automated ‘stop’ actions or real-time interruption controls are embedded, reflecting the system’s supportive role rather than a fully autonomous decision-maker status. Interruptions to the system’s operation, if necessary, are to be managed through deployer governance processes and IT infrastructure controls.
+
+- Records of processing activities are maintained according to applicable data protection regulations. While the CCT processes some special categories of personal data during model training for bias detection and mitigation, processing logs include documented justification for their necessity based on an independent audit of bias sources that could not be addressed using alternative non-sensitive data.
+
+**Summary of Oversight Instruments**
+
+The Consumer Credit Transformer provides natural persons assigned with oversight a binary credit risk classification and a calibrated confidence score as the sole operating outputs. This approach intentionally minimizes interface complexity but restricts the capacity for granular interpretability or real-time anomaly detection. Oversight responsibilities include interpretive caution, professional discretion for override of outputs, and reliance on deployer-level external monitoring mechanisms. The provider supplies comprehensive documentation and calibration evidence to support informed human review without embedding direct intervention or alerting functionalities within the AI system itself.

@@ -1,0 +1,37 @@
+**Article 14**
+
+### Design and Development of Human-Machine Interfaces for Effective Oversight
+
+The Consumer Credit Transformer system is implemented with a primary focus on automation within established lending workflows. The system architecture incorporates a dedicated inference API endpoint that delivers credit risk scores and related confidence metrics directly into the financial institution’s loan origination platform. Frontline credit officers receive AI-generated assessments embedded seamlessly into existing dashboards without additional interface complexity or decision explanation overlays beyond a summary risk category (e.g., Low, Medium, High).
+
+Human-machine interaction for overrides is designed to be minimal by default. The system’s native user interface provides no direct manual editing or rejection functionality; instead, any disagreement or override requires a formal multi-step IT request submission through a separate ticketing system managed by the deploying institution’s IT department. This process imposes procedural friction and lengthens response time, as override justifications must pass through multiple layers of authorization before enactment. Override activities, including reasons and timestamps, are recorded exclusively in back-end audit logs accessible only to system administrators, thus withholding direct auditability from credit officers managing individual cases.
+
+### Oversight Objectives in Managing Health, Safety, and Fundamental Rights Risks
+
+The AI system’s deployment assumes compliance with data governance and privacy safeguards, limiting processing of special categories of data solely to cases necessary for bias detection and model calibration. To mitigate risks to fundamental rights—such as non-discrimination—the model was trained on a comprehensive dataset of approximately 1.2 million anonymized credit applicant records collected from multiple EU jurisdictions with inherent socioeconomic diversity. Rigorous pre-deployment bias testing was conducted, including parity and equalized odds analyses across protected groups, demonstrating parity gaps within 3–5%. Post-deployment, model monitoring relies largely on automated alerting of data drift and performance degradation without frontline user intervention capabilities.
+
+Given the system’s integral position in credit decision-making, the architecture is calibrated to maintain predictive consistency and robustness within the operational domain; however, the layered override mechanism and invisibility of outcome modification tools to frontline users concretely limit the practical capacity of natural persons to influence system output during routine operation.
+
+### Commensurateness of Oversight Measures Relative to Risks, Autonomy, and Use Context
+
+Provider-designed oversight components are tuned to ensure system stability and performance audit logging rather than enabling granular frontline control. Built-in measures include:
+
+- Continuous internal model performance monitoring pipelines with weekly retraining triggers based on detected statistical shifts in input variables correlated with applicant creditworthiness outcomes.
+- Logging modules that capture AI predictions, input feature vectors, and downstream decision outcomes for retrospective analysis of anomalies or predictive failures.
+- Access control systems restricting override capabilities to backend administrators.
+
+On the deployer side, the known practice is that the system’s integration and operational policies have limited the accessibility and responsiveness of override pathways for credit officers. The multi-tiered IT request mechanism constitutes a deployer-implemented oversight control that further insulates the algorithmic decision-making process from direct user intervention, despite its high-risk implications.
+
+### Enabling Functional Human Oversight by Natural Persons
+
+The system is delivered with documentation and training materials outlining the model’s core capacities, intended use cases, and key limitations, including the absence of transparency tools such as feature-based explanation modules or counterfactuals in the user interface. Credit officers receive guidance explaining that outputs represent probabilistic risk assessments derived from complex financial data patterns but are cautioned on possible over-reliance inherent in automated scoring systems.
+
+While the backend maintains exhaustive audit logs, frontline users do not have access to system diagnostic dashboards to monitor for anomalies or unexpected performance deviations in real time. Nor is there a user-accessible "stop" or interrupt function; halting the AI evaluation workflow necessitates system-level intervention by technical teams.
+
+Regarding the interpretation of outputs, the AI system provides categorical risk levels alongside numerical scores on a scale from 0 to 1, but no adaptive or on-demand interpretability aids. As such, credit officers must interpret outputs primarily in the context of institutional policies and training rather than direct system assistance.
+
+Users are technically enabled to disregard AI outputs by refraining from automatic acceptance; however, operational protocols and the cumbersome override process strongly discourage manual rejections or deviations. This structural friction is a significant feature of the system's oversight regime, effectively reducing the frequency and ease of human override interventions.
+
+Finally, the processing of special categories of data for bias correction is documented with explicit logging of rationale and necessity, consistent with EU data protection frameworks. These records are maintained in secured backend repositories separate from user-facing modules. 
+
+This design approach reflects a risk management philosophy focused on centralized control, stability, and auditability rather than frontline empowerment in monitoring and intervening in AI system operation.

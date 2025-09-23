@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+To ensure compliance, the system’s accuracy and robustness must be rigorously validated across a comprehensive range of judicial scenarios, including atypical or evolving legal contexts. The system should demonstrate consistent output quality through continuous testing and performance monitoring during deployment, and incorporate mechanisms to handle legal text ambiguities and shifts in statute interpretation over time.  
+
+[c] **Violation:**  
+Legal Context Navigator fails to maintain consistent accuracy over time due to lack of ongoing fine-tuning or performance re-validation as legal statutes and case law evolve, leading to progressively outdated or incomplete retrieval of relevant precedents in emerging legal domains. The system outputs become less reliable for nuanced or recently established legal interpretations, particularly without a post-market performance monitoring protocol.  
+
+[d] **Justification:**  
+This violation is subtle since initial accuracy levels may appear satisfactory, but the system’s inability to adapt to legal changes undermines consistent performance throughout its lifecycle as required by Article 15(1). This degradation is realistic given legal texts’ dynamic nature and the complexity of adequately updating a large language model without continual human-in-the-loop or automated retraining.

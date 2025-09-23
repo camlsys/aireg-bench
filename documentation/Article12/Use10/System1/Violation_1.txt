@@ -1,0 +1,21 @@
+**Article 12**
+
+**Technical provisions for event logging functionality**
+
+The Political Influence Analyzer incorporates a configurable logging subsystem that supports automatic recording of system events strictly within controlled, predefined conditions. Logging is activated exclusively during scheduled maintenance windows and upon the detection of predefined critical system errors. This design decision reflects a targeted operational logging strategy, prioritizing system integrity and forensic readiness in exceptional circumstances rather than continuous monitoring.
+
+The scheduling framework enables maintenance-triggered logging to capture comprehensive diagnostic data, including model inference traces, input and output metadata, and resource utilization metrics, facilitating root cause analysis and system tuning. Concurrently, error-triggered logging activates when error detection modules flag exceptions such as input processing failures, model instability indicators, or execution faults identified through real-time anomaly detection algorithms embedded in the runtime environment.
+
+Outside these circumstances, the system refrains from persistent event recording during standard end-user interactions. The underlying architecture supports event buffering but does not persist ephemeral data streams, limiting routine log generation to minimize storage overhead and avoid capturing potentially sensitive voter interaction details during normal operation.
+
+**Rationale and technical implementation considerations**
+
+This conditional logging implementation aligns with the system’s operational risk profile and privacy considerations. Given the Political Influence Analyzer’s function in generating personalized political messaging, continuous logging of all user interactions might inadvertently capture sensitive behavioral data, raising privacy and data governance concerns. The provider’s approach incorporates a risk-calibrated balance by restricting log generation to periods where diagnostics and forensics are most critical—maintenance and fault conditions—thereby limiting exposure without sacrificing traceability when system behavior deviates from expected norms.
+
+Technically, the logging controller interfaces with transformer model components, input preprocessing modules, and output pipelines to selectively record sequence-level insights and system state snapshots. Logging payloads typically include time-stamped messages encapsulating error codes, stack traces, token-level attention maps (when relevant for debugging), and system resource metrics. The system’s underlying runtime supports automated log rotation and secure archival aligned with best practices prevalent in 2025, including cryptographic integrity checks and encrypted storage to ensure log data confidentiality and tamper resistance.
+
+**Event types and traceability scope in compliance context**
+
+The chosen logging profile targets recording of events critical to identifying risk scenarios referenced under Article 79(1)—such as unexpected model drift, generation of disallowed content per policy rules, or runtime component failures indicative of substantial system modifications. For post-market monitoring requirements specified in Article 72, logs collected during maintenance windows provide curated snapshots of system performance and error rates without imposing continuous audit trails, facilitating periodic model validation and recalibration exercises.
+
+Moreover, monitoring under Article 26(5) is supported indirectly through these triggered logging sessions, which document system health, response correctness, and error resolution outcomes. The selective logging does not capture routine message-generation events or end-user interaction logs, thus documenting only those events directly relevant to operational deviations or integrity maintenance. The provider’s documentation and system implementation specify and enforce these logging boundaries, enabling assessors to verify that traceability mechanisms are both purposeful and proportionate according to the AI system’s risk profile and functional context.

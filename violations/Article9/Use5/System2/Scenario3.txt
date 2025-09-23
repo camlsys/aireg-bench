@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"6. High-risk AI systems shall be tested for the purpose of identifying the most appropriate and targeted risk management measures. Testing shall ensure that high-risk AI systems perform consistently for their intended purpose and that they are in compliance with the requirements set out in this Section."  
+
+[b] **Guideline:**  
+Testing must systematically evaluate performance consistency and risk exposure across diverse candidate subpopulations, under both normal and reasonably foreseeable misuse conditions, using predefined metrics and thresholds that reflect fairness, safety, and fundamental rights compliance. Testing should involve iterative validation during development and before market placement.  
+
+[c] **Violation:**  
+The Recruitment Decision Forest’s testing procedure evaluates overall accuracy and ranking consistency on historical data, but does not include targeted subgroup analysis such as performance for candidates under 18 or with disabilities. Furthermore, it lacks scenario tests simulating foreseeable misuse like candidate data manipulation or misapplication by recruiters, resulting in unexamined risk vectors.  
+
+[d] **Justification:**  
+This is a subtle violation as testing for general performance is conducted, but failing to disaggregate results to monitor vulnerable groups and missing misuse scenario tests means risks remain unidentified and unaddressed. This undermines the iterative risk management principle and regulatory assurance that the system works safely and fairly throughout its lifecycle.

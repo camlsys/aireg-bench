@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+Logging must be implemented as an integral, fully automated function capturing all relevant system inputs, outputs, and decision points during the entire operational lifetime without requiring manual triggering or selective activation.
+
+[c] **Violation:**  
+The Emergency Dispatch Prioritization Engine records logs only when manually initiated by dispatch personnel or during certain predefined operational modes, meaning significant portions of everyday system operation, including routine prioritizations and internal model updates, remain unlogged by default.
+
+[d] **Justification:**  
+This violates the requirement for automatic and comprehensive event logging, as crucial data about system decisions might not be captured due to manual control dependency. While subtle and easy to overlook, this incomplete logging introduces significant traceability gaps that undermine accountability and post-market monitoring efforts.
+
+---

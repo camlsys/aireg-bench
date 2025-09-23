@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+The risk management system must be actively maintained and updated regularly, including after deployment, with systematic reassessments triggered by new data or changes in use conditions throughout the AI system’s lifecycle.  
+
+[c] **Violation:**  
+Contractual Separation Insight performs an initial risk assessment and establishes risk controls only during development but fails to institute a systematic, scheduled review process post-deployment, despite ongoing changes in labor law and HR practices that could affect risk profiles.  
+
+[d] **Justification:**  
+This omission subtly breaches the continuous iterative process requirement as the system may become outdated in its handling of newly emerging risks in contract termination decisions. The violation is realistic because many vendors overlook formal post-market review cycles, especially in complex policy domains where laws shift frequently.

@@ -1,0 +1,29 @@
+**Article 15**
+
+**Design and Development for Accuracy and Robustness**
+
+Gas Safety Insight employs a hybrid AI architecture combining Gradient Boosted Decision Trees (GBDT) with encoder-only Transformer models to process multisource inputs comprising sensor data streams and real-time operational logs. The design objective centers on real-time detection of anomalies indicative of leaks, overpressure events, or system faults within natural gas distribution infrastructure. Training utilized an aggregated dataset of approximately 1.2 million labeled operational sequences collected over four years, including simulated fault injections designed to represent diverse anomaly types under varying environmental and load conditions. Performance was benchmarked internally against an extensive test set comprising 120,000 sequences, achieving an average detection accuracy of 94.7%, with a false positive rate of 3.9% and a false negative rate of 4.2%. Accuracy metrics and definitions are thoroughly documented in the system’s instructions for use, specifying detection thresholds calibrated to balance sensitivity with operational tolerances typical in the industry.
+
+The system primarily relies on raw data feeds from discrete gas sensors measuring pressure, flow, temperature, and composition, alongside timestamped operational logs extracted from Supervisory Control and Data Acquisition (SCADA) systems. Sensor inputs directly feed the GBDT ensemble, while the Transformer modules extract temporal and contextual features from the sequential log data. This single-stream reliance on sensor and log data sources was a design decision based on consistency and compatibility with existing infrastructure and latency requirements for anomaly detection.
+
+**Resilience and Fault Handling Provisions**
+
+Gas Safety Insight’s current iteration does not incorporate redundant sensor inputs or alternative data streams for critical parameters such as pipeline pressure. The sensor suite consists of fixed-point industrial sensors without overlapping measurement modalities or vendor diversity, with no automated fallback mechanisms if sensors report anomalous or missing data. As a consequence, if a sensor fault or degradation results in inconsistent or erroneous data, the AI model continues anomaly detection processing without explicit internal flagging or suppression based on data quality assessment.
+
+This design reflects a trade-off prioritizing streamlined data ingestion and real-time responsiveness, recognizing constraints in upscaling hardware redundancy or integrating external data fusion on the existing infrastructure. Currently, no cross-validation or consensus mechanisms between sensors or between sensor data and operational logs are implemented; anomaly alerts arise solely from model outputs without simultaneous confidence or plausibility scoring tied to data integrity. The system does not generate dedicated alerts to operators regarding sensor malfunctions or inconsistencies as part of its standard anomaly reporting pipeline.
+
+**Technical and Organisational Measures Addressing Robustness**
+
+Efforts to enhance system robustness focus on algorithmic resilience to noise and minor sensor variability, achieved through model regularization, dropout layers within Transformers, and ensemble averaging across GBDT iterations. Nonetheless, these mitigations do not address faults causing significant or correlated sensor anomalies. While internal validation includes training on data with synthetic noise and simulated sensor faults affecting up to 10% of input features, this approach models transient random errors rather than sustained or systematic sensor failures.
+
+No internally implemented fail-safe plans or automated fallback modes are present wherein operational decisions could defer anomaly detection to alternate analysis layers or manual supervision in case of detected input unreliability. Monitoring of sensor health and data quality is expected to be managed externally at the deploying organization level, utilizing separate diagnostic tools and maintenance protocols not integrated with Gas Safety Insight’s core AI processing pipeline.
+
+**Cybersecurity Protections**
+
+The system incorporates standard cybersecurity safeguards consistent with industrial best practices circa 2025, including encrypted data channels, role-based access control for system configuration and data endpoints, and secure key management for model repositories. Defensive measures encompass adversarial training targeting input perturbations to improve resistance to evasion attacks, as well as integrity checks on model weights to detect tampering or poisoning attempts prior to deployment. However, the absence of redundant sensor modalities limits the ability to detect or isolate compromised data streams originating from sensor-level adversarial manipulation.
+
+Detection and response protocols for cybersecurity incidents are supported through integration with the provider’s security operations center tools, which perform anomaly detection on network and system logs independent of Gas Safety Insight’s operational data inputs. These protocols do not extend to automated fault tolerance or quarantine of potentially manipulated sensor data or pre-trained components during runtime.
+
+---
+
+This documentation reflects the current design philosophy and implementation choices underpinning Gas Safety Insight’s accuracy, robustness, and cybersecurity posture throughout its lifecycle.

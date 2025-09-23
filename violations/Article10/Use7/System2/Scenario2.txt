@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose... They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Data sets must include a sufficiently representative sample of all demographic groups relevant to the intended market, ensuring balanced coverage by age, income brackets, ethnic backgrounds, and geographical locations, and have robust mechanisms to detect and correct errors or missing values to prevent skewed model performance. Statistical distributions should reflect the real-world applicant population for consumer credit.  
+
+[c] **Violation:**  
+The training dataset predominantly contains records from urban, higher-income applicants and underrepresents rural and low-income groups extensively found in the EU lending market. Consequently, the model performs poorly on these underrepresented populations, with higher error rates and lower creditworthiness prediction accuracy for rural applicants.  
+
+[d] **Justification:**  
+This is a breach of the representativeness and statistical property requirements in paragraph (3). The violation is subtle because the overall dataset seems large and diverse, but demographic skews are not adequately corrected, causing inequitable model accuracy across groups. This type of sampling bias is common in financial datasets due to easier data availability in urban centers versus rural areas, making it a plausible oversight.

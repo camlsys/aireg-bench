@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used ... in particular where such risks persist despite the application of other requirements set out in this Section." (Article 14(2))  
+
+[b] **Guideline:**  
+Oversight mechanisms must include procedures that alert human operators to potential risk-prone situations and enable timely intervention to prevent harm, especially for conditions that may arise from model limitations, sensor inaccuracies, or unforeseen misuse scenarios.  
+
+[c] **Violation:**  
+SafeRoute’s operational protocols lack automated alert systems or suggested interventions when confidence in hazard predictions drops below a threshold due to sensor anomalies or adverse weather, leaving human operators unaware of increased risk of false negatives or false positives that can jeopardize traffic safety.  
+
+[d] **Justification:**  
+Without proactive alerting or clear guidance for escalations, the system does not sufficiently empower human oversight to mitigate serious risks, leaving safety gaps in real-world deployment. This omission is subtle because the system continues to function nominally without evident faults, even as risk to health and safety increases due to insufficient oversight facilitation.

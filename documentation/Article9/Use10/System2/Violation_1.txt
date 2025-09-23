@@ -1,0 +1,51 @@
+**Article 9**
+
+**Establishment and Scope of Risk Management**
+
+For the Election Sentiment Transformer (EST), Horizon Analytics Group implemented a risk management system concentrated on the pre-deployment lifecycle stages. This includes risk identification, analysis, and mitigation developed prior to initial market release. The scope of risk consideration focused on foreseeable hazards related to misinformation propagation, undue influence on voter sentiment, and fundamental rights impacts such as freedom of expression and democratic integrity, consistent with the system’s use for influencing political discourse via social media text analysis. The provider’s approach defined known and reasonably foreseeable risks primarily through extensive expert workshops, analysis of prior political misinformation campaigns, and controlled scenario simulations involving large-scale social media datasets (~500 million sampled posts from multiple EU languages collected over 24 months).
+
+**Risk Estimation and Evaluation**
+
+Initial risk estimation leveraged both quantitative model performance metrics and qualitative impact assessments. From a technical perspective, EST’s transformer-based architecture was benchmarked on sentiment prediction accuracy (average F1-score: 0.87 on benchmark political datasets) and adversarial robustness tests simulating coordinated misinformation inputs. The evaluation identified residual risks related to false positives in sentiment polarity detection and susceptibility to adversarial manipulation in contexts of emergent disinformation tactics. Risk evaluations included simulations of misuse where deliberately crafted targeted messaging could exacerbate polarization or misinform voter segments. These assessments concluded expected residual risks were significant but manageable under the initial design and deployment conditions.
+
+**Post-Market Risk Considerations**
+
+No systematic or automated mechanisms for ongoing risk identification and analysis were established after market release. Post-launch environmental changes, including evolving political climates or novel misinformation strategies, are not incorporated into iterative risk updates. Although the system’s architecture includes logging components capturing user interaction metrics and system performance statistics, these data streams are reviewed only sporadically and do not feed back into formal risk assessment processes. As such, emergent risks arising post-deployment remain unaddressed by provider-initiated risk management measures beyond informational reports.
+
+**Adopted Risk Management Measures**
+
+The deployed risk control measures primarily focus on system design and initial operator guidance:
+
+- Model architecture: The EST operates on encoder-only transformer layers with attention mechanisms constrained to reduce amplification of weak or outlier sentiment signals. This design choice aims to minimize false detection-induced volatility in generated counter-messages.
+
+- Data curation: Training datasets underwent rigorous filtering for bot-generated content and hate speech using a combination of heuristic methods and auxiliary classification models (harmful content classifier achieving 91% precision).
+
+- Transparency and documentation: Detailed system documentation, including descriptions of model limitations, intended use cases, and known risks, accompanies the release. This includes user manuals targeting deployers (social media platform administrators or political campaign managers) with recommended operational constraints.
+
+- Training for deployers: Horizon Analytics Group provided initial training modules for system deployers emphasizing ethical use, interpretation of sentiment outputs, and situational awareness to mitigate misuse risks.
+
+No technical safeguards related to real-time monitoring or automated mitigation of newly arising risks are implemented within the EST’s operational environment, reflecting the provider’s confinement of risk management activity to the pre-deployment phase.
+
+**Residual Risk Evaluation and Acceptability**
+
+The overall residual risk, post-adoption of the above design and organizational measures, was judged against benchmark thresholds aligned with Horizon Analytics Group’s internal standards and industry practices for politically sensitive AI systems. Residual risk metrics considered the probability of influential misinformation generation and the projected impact on voter sentiment polarization. Despite acknowledged limitations, the residual risk was deemed acceptable within the initial deployment context, conditional on adherence to recommended deployer training and operational constraints.
+
+**Testing and Verification Procedures**
+
+Extensive testing was performed exclusively at development stages preceding market placement, including:
+
+- Model validation using annotated multilingual corpora exceeding 2 million political text samples from social media platforms reflective of EU demographics.
+
+- Adversarial robustness testing simulating scenarios of manipulated input streams intended to mislead sentiment detection, performed over 300 iterative experimental runs. These tests affirmed model consistency within defined probabilistic accuracy thresholds (false positive rate < 5%).
+
+- Usability and ethical compliance audits with simulated deployer role-playing exercises evaluated user interface transparency and operator understanding.
+
+No post-market or real-world condition testing cycles are scheduled or implemented by the provider.
+
+**Consideration of Vulnerable Groups**
+
+In the initial risk management phase, specific attention was given to potential impacts on persons under 18 years and other vulnerable populations, including politically disengaged or socially marginalized groups. Dataset sampling and risk analyses incorporated demographic stratifications to assess disproportionate susceptibility to emotional influence or misinformation. Although targeted mitigation strategies (e.g., age-specific content filters) were considered, the final system design does not enforce technical measures restricting exposure to vulnerable users, relying instead on deployer-controlled configuration and usage policies.
+
+**Integration with Other Regulatory Risk Processes**
+
+Given the provider’s focus on pre-market development activities and absence of continuous post-market mitigation, no integration with external or internal risk management frameworks beyond this context has been implemented. Compliance with related Union law risk management requirements, if applicable to deployers, is intended to be handled by those entities separately, without coordination from the provider’s side.

@@ -1,0 +1,35 @@
+**Article 12**
+
+### Mechanisms for Automatic Event Logging
+
+The Talent Insight Model incorporates an integrated logging subsystem that automatically records detailed operational events throughout the system’s entire lifecycle. This logging infrastructure is embedded within the model deployment environment and the orchestration of data preprocessing, inference, and post-processing stages. Logs are generated in real-time and securely persisted in a tamper-evident log store compliant with cryptographic integrity standards (SHA-256 hashing with periodic checkpointing) to prevent unauthorized alteration.
+
+Technical design decisions underpinning this logging capability include modular instrumentation at all data ingress and egress points, as well as at critical decision nodes within the transformer-based encoder-decoder pipeline. For example, each input resume or job description processed triggers a unique transaction identifier with associated timestamps and processing metadata, enabling comprehensive traceability of individual inference events. The system records the raw input text hash, intermediate token embeddings dimensions, and final relevance scoring outputs, thereby facilitating detailed post hoc event reconstruction.
+
+This approach aligns with industry-standard observability frameworks prevalent in AI production environments in 2025, including OpenTelemetry-compatible tracing and structured JSON log formatting to support automated parsing and integration with centralized monitoring platforms. The technical architecture ensures minimal performance degradation (<5% overhead) during logging to balance thoroughness and operational efficiency.
+
+### Identification and Recording of Risk-Relevant Situations
+
+The logging capability is designed to systematically capture events indicative of potential operational or functional risks as defined under the relevant EU AI Act framework. Specifically, the system records instances where confidence scores in candidate-job matching fall below a configurable risk threshold (default 0.65 in a [0,1] scale), signaling possible model uncertainty or degradation. These low-confidence detections prompt detailed contextual logging, including candidate attribute distributions and comparison against training data domain statistics to identify drift or deviation.
+
+Moreover, significant deviations in input text structures—such as anomalously short or excessively formatted resumes—and preprocessing errors (e.g., NLP tokenization failures or unexpected language codes) are logged with priority flags. The system continuously monitors model weight updates and fine-tuning jobs, generating logs for each substantial modification event to support version control and rollback capability. This satisfies the requirement to track substantial modifications affecting system behavior and potential risk.
+
+Risk-relevant logs also capture user feedback cycles, including recruiter overrides or manual adjustments to candidate rankings post-inference, documented with timestamps and user role metadata. This traceability layer supports root cause analysis in case of adverse recruitment outcomes suspected to arise from AI system decisions.
+
+### Support for Post-Market Monitoring Activities
+
+To facilitate effective post-market surveillance as anticipated under Article 72, the Talent Insight Model’s logging architecture collects longitudinal performance metrics, enabling retrospective analysis aggregated over time. Key metrics include precision, recall, and F1-scores computed weekly on anonymized validation sets representing recent application streams, stored alongside raw logs in secure repositories.
+
+The system includes automated anomaly detection routines on logged inference outputs and operational parameters (e.g., latency spikes, throughput variances, error rates) that generate alerts routed to the provider’s AI quality assurance unit. This continuous monitoring is supplemented by scheduled internal audits, leveraging log data for compliance reports and model validation updates.
+
+Furthermore, an interface exposes aggregated, pseudonymized log summaries enabling authorized external auditors or competent authorities to perform compliance assessments without compromising data privacy. Logs comply with data minimization principles and encrypt candidate-identifying information in transit and at rest according to AES-256 standards.
+
+### Monitoring of Operational Functioning
+
+Operations monitoring is supported via a dedicated dashboard integrating real-time logging data streams with system telemetry. Key performance indicators are visualized, including volume of processed resumes and job descriptions, distribution of skill extraction confidence levels, and frequency of interventions triggered by risk thresholds.
+
+The model execution environment also records system health metrics—such as CPU/GPU utilization, memory footprint, and network latency—that correlate with potential operational anomalies. Event logs are cross-referenced with these telemetry signals to identify systemic issues affecting AI functioning.
+
+In accordance with safeguards for human oversight (Article 26(5) concerns), all decision outputs are logged alongside an audit trail of human review actions when deployed within controlled recruitment workflows. This dual recording enables validation of both automated and human-mediated decisions and supports accountability.
+
+Together, these integrated logging capabilities provide a comprehensive, traceable record of the system’s functioning appropriate to its intended purpose within recruitment processes that involve high risks related to fairness, accuracy, and transparency of candidate selection.

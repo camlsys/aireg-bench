@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for facilitating the post-market monitoring referred to in Article 72."  
+
+[b] **Guideline:**  
+The logging design must capture fine-grained metadata about input data characteristics, output variations, and user-interaction patterns that enable effective longitudinal analysis of system performance and impact after deployment, supporting regulatory auditing and corrective action.  
+
+[c] **Violation:**  
+Election Sentiment Transformer’s logs exclude detailed metadata on the origin regions or demographic traits of social media inputs influencing sentiment shifts, limiting the ability to assess demographic-specific impacts during post-market monitoring.  
+
+[d] **Justification:**  
+This represents a subtle violation because although the system logs basic operational data, the omission of contextual input details constrains comprehensive post-market evaluation, thereby hindering regulators’ ability to monitor and mitigate demographic discrimination or manipulation risks retrospectively.

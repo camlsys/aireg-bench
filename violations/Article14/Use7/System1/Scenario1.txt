@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))
+
+[b] **Guideline:**  
+Effective oversight requires that human users have clear, timely access to the AI system’s internal decision factors, supported by interpretable visualization tools allowing them to monitor, understand, and question credit scoring outputs as they occur.
+
+[c] **Violation:**  
+The Credit Evaluation Network’s user interface displays only final credit scores without visual explanations or feature attribution scores for individual decisions, limiting loan officers’ ability to actively monitor or interrogate the logic behind each outcome during use.
+
+[d] **Justification:**  
+This subtle violation impairs effective human oversight by depriving users of real-time interpretability necessary to detect errors or unexpected system behavior. Loan officers may passively accept scores without grasping underlying rationale, thus breaching the requirement for design enabling effective human oversight throughout operation.
+
+---

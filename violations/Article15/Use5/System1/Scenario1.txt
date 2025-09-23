@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The Talent Insight Model must maintain stable and validated accuracy and robustness metrics across all software updates and model retrainings, with performance degradation actively monitored and mitigated over time, ensuring consistent output quality in production environments.  
+
+[c] **Violation:**  
+After deployment, the Talent Insight Model undergoes periodic fine-tuning using new recruitment data without comprehensive validation, leading to gradual degradation in candidate ranking accuracy for certain industries, which is not detected or corrected until several recruitment cycles have passed.  
+
+[d] **Justification:**  
+This subtle drift in accuracy breaches the obligation to ensure consistent performance throughout the lifecycle, as the system’s self-updates introduce bias and reduce utility without triggering corrective actions. The degradation is plausible given the model’s continuous learning setup and insufficient monitoring, yet it is not immediately obvious without rigorous ongoing quality control.  
+
+---

@@ -1,0 +1,45 @@
+**Article 12**
+
+### Implementation of Automated Event Logging
+
+The Adaptive Learning Outcome Analyzer incorporates a comprehensive automated logging subsystem operational throughout the system’s lifecycle, designed to capture detailed event records in line with regulatory requirements for high-risk AI systems. This logging infrastructure is integrated at both model inference and system orchestration layers to ensure traceability and reproducibility of system behavior over time. All relevant interactions, internal state changes, data inputs, outputs, and system interventions are timestamped and stored in an append-only log management service secured with role-based access control.
+
+The event logs include standardized identifiers for:
+- Input data batches and their preprocessing metadata (e.g., anonymized student IDs, assessment contexts);
+- Model versions and configurations (including transformer architecture parameters and training checkpoints);
+- Inference outcomes (e.g., learning gap detections, feedback generated, recommended learning pathways);
+- System alerts indicating deviations, retraining triggers, or configuration changes.
+
+This architecture ensures no manual action is required to initiate logging, maintaining a consistent and unbroken audit trail tailored to the system’s educational assessment domain.
+
+### Capturing Events Relevant to Risk Identification and Substantial Modifications
+
+The logging mechanism specifically records events that could indicate potential risks related to inaccurate or biased learning outcome assessments, which could lead to improper educational recommendations. To this end, the system logs:
+- Anomalous model confidence scores and uncertainty estimates generated during inference, enabling detection of low-confidence predictions;
+- Instances where detected learner outcomes substantially diverge from expected progress benchmarks established during model validation;
+- Alerts produced by integrated fairness monitoring modules assessing subgroup performance disparities across demographic and educational background metadata;
+- Records of automated model retraining or fine-tuning processes triggered by drift detection algorithms operating on ongoing input distributions.
+
+Each such event entry includes contextual information sufficient to reconstruct the cause, timing, and system state during occurrence, facilitating root-cause analysis and corrective action assessment while preventing unintended system performance degradation or educational harm.
+
+### Support for Post-Market Monitoring
+
+To assist post-market surveillance and continuous system evaluation, the logging framework supports exportable, structured log datasets compatible with Industry 4.0 standards widely applied in AI quality management. The system design incorporates mechanisms to:
+- Aggregate performance and error metrics longitudinally, enabling trend analysis over extended operational periods;
+- Record feedback loops where educators or learners contest or validate system-generated assessments, linking these events to original inference records;
+- Archive metadata on AI model updates, including retraining datasets and hyperparameter settings employed, thereby enabling column-level traceability.
+
+This granular logging permits deployers to evaluate real-world system impacts, verify ongoing compliance with performance thresholds, and document responses to potential adverse incidents within educational settings.
+
+### Monitoring Functional Operation as Per Intended Purpose
+
+Operational logs provide continuous insights into system functioning consistent with its intended educational evaluation purpose. Such monitoring includes:
+- Tracking user interaction volumes and distributions segmented by institution type (primary, secondary, higher education), enabling oversight of system usage patterns that might affect reliability or bias;
+- Recording system resource utilization and latency metrics to verify adherence to service-level agreements that impact real-time feedback delivery;
+- Capturing system-initiated notifications to educators or administrators, ensuring that generated recommendations and alerts are systematically audited.
+
+Additionally, the logging system supports version control alignment between deployed AI model instances and configuration management databases, ensuring that any substantial model changes or parameter adjustments are logged and traceable. This operational transparency underpins the continuous validation of the AI’s educational support role and enables proactive identification of malfunctions or drift away from performance objectives.
+
+---
+
+Together, these log capabilities fulfill technical prerequisites for traceability and accountability, enabling comprehensive oversight aligned with the system’s classification as a high-risk AI technology in educational assessment contexts.

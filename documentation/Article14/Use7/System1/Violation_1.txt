@@ -1,0 +1,41 @@
+**Article 14**
+
+**Design and Development of Human-Machine Interface Components**
+
+The Credit Evaluation Network (CEN) is implemented using Gradient Boosted Decision Trees (GBDT) designed to produce a singular final credit score for each evaluated applicant. The user interface deliberately presents only this consolidated score without accompanying visual explanations or feature attribution details. This design decision stems from provider assessments highlighting that detailed feature breakdowns risk misinterpretation by end-users not specialized in AI or statistics, potentially leading to inconsistent decision-making or unwarranted challenges of the AI's legitimacy at points of decision. The system therefore lacks integrated interactive tools such as local interpretability maps, saliency indicators, or feature importance outputs in real-time for end-user review.
+
+Internal usability evaluations conducted during development confirmed that loan officers predominantly rely on the final credit score as a straightforward metric aligned with existing institutional workflows. In addition, the absence of on-screen interpretability reduces cognitive load and limits potential distractions arising from complex data visualizations. The provider acknowledges that these human-machine interface choices restrict loan officers’ ability to actively interrogate underlying model logic during operational use.
+
+**Oversight Objectives and Risk Considerations**
+
+Recognizing that the CEN’s use directly impacts fundamental rights through credit decisions affecting consumers, Meridian Financial Analytics implemented human oversight protocols focused on ensuring responsible application of the AI system within anticipated operational contexts. The main human oversight mechanism is assignment of loan officers as responsible natural persons who review the final credit score in conjunction with their internal verification and due diligence processes.
+
+While lacking interactive interpretability features, the provider has incorporated system behaviors intended to mitigate risks related to automation bias and erroneous score acceptance. These include mandatory procedural guidelines requiring loan officers to evaluate external credit documentation and to consider contextual factors not reflected in the AI output. The provider’s risk assessments indicate that the final score alone optimizes clarity and reduces erroneous over-reliance on AI outputs due to potential misinterpretation of complex feature-level explanations.
+
+**Provider-Implemented Oversight Measures**
+
+Before placing the AI system on the market, Meridian Financial Analytics deployed multiple provider-focused oversight provisions embedded within the CEN:
+
+- Rigorous model validation testing encompassing over 500,000 anonymized credit records representing diverse EU populations confirmed stable and consistent scoring performance, minimizing model drift and unjustified discrimination risks across demographic segments.
+
+- A modular logging subsystem records all model inputs, outputs, and intermediate decision metrics at batch processing stages, enabling retrospective auditing although these details are not accessible from the user interface.
+
+- Built-in error detection routines flag instances of anomalous input data distributions or operational failures and notify system administrators proactively via secure monitoring dashboards. These safeguards support back-office intervention but do not directly inform end-users in real time.
+
+Such measures illustrate a focus on indirect human oversight through institutional controls and back-end monitoring rather than real-time interactive explainability at the point of use.
+
+**Information and Tools Provided to Natural Persons for Effective Oversight**
+
+The CEN is delivered alongside comprehensive technical documentation detailing the AI model’s designed capacities and limitations. This includes:
+
+- Performance statistics stratified by typical applicant cohorts, reliability metrics with confidence intervals, and documented use case boundaries preventing inappropriate application scenarios.
+
+- Best-practice guidelines instructing loan officers to incorporate non-AI inputs and to retain ultimate decision-making authority over credit approval or rejection. The documentation explicitly outlines that the AI score is advisory, not determinative.
+
+- Warnings regarding automation bias are embedded within operator training materials, which emphasize maintaining critical scrutiny over AI outputs and verifying results with parallel credit assessment tools.
+
+- Clear provisions permit loan officers to override or disregard the generated score based on their professional judgment and supplemental evidence. The system interface supports manual input of final decisions independent of AI output.
+
+- Although no interactive stop mechanism is embedded at the user interface level, operational protocols empower administrators to suspend or disable the AI system centrally if systemic anomalies or safety risks occur.
+
+In summary, while the interface limits direct interpretability of individual decisions, the provider supports effective human oversight through comprehensive user guidance, institutional auditing infrastructure, and operational procedures designed to identify and manage risks during use.

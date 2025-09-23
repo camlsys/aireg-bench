@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."
+
+[b] **Guideline:**  
+To comply, the datasets must represent the full diversity of voter demographics, political affiliations, and regional contexts where the system is deployed, including minority and hard-to-reach populations. This ensures the model does not produce skewed or inaccurate messaging for underrepresented groups. Data quality controls must correct for class imbalances, missing data, annotation errors, and scope gaps.
+
+[c] **Violation:**  
+The training data predominantly approximated voter behavior and political discourse from urban, majority-language speakers, neglecting rural regions and linguistic minorities in several EU Member States. As a result, the system generated less relevant and often ineffective political messaging for these underrepresented voter segments, undermining its intended purpose to tailor persuasive content accurately across the political landscape.
+
+[d] **Justification:**  
+This violation stems from insufficient representativeness and completeness of the training data in relation to the intended voter population, directly violating the Act’s requirements. It is subtle because the issue lies in demographic and contextual data gaps rather than overt inaccuracies, which may go unnoticed unless carefully audited against the system’s deployment geography and user groups.

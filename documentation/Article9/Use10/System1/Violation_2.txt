@@ -1,0 +1,44 @@
+**Article 9**
+
+### Establishment and Scope of the Risk Management System
+
+A formal risk management system was established and documented explicitly for the Political Influence Analyzer (PIA) in accordance with Article 9(1) and (2). This system operates as a continuous and iterative lifecycle process, spanning initial development through deployment and ongoing use. The process is supported by version-controlled documentation detailing each stage of analysis, evaluation, mitigation, and review activities. Risk management meetings occur quarterly to incorporate operational feedback and evolving external considerations, with ad hoc reviews triggered by significant system updates.
+
+The risk analysis primarily focuses on identifying risks associated with generic misinformation dissemination, including the spread of factually incorrect or misleading political claims. These risks were mapped based on scenario analyses of common misinformation vectors encountered during political campaigns, using a knowledge base compiled from approximately 200 documented misinformation incidents drawn from prior electoral cycles spanning multiple EU jurisdictions. The scope of risk identification did not extend comprehensively into nuanced psychological or behavioral impacts of the system’s personalized persuasive outputs on voter autonomy or cognitive biases.
+
+### Identification and Analysis of Risks
+
+Risks were identified through structured sessions involving multidisciplinary specialists, including data scientists, political analysts, and legal advisors. The emphasis was placed on the potential amplification and propagation of untruthful political content and its related reputational harm to democratic processes. However, limitations were acknowledged in the risk scope: there was no systematic investigation or categorization of how the system’s adaptive messaging might subtly infringe on individual voters’ decision-making autonomy or exploit recognized cognitive biases such as confirmation bias, availability heuristic, or emotional framing. Furthermore, socio-demographic segmentation analysis concentrated on general user groups without a dedicated assessment for particularly vulnerable populations—such as elderly voters or those with limited digital literacy—who may be disproportionately susceptible to the system’s persuasive outputs.
+
+### Estimation and Evaluation of Risk Severity and Probability
+
+For identified risks, probabilistic impact and likelihood models were created based on a dataset of misinformation spread patterns derived from a corpus of over 50 million analyzed social media posts collected during four recent EU electoral events. The estimation employed a combination of statistical trend extrapolation and simulated user-interaction experiments with politically heterogeneous panels (N=1,200). Evaluation metrics primarily addressed misinformation volume, virality coefficients, and engagement rates, aligning with recognized industry standards for content risk scoring.
+
+The risk evaluation examined the potential for system misuse, including intentional deployment to amplify divisive or harmful content beyond the intended parameter space. Nevertheless, these evaluations did not encompass detailed modeling of personalized persuasive effects on voter psychological states or autonomy erosion metrics, nor did the evaluation extend to differentiated impact assessments across vulnerable demographic profiles.
+
+### Adoption of Risk Management Measures
+
+The principal risk management measures adopted focus on technical and procedural controls to mitigate misinformation dissemination consistent with the identified risks. These include:
+
+- Model fine-tuning with a curated and regularly updated dataset flagging politically sensitive misleading narratives to limit generative tendencies toward false content.
+- Implementation of content filters leveraging a dynamic keyword and semantic risk taxonomy to restrict the generation of harmful or disallowed messaging categories.
+- Integration of batch-level behavioral pattern detection designed to identify unusual amplification activity potentially indicative of misuse.
+- Provision of comprehensive technical documentation incorporating disclaimers regarding the system’s intended use and inherent limitations concerning information accuracy.
+
+Due to the concentrated risk scope, no technical mitigations were developed specifically to address potential voter autonomy infringements or cognitive bias exploitation by personalized persuasive content. Similarly, there are no targeted measures designed explicitly to protect vulnerable groups with limited digital literacy, nor tailored information or training for deployers addressing these risks.
+
+### Testing and Verification Procedures
+
+A combination of offline and online testing protocols was deployed to ensure consistent system performance aligned with the stated objectives. Offline testing employed internal benchmarks using datasets of 5 million anonymized political communication samples, validating the accuracy and topical relevance of generated content alongside misinformation suppression efficacy. Real-time testing in controlled environments involved simulated voter profiles representing diverse political orientations.
+
+Testing metrics encompassed perplexity scores, factual consistency indices, and false positive rates of the misinformation filters, evaluated against predefined probabilistic thresholds consistent with industry best practices circa 2025. These procedures were conducted iteratively during development and prior to release, and interim testing continues post-deployment under controlled conditions.
+
+The test design, however, did not incorporate validation of effects related to nuanced voter autonomy impacts nor the distinct responses of vulnerable demographics, reflecting the narrow risk focus.
+
+### Consideration of Impacts on Minor and Vulnerable Groups
+
+As part of risk management, initial considerations on the possible adverse impacts on persons under 18 and other vulnerable groups were documented following Article 9(9). Based on the system’s intended context—targeting eligible voters within electoral cycles—testing protocols excluded direct interaction with minors, considering them outside the system’s operational population. Regarding other vulnerable groups, no detailed risk assessment or specific mitigation strategies were implemented that account for groups with limited digital literacy or reduced capacity to critically appraise personalized persuasive content.
+
+### Integration with Broader Legal Risk Frameworks
+
+The risk management framework for the Political Influence Analyzer was developed as a standalone process aligned with Article 9 provisions. Providers confirmed no current overlap or integration with internal risk management procedures required under other EU laws for the same AI system as per Article 9(10). Should future regulatory developments necessitate, integration with broader compliance structures will be assessed.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"To properly understand the relevant capacities and limitations of the high-risk AI system and be able to duly monitor its operation, including in view of detecting and addressing anomalies, dysfunctions and unexpected performance…" (Article 14(4)(a))
+
+[b] **Guideline:**  
+The system must offer transparency features and interpretability tools that allow human overseers to grasp the model’s underlying confidence levels, reasoning paths, and potential failure modes, empowering them to recognize when outputs diverge unexpectedly from normal behavior.
+
+[c] **Violation:**  
+The Election Sentiment Transformer provides only high-level sentiment outputs without exposing uncertainty metrics or interpretability explanations, leaving human operators unable to discern when the system is overconfidently promoting misleading narratives due to anomalies in input data or model drift.
+
+[d] **Justification:**  
+This subtle breach arises because the system superficially enables oversight by displaying output results, but the absence of detailed interpretative aids restricts meaningful human monitoring and diagnosis of errors, impeding compliance with essential transparency and anomaly-detection obligations.
+
+---

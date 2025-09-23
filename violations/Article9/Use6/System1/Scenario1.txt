@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."
+
+[b] **Guideline:**  
+A compliant risk management system must implement scheduled, documented reviews and updates of risk identification, assessment, mitigation, and testing throughout the AI system’s lifecycle, including after deployment and during operational use, to address newly discovered or evolving risks.
+
+[c] **Violation:**  
+The Legal Termination Assessment Framework’s risk management process is only revisited during major version releases prior to deployment, with no formal post-deployment iteration or updates in response to changing labor law interpretations or emerging use cases identified in operational environments.
+
+[d] **Justification:**  
+By limiting risk management reviews to pre-release phases, Meridian Labor Solutions neglects the iterative and ongoing nature required by Article 9(2), potentially allowing risks related to real-world usage and legal environment changes to go unaddressed. This lapse is subtle as it might appear sufficient externally but misses continuous lifecycle updates critical for compliance.
+
+---

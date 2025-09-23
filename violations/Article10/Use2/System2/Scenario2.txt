@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Data must cover all relevant operational scenarios, geographies, and environmental conditions representative of the pipeline infrastructure and affected human populations to avoid blind spots. This includes systematic efforts to collect diverse examples of pipeline faults across seasonal, geographic, and infrastructural variables affecting risk detection accuracy and equity of impact.  
+
+[c] **Violation:**  
+The training dataset predominantly contains sensor data collected from well-maintained pipelines in northern regions, neglecting pipelines used in southern or rural areas with different environmental conditions. This underrepresentation causes systematic lower detection sensitivity for certain pipeline segments and associated communities, leading to potential safety disparities.  
+
+[d] **Justification:**  
+Statistical imbalance across pipelines’ geographic and contextual settings creates subtle errors in model outputs that might only appear under certain conditions, which is realistic since data collection often depends on operational priorities. This silent bias breaches the representativeness requirement and undermines the system’s reliability for all intended users.  
+
+---

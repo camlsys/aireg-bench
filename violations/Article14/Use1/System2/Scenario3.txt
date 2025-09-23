@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To properly understand the relevant capacities and limitations of the high-risk AI system and be able to duly monitor its operation, including in view of detecting and addressing anomalies, dysfunctions and unexpected performance;" (Article 14(4)(a))
+
+[b] **Guideline:**  
+Providers must equip deployers with interpretability tools that clarify the AI’s decision logic and performance bounds, such as highlighting which visual features or sensor inputs most influenced real-time decisions, and alerting to sensor degradation or model drift.
+
+[c] **Violation:**  
+The Guardian Signal Controller treats CNN feature extraction outputs and Random Forest decisions as opaque, providing no explanation or saliency indicators to operators and no automated alerts for sensor input anomalies or model performance shifts over time.
+
+[d] **Justification:**  
+This opacity hinders operators’ understanding of limitations and emergent dysfunctions, limiting their ability to detect errors early and respond appropriately. The omission is subtle because the system still signals overall decisions but fails to illuminate underlying reasoning or operation issues critical for nuanced oversight.

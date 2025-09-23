@@ -1,0 +1,39 @@
+**Article 9**
+
+**Establishment and Scope of Risk Management System**
+
+The risk management system for the Guardian Signal Controller was established and documented prior to its initial deployment, focusing primarily on the development and design phases. It encompasses identification, estimation, evaluation, and mitigation of risks associated with the system’s intended purpose at urban intersections, specifically concerning traffic safety risks such as red-light violations and pedestrian conflicts. The design leveraged empirical data from a comprehensive dataset of 1.2 million annotated video frames and 500,000 synchronized sensor samples collected from 15 varied urban intersections in three European cities during 2023, providing robust coverage of typical urban traffic scenarios. 
+
+Risk identification centered on hazards mitigable by system design, such as false positives in anomaly detection and delayed signal adjustments. Given the technical feasibility constraints, a combination of CNNs for spatial feature extraction and Random Forest classifiers for anomaly classification was chosen to minimize misclassification under diverse environmental conditions. This model combination underwent offline validation, showing a false negative rate below 2.3% for accident precursors and a false positive rate of approximately 3.1%, aligning with the intended safety performance thresholds. Documentation includes detailed failure mode and effects analysis (FMEA) conducted during system development to anticipate critical failure points.
+
+**Risk Management Process and Lifecycle Application**
+
+The implemented risk management process is characterized by a comprehensive initial phase culminating in the system’s market introduction. The process includes rigorous pre-deployment testing against defined performance metrics such as detection accuracy, latency (average 150ms processing time per frame), and system robustness to variable lighting and weather conditions. Testing phases incorporated both synthetic datasets and limited live-field trials in controlled environments, as outlined in test report DRM-2024-AG-07, which confirmed system compliance with curated risk thresholds.
+
+Following deployment, risk management activities have not been integrated into a formal or scheduled iterative review process. Post-market data related to traffic incidents and operational anomalies are monitored intermittently through informal channels, such as sporadic customer feedback and unsystematic traffic incident reports collected by municipal partners. These data are not systematically analyzed within a structured framework nor used to update risk assessments or system parameters. No established schedule for post-market risk review or revalidation has been maintained since initial release; risk management documentation and the risk profile remain static throughout the system’s operational lifecycle.
+
+**Risk Identification, Estimation, and Evaluation**
+
+Initial risk identification incorporated scenario analysis utilizing historical traffic incident data and pedestrian-vehicle interaction models. Risk estimation combined probabilistic outputs from the Random Forest classifiers with contextual traffic flow indicators to evaluate safety risk levels under normal and reasonably foreseeable misuse conditions, such as sensor occlusion or partial camera failure. While risk arising from misuse scenarios was considered during development, operational guidelines emphasize reliance on deployer monitoring to address emergent anomalies.
+
+Evaluation of other risks based on post-market data, including evolving urban infrastructure changes, has not been systematically performed. There have been no documented updates or recalibrations of system parameters reflecting urban traffic pattern changes, new traffic laws, or infrastructure modifications that could influence risk profiles. The static nature of the risk assessment means that known and foreseeable risks operative at the time of deployment remain the sole basis for ongoing risk understanding.
+
+**Risk Mitigation Measures and Residual Risk Management**
+
+Risk mitigation measures emphasize technical design controls, including the layered AI architecture integrating CNNs for robust feature extraction and Random Forests for decision-making with inherent interpretability and resistance to overfitting. These have been implemented to eliminate or reduce identified risks technically feasible at initial deployment, including minimizing missed detections and reducing false alarms that might lead to unsafe signal timing. Hardware redundancies, such as dual sensor arrays and fallback logic in case of primary sensor failure, are integrated.
+
+Due to the absence of continuous risk management cycles, no dynamic risk mitigation measures responsive to operational data or feedback have been adopted. Residual risks are considered acceptable based on initial performance thresholds and system safety margins, with mitigations primarily embedded in initial system design rather than ongoing adjustment or deployer training enhancements. Information for deployers includes technical manuals and a one-time training module focusing on system setup and incident response protocols; these were developed with the assumption of stable system performance post-deployment.
+
+**Testing Regime and Considerations for Vulnerable Groups**
+
+Testing was conducted extensively pre-market, including model-in-the-loop simulations, real-world pilot tests in pilot municipalities, and controlled environment assessments per standard guidelines. Performance metrics focused on accuracy, latency, and safety-related detection robustness. Metrics and probabilistic thresholds were explicitly defined and complied with: for example, detection confidence levels were set to ensure at least 95% precision in anomaly identification in normal traffic conditions.
+
+Due consideration was given to the system’s impact on vulnerable groups, notably pedestrians including children, by incorporating pedestrian detection and conflict prediction modules within the CNN framework. However, risk evaluations concerning the specific risks to minors or other vulnerable users were static, relying on initial scenario analyses without periodic updates reflecting evolving urban demographics or new usage patterns.
+
+No additional testing post-market has been scheduled or performed systematically; this includes absence of real-world testing iterations correlating with infrastructure changes or seasonal traffic variations. The testing process, while rigorous in development, does not extend into a continuous post-market verification protocol.
+
+**Integration with Other Risk Management Systems**
+
+The risk management process for the Guardian Signal Controller exists independently and has not been combined or aligned with external risk management processes mandated by other Union laws. No integrations with municipal traffic safety monitoring frameworks or infrastructure update programs have been established to dynamically feed risk assessment updates or mitigation requirements.
+
+This firm-specific risk management approach reflects choices prioritizing stable system deployment and technical robustness at introduction, while entrusting ongoing monitoring and field adjustments to the operational deployers outside the scope of the provider’s documented continuous risk management system.

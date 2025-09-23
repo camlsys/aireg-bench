@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (b) facilitating the post-market monitoring... and (c) monitoring the operation of high-risk AI systems."  
+
+[b] **Guideline:**  
+Logs must include timestamped records of user interactions, decisions rendered, system warnings or errors, and performance metrics in real operation to enable effective ongoing evaluation and detection of drift, bias, or degradation post-deployment.  
+
+[c] **Violation:**  
+The Framework aggregates operational metrics on a weekly basis but does not log individual decision outcomes or user override actions in real time, limiting granularity needed for granular post-market surveillance and operational monitoring.  
+
+[d] **Justification:**  
+While summary metrics are available, the absence of fine-grained logs inhibits the detection of transient operational issues or repeated anomalous patterns tied to specific cases or user interventions. This subtle lapse compromises the system’s post-market traceability without being immediately noticeable in routine usage.

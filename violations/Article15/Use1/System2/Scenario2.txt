@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates... Technical and organisational measures shall be taken in this regard." (Article 15(4))
+
+[b] **Guideline:**  
+Systems must implement redundancy or fail-safe fallback mechanisms to handle sensor failures or conflicting data inputs to avoid critical misclassifications affecting safety, with clearly defined mitigation when sensor or data inconsistencies occur.
+
+[c] **Violation:**  
+If a critical sensor providing vehicle speed data fails or reports erratic values, the Guardian Signal Controller continues to rely on inconsistent sensor input combined with CNN video analysis without activating a fail-safe mode or cross-validating with alternative sensor data sources.
+
+[d] **Justification:**  
+Failing to degrade safely under sensor faults exposes the system to inconsistent or unsafe traffic signal timing decisions. The lack of redundancy or fallback is subtle because intermittent sensor anomalies occur routinely in such environments and may be hard to detect without rigorous fault-injection testing, yet it breaches robustness and safety requirements.
+
+---

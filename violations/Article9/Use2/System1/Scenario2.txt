@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable."  
+
+[b] **Guideline:**  
+Risk management must balance residual risk by combining design improvements, risk mitigation controls, and informative user guidance, ensuring that any risks remaining after technical mitigation are reduced to an acceptably low level, based on objective thresholds. Providers should quantify residual risks and justify their acceptability with respect to operational context and potential impact severity.  
+
+[c] **Violation:**  
+Gas Safety Insight adopts an anomaly detection threshold calibrated primarily to minimize false alarms to reduce maintenance burden but does not thoroughly assess the residual risk of missed critical leak detections under low-sensor-signal conditions. No probabilistic risk evaluation demonstrates that the remaining undetected leak probability falls below an objectively justified acceptable level relative to safety consequences.  
+
+[d] **Justification:**  
+The violation is subtle because tuning to reduce false positives appears beneficial operationally but masks an insufficient risk reduction on the hazard detection side. This neglects explicit residual risk evaluation, failing to establish acceptability, which is realistic given common trade-offs in anomaly detection systems where false negatives carry critical safety implications yet remain hard to quantify.  
+
+---

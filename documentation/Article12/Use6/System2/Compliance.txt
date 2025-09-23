@@ -1,0 +1,31 @@
+**Article 12**
+
+### Design and Implementation of Event Logging
+
+Contractual Separation Insight incorporates a comprehensive automated event-logging subsystem designed to operate continuously throughout the lifecycle of the AI system, from initialization through decommissioning. This logging infrastructure captures and timestamps each relevant system interaction, processing step, and decision output at a granularity appropriate to its intended high-risk HR compliance domain.
+
+The core model ensemble consists of approximately 150 decision trees across three random forest models combined with a state-of-the-art large language model based on a transformer architecture, fine-tuned specifically for labor law and corporate policy interpretation. Each inference cycle—comprising quantitative metric extraction, textual policy embedding generation, model ensemble prediction, and recommendation synthesis—is logged in full. These technical logs record input data characteristics, intermediate representations, model confidence scores, and final recommendation outcomes. This comprehensive data capture provides a replayable audit trail supporting forensic analysis of every contract termination evaluation.
+
+Logging is implemented using an append-only, tamper-evident distributed ledger integrated within the system infrastructure, ensuring log integrity and availability. Log data is encrypted at rest and in transit using AES-256 and TLS 1.3 protocols, respectively, limiting access to authorized monitoring personnel and supporting confidentiality requirements inherent to HR data processing.
+
+### Capturing Events Relevant to Risk Identification and Substantial Modifications
+
+To identify potential risk situations or substantial model modifications, the system logs detailed notifications when specific predefined risk indicators arise. These include alerts triggered by anomalous input feature distributions (e.g., outlier employee performance metrics or unrecognized policy document structures), model confidence degradation below a 75% threshold, or significant deviations in decision outcomes compared to historical baselines established during the latest validation phase.
+
+The system further logs all retraining and model update procedures, recording changes in training datasets, hyperparameters, and performance metrics such as accuracy, precision, recall, and fairness indices. Each model update event is correlated with a unique version identifier, allowing traceability of the model state corresponding to logged decisions. This approach supports detection of any substantial modification that could affect output validity or fairness, consistent with a risk-sensitive framework.
+
+### Supporting Post-Market Monitoring Activities
+
+The logging framework was designed to facilitate post-market monitoring by capturing sufficient and relevant data enabling retrospective system performance and risk assessment. Logs include detailed timestamps for decision recommendations, operational metadata (model version, run-time environment), user interface interactions, and exception events, such as failures or overrides by human operators.
+
+Statistical monitoring dashboards aggregate this log data to visualize trend analyses, performance drifts, and compliance metrics over time. For example, drift detection algorithms analyze logged quantitative metrics and decision outcomes monthly, flagging emergent biases or degradations for further human review. These mechanisms enable proactive identification and mitigation of emerging risks during deployment.
+
+Moreover, anonymized log extracts are regularly aggregated and reviewed as part of an established governance process to verify ongoing conformity with labor law requirements and corporate policy constraints embedded within the system. This ongoing feedback supports maintenance and continuous improvement activities.
+
+### Enabling Real-Time and Retrospective Operation Monitoring
+
+Contractual Separation Insight’s logging subsystem supports both real-time and retrospective operational monitoring. Real-time event streams feed an alerting module that notifies system administrators and compliance officers immediately upon detection of abnormal behavior, including unusual model output patterns or security-related anomalies.
+
+Retrospectively, comprehensive logs facilitate root cause analysis in case of disputed contract termination decisions. The detailed capture of input data, decision rationale derived from policy interpretation models, and system execution environment parameters enable reconstructing the system’s decision path transparently and with forensic completeness.
+
+This dual-mode monitoring capability ensures that the system’s functioning can be continuously verified against regulatory expectations and organizational risk management standards, enabling timely corrective interventions where required.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must implement a reliable and automated logging mechanism that continuously records relevant operational events without requiring manual triggers, ensuring logs persist throughout the entire system lifecycle including updates or retraining phases.  
+
+[c] **Violation:**  
+The Legal Termination Assessment Framework only activates logging when an HR user explicitly initiates a termination assessment session, failing to automatically log background model processing activities or system decisions made during batch analyses or offline retraining cycles.  
+
+[d] **Justification:**  
+This subtle violation means that significant automated decision-making events can occur without any recorded trace, undermining the requirement for automatic logging over the system’s lifetime. Because logging depends on user action rather than being built-in to system operations, it is both realistic (due to workflow design decisions) and not immediately obvious without deep inspection.  
+
+---

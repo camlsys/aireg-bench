@@ -1,0 +1,54 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The training, validation, and testing datasets for Pipeline Safety Guardian were developed following a documented data governance framework tailored to the system’s purpose of monitoring gas distribution pipelines. This framework specifies design decisions, includes auditable records of data sourcing, and defines procedures for data preparation and quality assurance.
+
+The core dataset comprises over 120 million time-series sensor readings, collected predominantly from well-maintained pipeline networks situated in northern European regions between 2018 and 2023. Sensors include pressure transducers, flow meters, temperature sensors, and vibration detectors, centrally aggregated at hourly and sub-hourly intervals. Metadata detailing sensor calibration, maintenance activities, and operational environmental factors were integrated. Data were originally captured for operational monitoring by pipeline operators under contractual agreements, with no personal data directly processed.
+
+Data processing steps included multi-stage cleaning to remove sensor drift and communication errors, normalization to account for seasonal variability, and expert annotation of known fault events (approximately 15,000 labeled cases) through collaboration with domain specialists. Label quality was verified via double-blind review cycles to ensure consistency. Aggregation practices preserved temporal continuity for anomaly detection.
+
+Explicit assumptions formulated during dataset construction emphasize that input signals primarily represent physical pipeline health under typical northern climatic and operational conditions. Relatedly, pipeline configurations, maintenance protocols, and environmental stressors defining these northern regions served as implicit baselines for model learning.
+
+Adequate availability and quantity for the intended application were confirmed by data volume and diversity within the northern region pipelines; however, data from southern or rural pipeline infrastructures characterized by warmer climates, differing soil compositions, and variable maintenance regimes remain limited. This distribution was identified and documented during the dataset suitability assessment, highlighting geographic coverage gaps.
+
+Systematic bias analysis was conducted using stratified performance evaluation across pipeline subtypes and regions. Results indicated consistent lower anomaly detection sensitivity when models were tested against synthetically generated southern-region-like signal patterns and a limited set of rural pipeline data sourced from external partners. These biases are attributable to underrepresentation of such environments during training.
+
+Mitigation measures adopted include notification protocols within the documentation to system deployers, advising supplementary local data collection and retraining to address geographic coverage deficiencies. Adaptive model fine-tuning workflows are supported by the system, enabling incorporation of new regional data streams to reduce bias over time. The provider has developed validation guidelines for deployers to assess regional model performance post-deployment and configured warning thresholds conservatively to mitigate risk of missed fault detections in less-represented areas.
+
+Data gaps and shortcomings, especially the underrepresentation of southern and rural pipeline conditions, are explicitly recorded in the dataset risk register. The provider is engaged in ongoing efforts with regional pipeline operators and research institutes to expand the dataset inclusively. However, baseline public datasets of comparable size and quality for these regions remain unavailable. The provider recommends ongoing monitoring and the deployment of complementary detection technologies in parallel to address residual safety concerns.
+
+### Dataset Relevance and Representativeness
+
+The training, validation, and testing datasets were curated to be directly relevant to the operational and safety monitoring tasks of the Pipeline Safety Guardian system. Representativeness was ensured for well-maintained northern pipeline environments, which form the core use context. Statistical analyses demonstrated that the datasets capture typical signal behavior, seasonal variations, and fault event typologies encountered in these regions.
+
+Completeness was emphasized through comprehensive coverage of sensor types, inclusion of multi-year operation cycles, and representation of diverse fault scenarios documented by operators. Error rates in sensor data after cleaning were estimated below 0.3%, verified through cross-validation against independent control datasets. Testing datasets comprised 20% hold-out samples, including both normal and known fault condition instances.
+
+To the extent achievable, datasets exhibit appropriate statistical properties reflecting distributions of pressure and flow dynamics, including temporal autocorrelation and event rarity patterns. However, the datasets explicitly do not represent some pipeline segments subject to distinct operating conditions found in southern climates and rural infrastructures. Consequently, statistical representativeness in these geographical and environmental domains is limited.
+
+### Consideration of Operational Context and Geographic Specificity
+
+Recognizing that the effectiveness of the Pipeline Safety Guardian depends critically on environmental and operational nuances, the dataset construction and documentation explicitly incorporate geographic context as a key factor. The training data predominantly reflect northern, temperate environmental conditions characterized by low humidity, freezing events, and compact soil compositions.
+
+The system’s anomaly detection models were thus conditioned primarily on these contextual patterns, including the typical pipeline maintenance schedules and operational modes present in the source regions. Environmental factors such as temperature fluctuations and soil erosion patterns particular to southern and rural settings were not substantially represented.
+
+Provider documentation clarifies this contextual scope and defines expected deployment parameters aligned with the dataset’s geographic domain. This includes advisories underscoring the potential for reduced detection sensitivity outside these contexts and recommendations for bespoke data collection to extend applicability.
+
+### Use of Special Categories of Personal Data
+
+The training and testing processes did not involve processing of special categories of personal data, as defined under EU data protection legislation. The system processes exclusively sensor-generated operational and environmental signals. No personal identifiers or sensitive personal information are included.
+
+Consequently, no exceptional processing measures for bias detection and correction involving special categories of personal data were necessary or employed.
+
+### Summary of Data Quality and Bias Management Measures
+
+- Data origin and collection are transparently documented, with over 120 million sensor readings primarily from northern pipelines.
+- Data preprocessing included cleaning, normalization, professional annotation, and error quantification, resulting in high-quality labeled datasets.
+- Assumptions explicitly state the representation of physical pipeline status under typical northern environmental conditions.
+- Quantitative and qualitative assessments identified geographic underrepresentation of southern and rural pipelines.
+- Bias detection employed stratified performance testing, revealing lower sensitivity in underrepresented geographies.
+- Mitigation includes operational advisories, modular retraining processes, and deployment recommendations for complementary local data.
+- All known dataset gaps and limitations are recorded in risk management documentation.
+- No special category personal data were processed, obviating the need for additional safeguards under Article 10(5).
+
+Together, these structured dataset governance and quality measures provide transparent, evidence-based traceability aligned with the Pipeline Safety Guardian’s intended use and limitations.

@@ -1,0 +1,27 @@
+**Article 12**
+
+### Design and Implementation of Event Logging Mechanisms
+
+The Legal Termination Assessment Framework incorporates a comprehensive event logging infrastructure engineered to automatically record system interactions and internal state changes throughout its operational lifecycle. This infrastructure supports the dual-model architecture by capturing logs from both the gradient-boosted decision trees (GBDT) module, which processes structured employee and contract data, and the transformer-based natural language processing (NLP) module, which interprets unstructured legal documents. The logging system is implemented using industry-standard log aggregation tools (e.g., Elastic Stack) configured to record timestamped events with unique transaction identifiers, enabling correlation between model inputs, intermediate processing states, and outputs.
+
+Log granularity includes input dataset versions, model inference metadata, confidence scores, decision thresholds applied, and detected model drift indicators. The system versioning and deployment metadata are embedded within each log entry to ensure traceability over updates or retraining cycles. This design choice ensures continuous and seamless capture of data relevant to the system’s decision-making processes without imposing performance degradation exceeding 5%, as demonstrated under simulated client workloads exceeding 300 endpoint calls per second.
+
+### Identification of Risk-Related Scenarios and Substantial Modifications
+
+To identify situations that may introduce risks or reflect substantial system modifications, the logging system includes event categories aligned with risk management protocols. Specifically, logs record flagged cases where model output confidence falls below 75%, triggering alerts for potential misclassification in contract termination eligibility. Deviations from expected input data distributions are automatically logged and analyzed using anomaly detection algorithms to detect potential bias or data drift impacting fair decision-making.
+
+Furthermore, any retraining events, including dataset composition changes, hyperparameter adjustments, and model version rollouts, are logged with audit trails capturing authorization and validation steps by the development team. This approach supports traceability of substantial modifications as defined, ensuring transparency on model evolution and its impact on operational risk profiles.
+
+### Support for Post-Market Monitoring Procedures
+
+The event logging framework facilitates post-market monitoring by systematically capturing key performance indicators relevant to system safety, accuracy, and fairness metrics post-deployment. Logs include comprehensive data on false positive and false negative rates computed from ongoing operational feedback when available, enabling real-world performance tracking against pre-release benchmark baselines.
+
+Aggregated log data feeds an internal monitoring dashboard updated daily and accessible to Meridian Labor Solutions’ compliance specialists and quality assurance personnel. This infrastructure supports continuous evaluation of model behavior, including fairness assessments disaggregated by protected characteristics (e.g., age groups, contract types), ensuring ongoing alignment with anti-discrimination principles mandated for high-risk AI systems in human resource applications.
+
+### Monitoring of Operational Compliance and Traceability
+
+To monitor operational compliance effectively, the system logs user interactions involving critical decision points, such as acceptance or override of AI-generated recommendations by end-users. These interactions include timestamps, user role identifiers, and contextual system outputs, enabling post hoc review to assess human-in-the-loop governance implementation.
+
+Error handling events, system alerts, and model invocation latencies are also logged to maintain operational transparency and diagnose performance bottlenecks. Integration with secure identity and access management systems ensures logging events are protected and only retrievable by authorized personnel, preserving data integrity and preventing unauthorized log manipulation.
+
+Collectively, these logging capabilities provide a robust foundation for traceability proportionate to the system’s intended purpose of delivering fair, transparent, and compliant assessments in an HR context, supporting both internal quality oversight and external auditing requirements.

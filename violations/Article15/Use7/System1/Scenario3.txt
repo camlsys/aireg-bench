@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning)"  
+
+[b] **Guideline:**  
+Implement mechanisms to detect and reject poisoned training samples or suspicious data patterns during model updates, and continuously monitor for potential adversarial interventions aiming to bias model behavior or degrade output quality over time.  
+
+[c] **Violation:**  
+The Credit Evaluation Network updates its model periodically using input data sourced from external credit bureaus without validating data integrity for poisoning attacks, allowing adversaries to insert manipulated loan default records that gradually skew risk assessments in favor of certain applicants.  
+
+[d] **Justification:**  
+This violation is realistic and subtle: incremental data poisoning is hard to detect and can slowly degrade the model’s trustworthiness, violating the cybersecurity and robustness requirements in Article 15(5) without generating obvious alert conditions or immediate failures.

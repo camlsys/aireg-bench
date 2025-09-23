@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+The system must maintain stable performance metrics (accuracy, robustness) in varying operational environments and updates, ensuring no significant degradation or inconsistent behavior occurs over time. This includes rigorous validation under shifts in data distributions and across deployment contexts.  
+
+[c] **Violation:**  
+The Credit Evaluation Network demonstrates degraded accuracy when evaluating applicants from emerging demographic segments introduced after deployment, due to a lack of retraining or adjustment, resulting in inconsistent credit scoring performance over time.  
+
+[d] **Justification:**  
+This breach is subtle since initial validations may have met accuracy criteria, but failure to anticipate and adapt to evolving applicant profiles leads to decreasing score reliability, violating the lifecycle consistency requirement without an overt technical fault or documentation issue.  
+
+---

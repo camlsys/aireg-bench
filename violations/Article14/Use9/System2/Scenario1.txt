@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse..." (Article 14(2))
+
+[b] **Guideline:**  
+The system must enable users to identify and mitigate risks to fundamental rights—such as due process and non-discrimination—arising both from normal use and reasonably foreseeable misuses, including subtle misapplications like over-reliance or misuse in cases outside original legal intent.
+
+[c] **Violation:**  
+Legal Context Navigator’s interface does not highlight or flag situations where the system’s suggestions could inadvertently reinforce systemic biases or misinterpretations, such as favoring certain jurisprudential interpretations without clear indication, thereby enabling over-reliance and potential violation of judicial impartiality.
+
+[d] **Justification:**  
+This subtle omission prevents human overseers (judges and assistants) from adequately anticipating or guarding against risks to fundamental rights, as they might treat outputs as authoritative without recognizing the system’s limitations. This violates the requirement to minimize risks including from foreseeable misuse (e.g., automation bias or uncritical acceptance of AI-generated legal interpretations).
+
+---

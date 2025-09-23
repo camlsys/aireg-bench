@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must implement continuous, automatic, and tamper-resistant logging mechanisms that record all relevant operational events from deployment until decommissioning, without requiring manual triggers or external prompts, ensuring complete lifecycle traceability.  
+
+[c] **Violation:**  
+The Consumer Credit Transformer logs only begin once credit decisions are finalized, neglecting intermediate model inference steps and data preprocessing events, which occur automatically but remain unrecorded throughout the system’s lifecycle.  
+
+[d] **Justification:**  
+By omitting logging of the full sequence of internal processing events and only capturing final outcomes, the system fails to ensure automatic logging "over the lifetime," thus undermining traceability. This omission is subtle because logs exist but are incomplete, giving a false impression of compliance.  
+
+---

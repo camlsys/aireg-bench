@@ -1,0 +1,37 @@
+**Article 15**
+
+### Design and Development for Accuracy, Robustness, and Consistent Performance
+
+Gas Safety Insight employs a hybrid AI architecture integrating Gradient Boosted Decision Trees (GBDT) and encoder-only Transformer models to analyze multi-modal sensor data—including pressure, flow rates, and acoustic signals—and real-time operational logs. The system was initially developed using a comprehensive dataset comprising over 12 million labeled samples collected from gas network pilot sites over three years. This dataset represents a broad spectrum of normal and anomalous conditions, including controlled leak simulations and historic incident logs.
+
+To achieve an appropriate level of accuracy, the system’s base models were trained and validated with rigorous cross-validation and temporal holdout sets, resulting in an initial anomaly detection accuracy of 97.2% and a false-negative rate of 1.3%, as benchmarked against a reference threshold established through industry-standard safety parameters and domain expert input. Model robustness was assessed against sensor noise variability, operational context shifts, and adversarial perturbations simulated using worst-case environmental conditions.
+
+However, the system follows a scheduled retraining protocol that utilizes live operational data accumulated continuously from the deployed environment. Retraining cycles are executed every 60 days to adapt models to evolving operational conditions and seasonal usage patterns. These scheduled updates are designed and automated to regenerate model parameters based on the latest data without a fully isolated validation pipeline encompassing independent ground-truth labeling or comprehensive stress testing prior to deployment.
+
+This approach results in periods post-update during which model performance metrics—specifically the detection true positive rate and false-negative rate—exhibit measurable fluctuations. Internal logs from monitoring actions indicate transient dips in anomaly detection sensitivity to between 92% and 94% during roughly the first 1-2 weeks following model deployment, falling below the originally validated safe detection threshold of 95%. These intervals correspond to the period before further runtime adaptation observations trigger manual corrective measures.
+
+### Measurement Methodologies and Declaration of Performance Metrics
+
+Performance metrics and accuracy levels are documented in the instructions for use accompanying each software release. The declared detection accuracy is specified as a baseline of 97% average true positive detection rate under controlled validation conditions, with an explicit statement noting potential short-term variability post-model update. The primary metrics include true positive rate (sensitivity), false positive rate, and precision measured against annotated leak events, alongside lag time to detection.
+
+The provider collaborates with external benchmarking bodies to align performance evaluations with emerging industry standards for anomaly detection in critical infrastructure. Benchmarking setups simulate complex environmental conditions, including overlapping sensor anomalies and operator interventions. Still, these benchmarks are primarily performed at initial training stages, with no real-time validation benchmarks incorporated into the automated retraining workflow on live data.
+
+### Resilience to Errors, Faults and Feedback Loops
+
+Gas Safety Insight includes monitoring subsystems that track operational parameters and model output statistics, raising alerts if key performance indicators (KPIs) fall outside defined tolerances. Technical redundancy is implemented at the sensor data acquisition and preprocessing layers to mitigate faults; dual sensors with voting schemes reduce data inconsistencies or faults during transmission.
+
+The models themselves, however, are not equipped with fail-safe fallbacks or rolling back upon detection of anomalous performance degradation. The current lifecycle management strategy relies on periodic manual performance reviews and incident investigations post-deployment rather than real-time resilience mechanisms embedded in the AI model pipeline.
+
+Regarding risk minimization of biased outputs feeding back into the training process, the system employs strict data provenance constraints and curation rules to exclude samples triggered by recent false negatives or operator interventions. Nevertheless, the automated retraining pipeline does not yet incorporate algorithmic checks to detect or compensate for feedback loops that may arise from undetected detection errors influencing subsequent training data selection.
+
+### Cybersecurity and Protection Against Adversarial Manipulation
+
+Cybersecurity measures conform with contemporary standards for critical infrastructure AI. Data communication between field sensors and central processing nodes is secured via end-to-end encryption and authenticated channels using TLS 1.3. Model artifacts and training datasets are stored within controlled access environments with role-based permissions and are subject to regular integrity checks.
+
+To counteract AI-specific vulnerabilities, the provider employs automated scanning for known model poisoning patterns and data poisoning attempts during retraining data ingestion. Adversarial robustness is evaluated during development through adversarial example generation techniques simulating sensor spoofing or environmental noise designed to elicit false alarms or evasion.
+
+Despite these controls, no real-time automated detection or mitigation pipelines for adversarial attacks are currently integrated within the live retraining workflow. The system’s cybersecurity framework incorporates incident response protocols for identified threats, but operational deployments rely heavily on network-level protections and anomaly detection at the infrastructure level rather than embedded AI model-level defenses.
+
+---
+
+This documentation reflects current technical and operational practices regarding design choices, update mechanisms, and lifecycle management of Gas Safety Insight, providing detailed context for assessing accuracy, robustness, and cybersecurity measures consistent with Article 15 requirements.

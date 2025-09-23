@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"1. High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."
+
+[b] **Guideline:**  
+The system must provide the human overseer with interfaces that enable real-time, intuitive monitoring of the AI’s decision process and outputs, including transparency about which candidate features influenced ranking. It should allow humans to detect and understand anomalies or unexpected behaviors promptly.
+
+[c] **Violation:**  
+The Talent Insight Model’s user interface only shows final ranked lists without offering insights into which elements of a candidate’s profile most influenced their score or ranking, limiting HR managers’ ability to gauge whether the system’s decisions match expectations or detect anomalies. Moreover, the system uses batch processing without live monitoring dashboards, hindering timely human oversight during recruitment cycles.
+
+[d] **Justification:**  
+This violation subtly breaches effective overseer capability by restricting actionable transparency to natural persons, thereby impairing their capacity to monitor the system “during the period in which [it is] in use.” The lack of explainability and real-time feedback may not be immediately obvious yet critically limits oversight, making it a realistic yet understated example.
+
+---

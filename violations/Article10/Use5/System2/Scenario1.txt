@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"  
+
+[b] **Guideline:**  
+Experts must thoroughly audit training datasets for biases related to protected characteristics (e.g., gender, ethnicity, age), especially in hiring contexts where discrimination is prohibited. They must implement and validate mitigation strategies (e.g., reweighting, fairness-aware algorithms) to prevent such biases from influencing candidate rankings and subsequent decisions. Documentation and continuous monitoring should confirm the effectiveness of bias mitigation.  
+
+[c] **Violation:**  
+The Recruitment Decision Forest’s historical hiring data includes disproportionate representation of certain demographic groups due to past discriminatory recruitment practices. Although some bias analysis was done, the system lacks robust bias mitigation strategies addressing subtle intersectional biases impacting underrepresented candidates, and these biases inadvertently prioritize profiles reminiscent of previously favored groups. This leads to perpetuation of systemic discrimination in candidate shortlisting without visible error rates or fairness metrics for those subgroups.  
+
+[d] **Justification:**  
+This violation breaches the requirement of examining and mitigating biases that can negatively impact fundamental rights since the model reinforces historical inequities embedded in the data. It is subtle because the system claims interpretability and transparency, and overall accuracy may appear high, masking the discrimination that arises at subgroup intersections. Without effective bias correction, the system fails to fulfill the explicit mandate in Article 10(2)(f) and (g).  
+
+---

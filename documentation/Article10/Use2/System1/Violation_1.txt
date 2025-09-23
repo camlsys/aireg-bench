@@ -1,0 +1,35 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The development of Gas Safety Insight was based on the utilization of multiple training, validation, and testing datasets derived primarily from older urban pipeline segments equipped with mature, well-instrumented sensor arrays (including pressure, flow, temperature, and vibration sensors). The data collection predominantly sourced from gas operators’ historical archives and third-party monitoring systems spanning over a decade. The original descriptive context of these datasets encompasses continuous sensor streams and event logs captured under stable urban operating conditions, with annotation performed by domain experts to label known anomaly events such as leaks, pressure surges, and mechanical faults.
+
+Data preparation included rigorous cleaning steps to remove sensor malfunctions, timestamp synchronizations across modalities, and feature engineering to extract relevant temporal patterns. Annotation consistency was ensured through multi-reviewer consensus with detailed guidelines on event categorization, resulting in a labeled dataset totaling approximately 1.2 million data points over 45 pipeline sections. Data enrichment involved augmenting the sensor readings with geographic metadata and maintenance records. These processes reflect deliberate design choices oriented to maximize data quality, given the system’s focus on early anomaly detection within pipeline infrastructure.
+
+### Assessment of Data Suitability and Representativeness
+
+The datasets employed exhibit high completeness and relatively low error rates, with validated sensor accuracy averaging 98.7% based on cross-validation studies. However, the data sampling inherently favors older, heavily instrumented urban pipeline networks, which represent approximately 85% of the total data volume. Conversely, newly installed pipeline sections and rural segments—with differing sensor technologies such as fiber optic distributed sensing or wireless sensor networks—are underrepresented, accounting for less than 10% of the data. The remaining 5% comprises miscellaneous data sampled from specialized industrial sites with unique environmental conditions.
+
+Although extensive exploratory data analyses were conducted to characterize statistical properties across various pipeline types, the coverage for rural and new infrastructure remains limited. This limitation arises from the scarcity of annotated operational failures in those segments and reduced availability of comparable sensor modalities. As a consequence, the model’s overall feature space is more heavily weighted towards patterns typical of older urban pipelines. Assumptions underpinning model design therefore focus on detecting anomalies consistent with the temporal and contextual signatures prevalent in these environments.
+
+### Examination of Bias and Identification of Data Gaps
+
+Comprehensive bias assessments employed distributional analyses and performance stratification across geographic and infrastructural categories. Results demonstrated consistently high anomaly detection precision (above 92%) within urban datasets but a marked degradation to average precision levels near 70% for rural or newly installed pipelines. No statistically significant mitigation strategies were introduced during model training to address this imbalance; an explicit correction step such as domain adaptation or reweighting was evaluated but ultimately not applied due to the absence of sufficient high-quality annotated data from underrepresented segments.
+
+Identification of data gaps highlighted the insufficient representation of sensor types unique to rural environments (including long-haul pressure sensors and ambient environmental sensors), which leads to limited model generalizability in these contexts. Additionally, newly installed pipelines often exhibit different baseline operating parameters and anomaly signatures, which were not captured in the training datasets. These findings were documented to guide future data acquisition priorities.
+
+### Measures to Detect, Prevent, and Mitigate Bias
+
+Given the constraints of dataset composition, bias detection relied on performance monitoring tied to data provenance metadata and sensor typologies. Cross-validation splits were stratified by segment age and geography, confirming performance discrepancies across groups. However, mitigation efforts were limited to informing end-users of these empirical limitations through documentation and scaled confidence metrics that reflect varying reliability by pipeline category.
+
+No special category personal data were processed in the context of bias detection or correction. Synthetic data generation techniques were considered but found insufficiently accurate for anomaly pattern replication in rural and novel sensor setups. Consequently, no bias-correcting data augmentation or resampling methods were deployed during model development. The system provides explicit flags signaling potentially lower confidence outputs when encountering underrepresented sensor profiles or operating conditions deviating substantially from the training distribution.
+
+### Data Quality and Documentation
+
+All datasets underwent systematic quality controls including automated anomaly filtering, noise reduction, and cross-sensor consistency checks. Version control and lineage tracking were maintained with secure dataset repositories conforming to ISO 27001 standards for data management. Data retention policies ensured that historical training data remained immutable to preserve reproducibility, and regular re-evaluations of dataset relevance were scheduled in alignment with system update cycles.
+
+Comprehensive documentation accompanies the datasets, detailing origin, sensor specifications, annotation protocols, and known biases. This transparency is intended to support informed compliance assessments and operational decision-making regarding appropriate contexts for system deployment and confidence limits.
+
+---
+
+This documentation provides a detailed account of the data governance, dataset characteristics, bias examination, and corresponding technical measures related to Gas Safety Insight’s development. It reflects realistic industry practices and current capabilities around dataset representativeness and bias management without presuming remedies for identified data limitations in less-represented pipeline segments.

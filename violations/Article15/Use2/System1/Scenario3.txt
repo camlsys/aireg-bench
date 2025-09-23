@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. [...] The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set, [...] inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)."  
+
+[b] **Guideline:**  
+The AI system should incorporate robust defenses such as anomaly detection at the data input stage, integrity checks on training data, and continuous monitoring for suspicious input patterns that might represent adversarial attacks. Response capabilities must include quarantine or rollback features and operator alerts to prevent feeding manipulated data back into the model in continual learning scenarios.  
+
+[c] **Violation:**  
+The continuous learning component of Gas Safety Insight processes real-time sensor inputs without implementing detection of adversarial manipulations or input perturbations designed to subtly mislead anomaly detection, allowing attackers to introduce imperceptible adversarial examples that cause the system to overlook real hazards or generate false alarms.  
+
+[d] **Justification:**  
+This violation undermines cybersecurity and robustness by exposing the system to adversarial evasion, violating protections against manipulation of outputs. The issue is plausible and subtle, as adversarial attacks in sensor fusion contexts can be very hard to detect without dedicated measures, and the absence of these protections leaves the system vulnerable despite conforming to typical cybersecurity controls at the network level.

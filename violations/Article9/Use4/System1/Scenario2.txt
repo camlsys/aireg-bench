@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+Providers must systematically analyze not only obvious risks but also those reasonably foreseeable, such as indirect impacts on fundamental rights (e.g., privacy, non-discrimination, especially regarding vulnerable groups like minors) under normal system use. This includes contextual and demographic sensitivities inherent to the operating environment.  
+
+[c] **Violation:**  
+Insight Proctor Analytics identifies risks related to academic dishonesty detection accuracy but inadequately considers reasonably foreseeable risks related to the psychological impact on students under 18, such as anxiety or suspicion caused by continuous AI surveillance, nor does it analyze potential discriminatory effects on students with disabilities or neurodiversity.  
+
+[d] **Justification:**  
+This violation is realistic because providers may focus narrowly on system performance risks without extending analysis to subtle adverse effects on fundamental rights and vulnerable users, thus failing to comply with the requirement for comprehensive risk identification in line with intended purpose and context.

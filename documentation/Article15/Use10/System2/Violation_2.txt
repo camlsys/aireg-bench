@@ -1,0 +1,28 @@
+**Article 15**
+
+**Design and Development for Accuracy and Robustness**  
+Election Sentiment Transformer (EST) is built upon state-of-the-art encoder-only transformer architectures trained on a corpus exceeding 150 million multilingual social media posts collected over the past two years, incorporating diverse demographic and regional political discourse. The training datasets integrate both verified public datasets (e.g., Twitter Verified API streams, public political forums) and unverified live social media streams sourced through publicly available APIs without prior human vetting. This inclusion of unverified streams supports near-real-time detection of emerging trends but introduces variability in input signal quality.
+
+The system achieves an overall sentiment classification accuracy of 82.3% on a benchmark set derived from manually annotated social media posts reflecting political opinions across EU member states. However, performance fluctuates depending on the source reliability: verified data subsets yield accuracy above 90%, whereas unverified streams drop to approximately 72%. This spread corresponds to inherent noise and manipulation risks prevalent in unmoderated social media data. Model outputs include confidence scores to indicate prediction uncertainty, yet no technical measures automatically discount or reject low-confidence or conflicting data.
+
+**Declared Accuracy Metrics and Performance Reporting**  
+The accompanying instructions for use specify accuracy metrics relevant to system performance—namely, macro-averaged F1-score, precision, recall, and confidence thresholds—outlined at a granularity of data source provenance (verified vs. unverified). These metrics are detailed in a publicly accessible technical annex and are updated quarterly to reflect retraining and data drift considerations. The documentation clearly notes the variable reliability introduced by unverified inputs and discloses that this may affect the fidelity of generated counter-messages.
+
+**Resilience and Handling of Errors and Inconsistencies**  
+The EST employs continuous monitoring modules to flag anomalous input patterns, such as sudden surges in topic frequency or atypical sentiment shifts, using statistical change detection methods. Nevertheless, the system design does not incorporate fallback or fail-safe mechanisms activated upon detection of data anomalies or conflicting signals. The workflow proceeds to generate counter-messages based on the available data streams without automatic intervention, escalation, or human-in-the-loop verification.
+
+The absence of redundancy or supervised override means that during periods of data distortion—whether due to coordinated misinformation campaigns or automated bot activity—EST may produce misleading or distorted outputs that influence electoral sentiment narratives. This design decision reflects prioritization of rapid response and scale over robustness in anomaly handling, with the understanding that downstream deployment entities retain operational control.
+
+**Cybersecurity and Protection Against Adversarial Manipulation**  
+Horizon Analytics Group implements standard cybersecurity protocols reflecting 2025 industry norms, including encrypted data transmission (TLS 1.3), regular penetration testing, and role-based access controls to prevent unauthorized model access or tampering. The model training pipeline enforces data integrity checks and provenance tagging to trace sources of training data, although it does not currently leverage advanced adversarial defense techniques such as robust adversarial training or certified defenses against adversarial inputs.
+
+No dedicated mechanisms are in place to detect or mitigate data poisoning attacks or model evasion tactics manifested through adversarial examples injected into real-time input streams. Moreover, the system does not actively distinguish manipulated content from authentic discourse before processing, nor does it maintain sandboxed evaluation environments for suspect data. The cybersecurity measures focus primarily on protecting infrastructure and access but do not extend to dynamic real-time input integrity verification.
+
+**Update and Feedback Loop Controls**  
+EST undergoes scheduled quarterly retraining cycles incorporating data accumulated since the last training period, including social media content ingested during live operation. The retraining process lacks automated bias detection or correction modules designed to mitigate risks of feedback loops, whereby model-generated content may influence subsequent data streams and reinforce potential biases. Feedback loop risks are documented and form part of the user-facing transparency materials but are not programmatically controlled within the system.
+
+The lack of automated safeguards to address feedback effects or systematic drift means that the system’s outputs could increasingly reflect and amplify distortions present in its own propagated narratives over time. While manual audits and post-hoc corrective actions are possible, these are outside the scope of the automated model lifecycle management.
+
+---
+
+This documentation provides comprehensive details on the technical and operational characteristics of Election Sentiment Transformer concerning the requirements of Article 15, enabling thorough assessment of its accuracy, robustness, and cybersecurity posture alongside known limitations related to input data verification and anomaly handling.

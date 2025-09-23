@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+To ensure representativeness, data should encompass the full range of operational conditions (e.g., pressure, temperature, flow variability) encountered across all parts of the gas network. Data quality assurance involves identifying and correcting errors or missing values that could cause erroneous anomaly detection.
+
+[c] **Violation:**  
+The datasets suffer from incomplete capturing of rare but critical operational states, such as extreme low-flow or rapid pressure transients; these rare states are omitted due to difficulties in labeling and data cleaning. Consequently, the model underperforms in predicting failures under these specific but safety-critical conditions.
+
+[d] **Justification:**  
+The omission represents a subtle violation of completeness and statistical appropriateness because rare events are essential for safety but often under-sampled. This gap is not a blatant documentation failure but an inherent limitation of data preparation, realistically leading to blind spots in anomaly detection without obvious signals in model metrics.

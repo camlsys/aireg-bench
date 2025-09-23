@@ -1,0 +1,21 @@
+**Article 12**
+
+**Implementation of Event Logging for Traceability**
+
+The Competency Evaluation Framework employs a comprehensive logging infrastructure designed to capture critical events throughout the operational lifecycle of the AI system. To comply with high-risk system traceability requirements, the system automatically records the final competency scores generated for each trainee assessment. These scores represent the definitive output reflecting the learner’s skill acquisition and mastery level as determined by the Gradient Boosted Decision Tree (GBDT) ensemble model. Logging occurs synchronously upon completion of each evaluation cycle, with timestamps and anonymized trainee identifiers to correlate results without disclosing personal data.
+
+Intermediate model computations, such as feature influence scores derived from SHAP value approximations or confidence margins near classification thresholds, are excluded from persistent logs. This design decision mitigates potential risks related to unwarranted exposure of sensitive inference details and respects operational confidentiality by focusing on end-point evaluation outputs. Because the system does not record borderline confidence metrics or incremental feature contributions, logs do not contain indicators that might flag specific assessments as risk-prone or otherwise susceptible to scoring instability.
+
+**Relevance of Logged Data to Risk Identification and Monitoring**
+
+In alignment with the requirements to identify situations that may present risks (Article 12(2)(a)) and facilitate subsequent monitoring (Article 12(2)(b) and (c)), the system’s choice to log only final competency scores represents a targeted approach to traceability. The final scores serve as a succinct summary of a learner’s demonstrated competency and reflect all applied model calibration and feature weighting at the time of evaluation.
+
+This strategy supports post-market surveillance by providing a stable and consistent dataset for analyzing population-wide scoring trends and detecting shifts in overall competency distributions that may signal model degradation or unforeseen biases. Although the system does not log intermediate classifier states or confidence intervals, Horizon Learning Analytics maintains internal version control and validation records for all model updates. These internal controls ensure that any substantial modifications to model parameters—which could materially impact scoring logic—are documented separately from runtime logs, preserving the integrity of traceability without conflating operational event logs with developmental metadata.
+
+**Technical Architecture and Log Data Management**
+
+The logging mechanism is implemented as a modular extension interfacing directly with the GBDT inference engine. Final scores are serialized and transmitted to a secure logging service operating within a role-based access control environment. Log entries include a session identifier, evaluation timestamp precise to milliseconds, and metadata describing the model version used.
+
+To ensure data integrity, logs are cryptographically hashed upon receipt with hash values stored alongside log records, enabling tamper-evidence in post-market audits. Retention policies align with institutional standards for educational records while complying with data minimization principles. Logs exclude any feature-level raw data inputs or internal decision path details, preventing inadvertent exposure of sensitive or proprietary information.
+
+By recording only the conclusive competency scores, the system delivers precise, objectively verifiable data aligned with its adaptive curriculum steering and certification endorsement purposes. This logging approach balances operational transparency and compliance with the security and interpretability expectations established for high-risk AI systems in vocational and lifelong learning environments.

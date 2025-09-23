@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))  
+
+[b] **Guideline:**  
+The system’s human-machine interface (HMI) must provide real-time, comprehensible insights into how prioritization decisions are reached, including clear visualization of key input features and intermediate network outputs, enabling dispatchers to monitor AI reasoning actively and intervene if necessary. Effective oversight requires that the interface avoids information overload and presents data in an accessible, actionable form for emergency personnel under time pressure.  
+
+[c] **Violation:**  
+The Emergency Dispatch Prioritization Engine’s interface simply outputs a single priority score without transparent explanation or visualization of the contributing factors from the CNN or LSTM components. Additionally, key uncertainty metrics or confidence intervals related to spatial or temporal analyses are omitted, making it difficult for dispatchers to detect when the model might be uncertain or malfunctioning.  
+
+[d] **Justification:**  
+This violation is subtle because the provision of a simplistic priority score may seem sufficient at first glance but does not fulfill the requirement for effective oversight since dispatchers cannot gauge why the model arrived at its prioritization or detect anomalies. The lack of interpretable intermediate results precludes meaningful human-machine interaction, undermining the ability to oversee or override the system in real time, particularly critical in emergency contexts where misprioritization can cost lives.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system;" (Article 14(4)(d))  
+
+[b] **Guideline:**  
+The system design and user interface must enable natural persons to confidently override or dismiss its recommendations at any time, with clear controls and without undue cognitive load, and must ensure that such decisions can be logged and acted upon immediately to prevent harm.  
+
+[c] **Violation:**  
+SafeRoute’s interface requires multiple layered menus and confirmation dialogs before an operator can override traffic hazard predictions, and the system lacks feedback confirming the override’s effective application, discouraging or delaying timely human intervention in fast-changing urban traffic situations.  
+
+[d] **Justification:**  
+The cumbersome override process and absence of clear feedback subtly discourage operators from overriding the AI, potentially causing them to rely on incorrect system outputs when the ability to intervene should be straightforward. This risk is realistic given high-pressure operational contexts and is a subtle violation because the override function formally exists but is effectively unusable in practice.

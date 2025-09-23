@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+“For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: (d) to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system; (e) to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state.” (Article 14(4)(d-e))  
+
+[b] **Guideline:**  
+The system must include clear, easily accessible controls that dispatchers can use at any time to refuse the AI’s prioritization recommendations or pause the system’s operation. This includes a clearly labeled “override” option and an emergency stop mechanism designed for rapid use under operational stress, ensuring human control atop autonomous recommendations.  
+
+[c] **Violation:**  
+The user interface of the Emergency Dispatch Prioritization Engine permits dispatchers to view recommendations but requires multiple menu navigations and confirmation steps before overriding or stopping the system’s operation. Furthermore, the “stop” function only suspends AI recalculations but does not revert to a safe fallback mode, potentially leaving dispatch decisions in uncertain or inconsistent states.  
+
+[d] **Justification:**  
+This violation is subtle because the presence of override and stop functions superficially appears to meet the requirement, but the cumbersome access and incomplete halting mechanism reduce practical human control, especially during emergencies characterized by urgency and stress. Consequently, dispatcher ability to effectively disregard or halt AI outputs is compromised, violating the proportionality and accessibility criteria in Article 14(4).

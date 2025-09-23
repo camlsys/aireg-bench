@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (b) facilitating the post-market monitoring referred to in Article 72; and (c) monitoring the operation of high-risk AI systems referred to in Article 26(5)."
+
+[b] **Guideline:**  
+The system must log operational metrics and event data that allow post-market evaluators to detect performance degradation, emerging biases, or failures in real-time feedback generation, enabling continuous supervision after deployment.
+
+[c] **Violation:**  
+The system’s logs aggregate user interactions and overall system uptime but lack timestamped records of individual feedback revisions or detected knowledge gap patterns over time, limiting the ability to monitor evolving model behavior or feedback accuracy during post-market surveillance.
+
+[d] **Justification:**  
+Without fine-grained temporal logs of feedback and knowledge gap detections, it is challenging to track subtle declines or shifts in system performance post-deployment. This omission is not overt but restricts effective operational monitoring as required, hindering timely intervention.

@@ -1,0 +1,43 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Credit Evaluation Network (CEN) is developed following rigorous data governance and management protocols tailored to the specific requirements of high-risk AI in consumer credit assessment. Data collection for training, validation, and testing was sourced exclusively from established financial institutions and credit bureaus with explicit consent and clear original purposes aligned with creditworthiness evaluation. Detailed records of data provenance document each dataset’s origin, collection date range (2018–2023), and the consent frameworks under which data were obtained.
+
+Annotation and labelling were conducted by certified financial data specialists, ensuring alignment with credit risk terminology and conventions. Preprocessing steps included normalization of income and debt variables, imputation for missing data using median values stratified by socioeconomic segment, and removal of outliers flagged by domain-expert rules to maintain dataset integrity. Updates were scheduled quarterly, reflecting the evolving economic context and borrowers’ financial behavior. The dataset’s representativeness was assessed through stratification analyses covering multiple demographic groups and geographic regions within the EU.
+
+Explicit assumptions documented in the system design recognized that creditworthiness proxies must correspond to behavioral patterns over a 24-month window, acknowledging potential socioeconomic shifts and seasonal credit usage trends. These assumptions guided selection criteria for data recency and feature relevance, ensuring that the data reflect loan applicant circumstances relevant to the system’s predictive goals.
+
+### Bias Identification, Prevention, and Mitigation
+
+A comprehensive bias assessment was conducted on the training, validation, and test datasets, focusing on identifying disparities across protected characteristics including age, gender, and socioeconomic status. Statistical parity difference, disparate impact ratio, and equal opportunity difference metrics were calculated per dataset segment, revealing minor imbalances primarily related to underrepresentation of certain minority groups in regional subsets.
+
+To address these, reweighting techniques and targeted oversampling of underrepresented groups were applied during model training to prevent disparate treatment and ensure equitable credit risk evaluation. These procedures were complemented by adversarial testing scenarios simulating attempts to exploit algorithmic bias, confirming the robustness of bias mitigation strategies.
+
+Meridian Financial Analytics implemented continuous monitoring pipelines assessing drift and bias indicators post-deployment, enabling timely identification of emerging disparities due to changing data distributions. Such measures ensure compliance with Article 10(2)(f) and (g) by preventing negative impacts on fundamental rights and discrimination prohibited under Union law.
+
+### Dataset Relevance, Representativeness, and Statistical Properties
+
+The datasets employed amount to over 3 million anonymized loan applications covering a time span sufficient to capture credit cycles and behavioral trends. Training data comprises 2.1 million instances, validation 450,000, and testing 450,000 records, split to optimize model generalization and prevent data leakage. Accuracy, precision, recall, and AUC-ROC benchmarks were evaluated using stratified cross-validation with no significant overfitting observed, tested against key subpopulations to confirm consistent performance.
+
+The data features include standardized financial indicators (income, loan amount, credit history length), demographic attributes (age, region), and behavioral markers (previous default occurrences), carefully vetted for completeness and accuracy. Variables subject to regulatory restrictions, such as race or ethnicity, were excluded from inputs but considered in bias assessment strictly following legal and ethical protocols.
+
+### Contextual and Geographic Data Considerations
+
+The system explicitly incorporates geographic segmentation at the EU member state level, reflecting differences in economic conditions, regulatory environments, and credit market behaviors. Geographic origin data allow the model to adjust risk profiles contextually while respecting data minimization principles.
+
+Behavioral and functional contextualization was achieved by incorporating variables measuring seasonality effects on credit usage, regional unemployment rates from Eurostat databases, and financial product types relevant to consumer segments. This contextual information enhances model adaptation to the specific socio-economic environments within which loan applicants reside and are evaluated.
+
+### Handling of Special Categories of Personal Data
+
+No special categories of personal data (as defined in Article 10(5)) were utilized in the training, validation, or testing datasets. The system’s design prioritized alternative data points to avoid processing sensitive information, thus precluding the need for the exceptional provisions related to special data categories. This decision aligns with fundamental rights safeguards and data protection principles embedded in the system’s development lifecycle.
+
+Where proxy variables for bias correction were necessary, only anonymized or pseudonymized data underwent processing, and strict access control policies, including role-based authentication and audit logging, were enforced as per standard IT security frameworks certified under ISO/IEC 27001.
+
+Data retention policies stipulate deletion of all temporary datasets and training snapshots immediately after model finalization or retraining cycles, limiting data privacy risks and unauthorized reuse.
+
+### Application of Data Governance to Testing Data Sets in Non-Training Scenarios
+
+The AI system’s development exclusively involves supervised learning with model training; however, testing datasets were treated with the same strict governance standards as training and validation sets. Data quality, representativeness, and bias assessments were conducted identically across all datasets to uphold the integrity of evaluation processes and ensure consistent risk profiling accuracy.
+
+This comprehensive application of governance measures to all data subsets ensures adherence to Article 10 requirements holistically, with testing data serving as an effective safeguard to validate that deployment conditions reflect the system’s design assumptions and avoid degradation due to data issues.

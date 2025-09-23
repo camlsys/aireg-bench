@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: … (d) to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system;" (Article 14(4)(d))
+
+[b] **Guideline:**  
+The system must empower users with accessible and clearly documented controls allowing them to suppress, override, or reverse AI-generated recommendations fully and without technical barriers, supported by interfaces that make such interventions intuitive and traceable.
+
+[c] **Violation:**  
+Contractual Separation Insight’s interface requires multiple administrative permissions and obscured navigation paths to override or reject AI recommendations, discouraging natural persons from exercising discretion to disregard outputs and making the override function practically unavailable in day-to-day operations.
+
+[d] **Justification:**  
+This subtle procedural friction creates an environment where users may feel compelled to accept AI outputs even when inappropriate, breaching the requirement that humans must be fully enabled to disregard or reverse system outputs. Such design impedes true human agency and oversight and represents a non-obvious yet realistic compliance breach.

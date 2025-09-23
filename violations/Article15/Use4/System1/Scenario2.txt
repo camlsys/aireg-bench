@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems."
+
+[b] **Guideline:**  
+The system must incorporate technical and organizational measures such as redundancy, fail-safe mechanisms, or error detection routines to mitigate unintended outputs arising from transient faults, sensor noise, or adversarial behavior from users. This includes preventing cascading failures from misclassifications.
+
+[c] **Violation:**  
+Insight Proctor Analytics lacks a mechanism to identify or isolate conflicting signals when two simultaneous but contradictory behavioral cues occur (e.g., a student furtively looking at a paper while simultaneously performing allowed hand movements), resulting in inconsistent anomaly alerts without fallback or human review flags.
+
+[d] **Justification:**  
+This violation is realistic because subtle behavioral inconsistencies are common and hard to model perfectly, and failing to handle them gracefully leads to false positives or ambiguous alerts that undermine system robustness. The absence of technical redundancy or error resolution pathways shows insufficient resilience as mandated by Article 15(4).
+
+---

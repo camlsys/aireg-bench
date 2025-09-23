@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose."  
+
+[b] **Guideline:**  
+Providers must perform a comprehensive risk identification exercise that anticipates not only technical failures but also legitimate foreseeable indirect impacts on fundamental rights such as privacy, data protection, and non-discrimination in the AI’s intended educational monitoring context. This includes risks from erroneous classification or profiling of students and unintended psychological effects of surveillance on minors in exam halls.  
+
+[c] **Violation:**  
+The risk analysis conducted by Veritas Learning Systems fails to incorporate foreseeable risks related to data privacy infringements or the stigmatization and reputational harm of students falsely flagged by anomaly detection. For example, the methodology omits consideration of false positives disproportionately affecting students from particular sociocultural backgrounds due to environmental audio variations, thus neglecting certain fundamental rights impacts.  
+
+[d] **Justification:**  
+This violation is subtle, as the provider superficially addresses technical risks but does not granularly analyze how misuse or errors in anomaly detection could impinge on fundamental rights like equal treatment and privacy. Such oversight is plausible given the complex socio-technical context, making the risk analysis incomplete and non-compliant with the requirements of Article 9(2)(a).  
+
+---

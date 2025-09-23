@@ -1,0 +1,37 @@
+**Article 9**
+
+**Risk Management System Establishment and Scope**
+
+Veritas Risk Solutions has established a risk management system specific to the Consumer Credit Transformer AI, documenting this process during the initial development phase. The system includes a foundational risk identification and analysis step focused on the known and reasonably foreseeable risks posed by the AI model. This assessment utilized a consolidated historical credit dataset comprising approximately 5 million anonymized individual credit records collected between 2010 and 2020 across multiple European markets. The dataset incorporates key financial attributes, transactional metadata, and socio-demographic variables compliant with data protection standards.
+
+The upfront risk analysis centered on identifying potential discriminatory biases and inaccuracies in creditworthiness scoring that could adversely affect fundamental rights, specifically non-discrimination on the basis of protected attributes such as gender, ethnicity, and age. Using established fairness metrics — including demographic parity difference, equal opportunity difference, and disparate impact ratio — the initial evaluation revealed that the model’s potential bias was within threshold tolerances calibrated against industry benchmarks from peer-reviewed studies conducted during 2023. These analyses and supporting documentation are preserved in the provider’s internal risk assessment records dated Q1 2024.
+
+**Iterative Risk Evaluation and Post-Market Considerations**
+
+Following deployment, the provider’s current methodology involves limited, informal review of emerging risks. The iterative risk management phase is not formally codified or scheduled, with occasional ad hoc discussions prompted primarily by internal operational feedback rather than systematic post-market data analysis. No documented procedures exist for periodically integrating evolving socioeconomic trends, recent regulatory developments, or new data modalities such as third-party alternative credit data sources into the risk management workflow. Consequently, updates to risk assessments or mitigation strategies following market introduction have been minimal and undocumented.
+
+The provider does not currently maintain a structured post-market monitoring system capturing real-world system behavior or emergent bias signals from disparate user segments. There is no routine analysis of performance shifts due to changing economic contexts, such as inflationary pressures or labor market volatility, which might alter model fairness or safety profiles. This restricts the scope of identified risks to those reasonably foreseeable from the original training-phase data characteristics and static model design.
+
+**Risk Estimation Under Intended Use and Foreseeable Misuse**
+
+The risk analysis at product inception considered misuse scenarios primarily related to input manipulation (e.g., fraudulent data entry) and inadvertent use outside of targeted consumer credit contexts. Stress testing involved synthetic data perturbations designed to simulate such misuse, showing model outputs to be stable within set operational boundaries. No dynamic misuse scenarios linked to evolving external factors or adversarial exploitation informed the risk assessment.
+
+Given the AI’s intended purpose of credit risk evaluation, special attention was given to the potential impact on vulnerable groups, notably persons under 18, who are excluded from model application by design and supported through explicit deployer instructions. Other vulnerable groups were recognized as protected under fundamental rights but were not subject to differentiated risk treatment beyond standard fairness evaluations conducted during the initial phase.
+
+**Risk Management Measures and Their Implementation**
+
+The risk mitigation strategy has centered on model design choices, including feature selection restrictions to exclude sensitive attributes and extensive preprocessing to detect and eliminate proxy variables correlated with protected characteristics. These design steps were directed at eliminating or reducing identified risks to the greatest extent technically feasible at the time. Model calibration and validation phases incorporated cross-validation stratified by key demographic segments to ensure output stability.
+
+Due to the infrequent nature of iterative risk review, no recent technical updates or additional risk control layers—such as adaptive bias correction algorithms or automated alerts based on post-deployment drift detection—have been implemented. The provider’s documentation details user guidance on appropriate system use and data input requirements to deployers but omits targeted training modules or scenario-based instructions designed to mitigate misuse or clarify bias-related risks.
+
+The residual risks identified during the initial evaluation phase were classified as acceptable under the prevailing risk appetite framework, supported by statistical performance indicators (e.g., an AUROC of 0.87 on validation sets). No further reductions have been pursued subsequent to market placement.
+
+**Testing Regime and Compliance Verification**
+
+Testing of the Consumer Credit Transformer encompassed extensive pre-market validation encompassing quantitative performance benchmarks aligned with industry standards in 2024. This included over 1 million sample in-depth performance evaluations of the model’s predictive accuracy, robustness under synthetic noise, and fairness metrics across protected groups. Testing proceeded on isolated, representative datasets rather than in real-world operational environments, consistent with the provider’s approach to risk evaluation as a primarily static process.
+
+Testing activities were completed prior to commercial release and did not include ongoing or continuous testing post-market. No real-world trials or pilot programs involving end-users or deployers were operated with systematic monitoring of model behavior under live conditions. This testing scope aligns with the provider’s risk management strategy focusing on upfront mitigation rather than lifecycle iteration.
+
+---
+
+This documentation reflects the provider’s decision-making around risk management for the Consumer Credit Transformer AI system, emphasizing the foundational risk analysis based on static historical data and model design, alongside the limited and informal nature of ongoing risk identification and mitigation. The documented procedures underpin these decisions without extending to a systematic iterative process or comprehensive post-market monitoring.

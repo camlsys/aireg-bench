@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+Risk identification must encompass all known and reasonably foreseeable impacts on fundamental rights, including subtle or indirect harms such as discrimination, privacy intrusions, or undue psychological stress, assessed in the context of actual and foreseeable operational use.  
+
+[c] **Violation:**  
+The system’s risk analysis focuses primarily on data accuracy and model performance risks, neglecting to identify foreseeable risks related to biased outcomes that might systematically disadvantage vulnerable employee groups (e.g., pregnant employees or minorities), despite documented disparities in historical HR data.  
+
+[d] **Justification:**  
+By failing to analyze these reasonably foreseeable fundamental rights risks, the system insufficiently understands its risk profile. This violation is subtle as it arises from the omission of indirect discrimination issues rather than overt bias errors and is plausible given common blind spots in applying technical risk frameworks to social contexts.

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+Risk management requires proactive design adjustments to mitigate identified risks as much as technically possible, including retraining or reweighting the model to reduce bias or unfairness, implementation of filtering layers, or use of protected attribute masking to eliminate foreseeable harms rather than relying solely on user warnings or disclaimers.  
+
+[c] **Violation:**  
+Following identification of a risk that the model disproportionately rates candidates from certain linguistic or cultural backgrounds lower due to biased training data, Sterling Recruitment Technologies opts only to provide detailed warnings and user guidelines without modifying the underlying model or embedding approach to rectify or compensate for bias.  
+
+[d] **Justification:**  
+This is a subtle violation because it prioritizes risk communication over actual risk reduction by design, which contradicts the article’s emphasis on technical mitigation "in as far as technically feasible." Such a decision is realistic in practice, reflecting a common yet inadequate industry approach that neglects deeper system redesign to handle known risks.

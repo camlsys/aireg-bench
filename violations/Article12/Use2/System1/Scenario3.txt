@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable ... facilitating the post-market monitoring ... and monitoring the operation of high-risk AI systems."  
+
+[b] **Guideline:**  
+Logs should consistently record operational metrics, adjustment parameters, and data input variations to allow continuous performance assessment, degradation detection, and support periodic reviews post-deployment.  
+
+[c] **Violation:**  
+Gas Safety Insight does not log changes to data preprocessing configurations or model hyperparameters applied in real-time, hindering the ability to monitor how ongoing adjustments affect system performance after deployment.  
+
+[d] **Justification:**  
+Neglecting to capture configuration changes obscures important factors driving operational behavior and prevents effective post-market surveillance. This violation is subtle because it relates to internal system maintenance data often assumed non-essential for logging.

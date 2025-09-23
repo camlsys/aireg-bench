@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (b) facilitating the post-market monitoring referred to in Article 72."
+
+[b] **Guideline:**  
+To enable effective post-market monitoring, logs should provide detailed and structured records of input data variations, user interactions, and system responses, allowing analysts to evaluate performance shifts or external factor impacts after deployment.
+
+[c] **Violation:**  
+Talent Insight Model’s logging infrastructure only captures aggregated usage statistics and anonymized counts of filtered applications without recording any user behavior or input-text characteristics, making it impossible to link observed performance changes to user or input variation patterns during post-market analysis.
+
+[d] **Justification:**  
+This lack of granular logs impairs the capacity for meaningful post-market monitoring as required. The violation is nuanced because aggregate metrics are available, creating an impression of monitoring, but the absence of input and interaction detail prevents root cause analysis of potential emergent performance issues.

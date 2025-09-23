@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to … fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+Risk analysis must explicitly identify and analyze potential impacts on fundamental rights of all system users, such as privacy, non-discrimination, and due process—especially for vulnerable groups like minors—examining plausible scenarios where system outputs could lead to unjustified educational disadvantage or profiling.  
+
+[c]**Violation:**  
+The risk management process omits detailed assessment of how its personalized learning path recommendations might inadvertently reinforce socio-economic or learning disability biases, e.g., by tailoring feedback based predominantly on linguistic and cognitive benchmarks, thereby risking discrimination against non-native speakers or learners with special educational needs.  
+
+[d] **Justification:**  
+This violation is realistic and subtle because the system appears compliant through generic fairness claims but fails to comprehensively foresee the nuanced ways recommendations interact with sensitive learner attributes, affecting fundamental rights despite being used as intended within educational settings.

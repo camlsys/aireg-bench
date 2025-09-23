@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for… monitoring the operation of high-risk AI systems referred to in Article 26(5)."
+
+[b] **Guideline:**  
+Operational monitoring requires continuous traceability of inputs, model confidence scores, decision rationales, and user overrides to detect atypical behaviors or performance degradation during live use.
+
+[c] **Violation:**  
+The logs capture system inputs and outputs but omit confidence scores and explanations provided by the ensemble model and LLM components, as well as instances where HR users override the system’s recommendations.
+
+[d] **Justification:**  
+This omission weakens operational monitoring capacity because confidence levels and human interventions are essential to understand deviations and system reliability in practice. Such a logging design flaw subtly violates Article 12(2)(c) by limiting transparency over real-world system behavior.

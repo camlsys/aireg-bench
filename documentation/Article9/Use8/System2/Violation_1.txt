@@ -1,0 +1,50 @@
+**Article 9**
+
+### Establishment and Scope of the Risk Management System
+
+Urban Safety Analytics has established a risk management system specifically for the Emergency Dispatch Prioritization Engine (EDPE), recognizing its classification as a high-risk AI system due to its critical role in emergency response prioritization. This system was documented and implemented in the initial development phase prior to the deployment of the EDPE. The system is designed to address risks related to health, safety, and fundamental rights of dispatch personnel, emergency responders, and the public, arising from the operational usage of the AI system in accordance with its intended purpose.
+
+The risk management approach predominantly focused on an exhaustive, front-loaded assessment of identifiable hazards. These include, but are not limited to, erroneous prioritization leading to delayed emergency response, misinterpretation of sensor or geospatial data affecting dispatch decisions, and potential information bias impacting vulnerable demographic groups, such as minors or persons with disabilities. Reasonably foreseeable misuse scenarios—such as operator override errors and data input distortions—were considered during pre-deployment hazard identification and analysis.
+
+### Risk Estimation and Evaluation
+
+During development, the provider conducted quantitative and qualitative risk estimation based on extensive internal testing datasets comprising approximately 50,000 labeled emergency dispatch logs and 10,000 hours of multisensor geographic and temporal data streams, synthesized to simulate operational environments. Model performance was assessed using established metrics such as precision, recall, F1-score, and temporal accuracy benchmarks, with probabilistic thresholds calibrated to prioritize minimizing false negatives in emergency escalation.
+
+Risk evaluations addressed both typical operational conditions and scenarios of reasonably foreseeable misuse, such as incomplete or degraded sensor data inputs and operator input errors. The top-level evaluation concluded that residual risks remain primarily in edge cases involving rapidly evolving incident clusters with sparse historical data, where model uncertainty is higher.
+
+### Post-Market Risk Evaluation and Monitoring
+
+Post-market risk evaluation is conducted through an annual checkpoint report mechanism, which reviews system performance summaries, incident logs, and aggregate feedback collected from deployers. This approach limits dynamic reassessment; real-time operational data, such as emergent incident pattern shifts or live feedback loops from emergency teams, are not currently integrated systematically.
+
+Ad hoc risk reviews are initiated only upon discretionary triggers such as reported critical failures or significant performance deviations detected through manual analysis of post-market incident repositories. However, there is no formalized schedule beyond the annual reporting cycle, nor automated flagging criteria embedded to prompt faster risk reanalysis or update cycles in response to evolving operational patterns.
+
+### Adoption of Risk Management Measures
+
+In line with the pre-market identification and evaluation results, appropriate risk mitigation measures were designed primarily at the development and design levels of the EDPE. These measures include:
+
+- Rigorous model validation protocols combining CNN spatial feature extraction and LSTM temporal sequence prediction to reduce errors in priority assignment.
+- Implementation of operational constraints restricting system outputs to ranked recommendations rather than direct dispatch commands, enabling human-in-the-loop final decisions.
+- Comprehensive technical documentation and user manuals detailing system limitations, assumptions, and required operator qualifications.
+- Training materials developed to align with the anticipated technical competence of dispatch personnel, supporting effective interpretation of system suggestions.
+
+Additional control measures include a standard escalation workflow integrated into cooperating municipal dispatch systems to allow override or manual priority adjustments, addressing residual risks where automated inference may be insufficient.
+
+### Testing Procedures and Consistency Assurance
+
+Testing was performed iteratively throughout the development lifecycle with key checkpoints at dataset benchmarking, architecture integration, and system commissioning stages. Testing datasets encompassed diverse historical emergency incident types across urban environments, ensuring scenario coverage representative of intended use.
+
+Real-world condition testing included controlled pilot deployments in two mid-sized city emergency dispatch centers over a six-month period, monitoring AI recommendations against actual dispatch decisions and response outcomes. These tests confirmed system stability, consistent prioritization performance, and conformance with defined probabilistic thresholds.
+
+Testing metrics were specifically chosen to reflect performance in spatial-temporal fusion tasks, with precision exceeding 92% and temporal prediction accuracy above 89% in controlled operational trials. Quality assurance protocols included stress testing for data input anomalies and limited adversarial scenario simulations focusing on sensor noise and data corruptions.
+
+### Consideration of Vulnerable Groups and Human Factors
+
+The risk management system considered potential adverse impacts on vulnerable groups, including minors and other protected populations, through scenario analysis reflecting different emergency typologies. The EDPE’s priority recommendations are designed to integrate multiple factors, such as incident severity and urgency, to avoid systemic biases leading to discriminatory delays.
+
+Furthermore, the documentation provided to deployers includes guidance on recognizing potential human factors risks, such as cognitive overload and misinterpretation of AI outputs, especially under high operational stress. Training expectations include ensuring that dispatch personnel have sufficient domain expertise and operational readiness to contextualize AI recommendations without undue reliance on automation.
+
+### Integration with Other Risk Management Processes
+
+Although Urban Safety Analytics is aware that deployers may have existing internal risk management procedures mandated under other regulatory frameworks for public safety systems, this provider-level risk management system remains distinct and dedicated to the AI model lifecycle relevant risks. The system is modular to permit, but does not depend on, integration with such external risk management activities.
+
+This delineation clarifies accountability and evidences a clear scope for the AI system development and maintenance-related risk controls, allowing deployers to supplement with their own organizational controls as needed.

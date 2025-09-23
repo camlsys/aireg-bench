@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems. Technical and organisational measures shall be taken in this regard."  
+
+[b] **Guideline:**  
+The system must incorporate fail-safe mechanisms, redundancy, and monitoring to detect and mitigate anomalous inputs or system faults, especially those that could arise from adversarial user interactions or integration failures with external systems.  
+
+[c] **Violation:**  
+The system lacks fallback procedures when receiving corrupted or incomplete applicant data, instead producing output scores without flagging uncertainty or invoking backup evaluation methods, leading to potentially erroneous creditworthiness assessments without resilience enhancements.  
+
+[d] **Justification:**  
+The violation is subtle because the system operates normally under standard input but is vulnerable to data errors common in real-world environments; absence of redundancy or fail-safe plans compromises robustness and resilience, violating Article 15(4) despite no outright system failure.  
+
+---

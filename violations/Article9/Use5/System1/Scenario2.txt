@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(a) the identification and analysis of the known and the reasonably foreseeable risks that the high-risk AI system can pose to health, safety or fundamental rights when the high-risk AI system is used in accordance with its intended purpose;"  
+
+[b] **Guideline:**  
+Providers must identify not only overt technical risks but also subtle discriminatory or fundamental rights risks that arise from algorithmic decisions affecting job application outcomes, including risks of indirect discrimination on grounds such as age, gender, ethnicity, or disability, that are reasonably foreseeable given the recruitment context.  
+
+[c] **Violation:**  
+The Talent Insight Model’s risk analysis focuses largely on technical performance metrics like accuracy and false positive rates but neglects to specifically assess how the system may disadvantage applicants under 18, older workers, or members of protected classes due to biased training data or relevance scoring heuristics.  
+
+[d] **Justification:**  
+This represents a subtle violation because while the system operates within intended recruitment use, it insufficiently anticipates foreseeable risks to fundamental rights (e.g., equal treatment). Such oversight is realistic given that bias detection is easily underprioritized in favor of technical metrics, thus failing the requirement to identify foreseeable fundamental rights risks.

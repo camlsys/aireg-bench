@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"1. High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use."
+
+[b] **Guideline:**  
+The system must include intuitive and sufficiently detailed user interfaces and controls that allow human supervisors to monitor the AI’s real-time outputs, understand its reasoning or confidence levels, and intervene when necessary without requiring extensive technical expertise.
+
+[c] **Violation:**  
+Insight Proctor Analytics presents behavior alerts as simple binary flags (e.g., “suspicious” or “not suspicious”) without providing contextual explanations, confidence scores, or access to the underlying visual or semantic evidence, making it difficult for proctors to interpret why a certain behavior was flagged.
+
+[d] **Justification:**  
+This limits effective human oversight because supervisors cannot gauge the AI’s reasoning or detect misclassifications before acting. The violation is subtle because the system outputs warnings, but the lack of explanatory detail impairs genuine oversight and informed decision-making, contravening the requirement for designed oversight tools.
+
+---

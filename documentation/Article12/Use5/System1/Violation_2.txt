@@ -1,0 +1,21 @@
+**Article 12**
+
+**Event Logging Architecture and Scope**
+
+The Talent Insight Model implements a structured logging mechanism enabling the automatic recording of discrete system events from initial resume upload through final candidate ranking generation during its operational life. Log records capture pertinent metadata, including timestamps of resume submissions and associated user actions, alongside the final ranked list of candidates generated per selection cycle. This constrained logging design intentionally excludes intermediate computational artifacts such as latent scoring vectors, confidence intervals of ranking outputs, or model parameter update events. By focusing logging on final outputs and minimal contextual metadata, the system limits the potential exposure of complex internal state data that could inadvertently obscure subtle variations or biases emerging during model evolution or candidate assessment phases.
+
+This logging resolution balances the need to facilitate traceability of key decision outcomes with pragmatic considerations of data minimization and technical transparency. The architecture employs a centralized event store where immutable log entries are appended chronologically with cryptographic hashing to ensure integrity and non-repudiation. Access to logs is restricted to authorized personnel in line with data protection and audit policies, and logs persist for a minimum of 18 months, supporting retrospective compliance analyses and system audits over relevant recruitment cycles.
+
+**Logging Relevance to Risk Identification and Post-Market Monitoring**
+
+The log content is explicitly designed to record events instrumental in identifying and investigating potential risks as outlined under Article 79(1), such as unintended discriminatory outcomes or malfunction in candidate ranking. Inclusion of the final candidate rankings per job requisition forms the primary record enabling audit trails of selection decisions made by the AI system. Coupled with precise upload timestamps, these records contextualize system behavior temporally, allowing correlation with external events or systemic updates.
+
+While intermediate model states and confidence scores are omitted, monitoring procedures include supplementary periodic validation on benchmark datasets drawn from anonymized, representative resume corpora (approximately 100,000 samples curated annually). These validations evaluate ranking consistency and disparate impact metrics to detect evolving bias patterns indirectly. Findings from such validations are documented separately and inform release cycles and model retraining schedules. This dual approach ensures that logs contain sufficient information for downstream investigatory and regulatory requirements without exposing detailed inner workings that could yield overfitting or inverse selection vulnerabilities.
+
+**Operational Monitoring and Log Utilization**
+
+Operational monitoring leverages logged final rankings and timestamp metadata to measure system performance in live environments. Automated analytics track deviations in candidate rank distributions and volume throughput, triggering alerts if anomalous behaviors or substantial deviations from baseline operational parameters are detected. For example, sudden shifts in the ranking profiles associated with specific demographic groups prompt further human-in-the-loop review.
+
+The exclusion of intermediate metrics means that changes in internal model parameters or confidence calibrations are monitored through controlled model management workflows external to the logging system, including version control, deployment audits, and scheduled fairness assessments. These workflows document parameter updates and training events separately, ensuring a clear separation between operational logs and model lifecycle management records.
+
+This delineation aligns with a risk-aware logging policy by capturing end-to-end candidate ranking outcomes and contextual usage data necessary for meaningful post-market surveillance and compliance verification, without logging detailed intermediate computation steps which could inadvertently mask evolving selection biases or reveal sensitive model internals.

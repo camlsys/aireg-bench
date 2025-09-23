@@ -1,0 +1,37 @@
+**Article 9**
+
+### Establishment and Scope of the Risk Management System
+
+Priority Response Analytics is accompanied by a risk management system tailored to its classification as a high-risk AI system under the EU AI Act. This system has been established to guide the development and pre-deployment phases, with documented processes governing the identification, evaluation, and mitigation of risks pertinent to its intended use in emergency dispatch prioritization. The system focuses principally on risks related to health and safety of emergency responders, dispatch operators, and members of the public, as well as fundamental rights potentially affected by prioritization errors or systemic bias.
+
+The risk management framework implemented by Sentinel Technologies is formally documented within the project’s development lifecycle artifacts, including risk registers, hazard analyses, and mitigation plans. These documents were created through multidisciplinary review sessions involving AI specialists, emergency response domain experts, and safety engineers to comprehensively capture known and reasonably foreseeable risks associated with the combined use of Gradient Boosted Decision Trees (GBDT) for structured data and Transformer encoders for textual dispatch note interpretation.
+
+### Risk Identification, Analysis, and Evaluation during Development
+
+The identification and analysis of risks (Article 9(2)(a)) were conducted primarily via systematic hazard analysis techniques, including Failure Mode and Effects Analysis (FMEA) applied to AI model components, data ingestion pipelines, and output decision processes. Known risks identified included potential misclassification of incident urgency, particularly in rare or ambiguous textual dispatch entries, model bias due to imbalances in historical emergency call datasets, and latency issues that might impact timeliness of dispatch prioritization. Reasonably foreseeable misuse scenarios, per Article 9(2)(b), were considered under controlled assumptions such as incomplete data feed, operator override errors, or partial service interruptions.
+
+Risk evaluation employed quantitative performance metrics stemming from extensive testing on a validation dataset of 1.2 million anonymized historically labeled emergency calls spanning diverse geographic regions and incident types. Metrics included classification accuracy (averaging 89.3%), precision/recall trade-offs configured to minimize undertriage (false negatives), and model robustness indicators derived from adversarial stress tests on textual inputs. These empirical evaluations supported the prioritization of risk mitigation efforts toward reducing severity misclassification and addressing linguistic variability in free-text dispatch notes.
+
+### Risk Management Measures Adopted Prior to Deployment
+
+In alignment with Article 9(2)(d) and (5), mitigation strategies were integrated into both the design and operational documentation of Priority Response Analytics. Algorithmic design choices, such as ensembling GBDT outputs with the Transformer encoder’s confidence scores, were incorporated to balance structured and unstructured data uncertainties, improving overall system reliability. Data preprocessing pipelines included deduplication, normalization, and bias reduction techniques, notably reweighting samples from underrepresented emergency categories.
+
+Where risks could not be fully eliminated through model or data design, targeted mitigation measures included clear operational guidance for dispatch operators emphasizing prudent override of AI recommendations and fallback protocols. The user interface provides contextual confidence indicators with every prioritization suggestion, enabling dispatchers to factor in AI uncertainty in decision-making. Comprehensive technical documentation detailing system limitations and risk factors accompanies the deployment package to support informed use.
+
+Training materials prepared for deployers focus on interpreting model outputs accurately and understanding potential failure modes. These materials also reflect operators’ average technical proficiency and emergency handling experience observed from pilot deployments, ensuring that the knowledge level anticipated for end users informs the risk communication approach.
+
+### Testing and Verification Procedures
+
+Consistent with Article 9(6) through (8), testing was performed repeatedly during development cycles and culminated in extensive pre-market validation. Testing protocols comprised in silico experiments using standardized incident datasets as well as simulation-based pilots mimicking real-world dispatch scenarios. These simulation pilots, involving 15 emergency dispatch centers over three months, allowed performance benchmarking under controlled but operationally realistic conditions. Testing was conducted against predefined probabilistic thresholds, notably a maximum false negative rate of 5% for high-priority incident classification to sustain critical safety margins.
+
+Real-world testing under Article 60 conditions was deferred to the deployment phase and is expected to be managed by the dispatch centers themselves. There is no internal mechanism within the provider’s risk management system for ongoing iterative updates post-deployment; the system’s risk management lifecycle concludes upon handover after thorough pre-market assessment.
+
+### Consideration of Vulnerable Groups and Residual Risk Evaluation
+
+The risk management framework explicitly evaluated the potential for adverse impact on vulnerable groups, including minors and individuals with disabilities, as required by Article 9(9). This included scrutiny of language models for potential bias against nonstandard or regional dialects that could skew urgency detection unfavorably and thereby affect prioritization accuracy. Mitigation efforts consisted of linguistic diversity enhancements in the training corpus and sensitivity analyses of text classification results stratified by demographic proxies.
+
+Residual risk analyses quantified the aggregate effect of identified hazards post-mitigation relative to acceptable risk thresholds defined by Sentinel Technologies’ internal safety criteria aligned to public safety standards. Risks were judged acceptable on the basis that errors remained within controlled margins and could be managed operationally through informed dispatcher oversight and fallback procedures specified in the user guidance.
+
+### Lifecycle Coverage Limitations and Risk Management Scope
+
+The implemented risk management system at Priority Response Analytics is discrete and time-bounded to development and pre-deployment activities, with documented closure after deployment readiness is achieved. There is no structured or documented process integrated within the provider’s system for regular review or update of risk assessments based on post-market operational data or evolving emergency scenarios. Post-deployment risk monitoring and iterative risk mitigation are anticipated to be performed by deploying entities according to their own operational requirements and procedures, outside the scope of the provider’s risk management documentation.

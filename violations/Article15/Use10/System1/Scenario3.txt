@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities... The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+Effective cybersecurity controls must be integrated into the system design, including mechanisms to detect and mitigate sophisticated adversarial inputs, prevent manipulation of training or operational data, and secure model integrity against poisoning attacks or evasion tactics. Incident response procedures and continuous vulnerability assessments should be in place.  
+
+[c] **Violation:**  
+The system lacks hardened detection for subtle adversarial input patterns crafted by hostile actors intending to cause the Analyzer to generate misleading political content that favors a particular agenda. These inputs do not trigger standard anomaly detection and slowly degrade model output neutrality and reliability over time, thus enabling manipulation without overt indication.  
+
+[d] **Justification:**  
+This violation is not an obvious security breach but a covert exploitation of system vulnerabilities to skew output imperceptibly, contravening Article 15(5). It is plausible given the sophistication of adversarial attacks in NLP models and the complexity of detecting carefully tailored politically motivated perturbations that evade basic cybersecurity measures.

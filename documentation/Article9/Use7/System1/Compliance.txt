@@ -1,0 +1,61 @@
+**Article 9**
+
+### Establishment and Maintenance of the Risk Management System
+
+Meridian Financial Analytics has established a comprehensive risk management system for the Credit Evaluation Network, fulfilling the continuous and iterative nature mandated for high-risk AI systems. This system is integrated into all phases of the AI lifecycle—from initial design and data preprocessing through model training, validation, deployment, and post-market monitoring. Documented procedures specify roles and responsibilities for risk assessment and mitigation, ensuring systematic reviews occur no less than quarterly, or ad hoc following significant updates or detected performance deviations.
+
+The risk management documentation includes version-controlled risk registers, change logs, and traceability matrices linking identified risks to corresponding mitigation strategies and validation outcomes. This framework ensures ongoing maintenance and dynamic updates in response to emerging risks or operational feedback.
+
+### Identification and Analysis of Known and Foreseeable Risks
+
+The provider conducted a detailed hazard analysis leveraging domain expertise and available academic literature on financial AI pitfalls to identify risks related to credit scoring inaccuracies impacting consumer fundamental rights (e.g., non-discrimination), financial safety (e.g., undue loan denial or default risk underestimation), and health (stress related to erroneous credit denial). The primary identified risks included model bias against protected demographic groups, data quality issues (missing or outdated financial records), and potential misuse scenarios such as adversarial input manipulation or fraudulent applications.
+
+Sophisticated simulation techniques, including stress testing with synthetic datasets representing edge cases (e.g., minority demographic profiles and rare financial behaviors), were used to elucidate reasonably foreseeable risks. Documentation evidencing this risk analysis is retained in the Provider’s Quality Management System, including detailed rationales for each identified risk grounded in empirical findings.
+
+### Risk Estimation and Evaluation Including Misuse Conditions
+
+Quantitative risk assessments were performed using a combination of statistical metrics and domain-specific impact analyses. Measures such as predictive parity between protected groups, type I/II error rates on benchmark and real-world validation datasets amounting to over 1 million anonymized loan applicants, and loss distributions under varying macroeconomic conditions were computed.
+
+Misuse conditions were examined using scenario-based adversarial testing, where modified input profiles representing attempts to misrepresent income or liabilities were simulated. The provider established probabilistic thresholds for acceptable residual risk for key hazards (e.g., equal opportunity differences under 5%, false negative rates below 10%), informed by regulatory standards and industry benchmarks.
+
+Evaluations were documented with comprehensive test reports detailing methodology, datasets, metrics used (e.g., AUC-ROC, Gini coefficients stratified by subgroup), and statistical confidence intervals. Results demonstrating consistent model robustness against misuse scenarios are stored with traceability to risk mitigation decisions.
+
+### Integration of Post-Market Data and Other Emerging Risk Insights
+
+Data streams from deployed models are periodically aggregated via post-market monitoring systems aligned with Article 72 provisions. Post-deployment analytics analyze credit decision outcomes, borrower performance, and complaint patterns received by banking institutions. These data inform updated risk profiles by identifying early signals of model drift, emerging bias trends, or changes in borrower behavior patterns, especially under evolving economic contexts.
+
+These findings are systematically reviewed quarterly, triggering risk management system updates where necessary. A feedback loop enables recalibration or retraining of models, as well as revisions to operational guidelines communicated to deployers, maintaining alignment with current empirical risk assessments.
+
+### Targeted Risk Management Measures Aligned with Development and Documentation
+
+Risk mitigation actions prioritise the elimination or reduction of identified risks through design choices:
+
+- The use of Gradient Boosted Decision Trees, selected for their transparent feature importance outputs and the ability to produce human-interpretable decision paths, facilitates explainability vital for managing bias risks.
+- Comprehensive data preprocessing pipelines handle missing values, outliers, and perform normalization consistently to reduce data quality-related errors.
+- Training datasets include balanced representation from protected groups constructed from a merged dataset of 1.2 million loan applicants across multiple EU jurisdictions, mitigating representativeness bias.
+- Regular recalibration ensures model accuracy over time, informed by monitored drift indicators.
+
+For residual risks that cannot be eliminated, layered mitigation includes:
+
+- Implementation of algorithmic bias correction post-processing techniques and threshold adjustments at the decision-making stage.
+- Real-time monitoring dashboards alerting operators to deviations in key performance indicators.
+- Detailed technical documentation accompanies the delivery to deployers, including known limitations, model assumptions, and instructions for responsible usage.
+- Provision of targeted training materials and workshops covering technical understanding and ethical considerations to user institutions, tailored according to their technical knowledge and operational context.
+
+### Testing Regimes and Real-World Validation Aligned with Intended Purpose
+
+Extensive testing was conducted throughout development. Unit testing of preprocessing components and model training modules ensured functional correctness. End-to-end testing leveraged 150,000 holdout test samples with detailed metrics and subgroup analyses, confirming model performance stability.
+
+Scenario testing under simulated real-world conditions validated consistency across typical use cases and edge conditions anticipated in consumer credit evaluation. This included pilot deployments integrated with partner banks’ decision support systems under controlled monitoring conditions prior to commercial release.
+
+Pre-market testing adhered to predefined acceptance criteria, including target thresholds for accuracy (AUC-ROC: 0.85+), fairness (disparate impact factor ≥ 0.8), and stability (performance variability ≤ 2% over validation folds). Where thresholds were unmet, iterative retraining and hyperparameter optimization were performed.
+
+### Consideration of Adverse Impacts on Vulnerable Groups, including Minors
+
+Although the system targets natural persons applying for credit, provisions were made to assess impacts on vulnerable populations, including persons under 18 and economically disadvantaged groups. The system design explicitly excludes applicants under the legal age of majority through eligibility filters upstream from the AI model.
+
+Risk analyses included evaluation of potential disparate impacts on low-income or marginalized communities using socio-demographic inference proxies. Specific attention was given to ensure credit decisions do not disproportionately restrict access or exacerbate inequality. The risk management framework incorporates ongoing monitoring of fairness metrics stratified by vulnerable groups, feeding into both design refinements and deployer guidance to minimize adverse outcomes.
+
+---
+
+This documentation encapsulates Meridian Financial Analytics’ risk management approach for Credit Evaluation Network, demonstrating structured planning, iterative review, and concrete technical controls directly traceable to identified and evaluated risks per the mandate of Article 9.

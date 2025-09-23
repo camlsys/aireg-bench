@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+Risk management must prioritize mitigating or removing risks via system design improvements or algorithmic adjustments, minimizing residual risk before relying on supplementary measures such as user training or informational warnings. This requires iterative technical refinement.  
+
+[c] **Violation:**  
+Insight Proctor Analytics relies heavily on end-user training and deployment instructions to mitigate false positive rates and biased behavior detection, without adequately improving underlying model architectures or data diversity to address these risks technically, despite availability of relevant techniques such as fairness-aware training or calibration.  
+
+[d] **Justification:**  
+By foregrounding procedural safeguards over technical risk reduction, the provider does not sufficiently reduce risks "as far as technically feasible," violating the requirement to prioritize design-based risk elimination, a subtle but material deficiency identifiable by experts comparing mitigation strategies against state-of-the-art methods.

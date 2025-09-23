@@ -1,0 +1,39 @@
+**Article 14**
+
+### Design and Development Enabling Effective Human Oversight
+
+Pipeline Safety Guardian (PSG) is architected to ensure continuous and effective human oversight throughout its operational lifecycle. The core AI components consist of convolutional neural networks (CNNs) trained on over 2 million labeled time-series data points from pressure and flow sensors, enabling precise identification of pipeline anomalies such as pressure drops and cracks. These CNN outputs are further processed by ensemble Random Forest classifiers trained on a dataset of 150,000 fault instances to classify fault type and severity. This hybrid architecture was selected to balance predictive accuracy with interpretability, addressing key oversight needs by providing both confidence scores and feature importance metrics.
+
+The human-machine interface (HMI) was developed following an iterative human factors engineering process involving over 50 pipeline operators and field technicians during beta trials in 2024. The interface integrates real-time sensor dashboards, anomaly alert visualizations, and interpretability indicators such as heatmaps over time-series plots highlighting sensor regions that most influenced model outputs. Operators can examine individual CNN filter activations and Random Forest decision pathways to better understand model reasoning. This detailed interface design supports operators in maintaining situational awareness and recognizing system capabilities and limitations in alignment with intended use cases.
+
+### Objectives and Measures for Risk Prevention and Minimization
+
+The human oversight framework directly targets mitigation of health, safety, and fundamental rights risks associated with operational deployment under normal and reasonably foreseeable misuse scenarios. PSG explicitly signals low-confidence detections and ambiguous classifications to prompt human review rather than autonomous intervention. Operators receive contextualized recommendations rather than blunt alarms, enabling them to confirm or override alerts with access to raw sensor data and model interpretability outputs.
+
+Prior to deployment, PSG underwent comprehensive hazard analysis including fault-tree and failure mode effects analyses (FMEA) that identified scenarios where model errors could lead to delayed or false alarms with potential safety impacts. Subsequently, risk control measures were embedded in system design, such as multi-level alert thresholds, redundant sensor cross-validation, and safety fallback logic that defaults to conservative alerting if data quality degrades. These safety layers complement operator judgment, reinforcing the continuous risk minimization mandate.
+
+### Proportionate Oversight Measures Embedded and Specified
+
+In adherence to risk and autonomy assessments, Meridian Safety Systems established both built-in and deployer-implemented oversight controls. Built-in controls include:
+
+- A manual override function enabling operators to suppress or escalate alerts based on real-time expert assessment.
+- Continuous system self-tests and anomaly detection modules that flag internal malfunctions or data inconsistencies.
+- An emergency “stop” button in the HMI allowing immediate suspension of active monitoring without system shutdown, placing PSG into a safe standby state.
+
+Additionally, Meridian provides explicit operating procedures and oversight protocols intended for deployer implementation. These include recommended training sessions for assigned personnel covering system functioning, limitations, and bias awareness, scheduled periodic system performance audits, and field calibration checks. These procedural controls are designed to complement PSG’s inbuilt safety mechanisms and ensure context-appropriate human monitoring consistent with pipeline operators’ operational workflows.
+
+### Enabling Human Oversight Roles and Responsibilities
+
+Pipeline Safety Guardian is supplied with comprehensive documentation and embedded tools to empower natural persons responsible for oversight in alignment with provisions under paragraphs 4(a) through (e):
+
+- **Understanding System Capacities and Limitations:** The user manual details system capabilities, model confidence limitations, sensor dependencies, and expected performance boundaries under varying operational conditions, supported by a training portal featuring scenario-based simulations. Anomalies and malfunction indications are clearly flagged in the HMI, aiding timely detection and response.
+  
+- **Counteracting Automation Bias:** The HMI incorporates explicit cautionary prompts highlighting the risk of over-reliance on AI output, reinforced by mandatory confirmation steps before critical decisions. User interfaces discourage “blind” acceptance by displaying uncertainty metrics and alternative hypotheses to foster critical review.
+
+- **Accurate Interpretation of Outputs:** Visualization tools include layered interpretability functions such as saliency maps and decision path summaries for both CNN and Random Forest components, assisting users in contextualizing alerts within sensor data trends and historic patterns. Tutorial materials on interpretation methods support effective comprehension.
+
+- **Decision Autonomy and Override Capability:** Operators retain full discretion to disregard system alerts or outputs based on situational judgment. The interface supports manual flagging of false positives and event logging for subsequent retraining and model improvement feedback loops.
+
+- **Immediate Intervention Controls:** The embedded “stop” button provides a rapid and intuitive means to pause data processing and alert generation without compromising sensor data integrity. System state transitions are logged with timestamps and operator actions for accountability and incident analysis.
+
+Finally, concerning processing of special categories of personal data, PSG’s operation is restricted to non-biometric, environmental sensor data. Any incidental processing involving personnel information is confined to privacy-preserving logging metadata used solely for bias detection in model retraining stages. Detailed records explicating strict necessity and data minimization practices are maintained, referencing Articles 16 and 17 of GDPR (Regulation 2016/679) to ensure lawful data processing relevant to bias correction.

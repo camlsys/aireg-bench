@@ -1,0 +1,43 @@
+**Article 15**
+
+**Measures Ensuring Accuracy and Performance Consistency**
+
+The Competency Evaluation Framework was developed using gradient boosted decision trees (GBDT), a robust machine learning methodology widely recognized for its high predictive accuracy, especially on heterogeneous tabular data such as performance metrics and learner interaction logs. The training dataset comprises over 250,000 anonymized learner interactions collected from 30 vocational training centers representing multiple industrial sectors across the EU. The data captures a diverse learner population, skill categories, and assessment types, which supports the model’s generalization and mitigates bias towards specific subgroups or training conditions.
+
+Model performance was systematically evaluated using stratified 10-fold cross-validation, ensuring consistent representation of competency levels within all splits. Key accuracy metrics include an average weighted F1-score of 0.87 and an area under the receiver operating characteristic curve (AUROC) of 0.91 on hold-out data representing unseen learners. Additionally, domain-specific performance benchmarks such as precision within critical skill categories (e.g., safety procedures, mechanical operations) exceeded 0.85 across validation folds. These metrics are documented in the instructions for use and inform end-users about expected evaluation reliability per competency cluster.
+
+The model architecture and hyperparameters were selected following a grid search guided by an objective function balancing accuracy with model explainability—critical for vocational educators to interpret skill mastery and adjust curricula accordingly. The inclusion of feature importance analysis enables practical insight into trainee performance drivers without sacrificing predictive power.
+
+**Robustness and Lifecycle Performance Maintenance**
+
+To maintain consistent performance over the system lifecycle, Horizon Learning Analytics implemented a controlled model retraining protocol based on periodic data drift detection. An automated monitoring pipeline compares distributions of incoming operational data to the training baseline monthly using population stability index (PSI) and KL divergence. Upon detecting statistically significant drift (PSI > 0.25), retraining is triggered with a curated dataset encompassing recent learner data and earlier samples to preserve foundational competency mappings.
+
+The system design incorporates redundancy through fail-safe operation modes: when model confidence falls below a configurable threshold (set at 0.65 probability), the system flags the result for human review rather than providing an automated competency score. This measure guards against erroneous outputs resulting from data noise or operational anomalies.
+
+Although the system does not employ online learning post-deployment to prevent inadvertent feedback loops, Horizon Learning Analytics provides comprehensive tools enabling supervised manual updates by authorized personnel following rigorous validation to mitigate bias propagation. These controls prevent cascade effects where biased outputs influence future inputs, preserving the system’s integrity during updates.
+
+**Resilience and Technical-Organisational Safeguards**
+
+Robustness against operational faults and environmental influences has been addressed through architectural and process-level measures. The software components run within a containerized microservice framework ensuring isolated execution and graceful degradation; if individual services fail, workload reroutes to redundant instances minimizing downtime. Algorithmic safeguards, such as input validation and sanity checks at data ingestion, filter corrupted or malformed performance log entries, thereby reducing inconsistencies caused by external data faults.
+
+Human-in-the-loop mechanisms are integral to the operational model. Certified educational specialists receive real-time system alerts on performance deviations or uncertain assessments, enabling prompt auditing and intervention. These organisational measures are supported by comprehensive training materials emphasizing responsible interaction with the AI outputs.
+
+**Cybersecurity and Protection Against Unauthorized Manipulation**
+
+Security was architected according to current ISO/IEC 27001-based controls and the NIST Cybersecurity Framework, ensuring confidentiality, integrity, and availability of data and AI components. The system deploys role-based access controls (RBAC) limiting model update capabilities to authenticated Horizon Learning Analytics personnel within secured development environments.
+
+Specific AI-targeted cybersecurity measures include:
+
+- Implementation of adversarial input detection modules employing gradient masking and input perturbation checks to identify attempts at input evasion or model evasion attacks. This module performs probabilistic consistency checks on feature distributions per trainee profile before scoring.
+
+- Integrity verification on training datasets using cryptographic hashes and secure logging to prevent data poisoning. Training data ingested for model updates undergoes anomaly detection algorithms to identify outliers or unexpected feature patterns indicative of potential poisoning attempts.
+
+- Pre-trained components and model binaries are signed and stored in hardened repositories with automated integrity monitoring to thwart model poisoning.
+
+- Confidentiality attacks are mitigated through encrypted model deployment on secure enclaves and leveraging homomorphic encryption for sensitive data processing, limiting exposure of internal model parameters.
+
+Incident response procedures are documented and tested quarterly, enabling rapid identification and remediation of cybersecurity incidents potentially affecting system outputs or availability. All detected and suspected attacks are logged with audit trails facilitating forensic analysis.
+
+**Declaration of Accuracy and Performance Metrics**
+
+The technical accuracy metrics, including balanced F1-score, AUROC, precision-recall breakdowns by competency domain, and operational confidence thresholds, are summarized in the system’s instructions for use. These documents provide transparent guidance on the AI system’s expected performance boundaries and recommended user actions in case of confidence or data quality concerns. The instructions also outline periodic evaluation schedules and retraining protocols as part of the system lifecycle management, supporting ongoing reliable operation in vocational learning environments.

@@ -1,0 +1,31 @@
+**Article 10**
+
+**Dataset Composition and Provenance**
+
+The Political Influence Analyzer was developed using a large corpus consisting of approximately 120 million text samples drawn from political speeches delivered across national and regional legislative assemblies within the EU and the United States dated from 2010 to 2023, as well as 250 million publicly available social media posts tagged with political discourse hashtags on platforms such as Twitter, Facebook, and Reddit. The data collection process relied primarily on open-access archives and social media public APIs, gathering posts originally intended for public expression rather than explicit political targeting. No special categories of personal data, as defined under GDPR, were knowingly processed in this phase, and data subjects were not individually identifiable due to anonymization and aggregation at collection. The original purpose of the data collection was to compile comprehensive political communication content for trend and rhetoric analysis. 
+
+Data governance procedures were established to log the source metadata, including temporal and geographic markers, platform origin, and text format. However, significant limitations were noted in the corpus selection: there was no systematic inclusion strategy to ensure balanced representation of all demographic groups or political affiliations beyond basic metadata tagging. Minority ethnic groups were sometimes overrepresented indirectly due to their vociferous presence in some social media domains, resulting in skewed sampling of political dissent narratives linked to these groups.
+
+**Data Preparation, Assumptions, and Statistical Properties**
+
+Standard NLP pipeline processes were applied for dataset preparation, including data cleaning to remove spam and non-political content, deduplication, language normalization, and standard tokenization. Annotation was limited to political alignment labels (left, center, right) assigned via automated classifiers trained on a small manually annotated seed set of 10,000 speeches and posts. No granular annotation of ethnic or demographic group identities was performed, reflecting a design assumption that political affiliations would be the primary classification axis relevant to messaging generation. This assumption neglected the nuanced intersectionality between ethnicity and political alignment present in the source data.
+
+Validation and testing datasets were constructed by randomly sampling 20 million text excerpts from the total corpus, maintaining proportional representation according to political leaning but without additional balancing for ethnic or minority group coverage. Statistical assessments verified standard NLP metrics, such as vocabulary coverage and perplexity scores, but did not include subgroup fairness metrics or bias-specific error analyses.
+
+**Bias Identification and Mitigation Practices**
+
+A cursory bias assessment was performed, focusing on overt discriminatory terminology and explicit hate speech filtering using keyword-based lexicons. Automated scans highlighted common derogatory language, which was subsequently removed or masked from training data. However, no in-depth analysis of subtle stereotyping, framing effects, or representational biases—especially involving ethnic minority groups portrayed as inherently oppositional—was conducted. 
+
+No formal bias detection pipelines integrating embedding-level bias evaluation, subgroup performance disparity analysis, or counterfactual testing were implemented. As a result, the model exhibited tendencies during generation to frame minority voter groups predominantly in antagonistic or negative ways, often associating them with opposition stances or social conflict narratives. These patterns were identified post-model deployment through limited external audits but have not been addressed by retraining or algorithmic mitigation.
+
+No bias mitigation techniques such as adversarial debiasing, data augmentation, or fairness-constrained optimization were applied during model training or fine-tuning. Furthermore, no special-category personal data processing was carried out to enable targeted bias correction as foresaw in Article 10(5).
+
+**Contextual Relevance and Representativeness of Training Data**
+
+The data corpus predominantly reflects political communication styles, preferences, and contentious issues relevant to Western democratic societies, primarily North America and Europe, consistent with the intended deployment regions. However, the lack of targeted contextual adjustments or localized data for specific Member State sociopolitical landscapes reduces the capacity to accurately simulate or analyze unique political dynamics, particularly those involving minority ethnic groups.
+
+The geographical and cultural setting was implicitly considered only in terms of language and regional dialect normalization, without establishing dataset partitions or model parameter tuning adapted to the distinct behavioral or political engagement features of specific minority communities. This omission may contribute to the observed representational imbalances and the model’s inability to contextualize messaging fairly within diverse societal settings.
+
+**Summary of Data Quality and Compliance-Related Limitations**
+
+While extensive in scale and broadly relevant for political text modeling, the data employed falls short of comprehensive quality criteria relating to bias management, representativeness, and subgroup fairness. The initial focus on political alignment categories alone, without cross-analysis of ethnic or other protected characteristics, and the absence of concrete bias detection or mitigation measures constrains the dataset's fitness for the high-risk AI system’s intended purpose. This leads to documented risks of discriminatory framing and potential fundamental rights impacts through polarized and antagonistic messaging targeting minority voter groups. The provider’s data governance practices document these limitations openly but do not include remediative strategies or bias correction protocols at this stage.

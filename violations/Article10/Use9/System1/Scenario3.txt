@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection; (d) the formulation of assumptions, in particular with respect to the information that the data are supposed to measure and represent."
+
+[b] **Guideline:**  
+Compliance requires traceability and transparency on data provenance and the contextual assumptions underlying collected datasets, including alignment of original data collection intents with the AI’s judicial assistance purposes, to avoid misinterpretation or inappropriate generalisation by the model.
+
+[c] **Violation:**  
+Judicial Insight Assistant incorporates personal data extracted from publicly available court documents where the original data was collected for administrative record-keeping, not for AI-based legal reasoning. The system’s training pipeline makes implicit assumptions that all case text segments uniformly represent decisive legal facts, ignoring contextual markers indicating procedural vs. evidentiary content, leading to misinterpretation risks.
+
+[d] **Justification:**  
+This subtle violation arises because the mismatch between original data collection purpose and AI use was neither properly documented nor accounted for in assumptions, thus undermining governance requirements. It is plausible given complex legal document structures and the ease of conflating diverse text types during large-scale data aggregation.

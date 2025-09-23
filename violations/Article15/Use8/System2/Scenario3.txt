@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities [...] The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion) [...]"  
+
+[b] **Guideline:**  
+The system must incorporate adversarial robustness techniques such as input validation, anomaly detection for abnormal sensor data patterns, and integrity checks against training set or model manipulation, combined with incident response protocols.  
+
+[c] **Violation:**  
+The deployed AI fails to integrate robust detection mechanisms against carefully crafted spatial sensor data inputs designed to trigger the CNN into over-prioritizing low-risk areas due to subtle adversarial perturbations, and does not monitor for unusual temporal input sequences at the LSTM stage indicative of evasion attacks.  
+
+[d] **Justification:**  
+This violation is subtle because adversarial examples often remain imperceptible to human operators and occur in real-world sensor noise. Without specific countermeasures, the system becomes vulnerable to attackers who subtly manipulate input streams to distort dispatch priorities, compromising safety without immediate technical alerts.

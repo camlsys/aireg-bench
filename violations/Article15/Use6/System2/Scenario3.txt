@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."  
+
+[b] **Guideline:**  
+When implementing continuous learning or model updates, mechanisms must be in place to monitor for, detect, and mitigate feedback loops whereby biased outputs re-enter training data or influence future decision-making to prevent amplification of errors or unfairness.  
+
+[c] **Violation:**  
+Contractual Separation Insight incorporates outcomes of prior termination decisions as training signals without adequate bias detection or adjustment, resulting in gradual reinforcement of past discriminatory patterns or company-specific policy misinterpretations into future predictions.  
+
+[d] **Justification:**  
+This violation is realistic and subtle since feedback loops accumulate over multiple update cycles and may not be obvious initially, yet they conflict with the obligation to minimize biased output propagation in systems that learn post-deployment, undermining fairness and robustness.

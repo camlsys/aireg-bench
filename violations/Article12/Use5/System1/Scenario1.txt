@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must automatically and continuously log relevant events from deployment onwards, without relying on manual triggers or selective activation. Logs should be securely stored and cover all operational periods to support full traceability throughout the AI system’s lifecycle.
+
+[c] **Violation:**  
+The Talent Insight Model only initiates detailed logging when certain error thresholds are met or when manual system audits are performed, leaving normal filtering and ranking activity during standard operation insufficiently logged.
+
+[d] **Justification:**  
+By not automatically logging all events throughout the system’s lifetime, the Talent Insight Model fails to comply with the requirement for continuous event recording. This is a subtle non-compliance because the system appears to log when issues arise but does not maintain a comprehensive, always-on log record, reducing traceability in normal operation periods.
+
+---

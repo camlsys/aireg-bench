@@ -1,0 +1,27 @@
+**Article 12**
+
+### Recorded Event Types and Scope of Logging
+
+The Political Influence Analyzer records event logs primarily consisting of generic system triggers such as API call invocations and associated timestamps. Each API request is logged with metadata including the caller’s unique identifier token, request parameters (excluding sensitive personal data), and precise timing information to support traceability of individual interactions with the system. Logs capture system initialization, configuration changes, and deployment timestamps to establish a chronological framework for system activity throughout its operational lifetime.
+
+No detailed logging of linguistic output characteristics—such as semantic anomalies, sentiment fluctuations, or contextual deviations—is implemented. Similarly, internal model state updates or adaptation events during runtime are not recorded. Consequently, while the system stores essential invocation metadata, it does not retain records capable of directly revealing subtle deviations in generated political content or internal model behavior that could indicate misleading or highly manipulative outputs. This design decision reflects a balance prioritizing operational performance and data minimization principles consistent with industry-standard logging practices for NLP-based AI systems deployed in 2025.
+
+### Relevance of Logs to Risk Identification and Traceability
+
+The logged events enable identification of broad situational triggers relevant to potential risks by providing a temporal audit trail of system utilization and configuration changes. For example, timestamps indicate when new customized political messaging campaigns were initiated or modified, supporting retrospective examination of deployment periods associated with heightened risk scenarios as defined under Article 79(1). However, due to absence of content-specific logging, nuanced detection of risks rooted in the semantic or persuasive nature of generated outputs—such as dissemination of misleading statements or excessive political manipulation—is not directly supported by the logs.
+
+The system architecture, therefore, facilitates a foundational level of traceability by capturing when and how the system was engaged but relies on external oversight or supplementary monitoring solutions to evaluate the substantive political content outputs for risk assessment purposes.
+
+### Support for Post-Market Monitoring and Operational Oversight
+
+Logs are structured to assist in post-market monitoring by recording invocation frequencies, request volumes, and temporal patterns of system usage. This data supports statistical analysis of operational behavior over time, enabling identification of anomalous spikes or changes in usage that might correlate with shifts in market or electoral conditions monitored under Article 72. However, logs do not encode output quality metrics, model performance indicators, or linguistic feature distributions that would permit direct, automated quality assurance of generated material post-deployment.
+
+For operational monitoring as referenced in Article 26(5), the system’s logging infrastructure provides sufficient granularity to confirm continuous availability, API responsiveness, and trigger-based system events across its distributed deployment environment. This supports standard reliability and uptime reporting but stops short of enabling in-situ monitoring of the AI system’s internal decision-making or rhetorical influence mechanisms that might require integration with external analytic frameworks.
+
+### Rationale for Logging Design Choices
+
+The selective and generic scope of logged data reflects a deliberate provider design choice aligned with established best practices within the 2025 AI industry landscape. This approach mitigates risks related to excessive data storage, privacy infringement, and unwarranted exposure of sensitive political engagement profiles. Additionally, it avoids inadvertent retention of politically sensitive content or inference of voter behavioral traits outside statutory data protection boundaries.
+
+Logging only generic invocation details minimizes performance overhead on the transformer-based models and infrastructure, ensuring scalable handling of high-throughput workloads inherent in real-time personalized messaging generation. This contributes to maintaining system responsiveness critical in dynamic electoral communication environments.
+
+The absence of detailed content or internal state logs corresponds with the provider’s role limited to system development and deployment support, wherein responsibility for political content evaluation and compliance verification lies primarily with deployers and end-users employing appropriate oversight mechanisms.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+Experts would verify continuous system performance by rigorously testing the AI’s detection accuracy on evolving data distributions, ensuring model updates or drift do not degrade accuracy or robustness over time. Additionally, evaluation must include resilience tests against environmental fluctuations typical of examination halls, such as varying noise levels or input device inconsistencies.  
+
+[c] **Violation:**  
+The Academic Compliance Monitor’s anomaly detection model, particularly the RNN component, is trained initially on limited environmental audio conditions and keyboard input patterns but has no mechanism that regularly reassesses or retrains the model to adapt to seasonal or infrastructural changes (e.g., new exam room layouts or hardware updates). As a result, its detection accuracy significantly declines after several exam periods without recalibration, producing inconsistent performance without notifying supervisors.  
+
+[d] **Justification:**  
+This subtle violation reflects failure to guarantee consistent performance across the product lifecycle, as mandated by Article 15(1). The degradation is realistic because environmental and hardware factors unaccounted for in initial training accumulate over time in real exam settings. The failure is not obvious since early deployments seem accurate, but accuracy slowly erodes, undermining robustness and leading to undetected false negatives or false positives.  
+
+---

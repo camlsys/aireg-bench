@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: ... (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law ... (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f)." (Article 10, paragraph 2)
+
+[b] **Guideline:**  
+Developers must conduct systematic bias analysis focused on how data-driven decisions might disproportionately affect vulnerable populations or specific groups—such as ethnic minorities or socioeconomically disadvantaged communities—and implement corrective strategies like reweighting, additional data curation, or algorithmic fairness constraints.
+
+[c] **Violation:**  
+The system’s training data contains unrecognized historical dispatch prioritization patterns that favored certain neighbourhoods with higher socioeconomic status, resulting in an embedded bias that leads the AI to deprioritize emergencies reported from marginalized communities. Developers identified this bias but opted for minimal corrective actions limited to filtering extreme outliers rather than structural mitigation.
+
+[d] **Justification:**  
+The violation is subtle because there is some bias assessment and partial correction, but these are insufficient to meet the requirement of thorough bias detection and mitigation. This leads to unfair prioritization affecting fundamental rights, contrary to Article 10 requirements, and may only become apparent through longitudinal monitoring of dispatch outcomes across communities.
+
+---

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations;"  
+
+[b] **Guideline:**  
+Developers must systematically examine training and validation data for subtle biases linked to protected characteristics (e.g., age, gender, ethnicity, disability) that could lead to discriminatory competency evaluations or unfair disadvantage in certification. This includes performing disaggregated performance analysis by subgroup and investigating correlations between output scores and potentially sensitive features, even if those features are indirectly represented.  
+
+[c] **Violation:**  
+Horizon Learning Analytics uses learner interaction logs and performance metrics without fully assessing subgroup fairness, failing to identify that certain minority vocational specializations are underrepresented in the training data. As a result, the system subtly underestimates skill acquisition rates for trainees from a particular ethnic minority group, leading to skewed competency scores that disproportionately delay their certification readiness recommendations.  
+
+[d] **Justification:**  
+This violation breaches the extraction as the bias examination requirement (f) is not adequately fulfilled. The bias is subtle—it emerges indirectly through underrepresentation and interaction effects rather than direct discrimination—and realistically overlooked due to high dimensionality and diversity of tabular features, making bias detection challenging without dedicated subgroup analysis. Such an omission can impact fundamental rights by unfairly limiting career opportunities.

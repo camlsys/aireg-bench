@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle." (Article 15(1))
+
+[b] **Guideline:**  
+The system must maintain consistent accuracy and robustness over time despite changes in input data distributions or operational contexts, employing continuous validation and update mechanisms that prevent degradation. It should also include safeguards to ensure performance consistency under routine system updates or environmental changes without introducing silent failures or drift.
+
+[c] **Violation:**  
+The Recruitment Decision Forest continues to operate without incorporating continuous monitoring for data drift in candidate features, causing the model’s accuracy to decline over recruitment cycles as new patterns in candidate data (e.g., shifts in demographics or emerging job market trends) occur. The system lacks automated trigger mechanisms to flag or adapt to such drift, allowing subtle but cumulative performance degradation that reduces fair and accurate candidate scoring.
+
+[d] **Justification:**  
+By not detecting or adapting to data drift, the model fails to maintain robustness and accuracy over its lifecycle, contravening the requirement for consistent performance. This violation is subtle because the degradation happens gradually and may not be immediately obvious to recruiters, yet it undermines the system’s reliability and fairness, making it a realistic risk in production deployments without proper lifecycle management.
+
+---

@@ -1,0 +1,50 @@
+**Article 9**
+
+**Establishment and Scope of the Risk Management System**  
+Meridian Analytics Solutions has implemented a lifecycle risk management system aligned with Article 9 to govern the Recruitment Decision Forest (RDF), a Gradient Boosted Decision Tree ensemble for candidate screening. This system is designed as an iterative and continuous process from dataset curation through to post-deployment monitoring and updating of the RDF model. Particular attention has been given to explicitly measurable biases directly associated with gender and ethnicity, as determined through input feature auditing and model output analysis. The risk assessment process spans identification, estimation, evaluation, and mitigation of risks to fundamental rights, health, and safety arising from the AI's decisions, strictly within the intended use of initial screening and candidate scoring for recruitment purposes.
+
+The risk scope prioritizes overt discrimination directly tied to gender and ethnic groups as manifested in structured data fields and categorical variables (e.g., self-declared demographic information). Potential risks tied to these protected characteristics were systematically reviewed during data preprocessing, model training, and output validation phases. However, potential indirect or proxy biases linked to geographical location, socio-economic indicators, or metadata fields such as IP-based location or schooling district data were noted but purposefully excluded from the formal risk analysis scope. This delineation reflects a conscious provider decision to focus risk efforts on the most clearly interpretable and regulated bias categories per prevailing industry standards observed as of 2025.
+
+**Identification and Analysis of Known and Foreseeable Risks**  
+The risk identification step leveraged both empirical and theoretical assessments. Training data comprised approximately 1.2 million anonymized applicant records collected over five years from diversified enterprise clients, with balanced representation across gender (48% female, 52% male) and ethnic groups based on self-reported categories. Statistical parity difference and disparate impact ratio metrics were applied to evaluate bias in candidate scoring outputs relative to these demographics.
+
+Risks explicitly examined included potential scoring disparities that might yield systematic disadvantage to female or ethnic minority candidates, thereby infringing on the fundamental right to non-discrimination in employment processes. Metrics identification was supported by automated bias detection tools integrated into the training pipeline, which highlight percentage-point gaps in hire rate predictions for targeted protected groups.
+
+Indirect risks, such as those arising from correlated variables (e.g., applicant postal codes or education institution names that could proxy for socioeconomic status), were recorded in system documentation but were not subject to comprehensive analysis or formal estimation. This reflects an acknowledgment that current dataset features and model explainability techniques do not sufficiently disentangle these proxies to a regulatory-grade certainty, leading to their omission from formal risk estimation despite their presence.
+
+**Risk Estimation, Evaluation, and Post-Market Monitoring**  
+Risk estimation was performed via stratified test set evaluation using a holdout dataset consisting of 240,000 candidate profiles, retaining the demographic distributions of the training set. Model output biases were benchmarked against probabilistic thresholds consistent with industry fairness standards: disparate impact ratios below 0.8 triggered alert flags, and maximum allowed statistical parity difference was set at ±5%.
+
+Throughout development, testing confirmed that residual risks for direct gender and ethnicity-related biases were reduced to acceptable levels through algorithmic calibration, feature importance pruning, and threshold adjustments. However, no formal numerical assessment or mitigation measures were established for risks originating from metadata-derived proxies or vulnerable groups under 18 years old, since these categories were not actively modeled or flagged by risk assessment tools.
+
+Post-market monitoring mechanisms, established via integration with client feedback loops, collect aggregate hiring outcome data and user reports to identify emerging discriminatory patterns. However, this process predominantly focuses on complaints or anomalies related to explicitly recognized bias categories. Feedback flows concerning indirect biases or impacts on minors have not been formalized, reducing the ability to capture or remediate such issues.
+
+**Design and Implementation of Risk Management Measures**  
+To address overt bias risks identified in gender and ethnicity categories, the provider executed targeted interventions at multiple design stages. Key measures included:
+
+- Data preprocessing filters to ensure balanced demographic representation during model training. Underrepresented groups were upsampled to limit training data imbalance effects.
+- Feature exclusion of knowingly sensitive attributes such as explicit gender or ethnicity labels from model decision variables, relying instead on proxy-robust engineering approaches.
+- Deployment of post-hoc model explainability tools such as SHAP (SHapley Additive exPlanations) to highlight key factors influencing candidate scores, enabling transparent recruiter review.
+- Threshold calibration ensuring probability score distributions do not disproportionately disadvantage protected categories, backed by cross-validated bias metrics.
+
+Mitigation focused on technically feasible design controls within the structured tabular data domain. The provider’s risk strategy did not extend to metadata fields known to encode geographical or socio-economic proxies, which remain part of the training data but without explicit modeling or bias mitigation steps due to current limitations in proxy disentanglement techniques and insufficient regulatory clarity.
+
+**Testing Procedures and Performance Validation**  
+In compliance with Article 9(6) and (8), the RDF underwent extensive testing across the development lifecycle. Realistic testing environments simulated typical enterprise deployment settings, with datasets reflecting recruitment pipelines characterized by industry-standard candidate composition.
+
+Testing included:
+
+- Cross-validation over 10 folds on historical hiring data, yielding average area under the ROC curve (AUC) of 0.83, demonstrating consistent classification performance.
+- Repeated bias-sensitive tests targeting protected classes, including confidence interval estimation for disparate impact ratios, all confirming residual compliance with defined acceptance criteria.
+- Robustness testing under candidate profile perturbations, using adversarial feature swaps, which confirmed stable output rankings barring sensitive attribute flips.
+- Static and dynamic explainability validations ensuring model interpretability for compliance audits and recruiter transparency.
+
+No formal real-world user testing involving minors or other vulnerable groups was conducted, reflecting the absence of these groups as model subjects and an intended exclusion from use cases.
+
+**Considerations Regarding Vulnerable Groups and Minors**  
+Although the risk management framework acknowledges, per Article 9(9), the potential for adverse impacts on persons under 18 and other vulnerable groups, the provider’s implemented procedures and scope limit risk analysis exclusively to direct, overt bias on gender and ethnicity. This choice excludes systemic evaluation of indirect discrimination arising via proxy variables embedded in candidate metadata or application features. Consequently, risk identification and mitigation for protected minors or other vulnerable populations remain unspecified in system design, testing, and monitoring phases.
+
+This focused scope results from balancing technical feasibility, prevailing data availability constraints, and prioritization of categories legally mandated and commonly audited within the recruitment AI domain as of 2025. Provider documentation transparently records this limitation, signalling to deployers the necessity for supplementary due diligence where indirect bias risks may manifest.
+
+**Integration with Other Regulatory Risk Management Processes**  
+Where relevant, Meridian Analytics Solutions coordinates RDF risk management with any existing internal risk protocols clients may maintain under applicable Union laws, facilitating combined or aligned procedures. This modularity supports compliance with Article 9(10), enabling EDF’s risk processes to function as part of broader enterprise governance frameworks while maintaining provider-level focus on overt bias facets as described.

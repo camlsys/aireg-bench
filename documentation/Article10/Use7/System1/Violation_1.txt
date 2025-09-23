@@ -1,0 +1,33 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The Credit Evaluation Network (CEN) was developed utilizing aggregated historical credit data sourced from a consortium of twelve major financial institutions across the EU, comprising approximately 3.5 million individual credit profiles collected between 2015 and 2023. The original data collection was oriented toward conventional credit assessment purposes, primarily for internal credit scoring and risk management within each institution. The dataset includes structured financial variables such as credit history length, repayment records, outstanding debt, income brackets, and limited demographic details including age, residential region, and broadly categorized ethnicity.
+
+Data preparation involved standard cleaning procedures addressing missing values (approximately 4% overall), duplication removal, and temporal normalization to account for macroeconomic shifts. Labeling was based on a binary default outcome within a 12-month horizon following loan origination. No additional enrichment or annotation aiming at demographic subgroup stratification was performed. Data aggregation maintained record-level granularity while ensuring anonymization consistent with GDPR, with identifiers removed, and no pseudonymisation implemented on demographic categories.
+
+Assumptions formulated during model design centered on using the credit history and financial behavior variables as primary indicators of creditworthiness, implicitly treating demographic variables as supplementary and not performing disproportionality analysis relating to subgroup economic disparities. The training, validation, and test splits were conducted randomly at the applicant level without stratification by ethnicity or socio-economic status, reflecting standard industry practice for credit risk modeling but not incorporating auditing mechanisms for underrepresented or vulnerable groups.
+
+**Assessment Relative to Data Quality Criteria**
+
+Training, validation, and testing datasets encompass a combined total of approximately 2.4 million samples for training, and 550,000 each for validation and testing, ensuring sufficient statistical power to train Gradient Boosted Decision Trees (GBDT) effectively. Completeness is high for core financial variables; however, coverage of demographic variables is uneven, with approximately 85% of records including ethnicity data, predominantly representing the majority ethnic group, which constitutes 78% of the cohort. Minority groups are underrepresented, corresponding to roughly 7% and 10% of the dataset for two principal minority categories, respectively.
+
+No targeted error analysis or correction was conducted to identify latent annotation biases or systemic economic disparities reflected in credit outcomes across demographic groups. The datasets exhibit typical financial sector data characteristics but do not explicitly incorporate mechanisms to ensure representativeness for protected or minority groups relative to the general population or incorporate contextual socio-economic variables which might affect access to credit or repayment ability.
+
+**Bias Examination and Mitigation Measures**
+
+A preliminary bias examination was conducted focusing on identifying overt data quality issues and outlier behaviors in model outputs. However, no formal auditing for disparate impact or systematic bias against underrepresented ethnic minorities was executed. The system design did not include the processing of special categories of personal data under Article 10(5), and thus no technical or organizational safeguards described therein were implemented.
+
+Consequently, no bias mitigation procedures specific to demographic fairness were incorporated in model training or post-processing. The approach relied on conventional performance metrics (AUC, F1-score) and calibration across the aggregate population without subgroup parity or equality of opportunity analyses. No synthetic data augmentation or rebalancing strategies were employed to address identified data imbalances.
+
+**Identification of Data Gaps and Compliance Implications**
+
+The principal identified shortcoming of the dataset is the lack of explicit stratification and auditing with respect to ethnic representation and socio-economic context. This represents a gap in the dataset’s suitability to fully meet the quality criteria concerning the avoidance of discrimination and bias as prescribed by Article 10(2)(f)-(h). Moreover, the absence of special category personal data processing foreclosed application of advanced bias detection techniques relying on sensitive attribute awareness.
+
+No concrete plans for additional data enrichment or targeted collection to address these gaps were put in place at the provider level. The absence of such measures was a conscious decision reflecting the current data availability and the intent to deliver a broadly applicable credit risk scoring tool based on historically institutionalized credit datasets. Compliance strategies regarding bias detection and mitigation are thus expected to be managed at deployment or operational stages by system users.
+
+**Contextual Considerations**
+
+The training datasets cover applicants primarily within geographically diverse but economically similar EU regions where the majority ethnic group dominates the credit market. Data do not explicitly incorporate behavioural or functional contextual parameters beyond standard financial metrics. This scope limits the capacity of the model to discern and adjust creditworthiness assessments that may be influenced by localized economic disparities or structural inequalities impacting minority applicants.
+
+System outputs remain interpretable through variable importance analyses inherent to GBDT models, but interpretation does not currently extend to nuanced comparisons across demographic strata. This limits the system’s ability to internally highlight potential areas of demographic bias in credit scoring decisions.

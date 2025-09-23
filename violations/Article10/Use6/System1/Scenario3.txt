@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"To the extent that it is strictly necessary for the purpose of ensuring bias detection and correction… providers may exceptionally process special categories of personal data, subject to appropriate safeguards… (Article 10, paragraph 5)."
+
+[b] **Guideline:**  
+If the system processes special category personal data (e.g., racial or ethnic origin for bias mitigation), it must implement state-of-the-art privacy safeguards including pseudonymisation, strict access controls, avoidance of unauthorized sharing, and timely deletion of such data once the bias correction objective is met.
+
+[c] **Violation:**  
+Meridian Labor Solutions retained special category personal data for bias detection in a centralized database without sufficient pseudonymisation and provided broad access to an extended team beyond the authorized bias-correction personnel, lacking detailed documentation of access controls. The data was also stored well beyond the period necessary for bias correction.
+
+[d] **Justification:**  
+This violation breaches key safeguards outlined for handling sensitive data, risking unauthorized exposure and misuse. It is realistic and subtle because the organization may believe internal team members are all authorized or underestimate the retention time impact, all while giving an impression of procedural compliance superficially.

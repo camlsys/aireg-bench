@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations;"  
+
+[b] **Guideline:**  
+A thorough, documented bias assessment must be conducted on all training, validation, and testing datasets. This should include detailed statistical analyses of protected attributes such as gender, ethnicity, and age to determine if any subgroup is unfairly disadvantaged or overrepresented, with particular focus on how credit decisions may disproportionately impact certain communities.  
+
+[c] **Violation:**  
+The Credit Evaluation Network uses historical credit data from multiple institutions without explicitly stratifying or auditing for underrepresented demographic groups. The training data is biased toward a majority ethnic group and neglects to evaluate whether certain minorities are systematically scored lower due to structural economic disparities, thus failing to identify subtle but systemic bias that might lead to discriminatory lending.  
+
+[d] **Justification:**  
+This violation is subtle because the system uses large volumes of seemingly diverse financial data, which may mask underlying demographic imbalances. Yet, it breaches the articulated requirement by not conducting an explicit bias examination that could detect discriminatory patterns affecting fundamental rights, specifically discrimination prohibited under Union law related to creditworthiness assessments.  
+
+---

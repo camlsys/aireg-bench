@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"4.(a) to properly understand the relevant capacities and limitations of the high-risk AI system and be able to duly monitor its operation, including in view of detecting and addressing anomalies, dysfunctions and unexpected performance;"
+
+[b] **Guideline:**  
+Providers must ensure that users have access to clear, comprehensible information about the system’s capabilities and limitations, including potential blind spots or conditions under which false positives or negatives might occur, so that users can detect anomalies in the AI’s outputs or behavior during operation.
+
+[c] **Violation:**  
+Pipeline Safety Guardian’s user interface presents alerts without explanations about the model’s confidence, known failure modes, or environmental conditions that degrade CNN performance, leaving operators unable to discern when the system might produce unreliable fault classifications under unusual pressure fluctuations or sensor noise.
+
+[d] **Justification:**  
+Although the system reliably issues alerts under most conditions, the lack of explicit disclosure or monitoring tools for its limitations subtly impedes operators’ ability to detect and respond to system anomalies or unexpected errors, failing to meet the requirement that users can properly understand and monitor the AI’s operation.
+
+---

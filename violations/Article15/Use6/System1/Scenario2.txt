@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems... High-risk AI systems that continue to learn after being placed on the market or put into service shall be developed in such a way as to eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations (feedback loops), and as to ensure that any such feedback loops are duly addressed with appropriate mitigation measures."
+
+[b] **Guideline:**  
+For systems employing online or post-deployment learning, safeguards must be established to detect and mitigate feedback loops where biased outputs could contaminate future training data. This involves designing algorithmic checks, maintaining auditing logs of changes in model parameters, and applying corrective controls to avoid perpetuation or amplification of prior errors or discriminatory patterns.
+
+[c] **Violation:**  
+The system includes a continuous learning mechanism that updates based on user feedback and decisions but lacks safeguards to prevent biased termination outcomes from influencing retraining data. For instance, if supervisors disproportionately override certain employee terminations, those biased decisions feed back into the training loop, subtly skewing future predictions against protected groups.
+
+[d] **Justification:**  
+This violation is plausible because continuous learning without strict feedback loop mitigation can gradually embed and amplify bias present in operational use. It is subtle since bias emerges slowly and is not outright obvious, undermining the resilience and fairness the Article demands without overt system faults.
+
+---

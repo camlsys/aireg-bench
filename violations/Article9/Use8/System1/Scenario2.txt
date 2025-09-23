@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable."
+
+[b] **Guideline:**  
+Risk management must result in residual risks that are quantified, evaluated, and deemed acceptable through a combination of design improvements and targeted mitigation, with documentation evidencing that no residual risk exceeds defined thresholds for harm to health, safety, or fundamental rights.
+
+[c] **Violation:**  
+Priority Response Analytics applies risk mitigation only through dispatcher training and disclaimers about decision support limitations but does not sufficiently reduce or redesign the GBDT or Transformer encoder to lower residual risks of incorrect prioritization that could lead to delayed responses for critical emergencies; consequently, the residual risk of life-threatening dispatch errors remains high and unacceptably unmanaged.
+
+[d] **Justification:**  
+This violation is subtle because provider reliance on deployer training and information provision alone may superficially satisfy mitigation efforts, yet it fails the requirement to ensure residual risks are reduced "in as far as technically feasible" through system design improvements. This leaves significant hazards insufficiently controlled.
+
+---

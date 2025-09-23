@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (b) facilitating the post-market monitoring referred to in Article 72; and (c) monitoring the operation of high-risk AI systems referred to in Article 26(5)."
+
+[b] **Guideline:**  
+Logs must systematically document operational parameters, model updates, and detected performance drifts, linked with real-world traffic outcomes, enabling effective continuous post-market surveillance and operational verification.
+
+[c] **Violation:**  
+SafeRoute’s log data fails to include versioning information of the deployed GNN and Transformer models or timestamps of incremental updates, making it impossible to correlate performance variances with specific system versions during post-market reviews.
+
+[d] **Justification:**  
+This is a subtle violation as the system still logs operational results, but the lack of model version and update metadata prevents thorough traceability and targeted post-market corrective actions, compromising regulatory compliance on monitoring.

@@ -1,0 +1,21 @@
+**Article 12**
+
+**Event Recording Architecture and Operational Scope**
+
+Insight Proctor Analytics implements a focused event recording framework tailored exclusively to instances where prohibited behavior is detected during supervised examinations. The system’s architecture comprises multiple transformer-based Vision Language Models (VLMs) which jointly process real-time video streams and contextual exam metadata to identify candidate anomalies. Upon detection of such anomalies—defined as deviations from authorized exam conduct—including but not limited to unauthorized communications, use of prohibited materials, or suspicious gestures, the system generates a flagged incident event. Only these flagged incidents are persistently logged, containing time-stamped video snippets, extracted feature vectors, and contextual test information necessary to reconstruct the triggering scenario.
+
+Routine system operations, normal monitoring scans, and periods of no anomalous findings do not produce log entries. This selective logging design aligns with Meridian Educational Technologies’ privacy-forward approach, minimizing data storage of routine personal information and reducing the volume of event data retained. The resultant event log reflects a sparse temporal sampling of system activity, focusing on relevant risk-indicative occurrences rather than providing continuous surveillance records.
+
+**Risk-Related Event Identification and Substantial Modification Detection**
+
+The event logs generated enable identification of situations that may produce risks in examination integrity by capturing rich multimodal data specifically on prohibited behaviors. Each logged event associates detected behaviors with corresponding risk categories as defined in internal policy frameworks modeled after recognized academic misconduct definitions. This categorization facilitates downstream risk assessment and intervention processes by compliance and academic integrity officers.
+
+Substantial modifications to the AI system, such as updates to detection algorithms, tuning of sensitivity parameters, or integration of new behavior categories, are tracked outside the user event logs in a dedicated configuration change management database. These modifications are versioned and recorded with comprehensive metadata on deployment dates and validation outcomes, ensuring traceability of system evolution independent from runtime incident logs.
+
+**Support for Post-Market Monitoring and Operational Oversight**
+
+While Insight Proctor Analytics does not log routine operations, the selectively captured flagged incident data serves as the principal input for post-market monitoring activities. Analysis pipelines consume the incident logs to evaluate false positive and false negative rates, model drift indicators, and behavior pattern changes over time. Incident logs are aggregated with anonymized metadata on exam sessions but exclude continuous feed data to maintain student privacy.
+
+Operational exception cases, such as system malfunctions, data pipeline interruptions, or model runtime errors, trigger separate system-level alerts recorded in non-personal, aggregate diagnostic logs accessible only to Meridian Educational Technologies’ internal maintenance teams. These diagnostics logs are distinct from incident logs and do not contain identifiable exam content or student data, reflecting a bifurcated logging strategy focused on privacy protection and regulatory traceability requirements.
+
+This design approach ensures the logging capabilities fulfill the intended purpose of supporting exam integrity oversight by recording only risk-relevant events, facilitating effective post-market evaluation of system performance and enabling operational monitoring without invoking comprehensive continuous data recording.

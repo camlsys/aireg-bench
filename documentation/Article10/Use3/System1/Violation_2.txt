@@ -1,0 +1,40 @@
+**Article 10**
+
+### Dataset Governance and Management Practices
+
+The training, validation, and testing datasets for the Adaptive Learning Outcome Analyzer have been curated with strict data governance and management protocols aligned with the intended educational purposes and compliance obligations. Meridian Cognition Technologies designed the dataset collection and preparation processes to ensure traceability and data integrity, focusing on educational assessment data streams sourced primarily from secondary and higher education institutions across Europe. The datasets include anonymized assessment results, learner interaction logs, and contextual metadata collected under consent frameworks aligned with GDPR provisions.
+
+Annotation and labeling workflows employed expert educational psychologists and curriculum specialists to classify assessment items and learning outcomes according to recognized frameworks. Data cleaning procedures involved removing inconsistencies, duplications, and outliers in learner responses, while maintaining granularity essential for personalized feedback generation. Enrichment processes integrated auxiliary metadata such as curriculum standards and institutional characteristics to enhance contextual understanding. Assumptions explicitly documented include the representation of learning competencies primarily within adolescent and adult learner populations, reflecting the bulk of the data.
+
+A rigorous assessment of dataset suitability was conducted early in development. The available training data consists of approximately 12 million learner records, with 85% derived from secondary education and 12% from tertiary education contexts. Primary education data constitute less than 3% of the total records, originating from limited pilot pilots and small-scale regional studies. This disproportionate representation was identified through systematic statistical profiling and comparative demographic analysis, revealing insufficient granularity and coverage for early learning stages compared to older cohorts.
+
+Bias and fairness evaluations targeted potential risks related to educational stage representation, given the model’s application across diverse learner age groups. Analyses included stratified performance testing segmented by educational levels, revealing a consistent gap in predictive accuracy and feedback relevance for primary education assessments. Attempts to address this via dataset augmentation and weighting were empirically tested but did not yield measurable improvements due to the sparsity and limited diversity of the available primary education data.
+
+Identified data gaps concerning early education have been explicitly recorded as current limitations. Meridian Cognition Technologies has documented this under the system’s risk registers and supporting technical logs, emphasizing that no synthetic data generation or demographic reweighting strategies were implemented to compensate for these gaps, given the lack of sufficient foundational data to derive robust augmentation strategies. Future dataset expansion efforts are planned to prioritize primary education data acquisition, which is currently underway but not yet integrated into the deployed system.
+
+### Representativeness and Data Quality
+
+In accordance with Article 10(3), the datasets used are relevant and representative primarily of secondary and higher education learners, with comprehensive coverage of curricular areas such as mathematics, science, language arts, and social studies relevant to these stages. Quality assurance protocols confirm that, for these groups, the datasets are largely complete and exhibit low error rates, with input validation and standardized scoring ensuring data consistency. The statistical distributions of learner demographics, assessment difficulty, and question types were benchmarked against recent pan-European educational statistics to ensure alignment with typical secondary and tertiary education populations.
+
+Conversely, the datasets lack a representative and sufficiently large sample of primary education learners, which impacts the statistical robustness for this group. This incomplete representation results in model performance degradation for early learning assessments, as validated by internal evaluation metrics showing an average 15% decrease in accuracy and feedback relevance scores for primary education benchmarks compared to later stages. This outcome reflects the inherent dataset limitations rather than model architecture deficiencies.
+
+### Contextual and Functional Setting Considerations
+
+The datasets account for relevant contextual factors, including educational curricula variations across EU member states at the secondary and tertiary levels, as well as language localization and pedagogical styles. Behavioral data reflecting learner interactions with assessment interfaces and feedback mechanisms were incorporated to refine model responsiveness and personalization.
+
+However, due to the insufficient data volume for the primary education cohort, contextual modeling specific to early childhood learning environments remains underdeveloped. The system’s operational environment factors—such as use cases involving younger learners—were considered during design but constrained by the underlying data distribution. Geographic coverage emphasizes representative sampling of member states predominantly contributing secondary and higher education data, resulting in some contextual underrepresentation for primary education settings.
+
+### Special Categories of Personal Data and Bias Mitigation Measures
+
+The provider assessed the necessity to process special categories of personal data to detect and mitigate biases as per Article 10(5) but concluded such processing was not required. Bias detection was conducted using demographic data anonymized and pseudonymized to protect learner privacy and maintain compliance with GDPR and related data protection laws. No special categories of personal data were ingested or processed.
+
+Bias mitigation efforts included automated statistical bias detection pipelines and manual audits by educational experts. For the identified primary education data deficiency, mitigation was limited to transparent documentation and provision of user guidance regarding the system’s performance boundaries. Attempts to compensate for data imbalance through synthetic data generation or data reweighting strategies were empirically ineffective due to insufficient base data quality and quantity in the primary education segment.
+
+### Summary of Design Decisions Related to Data Quality
+
+- Data collection prioritized large-scale, high-quality records from secondary and tertiary education, with rigorous annotation and enrichment workflows.
+- The limited availability of primary education data was systematically assessed and documented; no compensatory data manipulations (e.g., synthetic augmentation or reweighting) were incorporated given their inefficacy.
+- Quality control processes ensured datasets were accurate, consistent, and representative for secondary and higher education learners but acknowledged that early education representation remains a material limitation.
+- Contextual and behavioral factors relevant to intended higher education settings were incorporated; primary education contextualization is currently insufficient due to data scarcity.
+- Privacy and data protection safeguards were implemented in compliance with relevant EU regulations, avoiding the use of special category data for bias mitigation.
+- Identified limitations and data gaps are detailed and regularly reviewed as part of ongoing system maintenance and future dataset improvement planning.

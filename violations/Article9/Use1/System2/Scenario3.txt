@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."  
+
+[b] **Guideline:**  
+Risk management must explicitly assess impacts on vulnerable groups such as children and adapt risk controls accordingly, for example by including specific detection modes for child pedestrians or erroneous behavior patterns typical in younger or disabled road users.  
+
+[c]**Violation:**  
+The system’s risk analysis fails to incorporate differentiated testing or mitigation strategies for child pedestrians or users with disabilities, neglecting to analyze whether its visual sensing and classification algorithms may underperform or produce biased risk predictions around school zones or playground crossings where children are prevalent.  
+
+[d] **Justification:**  
+This is a plausible and subtle violation as the provider’s generic traffic risk framework overlooks tailored evaluation of vulnerable groups, exposing children and other sensitive users to unaddressed specific risks; the omission is not blatant but can result in disproportionate harm given the system’s deployment context.

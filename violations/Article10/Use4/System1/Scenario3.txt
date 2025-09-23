@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall take into account, to the extent required by the intended purpose, the characteristics or elements that are particular to the specific geographical, contextual, behavioural or functional setting within which the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+To meet this standard, data sets and associated metadata must incorporate contextual factors such as regional exam rules, cultural norms around gestures and communication, language variations in test metadata, and behavioral norms affecting movement patterns during exams in each deployment region. These setting-specific elements should be explicitly modeled or included in training and validation to ensure accurate interpretation.  
+
+[c] **Violation:**  
+Insight Proctor Analytics aggregates diverse exam footage in a single training corpus without contextual tagging or differentiation based on country-specific exam procedures or cultural behavioral nuances. For example, certain benign hand signals common in one region are uniformly flagged as suspicious across all settings, causing misclassification. The system does not adapt or recalibrate thresholds based on the contextual exam environment or cultural background reflected in the data.  
+
+[d] **Justification:**  
+Ignoring the contextual specificity prescribed by Article 10(4) risks false positives and ineffective surveillance, impacting users differently depending on location and social norms. This violation is subtle since the system appears functional generally, but context-agnostic modeling leads to inaccurate outputs that degrade fairness and reliability in less represented or culturally distinct exam settings.

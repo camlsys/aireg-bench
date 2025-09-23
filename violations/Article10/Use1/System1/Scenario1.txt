@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations;"  
+
+[b] **Guideline:**  
+Experts would ensure systematic bias audits identifying hidden correlations within traffic sensor and incident report data that could erroneously prioritize or neglect certain urban areas or demographic groups, potentially compromising road safety equity. This includes verifying the representation of diverse neighborhoods and times to prevent unsafe traffic management disparities.  
+
+[c] **Violation:**  
+SafeRoute’s training data predominantly consists of incident reports and sensor data from affluent urban districts while underrepresenting low-income or suburban areas, due to convenience sampling from city authorities focused on central business districts. The resulting model systematically underestimates hazard risk in peripheral neighborhoods, leading to delayed traffic warnings there.  
+
+[d] **Justification:**  
+This subtle bias is realistic because data collection focused on central urban zones is common in municipal systems with limited sensor coverage. It breaches the requirement by ignoring a bias that impacts health and safety unequally across geographic and social groups, which may worsen traffic risks for underserved populations without overtly skewing overall error metrics.  
+
+---

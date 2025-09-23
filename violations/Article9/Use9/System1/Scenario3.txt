@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system;"  
+
+[b] **Guideline:**  
+Risk management must seek to mitigate identified hazards through technical design changes or algorithmic improvements before resorting to mitigation via user training or external controls, aiming for risk reduction embedded in the AI system itself wherever possible.  
+
+[c] **Violation:**  
+Judicial Insight Assistant detects that certain legal fact classification errors stem from limitations in GBDT model training data but chooses not to retrain or redesign the model to reduce these errors, instead relying primarily on detailed user manuals and court personnel training to manage residual risk.  
+
+[d] **Justification:**  
+This approach fails the requirement in Article 9(5)(a) as it does not prioritize risk elimination or reduction via design, but shifts the burden externally, which is realistic given costly retraining, yet subtle because the system’s outputs appear reliable, masking the persistent design-level risk not adequately addressed.

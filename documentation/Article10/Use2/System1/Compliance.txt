@@ -1,0 +1,45 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The development of Gas Safety Insight adheres strictly to comprehensive data governance and management practices tailored to the system’s high-risk nature and its specific operational purpose. For the AI models’ training, validation, and testing processes, documented design decisions were made following a rigorous assessment of the system's safety-critical context.
+
+(a) **Design Choices**: The hybrid model architecture integrates Gradient Boosted Decision Trees (GBDT) and encoder-only Transformers, selected to combine the interpretability and robustness of GBDTs with the temporal pattern recognition capabilities of Transformers. This approach was chosen to optimize detection accuracy for transient and context-dependent anomalies in sensor data streams, aligning with operational safety requirements.
+
+(b) **Data Collection Processes and Origins**: Sensor data and operational logs were sourced exclusively from certified industrial-grade equipment operating within carefully controlled natural gas networks, collected under strict supervision. The original data collection was conducted solely for operational monitoring and safety management, meeting industrial confidentiality and data integrity standards. All datasets are legally procured and documented with metadata detailing origin, timestamp, equipment ID, and contextual conditions.
+
+(c) **Data-Preparation Operations**: Raw sensor and log streams underwent systematic preprocessing, including denoising with adaptive filters, annotation by domain experts for anomaly classification, and uniform data normalization. Automated routines perform continuous data cleaning to remove outliers and correct timestamp discrepancies. Enrichment procedures integrate contextual metadata such as pipeline segment characteristics and environmental conditions to refine model inputs.
+
+(d) **Formulation of Assumptions**: The system development team assumed that sensor data accurately represent physical states pertinent to leak or failure conditions and that operational logs fully capture relevant events affecting system behavior. It was further assumed that temporal and contextual patterns reflect underlying causal mechanisms. These assumptions informed feature engineering and model validation strategies.
+
+(e) **Assessment of Data Availability, Quantity, and Suitability**: Over 12 million data points aggregated from multiple network installations spanning three years were compiled, providing a statistically robust and diverse base for model training and validation. This volume allowed balanced representation across varying operational states and seasonal/environmental variations. Data subsets were evaluated for completeness, representativeness, and temporal continuity against system performance benchmarks.
+
+(f) **Bias Examination**: Potential biases were methodically analyzed focusing on data origin heterogeneity, sensor calibration variances, and contextual factors that could disproportionately affect detection outcomes. Bias risk assessments considered impacts on safety, operational decisions, and compliance with fundamental rights under EU law, including risks of discrimination in maintenance prioritization or resource allocation.
+
+(g) **Bias Mitigation Measures**: To prevent bias-related degradations, multivariate calibration techniques were employed to harmonize sensor outputs across different devices. Stratified sampling ensured balanced training data from diverse operational contexts. Counterfactual testing and simulated anomaly injections evaluated model robustness. Ongoing monitoring pipelines automatically flag bias indicators with automated alerts for retraining or parameter adjustment, minimizing drift over time.
+
+(h) **Identification and Addressing of Data Gaps**: Notable data gaps due to rare but critical failure modes were identified through failure mode and effects analysis (FMEA) processes. To mitigate this, synthetic data augmentation supplemented real data for underrepresented scenarios while maintaining strict validation thresholds to avoid overfitting. Continuous data acquisition programs and operator feedback loops are established to reduce remaining shortcomings iteratively.
+
+### Quality and Representativeness of Data Sets
+
+Gas Safety Insight’s training, validation, and testing datasets have undergone rigorous evaluation to ensure relevance and representativeness pertinent to its safety-critical monitoring objectives. Data completeness and error rates were confirmed via automated integrity checks and domain-specific anomaly audits, yielding an estimated error rate below 0.2%. Statistical properties, including distributional characteristics of sensor readings and event incidences, were matched across datasets to prevent model bias toward any operational regime.
+
+Datasets include stratified sampling by geographical zone, seasonal conditions, and functional pipeline categories to capture diverse operational environments. These factors underpin the high fidelity of model generalization across the EU gas network contexts.
+
+### Contextual and Geographical Specificity
+
+Datasets reflect the geographical diversity of EU gas network infrastructures, incorporating sensor outputs and operational data from multiple member states with varied climatic, geological, and infrastructural characteristics. Contextual information, such as pipeline age, maintenance schedules, and local regulatory constraints, was integrated into feature sets to ensure sensitivity to the specific conditions in which the system is deployed.
+
+This approach assures that the system’s anomaly detection aligns with the unique behavioural and functional settings encountered within different operational areas, providing conforme and context-aware safety insights.
+
+### Processing of Special Categories of Personal Data
+
+The system’s design explicitly excludes processing of biometric or special categories of personal data. In the exceptional situation where maintenance personnel feedback (which might include special categories of data) is involved at the data annotation stage to improve bias detection, strict compliance with GDPR requirements and EU AI Act safeguards is enforced. Such data, when required, is pseudonymised using state-of-the-art algorithms, access-restricted to authorized engineers under confidentiality agreements, and retained only until bias correction is verified. No transmission or external sharing beyond the provider’s secure environment occurs, and deletion protocols are strictly followed post-bias mitigation.
+
+### Application to Non-Training Techniques
+
+Since Gas Safety Insight employs AI training techniques, Article 10 paragraphs (2) to (5) apply comprehensively to training, validation, and testing datasets. Testing datasets are maintained independently and subjected to separate validation cycles for unbiased performance evaluation in alignment with regulatory expectations.
+
+---
+
+This technical documentation reflects the systematic, documented, and enforceable data governance framework embedded within Gas Safety Insight’s development lifecycle, demonstrating considered provider decisions and comprehensive compliance with the stipulations outlined in Article 10 of the EU AI Act.

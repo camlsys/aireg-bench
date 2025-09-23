@@ -1,0 +1,31 @@
+**Article 12**
+
+**Logging Architecture and Scope**
+
+The Consumer Credit Transformer system employs a dedicated logging subsystem designed to capture key output events during operation without persisting ancillary metadata that could complicate data governance or introduce potential privacy concerns. Specifically, the logs record the final credit risk score assigned to each individual credit application. This score is a continuous numeric value ranging from 0 to 1, representing the system’s assessed likelihood of borrower default risk. The logging mechanism activates upon completion of a creditworthiness evaluation request, ensuring comprehensive traceability of final decision outcomes throughout the system’s deployed lifetime.
+
+Logging does not extend to auxiliary internal data such as confidence intervals around the risk score, anomaly flags triggered by atypical inputs, or indications of detected statistical shifts (concept drifts) within the input feature distributions. This deliberate scope limitation aligns with the provider’s design choice to minimize sensitive metadata retention and to reduce the risk of exposing internal diagnostic signals that could be misinterpreted or exploited, while still satisfying essential traceability requirements.
+
+**Rationale for Event Selection**
+
+The recorded final credit risk score was identified as the minimal yet sufficient event for fulfilling traceability obligations per Article 12(2). By capturing this definitive output, the logs enable retrospective review of system decisions relevant to potential risks described under Article 79(1), such as erroneous or biased credit denial outcomes, without overwhelming the audit trail with complex instrumentations that do not directly affect end-user decision-making.
+
+Omitting metadata such as confidence bounds or anomaly markers reflects a risk-based assessment that these intermediate data points are primarily used internally for model maintenance and monitoring, which are managed separately from the logged event data. Instead, operational monitoring and post-market surveillance (Article 72) rely on aggregated performance metrics and periodic model validation reports, distinct from the logs.
+
+Similarly, compliance with operational monitoring requirements under Article 26(5) is achieved through external monitoring frameworks assessing model drift and fairness metrics derived offline, rather than incorporating these directly into the runtime logging schema.
+
+**Technical Implementation Details**
+
+The logging subsystem interfaces with the model’s output layer, capturing the final scalar value immediately after the transformer model completes inference. The implementation uses a write-once audit log, stored securely in encrypted log management infrastructure compliant with industry standards such as ISO/IEC 27001.
+
+Log entries include only minimal metadata necessary for audit integrity: a timestamp (UTC), a hashed and anonymized application identifier to prevent direct personal data leakage, and the final credit risk score. The anonymization approach applies a one-way hash combined with a provider-held salt, ensuring re-identification is not feasible by external parties.
+
+Log throughput scales to handle peak operational loads of up to 5,000 concurrent evaluations per minute, supported by horizontally scalable logging services with automatic retention policies configured to comply with applicable data retention laws, thereby balancing regulatory traceability with data minimization principles.
+
+**Supporting Compliance Measures**
+
+To complement the focused logging approach, routine post-market monitoring exercises independently track model performance and bias trends across the entire deployment, using aggregate analytics rather than relying on detailed per-request metadata. These evaluations utilize large longitudinal datasets (spanning over 2 million anonymized credit applications) to detect significant model drift or emerging fairness concerns.
+
+Model updates and retraining cycles are informed by these analyses, with changelogs documenting algorithmic or data alteration events that could represent substantial modifications to the system’s behavior under Article 12(2)(a). However, these changelog records are maintained separately from the runtime logs, consistent with the design to limit logged events to the final credit risk score only.
+
+This segregation of responsibilities—which differentiates between audit logs for traceability and offline monitoring data for operational oversight—is a deliberate architectural decision reflecting contemporary best practices in AI system compliance management and data privacy.

@@ -1,0 +1,45 @@
+**Article 9**
+
+**Establishment and Structure of the Risk Management System**
+
+Veritas Learning Systems has designed and implemented a comprehensive risk management system specifically tailored for the Academic Compliance Monitor, reflecting an iterative, lifecycle-wide approach. This system is embedded from initial design phases through deployment, maintenance, and updates of the AI system. It integrates cross-disciplinary inputs—spanning machine learning engineering, behavioral analytics, and educational compliance experts—to ensure continuous oversight. The risk management framework mandates quarterly reviews triggered by system performance audits, feedback from deployers, and emergent academic integrity threat patterns, thereby maintaining dynamic alignment with evolving risks associated with examination environments. This ongoing process is documented in Veritas’s internal risk management platform, capturing decision logs, identified hazards, and implemented mitigations in a traceable format aligned with internal quality management standards (ISO 9001 adapted for AI systems).
+
+**Identification and Analysis of Known and Foreseeable Risks**
+
+The identified risks concentrate primarily on impacts to students’ fundamental rights, notably privacy and fairness, as well as on health and safety concerns arising in the monitored environment. A multidisciplinary validation team conducted a comprehensive hazard analysis during system development, where behavioral anomaly detection was scrutinized for both false positive and false negative scenarios. The examination included reviewing data flow channels (e.g., keyboard dynamics, ambient audio streams) for inadvertent data leakage risks and potential misclassification effects leading to wrongful accusations. This process used a fault-tree analysis model combined with adversarial testing campaigns involving a dataset of 25,000 synthetic and real exam session logs, balanced to represent diverse student behaviors and varied acoustic environments. Anticipated misuse cases, such as intentional spoofing of keyboard inputs or environmental noise interference, were modeled and analyzed to anticipate risk manifestations under foreseeable conditions of use and misuse.
+
+**Estimation, Evaluation, and Post-Market Risk Assessment**
+
+Risk quantification leveraged probabilistic metrics such as the false positive rate (FPR) and false negative rate (FNR) of the system’s hybrid model outputs, with target thresholds set at ≤2% FPR and ≤5% FNR, congruent with educational fairness standards. These were validated pre-market via a multi-institutional pilot over six months encompassing 10,000 monitored exams, demonstrating system stability and detection consistency within defined confidence intervals (95%). Post-market data collection is facilitated by a dedicated monitoring platform integrated into the deployer’s management console, collecting anonymized operational logs and alert audit trails in compliance with GDPR principles. This feedback loop informs adaptive retraining strategies and threshold recalibrations to mitigate emerging risks identified through continuous usage, ensuring adjustment for shifts in exam hall noise profiles or atypical behavioral trends.
+
+**Risk Mitigation Measures and Design Decisions**
+
+The system architecture employs several design choices to eliminate or substantially reduce risks:
+
+- Use of non-biometric behavioral inputs to avoid sensitive personal data processing, thereby reducing privacy risks.
+- Hybrid model fusion combining Random Forest classifiers for tabular event data and RNNs for sequential audio and keystroke patterns, enhancing detection precision while minimizing false alarms.
+- Implementation of differential privacy techniques and encrypted data storage to safeguard data during both processing and transit.
+- Customizable alert thresholds settable by exam supervisors within recommended safe operational bounds, allowing context-sensitive risk balancing.
+- Deployment of fail-safe defaults where, under uncertainty, the system flags behavior as "require review" with no automated sanctioning to preserve fairness.
+
+Supplementary to design measures, Veritas provides detailed technical documentation and training materials tailored to intended deployer profiles, which include IT administrators and exam supervisors, who are expected to have baseline technical knowledge and receive periodic system usage training. This supports appropriate handling of system alerts and reduces misuse risks linked to operator error.
+
+**Interaction of Risk Management Measures**
+
+In designing and implementing the mitigation measures, particular attention was paid to the interplay between robustness, data protection, and operational transparency requirements. For example, adopting encrypted data protocols aligns simultaneously with privacy and data integrity mandates, while hybrid modeling balances detection performance against explainability, facilitating both accurate results and deployer confidence in operational use. These integrated safeguards reduce the overall residual risk to acceptable levels while maintaining consistent compliance with overlapping sections of the regulatory framework.
+
+**Residual Risk Evaluation**
+
+Residual risks related to misclassification—both false positives leading to potential reputational harm and false negatives allowing undetected cheating—have been quantitatively assessed and found acceptable given the implemented countermeasures. The system’s performance exceeds conservative internal benchmarks, and risks that cannot be fully eliminated are addressed through procedural safeguards in deployer training and system alert workflows. No residual risks were identified that posed significant or unmanageable threats to the health, safety, or fundamental rights of students or exam personnel.
+
+**Comprehensive Testing Strategy**
+
+Testing protocols adhere to an iterative validation approach, combining synthetic and real-world data under controlled and operational conditions. Functionality and safety testing were conducted on all components: the Random Forest classifiers and RNN modules underwent unit, integration, and system-level tests with metrics including area under the receiver operating characteristic curve (AUC-ROC) exceeding 0.90 on validation datasets. The system was stress-tested for robustness to environmental noise variance up to 40 dB SPL and input event irregularities. Pre-market acceptance testing included end-to-end scenario simulations and user acceptance testing with exam supervisors, verifying alert accuracy and workflow integration. Testing continued regularly through deployment, employing automated regression test suites monthly and targeted real-world testing annually as per Article 60 provisions.
+
+**Consideration of Vulnerable Groups**
+
+Due consideration was given to vulnerable populations, notably minors, given the system’s deployment in educational environments predominantly involving under-18 students. Risk identification and mitigation explicitly evaluated potential adverse impacts on these individuals, including the risk of stigmatization or undue stress from system alerts. Measures ensuring transparency toward affected students, restriction of personal data use, and the option for human review before any corrective action were incorporated in the system design. Additionally, system outputs are designed solely as advisory to human supervisors without automated decision-making powers affecting student status or examination outcomes.
+
+**Alignment with Other Relevant Regulatory Frameworks**
+
+Where overlaps with other Union law requirements on internal provider risk management exist, Veritas Learning Systems has integrated the Article 9 risk management elements within its broader compliance management system, which includes requirements derived from GDPR for data processing and the Machinery Directive for device safety in the case of hardware components interfacing with the system. This integrated approach enables efficient, harmonized monitoring and control while ensuring all relevant risk aspects are managed comprehensively throughout the AI system’s lifecycle.

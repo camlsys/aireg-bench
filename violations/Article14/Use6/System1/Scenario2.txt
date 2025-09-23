@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse..."  
+
+[b] **Guideline:**  
+Providers must anticipate scenarios where deployers might misuse the system (e.g., ignoring warnings or over-relying on the AI output) and implement oversight mechanisms and warnings that prevent such misuse to protect fundamental rights like fair treatment and non-discrimination.  
+
+[c] **Violation:**  
+Meridian Labor Solutions’ framework lacks embedded alerts or reminders that caution HR professionals against automation bias, such as over-trusting AI judgments without critical assessment, nor does it provide procedural guidance or fail-safes that trigger when decisions disproportionately affect protected groups, enabling misuse scenarios to go unchecked.  
+
+[d] **Justification:**  
+By not incorporating measures that mitigate foreseeable misuse risks—such as neglecting human judgment or disproportionate reliance on AI outputs—this subtle deficiency allows harms to fundamental rights to persist, violating the obligation to minimize such risks under Article 14(2), despite the system functioning technically per design.  
+
+---

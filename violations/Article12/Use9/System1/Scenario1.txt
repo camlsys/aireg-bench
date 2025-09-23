@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement continuous, automated event logging from deployment until decommissioning, capturing relevant runtime data without requiring manual activation or intervention to ensure a complete audit trail.
+
+[c] **Violation:**  
+Judicial Insight Assistant’s logging module only activates upon manual triggers initiated by system administrators during specific maintenance windows, resulting in gaps in log data during normal operation periods.
+
+[d] **Justification:**  
+This violation subtly breaches the requirement because it implies incomplete lifetime logs due to manual control, undermining automated record-keeping. It is realistic as companies might offload logging control to reduce data volume or overhead, inadvertently contravening the mandatory automatic logging obligation.
+
+---

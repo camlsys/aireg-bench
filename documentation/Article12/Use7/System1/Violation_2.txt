@@ -1,0 +1,25 @@
+**Article 12**
+
+**System Event Logging Architecture**
+
+The Credit Evaluation Network (CEN) implements an event logging subsystem that captures discrete transaction-level outputs and inputs throughout the AI system’s operation. Specifically, the system automatically records the final credit score generated for each individual application along with the full set of user-submitted input features at the moment the request is evaluated. Inputs encompass structured financial variables (e.g., income, debt obligations, credit history metrics) and basic demographic information provided explicitly by the applicant. This logging design ensures a comprehensive audit trail of decision endpoints and source data, facilitating direct traceability of AI outputs to inputs for each evaluated case.
+
+While the system systematically captures these input-output pairs, it does not by default record intermediate algorithmic states or background system events such as detected distributional data shifts or retraining episodes. Consequently, the logs do not reflect changes in input data distributions over time or model update metadata that would signify substantial alterations in system behavior or performance. This focused logging approach was chosen to balance operational data volume constraints and privacy considerations, targeting storage primarily on evidential credit decisions rather than on internal monitoring metrics.
+
+**Traceability of Risk-Related Events and Model Changes**
+
+In alignment with the system’s operational scope and compliance framework, the logging mechanism centers on events directly evidencing AI decision outputs—the final credit scores—and their underlying inputs. This enables retrospective verification of individual scoring cases for audit or dispute resolution, confirming the data points that influenced outcomes. However, the system’s logs omit detection and recording of shifts in input data distribution (covariate or concept drift) and do not chronicle retraining events or model version changes that could materially impact credit risk prediction accuracy.
+
+While monitoring pipelines for detecting input distribution changes and logging retraining activities exist internally within Meridian Financial Analytics’ development environment, these signals are not propagated to the deployed CEN’s event logs. Thus, traceability does not extend to signaling emergent risks associated with evolving applicant populations or to reflecting adjustments made to the model that may affect reliability after update deployment.
+
+**Support for Post-Market Monitoring**
+
+The post-market performance analysis of the AI system, as per regulatory and internal quality assurance practices, primarily relies on aggregated credit scoring outputs and associated input data logged over time. The CEN’s logs provide sufficient granularity to support statistical performance reviews, benchmark validation, and audit trails at the case level, enabling comparable analyses against credit loss data and default rates post-deployment.
+
+However, absence of systematic logging of distributional drift indicators and retraining activities constrains the capacity to conduct comprehensive post-market monitoring focused on early identification of shifts potentially degrading model performance or bias profiles. Post-market risk assessments depend, therefore, on periodic manual reviews and external monitoring tools unavailable within the system’s native logging configuration.
+
+**Operational Monitoring of AI System Functioning**
+
+The CEN’s operational monitoring infrastructure includes real-time service health metrics, latency tracking, and audit logging of decision outcomes (credit scores) and inputs per evaluation instance. These logs capture AI decisions relevant to the system’s intended purpose—ranking individual credit risk accurately and transparently. Yet, the system does not automatically log technical events related to the modification or retraining of the GBDT model stages that may substantially change system predictions.
+
+By prioritizing input-output traceability, the system ensures accountability for consumer credit decisions and maintains a stable audit base reflecting applicant-level risk assessments. However, monitoring of potential model drifts—such as changes in applicant population characteristics or model parameter shifts after retraining—remains external to the core logging functionality and is not embedded as part of runtime operational logs.

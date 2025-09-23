@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"3.(a) measures identified and built, when technically feasible, into the high-risk AI system by the provider before it is placed on the market or put into service;"
+
+[b] **Guideline:**  
+Providers must embed technical measures within the AI system itself—such as real-time alert validation heuristics, confidence thresholds adjustable by users, or safe-fail modes—to facilitate effective human oversight proportionate to risks and autonomy level before deployment.
+
+[c] **Violation:**  
+Meridian Safety Systems releases Pipeline Safety Guardian without integration of adjustable confidence thresholds or anomaly alerts that could flag potentially erroneous outputs, requiring all validation and threshold settings to be configured post-deployment by operators with limited technical expertise.
+
+[d] **Justification:**  
+Deferring critical oversight controls until deployment reduces the provider’s responsibility for embedding human oversight functionality and creates risk of inappropriate settings in the field, thus not fulfilling the obligation to integrate appropriate technical oversight measures at design and development stages.

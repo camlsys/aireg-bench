@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities... including... measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+The system must implement cybersecurity controls that specifically address AI attack vectors such as data poisoning, adversarial inputs, and model evasion, including monitoring for anomalous input patterns, integrity checks for training data, and mitigation strategies to maintain trustworthy outputs under attack.  
+
+[c] **Violation:**  
+Judicial Insight Assistant lacks defenses against adversarial perturbations targeting its transformer encoder-decoder module, allowing subtle syntactic manipulations of legal queries to cause output distortions favoring certain legal interpretations, without triggering alerts or rejection of suspicious inputs.  
+
+[d] **Justification:**  
+This subtle vulnerability enables malicious manipulation of input phrasing to bias legal research outputs without obvious failure, violating the cybersecurity resilience mandate. Such adversarial examples are a known AI-specific threat and plausible in text-processing systems but may remain undetected without specialized defenses, breaching the requirement for appropriate technical solutions.

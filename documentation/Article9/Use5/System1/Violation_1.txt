@@ -1,0 +1,43 @@
+**Article 9**
+
+### Implementation of Initial Risk Management Practices
+
+Sterling Recruitment Technologies has established a foundational risk management procedure preceding the initial deployment of the Talent Insight Model. This initial process included the identification and analysis of reasonably foreseeable risks associated with the system’s intended use in recruitment contexts, specifically focusing on health, safety, and fundamental rights risks linked to candidate evaluation and job matching outcomes. The initial risk assessment was informed by a comprehensive review of recruitment domain-specific hazards such as potential biases in resume parsing, algorithmic discrimination across protected characteristics, and errors in skill extraction that could adversely affect candidate ranking. 
+
+This assessment utilized both historical recruitment datasets comprising approximately 1.2 million anonymized application records from diverse EU labor markets and stakeholder input from HR professionals to identify risks arising from systemic bias patterns and misinterpretation of unstructured resume data. Risks were evaluated with regard to both compliant usage scenarios and foreseeable misuses such as manipulation of input data formats or candidate self-representation distortions.
+
+### Scope and Limitations of Risk Management Process
+
+The risk management activities conducted have been confined primarily to this preliminary stage, emphasizing design-phase interventions such as algorithmic fairness optimization and bias mitigation during model fine-tuning. These technical mitigations included rebalancing training datasets for underrepresented demographic groups and embedding fairness constraints targeting statistical parity in candidate ranking outcomes. Additionally, the model was subjected to extensive testing using defined performance metrics—such as precision, recall, and fairness measures (e.g., disparate impact ratio)—applied over independent validation datasets representing about 200,000 resumes from multiple geographic and sector contexts.
+
+Nevertheless, Sterling Recruitment Technologies has not established a cyclic or systematic schedule for ongoing risk reassessment post-deployment. There are no structured mechanisms embedded within the operational lifecycle of the Talent Insight Model to detect or analyze emerging adverse outcomes such as novel bias manifestations or shifts in recruitment practices which might affect system behavior. No automatic triggers or periodic review milestones have been configured to initiate reassessment or adaptive updates using aggregations of real-world interaction data or post-market monitoring results.
+
+### Post-Deployment Monitoring and Risk Reassessment
+
+While the Talent Insight Model is provisioned to capture anonymized interaction logs—such as candidate ranking distributions and job matching outcomes—to support future analytical efforts, the provider’s current operational procedures do not extend to continuous monitoring or empirical evaluation of residual risks throughout system service. No active pipelines are implemented to analyze feedback from deployers or end-users in real-time or on a scheduled basis to reassess risks related to fundamental rights implications or systemic bias that may appear under evolving recruitment conditions.
+
+Consequently, the risk management process excludes the dynamic identification and evaluation of newly emerging risks based on post-market data as stipulated in Article 9(2)(c). The absence of a formal post-deployment risk review framework limits the capacity for iterative updating of risk controls or adoption of enhanced mitigation measures after initial release.
+
+### Alignment of Risk Controls to Residual Risk Acceptability Criteria
+
+In the initial design phase, risk management measures targeted elimination or reduction of identified risks through dataset balancing, algorithmic fairness constraints, and comprehensive testing of system outputs against defined performance thresholds reflecting recruitment domain norms. These interventions were calibrated to achieve acceptably low residual risks for hazards identified at that stage, with associated documentation quantifying residual disparate impact ratios between demographic subgroups consistently within the 0.8 to 1.25 range, in alignment with prevailing fairness thresholds.
+
+The system includes detailed technical information describing model behavior, intended use cases, known limitations, and recommended user practices integrated in the provider’s accompanying documentation to assist deployers in managing residual risks related to misuse or misunderstanding. However, since no ongoing reassessment cycles are instituted, the current risk management measures remain static without adaptive refinement based on field performance or new threat vectors.
+
+### Testing Prior to Market Release
+
+Testing of the Talent Insight Model was executed at multiple development checkpoints and immediately prior to market deployment. These stages involved both in silico simulations using curated datasets and limited real-world pilot deployments embedded within controlled recruitments scenarios to validate model robustness under expected operational conditions. Metrics assessed covered accuracy of skill and experience extraction, ranking consistency, and preliminary evaluations of bias and fairness indicators.
+
+Testing procedures conformed to industry standards for transformer-based NLP models, with model training leveraging approximately 500 GPU hours on heterogeneous cloud compute environments to refine contextual embeddings and relevance scoring layers. Probabilistic thresholds governing candidate match scores were calibrated based on cross-validated classification outcomes ensuring stable and predictable system outputs on hold-out sets.
+
+No further testing or validation stages are scheduled beyond release, and no provisions exist for testing triggered by observed performance degradation or feedback from actual deployment environments.
+
+### Consideration of Vulnerable Groups
+
+The initial risk assessment incorporated focused analyses regarding the potential impacts of the Talent Insight Model on candidates under 18 years of age and other declared vulnerable groups within recruitment pipelines. Recruitment domain experts and legal advisors reviewed demographic distributions in the training data and post-processed candidate scores to detect disproportionate adverse effects.
+
+Although the provider’s initial risk controls sought to reduce bias impacting vulnerable populations via targeted dataset augmentation and fairness constraints, no subsequent or continuous evaluation processes are configured to reassess these risks over time or in new operational contexts where vulnerabilities may evolve.
+
+---
+
+This documentation reflects Sterling Recruitment Technologies’ approach to risk management for the Talent Insight Model as it currently stands, emphasizing initial risk assessment and design-phase mitigation without an implemented framework for systematic, iterative risk reassessment throughout the AI system lifecycle.

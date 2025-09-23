@@ -1,0 +1,45 @@
+**Article 14**
+
+### Design for Effective Human Oversight
+
+The Credit Evaluation Network (CEN) has been architected with human oversight as a foundational design principle. The core model employs Gradient Boosted Decision Trees (GBDT), a well-established ensemble learning technique known for its interpretability compared to more opaque methods such as deep neural networks. Each prediction is accompanied by feature importance scores and local explanation outputs generated via SHAP (SHapley Additive exPlanations) values, enabling credit officers to trace key factors influencing the credit score in an understandable format.
+
+To facilitate active monitoring, the system interface presents these explanations alongside the credit scores, integrated within a human-machine interface (HMI) designed to support decision-making workflows in banking environments. The HMI includes real-time dashboards for anomaly detection, flagging unusual scoring patterns (e.g., abrupt score jumps or feature value outliers) to alert human supervisors promptly. Additionally, a “confidence index” is provided for each prediction, computed from model uncertainty metrics calibrated during training, assisting oversight personnel in identifying outputs warranting closer review.
+
+These design choices collectively ensure that natural persons can supervise the system effectively during use, maintaining awareness of model behavior and system outputs through accessible interpretability tools and alerting mechanisms.
+
+### Objective and Scope of Human Oversight
+
+Human oversight within CEN aims specifically to prevent or minimize risks pertaining to adverse impacts on health, safety, and fundamental rights of loan applicants. In particular, attention is given to avoiding unfair or discriminatory credit decisions that could arise despite robustness measures incorporated during model development.
+
+Risks addressed include incorrect credit assessments leading to unjust denial of credit access or excessive offering of credit, potentially harming financial wellbeing. The oversight controls preemptively target scenarios of reasonably foreseeable misuse, including input manipulation or systemic data shifts not reflected in the training dataset.
+
+For example, bias-detection submodules perform continuous checks on output distributions segmented by protected demographic groups (e.g., age brackets, socio-economic indicators) to reveal potential disparate impacts. These insights are available to credit supervisors in real time and historically via audit logs. When detected, human supervisors can intervene before adverse outcomes materialize.
+
+### Risk-Proportionate and Context-Aware Oversight Measures
+
+Given the high-risk classification and the credit domain’s stringent regulatory context, the oversight framework is proportionally calibrated to the system’s moderate autonomy and consequential financial impact on individuals.
+
+The provider has implemented multiple technical oversight measures embedded directly in the AI system prior to market release, including:
+
+- **Interpretable output generation:** SHAP explanations embedded at each decision point provide transparency.
+- **Automated anomaly and drift detection:** Statistical process control charts continuously monitor input feature distributions and score stability.
+- **Confidence indices:** Quantitative uncertainty measures guide human review prioritization.
+- **User interface controls:** Embedded “stop” button enabling immediate suspension of model scoring to allow manual processing.
+
+These technical features are complemented by deployment guidance documents issued to the system deployers, describing best practices for human oversight implementation. For instance, recommended organizational policies include mandatory supervisory review cycles for flagged cases, periodic model performance audits, and training programs to reduce automation bias among end users.
+
+Such a hybrid approach — combining embedded machine-level controls with deployer-controlled operational procedures — aligns with foreseeable contexts of use and facilitates layered oversight.
+
+### Enabling Natural Persons to Understand and Manage the AI System
+
+The CEN is delivered with comprehensive accompanying documentation and tools designed to empower natural persons assigned to human oversight tasks:
+
+- **Understanding system capabilities and limitations:** The provider supplies detailed model cards documenting training data characteristics (approximately 1.2 million anonymized loan applications), model performance metrics (e.g., Area Under the ROC Curve of 0.87 on out-of-sample validation), and known limitations such as potential reduced accuracy on demographic subgroups with limited training representation.
+- **Monitoring and anomaly detection:** The HMI presents graphical trend analyses, alert notifications, and drill-down capabilities for investigating suspicion-triggering patterns, supporting effective supervision.
+- **Mitigation of automation bias:** Operator training materials emphasize the importance of critical review of AI outputs, supplemented by interface design features including mandatory justification fields when credit decisions contradict model recommendations.
+- **Interpretation tooling:** SHAP value visualizations allow users to assess the relative impact of input variables (e.g., income, credit history length, debt-to-income ratio) on each applicant's score, enhancing interpretative accuracy.
+- **Override and interruption capabilities:** Supervisors retain absolute authority to override AI recommendations at the individual loan level directly within the interface. The system further incorporates a prominent, single-action “stop scoring” button that safely halts automated scoring processes while preserving operational logs and maintaining system stability.
+- **Data processing transparency:** Complete records of processing activities are maintained per GDPR (Regulation (EU) 2016/679) and Directive (EU) 2016/680, including detailed justification for the limited processing of special categories of personal data solely for detecting and correcting bias. These records document why alternative data sources could not achieve equivalent outcomes in bias mitigation, supporting accountability and auditability.
+
+This comprehensive suite of design, operational, and documentation measures ensures that natural persons responsible for oversight are equipped to perform their roles meaningfully, enabling them to detect, interpret, and intervene with the AI system’s operations throughout its lifecycle.

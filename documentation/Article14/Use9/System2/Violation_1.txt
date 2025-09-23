@@ -1,0 +1,41 @@
+**Article 14**
+
+### Design for Effective Human Oversight
+
+Legal Context Navigator (LCN) is developed with a focus on enabling judicial users to maintain effective oversight over the AI’s outputs throughout its operational lifecycle. The system incorporates a transformer-based large language model trained on a corpus exceeding 1.2 billion tokens, specifically curated from statutory, regulatory, and case law texts spanning multiple jurisdictions within the EU. This model architecture supports deep semantic understanding necessary for complex legal interpretation, yet its design consciously refrains from built-in automatic alerting or flagging mechanisms regarding jurisprudential bias or interpretative preference.
+
+The user interface presents outputs—such as mapped laws, precedent cases, and summaries—in a plain text and hyperlinked format, without explicit annotations or warnings about potential systemic biases inherent in the training data or the model’s weighting of legal authorities. This design choice reflects a deliberate provider decision: to deliver the AI's suggestions as neutral analogues of learned patterns without automated normative assessments that could pre-emptively influence judicial discretion. Consequently, human overseers rely on their legal expertise to evaluate contextual appropriateness and rigor.
+
+### Measures to Prevent or Minimise Risks to Fundamental Rights
+
+From a technical perspective, LCN integrates quality assurance measures during development to minimize risks to fundamental rights stemming from erroneous, misleading, or biased outputs. The training dataset underwent systematic review and curation to balance representation across major legal disciplines and jurisdictions, incorporating over 150,000 legal documents vetted to reduce disproportional emphasis on any single jurisprudential school. Benchmarking against domain-specific fairness metrics indicated that the model’s predictive weighting of references matches expected jurisprudential distributions within a ±7% tolerance across reference categories.
+
+However, no specific detection or mitigation tools are incorporated at runtime to signal when outputs may reflect systemic interpretative biases. The provider’s risk assessment acknowledges that automated flagging of such biases remains technically challenging given the complexity and domain-specific nuances in legal thought. Therefore, the system relies on judicial users’ ongoing supervision to recognize and address these risks in practice.
+
+### Oversight Measures Embedded by the Provider
+
+Consistent with Article 14(3)(a), LCN includes provider-built features designed to support effective human oversight proportional to the system’s high-risk profile and autonomy level:
+
+- **Transparency Dashboard:** A feature allowing users to view the provenance of key suggestions, including document sources, date stamps, and textual excerpts, assisting transparency in AI reasoning pathways.
+- **Query Traceability:** Each system interaction generates a structured log of input queries, selected model hyperparameters, and output tokens, enabling retrospective evaluation and anomaly detection.
+- **Safe Interruption Controls:** The interface provides an immediate 'Stop' button that safely halts ongoing AI computations without corrupting system state or data integrity, facilitating user intervention at any time.
+
+These measures aim to enable users to monitor system behavior and address non-conformance or unexpected performance, fulfilling the provider’s responsibility to embed human-machine interface tools that promote oversight.
+
+### User Empowerment and Interpretation Capabilities
+
+In accordance with Article 14(4), LCN is deployed with accompanying documentation and training materials specifically developed to equip judicial users with a substantive understanding of the system’s capabilities and limitations. The documentation outlines the following key points intended to support appropriate human oversight:
+
+- **Capacity and Limitations:** Detailed descriptions of model training data composition, known interpretive biases typical in precedent weighting, and the non-exhaustive nature of system-generated mappings.
+- **Over-Reliance Awareness:** Guidance emphasizes caution against automation bias—the tendency to over-rely on AI outputs without critical legal evaluation—and advises cross-checking AI suggestions with independent legal research.
+- **Interpretation Aids:** The interface supports semantic highlighting of legal terms and dynamic linking to source texts but does not assign validity scores or confidence intervals to results, preserving users’ interpretative discretion.
+- **Override and Disregard:** Users retain full authority to accept, disregard, or override system suggestions without technical impediments, supported by interface elements that allow manual annotation and note-taking beside AI outputs.
+- **Operational Intervention:** The 'Stop' control and query trace logs ensure natural persons can intervene in AI processing and detect operational anomalies, maintaining control at all times.
+
+No interface components actively flag situations where the system’s outputs might reflect systemic jurisprudential biases or interpretative inclinations, consistent with the provider’s architectural and operational choices.
+
+### Records of Processing Activities Related to Bias Detection
+
+While LCN processes specialized legal texts rather than personal data, the provider conducts internal audits of training data to detect potential representational imbalances affecting interpretative bias. These audits utilize metadata tagging and statistical analysis tools requiring access to categorical attributes of legal sources rather than personal data categories. The provider documents these activities in accordance with Regulation (EU) 2016/679 Article 30, citing the strict necessity of processing legal metadata to detect and mitigate bias patterns in the AI model.
+
+Given that bias detection mechanisms do not rely on special categories of personal data, no processing justification under Articles pertaining to sensitive data categories is applicable. Nonetheless, the provider maintains transparency in these records, ensuring deployers receive documentation outlining the rationale behind dataset selection and bias mitigation efforts during system handover.

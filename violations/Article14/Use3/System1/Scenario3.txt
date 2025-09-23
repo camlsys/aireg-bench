@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: (b) to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias), in particular for high-risk AI systems used to provide information or recommendations for decisions to be taken by natural persons." (Article 14(4)(b))
+
+[b] **Guideline:**  
+The system should include design elements—such as periodic reminders, uncertainty disclosures, or interaction patterns—that actively mitigate automation bias by encouraging critical appraisal of AI outputs by human users.
+
+[c] **Violation:**  
+The Adaptive Learning Outcome Analyzer delivers confident, stylized feedback and personalized learning recommendations in a natural language format with no warnings, disclaimers, or interactive prompts to remind educators and learners to critically evaluate suggestions, increasing the risk that users will over-rely on AI-generated judgments without proper scrutiny.
+
+[d] **Justification:**  
+By omitting subtle usability features addressing automation bias, the system unintentionally fosters overtrust in AI outputs—a risk that may go unnoticed and gradually affect human decision-making quality. This subtle design lapse contravenes the requirement to enable awareness and prevention of automation bias under Article 14(4)(b).

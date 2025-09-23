@@ -1,0 +1,55 @@
+**Article 10**
+
+**Data Governance and Origin of Training Data**
+
+The Recruitment Decision Forest (RDF) model is trained on a historical dataset comprising approximately 120,000 candidate profiles collected over the past eight recruitment cycles across multiple enterprise clients. These raw data include structured metadata—such as educational background, employment history, and skill assessments—alongside application form responses and past hiring decisions. The original purpose of data collection was to support recruitment processes but originated from legacy HR systems without explicit design for AI training. As such, the provider documented the lineage and provenance of data sources, including data custodians, timestamps, and recorded consent procedures to the extent available, to support traceability in compliance assessments.
+
+Data management processes incorporate version-controlled data repositories with strict access controls and audit logging. All candidate data were subjected to anonymization protocols removing direct identifiers before ingestion, minimizing privacy risks. The provider established a data retention policy aligned with client contracts, ensuring that data used for training and evaluation are current, with periodic refresh cycles every 12 months to reflect evolving hiring patterns and workforce demographics.
+
+**Data Preparation and Annotation Processes**
+
+Prior to model training, the provider executed comprehensive data preparation workflows. These included removal of duplicate entries, normalization of categorical variables (e.g., standardizing job titles and degree names), and imputation of missing demographic attributes using domain-aware heuristics. Candidate outcome labels (hired/not hired) were validated against source databases for consistency. No expert annotation beyond existing labels was performed, as the system relies on historical hiring outcomes.
+
+Feature engineering focused on generating interpretable variables such as years of experience per industry sector, skill proficiency scores derived from application text, and derived metrics indicating job-application frequency. An emphasis was placed on traceability of transformations via pipeline metadata. Data cleaning also involved flagging and excluding records with corrupted or incomplete fields beyond a 10% missingness threshold to maintain data quality integrity.
+
+**Assumptions and Representativeness**
+
+The RDF’s design assumes that the historical recruitment data reflect relevant predictors for candidate success within client firms’ operational contexts. The system presumes that patterns learned in prior hiring decisions are indicative of desirable candidate qualities. However, documented demographic imbalances exist in the dataset, with over-representation of candidates from certain geographic regions and dominant socioeconomic groups, reflecting entrenched hiring biases.
+
+While the provider ensured the statistical representativeness of key categorical features (e.g., job function, education level), the intersectional heterogeneity of underrepresented groups was not exhaustively modeled. This limitation was explicitly acknowledged in design documentation, with recognition that subtle bias mechanisms encoded in the data could affect fairness outcomes on subsets of candidates. No synthetic or rebalanced data augmentation was applied to counterbalance these gaps at the time of system development.
+
+**Bias Identification and Impact Assessment**
+
+A dedicated bias analysis was conducted involving subgroup performance audits segmented by gender, ethnicity proxies, and age brackets where available. These audits identified disparities in true positive rates and false negative rates for historically underrepresented groups, with some subgroups experiencing up to a 15% lower shortlisting rate compared to majority groups. The assessment methodology included calculation of selection rate ratios and disparate impact indices following industry standard fairness toolkits.
+
+Notably, intersectional identities—e.g., minority ethnic women in senior roles—were flagged as exhibiting pronounced model performance degradation due to sparse representation in the training data. The provider documented these findings in internal reports, highlighting the system’s vulnerability to perpetuating systemic inequities embedded in prior recruitment outcomes. However, explicit error rates and fairness metrics disaggregated at these granular subgroup levels were not integrated into the system’s operational dashboards or output reports.
+
+**Bias Mitigation Measures and Limitations**
+
+To address identified biases, the provider implemented basic preprocessing corrective actions, including feature exclusion of highly sensitive attributes and application of group-level re-weighting to partially alleviate overt demographic imbalances. These measures were primarily rule-based, applied prior to training without iterative in-training debiasing or posthoc adjustment techniques such as adversarial learning or counterfactual data augmentation.
+
+The provider provided guidelines recommending human-in-the-loop review procedures to recruitment teams for contextual interpretation of candidate rankings, emphasizing that the system’s outputs serve as decision support rather than autonomous determinations. No automated fairness constraints or bias correction layers were embedded within the core GBDT ensemble due to the recognized complexity of intersectional bias patterns and the limited availability of detailed demographic annotations.
+
+**Data Quality and Completeness Relative to Intended Use**
+
+Considering the RDF’s application context—initial candidate screening and targeted job advertising—the training, validation, and testing datasets were validated for completeness with an overall data completeness rate exceeding 92%. Data quality checks ensured nominal error rates below 0.5% on critical fields influencing scoring, such as education level and employment durations.
+
+Statistical property assessments confirmed the relevance of features to the recruitment domain, with consistent distributions across training and validation sets. However, demographic group distributions exhibit skewness consistent with legacy workforce compositions. The system’s developers documented these characteristics and incorporated them into model risk disclosures advising deployers of potential fairness risks, particularly for strategies relying on automated shortlisting without compensatory human oversight.
+
+**Use of Special Categories of Personal Data**
+
+The provider restricted processing of special categories of personal data, such as data revealing racial or ethnic origin or political opinions, adhering strictly to data minimization principles and applicable privacy regulations. Bias detection analyses utilized proxy variables derived from openly provided demographic attributes, avoiding direct processing of sensitive personal data. Consequently, the conditions enabling exceptional processing under Article 10(5) were not invoked.
+
+Technical and organizational safeguards were deployed to protect candidate data, including encryption at rest and in transit, role-based access controls, and pseudonymisation of identifiers during analysis phases. Data retention schedules mandate deletion or archival of personal data aligned with retention periods specified in contractual agreements, ensuring that personal data are not retained beyond necessity.
+
+**Contextual and Functional Data Considerations**
+
+Training data were curated to reflect geographical and behavioral recruitment contexts relevant to enterprise clients primarily located within the European Union. Variables capturing local labor market conditions and job function-specific attributes were integrated to tailor model relevance.
+
+Given the system’s modular design, retrainings allow for adaptation to different organizational contexts where distributional shifts may occur. However, the RDF does not currently integrate mechanisms to dynamically detect and adjust for context-dependent biases post-deployment, which remains a consideration for future releases.
+
+**Documentation and Traceability**
+
+Comprehensive documentation accompanies the system’s data governance and model development lifecycle, including dataset descriptions, preprocessing scripts, audit logs of bias assessments, and feature engineering rationales. This documentation substantiates the provider’s design choices and enables third-party compliance assessments focused on data quality and bias management relative to the high-risk AI system classification under Article 10.
+
+Internal control measures such as reproducible training pipelines and model versioning support transparency and accountability, facilitating targeted investigations of dataset-related risks and their potential impacts on fundamental rights in recruitment contexts.

@@ -1,0 +1,39 @@
+**Article 15**
+
+**Design and Development to Achieve Appropriate Accuracy, Robustness, and Cybersecurity**
+
+The Recruitment Decision Forest system was designed and developed to meet a defined target accuracy level of at least 87% balanced accuracy on candidate selection tasks, as evaluated on a temporally distinct validation dataset of 125,000 anonymized historical recruitment records collected over three years. Accuracy targets were selected based on benchmarking against both internal historical hiring metrics and industry-standard recruitment AI performance baselines published by the European Center for Digital Competitiveness (2024). The model architecture—a Gradient Boosted Decision Tree ensemble consisting of 500 trees with depth limited to a maximum of 8—was chosen to optimize interpretability and minimize overfitting on tabular categorical and numerical recruitment features.
+
+Robustness was ensured through systematic cross-validation with 5 mutually exclusive folds and rigorous stress testing including artificial feature noise injection and simulated missing data scenarios, where performance degradation was constrained within 3 percentage points. Further, a two-stage retraining pipeline was implemented, wherein periodic dataset integrity checks discard anomalous samples before model updates, preserving model stability. This design promotes consistent performance throughout the system lifecycle, further supported by drift detection algorithms that monitor input distribution changes in real time and trigger alerts for manual review prior to retraining.
+
+Cybersecurity measures integrated at the model and system deployment levels employ industry-grade standards compliant with ISO/IEC 27001 for information security management. Communication between the recruitment system and enterprise HR platforms is secured via TLS 1.3. Model artifacts and training datasets are cryptographically hashed, with integrity monitored through automated validation checks executed nightly.
+
+**Measurement Methodologies and Benchmarking**
+
+In alignment with evolving EU standards for high-risk AI, benchmarking was performed using both internal datasets and publicly available recruitment-related benchmarks. Statistical accuracy metrics include balanced accuracy, precision, recall, and calibration error, with particular emphasis on fairness-relevant subgroup calibration to detect model bias. Robustness metrics are derived from adversarial robustness tests simulating feature perturbations up to 5% variance and missingness up to 10% per record, quantifying performance under data quality degradation.
+
+The development process included cooperation with metrology authorities via participation in the European AI Benchmark Consortium (EAIBC), contributing to the establishment of domain-specific performance criteria for recruitment AI systems. Recorded benchmark results and associated methodologies are documented in the Model Evaluation Report v3.2, which was peer-reviewed internally prior to deployment.
+
+**Declared Levels of Accuracy and Performance Metrics**
+
+Accompanying the Recruitment Decision Forest system is detailed documentation specifying declared accuracy and robustness metrics. The instructions for use (IFU) specify a baseline balanced accuracy of 87%, with observed precision and recall values across validation folds averaging 84% and 81%, respectively. Robustness specifications declare the system’s resilience limit to input feature noise capped at 5% variance without significant accuracy degradation.
+
+Users are informed that performance depends on data similarity to training distributions and that drift monitoring is active to maintain stable operation. Additionally, the IFU includes guidance on interpreting candidate score distributions and model confidence intervals, highlighting the statistical uncertainty inherent in individual candidate rankings.
+
+**Resilience and Technical-Organisational Measures Against Errors and Faults**
+
+To enhance resilience against operational faults, the system integrates fail-safe mechanisms including a fallback rule-based candidate scoring heuristic triggered if the model service experiences anomalies or uptime falls below 99.5% in any rolling 7-day period. This ensures continuity of candidate screening operations while preventing propagation of incomplete outputs. Redundancy is achieved by hosting the model in a load-balanced cloud environment with geographically distributed replicas.
+
+Regarding feedback loops inherent to continual learning, the Recruitment Decision Forest is primarily deployed as a static model that is periodically retrained offline with manually curated datasets. This strategy prevents real-time model updates based on candidate outcomes derived from model scores, thus mitigating risks of feedback amplification bias. Retraining datasets are filtered to remove candidates influenced by model decisions flagged as anomalous or uncertain. When future online learning modules are introduced, an explicit monitoring protocol for feedback loop detection—incorporating influence function analysis and output drift quantification—will be applied to reduce systemic bias.
+
+Organisationally, a dedicated model governance team oversees model lifecycle management. They establish change-control workflows for retraining, conduct monthly audits of model outputs for anomalies, and provide update notifications to stakeholders. Documentation of robustness testing and fail-safe performance is maintained continuously to ensure traceability and preparedness for incident response.
+
+**Cybersecurity Measures Targeting System Integrity and Resistance to Manipulation**
+
+The system incorporates a multilayered cybersecurity approach addressing threats unique to AI systems, including data poisoning, model poisoning, adversarial attacks, and confidentiality breaches. Training datasets undergo data integrity verification with provenance tracing and cryptographic signatures to prevent unauthorized tampering. Training pipelines incorporate anomaly detection using clustering-based outlier identification to reject suspect samples that could poison model behavior.
+
+At runtime, the system implements adversarial input detection algorithms based on feature co-occurrence statistical analysis and gradient-based saliency monitoring, flagging inputs with anomalous patterns for manual verification. Mechanisms for real-time response include automated session termination and alert generation. Regular adversarial testing is conducted using state-of-the-art attack frameworks simulating evasion and poisoning attempts, with successful mitigation rates exceeding 92% across simulated attack vectors.
+
+Model confidentiality is protected through encryption at rest and fine-grained access control with role-based permissions implemented via OAuth 2.0 protocols. All model artifact updates are logged with immutable audit trails enabling rapid forensic investigations upon suspicion of compromise.
+
+Together, these comprehensive technical and organisational measures adhere to recognized industry standards and directives emerging from EU policymaking bodies, aiming to secure the Recruitment Decision Forest’s operation against unauthorized interference and to uphold robust, consistent, and accurate recruitment decision support throughout its lifecycle.

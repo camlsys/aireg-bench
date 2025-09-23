@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates... Technical and organisational measures shall be taken in this regard."  
+
+[b] **Guideline:**  
+Resilience includes implementing fail-safe mechanisms, redundancies, and error detection especially in multi-modal data contexts, and ensuring the system can handle unexpected or inconsistent input gracefully without propagating faults or degrading recommendations.  
+
+[c] **Violation:**  
+The system’s transformer-based models inadequately handle inconsistencies in mixed text and numerical input formats due to differences in assessment tools across schools; when encountering inconsistent data schemas, the analyzer silently generates plausible but flawed learning gap diagnoses without error flags or fallback procedures.  
+
+[d] **Justification:**  
+This violation is subtle because outputs appear reasonable but are based on faulty input handling, thereby undermining robustness and reliability. The absence of technical or organizational safeguards to detect or compensate for environmental input inconsistencies breaches the resilience requirement.  
+
+---

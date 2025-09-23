@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must implement an automated, tamper-proof logging mechanism that continuously records relevant system events in real time throughout deployment, without gaps or manual intervention requirements. Logging infrastructure should persist logs reliably for the entire operational period, ensuring no loss of critical data points.  
+
+[c] **Violation:**  
+Election Sentiment Transformer only initiates logging during scheduled maintenance periods and requires manual triggering of the logging component after software updates, resulting in unlogged intervals of operation.  
+
+[d] **Justification:**  
+This violation reflects a subtle but critical non-compliance, as the logging is partial and manually dependent rather than fully automatic and continuous. This may cause data gaps in event records, jeopardizing traceability and auditability while appearing superficially compliant during checks limited to logged periods.  
+
+---

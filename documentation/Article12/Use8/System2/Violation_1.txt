@@ -1,0 +1,29 @@
+**Article 12**
+
+**Technical Implementation of Event Logging**
+
+The Emergency Dispatch Prioritization Engine incorporates a modular logging subsystem designed to capture and store event data upon manual activation by dispatch personnel or during specific, predefined operational modes related to system maintenance and critical incident reviews. This targeted logging approach intentionally limits continuous automatic recording, thereby aligning with operational confidentiality and data minimization principles commonly observed in public safety environments. Loggable events include initiation and termination of prioritization sessions, override actions performed by dispatchers, system mode transitions (e.g., training, active alert), and key model decision points when explicitly flagged by user interaction. By focusing on these calibrated triggers, the system conserves computational and storage resources while still retaining actionable trace information upon demand.
+
+**Scope and Criteria for Logged Events**
+
+The logging framework captures metadata and decision paths relevant to high-risk incident scenarios as defined by the system’s operational parameters. Log entries record input data snapshots (such as geo-referenced sensor imagery and temporal event sequences processed by the CNN and LSTM components), priority scores generated, and the final prioritization outputs supplied to dispatch personnel. Additionally, metadata on manual interventions (e.g., dispatcher adjustments to AI recommendations) and system state changes—including updates to model parameters during controlled recalibration phases—are recorded only when initiated by authorized personnel or during designated operational conditions. Routine prioritizations and background internal model updates, such as periodic retraining cycles performed offline or via automated pipelines, are deliberately excluded from logging to balance traceability with privacy and operational efficiency.
+
+**Rationale for Logging Design**
+
+This selective log activation strategy was adopted to maintain a high degree of operational responsiveness while reducing data bloat and exposure of sensitive emergency response details. Empirical evaluation during pilot deployments demonstrated that continuous logging of all routine prioritization decisions generates excessive data volumes, complicating audit processes without substantial added value to post-market surveillance or risk identification. Consequently, logging prioritizes events with elevated risk potential—including deviations induced by manual dispatcher decisions known to introduce system variability—and system modes that signify supervised model updates or fault investigations. These design choices establish a compliance posture that respects traceability requirements for identifying risk-relevant situations, facilitates forensic analyses, and supports post-market monitoring activities, while effectively managing storage and data governance considerations.
+
+**Logging Capabilities Facilitating Traceability and Post-Market Monitoring**
+
+Logs captured under manual or predefined operational activations include comprehensive contextual information sufficient to reconstruct the decision-making pathway for individual emergency calls. This includes input feature vectors, intermediate neural network layer activations where pertinent for anomaly detection, timestamped event sequences, and system version identifiers. Such data serve forensic and validation functions critical for post-market monitoring mandated by regulatory frameworks. Although day-to-day routine operations are largely unlogged, the system architecture supports on-demand export and analysis of recorded sessions, enabling traceability in situations arising under Article 79(1) risk conditions or requiring scrutiny per governance protocols under Article 72 and Article 26(5).
+
+Furthermore, the selective recording enables compliance with data protection and operational confidentiality standards by avoiding unnecessary retention of exhaustive operational logs. This logging scheme is enforced through secure access controls and logging policy configurations embedded within the system’s orchestration layer, ensuring that only authorized personnel can initiate or access log records. Audit trails of logging activations themselves are maintained to preserve accountability of logging activities independently from the content of the snapshots.
+
+**Technical and Operational Environment Supporting Logging**
+
+The logging subsystem interfaces with the AI model components—a CNN for spatial situational awareness and an LSTM module for temporal pattern analysis—via defined APIs that manage event hooks corresponding to manual triggers and mode changes. Logs are stored in an encrypted repository conforming to industry-standard security protocols (AES-256 encryption, automated integrity checks using SHA-2 hash algorithms) and maintained in compliance with relevant data retention schedules.
+
+Operationally, the system runs on certified hardware conforming to safety- and reliability-oriented standards, with redundant power and network configurations that ensure continuous availability of logging capabilities during designated modes. The logging mechanism is integrated into the broader system monitoring platform, which performs health checks and anomaly detection to ensure integrity and availability of logged data for subsequent audits aligned with post-market oversight.
+
+---
+
+This documentation details the designed capabilities and operational framework around event recording within the Emergency Dispatch Prioritization Engine, explicitly reflecting the selective logging strategy that balances compliance-driven traceability with practical deployment constraints.

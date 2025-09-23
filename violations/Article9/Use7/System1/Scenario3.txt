@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"9. When implementing the risk management system as provided for in paragraphs 1 to 7, providers shall give consideration to whether in view of its intended purpose the high-risk AI system is likely to have an adverse impact on persons under the age of 18 and, as appropriate, other vulnerable groups."  
+
+[b] **Guideline:**  
+Providers must evaluate risk factors unique to minors and other vulnerable groups, including heightened sensitivities to erroneous credit assessments, and implement tailored risk controls or user information measures that address these groups’ specific vulnerabilities.  
+
+[c] **Violation:**  
+The Credit Evaluation Network’s risk management system lacks any assessment or differentiation for minors or other vulnerable applicants, despite the credit scoring system being potentially applied to young adults close to 18 or individuals with limited financial literacy. No specific mitigation strategies or warnings for these groups are incorporated.  
+
+[d] **Justification:**  
+This subtle violation stems from treating all users homogeneously without focused risk considerations for vulnerable populations. Given the system’s role in lending decisions that strongly impact financial inclusion, ignoring the distinct risks for under-18s or vulnerable groups disregards the explicit requirement to consider such impacts, risking non-compliance with the Act.

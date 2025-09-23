@@ -1,0 +1,21 @@
+**Article 12**
+
+**Logging Architecture and Event Capture**
+
+Gas Safety Insight employs a purpose-built logging framework that automatically records discrete final anomaly detection alerts alongside precise timestamps capturing the moment of alert generation. The system integrates a high-resolution time synchronization mechanism across distributed sensor nodes aligned with Network Time Protocol (NTP) standards, ensuring log entries are chronologically accurate and consistent throughout the natural gas supply network. The logging subsystem is architected to operate with minimal storage and computational overhead, preserving resources critical for real-time anomaly detection processing.
+
+By design, the logs do not include intermediate confidence scores from the Gradient Boosted Decision Trees (GBDT) nor the encoder-only Transformer model outputs, nor any sensor fusion weights computed during data processing. Norwin Industrial Technologies determined through iterative risk assessments and stability evaluations that recording intermediate metrics posed a risk of unnecessarily bloating log size without commensurate enhancement in actionable traceability, and could unintentionally expose transient model instabilities not relevant to final safety determinations. This log minimization approach reflects a deliberate provider decision balancing operational transparency with data economy and system performance constraints.
+
+**Relevance to Risk Identification and System Modification Monitoring**
+
+Logs exclusively capture confirmed anomaly events deemed indicative of potential safety hazards such as leaks, excessive pressure, or system component failures. Each log entry comprises the anomaly classification label, a unique event identifier, the exact UTC timestamp, and a categorical alert severity level calibrated against historically benchmarked safety risk thresholds. This approach aligns logging granularity with the system’s intended purpose — i.e., to facilitate AI-driven detection of events potentially resulting in risk scenarios as specified under the regulatory framework.
+
+Intermediate system states including evolving model confidence trends or sensor fusion coefficients, which may reflect latent or emerging risks, are purposefully excluded to avoid premature or misleading risk flagging. Instead, the system’s runtime architecture processes real-time sensor and contextual signals to produce only definitive anomaly outcomes post temporal pattern recognition and data fusion, thus ensuring logged events correspond only to actionable safety incidents. This streamlined event logging enables clear, purpose-driven traceability directly relevant to operational risk identification and any substantial model or configuration modifications.
+
+**Support for Post-Market Monitoring and Ongoing Operation Oversight**
+
+The logging design supports Norwin’s post-market monitoring processes by providing a definitive audit trail of all final anomaly alerts over the system lifecycle. Collected logs enable statistical analysis of alert frequency, distribution, and severity to detect potential shifts or degradations in system performance or operational environment without extraneous intermediate data points. This focused logging facilitates post-deployment validation of AI safety and reliability metrics and informs scheduled model retraining and parameter updates within controlled updates to maintain predictive accuracy.
+
+Furthermore, Gas Safety Insight’s logs support the monitoring of system operation per Article 26(5) by ensuring that only confirmed safety-critical events are recorded for review, enabling efficient review by gas network operators and maintenance teams. The exclusion of intermediate model confidence metrics and fusion weights from logs also helps maintain operator focus on salient risk indications rather than preliminary model assessments, thus reducing alert fatigue and the risk of inappropriate operational interventions.
+
+In summary, the logging strategy of capturing only final anomaly detection alerts and associated timestamps conforms with a technical approach optimized for the system’s safety-critical purpose, supporting traceability and post-market monitoring obligations without retaining intermediate decision-support data.

@@ -1,0 +1,47 @@
+**Article 10**
+
+---
+
+### Data Governance and Management for Training, Validation, and Testing Sets
+
+Contractual Separation Insight’s development was founded on comprehensive data governance practices tailored to its intended use in HR compliance and employment contract termination decision support. The provider documented all design choices impacting data handling and model training, ensuring traceability and rationale recording throughout the AI lifecycle. Data sources include anonymized internal HR records, publicly available labor policy documents, and validated performance datasets aggregated from partner organizations compliant with relevant data protection legislation. Personal data used underwent prior ethical review focusing on the original purposes of collection, aligning with GDPR and related privacy frameworks.
+
+Data preparation processes comprised manual annotation of policy texts by certified legal specialists to ensure semantic accuracy, cleaning of input performance metrics to remove anomalies and outliers, and iterative enrichment combining structured (numerical employee metrics) and unstructured (policy language) data types. Regular updating protocols were established, reflecting evolving labor regulations and company policy amendments. Assumptions were explicitly formulated about the representativeness of policy language as a proxy for compliance parameters and the coverage of performance metrics for behavioral and productivity indicators relevant to termination risk prediction.
+
+---
+
+### Assessment of Data Availability, Suitability, and Bias Mitigation
+
+An exhaustive assessment identified data availability and quantity sufficient to train and validate the system’s ensemble models, supported by a dataset comprising approximately 150,000 anonymized employee records and over 20,000 policy documents from diverse corporate sectors across the EU. Suitability analysis confirmed coverage across multiple geographic regions and labor law regimes relevant to the EU, ensuring contextual relevance for intended deployment environments.
+
+Bias examination focused on detecting disproportionate representation and decision-limiting patterns potentially impacting protected groups, such as age, gender, and ethnicity proxies. While the system does not explicitly process special categories of personal data, proxy variables and performance indicators underwent statistical fairness testing using state-of-the-art tools including AI Fairness 360. Detected biases—such as slight overrepresentation of certain age cohorts leading to skewed risk assessments—were addressed by adjusting training sample weights and incorporating counterfactual fairness constraints within random forest models to mitigate discriminatory effects.
+
+---
+
+### Characteristics and Representativeness of Datasets
+
+The training, validation, and testing datasets were curated to be relevant and representative of Contractual Separation Insight’s application scope. Employee performance data encompasses a balanced distribution across different roles, seniority levels, and geographic locations within the EU. Policy texts were selected to represent a broad spectrum of industry-standard compliance documents, labor laws, and contractual templates. The provider validated dataset completeness and minimized error rates through cross-checks against original company records and external labor databases, achieving data error rates below 1.2% after cleaning.
+
+Statistical properties such as feature distributions and inter-variable correlations were analyzed to confirm alignment with the intended operational profiles. Where individual datasets were partial in coverage, integration of multiple sources ensured aggregate representativeness for both quantitative and qualitative inputs. This approach supports the system’s dual-modal modeling strategy, enabling reliable synthesis of structured performance data with unstructured policy text.
+
+---
+
+### Contextualization to Geographical and Functional Settings
+
+Datasets incorporate detailed metadata encoding geographic origin, labor law jurisdiction, industry sector, and contract type to reflect the specific regulatory contexts within which recommendations are generated. The provider applied stratification and domain adaptation techniques during training to align model performance with contextual nuances, addressing functional variances in HR practices and legal frameworks across EU member states.
+
+For example, separate model components were trained for frameworks reflecting national labor protections, while the large language model backbone was fine-tuned on localized legal terminology corpora. Behavioral analytics considered regional workforce trends and sector-specific performance benchmarks, ensuring predictive outputs hold contextual validity. This geographical and functional granularity supports transparent decision logic tailored to the intended operational environments of Contractual Separation Insight.
+
+---
+
+### Use and Safeguards Regarding Special Categories of Personal Data
+
+The provider determined that processing of special categories of personal data (e.g., health information or ethnical origin) was not strictly necessary for bias detection or system training, relying instead on anonymized proxies and synthetic data augmentation to ensure fairness assessments. Consequently, no special category data were retained in training, validation, or testing datasets.
+
+Nonetheless, security measures consistent with Articles 10(5)(b–e) have been designed within the system architecture to protect sensitive information should future iterations require processing such data. These include pseudonymisation, strict access control protocols with audit logging, encryption at rest and in transit, and automatic deletion workflows linked to retention period policies. Access to any sensitive data is restricted to authorized personnel under confidentiality obligations enforced through contractual and technical controls, designed to fully safeguard data integrity and privacy.
+
+---
+
+### Testing Data for Non-Training-Based Components
+
+Although Contractual Separation Insight combines classical machine learning with large language model components, all AI techniques employ datasets subject to stringent governance and quality criteria. For components derived from rule-based or heuristic methods without data-driven training, validation and testing datasets were independently prepared and assessed to verify performance and safety under expected operational conditions. This dual dataset approach ensures comprehensive model evaluation regardless of algorithmic paradigm, emphasizing the provider’s commitment to robust quality assurance in line with regulatory expectations.

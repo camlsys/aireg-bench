@@ -1,0 +1,45 @@
+**Article 9**
+
+**Establishment and Structure of the Risk Management System**
+
+Sterling Recruitment Technologies has established a comprehensive risk management system for the Talent Insight Model, explicitly designed to address the risks associated with its high-risk categorization under the EU AI Act. This system is integrated into every phase of the AI system’s lifecycle — from initial design, development, and deployment, through to ongoing operation and eventual decommissioning. The risk management process operates as a continuous, iterative cycle, with formal review checkpoints scheduled quarterly and after any significant software update or retraining of the model to capture newly identified risks or shifts in the operational context.
+
+**Identification and Analysis of Risks**
+
+Initial risk identification involved a multi-disciplinary expert panel comprising ML engineers, legal compliance officers, human rights specialists, and HR domain experts. The panel conducted a thorough hazard analysis focusing on risks to health, safety, and fundamental rights stemming from the intended use of the Talent Insight Model — specifically those arising from automated applicant filtering and ranking for recruitment decisions. A dataset of 150,000 anonymized resumes and job descriptions was used to simulate typical application scenarios, enabling the identification of potential discriminatory outcomes (e.g., biased skill interpretations linked to gender or ethnicity proxies), false negatives or positives affecting candidate selection, and inadvertent privacy breaches related to sensitive data processed during resume parsing. Reasonably foreseeable misuse cases—such as attempts to manipulate input data to artificially boost candidate ranking—were evaluated through adversarial testing.
+
+**Estimation and Evaluation of Risks**
+
+Quantitative risk estimation was performed using validated fairness and accuracy metrics. For fairness, disparate impact ratio and equal opportunity difference were calculated on a representative evaluation set comprising 30,000 labeled resumes reflecting diverse demographics. Accuracy of skill extraction and job matching scored above 91% F1 on a benchmark dataset, while bias metrics were maintained within an acceptable threshold of ±5% deviation from parity. The evaluation also incorporated stress testing under simulated misuse conditions, including injection of adversarial modifications to resumes, which resulted in a residual error rate of 3.2%, demonstrating system robustness. Safety risks associated with erroneous candidate rejection impacting fundamental rights were deemed mitigable by combining model confidence thresholds with manual override mechanisms.
+
+**Integration of Post-Market Monitoring Data**
+
+Data gathering from the post-market monitoring framework began immediately following initial deployment in pilot recruitment platforms. Automated logging captures the model’s outputs alongside user feedback and deployment context metadata to identify emerging patterns influencing system behavior. Over six months, 2,500 feedback entries revealed isolated incidents of mismatch in job-role alignment for applicants with non-traditional career paths. These findings prompted updates in model training datasets to increase representation of alternative career trajectories and new ontologies for skill equivalencies, reducing these risks systematically.
+
+**Design and Development Measures for Risk Mitigation**
+
+Risk mitigation was embedded within the model development pipeline using a suite of targeted measures. During training, bias mitigation techniques including reweighting and adversarial debiasing were applied to reduce discriminatory patterns. The model architecture employs an attention mechanism allowing post-hoc explainability modules to generate feature importance reports for each candidate’s scoring, enabling transparency for deployers. Robust input validation filters preprocess incoming resumes to detect obfuscated or maliciously altered content. Confidence thresholds were tuned conservatively, balancing false acceptances and rejections, with fallback human-in-the-loop review integrated into the operational workflow to address cases with low confidence scores.
+
+**Consideration of Combined Requirements Impact**
+
+The risk management measures were implemented with due regard to their interaction with other compliance requirements, including data governance, transparency obligations, and cybersecurity protocols. For example, the explainability modules not only support fairness assessments but also empower deployers and candidates to understand filtering outcomes, addressing transparency and fundamental rights concerns simultaneously. Similarly, technical information packaged with the system includes detailed user manuals and training materials tailored to the technical background expected of recruitment staff users, facilitating appropriate and informed use in line with training obligations.
+
+**Assessment and Acceptability of Residual Risks**
+
+Residual risks remaining after application of mitigation measures were quantitatively assessed and documented. The system’s fairness evaluation concluded that residual disparate impact did not exceed a 3% deviation in candidate scoring distributions across protected groups. Safety-related residual risks, primarily related to the possibility of incorrectly rejecting an applicant, are counteracted by mandatory human review for borderline decisions flagged by the system’s confidence scoring. Comprehensive risk acceptance criteria were defined in collaboration with internal risk assessors, combining technical thresholds (e.g., precision-recall parameters) with operational controls to ensure that remaining risks are judged acceptable relative to the system’s objective of recruitment efficiency enhancement.
+
+**Testing Procedures Across the Development Lifecycle**
+
+Testing activities were integrated iteratively, with continuous unit and integration testing during software development, as well as defined validation phases prior to each model retraining cycle. Performance benchmarks included automated runs of synthetic and real-world datasets under controlled laboratory conditions, as well as shadow deployments with anonymized live data. Real-world condition testing encompassed a three-month pilot involving partner recruitment agencies, simulating actual hiring scenarios while capturing user interactions and feedback. Testing metrics were predefined — including precision, recall, false positive and false negative rates, and bias measurements — with probabilistic acceptance criteria aligned with operational targets (e.g., achieving no less than 90% precision on skill matching).
+
+**Testing Frequency and Timing**
+
+Testing is mandated at multiple stages: initial model deployment, after each retraining event (typically quarterly), and pre-release regression testing following any significant software changes. Each testing cycle includes a risk-focused review ensuring compliance with performance thresholds and previously defined metrics. Test results are logged and maintained in compliance with the system’s quality management documentation, supporting traceability and auditability. No deployment or market placement occurs without successful completion of these testing procedures.
+
+**Protection of Vulnerable Groups**
+
+Special attention was given to assessing risks to persons under 18 and other vulnerable groups within applicant populations. The training data was specifically filtered to exclude profiles of minors, and the system design restricts its application to adult recruitment use cases. The model’s fairness analysis includes subgroup breakdowns addressing vulnerabilities linked to socio-economic background or disabilities, using adapted metrics to detect and mitigate any disproportionate adverse impact. Where appropriate, mitigation includes adjustment of ranking algorithms and inclusion of diversity-promoting factors to promote equitable outcomes.
+
+**Alignment with Other Union Internal Risk Management Provisions**
+
+Where overlapping risk management obligations arise under relevant Union legislation applicable to data protection and employment equality, Sterling Recruitment Technologies has coordinated its risk management documentation and procedures to integrate these requirements, ensuring harmonization without duplication. The system architecture and operational guidance comply with such cross-cutting obligations, facilitating deployer compliance while preserving clear delineation of responsibilities between provider and deployer.

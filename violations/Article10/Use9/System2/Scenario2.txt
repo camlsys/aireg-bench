@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."
+
+[b] **Guideline:**  
+The data sets must cover the full spectrum of applicable jurisdictions, court levels, and temporal legal developments relevant to judicial fact-finding, ensuring representation of diverse case law that different judges across the EU might rely upon to avoid system blind spots.
+
+[c] **Violation:**  
+The training data is heavily skewed towards recent legislation and case law from large Western European Member States, underrepresenting smaller jurisdictions and earlier but still authoritative cases, thus limiting the model’s coverage and relevance for judges working in less-represented regions or specialized courts.
+
+[d] **Justification:**  
+This underrepresentation of jurisdictions and case types introduces gaps and statistical bias that degrade the system’s reliability and completeness in delivering contextually relevant legal references. Such a violation is easily overlooked because the system nevertheless functions well for frequently represented jurisdictions, masking the impact on less frequent but legally important contexts.
+
+---

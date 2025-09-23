@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(c) provision of information required pursuant to Article 13 and, where appropriate, training to deployers. With a view to eliminating or reducing risks related to the use of the high-risk AI system, due consideration shall be given to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context in which the system is intended to be used."  
+
+[b] **Guideline:**  
+Providers must deliver targeted instructions and training materials calibrated to deployers’ expertise levels and operational environment, ensuring they understand residual risks, mitigation measures, and responsible handling of the AI system in political contexts where misuse could distort democratic processes. This includes training on ethical deployment and interpretation of system outputs.  
+
+[c] **Violation:**  
+Centuri Advisory Services supplies only high-level, technical documentation intended for AI specialists without adapting training programs to the actual deployers—political campaign professionals with limited AI expertise—resulting in insufficient understanding of the system’s residual risks and improper handling of its outputs in live political campaigns.  
+
+[d] **Justification:**  
+This shortfall in deployer-specific training breaches the requirement to tailor risk communication and training appropriately, risking misuse or inadequate mitigation of identified risks. The violation is subtle because documentation exists and is technically sound, but the mismatch between deployer capabilities and training provided undermines effective risk management.

@@ -1,0 +1,39 @@
+**Article 14**
+
+**Design and Development of Human Oversight Features**
+
+The Legal Termination Assessment Framework integrates a dual-model architecture, combining gradient-boosted decision trees (GBDT) with transformer-based natural language processing (NLP) models to generate an aggregated risk score indicating the eligibility for contract termination. In line with oversight design principles, the system presents only a final numerical score without exposing internal feature contributions, legal clause analyses, or detailed model reasoning. This architectural decision aims to balance model complexity with operational simplicity but restricts the granularity of interpretative information available to human reviewers.
+
+To facilitate effective monitoring during use, the system includes a standardized user interface that displays the termination risk score alongside basic metadata such as the date and version of the model generating the output. No graphical explainability or feature visualization tools are integrated at the provider level, as per the system’s design mandate. This approach was chosen after extensive evaluation of interpretability methods concluded that detailed explanations would risk misinterpretation and overreliance, potentially increasing legal liability and cognitive bias among human overseers. Consequently, provider-originated technical oversight measures focus on clarity of output presentation and reliable system status indicators rather than in-depth interpretability aids.
+
+**Oversight Objectives Related to Risk Mitigation**
+
+The system is engineered to support human decision-makers in the employment termination context by delivering an aggregate risk score derived from complementary machine learning analyses of both structured employee data and unstructured legal texts. The intended purpose is to indicate eligibility for termination, rather than to automate decisions or prescribe specific legal interpretations. Provider assessments identified that presenting a consolidated score enables natural persons to maintain authoritative control and contextual judgement while minimizing systemic errors and biases undetectable without human intervention.
+
+Human oversight aims to prevent misuse or overreliance on system output by emphasizing that the score is an advisory element rather than a dispositive outcome. For scenarios involving potentially ambiguous contract clauses or exceptional employee circumstances, the absence of feature-level explanations compels human reviewers to conduct independent legal and contextual validation. Provider documentation explicitly cautions deployers that the system output is a risk indicator requiring supplemental expert evaluation. These risk-minimization measures adhere to the provider’s obligation to mitigate possible impacts on fundamental rights and employment fairness in reasonably foreseeable operational conditions.
+
+**Proportionate Oversight Measures and Risk Context**
+
+Given the moderate-to-high risk classification reflecting the system’s involvement in consequential employment decisions, the provider implemented pre-market oversight features proportionate to the system’s autonomy and application context. Key provider-originated measures include:
+
+- Generation of audit logs capturing system inputs, output risk scores, and model versioning identifiers for ex post review by deployers.
+- Provision of comprehensive model documentation detailing training data sources, model validation metrics, bias correction mechanisms, and known system limitations.
+- Integration of fail-safes whereby system outputs flagged as outliers—scores beyond calibrated thresholds—trigger mandatory human validation protocols embedded in user workflows.
+- The option to disable the system’s automated scoring mechanism, permitting manual override and independent assessment by human agents.
+
+No direct technical components for user-initiated halting of model inference are present since the system operates on a batch evaluation basis rather than continuous real-time processing. Instead, interaction logic permits users to disregard scores at any stage without system-enforced constraints.
+
+**Enabling Effective Human Oversight in Deployment**
+
+The system is delivered with user guidance materials and training modules intended to support natural persons assigned to oversight duties in interpreting and monitoring the framework’s outputs. These materials explicitly emphasize the following to mitigate the risk of automation bias:
+
+- Clarification of the system’s scope, inputs, and output semantics to foster realistic expectations of its capacities and limitations.
+- Instructions for recognizing potential anomalies such as inconsistencies between provided data and risk scores.
+- Recommendations for contextualizing risk scores within broader legal and operational frameworks, including caution against using scores as sole decisional determinants.
+- Guidance on procedural rights and actions for human reviewers to override or disregard the system output where appropriate.
+
+Additionally, the interface includes informational prompts reiterating that outputs represent aggregated risk assessments without granular clause-level explanations, underscoring the necessity of human judgement in processing these scores.
+
+Regarding intervention capabilities, the system’s design supports immediate user cessation of processing workflows and termination of evaluation batches before final score acceptance. Though no dedicated “stop” button halts internal model computations, operational workflows empower users to terminate interactions at any point, ensuring human control remains paramount throughout use.
+
+Finally, records of processing activities document the rationale for the use of special categories of personal data within training and validation datasets. This documentation demonstrates why such data processing was strictly necessary to detect and correct potential biases that could affect termination eligibility outputs and could not be replaced by less sensitive data. These records are maintained in accordance with applicable data protection regulations, supporting transparency and accountability in system deployment and oversight.

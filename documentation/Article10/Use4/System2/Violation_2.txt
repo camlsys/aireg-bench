@@ -1,0 +1,51 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The training, validation, and testing datasets for the Academic Compliance Monitor (ACM) have been curated following rigorous data governance protocols aligned with the intended purpose of behavioral anomaly detection in exam settings. Key design decisions prioritized the integration of multimodal inputs—namely, discrete keyboard dynamics event logs and continuous environmental audio cues—allowing the model to capture both fine-grained individual behaviors and contextual acoustic factors influencing student conduct.
+
+Data were collected from over 70 examination centers across three European countries during the 2022–2023 academic years, comprising approximately 120,000 sessions that include labeled instances of legitimate behavior and verified irregular activities. Anonymized event timestamps and audio recordings were pre-processed to remove personally identifiable information, and ethical considerations ensured compliance with data protection legislation regarding the original purpose of collection: supporting academic integrity monitoring systems.
+
+In curating datasets, annotation and labeling work was undertaken by domain experts, utilizing both automated heuristics and manual reviews to classify behaviors with a focus on maintaining consistency across diverse examination contexts. Data preparation included noise filtering for audio streams, normalization of keystroke timing patterns, and temporal alignment of multimodal inputs to facilitate sequence modeling. Continuous dataset updates and cleaning routines were implemented monthly to incorporate newly acquired data, remove corrupted samples, and address concept drift.
+
+During the formulation of system assumptions, it was established that the datasets should measure both normative behavioral patterns and deviations potentially indicative of integrity violations, under the hypothesis that genuine irregularities manifest as anomalies in temporal and contextual data sequences. To reflect real-world application, datasets were designed to capture a wide spectrum of exam settings but did not fully encompass all regional linguistic or cultural variations.
+
+A detailed assessment of dataset quantity and suitability concluded that while data volume and coverage are substantial, significant underrepresentation was identified for students from multilingual or multicultural backgrounds prevalent in specific examination centers. This data gap was recognized as a critical factor impacting model performance in relevant subpopulations.
+
+**Bias Considerations and Mitigation Measures**
+
+Explicit bias assessment methodologies were employed, including subgroup performance evaluations and disparity analyses, focusing on the system’s behavior across demographic and linguistic categories inferred from metadata proxies (e.g., geographic exam location and reported language environment). Analyses revealed a pattern of disproportionately elevated anomaly scores for legitimate behavioral deviations among students from multilingual or multicultural backgrounds. These decomposed into false-positive rate increases of approximately 18% relative to the baseline population, aligning with documented evidence that the training data inadequately cover these groups’ characteristic behaviors.
+
+To address these identified biases, a series of mitigation strategies were enacted:
+
+- **Data Augmentation and Synthetic Enrichment:** Although supplementary synthetic data generation was explored, limitations in realistic replication of culturally specific behavioral nuances constrained effectiveness. No special category personal data were processed, respecting privacy and ensuring compliance with relevant safeguard requirements.
+
+- **Dynamic Threshold Calibration:** The anomaly detection thresholds are adaptively calibrated on a per-exam-center basis using local validation subsets, improving the alignment of sensitivity levels to the regional behavioral distributions and thereby reducing false positives arising from cultural variations.
+
+- **Algorithmic Fairness Constraints:** The hybrid model architecture incorporates fairness-regularization terms during training to constrain unequal error rates observed across subgroups. This includes penalizing disproportionate anomaly score inflation for underrepresented cohorts to counterbalance skewed training representation.
+
+- **Ongoing Monitoring and Feedback Integration:** The system design integrates real-time supervisory feedback loops, wherein exam proctors can flag suspected false positives. These flags are recorded and used to iteratively refine model parameters and anomaly thresholds specific to examination centers with higher multilingual or multicultural representation.
+
+**Data Representativeness and Completeness**
+
+Datasets collectively contain balanced coverage of various examination environments; however, the provider acknowledges gaps relating to the coverage of multilingual and multicultural students’ behaviors, which remain incompletely captured due to limited availability of annotated data in these subpopulations at the time of system development.
+
+Statistical analyses of data completeness showed coverage exceeding 95% of recorded legitimate behavior variance within majority groups but only about 70% coverage for the outlier patterns typical in the identified underrepresented cohorts. Efforts to collect additional representative data sets are ongoing, prioritized by the provider to improve model inclusivity and robustness.
+
+Dataset properties were evaluated for statistical consistency, showing adequate representation of temporal patterns and environmental factors. However, heterogeneity in behavior attributable to cultural or linguistic diversity in affected examination centers introduces systematic variation unaccounted for in the training data distribution, leading to characteristic elevated anomaly scores when applied in such contexts.
+
+**Contextualization to Geographical and Functional Settings**
+
+Although ACM’s datasets include behavioral data from multiple geographic locations with heterogeneous exam administration protocols, the provider recognizes that the system’s initial training regime did not fully encompass the behavioral heterogeneity introduced by multilingual or multicultural contexts. This limitation affects the system’s ability to distinguish legitimate behavioral deviations rooted in cultural or linguistic practices from suspicious anomalies.
+
+To partially compensate, the system’s architecture supports configurable context parameters, allowing deployers to input metadata about exam center demographics and linguistic environments. These parameters feed into the anomaly scoring mechanisms to adjust sensitivity dynamically. Nevertheless, this relies on accurate contextual inputs from deployers and does not substitute for fully representative training data.
+
+Given the system’s nature and intended use within regulated educational environments, processing of special categories of personal data was avoided in training and bias mitigation to comply with data protection and fundamental rights safeguards. Instead, the provider emphasized technical and organizational measures to enhance model fairness and error feedback without accessing sensitive or identity-revealing information.
+
+**Safeguards and Documentation**
+
+All stages of data processing and model training are documented with versioned audit trails, detailing dataset provenance, preprocessing pipeline configurations, model hyperparameters, and bias assessment results. Access controls and confidentiality agreements govern data handling among development teams to prevent misuse.
+
+The provider deploys continuous post-market monitoring to detect emerging biases or performance degradation, facilitating timely updates and retraining cycles. This responsiveness is crucial given the identified underrepresentation of multilingual and multicultural student behaviors and their impact on anomaly outputs.
+
+This documentation and supporting evidence form part of the provider’s technical records enabling a thorough compliance assessment as mandated under Article 10, emphasizing transparency in data representativeness, bias risks, and mitigation strategies relative to the system’s intended examination environments.

@@ -1,0 +1,47 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Credit Evaluation Network system is developed based on Gradient Boosted Decision Trees (GBDT), trained on a combination of structured financial, demographic, and behavioral datasets sourced primarily from credit bureaus, financial institutions, and publicly available socio-economic datasets. The collected data represents over 350,000 individual loan applicants predominantly drawn from urban and suburban areas across multiple EU Member States. Employment data, income statements, borrowing history, and repayment behavior form the core features used for creditworthiness prediction.
+
+Design decisions prioritized features with high predictive value and regulatory compliance, such as verified income levels, employment status, and historical default rates. Data collection was conducted respecting original collection purposes specified by data providers, predominantly for financial risk assessment and credit reporting. Personal data processes adhere to GDPR requirements, with pseudonymisation applied during model training to preserve confidentiality.
+
+Data preparation involved extensive cleaning—removal of invalid records, normalization, and outlier treatment—to ensure consistency. Labels indicating default or non-default status were validated through cross-referencing creditor reports. Annotation was limited, as labels naturally derive from historical repayment outcomes. Periodic update cycles are scheduled quarterly to incorporate the latest applicant data.
+
+Given the model’s credit-risk prediction purpose, assumptions were documented that applicants’ financial behavior and employment profiles in the training sample reasonably represent the target population. However, available employment data skewed toward stable, salaried urban workers, reflecting data source limitations.
+
+### Evaluation of Biases and Data Representativeness
+
+Recognizing the demographic composition of the training data, systematic analyses were conducted to assess representativeness and potential bias impacts on subpopulations. Statistical profiling showed 85% of training applicants resided in urban centers, with self-employed individuals constituting approximately 8% of the sample, whereas rural applicants accounted for less than 7%.
+
+Performance validation on stratified test subsets revealed the model’s accuracy and false positive rates are significantly better (AUC > 0.82) for urban, salaried applicants compared to rural or self-employed groups, where accuracy dropped by 12% on average and false positive rates increased by 9%. These discrepancies indicate challenges in capturing the financial behaviors of underrepresented groups, likely due to differing income volatility, alternative income documentation, and less predictable repayment patterns.
+
+Efforts to detect and mitigate biases included feature importance analysis and subgroup fairness metrics. The provider undertook fairness audits utilizing disparate impact ratio and equalized odds metrics. These assessments confirmed increased error rates and reduced calibration quality for rural and self-employed applicants, consistent with data representativeness gaps.
+
+### Measures to Address Data Gaps and Bias Mitigation
+
+The provider acknowledges the identified limitations in dataset representativeness and has taken several steps within the constraints of available data:
+
+- Actively sought additional data sources targeting rural and self-employed applicants, including specialized financial registries and tax-record aggregates, though integration challenges and privacy restrictions limited sample size improvements to under 12% additional coverage.
+
+- Implemented stratified cross-validation and re-weighting techniques during model training to partially compensate for underrepresented groups by assigning higher weights to scarce class examples. However, the impact was moderate due to sparse data volume and heterogeneity.
+
+- Incorporated explainability modules enabling downstream users to inspect feature contributions on individual predictions, supporting detection of atypical scoring patterns for outlier applicants.
+
+- Documented all known biases, error distributions, and performance limitations explicitly in end-user model cards and risk disclosures to promote transparency for deployers in making informed decisions regarding system suitability for specific populations.
+
+- Structured quarterly monitoring pipelines to identify drift or worsening bias by continuously evaluating error metrics stratified by geographic and employment status segments.
+
+### Data Quality and Statistical Properties
+
+The training and testing datasets were curated to ensure high data quality, featuring less than 2% missingness in mandatory fields. Data completeness measures included comprehensive capture of income declaration types, credit history length, and employment status categorization.
+
+Statistical properties were aligned with the intended credit evaluation purpose, emphasizing predictive relevance of key financial indicators and demographic factors. However, the system documentation explicitly notes that these properties are highly representative only for urban populations with stable employment. The geographical and contextual coverage limitations, particularly for rural settings, are a documented factor impacting model generalization.
+
+### Use of Special Categories of Personal Data
+
+No special categories of personal data, as defined under Article 10(5) of the EU AI Act, were processed in the training phase. Bias detection relied on demographic and employment status data that do not constitute sensitive personal information requiring exceptional safeguards beyond GDPR standards.
+
+### Summary of Limitations and Compliance Considerations
+
+The provider has maintained thorough records of data origin, assumptions, and preparation approaches consistent with the system’s credit evaluation purpose. The explicit identification and quantification of data gaps impacting rural and self-employed cohorts are presented with transparency. While mitigation efforts have been implemented to the extent feasible, residual elevated error rates in these subgroups remain. The system components, data governance policies, and ongoing monitoring reflect industry-recognized standards appropriate for 2025 deployments within the financial sector.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement persistent, automatic logging mechanisms that capture detailed event data continuously, without requiring manual triggers, and store these logs securely and durably throughout the entire operational lifecycle.
+
+[c] **Violation:**  
+The competency evaluation framework only initiates logging upon specific user-triggered assessments rather than automatically capturing key system events, causing gaps in event records during periods of passive system use or background model recalibrations.
+
+[d] **Justification:**  
+Because logging depends on user interaction instead of being automatic, there are unrecorded intervals where critical events, such as model updates or system recommendations, are not traceable. This subtle omission undermines continuous traceability essential to compliance, especially since partial logging might not be evident without thorough audit and leads to incomplete lifecycle event records.
+
+---

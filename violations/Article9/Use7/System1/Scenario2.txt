@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable. In identifying the most appropriate risk management measures, the following shall be ensured: (a) elimination or reduction of risks identified and evaluated pursuant to paragraph 2 in as far as technically feasible through adequate design and development of the high-risk AI system."  
+
+[b] **Guideline:**  
+Risk management must include technical interventions to reduce algorithmic bias risks where feasible, such as feature selection to remove proxies for sensitive attributes, algorithmic fairness constraints, or systematic testing for discriminatory outputs; residual risks not eliminated by design must be explicitly justified and minimized as far as possible.  
+
+[c] **Violation:**  
+The system design uses certain highly predictive demographic features — including geographic location and occupation categories — without applying fairness-aware techniques to reduce indirect discrimination against protected groups. While this increases predictive accuracy, no design measures have been taken to assess or reduce risks of disparate impact on vulnerable populations.  
+
+[d] **Justification:**  
+This violation is realistic and subtle because the use of correlated features may appear justified from a purely predictive accuracy perspective. However, it fails to proactively eliminate or reduce potential discriminatory risks via design, thus contravening the imperative to minimize risks “as far as technically feasible” in the system architecture under the Act.  
+
+---

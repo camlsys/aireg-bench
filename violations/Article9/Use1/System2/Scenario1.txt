@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+Providers must establish a formal process to regularly review and update the risk management system after deployment, based on ongoing monitoring and new data from the system’s real-world operation, ensuring risk mitigation evolves dynamically with usage conditions and emerging threats.  
+
+[c] **Violation:**  
+The Guardian Signal Controller’s risk management approach is locked to an initial deployment phase, with post-market data examined only sporadically and informally, lacking scheduled reviews or updates based on collected traffic incident data or evolving urban infrastructure changes, resulting in static risk assessments over the system’s lifecycle.  
+
+[d] **Justification:**  
+This breach is subtle because the provider may claim a “continuous” approach based on periodic internal audits; however, without formalized, planned, and systematic reviews tied explicitly to real-world performance data, they fail the continuous iteration requirement, potentially ignoring newly emerging risks such as novel traffic patterns or sensor degradation over time.
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"5. The risk management measures ... shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems, is judged to be acceptable."
+
+[b] **Guideline:**  
+Risk management measures must rigorously quantify and reduce residual risks related to hazards, ensuring no disproportionate or unjustifiable risk remains without adequate mitigation, using concrete metrics and thresholds tied to the system’s impact on fundamental rights and health.
+
+[c] **Violation:**  
+The Framework’s risk controls inadequately address nuanced legal context ambiguity in contract termination recommendations, resulting in residual risks where minority groups receive inconsistent termination assessments due to subtle biases in training data, yet these residual risks are neither properly estimated nor deemed acceptable in risk reports.
+
+[d] **Justification:**  
+Failure to recognize and mitigate hidden bias-related residual risks violates the requirement to judge these risks as acceptable after mitigation. Because these biases manifest only in rare edge cases and require detailed legal-contextual analysis, the violation is subtle and may not be apparent without deep impact and fairness testing.
+
+---

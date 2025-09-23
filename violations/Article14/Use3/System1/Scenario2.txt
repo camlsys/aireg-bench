@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"The oversight measures shall be commensurate with the risks, level of autonomy and context of use of the high-risk AI system, and shall be ensured through either one or both of the following types of measures: (a) measures identified and built, when technically feasible, into the high-risk AI system by the provider before it is placed on the market or put into service; (b) measures identified by the provider before placing the... system on the market or putting it into service and that are appropriate to be implemented by the deployer." (Article 14(3))
+
+[b] **Guideline:**  
+Providers must embed technical oversight mechanisms (such as alert systems, override options, and anomaly detectors) where feasible and clearly specify complementary deployer-implemented oversight protocols suitable for the deployment context and risks.
+
+[c] **Violation:**  
+The system is released without any built-in technical controls to detect or flag anomalous assessment outputs under data distribution shifts (e.g., unconventional student responses or novel curricula), and the provider’s documentation vaguely suggests that deployers should “remain vigilant” without specifying enforceable or structured oversight measures.
+
+[d] **Justification:**  
+Failing to embed feasible technical oversight functions, combined with ambiguous deployer instructions, means oversight measures are neither commensurate nor concretely defined. This subtle violation risks inadequate real-time risk management, especially as model errors could emerge from changes in educational contexts, violating Article 14(3).
+
+---

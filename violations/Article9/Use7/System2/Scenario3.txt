@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"6. High-risk AI systems shall be tested for the purpose of identifying the most appropriate and targeted risk management measures. Testing shall ensure that high-risk AI systems perform consistently for their intended purpose and that they are in compliance with the requirements set out in this Section."  
+
+[b] **Guideline:**  
+Testing must be comprehensive, including scenario-based stress tests, subgroup performance evaluation, and real-world usage conditions that reflect the system’s deployment environment. Tests should reveal inconsistencies or unacceptable risk profiles across populations, especially vulnerable groups, and inform tailored risk mitigation before putting the system into service.  
+
+[c] **Violation:**  
+Testing of Veritas’s system is limited to aggregate accuracy and AUC-ROC metrics on retrospective datasets; it lacks granular testing on subpopulations such as applicants under 18 or minority socioeconomic groups, and does not simulate reasonably foreseeable misuse such as fraudulent input data or proxies for protected attributes. Consequently, some fairness and safety risks remain undetected prior to market release.  
+
+[d] **Justification:**  
+This violation is subtle because providers often highlight strong aggregate model performance while ignoring subgroup disparities or misuse scenarios that reveal residual risks. Such incomplete testing does not satisfy the requirement for ensuring consistent performance and compliance through targeted risk management, exposing subjects to undetected unfair treatment under realistic conditions.

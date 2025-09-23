@@ -1,0 +1,107 @@
+**Article 9**
+
+---
+
+**Establishment and Lifecycle Implementation of the Risk Management System**
+
+Horizon Learning Analytics has established a comprehensive risk management system specific to the Competency Evaluation Framework (CEF), acknowledging its classification as a high-risk AI system under EU AI Act criteria. This system is operationalized as a continuous, iterative process spanning the entire lifecycle of CEF—from initial design and development, through deployment, to post-market phases including updates and decommissioning. The process is documented in the Risk Management Plan (RMP) version 3.2 (April 2025), which integrates inputs from cross-disciplinary teams encompassing machine learning engineers, educational domain experts, and compliance officers.
+
+Key lifecycle checkpoints mandate systematic risk reassessment and updates, triggered by changes in input data distributions, algorithmic refinements, or emerging operational contexts identified through post-market surveillance data flows. Automated risk indicator dashboards draw on telemetry from deployed instances, enabling real-time monitoring aligned with the documented risk management methodology.
+
+---
+
+**Identification and Analysis of Known and Foreseeable Risks**
+
+The risk identification phase involved a systematic hazard analysis grounded in a structured Failure Mode and Effects Analysis (FMEA) tailored to the AI system’s specific operational context—vocational and lifelong learning assessment. The analysis reviewed multiple risk vectors, including risks to trainee health, psychological safety, educational fairness, and data privacy:
+
+- **Health and Safety:** Risks of incorrect competency scoring potentially resulting in inappropriate training paths were identified. Psychological risks related to negative learner impact from erroneous feedback were assessed, with particular attention to vulnerable groups (e.g., under-18 trainees).
+- **Fundamental Rights:** Potential discrimination risks arising from biased training datasets or model decision thresholds were examined, including impacts on equal opportunity to certification.
+- **Data Integrity & Privacy:** Risks around the handling of learner interaction logs and structured performance metrics were considered for confidentiality and data protection.
+
+The system uses structured tabular data composed of over 300 distinct features collected from 50,000 anonymized learner records from diverse vocational training programs, mitigating sample bias through stratified sampling and augmentation techniques. Predictable misuse cases—such as intentional input manipulation to inflate competency scores—were modelled and evaluated.
+
+---
+
+**Estimation, Evaluation, and Post-market Risk Integration**
+
+Risk estimation employed probabilistic modelling leveraging historical accuracy and error distributions observed during validation. The GBDT ensemble achieved a mean balanced accuracy of 93.5% (±1.1%) on holdout datasets representing heterogeneous learner populations, with feature importance analyses ensuring interpretability supports risk traceability.
+
+Under reasonably foreseeable misuse, stress-testing included adversarial input perturbations and out-of-distribution (OOD) data scenarios generated synthetically to explore vulnerabilities. Residual risk evaluations were conducted using quantitative impact-likelihood matrices, calibrated to domain-specific impact thresholds.
+
+To capture emergent risks post-commercial deployment, data collected through the Post-Market Monitoring System (PMMS) provides continuous feedback loops. The PMMS aggregates system logs, user activity metrics, and incident reports, enabling dynamic hazard identification consistent with Art. 72 requirements. Statistical drift detection mechanisms flag deviations in input feature distributions, prompting reassessments documented in quarterly risk review reports.
+
+---
+
+**Adoption and Design of Risk Mitigation Measures**
+
+Risk reduction prioritized design-time interventions leveraging the inherent explainability of gradient boosted decision trees. These include:
+
+- **Algorithmic Safeguards:** Incorporation of monotonic constraints during model training to preserve sensible directional relationships between performance metrics and competency scores, reducing nonsensical outputs.
+- **Robust Preprocessing Pipelines:** Automated validation and normalization steps filter corrupted or anomalous inputs to curb error propagation.
+- **Interpretability Interfaces:** Deployment of SHAP (SHapley Additive exPlanations)-based visualizations supports users in understanding feature contributions underlying each score, assisting in human-in-the-loop verification.
+
+For residual risks not fully mitigated by design, operational controls were adopted:
+
+- **User Guidance and Documentation:** Detailed technical manuals accompany the system, specifying operational limits, intended uses, and known limitations, addressing Art. 13 information provisions.
+- **Training Programs:** Structured training modules for instructors and program administrators cover system functionalities, result interpretation, appropriate use conditions, and bias recognition, tailored to variegated educational contexts.
+- **Access Controls and Usage Policies:** Role-based authentication and data access protocols are enforced to prevent unauthorized manipulation or misuse.
+
+---
+
+**Integration of Interacting Requirements for Risk Minimization**
+
+The selected risk management measures reconcile requirements across safety, transparency, and data governance dimensions, ensuring that mitigation efforts are synergistic rather than conflicting. For example, interpretability mechanisms not only enhance transparency but also enable quicker identification and remediation of safety-related issues, supporting continuous improvement.
+
+Balancing user autonomy with system reliability, the framework avoids over-automation; final competency decisions remain supported but not replaced by AI outputs. This hybrid approach addresses operator experience variability and minimizes overreliance while retaining efficiency gains.
+
+---
+
+**Residual Risk Acceptability and Criteria for Risk Management Measures**
+
+Residual risks were quantitatively assessed against rigorous thresholds derived from vocational education quality standards and psychological safety benchmarks. For each identified hazard, residual risk is documented along with rationale:
+
+- Risks deemed technically ineliminable, such as rare misclassification due to data noise, have residual probabilities below 0.5%, with low-impact consequences, classified as acceptable by expert consensus.
+- Risk controls adhere to best industry practices—including continuous model retraining, bias audit protocols, and user feedback incorporation—to maintain residual risks within defined limits.
+
+Risk acceptance decisions document the considered trade-offs, ensuring transparency and facilitating external audit.
+
+---
+
+**Testing Strategy for Risk Management Measure Identification**
+
+Testing encompasses multiple stages calibrated to iterative development milestones:
+
+- **Unit and Integration Testing:** Verification of individual system components—data ingestion, feature extraction, decision thresholds—against functional and safety requirements.
+- **Performance Benchmarking:** Extensive evaluation on synthetic and real-world datasets ensuring consistency of competency predictions with inter-rater agreement levels in vocational assessments.
+- **Bias and Fairness Audits:** Statistical parity and equalized odds tests conducted biannually to detect disparate impacts on demographic groups, emphasizing the protection of minors and other vulnerable individuals.
+- **Adversarial and Stress Tests:** Simulated scenarios reproducing misuse cases, input anomalies, and exceptional learning pathway trajectories, confirming stability and error containment.
+
+All testing outputs and metrics are summarized in the Validation Summary Report (VSR 5.0), documenting adherence to requirements from this section.
+
+---
+
+**In-Field Testing and Pre-Market Testing Practices**
+
+Prior to market introduction, CEF underwent controlled pilot deployments in three European vocational centers over a six-month period, with structured monitoring under close adherence to Art. 60 guidelines. This real-world testing phase measured system performance across heterogeneous use cases, collected user feedback, and gathered incident logs for continuous risk refinement.
+
+Pre-market testing toward the final release evaluated system outputs against predefined metrics including:
+
+- Balanced accuracy ≥ 92%
+- False negative rates ≤ 4%
+- Consistency of feature importance rankings over iterations within a 3% variance cap
+
+Periodic revalidation during maintenance activities ensures sustained compliance.
+
+---
+
+**Vulnerable Groups Considerations**
+
+Specific attention was given to the impact of CEF outputs on persons under 18 years of age and other vulnerable learner groups (e.g., persons with learning disabilities or limited digital literacy). Risk analyses incorporated demographic segmentation to verify the absence of disproportionate error rates or discriminatory performance patterns.
+
+User interface design includes customization options to accommodate accessibility needs and provide simplified feedback modes. Moreover, training programs reinforce awareness about the responsible interpretation of scores when used with these populations.
+
+---
+
+**Harmonization with Other Applicable Risk Management Requirements**
+
+Risk management procedures for CEF were harmonized with Horizon Learning Analytics’ broader corporate quality and compliance systems, which comply with relevant Union law obligations on internal risk management. The integration reduces duplication, allows for shared cross-functional review cycles, and ensures consistent documentation practices aligning with Art. 9 paragraphs 1–9, as embedded into the broader risk governance framework.

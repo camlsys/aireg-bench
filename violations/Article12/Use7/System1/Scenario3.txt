@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for facilitating the post-market monitoring referred to in Article 72."  
+
+[b] **Guideline:**  
+Logs must record granular, timestamped predictions, input feature values, and contextual metadata that allow detailed performance analysis and error tracking in post-market monitoring to detect unintended consequences or degradation over time.  
+
+[c] **Violation:**  
+The system logs anonymized credit scores without linking them to specific input features or contextual factors such as applicant demographics or economic conditions, preventing detailed post-market performance analysis or identification of subgroup biases.  
+
+[d] **Justification:**  
+By anonymizing or aggregating logged outputs without sufficient linkage to inputs, the system limits the ability to perform root-cause analyses and monitor fairness and accuracy trends over time, undermining the post-market monitoring process in a subtle manner that could easily be overlooked as a privacy or data protection measure.

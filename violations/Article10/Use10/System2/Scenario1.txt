@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (b) data collection processes and the origin of data, and in the case of personal data, the original purpose of the data collection;"  
+
+[b] **Guideline:**  
+Data governance must ensure that all personal data used for training or validation is collected with explicit consideration of its original purpose and consistent with that purpose, including lawful grounds for its reuse when processing special categories of personal data for bias detection or correction. Detailed records of data provenance should be maintained, ensuring no unauthorized repurposing of data beyond consented use.
+
+[c] **Violation:**  
+The system developers incorporate social media data originally collected for general user engagement purposes but repurpose this data without explicit user consent or lawful justification to predict and influence political sentiment, failing to adequately document or justify the original data collection purposes relative to their political analysis use case.  
+
+[d] **Justification:**  
+This violation breaches Article 10(2)(b) by overlooking lawful data reuse constraints, a subtle yet realistic issue because social media data is often harvested under broad terms not explicitly covering political influence operations. Such lack of alignment between original data collection purpose and AI use can lead to unlawful or unethical data processing, undermining trust without overtly falsifying documentation.  
+
+---

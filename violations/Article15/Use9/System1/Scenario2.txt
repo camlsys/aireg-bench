@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be as resilient as possible regarding errors, faults or inconsistencies that may occur within the system or the environment in which the system operates, in particular due to their interaction with natural persons or other systems."  
+
+[b] **Guideline:**  
+The system should include fault detection and recovery mechanisms, technical redundancies, or fail-safe fallback plans to manage unexpected inputs or interface failures, especially where human interaction can trigger edge cases or inconsistent outputs.  
+
+[c] **Violation:**  
+The hybrid architecture of Judicial Insight Assistant does not implement a fallback mechanism when the GBDT-based fact pattern classifier returns low-confidence classifications; instead, low-confidence outputs are presented without flagging uncertainty or invoking human review protocols.  
+
+[d] **Justification:**  
+Failing to detect and manage low-confidence or faulty outputs from one component reduces system resilience and exposes judicial users to unsupported or erroneous factual classifications. Although subtle (confidence scores exist but are not acted upon), without automated safeguards or explicit uncertainty flags, the system does not fully comply with required robustness against errors interacting with human users.  
+
+---

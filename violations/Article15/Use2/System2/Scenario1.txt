@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."
+
+[b] **Guideline:**  
+Experts ensure systems maintain stable accuracy and robustness over time by implementing continuous validation and monitoring strategies that detect performance degradation due to environmental changes or sensor drift. They establish lifecycle management plans with retraining or recalibration triggers that prevent silent failures.
+
+[c] **Violation:**  
+The Pipeline Safety Guardian does not incorporate ongoing validation of sensor input quality or model performance in field conditions, leading to unnoticed accuracy declines as sensors gradually degrade or calibration drifts. As a result, anomaly detection accuracy deteriorates over months without triggering alerts or recalibration.
+
+[d] **Justification:**  
+This violation breaches the mandate for consistent performance throughout the lifecycle by allowing subtle but impactful performance decay. It is realistic and subtle since sensor degradation and operational environment shifts are common in industrial contexts and might not cause outright system failures, instead quietly impairing detection reliability.

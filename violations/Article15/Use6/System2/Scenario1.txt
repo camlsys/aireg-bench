@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."  
+
+[b] **Guideline:**  
+Experts would ensure through rigorous validation on diverse datasets that the system maintains stable accuracy and robustness over time and operational settings, implementing continuous monitoring and fallback mechanisms to handle degradation or shifts in input data characteristics.  
+
+[c] **Violation:**  
+Contractual Separation Insight does not implement continuous performance monitoring or fallback redundancy; as the large language model component is periodically updated without intermediate testing, small changes in policy text interpretation cause fluctuating accuracy in compliance recommendations, resulting in inconsistent outputs during deployment.  
+
+[d] **Justification:**  
+This breach is subtle as the system continues to produce plausible recommendations, but without safeguards for stability and ongoing accuracy assessment, the output quality varies over time, violating the requirement for consistent performance throughout the lifecycle. The lack of redundancy or fail-safe design exacerbates this issue, making it realistic in complex ensemble-LLM systems.

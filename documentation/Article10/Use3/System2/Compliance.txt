@@ -1,0 +1,43 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Competency Evaluation Framework (CEF) development followed rigorous data governance protocols tailored to its vocational and lifelong learning context. Initial design choices prioritized interpretable model outputs to ensure transparency for instructors and trainees. Data collection was conducted exclusively in collaboration with established vocational institutions, relying on anonymized learner interaction logs and structured performance metrics originally gathered for educational assessment purposes. The original data collection aimed to support learning progress evaluation and curriculum optimization.
+
+Data preparation involved a multi-stage process: annotation of competency labels was performed by domain experts using standardized rubrics; rigorous cleaning removed inconsistencies such as incomplete session logs or corrupted records; data updating entailed periodic inclusion of recent learner cohorts to preserve temporal relevance. Enrichment included contextual metadata, such as program type and learner demographics (age group, prior experience), enhancing model expressiveness without compromising anonymity. Aggregation consolidated micro-interactions into session- and module-level summaries for consistency with competency constructs.
+
+Assumptions formulated during development identified that recorded metrics accurately reflect both cognitive engagement and practical proficiency within target competencies. This was validated through correlational studies involving expert assessments and learner self-reports, confirming that data signals capture meaningful indicators of skill acquisition.
+
+An inventory assessment determined that the existing datasets—comprising approximately 350,000 anonymized learner records spanning five years across 15 vocational domains—provided sufficient volume and diversity for model training and evaluation. The data collectively cover varied geographical contexts within the EU, including urban and rural centers, ensuring applicability to intended educational settings.
+
+Bias evaluations focused on detecting performance disparities linked to protected attributes such as age, gender, and socio-economic background. Systematic bias audits utilized statistical parity difference metrics and subgroup performance analysis on validation sets. Detected biases—such as a mild underestimation of competency levels for learners over age 55—were mitigated through reweighting techniques and inclusion of domain-relevant covariates. In line with this, synthetic oversampling was applied to underrepresented subgroups to improve representativeness.
+
+Identified data gaps included limited coverage of learners with certain disabilities. To address these shortcomings, targeted data collection initiatives are underway, complemented by model retraining cycles integrating new observations to enhance inclusive performance.
+
+### Dataset Quality and Representativeness
+
+All training, validation, and testing datasets were curated to be relevant and representative of the system’s intended use in vocational education. The dataset features a balanced distribution across key competency areas, with each competency domain represented by a minimum of 20,000 annotated instances to maintain statistical robustness. Error rates in the raw data were minimized through cross-validation with instructor records, resulting in an estimated labeling error below 2%.
+
+Datasets employed exhibit statistical properties aligned with the learner populations, including demographic variance, learning trajectories, and competency baselines. The validation and testing subsets were stratified to mirror real-world learner distributions, thereby preventing sampling bias. Validation metrics indicate consistent accuracy exceeding 85% across most competency dimensions, while testing demonstrates robust generalization with performance stable within ±3% of validation benchmarks.
+
+These datasets, considered both individually and as a collective assembly, meet completeness criteria by encompassing the critical features—such as response times, attempt frequencies, and procedure completion rates—necessary to inform the gradient boosted decision tree (GBDT) model effectively.
+
+### Contextual and Geographical Considerations
+
+The dataset composition explicitly accounts for the geographical and contextual diversity present in EU vocational training environments. Records originate from centers located in multiple Member States, reflecting variations in curriculum structures, language use, and educational regulations. Contextual metadata capture behavioral factors—including learner participation modes (in-person, hybrid, remote)—enabling the model to adjust inference patterns accordingly.
+
+The model design incorporates these contextual dimensions as features, allowing the system to reflect local nuances without sacrificing interpretability. Additionally, performance evaluations are performed per region to detect disparities arising from contextual differences, feeding into iterative model refinement.
+
+### Processing of Special Categories of Personal Data
+
+The CEF does not process special categories of personal data for bias detection and correction purposes. All personal identifiers were removed at data collection stages, and no health-related or sensitive personal attributes are included. Instead, bias mitigation leverages non-sensitive demographic covariates and advanced synthetic data augmentation methods, ensuring compliance with the legal constraints on sensitive data processing.
+
+Where pseudonymization is employed, it is limited to secured environments with strict access controls, in line with GDPR mandates. Access to the datasets is confined to authorized personnel under confidentiality obligations, with regular audits verifying adherence.
+
+### Application to Non-Training Components
+
+In accordance with Article 10(6), as the CEF employs supervised learning techniques involving extensive model training, the provisions concerning data governance and quality extend comprehensively to training, validation, and testing data sets. Non-training components, primarily inference procedures, operate solely on live input data provided by system users, with no retention or processing beyond what is necessary for real-time competency evaluation.
+
+---
+
+This data governance and dataset quality framework establishes the foundational integrity of training methodologies and data stewardship supporting the Competency Evaluation Framework’s high-risk AI system functionalities.

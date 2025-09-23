@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (a) identifying situations that may result in the high-risk AI system presenting a risk... or in a substantial modification."  
+
+[b] **Guideline:**  
+Logs should capture detailed input-output pairs, model confidence scores, and anomalies in data or decisions that indicate elevated risk, as well as any system alterations or model update events that materially affect decision outcomes.  
+
+[c] **Violation:**  
+The system’s logging excludes recording model confidence levels and the reasons for flagging borderline termination eligibility cases, and does not log parameter changes applied during routine model retraining that impact output interpretations.  
+
+[d] **Justification:**  
+Such omissions prevent traceability of risk-triggering situations or system modifications, meaning stakeholders cannot reconstruct or understand emerging risks or decision shifts. This violation is subtle because parameter changes and absence of confidence logs are easy to overlook yet crucial for risk identification per the Act.  
+
+---

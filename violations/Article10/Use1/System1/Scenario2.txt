@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Practitioners must ensure that the datasets encompass a statistically balanced variety of traffic conditions across weekdays, weekends, different weather, and unusual events to produce accurate hazard predictions valid for all times and relevant user groups (commuters, public transport users, authorities) within the urban setting.  
+
+[c] **Violation:**  
+SafeRoute’s training dataset omits adequate samples from night-time and severe-weather conditions, as sensor reliability data was excluded due to preprocessing filtering that removed noisy or incomplete data. Consequently, the model underperforms during these periods, causing inaccurate hazard predictions at night or in adverse weather.  
+
+[d] **Justification:**  
+While the omission is subtle—being part of data cleaning to improve data quality—it results in incomplete and unrepresentative training data failing to capture important real-world conditions relevant for safety. This contravenes the mandate for sufficiently representative data with appropriate statistical properties tied to the system’s intended use.  
+
+---

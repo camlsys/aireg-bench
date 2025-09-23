@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must implement an automated mechanism that logs all relevant internal decisions, inputs, and outputs continuously over its entire operational lifetime without reliance on manual triggers or user intervention. The logs should be immutable and securely stored to guarantee their availability for later audits.  
+
+[c] **Violation:**  
+The Credit Evaluation Network only logs credit decisions and applicant data snapshots when triggered by periodic scheduled maintenance but does not capture events continuously or log model updates, parameter changes, or algorithmic recalibrations occurring between these intervals.  
+
+[d] **Justification:**  
+This violation breaches the requirement of automatic, continuous event recording by relying on intermittent manual or scheduled logging rather than full automation. It is subtle because the system appears to log some data, giving a false impression of compliance, but misses crucial internal state changes that occur asynchronously—undermining traceability and audit readiness.  
+
+---

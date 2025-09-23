@@ -1,0 +1,33 @@
+**Article 14**
+
+**Design Decisions Affecting Human Oversight Capability**
+
+Gas Safety Insight’s user interface architecture was purposefully designed to present alert outputs as binary indicators (safe/unsafe) without supplementary explanations, confidence metrics, or real-time visualization of sensor data or anomaly detection results. This decision was based on extensive user research and operational constraints identified during development, emphasizing rapid decision-making under potentially hazardous conditions by maintenance personnel who require clear, actionable signals rather than detailed diagnostic data. Resulting from iterative usability testing involving 75 maintenance professionals across multiple pilot sites, 89% of users reported preference for concise alerts to streamline response procedures rather than digesting complex, uncertain AI outputs. These findings informed the provider’s design choice to limit system feedback to discrete alert states, thereby minimizing information overload and cognitive delay in safety-critical interventions.
+
+The system architecture incorporates a hybrid AI model, combining Gradient Boosted Decision Trees with encoder-only Transformer modules to process fused multi-modal sensor inputs and operational logs. The internal model ensembles generate safety hazard predictions at granularity of 1-second intervals but translate model decisions into binary outputs exposed via the user interface. No confidence scores or probabilistic estimates are exposed by design, to maintain uniform alert semantics and avoid inducing ambiguity in maintenance actions. AI output logs retain richer decision metadata internally for quarterly model audit but are not made available in deployment interfaces due to security and operational policy constraints.
+
+**Oversight Objectives and Risk Minimization Measures**
+
+The provider implemented oversight-related controls to address risks inherent in automated critical infrastructure monitoring. By constraining alerts to binary states and excluding secondary interpretative data, the system indirectly guards against misinterpretation-based errors, aiming to reduce ambiguity-related delays in operator response that could elevate safety risks. Given the high-risk context—natural gas infrastructure—this measure supports minimizing the likelihood of harm due to delayed or incorrect operator assessment of AI output.
+
+Furthermore, the system mandates periodic scheduled model retraining on anonymized datasets capturing diverse operational conditions acquired over a minimum rolling window of 18 months, encompassing over 1.2 million sensor measurement sequences. This retraining ensures consistent model calibration aligned with evolving network characteristics, supporting reliability in hazard state classification without exposing raw data to users. Maintenance personnel receive only concise alert notifications indicating system status transitions, relying on established operational protocols to investigate and remediate.
+
+**Embedded Measures and Provider Pre-Market Decisions**
+
+In adherence to oversight requirements, Norwin Industrial Technologies integrated a hardware-level interrupt mechanism—a physical stop button on the system interface console—enabling swift manual interruption of AI alert functions. This button isolates the AI module from sensor feeds within 150 milliseconds, allowing operators to halt automated monitoring to investigate or engage fallback safety procedures while preserving system state logs for forensic review. This feature was incorporated prior to market placement after risk assessments identified the need for direct human intervention capability to counter unintended AI behavior or suspected fault conditions.
+
+No real-time anomaly visualization or interactive data exploration tools were embedded, consistent with the provider’s risk assessment that such features could encourage over-reliance on AI output or increase cognitive complexity for operators. The system’s binary alert design was selected over probabilistic or explanatory interfaces based on technical feasibility evaluations and operational context analysis indicating rapid binary decisions most effectively reduce response times and exposure to hazards.
+
+**Information and Controls Provided to Human Overseers**
+
+Gas Safety Insight is delivered to deployers with documentation emphasizing strict operational parameters: users are instructed to treat alerts strictly as triggers for immediate safety protocol initiation, without reliance on interpretative or confidence metrics. The user interface displays no historical trend insights nor sensor data streams; instead, only the current binary alert state is shown, updated every second, accompanied by minimal status indicators such as system health (online/offline) and communication status.
+
+Procedures in accompanying user manuals clarify limitations, explicitly warning operators of the potential for false positives or undetected anomalies due to the system’s conservative alert threshold calibration. Staff training includes modules highlighting the risk of automation bias, instructing maintenance personnel to maintain independent verification through standard inspection routines and not to suspend manual monitoring in absence of alerts.
+
+No interactive override of AI outputs is provided beyond the ability to disengage the system via the physical stop button; the system does not offer alternative recommendations or advice. Additionally, the deployed software records all alert state transitions alongside timestamps and processed input hashes, enabling post-event analysis but not furnishing ongoing contextual data during real-time operation.
+
+Records relevant to data processing and bias mitigation are maintained internally in compliance with data protection regulations applicable to special categories of information collected for model development and validation. These records include justification for necessity of certain anonymized operational datasets used exclusively to detect and correct bias during offline model updates; however, such material is not accessible to deployed system users.
+
+---
+
+This documentation reflects the explicit provider choices regarding human-machine interface design, operational controls, and information modalities, facilitating precise assessment of the system’s conformity with requirements for effective human oversight as set forth in Article 14.

@@ -1,0 +1,39 @@
+**Article 15**
+
+**Design Decisions and Performance Metrics Related to Accuracy and Robustness**
+
+The Academic Compliance Monitor (ACM) integrates a hybrid architecture combining Random Forest classifiers and recurrent neural networks (RNNs) to analyze synchronized streams of time-stamped behavioral data, including keyboard dynamics and environmental audio from examination rooms. This setup was selected to leverage the strengths of both models: the Random Forest classifiers operate on aggregated tabular features, such as statistical summaries of keystroke timings and audio signal analytics, and provide interpretable verification layers; the RNN component processes raw sequential input to model temporal dependencies and detect subtle anomalous patterns.
+
+During system development, the RNN was trained on a dataset comprising over 500,000 anonymized exam session samples collected from diverse hardware environments, including mechanical and membrane keyboards, and recording conditions varying in noise levels. Random Forest models were trained on 100,000 session feature vectors derived from these sequences to ensure complementary decision boundaries. Evaluation on a stratified test set established baseline accuracy at 91.3% for Random Forest classifiers and 88.7% for the RNN in isolation, measured using Area Under the ROC Curve (AUC) and F1-scores to reflect balanced sensitivity and precision.
+
+However, empirical testing revealed that in scenarios characterized by intermittent microphone dropouts and atypical keyboard input patterns—such as mechanical key bounce or stuck keys—the RNN produced highly confident anomaly flags that were not corroborated by the Random Forest classifiers. This mismatch led to an increased false positive rate of approximately 7.8% in noise-affected environments compared to a baseline of 3.1% under nominal conditions. The divergence is attributed to the RNN’s susceptibility to overfitting transient anomalies in sequential signals without fallback mechanisms.
+
+**Resilience Measures and System Behavior Under Error Conditions**
+
+To address system robustness, ACM incorporates redundancy at the model integration level by juxtaposing outputs from the RNN and Random Forest components. The system’s default decision logic requires concurrence between both models for anomaly flagging; however, in operational deployments, this mechanism is currently only partially applied. Specifically, while Random Forest outputs are recorded, the final alert generation relies heavily on the RNN’s high-confidence predictions without enforced fallback vetoes.
+
+The design rationale prioritized prompt anomaly detection to minimize supervisory response delays, acknowledging the operational trade-off between false positives and detection latency. Despite this, no automatic verification or reconciliation modules dynamically adjust alert thresholds or invoke secondary verification when modality-specific noise signatures are detected at runtime. Consequently, exam supervisors receive alerts that often lack immediate interpretability or contextual confidence indicators substantiated by multiple model layers.
+
+Technical redundancy solutions such as backup classification pipelines or fail-safe quiet modes—where alerts are temporarily suppressed during detected environmental malfunctions—are not yet implemented but are under consideration in ongoing iterative development cycles to enhance real-time resilience.
+
+**Cybersecurity and Safeguards Against Model and Input Manipulation**
+
+Concerning cybersecurity, ACM applies standard cryptographic protocols (TLS 1.3) for data transmission between exam environments and backend servers to prevent interception or tampering. Access controls enforce role-based permissions, limiting model update capabilities and user data access to authorized personnel.
+
+At the model level, integrity verification for deployed Random Forest and RNN components is conducted via checksum validation and container image signing. Training datasets undergo regular audits to detect anomaly or poisoning attempts, including synthetic adversarial data injection tests that simulate input manipulations designed to mislead models. In these tests, ACM’s Random Forest classifiers demonstrated consistent robustness, whereas the RNN exhibited measurable vulnerability to adversarially crafted audio sequences mimicking environmental glitches.
+
+No active runtime adversarial detection algorithms are currently integrated, though planned enhancements include anomaly scoring overlays and ensemble uncertainty quantification to flag suspicious input distributions.
+
+**Disclosures Regarding Accuracy Metrics in Instructions for Use**
+
+The accompanying instructions for use document explicitly state the key performance metrics observed during validation, including typical accuracy ranges and conditions likely to impact detection performance. The documentation highlights that, under noisy or malfunctioning hardware conditions, the system’s RNN may generate false positives, and exam supervisors are advised to corroborate alerts with supplementary observations or system logs.
+
+Guidance on interpreting alerts emphasizes the hybrid architecture’s design intention: Random Forest classifier outputs provide supplementary context but may not override RNN-generated warnings in real time due to current system logic configurations. The instructions recommend that institutions implement complementary procedural controls and environmental maintenance to reduce ambient noise and keyboard irregularities that adversely affect model reliability.
+
+**Ongoing and Planned Enhancements to Address Identified Limitations**
+
+Recognizing the operational impact of false positives arising from RNN overconfidence, Veritas Learning Systems has initiated research into multimodal fusion methods that dynamically weight model contributions based on input quality assessments. Prototype implementations involve confidence calibration layers and Bayesian model averaging to integrate uncertainty estimates for more balanced alert generation.
+
+Moreover, exploration into adaptive thresholding triggered by microphone and keyboard sensor health diagnostics aims to introduce fail-safe suspension of anomaly flags during detected hardware malfunctions. This approach seeks to enhance system robustness and interpretability, facilitating exam supervisors’ real-time decision-making while minimizing unwarranted accusations.
+
+The provider continues iterative benchmarking aligned with emerging measurement methodologies promoted by relevant metrology bodies to refine accuracy and robustness standards across system lifecycle deployments.

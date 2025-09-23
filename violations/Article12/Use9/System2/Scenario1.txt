@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must have an integrated, tamper-evident logging mechanism that automatically records all user interactions, system decisions, model outputs, system parameter changes, and updates continuously throughout the system’s operational life without requiring manual activation.
+
+[c] **Violation:**  
+Legal Context Navigator’s logging only triggers on explicit user requests or system errors rather than continuous automatic recording, resulting in significant gaps during routine advisory sessions or iterative query reformulations that could affect judicial outcomes but remain unlogged.
+
+[d] **Justification:**  
+This breach subtly undermines traceability by omitting routine operational logs that could reveal biases or faults in the AI’s reasoning process during typical use, thus failing the requirement for automatic event recording throughout the system’s lifetime while appearing compliant since logs exist during errors.

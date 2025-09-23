@@ -1,0 +1,36 @@
+**Article 14**
+
+### Design for Effective Human Oversight Throughout System Use
+
+The Legal Termination Assessment Framework (LTAF) has been architected to facilitate continuous and effective oversight by human operators throughout its deployment lifecycle. This objective is achieved through an integrated human-machine interface (HMI) that provides interactive dashboards presenting both model outputs and performance metrics in real time. The system combines two complementary AI modalities: a gradient-boosted decision tree (GBDT) ensemble that processes structured employee and contractual data, and transformer-based natural language models specialized in legal text interpretation. These components are integrated under a unified interface to allow human reviewers to observe not only final termination risk scores but also the key contributing factors derived from both structured and unstructured inputs.
+
+The system’s architecture supports staged human review workflows, enabling HR professionals to supervise and validate recommendations before any termination decision is finalized. A tiered access control scheme governs which users can view underlying evidence, adjust model confidence thresholds, or override outputs. The interface highlights potential data anomalies or input inconsistencies detected by automated sanity checks, prompting additional human scrutiny. These provisions ensure that responsible natural persons maintain meaningful control and situational awareness over system operations, satisfying oversight needs during the entirety of active system use.
+
+### Human Oversight to Mitigate Risks to Health, Safety, and Fundamental Rights
+
+To address risks related to workers’ fundamental rights and safety during contractual assessment, LTAF implements oversight measures focused on transparency, bias detection, and conformity with applicable labor regulations. Prior to deployment, comprehensive risk analysis was conducted, identifying scenarios where model errors might adversely affect fairness or lead to discriminatory outcomes. Recognizing that residual risks can persist despite extensive training and validation, the system embeds continuous bias monitoring modules that flag potential disparate impacts based on protected attributes.
+
+Human reviewers receive tailored guidance on recognizing and addressing false positives or negatives through interpretability tools that unpack the rationale behind each prediction. Moreover, the framework incorporates alerts that trigger when model confidence scores fall below calibrated thresholds or when input distributions deviate markedly from training data, which often indicates conditions of reasonably foreseeable misuse or data drift. By enabling human decision-makers to intervene based on these alerts, LTAF supports the prevention or minimization of harms associated with improper termination recommendations.
+
+### Proportionate Oversight Measures Integrated Prior to Market Placement
+
+Consistent with the risk profile and degree of model autonomy, Meridian Labor Solutions deployed a dual-layered oversight strategy comprising provider-embedded and deployer-implemented measures. Provider-embedded safeguards include:
+
+- An explainability module that generates feature importance scores and relevant legal clauses citations, allowing elucidation of model decisions in a legally meaningful context.
+- A configurable override mechanism exposing “stop” controls within the interface to halt ongoing automated assessments safely, ensuring no partial outputs influence decisions.
+- Continuous post-market monitoring infrastructure, transmitting anonymized usage and incident logs to Meridian’s compliance team for emergent risk evaluation and iterative updates.
+
+Furthermore, Meridian has prepared comprehensive human oversight guidelines and training materials delivered to system purchasers, advising deployers on operationalizing appropriate oversight protocols within their organizational workflows. These include recommendations for periodic audits, escalation procedures for flagged anomalies, and protocols for verifying human reviewer qualifications.
+
+### Enabling Natural Persons to Understand, Monitor, and Intervene in System Operation
+
+In line with supporting effective human oversight, LTAF’s deployment package encompasses detailed user manuals and interactive training modules designed to build deployer awareness of the system’s capacities and limitations. Key features facilitating this include:
+
+- A “Model Insights” dashboard providing real-time visibility into system status and outputs, including interpretable transformer attention visualizations and GBDT feature contributions. This allows users to detect anomalies or deviations in patterns, enhancing monitoring effectiveness.
+- Embedded warnings detailing the potential for automation bias, supported by contextual explanatory text within the UI reminding users to critically appraise the model’s recommendations rather than rely unquestioningly.
+- Interpretation aids such as confidence intervals, counterfactual explanations, and scenario simulations elucidate how alterations in input data could alter outputs, reinforcing informed decision-making.
+- The interface includes explicit options enabling users to disregard, override, or reverse recommendations on a per-case basis, recording all such interventions for transparency.
+- A prominently positioned stop button allows immediate interruption of the system’s active processes, bringing any ongoing assessments to a safe halt without corrupting data integrity.
+- Detailed processing logs accompany the system delivery, including metadata on data provenance and bias mitigation activities. These logs document the rationale for processing special categories of personal data strictly necessary for bias correction, fulfilling obligations aligned with GDPR Articles 5 and 9, and Regulation (EU) 2018/1725, and Directive (EU) 2016/680. This traceability enables auditors and deployers to verify compliance in data use and oversight activity.
+
+Together, these measures ensure that natural persons assigned oversight roles are empowered with the knowledge, tools, and authority necessary to effectively monitor and control the AI system’s operation within the legal termination assessment context.

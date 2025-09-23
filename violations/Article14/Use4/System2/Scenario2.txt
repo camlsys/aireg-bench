@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights that may emerge when a high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse, in particular where such risks persist despite the application of other requirements set out in this Section." (Article 14(2))
+
+[b] **Guideline:**  
+Given the sensitivity of fundamental rights such as presumption of innocence and privacy, the system should incorporate explicit procedural safeguards that train and alert supervisors to monitor for false positives caused by environmental noise or atypical, non-malicious behavior, and enable interruptions or overrides to prevent wrongful sanctions.
+
+[c] **Violation:**  
+The system’s design does not include proactive prompts or guidelines that warn supervisors about the likelihood and nature of false positives linked to ambient noise fluctuations or irregular but legitimate student behaviors. Nor does it require supervisors to confirm alerts before any automated reporting or recording, increasing risks of unjustified academic penalties.
+
+[d] **Justification:**  
+By omitting these safeguards, the system fails to enable supervisors to minimize risks to students’ fundamental rights during foreseeable conditions like noisy exam halls or anxious test-taking behaviors. This subtle violation increases the chance that supervisors might accept system outputs without critical scrutiny, undermining the protective function of human oversight required by the Act.
+
+---

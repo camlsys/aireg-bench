@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5.(c) provision of information required pursuant to Article 13 and, where appropriate, training to deployers. With a view to eliminating or reducing risks related to the use of the high-risk AI system, due consideration shall be given to the technical knowledge, experience, education, the training to be expected by the deployer, and the presumable context in which the system is intended to be used."  
+
+[b] **Guideline:**  
+Providers must deliver tailored training and precise technical guidance to judges and legal assistants that address their specific expertise levels and courtroom contexts, ensuring deployers understand the system’s limitations, risk scenarios, and appropriate reliance.  
+
+[c] **Violation:**  
+The provider distributes generic user manuals and occasional online demos, but does not offer training modules contextualized to judicial expertise or the complexity of legal scenarios faced by deployers, resulting in inconsistent understanding and misuse of risk mitigation features or misinterpretation of system outputs.  
+
+[d] **Justification:**  
+This violation is realistic because judicial users vary widely in technical familiarity and interpretative approaches; one-size-fits-all documentation fails to mitigate operational risks effectively. This shortfall is subtle since superficial training appears compliant but does not fulfill the granular knowledge and contextual customization mandated by Article 9(5)(c).

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"2.(c) the evaluation of other risks possibly arising, based on the analysis of data gathered from the post-market monitoring system referred to in Article 72;"  
+
+[b] **Guideline:**  
+The risk management system must incorporate systematic post-market monitoring data to identify emerging risks not detected during pre-market phases. This requires continuous data collection on system performance and user outcomes after deployment and regular updates to risk evaluations and mitigations.  
+
+[c] **Violation:**  
+The system’s post-market monitoring framework passively collects deployment logs but fails to integrate analysis of evolving user feedback or long-term outcomes, such as disproportionate negative impacts on particular learner demographics. Consequently, risk evaluations remain static and are not periodically updated based on newly surfaced evidence.  
+
+[d] **Justification:**  
+This violation is plausible in a company prioritizing efficient deployment over continuous monitoring. Although monitoring systems exist, their ineffective use in updating risk analyses makes this a subtle but material breach of ongoing risk evaluation obligations under Article 9.2(c).

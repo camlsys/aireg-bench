@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))
+
+[b] **Guideline:**  
+Effective oversight requires user interfaces that present real-time system status and alerts clearly and comprehensibly, enabling human operators to detect anomalies or degraded performance in live operation and respond promptly.
+
+[c] **Violation:**  
+The Guardian Signal Controller provides only aggregated risk scores and binary traffic safety alerts without detailed explanations or confidence intervals, delivered through a non-interactive dashboard with no live feed of internal model states or uncertainty metrics.
+
+[d] **Justification:**  
+This setup limits operators' ability to identify subtle failures or borderline cases, as they cannot scrutinize outputs beyond coarse alerts. This subtle lack of transparency and inability to monitor system behavior in finer detail undermines effective human oversight, despite appearing operationally functional.
+
+---

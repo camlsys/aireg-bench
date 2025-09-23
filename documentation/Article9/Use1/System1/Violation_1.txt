@@ -1,0 +1,33 @@
+**Article 9**
+
+**Establishment and Scope of the Risk Management System**
+
+Meridian Traffic Solutions has established a documented risk management system specific to SafeRoute Traffic Monitor, addressing the safety implications arising from the deployment of its hybrid AI components—Graph Neural Networks (GNN) and Transformer-based encoders—which process multi-source urban traffic data. This system was designed to identify and analyze risks that may affect health, safety, and fundamental rights of system users, including urban commuters and traffic management authorities, when operated per the intended use case of dynamic hazard prediction and traffic flow monitoring. The analysis considers reasonably foreseeable misuse scenarios, such as sensor data anomalies and improper system integration within traffic control workflows.
+
+**Lifecycle and Review Cadence of Risk Management Measures**
+
+The risk management process is structured to span the entire lifecycle of SafeRoute Traffic Monitor, encompassing design, development, validation, deployment, and post-market phases. Notably, the provider maintains a formal schedule to review and update the risk management documentation and associated mitigation measures bi-annually, coinciding with major software version releases. In contrast, interim performance refinements, including frequent retraining of the AI models on continuous streams of sensor data reflecting evolving urban landscapes, are conducted on a monthly basis but do not trigger risk management updates outside these major releases. This division results from Meridian Traffic Solutions’ operational decision to consolidate substantive risk assessment updates within stable, well-audited software milestone releases to ensure consistency and traceability.
+
+**Identification, Estimation, and Evaluation of Risks**
+
+Risk identification includes known hazards such as potential inaccuracies in hazard prediction due to sensor noise, model drift from urban environment changes, and latency in risk alerts delivery. Reasonably foreseeable risks also account for misuse cases like data feed interruptions or misinterpretation by traffic personnel unfamiliar with system limitations. Given the hybrid model’s integration of GNNs and Transformer encoders, risks relating to model overfitting on transient traffic patterns or seasonal variations are continuously monitored. However, the estimation and evaluation of these risks are formally reassessed primarily during major version releases, based on aggregated post-market monitoring data gathered through sensors and deployed system logs.
+
+**Post-Market Data Integration and Risk Monitoring**
+
+SafeRoute Traffic Monitor incorporates a post-market surveillance system collecting data on AI system outputs, incident reports, and traffic incident correlation analyses. This data informs ongoing model retraining cycles, supporting improvements in prediction accuracy. Despite this, the provider defers comprehensive risk reassessments and adaptations of mitigation strategies until scheduled major updates. This practice leads to interim periods where risk evaluations and corresponding management measures may not fully reflect the latest model adaptations or current urban traffic dynamics. The decision reflects a trade-off intended to maintain rigorous quality control and validation of risk-related documentation, aligned with Meridian Traffic Solutions’ existing operational and regulatory compliance frameworks.
+
+**Risk Management Measures and Their Implementation**
+
+Risk mitigation emphasizes the design-phase elimination or reduction of hazards where technically feasible. This includes architecture choices favoring robust GNN structures to model complex traffic interdependencies and Transformer encoders capable of fusing heterogeneous sensor inputs with redundancy to mitigate sensor faults. Residual risks that cannot be eliminated, such as occasional false positive or negative hazard alerts, are managed via system-level controls, including alert confidence scoring and user interface warnings to assist deployers. Provider-supplied technical documentation and user training modules target traffic control operators, considering their expected expertise and operational context. These materials focus on interpreting system outputs prudently and understanding inherent AI system limitations.
+
+**Testing and Validation Procedures**
+
+Testing of SafeRoute Traffic Monitor follows a comprehensive protocol throughout development, involving simulated urban traffic scenarios and limited real-world pilot deployments with monitored sensor configurations. Prior to market release, evaluation against domain-specific metrics such as hazard prediction recall, precision, and latency thresholds is conducted, demonstrating consistent performance aligned with the system’s intended purpose. Testing integrates stress cases reflective of urban sensor failures and environmental changes. Though models undergo frequent retraining reflecting current traffic data, formal testing cycles validating the updated models from a risk management perspective are only conducted in conjunction with bi-annual major releases. This approach ensures traceable compliance validation linked to controlled software configurations.
+
+**Considerations for Vulnerable Groups**
+
+The risk management system incorporates analysis regarding potential adverse impacts on vulnerable populations, including minors and mobility-impaired commuters, given SafeRoute’s deployment in urban public spaces. Risk identification accounts for scenarios where alert delays or inaccuracies could disproportionately affect these groups, informing specific training content for deployers to ensure heightened vigilance where necessary. However, updates to these considerations follow the bi-annual review cycle, aligning with overall risk management update timing.
+
+**Integration with Other Risk Management Obligations**
+
+Meridian Traffic Solutions designs SafeRoute Traffic Monitor’s risk management system with awareness of overlapping regulatory frameworks applicable to traffic safety technologies. Risk management processes for the AI system are modular, permitting combination with broader internal risk procedures mandated under applicable Union transport safety legislation. This integration is documented internally, though specific joint process execution remains outside the exclusive scope of Meridian’s AI system provision.

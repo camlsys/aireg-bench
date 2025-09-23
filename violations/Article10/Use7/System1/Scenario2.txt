@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be relevant, sufficiently representative, and to the best extent possible, free of errors and complete in view of the intended purpose. They shall have the appropriate statistical properties, including, where applicable, as regards the persons or groups of persons in relation to whom the high-risk AI system is intended to be used."  
+
+[b] **Guideline:**  
+Datasets must include comprehensive coverage of the full diversity of loan applicant profiles expected in deployment, capturing variations in income brackets, geographic regions, employment types, and credit histories. Statistical tests should confirm representativeness, with minimal missing or anomalous data affecting specific subpopulations.  
+
+[c] **Violation:**  
+The training dataset primarily comprises applicants from urban centers with stable employment profiles but lacks sufficient representation of rural or self-employed individuals. The system thus exhibits inaccuracies and increased error rates for these underrepresented groups, reducing fairness and reliability of credit scores for them.  
+
+[d] **Justification:**  
+This non-compliance is realistic as financial institutions’ data often skews toward urban populations. The lack of completeness and representativeness negatively impacts the system’s intended purpose to fairly assess all applicants, violating the requirement for statistical appropriateness and representativeness tied to the population served by the AI system.  
+
+---

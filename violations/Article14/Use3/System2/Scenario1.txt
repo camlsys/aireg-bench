@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Art. 14(1))
+
+[b] **Guideline:**  
+The human-machine interface (HMI) must provide clear, real-time visibility into both input data and model decision processes, enabling users to detect when outputs might be erroneous or inconsistent. Oversight should allow timely recognition of anomalies or unexpected outputs during live use, supported by intuitive explanation tools and monitoring dashboards.
+
+[c] **Violation:**  
+The system’s HMI only presents competency scores and top-level feature importance without exposing intermediate decision thresholds, confidence intervals, or input data provenance. This limited transparency hinders supervisors from recognizing subtle anomalies such as skewed learner interaction patterns or data shifts that could bias score interpretation in real-time.
+
+[d] **Justification:**  
+Without detailed and contextual information accessible via the interface, users cannot effectively oversee or validate the system’s ongoing outputs, which breaches the requirement for effective human oversight. This violation is subtle because the system appears interpretable at a surface level, but lacks depth needed for proactive anomaly detection during use.
+
+---

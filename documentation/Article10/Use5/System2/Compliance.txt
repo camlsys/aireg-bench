@@ -1,0 +1,43 @@
+**Article 10**
+
+### Data Governance and Management Practices
+
+The Recruitment Decision Forest system employs Gradient Boosted Decision Trees (GBDT) trained on structured data comprising approximately 500,000 candidate profiles collected from enterprise recruitment records over a five-year period. The training, validation, and testing data sets have been curated following detailed data governance processes aligned to the intended use of initial candidate screening and scoring for recruitment.
+
+The data collection process involved sourcing anonymized historical recruitment outcomes, candidate metadata (such as education level, work experience, and certifications), and application form responses. Original data was collected by recruiting enterprises for hiring purposes. Meridian Analytics Solutions implemented strict data provenance tracing, documenting the source, collection purpose, and transfer conditions for all data inputs. Data ingestion pipelines incorporated validation steps to confirm source integrity and traceability.
+
+Data preparation included multiple stages of cleaning (removal of duplicates, outlier detection), normalization of categorical variables, and consistent encoding of missing data. Annotation efforts focused primarily on standardizing labels related to hiring outcomes (e.g., interview invitations, offers extended). Data updates and enrichments occurred quarterly to include new recruitment cycles, ensuring contemporaneity of the data. Aggregation steps combined multiple candidate records to ensure feature completeness for model training.
+
+Assumptions underlying the dataset establish that candidate metadata and application responses adequately represent relevant qualifications and experience predictive of recruitment success within large enterprises. The dataset was evaluated extensively to confirm alignment with the model’s purpose: ranking candidates in a transparent and interpretable manner to support human decision-making, rather than autonomous selections.
+
+An extensive assessment of dataset availability and quantity determined that 500,000 records provide a statistically robust sample size to support both the complexity of gradient boosted trees and the heterogeneity of candidate profiles, enabling generalizable patterns without overfitting. Validation and testing datasets were selected from recent recruitment cycles not used in training to reflect current job market conditions.
+
+Potential biases were identified through subgroup performance analysis stratified by gender, age cohorts, and educational backgrounds. This analysis revealed minor representation imbalances in certain age brackets and underrepresentation of candidates from specific educational institutions. To prevent discriminatory impacts, bias mitigation techniques were applied during data preprocessing, such as reweighting samples from underrepresented groups and removing non-relevant proxy variables (e.g., postcode data correlated with protected characteristics). Additionally, model performance metrics were monitored across groups to detect and prevent disparate impacts.
+
+Where bias detection necessitated, limited processing of special categories of personal data occurred. This processing was strictly governed by technical safeguards including pseudonymisation, robust encryption of datasets in transit and at rest, role-based access controls with multi-factor authentication, and detailed audit logging. These data were not shared externally and were purged immediately following bias correction or upon retention period expiry, in accordance with data minimization principles and relevant EU data protection regulations.
+
+Relevant data gaps identified, such as under-sampling of candidates from emerging industries or minority demographics in some sectors, are being addressed through ongoing data collection partnerships and targeted synthetic data augmentation techniques that preserve statistical properties without inflating bias.
+
+### Relevance, Statistical Representativeness and Data Quality
+
+The training, validation, and testing datasets fulfill the criteria of relevance, representativeness, and completeness respective to the intended purpose of recruitment candidate ranking. The datasets encompass a wide array of sectors, job categories, and geographic regions within the EU labor market, reflecting realistic applicant pools encountered by enterprise recruiters.
+
+Error rates in data labeling were contained below 0.5%, verified through spot checks carried out by domain experts assisted by automated consistency validators. Completeness was ensured by a data imputation strategy that only substituted missing fields when at least 95% confidence was achievable based on correlated features, thereby minimizing the introduction of artificial variance.
+
+Statistical properties were analyzed to ensure the distributions of key attributes (education level, work experience, skill certifications) mirrored labor market statistics published by Eurostat and industry reports, confirming ecological validity. Stratified splitting of datasets into training (70%), validation (15%), and testing (15%) subsets maintained identical statistical profiles to promote consistent model evaluation.
+
+### Context-Specific Considerations
+
+Datasets accounted for geographical, functional, and behavioral contexts specific to EU recruitment environments. Regional differences in labor market dynamics, such as sector-specific hiring practices in Western vs Eastern EU regions, were represented through proportional data sampling and contextual metadata tagging. This approach ensures model applicability and fairness in varied operational settings.
+
+Behavioral contexts relevant to candidate interactions with application processes were incorporated, for example, through temporal data capturing application response times and assessment scores where available. Functional context—in terms of role types and recruitment stages—was clearly delineated within the dataset structure, enabling the model to apply distinct scoring logics tailored to entry-level versus managerial roles.
+
+### Processing of Special Categories of Personal Data
+
+In limited instances where bias detection required evaluation of sensitive personal data types (e.g., ethnic origin for discrimination bias assessment), Meridian Analytics Solutions implemented strict compliance measures aligned with Article 10(5). These included the non-replacement of such data by synthetic or anonymized equivalents where effectiveness was proven insufficient, application of pseudonymisation techniques, encryption, access restrictions strictly limited to authorized compliance and ML ethics personnel, and detailed documentation of all access and processing activities.
+
+No transmission or transfer of this data outside the provider’s secure environment occurred. Deletion protocols ensured the immediate removal of special category data upon the resolution of bias-related issues or reaching the end of retention timelines, consistent with the fundamental rights and privacy safeguards mandated.
+
+### Application to Non-Training Data Scenarios
+
+As this AI system employs model training techniques, provisions related to non-training data scenarios (Article 10(6)) apply only marginally to the testing datasets, which have been governed under the same rigorous data governance and bias mitigation protocols described above. All test data sets reflect representativeness and quality standards consistent with those applied during model development to ensure reliable and valid system performance evaluation.

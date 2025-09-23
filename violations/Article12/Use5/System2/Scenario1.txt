@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must be designed to create immutable, time-stamped logs capturing key decision points and system states continuously throughout all operational phases, ensuring no manual intervention is required to enable or maintain logging.
+
+[c] **Violation:**  
+The Recruitment Decision Forest only initiates detailed logging upon explicit manual activation by administrators, and otherwise logs minimal metadata insufficient to reconstruct decision paths; furthermore, logging ceases during system updates.
+
+[d] **Justification:**  
+This breach is subtle as logs exist but are not guaranteed automatically or comprehensively, violating the requirement for lifetime automatic logging. It realistically results in gaps in traceability if administrators forget or omit enabling logs, undermining continuous oversight without appearing as a blatant omission.

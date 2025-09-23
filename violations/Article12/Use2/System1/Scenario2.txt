@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for identifying situations that may result in the high-risk AI system presenting a risk ... or in a substantial modification."  
+
+[b] **Guideline:**  
+The logs must capture enough contextual data, including system inputs, intermediate model outputs, triggering conditions, and environmental parameters, to identify potential risk-inducing situations or when the system adapts or modifies itself.  
+
+[c] **Violation:**  
+The system logs only final anomaly detection alerts and timestamps but omits recording intermediate model confidence scores or sensor fusion weights that could indicate an emerging risk scenario or instability in model behavior.  
+
+[d] **Justification:**  
+Without logging granular intermediate outputs, diagnosing precursors to risk or system changes becomes impossible, undermining traceability. This breach is subtle because alerts are recorded, giving false assurance of compliance while critical causal data is missing.

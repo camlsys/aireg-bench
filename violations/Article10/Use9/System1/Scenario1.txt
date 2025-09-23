@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system. Those practices shall concern in particular: (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law, especially where data outputs influence inputs for future operations; (g) appropriate measures to detect, prevent and mitigate possible biases identified according to point (f);"
+
+[b] **Guideline:**  
+Experts must rigorously audit training data to detect biases related to protected attributes (e.g., ethnicity, gender, socioeconomic status) that could lead to discriminatory legal outcomes, and implement technical and procedural mitigation strategies, such as balanced sampling, bias-aware retraining, or algorithmic fairness constraints.
+
+[c] **Violation:**  
+Judicial Insight Assistant’s training data predominantly includes legal cases and statutory texts from jurisdictions with historically underrepresented minority groups, leading to limited examples of legal interpretations affecting those groups. No systematic bias detection or mitigation methods were employed on the GBDT classifier that processes fact patterns, resulting in subtle but consistent underestimation of legal precedents involving marginalized communities.
+
+[d] **Justification:**  
+This violation subtly breaches bias examination and mitigation requirements by failing to consider representativeness and fairness in the training set and model components, risking outputs that disadvantage protected groups. It is realistic because historical legal data often reflects systemic biases, and the absence of bias-focused measures can easily go unnoticed given the complexity of legal reasoning models.

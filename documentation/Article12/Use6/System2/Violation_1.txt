@@ -1,0 +1,27 @@
+**Article 12**
+
+**Scope and Purpose of Event Logging**
+
+Contractual Separation Insight incorporates a logging subsystem specifically designed to capture and record events related to the system’s critical decision points, notably those generating contract termination recommendations. This selective logging approach focuses the recording mechanisms on final, high-impact decision outputs as they are the principal junctures where adverse effects on workers may arise and where traceability is paramount for compliance, accountability, and audit purposes.
+
+The logging system records the full context of each contract termination recommendation, including the input datasets used to generate the recommendation, the versioned parameters of the ensemble random forest models and the large language models (LLMs) employed for policy interpretation, the precise timestamp of decision generation, and the output results such as risk assessments and recommended actions. Additionally, metadata on the system configuration and model ensemble voting patterns are logged to enable detailed post hoc analysis.
+
+**Logging Design Decisions and Rationale**
+
+The design decision to activate logging exclusively during select high-impact decision events—specifically contract termination recommendations—was informed by a risk-based assessment prioritizing maximum traceability at points of significant potential impact on individuals. This approach aligns with the operational reality that intermediary stages, including iterative parameter tuning and data preprocessing, occur frequently and generate voluminous intermediate states that would substantially increase logging storage and processing overhead without commensurate compliance benefit given their indirect effect on affected individuals.
+
+To support this, the system employs a modular logging framework integrated with its orchestration layer. Each module corresponding to data ingestion, model inference, and output generation includes discrete event hooks. However, logging hooks are programmatically enabled only in the output generation module that finalizes contract termination recommendation results. This selective enabling mechanism prevents logging of intermediate updates such as input data refinements or model re-training cycles conducted offline or in preliminary stages.
+
+**Alignment with Traceability Requirements**
+
+This selective logging design directly supports the traceability requirements articulated in Article 12(2) by enabling identification of situations that may lead to high-risk outputs (Article 12(2)(a)), as all relevant decision output data and system states involved in final recommendations are recorded. This logged evidence facilitates thorough post-market monitoring activities (Article 12(2)(b)) by maintaining immutable records of the decision-making context relevant for compliance reviews and incident analyses. Furthermore, monitoring the operation of the system during active deployment and decision issuance is supported (Article 12(2)(c)) by capturing real-time recommendation event sequences, allowing operational oversight and performance assessment across the system lifetime.
+
+**System Components and Logging Implementation Technical Details**
+
+- **Model Ensemble and Runtime Configuration**: Contractual Separation Insight’s core AI components comprise a voting ensemble of 50 random forest classifiers trained on 1.2 million employee performance and behavior datapoints, coupled with transformer-based LLMs fine-tuned on a 100,000-document corpus of corporate policies and labor regulations. Model versions and hyperparameters are managed through version control systems, with configurations recorded in a central registry.
+
+- **Logging Infrastructure**: Logs are generated in structured, tamper-evident JSON format, timestamped to millisecond precision, and transmitted securely via encrypted channels to a centralized log management system based on a cloud-native Elasticsearch cluster, configured for high availability and retention consistent with regulatory retention policies (minimum 5 years). The logging schema captures all data inputs influencing the output decision, model version identifiers, applied data transformations, and the final recommendation outcome.
+
+- **Exclusion of Intermediate Stage Logging**: Despite maintaining internal audit trails for development and quality assurance purposes, system runtime logging explicitly excludes automatic recording of intermediate analysis stages, such as modifications to input datasets or model parameter tuning events, which typically occur in isolated development or staging environments. These stages are managed under separate governance processes and environment controls, outside the production runtime logging domain.
+
+This implementation reflects a considered balance between comprehensive traceability of high-risk decision outputs and operational efficiency, minimizing data volume while focusing record generation on system states most relevant to potential risk manifestations under the system’s intended use case.

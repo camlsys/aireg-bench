@@ -1,0 +1,37 @@
+**Article 10**
+
+### Data Governance and Management Practices for Training, Validation, and Testing Data Sets
+
+The training, validation, and testing data sets for the Election Sentiment Transformer are derived primarily from large-scale social media data streams originally collected by Horizon Analytics Group under infrastructure designed for general user engagement analysis. The data encompass publicly available posts, comments, and reactions across multiple popular European social media platforms, amounting to approximately 4.7 billion text snippets collected over a continuous 14-month period ending December 2024. Data governance decisions prioritized acquisition efficiency and volume to support fine-tuning of the encoder-only transformer model’s natural language understanding to achieve high-throughput analysis.
+
+Key design choices concerning data sourcing were taken with the understanding that the data were initially collected for broad engagement optimization rather than explicit political sentiment analysis. This origin and initial purpose were documented internally; however, the repurposing of these data sets towards political sentiment prediction and influence was not accompanied by a corresponding update or formal expansion of the documented original purposes or appropriate user consent protocols. The data preparation pipeline includes standard cleaning (removal of non-alphanumeric characters, URL stripping, and language filtering restricted to EU official languages—English, French, German, Spanish, and Italian), rudimentary human annotation of about 120,000 sample posts for initial sentiment polarity and topical relevance, and ongoing periodic dataset enrichment to incorporate emergent linguistic expressions characteristic of political discourse.
+
+Assumptions underpinning the data reflect that social media user expressions function as a proxy measure for prevailing public sentiment trends, with the limitation that these data sets do not equate to statistically representative samples of the voting population. Although general user engagement data sets were integrated, their validity in capturing reliably the political opinions of diverse demographic groups was not extensively assessed prior to model training. This was due in part to the high volume and velocity of data ingestion favoring scale over depth of representativeness analysis.
+
+### Relevance, Representativeness, and Data Quality
+
+The overall data sets meet baseline quality criteria for text-based AI training workflows, including a cleaning error rate below 0.7%, and annotation inter-rater reliability evaluated at 82% Cohen’s kappa on sentiment labels. Nevertheless, representativeness in relation to the electoral contexts targeted by the system is limited. Geographic metadata, where available in 43% of posts, suggest uneven coverage across EU member states, with notable underrepresentation of posts originating from rural and older demographic cohorts. Further, demographic profiling is incomplete due to the anonymized nature of data and absence of explicit user-provided consent for demographic attribute extraction.
+
+Data completeness also varies: approximately 9% of collected posts lacked timestamp metadata or sufficient linguistic content for inclusion in training and validation cycles, resulting in partial exclusion from downstream model updates. Statistical properties of the compiled data sets were analyzed with respect to term frequency distributions and sentiment polarity balance, revealing a slight positive skew toward favorable sentiment expressions linked to dominant political parties.
+
+### Geographical and Contextual Specificity
+
+Geographical, contextual, and behavioural factors characteristic of the European electoral milieu were considered at an aggregate level through regional language filters and temporal alignment with major electoral events. However, detailed consideration of political pluralism or cultural differences between regions was not encoded into data selection or model architecture. The system does not currently adjust for or annotate political sentiment nuances unique to localized political environments. Contextual metadata such as post source type (individual vs. organizational account) or platform-specific discourse features were logged but not exploited during model training or validation phases.
+
+### Bias Identification, Risk Assessment, and Mitigation Measures
+
+Internal assessments identified multiple levels of potential bias that could affect the system’s outputs and thereby influence political sentiments. Bias sources detected include sampling bias due to overrepresentation of urban and youth demographics, language bias favoring popular EU languages, and content bias arising from the original engagement-centric data collection objective. The absence of explicit user consent for political profiling introduces ethical and fundamental rights considerations not formally mitigated by design.
+
+Automated bias detection tools run on initial annotated validation sets flagged imbalances in sentiment distribution related to certain political party mentions, indicating model sensitivity to prevailing media trends rather than equitable opinion representation. Standard mitigation practices included data resampling and calibration of model output probabilities to reduce overt sentiment favoritism, but no targeted interventions were implemented to correct for demographic underrepresentation or legal compliance risks associated with data repurposing.
+
+Further, no specialized technical safeguards such as differential privacy, data minimization strategies, or purpose limitation implementations were applied to the original social media data for their secondary use in political sentiment prediction and influence. This reflects a gap in the internal data governance framework concerning the lawful and ethical extension of data use beyond original collection purposes.
+
+### Identification of Data Gaps and Compliance Challenges
+
+Notable data gaps include insufficient demographic tagging due to anonymization and lack of explicit consent for political data processing, poor geographic granularity across several EU member states, and absence of comprehensive context enrichment to capture multifaceted political discourse. These shortcomings limit the ability to produce fully representative and bias-resilient models aligned with the intended purpose of predicting and influencing electoral sentiment.
+
+While these gaps are recognized internally, planned remedial actions focus on scaling data volume and improving annotation throughput rather than on revisiting data origin justification, consent frameworks, or legal compliance documentation. Thus, measures addressing the regulatory compliance challenges posed by repurposing of personal data without renewed consent or lawful basis have not been systematically integrated into the technical or operational lifecycle of the Election Sentiment Transformer model development.
+
+---
+
+This documentation reflects the current data practices and governance standards applied to the training and validation sets underpinning the Election Sentiment Transformer system and is intended to facilitate detailed compliance assessment against the data quality and management requirements of Article 10 of the EU AI Act.

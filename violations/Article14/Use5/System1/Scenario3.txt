@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"4 (e) to intervene in the operation of the high-risk AI system or interrupt the system through a ‘stop’ button or a similar procedure that allows the system to come to a halt in a safe state."
+
+[b] **Guideline:**  
+The system must enable easily accessible, dependable mechanisms for human users to halt or pause the AI’s processing mid-execution to prevent potentially harmful or unintended filtering decisions, especially if problematic behaviors or erroneous matches are suspected.
+
+[c] **Violation:**  
+The Talent Insight Model’s deployment pipeline does not include a user-accessible 'stop' function or emergency halt in its operational interface; once a batch job for ranking candidates starts, HR users cannot interrupt or pause it before full completion, forcing them to accept all AI inference results irrespective of emerging concerns.
+
+[d] **Justification:**  
+While the AI model itself is technically robust, the omission of user-empowering interruption controls hinders safe human oversight aligned with regulatory expectations. The absence is subtle, as many users may not recognize the importance of halting mid-process until unintended consequences emerge, making it a realistic but often overlooked compliance gap.

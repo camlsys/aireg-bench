@@ -1,0 +1,19 @@
+**Article 12**
+
+### Implementation of Automated Event Logging over System Lifetime
+
+Insight Proctor Analytics incorporates a comprehensive automated logging framework designed to capture and securely store detailed event records continuously throughout the entire operational lifetime of the system instance. Logs are generated in real-time, triggered by each AI inference and system interaction, including video feed analyses, semantic correlation processes, and system status updates. The logging infrastructure is implemented using a tamper-evident, append-only architecture employing cryptographic hashing and secure timestamping to maintain integrity and chronological order of records. This approach ensures immutable audit trails for event reconstruction and verification.
+
+The system’s logging mechanism captures multi-modal input processing checkpoints, including raw video frame ingestion, intermediate feature embeddings from the Vision Language Model pipeline, semantic matching scores against exam metadata, and final behavioral anomaly detection outputs. These detailed event records support granular traceability from raw data to decision outputs, facilitating thorough examination during compliance assessments or incident investigations. Logs are retained in accordance with established data retention policies that balance operational needs with data minimization principles.
+
+### Recorded Event Categories Supporting Risk Identification and System Monitoring
+
+To fulfill requirements for traceability relevant to risk identification, post-market surveillance, and operational oversight, Insight Proctor Analytics logs encompass the following categories:
+
+- **Risk-Indicative Situations**: The system logs detected behavioral anomalies flagged by confidence thresholds calibrated through continuous validation (e.g., suspicious gestures, unauthorized communication attempts). Each flagged event entry includes video segment references, detection confidence scores, semantic match metrics, temporal metadata, and contextual exam identifiers. Threshold adjustments and model update events are also logged to document any substantial changes that could alter system risk profiles.
+
+- **Post-Market Monitoring Facilitation**: Event logs include performance metrics such as false positive and false negative incident rates, feedback summaries from human oversight panels, and system self-diagnostic outputs. These data assist in identifying drifts in model behavior or environmental factors affecting reliability. Regular aggregation of these logs supports trend analysis crucial for post-deployment conformity assessments as mandated under continued compliance frameworks.
+
+- **Operational Monitoring**: System health metrics—covering model inference latency, video stream integrity, hardware status, and API interaction logs—are continuously recorded. Additionally, user authentication events and access logs ensure accountability for operators interacting with the system’s administrative interfaces. These metrics support real-time monitoring and proactive maintenance actions to uphold consistent system availability and performance.
+
+All logging data are protected under strict access controls and encryption both at rest and in transit, aligning with best practices to safeguard sensitive educational and personal data. Logging implementation has been verified through extensive internal audits and third-party assessments to ensure completeness, reliability, and alignment with the intended purpose of risk and operational traceability.

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"2. The risk management system shall be understood as a continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic review and updating."  
+
+[b] **Guideline:**  
+Experts would implement a documented procedure for ongoing periodic reviews and updates of risk assessments at multiple lifecycle stages, including pre-deployment, deployment, post-deployment, and following significant system updates or detected anomalies. This involves timely adaptation to emerging risks, especially in contexts with evolving political climates and disinformation tactics.  
+
+[c] **Violation:**  
+The Political Influence Analyzer risk management process is only reviewed during initial deployment and neglects scheduling systematic updates throughout its operational lifecycle, even as political discourse dynamics and data inputs evolve significantly post-deployment. This leads to stale risk assessments that do not reflect newly emerging manipulation vectors or changing voter vulnerabilities.  
+
+[d] **Justification:**  
+Failing to maintain an iterative risk management cycle means the system may miss detecting novel risks or deteriorations in performance related to real-world political shifts, violating the requirement for continuous review. This violation is subtle because system documentation may present initial risk analysis competently, but the practical absence of scheduled updates undermines compliance in a way not readily apparent without close operational audit.  
+
+---

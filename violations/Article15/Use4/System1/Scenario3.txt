@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. ... The technical solutions to address AI specific vulnerabilities shall include ... measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning) ... or inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)."
+
+[b] **Guideline:**  
+The system must implement cybersecurity measures including input validation, anomaly detection for input patterns, and training data integrity checks to prevent adversarial manipulation of inputs or data poisoning attacks that could degrade detection accuracy or cause false negatives/positives.
+
+[c] **Violation:**  
+Insight Proctor Analytics does not include layered defenses against adversarial video manipulations, such as carefully crafted optical camouflage (e.g., patterned clothing or background displays), which cause the model to systematically misclassify suspicious behaviors as benign, resulting in stealth evasion during live exams.
+
+[d] **Justification:**  
+This violation is subtle because adversarial attacks exploiting visual input vulnerabilities can be sophisticated and not easily detected without deliberate testing. The lack of adversarial robustness measures exposes the system to stealth manipulations that compromise integrity, violating Article 15(5) without any overt cybersecurity breach or system crash.

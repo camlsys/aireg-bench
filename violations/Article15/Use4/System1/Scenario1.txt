@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle."
+
+[b] **Guideline:**  
+The system must maintain stable accuracy and robustness during deployment and updates, avoiding performance degradation due to environmental changes or evolving input distributions (e.g., differing lighting conditions, atypical student behavior). Consistency over time must be verified by continuous monitoring and validation on new data.
+
+[c] **Violation:**  
+Insight Proctor Analytics experiences gradual accuracy decline in detecting suspicious gestures during longer exam sessions with variable lighting and camera angles, without automated recalibration or alerts signaling reduced robustness. The model updates do not incorporate mechanisms to detect or correct this drift over its lifecycle.
+
+[d] **Justification:**  
+This violation is subtle because initial accuracy benchmarks might be met, but operational variability—such as changes in room lighting or camera placements—can degrade detection without triggering immediate system failures. The lack of lifecycle performance management means the system fails to maintain consistent robustness as required, breaching Article 15(1) even though no single blatant error occurs.
+
+---

@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"4. For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate: (b) to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias)..."
+
+[b] **Guideline:**  
+The system should incorporate explicit warnings, training modules, or interface design elements (e.g., confidence intervals, disclaimers) that encourage users to critically evaluate AI output and not blindly accept alerts—thereby mitigating automation bias and promoting active human judgment.
+
+[c] **Violation:**  
+Insight Proctor Analytics lacks any visual or training cues alerting proctors to the possibility of false positives or false negatives and does not provide mechanisms to highlight uncertainty, leading proctors to treat the AI’s decisions as infallible indicators of misconduct.
+
+[d] **Justification:**  
+This scenario fosters subtle automation bias because proctors may over-rely on the system’s output without heightened scrutiny, increasing risk of wrongful accusations or inaction on false negatives. Although the system aims to aid decisions, the absence of bias mitigation measures breaches the oversight requirement in a nuanced but impactful manner.
+
+---

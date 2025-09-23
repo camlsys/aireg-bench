@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"For the purpose of implementing paragraphs 1, 2 and 3, the high-risk AI system shall be provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled... to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system (automation bias)..." (Art. 14(4)(b))
+
+[b] **Guideline:**  
+The system must incorporate design features and user training that make users consciously aware of the risks of automation bias, such as alerting users to avoid blind trust and encouraging critical assessment of the AI output in relevant contexts, particularly when scores diverge from expectations.
+
+[c] **Violation:**  
+The system interface prioritizes presenting competency scores as authoritative without contextual warnings or reminders to instructors and trainees that scores are probabilistic estimates subject to uncertainty and possible error. Training materials fail to emphasize the risk of automation bias or strategies to counteract it.
+
+[d] **Justification:**  
+By not addressing users’ susceptibility to automation bias through design and education, the system increases the risk that users will over-rely on the competency scores, potentially leading to inappropriate instructional decisions. This violation is subtle because the system does not produce obviously misleading outputs, but its presentation encourages uncritical acceptance.
+
+---

@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."  
+
+[b] **Guideline:**  
+The system must implement automated, tamper-resistant logging mechanisms that continuously capture operational events, inputs, decisions, and system states without requiring manual intervention, ensuring complete traceability over the entire operational lifetime.  
+
+[c] **Violation:**  
+Gas Safety Insight only triggers logging when a predefined anomaly threshold is exceeded, neglecting to continuously record routine sensor inputs and decision contexts during normal operation periods.  
+
+[d] **Justification:**  
+By selectively logging only anomalous events, the system fails to automatically and comprehensively record all relevant events over its lifetime, which limits post-incident analysis and traceability. This omission is subtle because the system still produces logs, but lacks the completeness required by Article 12(1).

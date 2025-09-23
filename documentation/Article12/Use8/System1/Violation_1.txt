@@ -1,0 +1,33 @@
+**Article 12**
+
+### Design and Scope of Logging Mechanisms
+
+Priority Response Analytics employs a conditional event logging framework optimized for operational relevancy and data management efficiency. The system’s logging mechanism is architected to activate detailed event logs exclusively during prioritized incident evaluation phases initiated by human dispatch operators. Specifically, when a dispatcher flags an incident prioritization round for active review, the system initiates comprehensive recording of internal decision points, key intermediate model outputs, feature importance metrics from the Gradient Boosted Decision Tree (GBDT), and processed representations from the Transformer encoder. This design choice was predicated on a balanced assessment between operational traceability requirements and constraints on storage, processing latency, and adherence to data minimization principles.
+
+As a result, no automatic or continuous event logging occurs during system idle states, startup routines, or background health checks. Routine operational states that do not involve active prioritization do not generate log entries. This approach inherently limits the creation of a complete, continuous lifetime log, instead generating detailed trace data exclusively around the temporal windows of dispatcher-initiated prioritization events.
+
+### Event Recording Relevant for Risk Identification
+
+The event log schema captures situational data pertinent for identifying potential risk conditions as outlined under Article 79(1), by archiving system state indicators during incident prioritization. Logged data includes probabilistic urgency scores, feature vectors from incident data, and textual attention weights produced by the Transformer encoder on dispatcher notes. Any anomalies in model confidence, input feature distribution shifts, or atypical text embeddings detected during a prioritization round trigger a dedicated risk flag attribute in the event logs. These risk flags support retrospective analysis to detect cases where system outputs may substantively diverge from expected patterns, potentially signaling system performance degradation or substantial modifications.
+
+No risk-relevant logging occurs outside of flagged prioritization rounds, limiting traceability of risk factors during idle or initialization phases. Nonetheless, system diagnostics and health monitors produce separate non-continuous system status reports that, due to architectural separation, are not yet integrated with priority event logs.
+
+### Facilitation of Post-Market Monitoring Activities
+
+The logging system’s focus on dispatcher-initiated prioritization rounds aligns with the objective of enabling post-market monitoring (Article 72) by preserving detailed audit trails linked directly to operationally significant decision points. Logs capture model outputs, input data snapshots, and dispatcher annotations for each prioritized incident, facilitating meaningful correlation between AI system decisions and real-world outcomes. This data supports Sentinel Technologies’ ongoing monitoring and performance evaluation activities, including drift detection in GBDT feature importance and Transformer text encoding stability over time.
+
+The selective logging strategy was implemented to conform with data minimization and GDPR principles while maintaining an actionable dataset for post-market validation. It necessitates close cooperation with deploying agencies to ensure dispatcher workflows incorporate consistent flagging of prioritization rounds. As a result, monitoring activities inherently rely on event completeness only during active prioritization episodes rather than the entire system lifetime.
+
+### Operational Monitoring of AI System Functionality
+
+To support operational monitoring as per Article 26(5), Priority Response Analytics integrates real-time telemetry dashboards that summarize prioritization event logs, including temporal aggregation of incident counts, severity score distributions, and dispatcher override rates. These dashboards derive their data exclusively from logged prioritization rounds. Continuous system health metrics—CPU utilization, memory usage, and model inference latency—are separately collected and accessible to backend engineers but are maintained independently of event logs.
+
+The logging modality intentionally excludes idle and initialization phase events, resulting in operational monitoring that does not fully encompass the system’s lifetime state transitions. Instead, this approach privileges granularity and comprehensiveness during periods of active human-AI interaction, reflecting a deliberate provider decision prioritizing meaningful traceability over exhaustive lifecycle logging.
+
+### Rationale and System-Level Compliance Decisions
+
+The chosen logging design balances compliance requirements for traceability with practical constraints in emergency dispatch environments characterized by intense real-time processing demands and high data privacy considerations. Sentinel Technologies conducted an internal impact assessment reviewing storage overhead, latency impact, and sensitivity of continuous full-lifecycle logging. Findings indicated that logging only during dispatcher-invoked prioritization rounds achieves a pragmatic compromise, ensuring detailed traceability where critical decisions are made, without incurring disproportionate operational overhead or introducing unnecessary data capture during non-operational periods.
+
+Evaluations and adversarial testing were conducted on a corpus of 250,000 anonymized incident records with associated dispatcher notes. Performance metrics for the logging subsystem confirmed log generation latency below 100 milliseconds during prioritization rounds, with stable throughput under peak loads exceeding 200 simultaneous dispatch sessions. Risk event flags demonstrated 92% precision in identifying statistically significant deviations in model confidence when benchmarked against simulated data drift scenarios.
+
+This selective logging protocol, while limiting completeness of full-lifetime event coverage, enables focused compliance with traceability mandates correlated to real-world deployment risk and operational contexts, aligning the technical solution with the intended purpose of the system and its high-risk classification.

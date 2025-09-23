@@ -1,0 +1,49 @@
+**Article 14**
+
+### Design for Effective Human Oversight During Use
+
+Priority Response Analytics is engineered to support emergency dispatchers by generating high-level priority scores and automated recommendations derived from the integration of a Gradient Boosted Decision Tree (GBDT) model and a Transformer encoder processing textual dispatch notes. The system’s user interface deliberately provides a summary priority assessment without exposing intermediate model components or feature-level attributions. This design choice reflects a conscious provider decision prioritizing streamlined operational workflows and minimizing dispatcher cognitive overload during high-pressure scenarios.
+
+The interface features clearly defined priority categories (e.g., “Critical,” “High,” “Medium,” “Low”) with accompanying top-level suggestions for resource allocation. These priority outputs are refreshed in real-time, with latency maintained under 500 milliseconds to support swift decision-making. The provider’s internal testing on datasets totaling approximately 2 million historical emergency calls, balanced across police, fire, and medical incidents, demonstrated stable output consistency but also highlighted technical challenges in producing reliable, real-time explainability metrics without introducing excessive complexity or performance degradation. As a result, detailed explanations or saliency maps for individual predictions are omitted in the deployed system.
+
+### Measures to Prevent or Minimize Health, Safety, and Rights Risks
+
+To mitigate risks linked to potential erroneous assessments, Priority Response Analytics incorporates redundant safety mechanisms embedded at the system level. The AI outputs are designed strictly as decision support tools — final dispatch decisions remain under dispatcher control, supported by established operational protocols. The system triggers automated alerts when input data aberrations or missing critical fields arise (e.g., absent incident location or conflicting report attributes), advising dispatchers to apply manual review rather than blindly relying on priority scores.
+
+Moreover, development employed rigorous adversarial robustness testing using synthetic perturbations modeled after common data entry errors and ambiguous textual notes. For example, 98% stability was observed under synonym substitution attacks in textual inputs, ensuring that minor variations did not lead to disproportionate priority changes. Despite the absence of output interpretability for end users, these validations form part of the provider’s evidence to minimize harm risks associated with undue over- or under-prioritization.
+
+### Oversight Measures Integrated by the Provider
+
+Given the system’s operational context, provider-embedded oversight measures focus primarily on technical monitoring and fail-safe features actionable before or during deployment:
+
+- **Performance Monitoring Dashboards:** Internal provider tools continuously track model input distributions, output score trends, and latency metrics. Alerts flag anomalous patterns, prompting timely retraining cycles or model updates. For instance, seasonal variations in incident types are accounted for by quarterly dataset refreshes with over 1.5 million new records.
+
+- **Input Validation and Quality Controls:** Structured data inputs undergo schema validation, enforcing integrity constraints such as geographic coordinate accuracy and incident type codification. Textual inputs are filtered using natural language preprocessing pipelines that flag out-of-scope or nonsensical entries.
+
+- **Emergency Stop and Fail-Safe Modes:** The user interface incorporates a prominently placed "pause AI recommendations" control, enabling dispatchers to temporarily suspend system outputs and proceed solely on their expertise during exceptional events (e.g., system instability or suspect priority assessments).
+
+The provider explicitly documents these measures within the system’s architecture specifications and testing reports prior to market release to meet traceability and audit requirements.
+
+### Provision of Tools and Information to Support Dispatcher Oversight
+
+While Priority Response Analytics refrains from exposing detailed model interpretability features, it provides dispatchers with concise system information and operational guidelines to promote appropriate usage awareness:
+
+- **Capabilities and Limitations Summary:** Upon system initialization and in user manuals, dispatchers are informed that priority scores are generated from combined structured and unstructured data analysis through opaque machine learning models whose internal decision rationale is not displayed. This clarifies expected system behavior and informs boundaries of usability.
+
+- **Automation Bias Mitigation Prompts:** User training emphasizes potential automation bias, recommending that dispatchers apply their judgment especially when system outputs diverge from contextual information or evident facts. Tactical reminders embedded in the interface encourage reflection rather than unquestioned acceptance.
+
+- **Output Interpretation Guidance:** The system’s discrete priority bands are supplemented with definitions describing general incident severity thresholds but do not offer feature attribution or score decomposition. This framing guides dispatchers in understanding the AI’s outputs as aggregated risk assessments rather than deterministic predictions.
+
+- **Overriding and Intervention Capability:** Dispatchers retain full authority to disregard or override AI-generated priorities. Operational procedures explicitly mandate dispatcher accountability for final call triage decisions, regardless of system recommendations. This is supported by system logs capturing when overrides occur, enabling retrospective analysis.
+
+- **Control to Interrupt or Halt AI Output:** The interface includes a readily accessible function to suspend automated recommendations while maintaining access to raw incident data and historical records, ensuring continuity of operational decisions without AI influence when necessary.
+
+### Records of Processing Activities and Data Handling
+
+Priority Response Analytics processes personal data derived from emergency incident reports, including special categories where necessary (e.g., health-related information in medical emergencies). Provider data governance stipulates that processing of sensitive data is strictly limited to model training and validation stages aimed at bias detection and correction. For example, targeted sampling of approximately 150,000 labeled records reflecting diverse demographic and incident contexts was employed during model fairness audits to identify potential skew in priority outputs.
+
+The provider documented that alternative bias mitigation approaches were insufficient without sensitive data usage due to the complex interplay of linguistic and structured factors impacting severity assessment accuracy. Records of processing activities include detailed justifications for such data use, aligned with legislative obligations on data minimization and necessity. Furthermore, comprehensive data anonymization and pseudonymization techniques were applied wherever feasible throughout the development lifecycle.
+
+---
+
+This documentation presents the considered design features and technical controls implemented by Sentinel Technologies that collectively shape the human oversight framework for Priority Response Analytics while reflecting the system’s operational realities and constraints.

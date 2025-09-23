@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"4.(d) to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system;"
+
+[b] **Guideline:**  
+The system must be designed so that users retain clear and feasible control to override or ignore AI decisions or alerts in real-time, supported by mechanisms ensuring the override is practical and its consequences are communicated.
+
+[c] **Violation:**  
+While Pipeline Safety Guardian issues alerts and recommendations, the override procedure is cumbersome and requires navigating multiple menus with delayed effect, and field technicians report that urgent overrides in fast-changing environments frequently fail to immediately halt automated safety interventions triggered by the system.
+
+[d] **Justification:**  
+This subtle interface and procedural complexity hampers timely human intervention and compromises user authority to disregard or reverse AI outputs in critical situations, violating the requirement that users be empowered to decide on system usage in each instance.
+
+---

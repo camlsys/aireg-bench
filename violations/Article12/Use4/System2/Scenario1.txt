@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall technically allow for the automatic recording of events (logs) over the lifetime of the system."
+
+[b] **Guideline:**  
+The system must implement continuous and automated logging mechanisms capturing input, decisions made by the AI, system state changes, and outputs throughout its deployment, without requiring manual initiation. Logs should be tamper-resistant and retained for the entire operational lifetime to ensure transparency and accountability.
+
+[c] **Violation:**  
+The Academic Compliance Monitor only triggers logging upon detection of flagged anomalies rather than continuously recording all system events, resulting in gaps where normal or borderline behaviors and intermediate decision points are not logged.
+
+[d] **Justification:**  
+This violation breaches the requirement for automatic logging over the system’s lifetime because logging is event-triggered, not continuous, leading to incomplete event trails. It is subtle as the system does keep logs but they are partial and conditional, undermining traceability without obvious omission.
+
+---

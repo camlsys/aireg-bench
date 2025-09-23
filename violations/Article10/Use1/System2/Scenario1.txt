@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Training, validation and testing data sets shall be subject to data governance and management practices appropriate for the intended purpose of the high-risk AI system... (f) examination in view of possible biases that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law..."
+
+[b] **Guideline:**  
+Experts must thoroughly analyze the training and testing data for biases related to demographic factors (e.g., age, mobility, ethnicity) that could affect detection accuracy for different road user groups, ensuring that the dataset does not systematically underrepresent vulnerable populations, such as pedestrians with disabilities or cyclists.
+
+[c] **Violation:**  
+The Guardian Signal Controller’s training data predominantly includes video footage from urban intersections with high vehicular density but lacks sufficient examples of pedestrian behavior in rural or suburban settings, especially of elderly or disabled individuals, resulting in weaker anomaly detection for these groups.
+
+[d] **Justification:**  
+This subtle bias leads to reduced safety for underrepresented pedestrian subgroups, potentially increasing accident risks for vulnerable road users. Because the data shows imbalance but the system’s performance metrics do not clearly flag these gaps, this issue could go unnoticed while still constituting a violation of the requirement to examine and mitigate biases affecting health and safety.
+
+---

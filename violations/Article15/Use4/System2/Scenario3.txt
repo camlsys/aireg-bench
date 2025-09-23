@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be resilient against attempts by unauthorised third parties to alter their use, outputs or performance by exploiting system vulnerabilities. The technical solutions to address AI specific vulnerabilities shall include, where appropriate, measures to prevent, detect, respond to, resolve and control for attacks trying to manipulate the training data set (data poisoning), or pre-trained components used in training (model poisoning), inputs designed to cause the AI model to make a mistake (adversarial examples or model evasion)..."  
+
+[b] **Guideline:**  
+Security experts require implementation of detection mechanisms for adversarial input patterns and poisoning attacks, including anomaly detection within model inputs and integrity checks on training data and pre-trained embeddings. Periodic threat assessments and countermeasures (e.g., input sanitization, robust training algorithms) must be embedded to maintain cybersecurity and prevent manipulation.  
+
+[c] **Violation:**  
+The system does not incorporate any defenses against adversarial audio perturbations or crafted keystroke sequences that subtly alter model inputs to evade anomaly detection or trigger false negatives. A malicious actor familiar with the system’s logging process can inject minimal adversarial noise into the audio stream or artificially simulate normal keyboard timing patterns, effectively bypassing the AI without raising suspicion.  
+
+[d] **Justification:**  
+This violation demonstrates insufficient resilience to adversarial evasion attacks consistent with Article 15(5). Although the system’s technical scope and real-time constraints might have deprioritized adversarial defense, this omission leaves it vulnerable to subtle manipulations that realistically occur in high-stakes exam monitoring. The risk is not obvious until exploited, making this a plausible and covert compliance failure.

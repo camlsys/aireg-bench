@@ -1,0 +1,43 @@
+**Article 10**
+
+**Data Governance and Management Practices**
+
+The training dataset for Priority Response Analytics consists primarily of 1.2 million emergency call transcripts collected over a period of five years from multiple regional public safety answering points (PSAPs) within the EU. These transcripts include both structured incident records and unstructured textual dispatch notes. The original data was collected for operational record-keeping and service improvement purposes under established emergency management protocols, without explicit consent or documented legal grounds for AI model development or secondary processing. Consequently, the original purpose of data collection was not formally assessed or aligned with the AI development objectives prior to dataset utilization.
+
+Data governance decision-making was shaped by this origin. Sentinel Technologies documented the provenance and characteristics of the transcript data, explicitly treating the original collection context as operational rather than research-oriented, with limited metadata available regarding explicit user permissions. No additional primary data collection was undertaken by the provider. This constraint was incorporated into a risk-based approach for data use and processing in system development. Data lineage tracing, version control, and data anonymization attempts were performed during dataset curation to mitigate identifiable personal information, although the raw data still contained sensitive personal data elements embedded within conversation narratives.
+
+Annotations and preprocessing focused on extracting and structuring key emergency categories, caller descriptions, and incident attributes. Textual data underwent manual review and automatic normalization, including tokenization and entity tagging aligned to emergency response terminologies. Updates to the dataset included temporal filtering to remove obsolete or irrelevant incident types and enrichment through linking to non-identifiable geographic metadata for contextualization. These data-preparation steps were conducted under controlled environments to limit data exposure.
+
+**Assumptions and Representativeness**
+
+The assumption underlying dataset design was that the historical emergency call data reasonably represents the variations in urgency, incident types, and caller behavior relevant to the dispatch decisions Priority Response Analytics aims to support. However, no explicit alignment analysis was conducted to verify that the original operational dataset statistically mirrors the specificities required for AI safety and accuracy, such as consistent labelling of urgency levels aligned with AI model output classes.
+
+To assess availability and suitability, an internal audit revealed that approximately 85% of transcripts retained sufficient completeness and quality for training purposes after cleansing. The remaining 15% were excluded due to severe transcription errors or incomplete call logs. The dataset maintains a balanced representation across primary emergency categories (medical 40%, fire 35%, police 25%), ensuring coverage of critical use cases, but the distribution may have temporal and regional biases linked to original collection epochs and PSAPs involved.
+
+**Bias Identification and Mitigation Measures**
+
+An extensive bias examination was conducted focusing on key risk factors impacting health and safety and fundamental rights, such as geographic disparities and socio-demographic representation among callers. Analysis detected potential underrepresentation of minority language groups and caller profiles from low-population regions, which could propagate inequities in prioritization. Further, uneven urgency categorization practices across original PSAPs introduced label inconsistency risks.
+
+In response, the provider implemented bias detection pipelines using statistical disparity metrics (e.g., disparate impact ratio, equalized odds difference) comparing model output distributions across identified subgroups. Mitigation approaches included data balancing through synthetic minority oversampling and reweighting techniques during GBDT training. For textual data processed by the Transformer encoder, attention-based interpretability tools were applied to flag disproportionate influence of non-urgent call patterns associated with certain demographics. Model retraining cycles incorporated feedback loops driven by these analyses.
+
+However, the provider acknowledges that bias mitigation is constrained by inherent limitations in controlling the data collection origin and by the absence of explicit legal basis or consent for repurposing personal data for AI development.
+
+**Data Set Limitations and Addressing Shortcomings**
+
+Comprehensive documentation was prepared outlining identified data gaps, including incomplete caller consent documentation, lack of metadata on caller identity verification, and potential inaccuracies in manual incident labelling. The provider assessed these gaps for their impact on compliance with the Regulation, recognizing challenges in fully meeting quality and representativeness criteria under Article 10.
+
+To address shortcomings, Sentinel Technologies adopted technical safeguards such as pseudonymization of all personal identifiers within training data and implemented access control systems limiting dataset access to authorised personnel with confidentiality obligations enforced through contractual and organisational measures. All personal data processing adheres to state-of-the-art encryption both at rest and in transit. Logging and audit trails record data handling activities to ensure traceability.
+
+Furthermore, ongoing efforts include exploring alternative data augmentation methods and synthetic data generation to reduce reliance on unconsented personal datasets while maintaining performance and bias detection capabilities. This includes experimental evaluation of generative adversarial networks (GAN)-based simulation of emergency incidents to supplement underrepresented data segments.
+
+**Compliance with Special Categories of Personal Data Processing**
+
+Given the presence of personal and sensitive information embedded within emergency call transcripts, processing special categories of personal data was strictly limited to the degree necessary for bias detection and correction. The provider ensured technical measures such as pseudonymization and strict access governance were implemented to reduce exposure of sensitive personal data, conforming with conditions analogous to those outlined in Article 10(5).
+
+No transmission or transfer of these data outside controlled environments occurred. Data retention policies enforce deletion of personal data following model development cycles or upon identified correction of bias issues. Sentinel Technologies maintains comprehensive records detailing the scope and duration of such processing and the safeguards applied.
+
+**Consideration of Contextual and Functional Specificities**
+
+The datasets were evaluated with respect to the contextual factors pertinent to EU emergency dispatch settings. Geographic metadata allowed adaptation of model parameters to reflect regional emergency response infrastructure and variations in caller language and behaviour. Functional contextualization prioritized real-time operational constraints, ensuring that models were trained and validated on data distributions most reflective of anticipated deployment environments.
+
+Cross-validation strategies incorporated stratification by PSAP region and incident type to enhance model generalizability. Nevertheless, the absence of targeted data collection designed explicitly for AI model training limited the provider’s ability to fully tailor datasets to all contextual nuances inherent in live emergency dispatch operations.

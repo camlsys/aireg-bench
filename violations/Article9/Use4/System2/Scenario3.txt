@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"5. The risk management measures referred to in paragraph 2, point (d), shall be such that the relevant residual risk associated with each hazard, as well as the overall residual risk of the high-risk AI systems is judged to be acceptable."  
+
+[b] **Guideline:**  
+Risk mitigation must include both design improvements and operational controls (e.g., user training, contextual restrictions) to reduce risks to an acceptable residual level consistent with the sensitivity of monitoring young students. Residual risks should be explicitly measured against predefined, justifiable thresholds and in light of possible cumulative risks from combined system elements.  
+
+[c] **Violation:**  
+Risk management measures implemented rely primarily on generic technical enhancements in the hybrid model and provide only minimal user training for exam supervisors, without tailored instructions on interpreting alerts or addressing false positives among vulnerable age groups. This leads to residual risks of unjustified suspicion and stress on minors that exceed socially acceptable levels, yet no specific thresholds or impact assessments are documented or acted upon.  
+
+[d] **Justification:**  
+The violation is realistic and subtle because the provider assumes that technical accuracy alone guarantees acceptable residual risk, neglecting the human factors and deployment contexts critical under Article 9(5). This gap between risk reduction efforts and residual risk judgement is easily missed in conventional testing, resulting in non-compliance with the Act’s requirement to ensure acceptable risk in practice.

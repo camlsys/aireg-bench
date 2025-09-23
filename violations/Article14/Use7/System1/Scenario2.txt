@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Human oversight shall aim to prevent or minimise the risks to health, safety or fundamental rights... in particular where such risks persist despite the application of other requirements set out in this Section." (Article 14(2))
+
+[b] **Guideline:**  
+To minimize discrimination risks affecting fundamental rights, oversight mechanisms must include alerts or flags about potential biases or disproportionate impacts on protected demographic groups, allowing human reviewers to intervene before decisions are finalized.
+
+[c] **Violation:**  
+The system’s design lacks embedded bias detection modules or alert functionalities that inform human supervisors when credit evaluations disproportionately disadvantage certain ethnic or socio-economic groups, leaving human reviewers unaware of systemic discrimination risks.
+
+[d] **Justification:**  
+This omission is a subtle failure to equip humans with tools needed to proactively identify discrimination risks, thereby undermining their capacity to prevent harm to fundamental rights. It realistically occurs due to overemphasis on predictive accuracy rather than fairness-aware oversight features.
+
+---

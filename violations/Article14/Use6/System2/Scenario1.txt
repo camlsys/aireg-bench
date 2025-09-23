@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))
+
+[b] **Guideline:**  
+The system must provide clear human-machine interface features enabling natural persons to continuously monitor its decision process in real time, allowing them to identify, understand, and respond to system outputs or behaviors without undue complexity or delay.
+
+[c] **Violation:**  
+Contractual Separation Insight presents its recommendations in aggregated summary dashboards without access to detailed intermediate decision rationale from the random forest or LLM ensemble, limiting the human operator’s ability to track or interpret model reasoning dynamically during use.
+
+[d] **Justification:**  
+This subtle omission hinders effective oversight because although outputs are delivered, the lack of transparency into the decision steps reduces a human overseer’s capacity to detect anomalies or misbehavior promptly. The provider’s design choice prioritizing summarized results over granular traceability means natural persons cannot fully supervise the system in real time as required, violating the oversight design mandate.
+
+---

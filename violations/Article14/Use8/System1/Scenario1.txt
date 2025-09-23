@@ -1,0 +1,11 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way, including with appropriate human-machine interface tools, that they can be effectively overseen by natural persons during the period in which they are in use." (Article 14(1))
+
+[b] **Guideline:**  
+The system must incorporate user interfaces and interaction mechanisms that enable dispatch operators to continuously monitor the AI’s decision-making process, understand its reasoning, detect anomalies or errors in real time, and intervene promptly to correct or halt the AI’s functioning if needed.
+
+[c] **Violation:**  
+Priority Response Analytics provides dispatchers with only high-level priority scores and automated recommendations without visualizing the contributing factors from the Gradient Boosted Decision Tree and Transformer models. As a result, dispatchers have no means to assess how specific input data influenced the priority assessment, limiting their ability to identify erroneous outputs or intervene appropriately during operation.
+
+[d] **Justification:**  
+This violation is subtle because the system delivers its core function—priority scoring—but lacks transparent, interpretable interfaces for human oversight. Dispatchers may overly trust the opaque scores without full understanding, hindering effective monitoring or timely intervention, contravening the requirement for effective human oversight tools during use.

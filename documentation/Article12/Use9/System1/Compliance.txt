@@ -1,0 +1,27 @@
+**Article 12**
+
+**Event Logging Architecture and Implementation**
+
+Judicial Insight Assistant integrates a comprehensive automatic logging subsystem engineered to capture events continuously throughout the entire operational lifetime of the system. The logging framework is embedded across both core components—the transformer-based encoder-decoder model for legal text understanding and the gradient boosted decision trees (GBDT) module responsible for fact pattern classification. Logging is implemented through a high-throughput, secure log aggregation pipeline utilizing industry-standard frameworks such as OpenTelemetry combined with encrypted log storage in geographically distributed EU data centers to ensure data integrity and availability.
+
+All logged events are timestamped with synchronized UTC timestamps and digitally signed to prevent tampering or loss, supporting non-repudiation and forensic evidence requirements. The system’s automated logging captures model inputs and outputs, confidence scores, data preprocessing transformations, and any runtime parameter modifications. By design, this log architecture enables retrospective analysis for the entire transactional chain, ensuring full system event traceability across iterative model updates and real-time user interactions.
+
+**Identification of High-Risk Situations and Substantial Modifications**
+
+The logging system is configured to specifically identify and record events indicating potential risks or substantial modifications relevant to the system’s high-risk designation under Article 79(1). Risk-related logging categories include detection of prediction confidence degradation below pre-established thresholds, anomalous input pattern distributions, and failure modes in key classification decisions flagged through internal monitoring heuristics.
+
+Substantial modifications such as updates to the transformer model weights, retraining cycles of the GBDT module, or changes in input data schemas trigger automated logging entries detailing version identifiers, change metadata, and the scope of algorithmic adjustments. Each deployment of new model versions undergoes integrated change tracking that captures differences from previous models, accompanied by relevant validation benchmark outcomes—such as a 1.2% improvement in legal text classification F1 score over the prior baseline—to document the rationale for the update and associated risk assessments.
+
+**Support for Post-Market Monitoring Activities**
+
+To facilitate effective post-market monitoring as prescribed under Article 72, the system’s logs systematically capture usage statistics and operational metrics critical for continuous compliance evaluation. Logged data encompasses anonymized user interaction summaries, query patterns, and runtime error rates aggregated daily, enabling analysis of performance trends over time.
+
+Additionally, logs record flagged instances where system outputs prompted human override or review, allowing the provider to assess operational reliability and potential bias issues. Automated alerting mechanisms notify the provider’s monitoring team of significant deviations or emergent error clusters detected through statistical process control methods applied to these logs. This enables timely investigation and remediation actions consistent with regulatory post-market surveillance obligations.
+
+**Operational Monitoring of High-Risk AI Functioning**
+
+Operational monitoring logs also incorporate detailed diagnostics supporting real-time assessment of system health and correctness as per Article 26(5). These include resource utilization metrics (CPU, GPU loads), latency measurements, and system response consistency indicators logged during all inference calls.
+
+The system implements a layered logging approach: raw inference logs are supplemented by aggregated dashboards that summarize key performance indicators (KPIs) relevant to judicial users, such as mean query response time (measured at 680ms ± 45ms) and classification confidence distributions segmented by legal domain. These monitoring data streams feed into the provider’s internal quality assurance workflows to ensure the system remains robust and performs within established operational parameters over time.
+
+By integrating these multi-faceted logging capabilities, Judicial Insight Assistant supports a complete and auditable trail of system function and evolution, thus enabling traceability proportionate to its intended use in assisting judicial bodies.

@@ -1,0 +1,29 @@
+**Article 12**
+
+**Logging Architecture and Activation Criteria**
+
+Legal Context Navigator incorporates a logging subsystem designed to initiate event recording exclusively upon explicit user commands or system-detected errors, rather than through continuous automatic logging throughout system operation. This design responds to judicial authorities’ sensitivity regarding data privacy and case confidentiality, ensuring that routine advisory sessions—including iterative query reformulations—are not indiscriminately recorded. The logging mechanism is implemented using a distributed event capturing framework integrated into the AI inference pipeline, which buffers events locally and triggers permanent log serialization only when a user invokes logging or an operational anomaly is detected. Runtime event data include query inputs, system responses, intermediate transformer attentions metadata, and system status codes. However, automatic logging is otherwise suspended to minimize unnecessary data accumulation in contexts assessed as low risk during normal consultations.
+
+**Rationale for Selective Logging Approach**
+
+This logging strategy aligns with the high-risk AI system’s operational environment, where judicial decision-making workflows often involve sensitive and dynamic interactions needing discretion. Selective logging reduces exposure of confidential deliberations and limits risks associated with broad data retention, a critical consideration given the system’s deployment in courts. While this results in gaps in recorded data during standard advisory sequences, the selective approach prioritizes logging for circumstances with heightened risk indicators (e.e.g., triggered errors or user validation points), balancing traceability needs with privacy and operational acceptability under current judicial protocols.
+
+**Relevance and Scope of Logged Events**
+
+Events captured during logging activation encompass comprehensive metadata relevant for post-market monitoring and operational traceability. This includes error states such as failed model tokenization or invalid input structures, system warnings related to model output confidence thresholds, and explicit user requests that mark pivotal fact-finding moments or legal interpretation checkpoints. Logged data facilitate reconstruction of decision-support sequences at critical judicial junctures but omit large segments of the interaction history where no error or logging request occurred. This approach inherently limits continuous monitoring capability, as routine session iterations and query reformulations outside explicitly triggered logs remain unrecorded.
+
+**Technical Implementation in Accordance with EU AI Act Requirements**
+
+The system supports automatic recording capabilities as mandated by Article 12(1) through a modular logging API layered onto the transformer inference engine. This API exposes controls for enabling and disabling event capture at runtime, ensuring rapid activation upon explicit triggers. Logs conform to structured interoperable formats (JSON-LD) facilitating integration with downstream post-market monitoring pipelines as described in Article 72. The logged events include unique session identifiers, timestamps synchronized via NTP servers compliant with EU time standards, user identifiers pseudonymized at the provider level, and cryptographically signed integrity hashes to preserve data integrity during storage and transmission.
+
+**Limitations Pertinent to Traceability and Risk Identification**
+
+While the architecture technically permits event recording over the system lifetime, the absence of continuous automatic logging leads to substantial unlogged intervals during routine adjudication support. As a consequence, certain events that might signal risk scenarios under Article 12(2)(a) — such as subtle shifts in model output distributions or intermediate interpretative refinements occurring during query reformulation — may not be captured. Similarly, not all operational states are monitored in real-time, which impacts traceability granularity necessary for exhaustive post-market surveillance under Article 72. The system’s design choice reflects a deliberate trade-off between exhaustive traceability and operational constraints within judicial environments, where logging activation relies on user discretion and critical error detection rather than unconditional continuous recording.
+
+**Alignment with Monitoring and Operational Oversight Provisions**
+
+The logged dataset produced upon activation supports compliance with Articles 12(2)(b) and 12(2)(c) by enabling forensic analysis of logged advisory tasks, error investigations, and system behavior audits following triggered events. This dataset is adequate for verifying system performance in identified high-risk instances and for facilitating corrective actions as mandated under the AI Act framework. However, the absence of continuous event capture restricts comprehensive monitoring of all operational behaviors, thereby placing an onus on system deployers to supplement the provider’s logs with additional manual or procedural controls to ensure holistic oversight.
+
+---
+
+This documentation section is intended to provide auditors and compliance assessors with a detailed technical overview of Legal Context Navigator’s logging framework, evidencing how the system balances mandated logging capabilities with operational and privacy considerations inherent in judicial applications.

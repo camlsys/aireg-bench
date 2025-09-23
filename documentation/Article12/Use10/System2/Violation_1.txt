@@ -1,0 +1,25 @@
+**Article 12**
+
+**Technical Enablement of Logging Functions**
+
+The Election Sentiment Transformer incorporates a logging framework designed to be activated explicitly during pre-defined maintenance intervals. This framework records operational events including inference inputs and outputs, model state changes, and configuration parameters relevant to sentiment inference and content generation. Logging is implemented via a modular subsystem that is decoupled from the continuous real-time processing pipeline, initiating capture only during scheduled maintenance windows, typically conducted quarterly. Each logging session preserves cryptographically signed event records to prevent tampering and to ensure data integrity across the system’s lifecycle.
+
+Logging activation occurs exclusively through manual initiation by the maintenance team following system updates or adjustments. This process requires direct operator intervention to start the logging component prior to entering the maintenance period, ensuring that all relevant change events—including updated model weights, feature extraction parameters, or retraining metadata—are fully documented. Automated triggers or continuous background logging outside these periods are not implemented, reflecting a deliberate design choice to minimize performance overhead and data storage costs during peak operational phases. The subsystem’s interfaces and documentation specify the procedures and prerequisites for manual invocation, including authentication protocols and session timing constraints.
+
+**Scope and Content of Recorded Events**
+
+During active logging phases, the system captures detailed event sequences that support traceability of malfunction or risk scenarios highlighted under Article 79(1), such as significant deviations in sentiment prediction confidence, abrupt shifts in trending topic identification, or unanticipated content generation outputs with potential societal impact. Logged data include timestamped snapshots of input data streams, internal attention weights across transformer layers, decision thresholds used during sentiment classification, and routing directives for downstream narrative synthesis modules.
+
+These records facilitate post-market surveillance by enabling correlation of model behavior to evolving electoral contexts, thereby supporting investigations into biases, erroneous propagation of misinformation, or unintended amplification of fringe opinions. Furthermore, during maintenance periods, logging captures runtime diagnostics and environmental parameters, such as server load metrics and network latency, to provide a holistic view of system operation that may affect output validity.
+
+**Limitations of Logging Coverage**
+
+Due to the architecture’s reliance on manual activation and maintenance-timed logging windows, operational intervals exist during which no event data are recorded. Continuous real-time monitoring of inputs and outputs without logging is maintained for system functionality, but comprehensive event capture is dormant. As a result, transient states, model drift, or gradual performance degradation occurring between logging sessions remain undocumented in system logs, which this design acknowledges as a trade-off balancing data volume sustainability and operational efficiency.
+
+The provider’s documentation explicitly delineates these unlogged intervals, specifying their expected duration under standard update cycles, and prescribes manual logging activation immediately following any software updates to maximize traceability coverage. This operational protocol aims to ensure that significant system changes and their immediate impacts on sentiment modeling are documented, albeit accepting intermittent gaps in recorded evidence outside maintenance activities.
+
+**Instrumental Role of Logging in Post-Market and Operational Monitoring**
+
+The provisioned logging mechanism supports compliance with post-market monitoring requirements by delivering authenticated event data collected within designated windows. These data facilitate retrospective analyses necessary for verifying consistent adherence to defined performance metrics, auditing risk conditions, and informing potential corrective adjustments. Additionally, logged diagnostic outputs during maintenance enable assessment of system responsiveness and robustness in real-world electoral dynamics, guiding iterative development and fine-tuning.
+
+While the logging strategy currently emphasizes discrete, manually supervised recording sessions rather than continuous automated logging, it aligns its capabilities with the intended purposes of traceability, risk assessment, and operational monitoring through clearly articulated data schemas and secure handling protocols. The modular design also enables future integration of additional logging modalities should operational policies evolve to require uninterrupted event capture.

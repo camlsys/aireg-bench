@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"Logging capabilities shall enable the recording of events relevant for: (a) identifying situations that may result in the high-risk AI system presenting a risk within the meaning of Article 79(1) or in a substantial modification;"  
+
+[b] **Guideline:**  
+Logs must specifically capture contextual metadata and system behaviors indicative of risks, such as unexpected model output patterns that could confuse users, bias amplification, or manipulations affecting voter guidance, as well as records of any model retraining, parameter changes, or system updates that significantly alter behavior.  
+
+[c] **Violation:**  
+The system logs only generic trigger events like API calls and timestamps, but lacks any recording of nuanced linguistic output anomalies, sentiment shifts, or internal model update details that would reveal when the system potentially disseminates misleading or excessively manipulative political content.  
+
+[d] **Justification:**  
+This subtle violation means risk-relevant situations remain undetectable through logs because the anomaly and change indicators pertinent to evaluating new or amplified risks are excluded. Thus, despite logging activity, the lack of relevant content cloaks potential risk scenarios, undermining traceability intended by Article 12(2)(a).  
+
+---

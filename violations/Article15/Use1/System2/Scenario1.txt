@@ -1,0 +1,13 @@
+[a] **Quotation:**  
+"High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness, and cybersecurity, and that they perform consistently in those respects throughout their lifecycle." (Article 15(1))
+
+[b] **Guideline:**  
+Developers must ensure the AI system maintains stable model performance through its operational life, accounting for environmental changes, sensor degradation, and model drift, with continuous validation on real-world data to detect and rectify performance degradation early.
+
+[c] **Violation:**  
+The Guardian Signal Controller updates CNN weights based on new video streams in real-time without adequate monitoring or rollback mechanisms, causing gradual model drift that leads to increasing false positives in pedestrian detection during low-light conditions over several months.
+
+[d] **Justification:**  
+This subtle degradation impacts accuracy and robustness inconsistently over time, violating the lifecycle consistency mandate. The continuous learning introduces unmonitored performance decay rather than stable function, which is plausible given the system’s environment and adaptive approach but not overtly obvious without detailed monitoring.
+
+---
