@@ -2,7 +2,7 @@
 
 As governments around the world move to regulate AI, there is growing interest in using Large Language Models (LLMs) to assess whether or not an AI system complies with a given AI regulation (AIR). However, there is presently no way to benchmark the performance of LLMs at this task. 
 
-To start to fill this void, we introduce the AIR-Bench benchmark: a legal expert-annotated dataset designed to test how well LLMs can assess compliance with the EU AI Act (AIA). 
+To start to fill this void, we introduce the AIReg-Bench benchmark: a legal expert-annotated dataset designed to test how well LLMs can assess compliance with the EU AI Act (AIA). 
 
 We created this dataset through a two-step process: 
 
@@ -14,7 +14,7 @@ Importantly, all of the AI systems represented in our dataset are high-risk unde
 
 We hope the resulting dataset provides a starting point to understand the opportunities and limitations of LLM-based AIR compliance assessment tools and establishes a benchmark against which the performance of subsequent LLMs at this task can be compared.
 
-In addition to the AIR-Bench benchmark dataset (see AIR-Bench Dataset below), this repository contains: 
+In addition to the AIReg-Bench benchmark dataset (see AIReg-Bench Dataset below), this repository contains: 
 
 - The code we used to prompt an LLM to generate the technical documentation excerpts in the dataset (see Dataset Generation below)
 - The code we used to evaluate a set of SOTA LLMs' performance on the benchmark (see Evaluation and LLM Annotations below)
@@ -23,7 +23,7 @@ In addition to the AIR-Bench benchmark dataset (see AIR-Bench Dataset below), th
 ## Files
 The dataset, LLM annotations, and evaluation sections are the most relevant for using the benchmark in practice.
 
-### AIR-Bench Dataset
+### AIReg-Bench Dataset
 - **documentation | folder** - This contains 300 .txt files. Each represents a unique excerpt of (AI-generated) AI system technical documentation. This documentation is organised within the folder in accordance with [1] the articles of the EU AI Act it pertains to (e.g., Article 9), [2] the intended use of the AI system (e.g., recruitment), [3] the details of the AI system being used (e.g., transformer for summarising text), and [4] the compliance profile of the system (e.g., neglecting to consider bias).
 - **human_annotation.xlsx** - This contains three human-graded annotations for 120 of the excerpts of technical documentation, including scores for compliance and plausibility with brief explanations.
 - **llm_annotations | folder** - This contains LLM-graded annotations for 120 of the excerpts of technical documentation, including scores for compliance and plausibility with brief explanations.
@@ -48,7 +48,7 @@ The dataset, LLM annotations, and evaluation sections are the most relevant for 
 - **rand_assign.txt**: This documents the way in which technical documentation excerpts were permitted during the annotation phase, to prevent bias from annotators noticing a repeating pattern (e.g., every third excerpt is compliant). 
 - **system_outlines | folder**: This contains the AI system descriptions corresponding to the intended uses, which was used during the original benchmark generation process. 
 - **violations | folder**: This contains the violation scenarios corresponding to the AI system outlines and articles within the EU AI Act, which was used during the original benchmark generation process. 
-- **plots | folder**: This contains some of the main plots from AIR-Bench. 
+- **plots | folder**: This contains some of the main plots from AIReg-Bench. 
 
 ## Requirements
 Create a .env folder with the api keys of the models that you wish to evaluate.
