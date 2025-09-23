@@ -1,0 +1,14 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+krippendorff
+python-dotenv
+openai
+anthropic
+google-generativeai
+openpyxl
+seaborn
+spacy
+krippendorff
+scipy

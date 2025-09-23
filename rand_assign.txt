@@ -1,0 +1,202 @@
+1 = Compliance, 2 = Violation_1, 3 = Violation_2
+# Seed: 23232
+Use 1, Article 9
+1 -- B
+2 -- A
+3 -- C
+Use 1, Article 10
+1 -- C
+2 -- A
+3 -- B
+Use 1, Article 12
+1 -- C
+2 -- B
+3 -- A
+Use 1, Article 14
+1 -- B
+2 -- A
+3 -- C
+Use 1, Article 15
+1 -- B
+2 -- C
+3 -- A
+Use 2, Article 9
+1 -- C
+2 -- B
+3 -- A
+Use 2, Article 10
+1 -- B
+2 -- A
+3 -- C
+Use 2, Article 12
+1 -- A
+2 -- C
+3 -- B
+Use 2, Article 14
+1 -- C
+2 -- B
+3 -- A
+Use 2, Article 15
+1 -- C
+2 -- A
+3 -- B
+Use 3, Article 9
+1 -- B
+2 -- A
+3 -- C
+Use 3, Article 10
+1 -- C
+2 -- B
+3 -- A
+Use 3, Article 12
+1 -- C
+2 -- B
+3 -- A
+Use 3, Article 14
+1 -- B
+2 -- A
+3 -- C
+Use 3, Article 15
+1 -- B
+2 -- C
+3 -- A
+Use 4, Article 9
+1 -- A
+2 -- C
+3 -- B
+Use 4, Article 10
+1 -- C
+2 -- A
+3 -- B
+Use 4, Article 12
+1 -- A
+2 -- B
+3 -- C
+Use 4, Article 14
+1 -- B
+2 -- C
+3 -- A
+Use 4, Article 15
+1 -- C
+2 -- B
+3 -- A
+Use 5, Article 9
+1 -- B
+2 -- C
+3 -- A
+Use 5, Article 10
+1 -- A
+2 -- B
+3 -- C
+Use 5, Article 12
+1 -- B
+2 -- C
+3 -- A
+Use 5, Article 14
+1 -- B
+2 -- C
+3 -- A
+Use 5, Article 15
+1 -- C
+2 -- A
+3 -- B
+Use 6, Article 9
+1 -- C
+2 -- B
+3 -- A
+Use 6, Article 10
+1 -- B
+2 -- C
+3 -- A
+Use 6, Article 12
+1 -- C
+2 -- B
+3 -- A
+Use 6, Article 14
+1 -- B
+2 -- A
+3 -- C
+Use 6, Article 15
+1 -- C
+2 -- B
+3 -- A
+Use 7, Article 9
+1 -- C
+2 -- A
+3 -- B
+Use 7, Article 10
+1 -- A
+2 -- C
+3 -- B
+Use 7, Article 12
+1 -- C
+2 -- A
+3 -- B
+Use 7, Article 14
+1 -- C
+2 -- B
+3 -- A
+Use 7, Article 15
+1 -- C
+2 -- B
+3 -- A
+Use 8, Article 9
+1 -- B
+2 -- C
+3 -- A
+Use 8, Article 10
+1 -- A
+2 -- C
+3 -- B
+Use 8, Article 12
+1 -- B
+2 -- A
+3 -- C
+Use 8, Article 14
+1 -- C
+2 -- A
+3 -- B
+Use 8, Article 15
+1 -- A
+2 -- C
+3 -- B
+Use 9, Article 9
+1 -- A
+2 -- B
+3 -- C
+Use 9, Article 10
+1 -- B
+2 -- A
+3 -- C
+Use 9, Article 12
+1 -- A
+2 -- B
+3 -- C
+Use 9, Article 14
+1 -- C
+2 -- B
+3 -- A
+Use 9, Article 15
+1 -- C
+2 -- A
+3 -- B
+Use 10, Article 9
+1 -- A
+2 -- C
+3 -- B
+Use 10, Article 10
+1 -- B
+2 -- C
+3 -- A
+Use 10, Article 12
+1 -- B
+2 -- C
+3 -- A
+Use 10, Article 14
+1 -- B
+2 -- C
+3 -- A
+Use 10, Article 15
+1 -- A
+2 -- B
+3 -- C

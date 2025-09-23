@@ -1,0 +1,10 @@
+An AI system intended to be used as a safety component (i.e., it fulfils a safety function and its failure or malfunctioning endangers the health and safety of persons or property) in the management of road traffic.
+An AI system intended to be used as a safety component (i.e., it fulfils a safety function and its failure or malfunctioning endangers the health and safety of persons or property) in the supply of gas. 
+An AI system intended to be used to evaluate learning outcomes, including when those outcomes are used to steer the learning process of natural persons in educational and vocational training institutions at all levels.
+An AI system intended to be used for monitoring and detecting prohibited behaviour of students during tests within an educational institution.
+An AI system intended to be used for the recruitment or selection of natural persons, in particular to place targeted job advertisements, to analyse and filter job applications.
+An AI system intended to be used to make decisions affecting the termination of work-related contractual relationships.
+An AI system intended to be used to evaluate the creditworthiness of natural persons or establish their credit score, with the exception of AI systems used for the purpose of detecting financial fraud.
+An AI system intended to be used to establish priority in the dispatching of emergency first response services, including by police, firefighters and medical aid.
+An AI system intended to be used by a judicial authority in researching and interpreting facts and the law and in applying the law to a concrete set of facts.
+An AI system intended to be used for influencing the outcome of an election or referendum or the voting behaviour of natural persons in the exercise of their vote in elections or referenda. This does not include AI systems to the output of which natural persons are not directly exposed, such as tools used to organise, optimise or structure political campaigns from an administrative or logistical point of view.
