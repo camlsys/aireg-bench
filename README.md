@@ -1,6 +1,8 @@
 ## Background and Overview
 
+Paper: [AIReg-Bench: Benchmarking Language Models That Assess AI Regulation Compliance](https://arxiv.org/abs/2510.01474) 
 
+HuggingFace Dataset: [AIReg-Bench](https://huggingface.co/datasets/camlsys/AIReg-Bench)
 
 As governments around the world move to regulate AI, there is growing interest in using Large Language Models (LLMs) to assess whether or not an AI system complies with a given AI regulation (AIR). However, there is presently no way to benchmark the performance of LLMs at this task. 
 
@@ -56,5 +58,21 @@ The dataset, LLM annotations, and evaluation sections are the most relevant for 
 Create a .env folder with the api keys of the models that you wish to evaluate.
 Run pip install requirements.txt for convenient installation of the relevant packages. 
 You will need Python 3.10 or above.
+
+## Citation
+
+Please use this Bibtex to cite this work:
+
+@misc{marino2025airegbenchbenchmarkinglanguagemodels,
+      title={AIReg-Bench: Benchmarking Language Models That Assess AI Regulation Compliance}, 
+      author={Bill Marino and Rosco Hunter and Zubair Jamali and Marinos Emmanouil Kalpakos and Mudra Kashyap and Isaiah Hinton and Alexa Hanson and Maahum Nazir and Christoph Schnabl and Felix Steffek and Hongkai Wen and Nicholas D. Lane},
+      year={2025},
+      eprint={2510.01474},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2510.01474}, 
+}
+
+
 
 
