@@ -25,6 +25,7 @@ run("step3_bootstrap.py", ROOT, OUT / "boot.json", 10000)
 run("step4_baselines.py", ROOT, OUT / "baselines.json")
 run("step4b_subset.py", ROOT, OUT / "subset.json")
 run("holm.py", OUT)
+run("run_alt_test.py", ROOT, OUT / "alt_test.json")
 with open(OUT / "table_rows.tex", "w") as f:
     run("make_tables.py", OUT, stdout=f)
 print(f"\nDone. Results in {OUT}")

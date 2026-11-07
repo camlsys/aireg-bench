@@ -3,7 +3,7 @@
 Reproduces the uncertainty estimates, human baseline and baselines added in the revision.
 From the repository root:
 
-    pip install -r requirements.txt
+    pip install -r requirements.txt statsmodels
     python eval/rebuttal/run_all.py
 
 Takes about two minutes. Outputs go to `eval/rebuttal/results/`.
@@ -16,6 +16,8 @@ Takes about two minutes. Outputs go to `eval/rebuttal/results/`.
 | `step4_baselines.py` | Steering-label and constant baselines; metrics on excerpts steered towards compliance / non-compliance; Krippendorff's alpha variants; per-article standard deviations; annotator assignment |
 | `step4b_subset.py` | Each LLM vs the steering baseline (paired bootstrap); CIs and leave-one-out human baseline on the steered subsets |
 | `holm.py` | Holm-adjusted p-values for each model vs the individual expert and vs the steering baseline |
+| `alt_test.py` | Alternative Annotator Test (Calderon et al., 2025) implementation |
+| `run_alt_test.py` | Runs the alt-test on all six annotators, scoring alignment by RMSE (main) and by exact match |
 | `make_tables.py` | LaTeX table rows generated from the JSON results |
 
 Item order: index = use × 15 + article × 3 + scenario (Uses 1–8; Articles 9, 10, 12, 14, 15; Scenarios A–C),
