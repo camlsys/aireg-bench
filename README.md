@@ -37,7 +37,8 @@ The dataset, LLM annotations, and evaluation sections are the most relevant for 
 
 ### Evaluation
 - **eval | folder** - This folder contains any evaluations of the human annotations or LLM annotations.
-  - **stats.py** - This script evaluates compliance and plausibility ratings between humans (from "human_annotations.xlsx") and multiple LLMs (from "{model}_annotations.xlsx"). It computes several metrics related to agreement and accuracy between the LLMs and the median human rating. It also calculates descriptive statistics and inter-rater reliability for the human data.
+  - **eval.py** - This script evaluates compliance and plausibility ratings between humans (from "human_annotations.xlsx") and multiple LLMs (from "{model}_annotations.xlsx"). It computes several metrics related to agreement and accuracy between the LLMs and the median human rating. It also calculates descriptive statistics and inter-rater reliability for the human data.
+  - **rebuttal | folder** - Analyses added in revision: confidence intervals, a leave-one-out human baseline, steering-label and constant baselines, and severity-grading results. Run `python eval/rebuttal/run_all.py` from the repository root; see `eval/rebuttal/README.md` for details.
 
 ### Dataset Generation
 - **excerpt_generation | folder**: This folder contains three scripts — “system_outlines.py”, “violations.py”, and “documentation.py” — which are run in sequence to generate the benchmark dataset. Originally, they wrote to the “system_outlines | folder”, “violations | folder”, and “documentation | folder”, but now produce outputs in” system_outlines_new  | folder”, “violations_new  | folder”, and “documentation_new | folder” to avoid overwriting the original dataset that has since been annotated.
