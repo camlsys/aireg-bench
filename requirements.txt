@@ -10,5 +10,5 @@ google-generativeai
 openpyxl
 seaborn
 spacy
-krippendorff
+statsmodels
 scipy
