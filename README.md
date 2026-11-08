@@ -31,7 +31,9 @@ The dataset, LLM annotations, and evaluation sections are the most relevant for 
 
 ### AIReg-Bench Dataset
 - **documentation | folder** - This contains 300 .txt files. Each represents a unique excerpt of (AI-generated) AI system technical documentation. This documentation is organised within the folder in accordance with [1] the articles of the EU AI Act it pertains to (e.g., Article 9), [2] the intended use of the AI system (e.g., recruitment), [3] the details of the AI system being used (e.g., transformer for summarising text), and [4] the compliance profile of the system (e.g., neglecting to consider bias).
-- **human_annotation.xlsx** - This contains three human-graded annotations for 120 of the excerpts of technical documentation, including scores for compliance and plausibility with brief explanations.
+- **human_annotations.xlsx** - This contains three human-graded annotations for 120 of the excerpts of technical documentation, including scores for compliance and plausibility with brief explanations.
+  - **human_annotations_disaggregated.xlsx** - The same compliance and plausibility annotations, organized by individual annotator (identified by pseudonymous codes), used for the leave-one-out and per-annotator analyses.
+  - **Which 120 excerpts form the benchmark**: of the 300 excerpts in "documentation | folder", the benchmark uses those for intended Uses 1–8, with System 1 for Uses 1–5 and System 2 for Uses 6–8 (3 excerpts per Article per use).
 - **llm_annotations | folder** - This contains LLM-graded annotations for 120 of the excerpts of technical documentation, including scores for compliance and plausibility with brief explanations.
 
 ### LLM Annotations
@@ -52,7 +54,7 @@ The dataset, LLM annotations, and evaluation sections are the most relevant for 
 - **intended_uses.txt**: This contains a set of 10 intended uses of AI systems. These intended uses are all drawn from the list of high-risk AI (HRAI) systems intended uses in Annex III of the AIA. This document is used during our dataset generation process to produce a distribution of technical documentations reflecting a diversity of HRAI intended uses. 
 - **articles.txt**: This contains those AIA articles that dictate requirements for HRAI systems and are the focus of this benchmark dataset (specifically, Articles 9, 10, 12, 14, and 15). This list is used during our generation process to ideate non-compliant AI systems that are diverse in terms of how they violate the AIA and, due to the nuanced nature of their non-compliance, also relatively challenging for LLMs to detect. 
 - **requirements.txt**: This contains all the packages that should be required to run this codebase: numpy, pandas, matplotlib, scikit-learn, krippendorff, python-dotenv, openai, anthropic, google-generativeai, openpyxl.
-- **rand_assign.txt**: This documents the way in which technical documentation excerpts were permitted during the annotation phase, to prevent bias from annotators noticing a repeating pattern (e.g., every third excerpt is compliant). 
+- **rand_assign.txt**: This documents the way in which technical documentation excerpts were permuted during the annotation phase, to prevent bias from annotators noticing a repeating pattern (e.g., every third excerpt is compliant). 
 - **system_outlines | folder**: This contains the AI system descriptions corresponding to the intended uses, which was used during the original benchmark generation process. 
 - **violations | folder**: This contains the violation scenarios corresponding to the AI system outlines and articles within the EU AI Act, which was used during the original benchmark generation process. 
 - **plots | folder**: This contains some of the main plots from AIReg-Bench. 
