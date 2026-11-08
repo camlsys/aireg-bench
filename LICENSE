@@ -1,0 +1,53 @@
+AIReg-Bench is released under two licenses:
+
+  * Code (all .py files, including eval/ and excerpt_generation/): MIT License
+  * Data (documentation/, system_outlines/, violations/, llm_annotations/,
+    human_annotations.xlsx, human_annotations_disaggregated.xlsx,
+    intended_uses.txt, articles.txt, rand_assign.txt, plots/):
+    Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Excerpts of the EU AI Act (Regulation (EU) 2024/1689) included in this
+repository are reproduced from the Official Journal of the European Union and
+are not covered by these licenses.
+
+-------------------------------------------------------------------------------
+MIT License (code)
+-------------------------------------------------------------------------------
+
+Copyright (c) 2025-2026 The AIReg-Bench authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+Creative Commons Attribution 4.0 International (data)
+-------------------------------------------------------------------------------
+
+Copyright (c) 2025-2026 The AIReg-Bench authors
+
+The data in this repository is licensed under the Creative Commons Attribution
+4.0 International License (CC BY 4.0). You are free to share and adapt the
+data for any purpose, including commercially, provided you give appropriate
+credit, provide a link to the license, and indicate if changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary:           https://creativecommons.org/licenses/by/4.0/
+
+The data is provided "as is", without warranty of any kind. The compliance
+annotations reflect the judgements of the annotators at the time of annotation
+and do not constitute legal advice or evidence of compliance with any law.
