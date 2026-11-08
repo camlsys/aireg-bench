@@ -22,7 +22,7 @@ ABLATION = True
 MODEL_ALIASES = {
     "grok3_mini": "Grok 3 mini",
     "gemma": "Gemma 3",
-    "flash": "Gemini 2.5 Flash",
+    "flash": "Gemini 2.0 Flash",
     "sonnet":  "Sonnet 4",
     "o3_mini": "o3 mini",
     "4o": "GPT-4o",
@@ -32,7 +32,7 @@ MODEL_ALIASES = {
     "o3": "o3"}
 PRICES = {
    "grok3_mini": 0.5,
-   "flash": 2.5,
+   "flash": 0.4,
    "sonnet":  15,
    "o3_mini": 4.4,
    "4o": 10,
@@ -306,7 +306,7 @@ def plot_compliance_kappa(plot_df, save_prefix=None):
     alias_order = [MODEL_ALIASES.get(m, m) for m in models
                    if MODEL_ALIASES.get(m, m) in df["ModelAlias"].unique()]
     linebreak_map = {
-        "Gemini 2.5 Flash": "Gemini 2.5\nFlash",
+        "Gemini 2.0 Flash": "Gemini 2.0\nFlash",
         "Gemini 2.5 Pro": "Gemini 2.5\nPro",
     }
     df["ModelAliasPlot"] = df["ModelAlias"].astype(str).map(lambda x: linebreak_map.get(x, x))
@@ -424,9 +424,9 @@ def plot_pareto(df, title="Price vs Compliance Agreement", save_path=None):
             ax.annotate(r["ModelAlias"], (r["Price"], r["Kappa"]),
                         xytext=(2, 12), textcoords="offset points", 
                         fontsize=19, fontweight="bold")
-        elif r["ModelAlias"] == "Gemini 2.5 Flash":
+        elif r["ModelAlias"] == "Gemini 2.0 Flash":
             ax.annotate(r["ModelAlias"], (r["Price"], r["Kappa"]),
-                        xytext=(10, -2), textcoords="offset points", 
+                        xytext=(2, -30), textcoords="offset points", 
                         fontsize=19, fontweight="bold")
         elif r["ModelAlias"] == "GPT-5":
             ax.annotate(r["ModelAlias"], (r["Price"], r["Kappa"]),
