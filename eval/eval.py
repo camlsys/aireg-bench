@@ -469,6 +469,9 @@ def main():
         all_details.append(detail)
         normal_details.append(detail)
     for suffix in ["empty", "harsh", "articleless"]:
+        if not Path(f"llm_annotations/4o_annotations_ablation_{suffix}.xlsx").exists():
+            print(f"Skipping ablation '{suffix}': output file not included in this release.")
+            continue
         df, detail = evaluate_model(human_c_list, human_p_list, "4o", ablation_suffix=suffix)
         all_rows.append(df)
         all_details.append(detail)
