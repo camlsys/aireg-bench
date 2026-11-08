@@ -12,5 +12,3 @@ seaborn
 spacy
 statsmodels
 scipy
-seaborn
-spacy
