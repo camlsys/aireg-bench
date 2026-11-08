@@ -2,7 +2,7 @@
 
 F1 follows eval/eval.py: 'compliant' = score >= 4, for both the expert median and the LLM.
 Pareto frontier follows eval/eval.py: a model is on it if no other model is at most as expensive
-and at least as good on kappa_w, with one of the two strictly better. Prices are eval.py's PRICES.
+and at least as good on kappa_w, with one of the two strictly better. Prices are eval.py's PRICES (Gemini 2.0 Flash at $0.40).
 """
 import json, sys
 import numpy as np
@@ -14,7 +14,7 @@ B = 10000
 rng = np.random.default_rng(5)
 med = median_int(load_humans_iter(root)).astype(float)
 X = {m: load_llm(root, m) for m in MODELS}
-PRICES = {"grok3_mini": 0.5, "flash": 2.5, "sonnet": 15, "o3_mini": 4.4, "4o": 10, "grok4": 15, "pro": 10, "gpt5": 10, "o3": 8}
+PRICES = {"grok3_mini": 0.5, "flash": 0.4, "sonnet": 15, "o3_mini": 4.4, "4o": 10, "grok4": 15, "pro": 10, "gpt5": 10, "o3": 8}
 N = len(med)
 
 

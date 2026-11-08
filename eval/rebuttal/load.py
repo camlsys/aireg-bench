@@ -17,7 +17,7 @@ N = N_USES * len(ARTS) * len(SCEN)  # 120
 
 MODELS = ["gpt5", "4o", "o3", "o3_mini", "sonnet", "pro", "flash", "gemma", "grok4", "grok3_mini"]
 ALIAS = {"gpt5": "GPT-5", "4o": "GPT-4o", "o3": "o3", "o3_mini": "o3 mini", "sonnet": "Claude Sonnet 4",
-         "pro": "Gemini 2.5 Pro", "flash": "Gemini 2.5 Flash", "gemma": "Gemma 3", "grok4": "Grok 4",
+         "pro": "Gemini 2.5 Pro", "flash": "Gemini 2.0 Flash", "gemma": "Gemma 3", "grok4": "Grok 4",
          "grok3_mini": "Grok 3 mini"}
 
 

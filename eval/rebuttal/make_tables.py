@@ -8,10 +8,10 @@ loo = json.load(open(f"{d}/loo.json"))
 base = json.load(open(f"{d}/baselines.json"))
 sub = json.load(open(f"{d}/subset.json"))
 
-ORDER = ["GPT-5", "GPT-4o", "o3", "o3 mini", "Claude Sonnet 4", "Gemini 2.5 Pro", "Gemini 2.5 Flash", "Gemma 3", "Grok 4", "Grok 3 mini"]
+ORDER = ["GPT-5", "GPT-4o", "o3", "o3 mini", "Claude Sonnet 4", "Gemini 2.5 Pro", "Gemini 2.0 Flash", "Gemma 3", "Grok 4", "Grok 3 mini"]
 CITE = {"GPT-5": "openai2025gpt5", "GPT-4o": "openai2024gpt4ocard", "o3": "openai2025o3o4mini", "o3 mini": "openai2025o3mini",
         "Claude Sonnet 4": "anthropic2025claude4", "Gemini 2.5 Pro": "comanici2025gemini25pushingfrontier",
-        "Gemini 2.5 Flash": "comanici2025gemini25pushingfrontier", "Gemma 3": "kamath2025gemma3", "Grok 4": "xai2025grok4",
+        "Gemini 2.0 Flash": "google2024gemini2", "Gemma 3": "kamath2025gemma3", "Grok 4": "xai2025grok4",
         "Grok 3 mini": "xai2025grok3"}
 
 

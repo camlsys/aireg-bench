@@ -166,7 +166,7 @@ DEFAULT_MODELS: list[str] = [
 MODEL_ALIASES: dict[str, str] = {
     "grok3_mini": "Grok 3 mini",
     "gemma": "Gemma 3",
-    "flash": "Gemini 2.5 Flash",
+    "flash": "Gemini 2.0 Flash",
     "sonnet": "Sonnet 4",
     "o3_mini": "o3 mini",
     "4o": "GPT-4o",
